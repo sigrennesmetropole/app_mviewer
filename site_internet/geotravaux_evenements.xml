@@ -77,7 +77,7 @@ attribution="&lt;a href=&quot;https://applications.region-bretagne.fr/geonetwork
 				visible="false"
 				metadata="undefined"
 				queryable="true"
-mobile				fields="niv_perturbation,type,libelle,localisation,date_deb,date_fin,tel_fixe,tel_mobile"
+		   		fields="niv_perturbation,type,libelle,localisation,date_deb,date_fin,tel_fixe,tel_mobile"
                 featurecount="5"
                 tooltip="true" 
                 tooltipenabled="true" 
