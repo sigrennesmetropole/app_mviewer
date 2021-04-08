@@ -22,16 +22,18 @@ adresse_confinement = (function() {
     }
 
     /*
-    * Ajoute un cercle de 1000m de rayon autour d'un point passé en paramètre
+    * Ajoute des cercles  autour d'un point passé en paramètre
     */
     function addCircleFeature(coord){
-            mviewer.customLayers.distconfinement_20km.layer.getSource().clear();
-            mviewer.customLayers.distconfinement_1km.layer.getSource().clear();
-            var feat_1km = new ol.Feature(new ol.geom.Circle(coord, getradius(1000)));
-            var feat_20km = new ol.Feature(new ol.geom.Circle(coord, getradius(20000)));
-            //var feat = new ol.Feature(new ol.geom.Point(coord));
-            mviewer.customLayers.distconfinement_1km.layer.getSource().addFeature(feat_1km);
-            mviewer.customLayers.distconfinement_20km.layer.getSource().addFeature(feat_20km);
+            //mviewer.customLayers.distconfinement_20km.layer.getSource().clear();
+            mviewer.customLayers.distconfinement_10km.layer.getSource().clear();
+            //mviewer.customLayers.distconfinement_1km.layer.getSource().clear();
+            //var feat_1km = new ol.Feature(new ol.geom.Circle(coord, getradius(1000)));
+            var feat_10km = new ol.Feature(new ol.geom.Circle(coord, getradius(10000)));
+            //var feat_20km = new ol.Feature(new ol.geom.Circle(coord, getradius(20000)));
+            //mviewer.customLayers.distconfinement_1km.layer.getSource().addFeature(feat_1km);
+            mviewer.customLayers.distconfinement_10km.layer.getSource().addFeature(feat_10km);
+            //mviewer.customLayers.distconfinement_20km.layer.getSource().addFeature(feat_20km);
     }
     
     function getradius(dist_m){ // distance en metres
