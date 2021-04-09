@@ -335,6 +335,11 @@ ul#basemapslist  li.active{
     font-family: 'vistaSansOT_regular', Arial, Sans-serif;
 }
 
+#map {
+    /*background: #e2e6ea!important;*/
+    background: #d4e6f4!important;
+}
+
 /*******************************
 ------------- RIGHT PANEL
 ********************************/
