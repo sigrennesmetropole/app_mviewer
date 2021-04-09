@@ -1,0 +1,11 @@
+/******************************************************************************
+--------------------------- CSS THEME MVIEWER / cartes intégrées avec recherche -----
+********************************************************************************/
+
+/*  Import du style du site internet  */
+@import url("site_internet_gris.css");
+
+
+.nav>li>a {
+    display:none!important;
+}
