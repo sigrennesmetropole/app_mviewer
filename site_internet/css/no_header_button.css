@@ -9,3 +9,7 @@
 .nav>li>a {
     display:none!important;
 }
+
+.nav>li>a[data-target="#legend-modal"]{
+    display:block!important;
+}
