@@ -1,6 +1,16 @@
 {{#features}}
-	<li class="item">
-		<h5 class="rm-popup-title-feature">{{nom_eqt}}</h5>
-
-	</li>
+    <li class="item">
+        <h5 class="rm-popup-title-feature">{{nom_eqt}}</h5>
+        
+        <p class="rm-popup-text-feature">
+            {{#adresse}} {{{adresse}}}<br/>{{/adresse}}
+        </p>
+        
+        <p class="rm-popup-text-feature">
+            {{#nom_quartier}}<span class='rm-popup-label'> Quartier :</span> {{{nom_quartier}}}<br/>{{/nom_quartier}}
+            {{#description}}<span class='rm-popup-label'> Description :</span> {{{description}}}<br/>{{/description}}
+            {{#crit_acces}}<span class='rm-popup-label'> Accès :</span> {{{crit_acces}}}<br/>{{/crit_acces}}
+            {{#horaires}}<span class='rm-popup-label'> Horaires :</span> {{{horaires}}}<br/>{{/horaires}}
+        </p>
+    </li>
 {{/features}}
