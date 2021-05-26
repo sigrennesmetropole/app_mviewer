@@ -22,23 +22,7 @@
     <searchparameters bbox="false" localities="false" features="false" static="false"/>
 
     <themes mini="false" legendmini="true"> 
-        <theme id="theme-sportscollectifs" name="Sports collectifs" collapsed="true" icon="fas fa-basketball-ball"> 
-            <layer 
-                id="v_sport_proximite"
-                name="Baseball"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                style="eq_cultspo:eq_sport_proxi_baseball"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
-                queryable="true"
-                featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
-            </layer>
+        <theme id="theme-sportsequipt" name="Équipements sportifs" collapsed="false" icon="fas fa-map-marker-alt"> 
             <layer 
                 id="v_sport_proximite"
                 name="Basketball"
@@ -73,6 +57,102 @@
             </layer>
             <layer 
                 id="v_sport_proximite"
+                name="Babyfoot"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                style="eq_cultspo:eq_sport_proxi_babyfoot"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
+                queryable="true"
+                featurecount="6"
+                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
+            </layer>
+            <layer 
+                id="v_sport_proximite"
+                name="Bicross"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
+                queryable="true"
+                featurecount="6"
+                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                style="eq_cultspo:eq_sport_proxi_bicross"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
+            </layer>
+            <layer 
+                id="v_sport_proximite"
+                name="Cyclisme sur piste"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
+                queryable="true"
+                featurecount="6"
+                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                style="eq_cultspo:eq_sport_proxi_cyclisme"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
+            </layer>
+            <layer 
+                id="v_sport_proximite"
+                name="Échecs"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
+                queryable="true"
+                featurecount="6"
+                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                style="eq_cultspo:eq_sport_proxi_echecs"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
+            </layer>
+            <layer 
+                id="v_sport_proximite"
+                name="Espace de rafraichissement"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
+                queryable="true"
+                featurecount="6"
+                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                style="eq_cultspo:eq_sport_proxi_espace_rafraichissement"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
+            </layer>
+            <layer 
+                id="v_sport_proximite"
+                name="Fitness"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
+                queryable="true"
+                featurecount="6"
+                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                style="eq_cultspo:eq_sport_proxi_fitness"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
+            </layer>
+            <layer 
+                id="v_sport_proximite"
                 name="Football"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
@@ -89,7 +169,7 @@
             </layer>
             <layer 
                 id="v_sport_proximite"
-                name="Hockey sur gazon"
+                name="Glisse urbaine"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
                 visible="true"
@@ -99,13 +179,13 @@
                 queryable="true"
                 featurecount="6"
                 filter="crit_acces &lt;&gt; 'Accès interdit'"
-                style="eq_cultspo:eq_sport_proxi_hockey_gazon"
+                style="eq_cultspo:eq_sport_proxi_glisse_urbaine"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
             <layer 
                 id="v_sport_proximite"
-                name="Rugby"
+                name="Mölky"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
                 visible="true"
@@ -115,13 +195,13 @@
                 queryable="true"
                 featurecount="6"
                 filter="crit_acces &lt;&gt; 'Accès interdit'"
-                style="eq_cultspo:eq_sport_proxi_rugby"
+                style="eq_cultspo:eq_sport_proxi_molky"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
             <layer 
                 id="v_sport_proximite"
-                name="Volleyball"
+                name="Parcours de santé"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
                 visible="true"
@@ -131,12 +211,58 @@
                 queryable="true"
                 featurecount="6"
                 filter="crit_acces &lt;&gt; 'Accès interdit'"
-                style="eq_cultspo:eq_sport_proxi_volley_ball"
+                style="eq_cultspo:eq_sport_proxi_parcours_sante"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-        </theme> 
-        <theme id="theme-sportsraquette" name="Sports de raquette" collapsed="true" icon="fas fa-table-tennis"> 
+            <layer 
+                id="v_sport_proximite"
+                name="Pétanque"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
+                queryable="true"
+                featurecount="6"
+                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                style="eq_cultspo:eq_sport_proxi_petanque"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
+            </layer>
+            <layer 
+                id="v_sport_proximite"
+                name="Piste d'athlétisme"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
+                queryable="true"
+                featurecount="6"
+                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                style="eq_cultspo:eq_sport_proxi_course_a_pied"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
+            </layer>
+            <layer 
+                id="v_sport_proximite"
+                name="Street workout"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
+                queryable="true"
+                featurecount="6"
+                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                style="eq_cultspo:eq_sport_proxi_street_workout"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
+            </layer>
             <layer 
                 id="v_sport_proximite"
                 name="Tennis"
@@ -169,11 +295,9 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-        </theme>
-        <theme id="theme-sportsforce" name="Sports de force" collapsed="true" icon="fas fa-dumbbell"> 
             <layer 
                 id="v_sport_proximite"
-                name="Fitness"
+                name="Volleyball"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
                 visible="true"
@@ -183,196 +307,10 @@
                 queryable="true"
                 featurecount="6"
                 filter="crit_acces &lt;&gt; 'Accès interdit'"
-                style="eq_cultspo:eq_sport_proxi_fitness"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
-            </layer>
-            <layer 
-                id="v_sport_proximite"
-                name="Parcours de santé"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
-                queryable="true"
-                featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
-                style="eq_cultspo:eq_sport_proxi_parcours_sante"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
-            </layer>
-            <layer 
-                id="v_sport_proximite"
-                name="Street workout"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
-                queryable="true"
-                featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
-                style="eq_cultspo:eq_sport_proxi_street_workout"
+                style="eq_cultspo:eq_sport_proxi_volley_ball"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
         </theme>
-        <theme id="theme-athletisme" name="Athletisme" collapsed="true" icon="fas fa-running"> 
-            <layer 
-                id="v_sport_proximite"
-                name="Course à pied"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
-                queryable="true"
-                featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
-                style="eq_cultspo:eq_sport_proxi_course_a_pied"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
-            </layer>
-        </theme>
-        <theme id="theme-sportprécision" name="Sports de précision" collapsed="true" icon="fas fa-bowling-ball"> 
-            <layer 
-                id="v_sport_proximite"
-                name="Mölky"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
-                queryable="true"
-                featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
-                style="eq_cultspo:eq_sport_proxi_molky"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
-            </layer>
-            <layer 
-                id="v_sport_proximite"
-                name="Pétanque"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
-                queryable="true"
-                featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
-                style="eq_cultspo:eq_sport_proxi_petanque"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
-            </layer>
-        </theme>
-        <theme id="theme-cyclisme" name="Cyclisme" collapsed="true" icon="fas fa-bicycle"> 
-            <layer 
-                id="v_sport_proximite"
-                name="Bicross"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
-                queryable="true"
-                featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
-                style="eq_cultspo:eq_sport_proxi_bicross"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
-            </layer>
-            <layer 
-                id="v_sport_proximite"
-                name="Cyclisme"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
-                queryable="true"
-                featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
-                style="eq_cultspo:eq_sport_proxi_cyclisme"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
-            </layer>
-        </theme>
-        <theme id="theme-sportsautres" name="Autres" collapsed="true" icon="fas fa-map-marker-alt"> 
-            <layer 
-                id="v_sport_proximite"
-                name="Babyfoot"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                style="eq_cultspo:eq_sport_proxi_babyfoot"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
-                queryable="true"
-                featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
-            </layer>
-            <layer 
-                id="v_sport_proximite"
-                name="Échecs"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
-                queryable="true"
-                featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
-                style="eq_cultspo:eq_sport_proxi_echecs"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
-            </layer>
-            <layer 
-                id="v_sport_proximite"
-                name="Glisse urbaine"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
-                queryable="true"
-                featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
-                style="eq_cultspo:eq_sport_proxi_glisse_urbaine"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
-            </layer>
-            
-            <layer 
-                id="v_sport_proximite"
-                name="Espace de rafraichissement"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
-                queryable="true"
-                featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
-                style="eq_cultspo:eq_sport_proxi_espace_rafraichissement"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
-            </layer>
-        </theme>
-        
     </themes>
 </config>
