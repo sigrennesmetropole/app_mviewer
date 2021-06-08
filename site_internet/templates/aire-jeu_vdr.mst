@@ -1,0 +1,12 @@
+{{#features}}
+    <li class="item">
+        <h5 class="rm-popup-title-feature">{{nom}}</h5>
+        
+        <p class="rm-popup-text-feature">
+            {{#equip_type}}<span class='rm-popup-label'> Type :</span> {{equip_type}}<br/>{{/equip_type}}
+            {{#amor_nat}}<span class='rm-popup-label'> Nature du sol :</span> {{amor_nat}}<br/>{{/amor_nat}}
+            {{#age_tran}}<span class='rm-popup-label'> Tranche d'âge :</span> {{age_tran}}<br/>{{/age_tran}}
+        </p>
+    </li>
+{{/features}}
+
