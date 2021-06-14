@@ -8,14 +8,14 @@ var searchCadastreRM = (function () {
     var sectionTag = '<div class="sectionInputContainer">'
                     + '<select id="section" class="sectionsList form-control"></select>'
                 + '</div>';
-    
+
     var parcelTag = '<div class="parcelleInputContainer">'
         		    +    '<select id="parcelle" class="parcellesList form-control" disabled></select>'
                 +	'</div>';
-    
+
     var selectedParcelLayer;
 
-    
+
     var getCenterGeometry = function (geomCoords) {
         var nbCoords = geomCoords.length;
         var sumX = 0;
@@ -34,11 +34,11 @@ var searchCadastreRM = (function () {
         baseUrl_cadastre = 'https://api-cadastre.sig.rennesmetropole.fr/v1/';
 
           /*var searchCadastreElement = '<ul class="nav navbar-nav navbar-right"><li class="parcelSelector"><div class="parcelSelectorsContainer">'
-            + '<div><p class="labelRechercheParcelle">Recherche de parcelle</p></div><div class="parcelSelectors">' 
+            + '<div><p class="labelRechercheParcelle">Recherche de parcelle</p></div><div class="parcelSelectors">'
             + selectCityInput + sectionTag + parcelTag +'</div></li></ul>';
           $('#bs-example-navbar-collapse-1').append(searchCadastreElement);*/
 
-          $('#page-content-wrapper').append('<div class="parcelSelectors">' + selectCityInput + sectionTag + parcelTag + '</div>');
+          $('.parcelSelectors').append(selectCityInput + sectionTag + parcelTag);
 
         $.getJSON(baseUrl_cadastre + 'communes', function(dataApiJson) {
             //var htmlContent = '<option value="-1" disabled selected> rechercher la commune de la parcelle</option>';
@@ -143,7 +143,7 @@ var searchCadastreRM = (function () {
                   })
                 })
               ];
-             
+
               if (typeof codeParcelle !== 'undefined' && codeParcelle !== null && codeParcelle.trim() !== '') {
                 $.getJSON(baseUrl_cadastre + 'epsg:3948/parcelles/' + codeParcelle, function(dataApiJson) {
                   var geomNewProj = [];
@@ -169,7 +169,7 @@ var searchCadastreRM = (function () {
                   var source = new ol.source.Vector({
                     features: (new ol.format.GeoJSON()).readFeatures(geojsonObject)
                   });
-                  var layerCadatsreFound = false; 
+                  var layerCadatsreFound = false;
                   mviewer.getMap().getLayers().array_.forEach(function (lay) {
                     if (lay.className_ === 'cadastreLayer' ) {
                       layerCadatsreFound = true;
@@ -191,13 +191,13 @@ var searchCadastreRM = (function () {
                   var geometryCenter = getCenterGeometry(geomNewProj);
                   mviewer.getMap().getView().setCenter(geometryCenter);
                   mviewer.getMap().getView().setZoom(17);
-    
+
                   var e = {
                     coordinate:geometryCenter,
                     pixel: mviewer.getMap().getPixelFromCoordinate(mviewer.getMap().getView().getCenter())
                   };
                   info.queryMap(e);
-  
+
                 });
               }
         });

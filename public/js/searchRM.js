@@ -3,7 +3,7 @@ var searchRM = (function () {
     var searchParameters = [];
 
     var nbResults = 0;
-    var currentRmAutocompleteItem = -1; 
+    var currentRmAutocompleteItem = -1;
     var apiSitesOrgkey = '';
 
     var previousRequest;
@@ -15,18 +15,49 @@ var searchRM = (function () {
             if (typeof inputlabel !== 'undefined' && inputlabel.trim() !== '') {
                 placeholder = inputlabel;
             }
-           var searchtool =  '<div class="navbar-form" role="search" id="searchtool">'
-            +    '<div class="form-group input-group">'
+           var searchtool =  '<div class="" role="search" id="searchtool">'
+            +    '<div class="form-group input-group" id="fieldWrapper">'
             +        '<input type="text" class="form-control" placeholder="'+ placeholder +'" i18n="navbar.search.placeholder" id="searchfield">'
             +        '<div class="input-group-btn">'
-            +            '<button type="button" class="btn btn-default" aria-label="Help" data-toggle="modal" data-target="#parameterspanel">'
+            +            '<button id="buttonSearchField" type="button" class="btn btn-default" aria-label="Help" data-toggle="modal" data-target="#parameterspanel">'
             +                '<span class="glyphicon glyphicon-option-vertical"></span>'
             +            '</button>'
             +        '</div>'
             +    '</div>'
             +'</div>';
-            if (typeof $('.navbar-right')[0] !== 'undefined') {
-                $('.navbar-right')[0].firstElementChild.innerHTML = searchtool;
+            // if (typeof $('.navbar-right')[0] !== 'undefined') {
+            //     $('.navbar-right')[0].firstElementChild.innerHTML = searchtool;
+            // }
+            $('#page-content-wrapper').append('<div class="parcelSelectors">' + searchtool + '</div>');
+            if(API.mode != 'd'){
+              searchCadastreRM.init();
+            }
+
+            if(API.mode === 'u'){
+              $(".xs.mode-u #searchtool").css({"margin-right": "75px"});
+              $("#fieldWrapper").css({"border": "1px solid #aaa", "border-radius": "4px", "background-color" : "white",
+                "right": "0","width": "220px", "margin-bottom": "0px", "height": "10px"});
+              $("#searchresults").css({"margin-right": "55px"});
+            }
+
+            if(API.mode === 's'){
+              $("#searchtool").css({"margin-right": "15px", "height": "8px"});
+              $("#fieldWrapper").css({"border": "1px solid #aaa", "border-radius": "4px", "background-color" : "white",
+                "right": "0","width": "220px", "margin-bottom": "0px", "height": "10px"});
+              $("#searchresults").css({"margin-right": "445px", "margin-top": "40px"});
+              $("#fieldWrapper #searchfield").css({"height": "28px"});
+              $("#fieldWrapper #buttonSearchField").css({"height": "28px"});
+              $("#buttonSearchField").css({"padding-top": "3px"});
+            }
+
+            if(API.mode === 'd'){
+              $("#searchtool").css({"margin-right": "15px", "height": "8px"});
+              $("#fieldWrapper").css({"border": "1px solid #aaa", "border-radius": "4px", "background-color" : "white",
+                "right": "0","width": "220px", "margin-bottom": "0px", "height": "10px"});
+              $("#searchresults").css({"margin-right": "445px", "margin-top": "40px"});
+              $("#fieldWrapper #searchfield").css({"height": "28px"});
+              $("#fieldWrapper #buttonSearchField").css({"height": "28px"});
+              $("#buttonSearchField").css({"padding-top": "3px"});
             }
         }
         _configureSearch(searchRMConf);
@@ -100,7 +131,7 @@ var searchRM = (function () {
                 searchParameters.push('Communes');
             } else {
                 newSearchParameter += 'mv-unchecked';
-            } 
+            }
             newSearchParameter += '"></span>'
                 +    '<div style="display:inline;">'+ searchElem.searchParameterName +'</div>'
                 + '</a>'
@@ -139,7 +170,7 @@ var searchRM = (function () {
                  && citiesFilter !== -1 ) {
                     citiesFound.push(city);
                 }
-                if ( ( (city.name.toLowerCase().includes(elemSearch.toLowerCase()) || city.name.toLowerCase() === elemSearch.toLowerCase() || 
+                if ( ( (city.name.toLowerCase().includes(elemSearch.toLowerCase()) || city.name.toLowerCase() === elemSearch.toLowerCase() ||
                 city.name2.toLowerCase().includes(elemSearch.toLowerCase()) || city.name2.toLowerCase() === elemSearch.toLowerCase() )
                 && citiesFound.indexOf(city) === -1) && citiesFilter !== -1)  {
                     citiesFound.push(city);
@@ -151,7 +182,7 @@ var searchRM = (function () {
                 if (city.name.toLowerCase().startsWith(elemSearch.toLowerCase()) || city.name2.toLowerCase().startsWith(elemSearch.toLowerCase()) ) {
                     citiesFound.push(city);
                 }
-                if ( (city.name.toLowerCase().includes(elemSearch.toLowerCase()) || city.name.toLowerCase() === elemSearch.toLowerCase() || 
+                if ( (city.name.toLowerCase().includes(elemSearch.toLowerCase()) || city.name.toLowerCase() === elemSearch.toLowerCase() ||
                 city.name2.toLowerCase().includes(elemSearch.toLowerCase()) || city.name2.toLowerCase() === elemSearch.toLowerCase() )
                 && citiesFound.indexOf(city) === -1) {
                     citiesFound.push(city);
@@ -222,7 +253,7 @@ var searchRM = (function () {
                 }
 
             });
-            
+
         }
 
         return mainSite;
@@ -249,7 +280,7 @@ var searchRM = (function () {
                 resolve({site});
             });
         });
-        
+
     };
 
     /**
@@ -306,7 +337,7 @@ var searchRM = (function () {
     };
 
     var _getApisRequests = function (confData, value) {
-        
+
         var searchItemChecked = $('#searchparameters li a .mv-checked');
         var promises = [];
         var apiRvaBaseUrl = 'https://api-rva.sig.rennesmetropole.fr/';
