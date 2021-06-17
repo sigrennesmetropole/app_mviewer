@@ -2,7 +2,7 @@
 	<li class="item">
 		<h5 class="rm-popup-title-feature quartier-title">{{#nom}} {{{nom}}} {{/nom}}</h5>
 		<p class="rm-popup-text-feature">
-			<p> {{#numnom}}<span class='rm-popup-label'> Numéro et nom du quartier : </span>{{{numnom}}} {{/numnom}} </p>
+			{{#numnom}}<span class='rm-popup-label'> Numéro et nom du quartier : </span>{{{numnom}}} {{/numnom}}
 		</p>
 	</li> 
 {{/features}} 
