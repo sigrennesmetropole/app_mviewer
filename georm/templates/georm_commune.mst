@@ -2,7 +2,7 @@
 	<li class="item">
 		<h5 class="rm-popup-title-feature commune-title">{{#nom}} {{{nom}}} {{/nom}}</h5>
 		<p class="rm-popup-text-feature">
-			<p> {{#code_insee}}<span class='rm-popup-label'> Code INSEE : </span>{{{code_insee}}} {{/code_insee}} </p>
+			{{#code_insee}}<span class='rm-popup-label'> Code INSEE : </span>{{{code_insee}}} {{/code_insee}}
 		</p>
 	</li>
 {{/features}} 

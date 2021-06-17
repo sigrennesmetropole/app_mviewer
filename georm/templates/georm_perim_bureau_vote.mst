@@ -4,7 +4,7 @@
             <span class='rm-popup-label'> Numéro du centre de vote : </span>{{{num_centre}}} {{/num_centre}}</h5>
             
 		<p class="rm-popup-text-feature">
-			<p> {{#num_bureau}}<span class='rm-popup-label'> Numéro du bureau de vote : </span>{{{num_bureau}}} {{/num_bureau}} </p>
+			{{#num_bureau}}<span class='rm-popup-label'> Numéro du bureau de vote : </span>{{{num_bureau}}} {{/num_bureau}}
 		</p>
 	</li> 
 {{/features}} 
