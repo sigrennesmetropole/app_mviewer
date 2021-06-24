@@ -36,6 +36,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
                 queryable="true"
                 featurecount="6"
+                filter="strToLowerCase(espace_publique) = 'oui'"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/aire-jeu_vdr.mst"></template>
             </layer>
