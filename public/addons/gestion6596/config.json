@@ -1,0 +1,4 @@
+{
+    "js": ["getClic.js"],
+    "target": "page-content-wrapper"
+}

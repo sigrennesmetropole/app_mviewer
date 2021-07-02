@@ -1,0 +1,9 @@
+{{#features}}
+		<h5 class="rm-popup-title-feature station-velo-title">{{pinName}}</h5>
+    <div><img src="../picture/pen.png"></div>
+		<p class="rm-popup-text-feature">
+			{{#categorie}}<span class='rm-popup-label'> Categorie : </span> {{categorie}}<br/>{{/categorie}}
+			{{#description}}<span class='rm-popup-label'> Description :</span> {{description}}<br/>{{/description}}
+      <!-- {{#coordinates}}<span class='rm-popup-label'> <input type="text"/> : <input type="text"/></span><br/>{{/coordinates}} -->
+		</p>
+{{/features}}
