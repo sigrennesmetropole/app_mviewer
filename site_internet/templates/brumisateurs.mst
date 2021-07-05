@@ -1,0 +1,16 @@
+{{#features}}
+	<li class="item">
+		<h5 class="rm-popup-title-feature">{{nom_eqt}}</h5>
+
+		<p class="rm-popup-text-feature">
+			<span class='rm-popup-label'> Adresse :</span> {{adresse}} Rennes<br/>
+			{{#crit_acces}}<span class=''> {{{crit_acces}}}</span>{{/crit_acces}}
+
+            {{#observation}}
+                {{#horaire}}<span class='rm-popup-label'> Horaires :</span><br><span class='horaires'>{{{horaire}}}</span>{{/horaire}} <br/>
+                <span class="exceptionalClosures">{{{observation}}}</span>
+            {{/observation}}
+
+			</p>
+	</li>
+{{/features}}
