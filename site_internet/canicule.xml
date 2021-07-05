@@ -109,7 +109,7 @@
               featurecount="3"
               filter="description = 'Pataugeoire'"
               infopanel="right-panel">
-              <template url="apps/site_internet/templates/pataugeoire.mst"></template>
+              <template url="apps/site_internet/templates/pataugeoires.mst"></template>
           </layer>
         </theme>
     </themes>
