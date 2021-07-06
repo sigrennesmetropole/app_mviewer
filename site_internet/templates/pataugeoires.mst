@@ -4,9 +4,8 @@
 
 		<p class="rm-popup-text-feature">
 			<span class='rm-popup-label'> Adresse :</span> {{adresse}} Rennes<br/>
-			{{#crit_acces}}<span class='rm-popup-label'> Critères d'accès: </span>{{{crit_acces}}}{{/crit_acces}}<br/>
-      {{#horaires}}<span class='rm-popup-label'> Horaires :</span><br><span class='horaires'>{{{horaires}}}</span>{{/horaires}} <br/>
-      <!-- <span class="exceptionalClosures">{{{observation}}}</span> -->
+			{{#crit_acces}}<span class='rm-popup-label'> Critères d'accès: </span>{{crit_acces}}{{/crit_acces}}<br/>
+      {{#horaires}}<span class='rm-popup-label'> Horaires :</span><br><span class='horaires'>{{observation}} <br>{{horaires}}</span>{{/horaires}} <br/>
 			</p>
 	</li>
 {{/features}}
