@@ -5,81 +5,133 @@ const clic = (function() {
   var _pinValues;
   var _containerPosition;
   var _layerFeature;
-  var _pixelPosition;
   var _configurationPosition;
   var _categoryList = [];
   var _layerList = [];
 
   var _clic = function (evt) {
-    _pixelPosition = evt.pixel;
     addPinOnMap(evt);
   };
+
+  function _createMarker(lon,lat){
+
+    //borne haute lon
+    if(lon <= -1.9776085738943796){
+      lon = -1.9776085738943796;
+    }
+    //borne basse lon
+    if(lon >= -1.4520755619906778){
+      lon = -1.4520755619906778;
+    }
+    //borne haute lat
+    if(lat >= 48.31829103555526){
+      lat = 48.31829103555526;
+    }
+    //borne basse lat
+    if(lat <= 47.92588973018792){
+      lat = 47.92588973018792;
+    }
+
+    var iconFeature = new ol.Feature({
+      geometry: new ol.geom.Point(ol.proj.transform([lon,lat], 'EPSG:4326', 'EPSG:3857')),
+      pinName: 'New Marker',
+      categorie: 'New Category',
+      description: 'Dummy',
+      coordinates: [parseFloat(lon),parseFloat(lat)]
+    });
+
+    iconFeature = _getMarkerStyle(iconFeature);
+
+    var vectorSource = new ol.source.Vector({
+      features: [iconFeature]
+    });
+    this.dynamicPinLayer = new ol.layer.Vector({
+      source: vectorSource
+    });
+
+    var clickInteraction = new ol.interaction.Select({
+      condition: ol.events.condition.click,
+      layer: [this.dynamicPinLayer]
+    });
+
+    _map.addInteraction(clickInteraction);
+
+    clickInteraction.on('select', (e) => {
+      if(e.selected[0] != undefined){
+        _map.forEachFeatureAtPixel(e.mapBrowserEvent.pixel_,function(feature,layer){
+          _layerFeature = layer;
+        })
+        _pinValues = e.selected[0];
+        _categoryList.forEach((item, i) => {
+          if(item.name === _pinValues.getProperties().categorie){
+            _getMarkerStyle(_pinValues,item.src);
+          }else{
+            _getMarkerStyle(_pinValues);
+          }
+        });
+        _getRightPanel();
+      }
+    });
+
+    var modify = new ol.interaction.Modify({
+      features: new ol.Collection([iconFeature]),
+      pixelTolerance: 20
+    });
+    iconFeature.on('change',function(){
+      var pinValues = _pinValues;
+      pinValues.values_.coordinates = ol.proj.transform(this.getGeometry().getCoordinates(), 'EPSG:3857', 'EPSG:4326');
+      _pinValues.setProperties(pinValues,false);
+      if($("#pinLongitude")[0] != undefined){
+        $("#pinLongitude")[0].value = _pinValues.getProperties().coordinates[0];
+        $("#pinLatitude")[0].value = _pinValues.getProperties().coordinates[1];
+      }
+    },iconFeature);
+    _map.addInteraction(modify);
+
+    _map.addLayer(this.dynamicPinLayer);
+    _pinValues = this.dynamicPinLayer.getSource().getFeatures()[0];
+    _layerFeature = this.dynamicPinLayer;
+    _layerList.push(this.dynamicPinLayer);
+
+    _getRightPanel();
+    _closeCreationByCoordinates();
+  }
+
+  function _getMarkerStyle(feature, featureSource = 'apps/dynMapPublic/picture/markerRed.svg'){
+
+    if(featureSource != 'hidden'){
+      var iconStyle = new ol.style.Style({
+        image: new ol.style.Icon(({
+          anchor: [0.38, 40],
+          anchorXUnits: 'fraction',
+          anchorYUnits: 'pixels',
+          size: [48, 48],
+          opacity: 1,
+          src: featureSource
+        }))
+      });
+    }else{
+      var iconStyle = new ol.style.Style({
+        image: new ol.style.Icon(({
+          anchor: [0.38, 40],
+          anchorXUnits: 'fraction',
+          anchorYUnits: 'pixels',
+          size: [48, 48],
+          opacity: 1,
+          src: 'apps/dynMapPublic/picture/transparent.svg'
+        }))
+      });
+    }
+
+    feature.setStyle(iconStyle);
+    feature.changed();
+    return feature;
+  }
 
   var addPinOnMap = function (evt) {
     _currentCoordinates = ol.proj.transform(evt.coordinate, 'EPSG:3857', 'EPSG:4326');
 
-      var iconFeature = new ol.Feature({
-        geometry: new ol.geom.Point(evt.coordinate),
-        pinName: 'New Marker',
-        categorie: 'New Category',
-        description: 'Dummy',
-        coordinates: _currentCoordinates
-      });
-
-      iconFeature = _getMarkerStyle(iconFeature);
-
-      var vectorSource = new ol.source.Vector({
-        features: [iconFeature]
-      });
-      this.dynamicPinLayer = new ol.layer.Vector({
-        source: vectorSource
-      });
-
-      var clickInteraction = new ol.interaction.Select({
-        condition: ol.events.condition.click,
-        layer: [this.dynamicPinLayer]
-      });
-
-      _map.addInteraction(clickInteraction);
-
-      clickInteraction.on('select', (e) => {
-        if(e.selected[0] != undefined){
-          _map.forEachFeatureAtPixel(e.mapBrowserEvent.pixel_,function(feature,layer){
-            _layerFeature = layer;
-          })
-          _pinValues = e.selected[0];
-          _categoryList.forEach((item, i) => {
-            if(item.name === _pinValues.getProperties().categorie){
-              _getMarkerStyle(_pinValues,item.src);
-            }else{
-              _getMarkerStyle(_pinValues);
-            }
-          });
-
-          _pixelPosition = e.mapBrowserEvent.pixel_;
-          _getRightPanel();
-        }
-      });
-
-      var modify = new ol.interaction.Modify({
-        features: new ol.Collection([iconFeature]),
-        pixelTolerance: 20
-      });
-      iconFeature.on('change',function(){
-        var pinValues = _pinValues;
-        pinValues.values_.coordinates = ol.proj.transform(this.getGeometry().getCoordinates(), 'EPSG:3857', 'EPSG:4326');
-        _pinValues.setProperties(pinValues,false);
-        if($("#pinLongitude")[0] != undefined){
-          $("#pinLongitude")[0].value = _pinValues.getProperties().coordinates[0];
-          $("#pinLatitude")[0].value = _pinValues.getProperties().coordinates[1];
-        }
-      },iconFeature);
-      _map.addInteraction(modify);
-
-      _map.addLayer(this.dynamicPinLayer);
-      _pinValues = this.dynamicPinLayer.getSource().getFeatures()[0];
-      _layerFeature = this.dynamicPinLayer;
-      _layerList.push(this.dynamicPinLayer);
+    _createMarker(_currentCoordinates[0],_currentCoordinates[1]);
 
       _getRightPanel();
   }
@@ -101,7 +153,7 @@ const clic = (function() {
 
     $("#custom-panel").css({'display':'block'});
     $('.wrapText').css({'overflow-wrap':'break-word'});
-    $("#custom-panel #closeCross").css({'position':'fixed', 'right':'1em', 'padding-top':'40px'});
+    $("#custom-panel #closeCross").css({'position':'fixed', 'right':'1em', 'padding-top':'40px', "color": "red"});
     $("#custom-panel h2").css({"padding": "36px 8px 6px 16px","text-decoration": "none","font-size": "25px","color": "#4D4D4D","display": "block"});
     $("#custom-panel svg").css({'width': '25px', 'height': '25px','align':'right', 'position':'fixed', 'right':'1em'});
     $("#custom-panel p").css({"padding": "6px 8px 6px 16px","text-decoration": "none","font-size": "15px","color": "#4D4D4D","display": "block"});
@@ -130,7 +182,7 @@ const clic = (function() {
         '</div>' +
         '<div class="divCenter">' +
           '<label for="description">Description</label><br>' +
-          '<textarea type="text" id="pinDescription" name="description" value="' + _pinValues.getProperties().description + '" maxlength="450"></textarea><br><br><br><br><br><br><br><br><br><br><br><br>' +
+          '<textarea type="text" id="pinDescription" name="description" maxlength="450">' + _pinValues.getProperties().description + '</textarea><br><br><br><br><br><br><br><br><br><br><br><br>' +
         '</div>' +
         '<div id="coordinatesContainer"><input type="text" id="pinLongitude" name="longitude" value="' + _pinValues.getProperties().coordinates[0] + '"> : <input type="text" id="pinLatitude" name="latitude" value="' + _pinValues.getProperties().coordinates[1] + '"></div>' +
         '<div id="validationContent">' +
@@ -141,9 +193,9 @@ const clic = (function() {
     );
 
     _categoryList.forEach((item, i) => {
-      if(_pinValues.getProperties().categorie === item){
+      if(_pinValues.getProperties().categorie === item.name){
         $("#pinCategorie").prepend(
-          '<option value="' + item.name + '">' + item.name + '</option>'
+          '<option value="' + item.name + '" selected>' + item.name + '</option>'
         );
       }else{
         $("#pinCategorie").append(
@@ -159,7 +211,7 @@ const clic = (function() {
     $("#validationContent .btn").css({'background-color':'#8ebf42','color':'#fff','padding':'12px 12px','border':'none','cursor':'pointer','width':'100%','margin':'3px 3px 3px','margin-bottom':'8px','opacity':'0.8'});
     $("#validationContent .cancel").css({'background-color':'#cc0000'});
     $("#editionContent").css({"padding": "55px 8px 6px 16px","text-decoration": "none","font-size":"16px","color": "#4D4D4D","display": "block"});
-    $("#custom-panel #closeCross").css({'position':'fixed', 'right':'1em', "padding-top": "40px"});
+    $("#custom-panel #closeCross").css({'position':'fixed', 'right':'1em', "padding-top": "40px", "color": "red"});
     $("#editionContent #pinName, #pinCategorie, #pinDescription").css({'position':'fixed', 'right':'1em'});
     $("#editionContent div").css({'margin':'2px'});
     $("#coordinatesContainer").css({'text-align': 'center'});
@@ -175,34 +227,61 @@ const clic = (function() {
   }
 
   function _deletePin(){
-    _layerFeature.getSource().removeFeature(_pinValues);
+    _map.removeLayer(_layerFeature);
+    // _layerFeature.getSource().removeFeature(_pinValues);
     _closeRightPanel();
   }
 
   function _savePin(){
-    var pinValues = _pinValues.getProperties();
-    pinValues.pinName = $("#pinName")[0].value;
-    if($("#pinCategorie")[0].value === ""){
-      pinValues.categorie = 'Catégorie Inconnue';
+    // console.log(_pinValues);
+    var name = $("#pinName").val()
+    var category = $("#pinCategorie").val();
+    var description = $("#pinDescription").val();
+    // var longitude = $("#pinLongitude").val();
+    // var latitude = $("#pinLatitude").val();
+    //_deletePin();
+    //_createMarker(longitude,latitude);
+    // _layerFeature.getSource().clear();
+    // var pinValues = new ol.Feature({
+    //   geometry: new ol.geom.Point([longitude,latitude]),
+    //   pinName: 'New Marker',
+    //   categorie: 'New Category',
+    //   description: 'Dummy',
+    //   coordinates: [parseFloat(longitude),parseFloat(latitude)]
+    // });
+    // pinValues.setProperties({'pinName': name});
+    _pinValues.values_.pinName = name;
+    if(category === null){
+      // pinValues.setProperties({'categorie': 'Catégorie Inconnue'});
+      _pinValues.values_.categorie = 'Catégorie Inconnue';
     }else{
-      pinValues.categorie = $("#pinCategorie")[0].value;
+      // pinValues.setProperties({'categorie': category});
+      _pinValues.values_.categorie = category;
     }
 
-    if($("#pinDescription")[0].value === ""){
-      pinValues.description = 'Pas de description fournie.';
+    if(description === ""){
+      // pinValues.setProperties({'description': 'Pas de description fournie.'});
+      _pinValues.values_.description = 'Pas de description fournie.';
     }else{
-      pinValues.description = $("#pinDescription")[0].value;
+      // pinValues.setProperties({'description': description});
+      _pinValues.values_.description = description;
     }
-    pinValues.coordinates[0] = $("#pinLongitude")[0].value;
-    pinValues.coordinates[1] = $("#pinLatitude")[0].value;
+    // pinValues.setProperties({'coordinates': [parseFloat(longitude),parseFloat(latitude)]});
+    // _pinValues.setProperties({'coordinates': [parseFloat(longitude),parseFloat(latitude)]});
+    // _pinValues.values_.coordinates[1] = parseFloat(latitude);
 
-    _pinValues.setProperties(pinValues,false);
+    // _layerFeature.getSource().refresh();
+    //https://stackoverflow.com/questions/35696175/dynamically-update-position-of-marker-openlayers-3
+    //https://gis.stackexchange.com/questions/230912/changing-vector-layer-dynamically-using-openlayers-4
 
-    // _pinValues.getGeometry().setCoordinates(pinValues.coordinates);
+    // _pinValues.setProperties(pinValues,false);
+    // console.log(_pinValues);
+
+    // _layerFeature.getSource().addFeatures(pinValues);
 
     if(_categoryList.length != 0){
       _categoryList.forEach((item, i) => {
-        if(item.name === $("#pinCategorie")[0].value){
+        if(item.name === category){
           _getMarkerStyle(_pinValues,item.src);
         }else{
           _getMarkerStyle(_pinValues);
@@ -271,15 +350,16 @@ const clic = (function() {
       '</div>'
     );
 
-    $(".login-popup").css({'position':'relative','text-align':'center','width':'100%'});
+    $(".login-popup").css({'position':'relative','text-align':'center','width':'100%',"font-family": "'vistaSansOT_regular', Arial, Sans-serif"});
     $(".form-popup").css({'display':'none','position':'fixed','left':'45%','top':'12%','transform':'translate(-45%,5%)','border':'2px solid #666','z-index':'9','max-width':'800px','padding':'20px','background-color':'#fff'});
     $(".form-popup #mapTitlePart input, #categoryPart input, #categoryPart select").css({'width':'100%','padding':'10px','margin':'5px 5px 5px 5px','border':'none','background':'#eee'});
     $(".form-popup input:focus").css({'background-color':'#ddd','outline':'none'});
     $(".form-popup #buttons .btn").css({'background-color':'#8ebf42','color':'#fff','padding':'12px 12px','border':'none','cursor':'pointer','width':'100%','margin':'3px 3px 3px','margin-bottom':'8px','opacity':'0.8'});
     $(".form-popup #buttons .cancel").css({'background-color':'#cc0000'});
-    $("#popupForm #closeCrossConfig").css({'position':'fixed', 'right':'1em'});
+    $("#popupForm #closeCrossConfig").css({'position':'fixed', 'right':'1em', "color": "red"});
 
     _getCategoryList();
+    _deleteAllMarkersPopUp()
 
     $('#mapTitle').on('input', function (e) {
       $('.mv-title')[0].text = $('#mapTitle').val();
@@ -289,7 +369,7 @@ const clic = (function() {
     closeButton.addEventListener('click', _closeConfig);
 
     var deleteAllPoints = document.getElementById("deleteAll");
-    deleteAllPoints.addEventListener('click', _deleteAllMarkers);
+    deleteAllPoints.addEventListener('click', _deleteAllMarkersPopUpShow);
 
     var exportGeoJSON = document.getElementById("exportGeoJSON");
     exportGeoJSON.addEventListener('click', _exportGeoJSON);
@@ -305,6 +385,7 @@ const clic = (function() {
       }
     });
 
+    var finalBuffer = new Array(2);
     var buffer = [];
 
     customLayersArray.forEach((item, i) => {
@@ -314,10 +395,10 @@ const clic = (function() {
                   'description:' + item.getSource().getFeatures()[0].getProperties().description
                 ]);
     });
-    buffer.push(_categoryList);
-
-    var file = JSON.stringify(buffer);
-    download('points_intéret.geoJSON',file);
+    finalBuffer[0] = buffer;
+    finalBuffer[1] = _categoryList;
+    var file = JSON.stringify(finalBuffer);
+    download('points_intéret.JSON',file);
   }
 
   function download(file, text) {
@@ -335,11 +416,46 @@ const clic = (function() {
     document.body.removeChild(element);
   }
 
+  function _deleteAllMarkersPopUp(){
+    $('#map').append(
+      '<div class="remove-popup">' +
+        '<h1>Attention, notice importante</h1>' +
+        '<p>Vous êtes sur le point de supprimer tout les points existants sur la carte.</p>' +
+        '<p>Souhaitez vous continuer ?</p>' +
+        '<div id="buttons">' +
+          '<button id="deleteAllConfirmed" class="btn cancel">Oui, supprimer</button>' +
+          '<button id="cancelConfirmation" class="btn">Non, annuler</button>' +
+        '</div>' +
+      '</div>'
+    );
+    $(".remove-popup").css({'position':'relative','text-align':'center','width':'60%',"font-family": "'vistaSansOT_regular', Arial, Sans-serif"});
+    $(".remove-popup").css({'display':'none','position':'fixed','left':'45%','top':'25%','transform':'translate(-45%,5%)','border':'2px solid #666','z-index':'9','max-width':'800px','padding':'20px','background-color':'#fff'});
+
+
+    $(".remove-popup #buttons .btn").css({'background-color':'#8ebf42','color':'#fff','padding':'12px 12px','border':'none','cursor':'pointer','width':'100%','margin':'3px 3px 3px','margin-bottom':'8px','opacity':'0.8'});
+    $(".remove-popup #buttons .cancel").css({'background-color':'#cc0000'});
+
+    var deleteAllPoints = document.getElementById("deleteAllConfirmed");
+    deleteAllPoints.addEventListener('click', _deleteAllMarkers);
+
+    var cancelConfirmation = document.getElementById("cancelConfirmation");
+    cancelConfirmation.addEventListener('click', _hideDeletionConfirmation);
+  }
+
+  function _deleteAllMarkersPopUpShow(){
+    $('.remove-popup').css({'display':'block'});
+  }
+
+  function _hideDeletionConfirmation(){
+    $('.remove-popup').css({'display':'none'});
+  }
+
   function _deleteAllMarkers(){
     _layerList.forEach((layer, i) => {
       _map.removeLayer(layer);
     });
     _closeRightPanel();
+    _hideDeletionConfirmation();
   }
 
   function _addCategorie(){
@@ -347,9 +463,49 @@ const clic = (function() {
       name: $('#categoryName').val(),
       src: $('#markerPreview')[0].src,
       marker: $('#markerList').val(),
-      color: $('#colorList').val()
+      color: $('#colorList').val(),
+      hidden:false
     });
     _getCategoryList();
+    $('.layerdisplay-legend').empty();
+    _categoryList.forEach((item, i) => {
+      $('.layerdisplay-legend').append(
+        '<div class="legendDisplay" id="legendDisplay' + item.name + '">' +
+          item.name + '<img src="' + item.src + '" class="markerPreview" >' +
+        '</div>'
+      );
+
+      $(".markerPreview").css({'height':'45px','margin-bottom':'5px'});
+      $(".legendDisplay").css({'margin-left':'10px'});
+
+      var hideMarkers = document.getElementById("legendDisplay" + item.name);
+      hideMarkers.addEventListener('click', function(){
+        _hideMarkers(item);
+      });
+
+    });
+  }
+
+  function _hideMarkers(category){
+    var layers = _map.getLayers();
+    layers.forEach((layer, i) => {
+      if(layer instanceof ol.layer.Vector){
+        if(layer.ol_uid >= 65){
+          if(category.name === layer.getSource().getFeatures()[0].getProperties().categorie){
+            if(!category.hidden){
+              _getMarkerStyle(layer.getSource().getFeatures()[0],'hidden');
+            }else{
+              _getMarkerStyle(layer.getSource().getFeatures()[0],category.src);
+            }
+          }
+        }
+      }
+    });
+    if(category.hidden){
+      category.hidden = false;
+    }else{
+      category.hidden = true;
+    }
   }
 
   function _updateCategorie(i){
@@ -598,6 +754,7 @@ const clic = (function() {
   function _openCreationByCoordinates() {
     _closeRightPanel();
     _closeConfig();
+    _hideDeletionConfirmation();
     $("#creationByCoordinatesPopup").css({'display':'block'});
   }
 
@@ -621,12 +778,12 @@ const clic = (function() {
       '</div>'
     );
 
-    $(".creationPopup").css({'position':'relative','text-align':'center','width':'100%'});
+    $(".creationPopup").css({'position':'relative','text-align':'center','width':'100%',"font-family": "'vistaSansOT_regular', Arial, Sans-serif"});
     $(".form-popup").css({'display':'none','position':'fixed','left':'45%','top':'12%','transform':'translate(-45%,5%)','border':'2px solid #666','z-index':'9','max-width':'800px','padding':'20px','background-color':'#fff'});
     $(".form-popup #coordinatesSelector input").css({'width':'45%','padding':'10px','margin':'5px 5px 5px 5px','border':'none','background':'#eee'});
     $(".form-popup input:focus").css({'background-color':'#ddd','outline':'none'});
     $(".form-popup #buttons .btn").css({'background-color':'#8ebf42','color':'#fff','padding':'12px 12px','border':'none','cursor':'pointer','width':'100%','margin':'3px 3px 3px','margin-bottom':'8px','opacity':'0.8'});
-    $("#creationByCoordinatesPopup #closeCrossCoosCreation").css({'position':'fixed', 'right':'1em'});
+    $("#creationByCoordinatesPopup #closeCrossCoosCreation").css({'position':'fixed', 'right':'1em', "color": "red"});
 
     var closeButton = document.getElementById("closeCrossCoosCreation");
     closeButton.addEventListener('click', _closeCreationByCoordinates);
@@ -637,104 +794,23 @@ const clic = (function() {
     });
   }
 
-  function _createMarker(lon,lat){
-    var iconFeature = new ol.Feature({
-      geometry: new ol.geom.Point(ol.proj.transform([lon,lat], 'EPSG:4326', 'EPSG:3857')),
-      pinName: 'New Marker',
-      categorie: 'New Category',
-      description: 'Dummy',
-      coordinates: [parseFloat(lon),parseFloat(lat)]
-    });
-
-    iconFeature = _getMarkerStyle(iconFeature);
-
-    var vectorSource = new ol.source.Vector({
-      features: [iconFeature]
-    });
-    this.dynamicPinLayer = new ol.layer.Vector({
-      source: vectorSource
-    });
-
-    var clickInteraction = new ol.interaction.Select({
-      condition: ol.events.condition.click,
-      layer: [this.dynamicPinLayer]
-    });
-
-    _map.addInteraction(clickInteraction);
-
-    clickInteraction.on('select', (e) => {
-      if(e.selected[0] != undefined){
-        _map.forEachFeatureAtPixel(e.mapBrowserEvent.pixel_,function(feature,layer){
-          _layerFeature = layer;
-        })
-        _pinValues = e.selected[0];
-        _categoryList.forEach((item, i) => {
-          if(item.name === _pinValues.getProperties().categorie){
-            _getMarkerStyle(_pinValues,item.src);
-          }else{
-            _getMarkerStyle(_pinValues);
-          }
-        });
-        _pixelPosition = e.mapBrowserEvent.pixel_;
-        _getRightPanel();
-      }
-    });
-
-    var modify = new ol.interaction.Modify({
-      features: new ol.Collection([iconFeature]),
-      pixelTolerance: 20
-    });
-    iconFeature.on('change',function(){
-      var pinValues = _pinValues;
-      pinValues.values_.coordinates = ol.proj.transform(this.getGeometry().getCoordinates(), 'EPSG:3857', 'EPSG:4326');
-      _pinValues.setProperties(pinValues,false);
-      $("#pinLongitude")[0].value = _pinValues.getProperties().coordinates[0];
-      $("#pinLatitude")[0].value = _pinValues.getProperties().coordinates[1];
-    },iconFeature);
-    _map.addInteraction(modify);
-
-    _map.addLayer(this.dynamicPinLayer);
-    _pinValues = this.dynamicPinLayer.getSource().getFeatures()[0];
-    _layerFeature = this.dynamicPinLayer;
-    _layerList.push(this.dynamicPinLayer);
-
-    _getRightPanel();
-    _closeCreationByCoordinates();
-  }
-
-  function _getMarkerStyle(feature, featureSource = 'apps/dynMapPublic/picture/markerRed.svg'){
-    var iconStyle = new ol.style.Style({
-      image: new ol.style.Icon(({
-        anchor: [0.38, 40],
-        anchorXUnits: 'fraction',
-        anchorYUnits: 'pixels',
-        size: [48, 48],
-        opacity: 1,
-        src: featureSource
-      }))
-    });
-    feature.setStyle(iconStyle);
-    feature.changed();
-    return feature;
-  }
-
   function _onSimpleClick(){
     _closeRightPanel();
     _closeConfig();
     _closeCreationByCoordinates();
-    var extent = _map.getView().calculateExtent(_map.getSize());
+    _hideDeletionConfirmation();
     var layers = _map.getLayers();
     layers.forEach((layer, i) => {
       if(layer instanceof ol.layer.Vector){
         if(layer.ol_uid >= 65){
           if(_categoryList.length === 0){
-            _getMarkerStyle(layer.getSource().getFeatures()[0]);
+            if(layer.getSource().getFeatures()[0] != undefined){
+              _getMarkerStyle(layer.getSource().getFeatures()[0]);
+            }
           }else{
             _categoryList.forEach((item, i) => {
               if(item.name === layer.getSource().getFeatures()[0].getProperties().categorie){
                 _getMarkerStyle(layer.getSource().getFeatures()[0],item.src);
-              }else{
-                _getMarkerStyle(layer.getSource().getFeatures()[0]);
               }
             });
           }
@@ -747,13 +823,14 @@ const clic = (function() {
       init : function () {
         _containerPosition = $('#map').parent('.row');
         _containerPosition.append('<div id="custom-panel">');
-        $("#custom-panel").css({"height": "100%","width": "400px","position": "fixed","z-index": "1","top": "0","right": "0","background-color": "#FFF","overflow-x": "hidden","padding-top": "20px"});
+        $("#custom-panel").css({"height": "100%","width": "400px","position": "fixed","z-index": "1","top": "0","right": "0","background-color": "#FFF","overflow-x": "hidden","padding-top": "20px","font-family": "'vistaSansOT_regular', Arial, Sans-serif"});
         _containerPosition = $('#custom-panel');
         $("#custom-panel").css({'display':'none'});
         _configurationPosition = $("#bs-example-navbar-collapse-1 .navbar-right");
         _setCreationByCoordinates();
         _setConfiguration();
         _map.on('dblclick', _clic);
+        var solveClickIssue = false;
         _map.on('click',function(){
           _onSimpleClick();
         });
