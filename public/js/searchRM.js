@@ -16,6 +16,7 @@ var searchRM = (function () {
                 placeholder = inputlabel;
             }
            var searchtool =  '<div class="" role="search" id="searchtool">'
+            +    '<p>Recherche par adresse: </p>'
             +    '<div class="form-group input-group" id="fieldWrapper">'
             +        '<input type="text" class="form-control" placeholder="'+ placeholder +'" i18n="navbar.search.placeholder" id="searchfield">'
             +        '<div class="input-group-btn">'
@@ -25,40 +26,55 @@ var searchRM = (function () {
             +        '</div>'
             +    '</div>'
             +'</div>';
-            // if (typeof $('.navbar-right')[0] !== 'undefined') {
-            //     $('.navbar-right')[0].firstElementChild.innerHTML = searchtool;
-            // }
-            $('#page-content-wrapper').append('<div class="parcelSelectors">' + searchtool + '</div>');
-            if(API.mode != 'd'){
+
+            console.log('test');
+            console.log(API.mode);
+
+            $('#page-content-wrapper').append(searchtool + '<div class="parcelSelectors"></div><p id="parcelSelectorsLegend">Recherche par parcelle: </p>');
+            if(API.mode !== 'u' && API.mode !== 's'){
               searchCadastreRM.init();
+              $(".parcelSelectors").css({"top":"140px"})
+              $("#searchtool").css({"margin-right": "15px",'top': '60px','right': '90px','position': 'fixed'});
+              $("#parcelSelectorsLegend").css({"margin-right": "15px",'top': '120px','right': '330px','position': 'fixed'});
+              $("#fieldWrapper").css({"border": "1px solid #aaa", "border-radius": "4px", "background-color" : "white",
+                "right": "0","width": "220px", "margin-bottom": "0px", "height": "10px","margin-top":"-10px"});
+              $("#searchresults").css({"right": "75px", "top": "115px"});
+              $("#fieldWrapper #searchfield").css({"height": "28px"});
+              $("#fieldWrapper #buttonSearchField").css({"height": "28px"});
+              $("#buttonSearchField").css({"padding-top": "3px"});
             }
 
             if(API.mode === 'u'){
-              $(".xs.mode-u #searchtool").css({"margin-right": "75px"});
+              $("#searchtool").css({"right": "-30px", "top": "30px"});
+              $("#searchtool p").css({'right': '165px','position':'fixed','top':'5px'});
               $("#fieldWrapper").css({"border": "1px solid #aaa", "border-radius": "4px", "background-color" : "white",
-                "right": "0","width": "220px", "margin-bottom": "0px", "height": "10px"});
-              $("#searchresults").css({"margin-right": "55px"});
+                "right": "35px","width": "220px", "margin-bottom": "0px", "height": "10px","margin-top":"-10px"});
+              $("#searchresults").css({"right": "55px", "top": "55px"});
+              $("#fieldWrapper #searchfield").css({"height": "28px"});
+              $("#fieldWrapper #buttonSearchField").css({"height": "28px"});
+              $("#buttonSearchField").css({"padding-top": "3px"});
             }
 
             if(API.mode === 's'){
-              $("#searchtool").css({"margin-right": "15px", "height": "8px"});
+              $("#searchtool").css({'top': '60px','right': '35px','position': 'fixed'});
               $("#fieldWrapper").css({"border": "1px solid #aaa", "border-radius": "4px", "background-color" : "white",
-                "right": "0","width": "220px", "margin-bottom": "0px", "height": "10px"});
-              $("#searchresults").css({"margin-right": "445px", "margin-top": "40px"});
+                "right": "0","width": "220px", "margin-bottom": "0px", "height": "10px",'margin-top':'-10px'});
+              $("#searchresults").css({"right": "55px", "top": "115px"});
               $("#fieldWrapper #searchfield").css({"height": "28px"});
               $("#fieldWrapper #buttonSearchField").css({"height": "28px"});
               $("#buttonSearchField").css({"padding-top": "3px"});
             }
 
-            if(API.mode === 'd'){
-              $("#searchtool").css({"margin-right": "15px", "height": "8px"});
-              $("#fieldWrapper").css({"border": "1px solid #aaa", "border-radius": "4px", "background-color" : "white",
-                "right": "0","width": "220px", "margin-bottom": "0px", "height": "10px"});
-              $("#searchresults").css({"margin-right": "445px", "margin-top": "40px"});
-              $("#fieldWrapper #searchfield").css({"height": "28px"});
-              $("#fieldWrapper #buttonSearchField").css({"height": "28px"});
-              $("#buttonSearchField").css({"padding-top": "3px"});
-            }
+            // if(API.mode === 'd'){
+            //   $("#searchtool").css({"margin-right": "15px",'top': '120px','right': '90px','position': 'fixed'});
+            //   $("#parcelSelectorsLegend").css({"margin-right": "15px",'top': '60px','right': '330px','position': 'fixed'});
+            //   $("#fieldWrapper").css({"border": "1px solid #aaa", "border-radius": "4px", "background-color" : "white",
+            //     "right": "0","width": "220px", "margin-bottom": "0px", "height": "10px"});
+            //   $("#searchresults").css({"margin-right": "415px", "margin-top": "40px"});
+            //   $("#fieldWrapper #searchfield").css({"height": "28px"});
+            //   $("#fieldWrapper #buttonSearchField").css({"height": "28px"});
+            //   $("#buttonSearchField").css({"padding-top": "3px"});
+            // }
         }
         _configureSearch(searchRMConf);
     };
