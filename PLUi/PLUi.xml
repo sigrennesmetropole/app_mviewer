@@ -24,7 +24,7 @@
     </baselayers>
 
     <searchparameters bbox="false" localities="false" features="false" static="false" querymaponclick="true"
-        searchRM="true" searchCadastre="true"
+        searchRM="true"
         searchRMConf="apps/PLUi/addons/data/searchAddressConf.json"
         disableSearchExtentLimitation="true"
         inputlabel="Adresse" />
