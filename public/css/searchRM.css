@@ -14,7 +14,7 @@
 .parcelSelectors {
   display: flex;
   position: fixed;
-  top: 64px;
+  top: 80px;
   right: 62px;
   display: flex;
 }
