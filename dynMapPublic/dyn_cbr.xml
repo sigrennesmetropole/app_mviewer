@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
 	<application
-		title="Carte dynamique pour le grand public"
+		title="Mes localisations"
 		logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"
 		help=""
 		showhelp="false"
@@ -9,12 +9,12 @@
 		iconhelp=""
 		style="apps/georm/css/mv_georm.css"
 		exportpng="true"
-		geoloc="true"
+		geoloc="false"
 		measuretools="true"
 		stats="false"
 		statsurl=""
-		togglealllayersfromtheme="true"
-		printMap="true"
+		togglealllayersfromtheme="false"
+		printMap="false"
 		>
         <!--
         changeBtnremovelayersIcon='glyphicon glyphicon-eye-close'
@@ -23,15 +23,15 @@
 		searchRMConfFile="apps/public/data/searchRMConf.json"
         -->
 	</application>
-	<mapoptions maxzoom="20" minzoom="10" projection="EPSG:3857" center="-186098.36482879001,6125889.9088213602" zoom="12" />
+	<mapoptions maxzoom="22" minzoom="11" projection="EPSG:3857" center="-185600.24433942206,6125077.984905125" zoom="13" />
 
 
 	<baselayers style="default">
-		<baselayer visible="false" id="pvcisimplegris" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville simple gris" type="WMTS"
+		<baselayer visible="true" id="pvcisimplegris" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville simple gris" type="WMTS"
 			url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
 			attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
 		</baselayer>
-		<baselayer visible="true" id="pvci_nb" thumbgallery="apps/public/img/basemap/pvcinb.jpg" title="Rennes Metropole" label="Plan de ville gris" type="WMTS"
+		<baselayer visible="false" id="pvci_nb" thumbgallery="apps/public/img/basemap/pvcinb.jpg" title="Rennes Metropole" label="Plan de ville gris" type="WMTS"
 			url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci_nb" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
 			attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
 		</baselayer>
@@ -45,32 +45,31 @@
 		</baselayer>
 	</baselayers>
 
-    <searchparameters bbox="false" localities="false" features="false" static="false" searchRM="true" searchRMConf="apps/dynMapPublic/addons/data/searchConf.json" disableSearchExtentLimitation="true" />
+    <searchparameters bbox="false" localities="false" features="false" static="false" searchRM="false" searchRMConf="apps/dynMapPublic/addons/data/searchConf.json" disableSearchExtentLimitation="true" />
 
     <extensions>
-				 <extension type="component" id="gestion6596" path="apps/public/addons"/>
+        <extension type="component" id="gestion6596_cbr" path="apps/dynMapPublic/addon"/>
     </extensions>
 
-	<themes mini="true">
-
-    <theme id="theme-202103090939" name="bidon" collapsed="true" icon="fas fa-camera">
-		<layer
-				id="pinDynMap"
-				name="Cacher les points"
-				visible="true"
-				type="customlayer"
-				legendurl="apps/dynMapPublic/picture/pen.png"
-				opacity="1"
-				url="apps/dynMapPublic/js/inputData.js"
-				attribution=""
-				metadata="undefined"
-				metadata-csw=""
-				infoformat="application/vnd.ogc.gml"
-				queryable="false"
-        featurecount="5"
-				infopanel="right-panel">
-				<!-- <template url="apps/dynMapPublic/templates/pinInfo.mst"></template> -->
-			</layer>
-	</theme>
-	</themes>
+    <themes mini="true">
+        <theme id="theme-202103090939" name="Mes Localisations" collapsed="true" icon="fas fa-marker">
+            <layer 
+                id="meslocalisations"
+                name="Mes localisations"
+                type="customlayer"
+                url="apps/dynMapPublic/customlayer/mes_localisations.js"
+                visible="true"
+                tooltip="true" 
+                tooltipenabled="true" 
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{nom}}&lt;/span&gt;"
+                metadata="undefined"
+                metadata-csw=""
+                queryable="true"
+                featurecount="3"
+                infopanel="right-panel">
+                <!-- <template url="apps/dynMapPublic/templates/localisations.mst"></template> -->
+            </layer>
+            
+        </theme>
+    </themes>
 </config>

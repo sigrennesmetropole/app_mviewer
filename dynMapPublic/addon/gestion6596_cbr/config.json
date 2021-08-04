@@ -1,0 +1,6 @@
+{
+    "js": ["categories.js"],
+    "html": "test.html",
+    "css": "test.css",
+    "target": "page-content-wrapper"
+}
