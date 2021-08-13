@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
 	<application
-		title="Mes localisations"
+		title="Ma carte"
 		logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"
-		help=""
+		titlehelp="À propos..." 
+        help="apps/dynMapPublic/html/mesloc_help.html"
 		showhelp="false"
-		titlehelp="En cours de création ..."
 		iconhelp=""
 		style="apps/georm/css/mv_georm.css"
 		exportpng="true"
@@ -67,7 +67,7 @@
                 queryable="true"
                 featurecount="3"
                 infopanel="right-panel">
-                <!-- <template url="apps/dynMapPublic/templates/localisations.mst"></template> -->
+                <template url="apps/dynMapPublic/templates/meslocs.mst"></template>
             </layer>
             
         </theme>

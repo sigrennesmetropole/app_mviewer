@@ -2064,7 +2064,7 @@ mviewer = (function () {
             $("#mv_marker").show();
             // debut modif CT 31/01/2020
             var nbItems = rmOptionsManager.getClickNbItems();
-            if (nbItems > 1 && rmOptionsManager.getApplicationConfiguration().showClickNbItems !== "false") {                 
+            if (nbItems > 1 && rmOptionsManager.getApplicationConfiguration().showClickNbItems !== "false") {
                _popup.setPosition(ptResult);
                $("#popup-number-results").html(rmOptionsManager.getClickNbItems() + ' résultats');
 

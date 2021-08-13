@@ -15,9 +15,12 @@
 				"coordinates" : [ -186552.5868581999, 6128292.1016827915 ]
 			},
 			"properties" : {
+                "id" : 1,
 				"nom" : "Armorique",
-				"categorie" : "categ1",
-				"description" : "bla bla bla bla bla bla<br/>bla bla"
+				"categorie" : "1",
+				"description" : "bla bla bla bla bla bla\nbla bla",
+                "long" : -186552.5868581999,
+                "lat" : 6128292.1016827915
 			}
 		},
         {
@@ -27,9 +30,12 @@
 				"coordinates" : [ -186910.3200534144, 6126507.0860921573 ]
 			},
 			"properties" : {
+                "id" : 5,
 				"nom" : "Hôtel dieu",
 				"categorie" : "categ inconnue",
-				"description" : "bla bla bla bla bla bla<br/>bla bla"
+				"description" : "bla bla bla bla bla bla\nbla bla",
+                "long" : -186910.3200534144,
+                "lat" : 6126507.0860921573
 			}
 		},
 		{
@@ -39,9 +45,12 @@
 				"coordinates" : [ -183196.9625742379, 6124968.2044649227 ]
 			},
 			"properties" : {
+                "id" : 3,
 				"nom" : "Baud-Chardonnet",
-				"categorie" : "categ1",
-				"description" : "bla bla bla bla bla bla<br/>bla bla"
+				"categorie" : "1",
+				"description" : "bla bla bla bla bla bla\nbla bla",
+                "long" : -183196.9625742379,
+                "lat" : 6124968.2044649227
 			}
 		},
 		{
@@ -51,9 +60,12 @@
 				"coordinates" : [ -189251.2729847701, 6128594.997272782 ]
 			},
 			"properties" : {
+                "id" : 14,
 				"nom" : "Beauregard",
-				"categorie" : "categ2",
-				"description" : "bla bla bla bla bla bla<br/>bla bla"
+				"categorie" : "2",
+				"description" : "bla bla bla bla bla bla\nbla bla",
+                "long" : -189251.2729847701,
+                "lat" : 6128594.997272782
 			}
 		},
         {
@@ -63,9 +75,12 @@
 				"coordinates" : [ -184338.9815243937, 6121464.8929478852 ]
 			},
 			"properties" : {
+                "id" : 2,
 				"nom" : "Blosne Est",
-				"categorie" : "categ1",
-				"description" : "bla bla bla bla bla bla<br/>bla bla"
+				"categorie" : "1",
+				"description" : "bla bla bla bla bla bla\nbla bla",
+                "long" :  -184338.9815243937,
+                "lat" : 6121464.8929478852
 			}
 		}
 	]

@@ -1,6 +1,16 @@
 {
-    "js": ["categories.js"],
-    "html": "test.html",
-    "css": "test.css",
-    "target": "page-content-wrapper"
+    "js": [
+        "js/categories.js",
+        "js/lib/Snap.svg-0.5.1/snap.svg-min.js"],
+    "html": "templates/mapconfig.html",
+    "css": "css/mapconfig.css",
+    "target": "page-content-wrapper",
+    "options": {
+        "icones": {
+            "Goutte": "apps/dynMapPublic/picture/marker_blanc.svg",
+            "Panneau" : "apps/dynMapPublic/picture/panneau_blanc.svg", 
+            "Etoile" : "apps/dynMapPublic/picture/star_blanc.svg"
+        },
+        "maxmarkerwidth":"35"
+    }
 }
