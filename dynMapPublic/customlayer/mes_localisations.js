@@ -1,4 +1,4 @@
-
+// Layer = gestion des features affichées sur la carte (OpenLayers6)
 mviewer.customLayers.meslocalisations = (function() {
     // liste des categories et des styles associés 
     var l_styles = new Object;

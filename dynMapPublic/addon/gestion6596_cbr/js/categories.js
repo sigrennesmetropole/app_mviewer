@@ -1,9 +1,12 @@
+// CustomComponent = gestion de l'expérience utilisateur (fenêtre, actions, etc.). Communique avec le customLayer 
 const l_markers = mviewer.customComponents.gestion6596_cbr.config.options.icones;
 const _map = mviewer.getMap();
 
 const categories = (function() {
     
     //TODO : gestion du déplacement de point
+    //TODO : ajout de point par coordonnées (utile ?)
+    //TODO :Activation/désactivation de la recherche par adresse / par organisme
     
     var localisations = mviewer.customLayers.meslocalisations;
     var allcategories = [];

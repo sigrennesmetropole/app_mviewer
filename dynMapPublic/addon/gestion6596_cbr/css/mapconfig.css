@@ -33,6 +33,27 @@
     margin-top:5px;
     vertical-align: top;
 }
+
+table.rm-popup-text-feature {
+    width:100%;
+}
+
+table.rm-popup-text-feature td:nth-child(1) {
+  width: 20%;
+  }
+  
+table.rm-popup-text-feature td:nth-child(2) {
+  width: 80%;
+  }
+  
+table.rm-popup-text-feature td {
+    padding : 5px;
+}
+
+table.rm-popup-text-feature td>input,td>select, td>textarea {
+    width:100%
+}
+
 /****** FENETRE CONFIG         *******/
 
 #config-modal{  
@@ -127,6 +148,9 @@
 
 .alig-center{
     text-align: center;
+}
+.valign-top{
+    vertical-align: top;
 }
 
 #confbuttons {

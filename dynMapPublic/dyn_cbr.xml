@@ -45,7 +45,7 @@
 		</baselayer>
 	</baselayers>
 
-    <searchparameters bbox="false" localities="false" features="false" static="false" searchRM="false" searchRMConf="apps/dynMapPublic/addons/data/searchConf.json" disableSearchExtentLimitation="true" />
+    <searchparameters bbox="false" localities="false" features="false" static="false" searchRM="true" searchRMConf="apps/dynMapPublic/addons/data/searchConf.json" disableSearchExtentLimitation="true" />
 
     <extensions>
         <extension type="component" id="gestion6596_cbr" path="apps/dynMapPublic/addon"/>
