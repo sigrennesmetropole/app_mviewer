@@ -22,18 +22,38 @@
     <searchparameters bbox="false" localities="false" features="false" static="false"/>
 
     <themes mini="true">
-        <theme id="antCapt_rennes" name="Antennes et Capteurs electromagnetiques" collapsed="true" icon="fas fa-child">
+        <theme id="antennes_rennes" name="Antennes electromagnetiques" collapsed="true" icon="fas fa-broadcast-tower">
             <layer
                 id="observatoire_anfr"
-                name="Antennes et capteurs de rennes"
+                name="Antennes de téléphonie"
                 visible="true"
                 type="customlayer"
                 legendurl="apps/site_internet/img/legend/jeu_enfant_vdr.png"
                 opacity="1"
                 url="apps/site_internet/customlayer/observatoire_anfr.js"
                 attribution=""
-                metadata=""
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84">
+                metadata="undefined"
+                metadata-csw=""
+                queryable="true"
+                featurecount="10"
+                infopanel="right-panel">
+            </layer>
+        </theme>
+        <theme id="capteurs_rennes" name="Capteurs permanents" collapsed="true" icon="fas fa-thermometer">
+            <layer
+                id="capteurs_exem"
+                name="Capteurs permanents"
+                visible="true"
+                type="customlayer"
+                legendurl="apps/site_internet/img/legend/jeu_enfant_vdr.png"
+                opacity="1"
+                url="apps/site_internet/customlayer/capteurs_exem.js"
+                attribution=""
+                metadata="undefined"
+                metadata-csw=""
+                queryable="true"
+                featurecount="10"
+                infopanel="right-panel">
             </layer>
         </theme>
     </themes>

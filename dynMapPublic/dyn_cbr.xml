@@ -7,7 +7,7 @@
         help="apps/dynMapPublic/html/mesloc_help.html"
 		showhelp="false"
 		iconhelp=""
-		style="apps/georm/css/mv_georm.css"
+		style="apps/site_internet/css/site_internet_gris.css"
 		exportpng="true"
 		geoloc="false"
 		measuretools="true"
@@ -45,10 +45,10 @@
 		</baselayer>
 	</baselayers>
 
-    <searchparameters bbox="false" localities="false" features="false" static="false" searchRM="true" searchRMConf="apps/dynMapPublic/addons/data/searchConf.json" disableSearchExtentLimitation="true" />
+    <searchparameters bbox="false" localities="false" features="false" static="false" searchRM="true" searchRMConf="apps/dynMapPublic/addon/data/searchConf.json" disableSearchExtentLimitation="true" />
 
     <extensions>
-        <extension type="component" id="gestion6596_cbr" path="apps/dynMapPublic/addon"/>
+        <extension type="component" id="gestion6596_cbr" path="apps/dynMapPublic/addon" configfile="url/configperso"/>
     </extensions>
 
     <themes mini="true">

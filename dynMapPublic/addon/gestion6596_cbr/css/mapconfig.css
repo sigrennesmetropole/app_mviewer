@@ -123,8 +123,13 @@ table.rm-popup-text-feature td>input,td>select, td>textarea {
   width: 25%;
   }
 
-#categTabletd:nth-child(2) {
-  width: 65%;
+#categTable td:nth-child(2) {
+  width: 75%;
+}
+
+#categTable tr[default] {
+  text-align: center;
+  font-style: italic;
 }
 
 .categNameInput{
@@ -159,5 +164,19 @@ table.rm-popup-text-feature td>input,td>select, td>textarea {
 
 .iconwtext{
     margin-right: 8px;
+}
+
+/* Légende */
+#btn-remove-layers, #legend-meslocalisations {
+    display:none;
+}
+#leg-loctable td:nth-child(1) {
+  //width: 25%;
+  width: 40px;
+  }
+
+#leg-loctable td:nth-child(2) {
+  //width: 75%;
+  padding: 5px; 
 }
 

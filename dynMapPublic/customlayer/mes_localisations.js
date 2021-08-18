@@ -3,6 +3,9 @@ mviewer.customLayers.meslocalisations = (function() {
     // liste des categories et des styles associés 
     var l_styles = new Object;
     
+    var defaultStyle;
+    
+    /**** Couche des localisations ****/
     let meslocalisations = new ol.layer.Vector({
         source: new ol.source.Vector({
             //url: 'apps/dynMapPublic/data/data_vide.geojson',
@@ -12,7 +15,11 @@ mviewer.customLayers.meslocalisations = (function() {
     });
     
     function _updateStyle (id, style) {
-        l_styles[id]=style;
+        if (id != undefined){
+            l_styles[id]=style;
+        } else {
+            defaultStyle=style;
+        }
         meslocalisations.getSource().changed();
     }
     
@@ -29,16 +36,27 @@ mviewer.customLayers.meslocalisations = (function() {
         }
     
     function _defaultStyle(){
-        return [
-            new ol.style.Style({
-                image: new ol.style.Icon({
-                  color: '#f78b12',
-                  crossOrigin: 'anonymous',
-                  scale:0.02,
-                  src: 'apps/dynMapPublic/picture/marker_blanc.svg',
-                }),
-              })
-        ];
+        if (typeof defaultStyle !== 'undefined' ) {
+            return [defaultStyle];
+        } else {
+            if(typeof categories != 'undefined') {
+                categories.setDefaultStyle();
+                setTimeout(function(){return [defaultStyle]},50);
+            } else {
+                return [
+                    new ol.style.Style({
+                        image: new ol.style.Icon({
+                          //color: '#f78b12',
+                          color: '#8FBC8F',
+                          crossOrigin: 'anonymous',
+                          scale:0.02,
+                          anchor:[0.5,1],
+                          src: 'apps/dynMapPublic/picture/marker_blanc.svg',
+                        }),
+                      })
+                ];
+            }
+        } 
     }
     
     function _getFeatureStyle(feat) {
@@ -49,12 +67,14 @@ mviewer.customLayers.meslocalisations = (function() {
     
     function _getAllStyles() { return l_styles; }
     
+    /**** Gestion des features ****/
     function _addNewFeature(coord) {
+        var _WGS84 = ol.proj.toLonLat(coord);
         let feat = new ol.Feature({
             geometry: new ol.geom.Point(coord),
             id: _getNextFeatureId(),
-            long: coord[0],
-            lat: coord[1]
+            long: _WGS84[0],
+            lat: _WGS84[1]
             });
         _addFeature(feat);
     }
@@ -105,6 +125,7 @@ mviewer.customLayers.meslocalisations = (function() {
     }
     
     
+    /**** Sortie de tous les points au format GEOjson****/
     var _featuresToGeoJSON = function(data) {
         geoJSONFormat = meslocalisations.getSource().getFormat();
         featuresASGeoJSON = geoJSONFormat.writeFeaturesObject (meslocalisations.getSource().getFeatures());
@@ -115,10 +136,33 @@ mviewer.customLayers.meslocalisations = (function() {
         return featuresASGeoJSON;
     };
     
+    /**** Déplacement de point ***/
+    var modify = new ol.interaction.Modify({
+      source: meslocalisations.getSource(),
+      pixelTolerance: 20,
+      hitDetection: true,
+      style : new ol.style.Style()
+    });
+    _map.addInteraction(modify);
+    
+    modify.on('modifyend', () => {
+        var features = meslocalisations.getSource().getFeatures();
+        for(index in features){
+            feat = features[index];
+            newcoord = ol.proj.toLonLat(feat.getGeometry().getCoordinates());
+            if( feat.get("long") != newcoord[0] || feat.get("lat") != newcoord[1]) {
+                feat.set("long", newcoord[0]);
+                feat.set("lat", newcoord[1]);
+                categories.refreshCoordDisplay(feat.get("id"), newcoord);
+            }
+        }
+    });
+    
+    
     /********************************************************/
     /* Code temporaire pour tests                           */
     /********************************************************/
-      console.log("Code de test");
+/*      console.log("Code de test");
       const style1 = new ol.style.Style({
         image: new ol.style.Icon({
           color: '#aa0c8b',
@@ -151,7 +195,7 @@ mviewer.customLayers.meslocalisations = (function() {
       //setTimeout(function(){ _deleteStyle('categ1', true); }, 3000);
       
       console.log("Fin code de test");
-      
+*/
     /********************************************************/
     /* Fin de code pour les tests                           */
     /********************************************************/

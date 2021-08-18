@@ -38,6 +38,7 @@
                     </div>
                 </div>
                 <div id="confbuttons">
+                  <button id="cancel" class="btn" data-dismiss="modal">Fermer</button>
                   <button id="deleteAll" class="btn lightbtn" data-toggle="modal" data-target="#emptyconfirm-modal" i18n="help.modal.doc" title="Vider la carte">Vider la carte</button>
                   <button id="exportGeoJSON" class="btn cancel lightbtn" onclick="categories.exportGeoJSON()">Exporter les données</button>
                 </div>
@@ -112,5 +113,9 @@
 
 
 <div id="createPointOnMapTooltip" class="tooltip-btn">
-    <button id="creatPtBtn" type="button" class="btn darkbtn" title="Configuration"><span class="far fa-save iconwtext"></span>Créer le point</button>
+    <button id="creatPtBtn" type="button" class="btn darkbtn" title="Création de point"><span class="far fa-save iconwtext"></span>Créer le point</button>
+</div>
+
+<div id="legend-localisations" >
+    <table id="leg-loctable" cellpadding=2 cellspacing=2> <tbody ></tbody> </table>
 </div>

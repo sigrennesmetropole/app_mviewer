@@ -4,16 +4,13 @@ const _map = mviewer.getMap();
 
 const categories = (function() {
     
-    //TODO : gestion du déplacement de point
     //TODO : ajout de point par coordonnées (utile ?)
-    //TODO :Activation/désactivation de la recherche par adresse / par organisme
+    //TODO : Activation/désactivation de la recherche par adresse / par organisme
     
     var localisations = mviewer.customLayers.meslocalisations;
     var allcategories = [];
     
-  function _getCategorieIdByTableElement(elementid){
-      return $('#'+elementid + " :parent tr").attr('categorieId');
-  }
+
   
   function _getCategorieById(id){
       for (categ in allcategories) {
@@ -63,9 +60,10 @@ const categories = (function() {
       // update shown marker
       _refreshSvgMarker(id);
       // update style couche meslocalisations
-      _calculateStyle(id, formeSrc, couleur);
+      _calculateStyle(id, formeSrc, couleur,_getCategorieById(id).getIconeAnchor());
       // update listes de categories
       _updateFicheInfoCateg();
+      _refreshLegend();
   }
   
   
@@ -74,7 +72,18 @@ const categories = (function() {
 
   }
   
-  function _calculateStyle(id, url, couleur){
+      // retourne le style par défaut paramétré dans le fichier config
+  function _setDefaultStyle(){
+      icone = mviewer.customComponents.gestion6596_cbr.config.options.defaultstyle["icone"];
+      couleur = mviewer.customComponents.gestion6596_cbr.config.options.defaultstyle["couleur"];
+      src = l_markers[icone].src;
+      anchor = l_markers[icone].anchor;
+      
+      _calculateStyle(null, src, couleur, anchor);
+      
+  }
+  
+  function _calculateStyle(id, url, couleur, anchor){
       // calcul de l'échelle par rapport à l'image svg
       var maxwidth=mviewer.customComponents.gestion6596_cbr.config.options.maxmarkerwidth;
       var svgWidth = maxwidth;
@@ -89,21 +98,23 @@ const categories = (function() {
               if (svgWidth > maxwidth) { return (maxwidth / svgWidth);}
               else {return 1; }
           }).then((echelle) => {
-                localisations.updateStyle(id, _getOLStyle(couleur, url, echelle));
-          });
+                localisations.updateStyle(id, _getOLStyle(couleur, url, echelle, anchor));
+          }).then(() => {_refreshLegend()});
       });
   }
 
   
   function _showSvgMarker(svgid, url, color) {
       var s = Snap("#"+svgid);
-      var svgMarker = Snap.load(url, function ( f ) { 
-        var g = f.select("g");
-        g.attr({fill: color});
-        g.parent().attr({width:'100%', height:'100%'});
-        s.clear();
-        s.append( f );
-        });
+      if (s) {
+          var svgMarker = Snap.load(url, function ( f ) { 
+            var g = f.select("g");
+            g.attr({fill: color});
+            g.parent().attr({width:'100%', height:'100%'});
+            s.clear();
+            s.append( f );
+            });
+      }
   }
   
   function _showAllStyles(){
@@ -169,12 +180,12 @@ const categories = (function() {
   function _getAvailableIconsHTMLList(){
       var html="";
       for (const [nom, url] of Object.entries(l_markers)) {
-        html += '<option value="' + url + '" >' + nom + '</option>';
+        html += '<option value="' + url.src + '" >' + nom + '</option>';
       }
       return html;
   }
   
-  function _getOLStyle(couleur, IconeSrc, echelle){
+  function _getOLStyle(couleur, IconeSrc, echelle, anchor){
       var style = new ol.style.Style({
             image: new ol.style.Icon({
               color: couleur,
@@ -183,8 +194,19 @@ const categories = (function() {
               src: IconeSrc,
             }),
           });
-      return style
+      if (anchor != undefined){style.getImage().setAnchor(anchor);}
+      return style;
+  }
+  
+  // retourne le style par défaut paramétré dans le fichier config
+  function _getDefaultStyle(){
+      icone = mviewer.customComponents.gestion6596_cbr.config.options.defaultstyle["icone"];
+      couleur = mviewer.customComponents.gestion6596_cbr.config.options.defaultstyle["couleur"];
+      src = l_markers[icone].src;
+      anchor = l_markers[icone].anchor;
       
+      var style = _getOLStyle(couleur, src, echelle, anchor)
+      return style;
   }
   
   function _delCategorie(id, removePoints){
@@ -199,22 +221,23 @@ const categories = (function() {
       localisations.deleteStyle(id, removePoints);
       // refresh configuration window
       _showAllStyles();
+      _refreshLegend();
   }
   
   function _initDefaultCategConfig() {
-      nom = "Catégorie par défaut";
+      nom = "Catégorie non définie";
       defaultStyle = localisations.getDefaultStyle()[0];
       iconUrl = defaultStyle.getImage().getSrc();
       iconName = "icone par défaut";
       for (const [nomIcone, url] of Object.entries(l_markers)) {
-        if (url == iconUrl) {
+        if (url.src == iconUrl) {
           iconName = nomIcone;
           break;
         }
       }
       couleurRGB = defaultStyle.getImage().getColor();
       couleurHex = _rgbToHex(couleurRGB[0], couleurRGB[1], couleurRGB[2]);
-      var html = '<tr ><td><i>'+ nom + '</i> </td>';
+      var html = '<tr default><td><i>'+ nom + '</i> </td>';
           html += '  <td id="default" class="categStyleConf">';
           html += '    <label id="default-markershape" class="icones-value" >'+ iconName +'</label>';
           html += '    <input id="default-color" type="color" value="'+ couleurHex +'" disabled />';
@@ -224,6 +247,52 @@ const categories = (function() {
       $("#configLCateg").append(html);
       
       _showSvgMarker("default-showmarker", iconUrl, couleurHex);
+  }
+  
+  // Met à jour la liste des catégories des fiches d'info ouvertes
+  function _updateFicheInfoCateg () {
+    var categorieTrouvee = false;
+    // vider la liste
+    $(".categ-choice").html('');
+    categid = $(".categ-choice").attr("ptcategorie");
+    // insérer toutes les catégories enregistrées
+    for (index in allcategories) {
+        let selected = false;
+        if(categid != undefined && allcategories[index].getId()==categid){
+            selected=true;
+            categorieTrouvee = true;
+        }
+        $(".categ-choice").append(new Option(allcategories[index].getNomForList(), allcategories[index].getId(),selected,selected));
+    }
+    // ajouter la catégorie par défaut en tete
+    $(".categ-choice").prepend(new Option("-- Sans catégorie (défaut) --", "0", !categorieTrouvee,!categorieTrouvee));
+  }
+  
+  
+  function _refreshLegend(){
+      legend_div=$("#leg-loctable");
+      legend_div.empty();
+      // ajouter toutes les catégories
+      for (categ in allcategories) {
+          let id = allcategories[categ].getId();
+          let html='<tr categorieId='+ id +'>';
+          html += '  <td><svg id="legendmarker'+id+'" preserveAspectRatio="xMidYMid meet" class="confImg" ></svg></td>';
+          html += '  <td><span class="legendcategname">'+ allcategories[categ].getNomForList() +'</span></td>';
+          html += '</tr>';
+          legend_div.append(html);
+          _showSvgMarker("legendmarker"+id, allcategories[categ].getIconeURL(), allcategories[categ].getCouleur());
+      }
+      // ajouter la "non catégorie" (catégorie par défaut)
+      defaultStyle = localisations.getDefaultStyle()[0];
+      iconUrl = defaultStyle.getImage().getSrc();
+      couleurRGB = defaultStyle.getImage().getColor();
+      couleurHex = _rgbToHex(couleurRGB[0], couleurRGB[1], couleurRGB[2]);
+      let htmldef='<tr>';
+          htmldef += '  <td><svg id="legendmarker-default" preserveAspectRatio="xMidYMid meet" class="confImg" ></svg></td>';
+          htmldef += '  <td><span class="legendcategname"> Points sans catégorie </span></td>';
+          htmldef += '</tr>';
+          legend_div.append(htmldef);
+      _showSvgMarker("legendmarker-default", iconUrl, couleurHex);
   }
   
   /** Fonctions liées aux points **/
@@ -238,16 +307,29 @@ const categories = (function() {
   }
   function _delAllPoints(){
       localisations.deleteAllFeatures();
+      if ($("#right-panel").hasClass("active")) {
+        $("#right-panel").toggleClass("active");
+      }
+      $("#mv_marker").hide();
   }
   
   function _updatePoint(id){
       var fiche = $(".item[featId='"+id+"']");
       var nom = fiche.find(".nomdupoint").val();
-      //var categorie = fiche.find(".categ-choice option:selected").val();
       var categorie = _getCategorieById(fiche.find(".categ-choice option:selected").val());
       var description = fiche.find(".descriptiondupoint").val();
       
       localisations.updateFeature(id, nom, categorie, description);
+  }
+  
+  function _refreshCoordDisplay(pointid, newcoord) {
+      $("#mv_marker").hide();
+      $("#createPointOnMapTooltip").hide();
+      var fiche = $(".item[featId='"+pointid+"']");
+      if(fiche != undefined && fiche.length >0){
+          fiche.find(".longval")[0].innerHTML = newcoord[0];
+          fiche.find(".latval")[0].innerHTML = newcoord[1];
+      }
   }
   
   /** Export des points **/
@@ -285,6 +367,9 @@ const categories = (function() {
           $('#mapTitleInput').on('input', function (e) {
               $('.mv-title')[0].text = $('#mapTitleInput').val();
             });
+            
+          // Affichage de la légende
+          $("#legend li[data-layerid='meslocalisations'] div.layerdisplay-legend").append ($("#legend-localisations"));
           
           // Bouton de creation de point
           _createBtn = new ol.Overlay({ positioning: 'top-center', element: $("#createPointOnMapTooltip")[0], stopEvent: true});
@@ -303,31 +388,24 @@ const categories = (function() {
               let coordProj = proj4('EPSG:3857', 'EPSG:4326', coord);
               // ajout d'un point sur la couche aux coordonnées cliquées
               _createNewEmptyPoint(coord);
-              // simuler le clic sur les coordonnées pour ouverture automatique de la fiche créée
-              mviewer.zoomToLocation(coordProj[0], coordProj[1], _map.getView().getZoom(), true);
               $("#createPointOnMapTooltip").hide();
+              // simuler le clic sur les coordonnées pour ouverture automatique de la fiche créée
+              var i = function () {
+                    var ex = {
+                        coordinate:coord,
+                        pixel: _map.getPixelFromCoordinate(coord)
+                    };
+                    info.queryMap(ex);
+                };
+                setTimeout(i, 250); // timeout utile le temps que le point s'affiche sur la carte
+              
           });
           
       });
   }
   
-  function _updateFicheInfoCateg () {
-    var categorieTrouvee = false;
-    // vider la liste
-    $(".categ-choice").html('');
-    categid = $(".categ-choice").attr("ptcategorie");
-    // insérer toutes les catégories enregistrées
-    for (index in allcategories) {
-        let selected = false;
-        if(categid != undefined && allcategories[index].getId()==categid){
-            selected=true;
-            categorieTrouvee = true;
-        }
-        $(".categ-choice").append(new Option(allcategories[index].getNomForList(), allcategories[index].getId(),selected,selected));
-    }
-    // ajouter la catégorie par défaut en tete
-    $(".categ-choice").prepend(new Option("-- Sans catégorie (défaut) --", "0", !categorieTrouvee,!categorieTrouvee));
-  }
+
+
   
   return {
       init : ()  => {
@@ -344,12 +422,13 @@ const categories = (function() {
       updateCategorie: _updateCategorie,
       addCategInConfigWindow: _addCategInConfigWindow,
       delCategorie:_delCategorie,
-      getCategorieIdByTableElement: _getCategorieIdByTableElement,
       delPoint: _delPoint,
       delAllPoints: _delAllPoints,
       updateFicheInfoCateg: _updateFicheInfoCateg,
       updatePoint: _updatePoint,
       exportGeoJSON : _exportGeoJSON, 
+      refreshCoordDisplay : _refreshCoordDisplay,
+      setDefaultStyle: _setDefaultStyle,
    };
 
 })();
@@ -380,12 +459,17 @@ class Categorie {
    getCouleur(){return this.couleur;}
    setCouleur(couleur) {this.couleur=couleur;}
 
-   updateCategorie(nom, icone, couleur){
+    updateCategorie(nom, icone, couleur){
        this.nom=nom;
        this.icone=icone;
        this.couleur=couleur;
-   }
-   getIconeURL() {
-      return mviewer.customComponents.gestion6596_cbr.config.options.icones[this.icone];
-  }
+    }
+    getIconeURL() {
+      return l_markers[this.icone].src;
+    }
+    
+    getIconeAnchor() {
+      // si non précisé, l'ancre est [0.5,0.5] au départ de l'angle haut-gauche. Ce qui indique un point d'ancrage au centre de l'icone
+      return l_markers[this.icone].anchor;
+    }
 }
