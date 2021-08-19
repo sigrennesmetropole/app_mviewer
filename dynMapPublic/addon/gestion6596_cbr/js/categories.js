@@ -226,7 +226,7 @@ const categories = (function() {
   }
   
   function _initDefaultCategConfig() {
-      nom = "Catégorie non définie";
+      nom = "Points sans catégorie";
       var defaultStyle;
       defaultStyle = localisations.getDefaultStyle()[0];
       iconUrl = defaultStyle.getImage().getSrc();
