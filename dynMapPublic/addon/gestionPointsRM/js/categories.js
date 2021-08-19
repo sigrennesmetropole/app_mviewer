@@ -81,7 +81,7 @@ const categories = (function() {
       src = l_markers[icone].src;
       anchor = l_markers[icone].anchor;
       
-      _calculateStyle(null, src, couleur, anchor);
+      setTimeout(_calculateStyle(null, src, couleur, anchor), 150); // Attente du chargement de la lib Snap
       
   }
   
@@ -107,6 +107,7 @@ const categories = (function() {
 
   
   function _showSvgMarker(svgid, url, color) {
+      
       var s = Snap("#"+svgid);
       if (s) {
           var svgMarker = Snap.load(url, function ( f ) { 
