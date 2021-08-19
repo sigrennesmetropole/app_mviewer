@@ -171,12 +171,14 @@ table.rm-popup-text-feature td>input,td>select, td>textarea {
     display:none;
 }
 #leg-loctable td:nth-child(1) {
-  //width: 25%;
   width: 40px;
   }
 
 #leg-loctable td:nth-child(2) {
-  //width: 75%;
   padding: 5px; 
+}
+
+#leg-loctable .legendcategname{
+  font-style: italic;
 }
 

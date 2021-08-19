@@ -39,11 +39,7 @@ mviewer.customLayers.meslocalisations = (function() {
         if (typeof defaultStyle !== 'undefined' ) {
             return [defaultStyle];
         } else {
-            if(typeof categories != 'undefined') {
-                categories.setDefaultStyle();
-                setTimeout(function(){return [defaultStyle]},50);
-            } else {
-                return [
+            return [
                     new ol.style.Style({
                         image: new ol.style.Icon({
                           //color: '#f78b12',
@@ -55,7 +51,6 @@ mviewer.customLayers.meslocalisations = (function() {
                         }),
                       })
                 ];
-            }
         } 
     }
     
@@ -66,6 +61,18 @@ mviewer.customLayers.meslocalisations = (function() {
     }
     
     function _getAllStyles() { return l_styles; }
+    
+    
+    /**** Attente de l'instanciation du customComponent pour opérations d'initialisation dépendantes ****/ 
+    const maPremierePromesse = new Promise((resolve, reject) => {
+        (function waitForCategories(){
+            if (typeof categories != 'undefined') return resolve();
+            setTimeout(waitForCategories, 30);
+        })()
+        }).then(()=>{
+            categories.setDefaultStyle(); // Mise à jour du style par défaut selon la configuration du customComponent
+          });
+        
     
     /**** Gestion des features ****/
     function _addNewFeature(coord) {

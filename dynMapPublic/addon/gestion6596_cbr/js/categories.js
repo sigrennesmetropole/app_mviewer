@@ -2,6 +2,7 @@
 const l_markers = mviewer.customComponents.gestion6596_cbr.config.options.icones;
 const _map = mviewer.getMap();
 
+
 const categories = (function() {
     
     //TODO : ajout de point par coordonnées (utile ?)
@@ -98,7 +99,7 @@ const categories = (function() {
               if (svgWidth > maxwidth) { return (maxwidth / svgWidth);}
               else {return 1; }
           }).then((echelle) => {
-                localisations.updateStyle(id, _getOLStyle(couleur, url, echelle, anchor));
+              localisations.updateStyle(id, _getOLStyle(couleur, url, echelle, anchor));
           }).then(() => {_refreshLegend()});
       });
   }
@@ -226,6 +227,7 @@ const categories = (function() {
   
   function _initDefaultCategConfig() {
       nom = "Catégorie non définie";
+      var defaultStyle;
       defaultStyle = localisations.getDefaultStyle()[0];
       iconUrl = defaultStyle.getImage().getSrc();
       iconName = "icone par défaut";
