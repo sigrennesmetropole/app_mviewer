@@ -320,7 +320,9 @@ const categories = (function() {
   function _updatePoint(id){
       var fiche = $(".item[featId='"+id+"']");
       var nom = fiche.find(".nomdupoint").val();
-      var categorie = _getCategorieById(fiche.find(".categ-choice option:selected").val());
+      var selectedCateg = fiche.find(".categ-choice option:selected").val();
+      var categorie = _getCategorieById(selectedCateg);
+      $(".categ-choice").attr("ptcategorie",selectedCateg);
       var description = fiche.find(".descriptiondupoint").val();
       
       localisations.updateFeature(id, nom, categorie, description);

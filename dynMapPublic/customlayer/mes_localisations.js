@@ -71,7 +71,7 @@ mviewer.customLayers.meslocalisations = (function() {
         })()
         }).then(()=>{
             categories.setDefaultStyle(); // Mise à jour du style par défaut selon la configuration du customComponent
-          });
+        });
         
     
     /**** Gestion des features ****/
