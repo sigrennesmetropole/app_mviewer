@@ -3,7 +3,7 @@
 	<application
 		title="Ma carte"
 		logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"
-		titlehelp="À propos..." 
+		titlehelp="À propos..."
         help="apps/dynMapPublic/html/mesloc_help.html"
 		showhelp="false"
 		iconhelp=""
@@ -48,19 +48,19 @@
     <searchparameters bbox="false" localities="false" features="false" static="false" searchRM="true" searchRMConf="apps/dynMapPublic/addon/data/searchConf.json" disableSearchExtentLimitation="true" />
 
     <extensions>
-        <extension type="component" id="gestion6596_cbr" path="apps/dynMapPublic/addon" configfile="url/configperso"/>
+        <extension type="component" id="gestion6596_cbr" path="apps/dynMapPublic/addon"/>
     </extensions>
 
     <themes mini="true">
         <theme id="theme-202103090939" name="Mes Localisations" collapsed="true" icon="fas fa-marker">
-            <layer 
+            <layer
                 id="meslocalisations"
                 name="Mes localisations"
                 type="customlayer"
                 url="apps/dynMapPublic/customlayer/mes_localisations.js"
                 visible="true"
-                tooltip="true" 
-                tooltipenabled="true" 
+                tooltip="true"
+                tooltipenabled="true"
                 tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{nom}}&lt;/span&gt;"
                 metadata="undefined"
                 metadata-csw=""
@@ -69,7 +69,7 @@
                 infopanel="right-panel">
                 <template url="apps/dynMapPublic/templates/meslocs.mst"></template>
             </layer>
-            
+
         </theme>
     </themes>
 </config>

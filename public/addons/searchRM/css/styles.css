@@ -1,3 +1,51 @@
+#searchtool{
+  margin-right: 15px;
+  top: 60px;
+  right: 90px;
+  position: fixed;
+  font-family: VistaSansOT_regular, Arial;
+};
+#parcelSelectorsLegend{
+  margin-right: 15px;
+  top: 120px;
+  right: 330px;
+  position: fixed;
+  font-family: VistaSansOT_regular, Arial;
+};
+#fieldWrapper{
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  background-color : white;
+  right: 0;
+  width: 220px;
+  margin-bottom: 0px;
+  height: 10px;
+  margin-top:-10px;
+};
+#searchresults{
+  right: 75px;
+  top: 115px;
+};
+#fieldWrapper #searchfield{
+  height: 28px;
+  border-radius:4px;
+};
+#fieldWrapper #buttonSearchField{
+  height: 28px;
+};
+#buttonSearchField{
+  padding-top: 3px;
+}
+
+.close:hover{
+  color: #fff;
+  opacity: 1;
+  padding-top: 10px;
+  right: 10px;
+  position: absolute;
+  margin-top: -38px;
+}
+
 .selectedRmAutocompleteItem {
   background-color: #F1F1F2;
 }
@@ -14,8 +62,8 @@
 .parcelSelectors {
   display: flex;
   position: fixed;
-  top: 80px;
-  right: 62px;
+  top: 110px;
+  right: 105px;
   display: flex;
   font-family: VistaSansOT_regular, Arial;
 }
@@ -32,7 +80,7 @@
 }
 @media (min-width: 992px) {
   .parcelSelectors {
-    right: 120px;
+    right: 105px;
   }
 }
 .parcelSelector {
@@ -57,27 +105,7 @@
   border-color: #333;
 }
 
-/***********************************************/
-/*@media (min-height: 475px ) {
-  .rm-popup-text-feature {
-      height: 30%;
-  }
-}
-
-@media (min-height: 588px ) {
-  .rm-popup-text-feature {
-      height: 46%;
-  }
-}
-
-@media (min-height: 735px ) {
-  .rm-popup-text-feature {
-      height: 57%;
-  }
-}*/
 #modal-panel-selector .rm-popup-footer {
   position: relative;
   bottom: 0px !important;
 }
-
-/*# sourceMappingURL=searchRM.css.map */
