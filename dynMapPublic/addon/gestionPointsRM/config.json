@@ -1,7 +1,8 @@
 {
     "js": [
         "js/categories.js",
-        "js/lib/Snap.svg-0.5.1/snap.svg-min.js"],
+        "js/lib/Snap.svg-0.5.1/snap.svg-min.js"
+        ],
     "html": "templates/mapconfig.html",
     "css": "css/mapconfig.css",
     "target": "page-content-wrapper",

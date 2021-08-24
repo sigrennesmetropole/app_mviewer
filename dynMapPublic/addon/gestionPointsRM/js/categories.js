@@ -1,5 +1,6 @@
 // CustomComponent = gestion de l'expérience utilisateur (fenêtre, actions, etc.). Communique avec le customLayer 
-const l_markers = mviewer.customComponents.gestion6596_cbr.config.options.icones;
+const _config = mviewer.customComponents.gestionPointsRM.config;
+const l_markers = _config.options.icones;
 const _map = mviewer.getMap();
 
 
@@ -75,18 +76,18 @@ const categories = (function() {
   
       // retourne le style par défaut paramétré dans le fichier config
   function _setDefaultStyle(){
-      icone = mviewer.customComponents.gestion6596_cbr.config.options.defaultstyle["icone"];
-      couleur = mviewer.customComponents.gestion6596_cbr.config.options.defaultstyle["couleur"];
+      icone = _config.options.defaultstyle["icone"];
+      couleur = _config.options.defaultstyle["couleur"];
       src = l_markers[icone].src;
       anchor = l_markers[icone].anchor;
       
-      _calculateStyle(null, src, couleur, anchor);
+      setTimeout(_calculateStyle(null, src, couleur, anchor), 150); // Attente du chargement de la lib Snap
       
   }
   
   function _calculateStyle(id, url, couleur, anchor){
       // calcul de l'échelle par rapport à l'image svg
-      var maxwidth=mviewer.customComponents.gestion6596_cbr.config.options.maxmarkerwidth;
+      var maxwidth=_config.options.maxmarkerwidth;
       var svgWidth = maxwidth;
       let svgContent ='';
       fetch(url).then((response)=>{
@@ -106,6 +107,7 @@ const categories = (function() {
 
   
   function _showSvgMarker(svgid, url, color) {
+      
       var s = Snap("#"+svgid);
       if (s) {
           var svgMarker = Snap.load(url, function ( f ) { 
@@ -153,7 +155,7 @@ const categories = (function() {
           });
           
           
-          // ajout de la catégorie en mémoire
+          // ajout de la nouvelle catégorie dans la liste des catégories
           if (newCateg == true){
               allcategories.push(new Categorie(id, $("#"+ id +"-nameconf").attr("value"), $("#"+ id +"-markershape option:selected").text, couleur));
               _updateCategorie(id);
@@ -201,8 +203,8 @@ const categories = (function() {
   
   // retourne le style par défaut paramétré dans le fichier config
   function _getDefaultStyle(){
-      icone = mviewer.customComponents.gestion6596_cbr.config.options.defaultstyle["icone"];
-      couleur = mviewer.customComponents.gestion6596_cbr.config.options.defaultstyle["couleur"];
+      icone = _config.options.defaultstyle["icone"];
+      couleur = _config.options.defaultstyle["couleur"];
       src = l_markers[icone].src;
       anchor = l_markers[icone].anchor;
       
@@ -267,7 +269,7 @@ const categories = (function() {
         $(".categ-choice").append(new Option(allcategories[index].getNomForList(), allcategories[index].getId(),selected,selected));
     }
     // ajouter la catégorie par défaut en tete
-    $(".categ-choice").prepend(new Option("-- Sans catégorie (défaut) --", "0", !categorieTrouvee,!categorieTrouvee));
+    $(".categ-choice").prepend(new Option("-- Sans catégorie (défaut) --", "0", !categorieTrouvee, !categorieTrouvee));
   }
   
   
@@ -318,7 +320,9 @@ const categories = (function() {
   function _updatePoint(id){
       var fiche = $(".item[featId='"+id+"']");
       var nom = fiche.find(".nomdupoint").val();
-      var categorie = _getCategorieById(fiche.find(".categ-choice option:selected").val());
+      var selectedCateg = fiche.find(".categ-choice option:selected").val();
+      var categorie = _getCategorieById(selectedCateg);
+      $(".categ-choice").attr("ptcategorie",selectedCateg);
       var description = fiche.find(".descriptiondupoint").val();
       
       localisations.updateFeature(id, nom, categorie, description);
@@ -406,8 +410,6 @@ const categories = (function() {
       });
   }
   
-
-
   
   return {
       init : ()  => {

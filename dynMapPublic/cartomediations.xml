@@ -16,12 +16,7 @@
 		togglealllayersfromtheme="false"
 		printMap="false"
 		>
-        <!--
-        changeBtnremovelayersIcon='glyphicon glyphicon-eye-close'
 
-		searchRM="true"
-		searchRMConfFile="apps/public/data/searchRMConf.json"
-        -->
 	</application>
 	<mapoptions maxzoom="22" minzoom="11" projection="EPSG:3857" center="-185600.24433942206,6125077.984905125" zoom="13" />
 
@@ -46,8 +41,9 @@
 	</baselayers>
 
     <extensions>
-        <extension type="component" id="gestion6596_cbr" path="apps/dynMapPublic/addon"/>
 				<extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/site_internet/addons/searchConf_SitesOrgRVA.json"/>
+				<extension type="component" id="gestionPointsRM" path="apps/dynMapPublic/addon" />
+        <!-- TODO : ajouter le composant de recherche RVA+siteorgs -->
     </extensions>
 
     <themes mini="true">
@@ -58,6 +54,7 @@
                 type="customlayer"
                 url="apps/dynMapPublic/customlayer/mes_localisations.js"
                 visible="true"
+                permanentlayer="true"
                 tooltip="true"
                 tooltipenabled="true"
                 tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{nom}}&lt;/span&gt;"

@@ -1,6 +1,6 @@
 
 mviewer.customLayers.capteurs_exem= (function() {
-    var capteurs_data_url = 'https://external-api.exem.fr/sites?api_key=AIzaSyC80aUKhGfG9x10GWK7rm3ICyDyf1BdJKA';
+    var capteurs_data_url = 'https://external-api.exem.fr/sites?api_key=<cle API>'; // L'utilisation de cette API n'est pas permise ici. Exem revendique un serveur non dimensionné pour une utilisation massive. Par ailleurs la clé d'accès aux API est strictement réservé à un usage interne par les services de Rennes Métropole.
 
     
     

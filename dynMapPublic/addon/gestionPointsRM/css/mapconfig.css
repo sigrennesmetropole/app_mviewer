@@ -138,6 +138,7 @@ table.rm-popup-text-feature td>input,td>select, td>textarea {
 
 .categStyleConf>input{
     width:85px;
+    vertical-align:inherit;
 }
 
 
@@ -168,7 +169,7 @@ table.rm-popup-text-feature td>input,td>select, td>textarea {
 
 /* Légende */
 #btn-remove-layers, #legend-meslocalisations {
-    display:none;
+    display:none!important;
 }
 #leg-loctable td:nth-child(1) {
   width: 40px;

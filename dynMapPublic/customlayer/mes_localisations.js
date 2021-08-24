@@ -64,14 +64,14 @@ mviewer.customLayers.meslocalisations = (function() {
     
     
     /**** Attente de l'instanciation du customComponent pour opérations d'initialisation dépendantes ****/ 
-    const maPremierePromesse = new Promise((resolve, reject) => {
+    const defaultPromesse = new Promise((resolve, reject) => {
         (function waitForCategories(){
             if (typeof categories != 'undefined') return resolve();
             setTimeout(waitForCategories, 30);
         })()
         }).then(()=>{
             categories.setDefaultStyle(); // Mise à jour du style par défaut selon la configuration du customComponent
-          });
+        });
         
     
     /**** Gestion des features ****/
@@ -98,10 +98,14 @@ mviewer.customLayers.meslocalisations = (function() {
         feat =_getFeatureById(id);
         feat.set("nom", nom);
         if (categorie!=undefined){
-        feat.set("categorie", categorie.getId());
-        feat.set("nomcategorie", categorie.getNom()); 
+            feat.set("categorie", categorie.getId());
+            feat.set("nomcategorie", categorie.getNom()); 
+        } else {
+            feat.unset("categorie", true);
+            feat.unset("nomcategorie", true); 
         }
         feat.set("description", description);
+        meslocalisations.getSource().changed();
     }
     function _deleteFeature(id){
         meslocalisations.getSource().removeFeature(_getFeatureById(id));
