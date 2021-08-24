@@ -45,10 +45,9 @@
 		</baselayer>
 	</baselayers>
 
-    <searchparameters bbox="false" localities="false" features="false" static="false" searchRM="true" searchRMConf="apps/dynMapPublic/addon/data/searchConf.json" disableSearchExtentLimitation="true" />
-
     <extensions>
         <extension type="component" id="gestion6596_cbr" path="apps/dynMapPublic/addon"/>
+				<extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/site_internet/addons/searchConf_SitesOrgRVA.json"/>
     </extensions>
 
     <themes mini="true">

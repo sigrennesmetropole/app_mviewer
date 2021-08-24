@@ -1,7 +1,7 @@
 {
     "js": [
       "js/searchRM.js",
-      "js/searchCadastreRM"
+      "js/searchCadastreRM.js"
     ],
     "css": "./css/styles.css",
     "html": "html/html.html",

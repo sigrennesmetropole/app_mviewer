@@ -221,30 +221,34 @@ setTimeout(function () {
 
   var extensions = configuration.getConfiguration().extensions;
   var configPerso;
-  var trueOrFalse = 'potatoe';
-  for (index in extensions){
-      // console.log(extensions[index]);
-      if(extensions[index].id=="searchRM"){
-          if (extensions[index].configFile != undefined) {
-              configPerso=extensions[index].configFile;
+  var trueOrFalse = 'false';
+  for (index in extensions.extension){
+      // console.log(extensions.extension[index]);
+      configPerso = extensions.extension[index];
+      if(extensions.extension[index].id=="searchRM"){
+          if (extensions.extension[index].configFile != undefined) {
+              configPerso=extensions.extension[index].configFile;
           } else {
               console.log("Err : l'attribut configfile du fichier de personnalisation de la recherche est manquant sur l'extension");
           }
       break;
       }
   }
-
+$('#parcelSelectors').hide();
  if (configPerso != 'undefined') {
    $.ajax({
      url: '.' + configPerso,
      method: 'GET',
      async: false
-   }).done(function(){
-     trueOrFalse = 'true';
+   }).done(function(response){
+     if(response.cadastre === true){
+       trueOrFalse = 'true';
+     }
    })
   }
 
   if (trueOrFalse === 'true' && API.mode !== 'u' && API.mode !== 's') {
+    $('#parcelSelectors').show();
     searchCadastreRM.init();
   }
 

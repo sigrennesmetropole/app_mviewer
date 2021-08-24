@@ -23,11 +23,15 @@
         <baselayer visible="false" id="ortho2017" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2017" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;"  ></baselayer>
     </baselayers>
 
-    <searchparameters bbox="false" localities="false" features="false" static="false" querymaponclick="true"
+    <!-- <searchparameters bbox="false" localities="false" features="false" static="false" querymaponclick="true"
         searchRM="true" searchCadastre="true"
         searchRMConf="apps/PLUi/addons/data/searchAddressConf.json"
         disableSearchExtentLimitation="true"
-        inputlabel="Adresse" />
+        inputlabel="Adresse" /> -->
+
+        <extensions>
+    				 <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_CadastreRVA.json"/>
+        </extensions>
 
     <themes mini="true">
         <theme id="theme-20200130112616" name="Contexte" collapsed="false" icon="fas fa-map-signs">

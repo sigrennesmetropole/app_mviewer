@@ -26,7 +26,7 @@
         },
         {
             "categoryName": "Organismes",
-            "searchParameterName": "Rechercher des organimes",
+            "searchParameterName": "Rechercher des organismes",
             "defaultCheck": true,
             "nbItemDisplay": 5,
             "zoom": 17

@@ -45,10 +45,9 @@
 		</baselayer>
 	</baselayers>
 
-    <searchparameters bbox="false" localities="false" features="false" static="false" searchRM="true" searchRMConf="apps/georm/addons/data/searchConf.json" disableSearchExtentLimitation="true" />   
-
     <extensions>
          <extension type="component" id="carousel_photo" path="apps/public/addons"/>
+				 <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_SitesOrgRVA.json"/>
     </extensions>
 
 	<themes mini="true">

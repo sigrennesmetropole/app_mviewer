@@ -11,7 +11,7 @@ var searchRM = (function () {
 
     var enable = function () {
         $("#searchtool").show();
-        $("#parcelSelectors").show();
+        // $("#parcelSelectors").show();
         // var configapp = mviewer.customComponents.searchRM;
         // console.log(configapp);
         $("#searchtool input").attr("placeholder", mviewer.customComponents.searchRM.config.options.libelles.placeholderRVA);
@@ -51,23 +51,19 @@ var searchRM = (function () {
     function _getConfigPerso(){
       var extensions = configuration.getConfiguration().extensions;
       var configPerso;
-      for (index in extensions){
-          // console.log(extensions[index]);
-          if(extensions[index].id=="searchRM"){
-              if (extensions[index].configFile != undefined) {
-                  configPerso=extensions[index].configFile;
+      for (index in extensions.extension){
+          // console.log(extensions.extension[index]);
+          configPerso = extensions.extension[index];
+          if(extensions.extension[index].id=="searchRM"){
+              if (extensions.extension[index].configFile != undefined) {
+                  configPerso=extensions.extension[index].configFile;
               } else {
                   console.log("Err : l'attribut configfile du fichier de personnalisation de la recherche est manquant sur l'extension");
               }
           break;
           }
       }
-
      if (configPerso != 'undefined') {
-       // jQuery.get('.' + configPerso, function(data) {
-       //   console.log(data);
-       //    return data;
-       //  });
        return '.' + configPerso;
       }
     }
