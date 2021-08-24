@@ -1,0 +1,11 @@
+{
+	"type" : "FeatureCollection",
+	"name" : "Mes localisations",
+	"crs" : {
+		"type" : "name",
+		"properties" : {
+			"name" : "EPSG:3857"
+		}
+	},
+	"features" : []
+}

@@ -1,0 +1,40 @@
+{{#features}}
+    <li class="item" featId={{id}}>
+        <table class="rm-popup-text-feature">
+            <tr>
+                <td><span class='rm-popup-label'> Nom :</span></td>
+                <td><input type="text" class="nomdupoint" value="{{nom}}" onchange="categories.updatePoint({{id}})" maxlength="50"/></td>
+            </tr>
+            <tr>
+                <td><span class='rm-popup-label'> Catégorie :</span></td>
+                <td><select class="categ-choice" ptcategorie="{{categorie}}" onchange="categories.updatePoint({{id}})"></select></td>
+            </tr>
+            <tr>
+                <td class='valign-top'><span class='rm-popup-label'> Description :</span></td>
+                <td><textarea class="descriptiondupoint" rows="4" cols="50" onchange="categories.updatePoint({{id}})">{{{description}}} </textarea></td>
+            </tr>
+
+        </table>
+        
+        <!--
+        <p class="rm-popup-text-feature">
+             <span class='rm-popup-label'> Nom :</span> <input type="text" class="nomdupoint" value="{{nom}}" onchange="categories.updatePoint({{id}})" maxlength="50"/> <br/>
+             <span class='rm-popup-label'> Catégorie :</span> <select class="categ-choice" ptcategorie="{{categorie}}" onchange="categories.updatePoint({{id}})"></select>
+             <label class='rm-popup-label labelarea'> Description :</label> <textarea class="descriptiondupoint" rows="4" cols="50" onchange="categories.updatePoint({{id}})">{{{description}}} </textarea>  
+        </p>
+        -->
+        <p>
+             <span class='rm-popup-label labelarea'> Long :</span> <span class='longval'>{{{long}}}</span>  -  <span class='rm-popup-label labelarea'> Lat :</span> <span class='latval'>{{{lat}}}</span>
+        </p>
+        <p style="text-align: center; margin-top: 35px;">
+             <button id="supprPntBtn"+{{{id}}} class="btn darkbtn" data-toggle="modal" data-target="#supprPtconfirm-modal" i18n="help.modal.doc" title="Supprimer le point" onclick="$('#pointASuppr').attr('ptid', {{{id}}});">Supprimer ce point</button>
+        </div>
+    </li>
+    
+    <script>
+      categories.updateFicheInfoCateg();
+
+    </script>
+{{/features}}
+
+
