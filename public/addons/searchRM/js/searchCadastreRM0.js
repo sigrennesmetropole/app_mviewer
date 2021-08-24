@@ -2,16 +2,9 @@ var searchCadastreRM = (function () {
 
     var baseUrl_cadastre;
 
-    var selectCityInput = '<div id="communeSearchContainer"><select id="communeSearch" name="communeSearch" class="form-control">'
-							+	'</select></div>';
-
-    var sectionTag = '<div class="sectionInputContainer">'
-                    + '<select id="section" class="sectionsList form-control"></select>'
-                + '</div>';
-
-    var parcelTag = '<div class="parcelleInputContainer">'
-        		    +    '<select id="parcelle" class="parcellesList form-control" disabled></select>'
-                +	'</div>';
+    var selectCityInput = $('#communeSearchContainer');
+    var sectionTag = $('#sectionInputContainer');
+    var parcelTag = $('#parcelleInputContainer');
 
     var selectedParcelLayer;
 
@@ -38,6 +31,7 @@ var searchCadastreRM = (function () {
             + selectCityInput + sectionTag + parcelTag +'</div></li></ul>';
           $('#bs-example-navbar-collapse-1').append(searchCadastreElement);*/
 
+          //revoir cette partie
           $('.parcelSelectors').append(selectCityInput + sectionTag + parcelTag);
 
         $.getJSON(baseUrl_cadastre + 'communes', function(dataApiJson) {
@@ -219,7 +213,7 @@ var searchCadastreRM = (function () {
 
 
 setTimeout(function () {
-  if (configuration.getConfiguration().searchparameters.searchCadastre === 'true' && API.mode !== 'u' && API.mode !== 's') {
+  if (configuration.getExtensions()['searchRM'].searchRMConf === 'true' && API.mode !== 'u' && API.mode !== 's') {
     searchCadastreRM.init();
   }
 }, 2000);
