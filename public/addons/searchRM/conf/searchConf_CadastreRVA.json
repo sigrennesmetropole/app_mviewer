@@ -1,0 +1,28 @@
+{
+    "RVA" : true,
+    "SitesOrg" : false,
+    "cadastre" : true,
+    "searchContent": [
+        {
+            "categoryName": "Communes",
+            "searchParameterName": "Rechercher des communes",
+            "defaultCheck": true,
+            "nbItemDisplay": 5,
+            "zoom": 14
+        },
+        {
+            "categoryName": "Voies",
+            "searchParameterName": "Rechercher des voies",
+            "defaultCheck": true,
+            "nbItemDisplay": 5,
+            "zoom": 17
+        },
+        {
+            "categoryName": "Adresses",
+            "searchParameterName": "Rechercher des adresses",
+            "defaultCheck": true,
+            "nbItemDisplay": 5,
+            "zoom": 17
+        }
+    ]
+}

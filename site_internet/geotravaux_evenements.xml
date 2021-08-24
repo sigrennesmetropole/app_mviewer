@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?> 
+<?xml version="1.0" encoding="UTF-8"?>
 <config>
     <application
         title="Travaux du jour et survenant dans la semaine"
         logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"
-        titlehelp="À propos des cartes thématiques" 
+        titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/geotravaux_help.html"
         showhelp="false"
         style="apps/site_internet/css/site_internet_gris.css"
@@ -11,29 +11,30 @@
         geoloc="true"
         measuretools="true"
         coordinates="false"
-        printMap="true" 
+        printMap="true"
         togglealllayersfromtheme="false"
         showClickNbItems="false" />
     <mapoptions maxzoom="20" minzoom="13" projection="EPSG:3857" center="-186098.36482879001,6125889.9088213602" zoom="11" />
-    
+
     <baselayers style="default">
-        <baselayer visible="true" id="pvci_nb" thumbgallery="apps/public/img/basemap/pvcinb.jpg" title="Rennes Metropole" label="Plan de ville gris" type="WMTS" 
-url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci_nb" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" 
+        <baselayer visible="true" id="pvci_nb" thumbgallery="apps/public/img/basemap/pvcinb.jpg" title="Rennes Metropole" label="Plan de ville gris" type="WMTS"
+url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci_nb" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
 attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;"/>
-        <baselayer visible="false" id="pvcisimplegris" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville simple gris" type="WMTS" 
-url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" 
+        <baselayer visible="false" id="pvcisimplegris" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville simple gris" type="WMTS"
+url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
 attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;"/>
-        <baselayer visible="false" id="pvcicouleur" thumbgallery="apps/public/img/basemap/pvci.jpg" title="Rennes Metropole" label="Plan de ville couleur" type="WMTS" 
-url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" 
+        <baselayer visible="false" id="pvcicouleur" thumbgallery="apps/public/img/basemap/pvci.jpg" title="Rennes Metropole" label="Plan de ville couleur" type="WMTS"
+url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
 attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;"/>
-        <baselayer visible="false" id="ortho2017" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" 
-url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2017" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" 
+        <baselayer visible="false" id="ortho2017" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS"
+url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2017" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false"
 attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;"/>
     </baselayers>
-    
-    <searchparameters bbox="false" localities="false" features="false" static="false"
-        searchRM="true" searchRMConf="apps/site_internet/addons/data/searchRVAConf.json"/>
-    
+
+    <extensions>
+      <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_RVA.json"/>
+    </extensions>
+
     <themes mini="true">
         <theme id="theme-trafic_dessus" name="Trafic routier (dessus)" collapsed="true" icon="fas fa-road">
              <layer
@@ -62,8 +63,8 @@ attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/s
                 queryable="true"
                 fields="niv_perturbation,type,libelle,localisation,date_deb,date_fin,tel_fixe,tel_mobile"
                 featurecount="5"
-                tooltip="true" 
-                tooltipenabled="true" 
+                tooltip="true"
+                tooltipenabled="true"
                 tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{localisation}}&lt;/span&gt;&lt;/b&gt;&lt;br/&gt;{{niv_perturbation}}&lt;br/&gt; du &lt;span class=&apos;date_in_french_format&apos;&gt;{{date_deb_french}}&lt;/span&gt; au &lt;span class=&apos;date_in_french_format&apos;&gt;{{date_fin_french}}&lt;/span&gt;"
                 infopanel="right-panel">
                  <template url="apps/site_internet/templates/geotravaux_evenements.mst"></template>
@@ -79,12 +80,12 @@ attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/s
                 queryable="true"
                 fields="niv_perturbation,type,libelle,localisation,date_deb,date_fin,tel_fixe,tel_mobile"
                 featurecount="5"
-                tooltip="true" 
-                tooltipenabled="true" 
+                tooltip="true"
+                tooltipenabled="true"
                 tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{localisation}}&lt;/span&gt;&lt;/b&gt;&lt;br/&gt;{{niv_perturbation}}&lt;br/&gt; du &lt;span class=&apos;date_in_french_format&apos;&gt;{{date_deb_french}}&lt;/span&gt; au &lt;span class=&apos;date_in_french_format&apos;&gt;{{date_fin_french}}&lt;/span&gt;"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/geotravaux_evenements.mst"></template>
             </layer>
         </theme>
-    </themes> 
+    </themes>
 </config>

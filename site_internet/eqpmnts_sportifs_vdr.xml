@@ -3,28 +3,26 @@
     <application
         title="Équipements sportifs de proximité ville de Rennes"
         logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"
-        titlehelp="À propos des cartes thématiques" 
+        titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
         exportpng="false"
         style="apps/site_internet/css/site_internet_gris.css"
-        measuretools="false" 
-        togglealllayersfromtheme="true" 
+        measuretools="false"
+        togglealllayersfromtheme="true"
         geoloc="true"
          />
-    
+
     <mapoptions maxzoom="22" minzoom="11" projection="EPSG:3857" center="-185600.24433942206,6125077.984905125" zoom="14" />
-    
-    <baselayers style="default"><!-- style="default"||gallery" -->     
+
+    <baselayers style="default"><!-- style="default"||gallery" -->
         <baselayer visible="false" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
         <baselayer visible="true" id="ortho2017" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2017" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
     </baselayers>
 
-    <searchparameters bbox="false" localities="false" features="false" static="false"/>
-
-    <themes mini="false" legendmini="true"> 
-        <theme id="theme-sportsequipt" name="Équipements sportifs" collapsed="false" icon="fas fa-map-marker-alt"> 
-            <layer 
+    <themes mini="false" legendmini="true">
+        <theme id="theme-sportsequipt" name="Équipements sportifs" collapsed="false" icon="fas fa-map-marker-alt">
+            <layer
                 id="v_sport_proximite"
                 name="Basketball"
                 type="wms"
@@ -40,7 +38,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Basketall / Football / Handball"
                 type="wms"
@@ -56,7 +54,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Babyfoot"
                 type="wms"
@@ -72,7 +70,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Bicross"
                 type="wms"
@@ -88,7 +86,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Cyclisme sur piste"
                 type="wms"
@@ -104,7 +102,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Échecs"
                 type="wms"
@@ -120,7 +118,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Espace de rafraichissement"
                 type="wms"
@@ -136,7 +134,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Fitness"
                 type="wms"
@@ -152,7 +150,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Football"
                 type="wms"
@@ -168,7 +166,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Glisse urbaine"
                 type="wms"
@@ -184,7 +182,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Mölky"
                 type="wms"
@@ -200,7 +198,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Parcours de santé"
                 type="wms"
@@ -216,7 +214,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Pétanque"
                 type="wms"
@@ -232,7 +230,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Piste d'athlétisme"
                 type="wms"
@@ -248,7 +246,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Street workout"
                 type="wms"
@@ -264,7 +262,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Tennis"
                 type="wms"
@@ -280,7 +278,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Tennis de table"
                 type="wms"
@@ -296,7 +294,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="v_sport_proximite"
                 name="Volleyball"
                 type="wms"

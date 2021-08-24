@@ -3,23 +3,21 @@
     <application
         title="Marchés rennais"
         logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"
-        titlehelp="À propos des cartes thématiques" 
+        titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
         exportpng="false"
         style="apps/site_internet/css/site_internet_gris.css"
-        measuretools="false" 
-        togglealllayersfromtheme="false" 
+        measuretools="false"
+        togglealllayersfromtheme="false"
          />
-    
+
     <mapoptions maxzoom="22" minzoom="11" projection="EPSG:3857" center="-185600.24433942206,6125077.984905125" zoom="14" />
-    
-    <baselayers style="default"><!-- style="default"||gallery" -->     
+
+    <baselayers style="default"><!-- style="default"||gallery" -->
         <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
         <baselayer visible="false" id="ortho2017" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2017" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
     </baselayers>
-    
-    <searchparameters bbox="false" localities="false" features="false" static="false"/>
 
     <themes mini="true">
         <theme id="theme-20180827150815" name="Marchés rennais" collapsed="true" icon="fas fa-shopping-basket">
@@ -32,10 +30,10 @@
                     infoformat="application/vnd.ogc.gml"
                     sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/organisme_bleu.sld"
                     metadata="undefined"
-                    metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"            
-                    queryable="true"    
-                    featurecount="3"        
-                    filter="code_nomenclature_principale = '3.5.2' AND etat_organisme='actif' AND code_insee='35238'"            
+                    metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                    queryable="true"
+                    featurecount="3"
+                    filter="code_nomenclature_principale = '3.5.2' AND etat_organisme='actif' AND code_insee='35238'"
                     infopanel="right-panel"><template url="apps/site_internet/templates/organisme_ouvertures.mst"/>
             </layer>
             <layer
@@ -47,8 +45,8 @@
                     infoformat="application/vnd.ogc.gml"
                     style="espub_autr:v_marche_emplacement_vdr_occupation"
                     metadata="undefined"
-                    metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/271960ce-73ad-4d54-84d0-1f6a8dd3cd1f"            
-                    queryable="false"            
+                    metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/271960ce-73ad-4d54-84d0-1f6a8dd3cd1f"
+                    queryable="false"
                     infopanel="right-panel">
             </layer>
         </theme>
