@@ -495,7 +495,11 @@ ul ul {
     border-width: 0px 1px 1px 0px;
     border-right-color:#bcbcbc;
     border-style: solid;
+    overflow:auto;
+    scrollbar-width: none!important; /*ne fonctionne que pour firefox*/
+    height:91%!important;
 }
+
 
 /* Li */
 .popup-content .nav-tabs > li  {
