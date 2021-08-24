@@ -41,9 +41,8 @@
 	</baselayers>
 
     <extensions>
-				<extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/site_internet/addons/searchConf_SitesOrgRVA.json"/>
+				<extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_SitesOrgRVA.json"/>
 				<extension type="component" id="gestionPointsRM" path="apps/dynMapPublic/addon" />
-        <!-- TODO : ajouter le composant de recherche RVA+siteorgs -->
     </extensions>
 
     <themes mini="true">
