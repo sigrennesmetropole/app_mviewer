@@ -37,7 +37,7 @@
   padding-top: 3px;
 }
 
-.close:hover{
+searchresults-title .close:hover{
   color: #fff;
   opacity: 1;
   padding-top: 10px;
