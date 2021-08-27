@@ -1,8 +1,8 @@
 {
     "RVA" : true,
     "SitesOrg" : false,
-    "cadastre" : false,
-    "queryMapOnClick" : false,
+    "cadastre" : true,
+    "queryMapOnClick" : true,
     "searchContent": [
         {
             "categoryName": "Communes",
