@@ -30,7 +30,8 @@
         inputlabel="Adresse" /> -->
 
         <extensions>
-            <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_CadastreRVA.json"/>
+    				 <extension type="component" id="searchRM" path="apps/public/addons"
+               configFile="/apps/public/addons/searchRM/conf/searchConf_CadastreRVAQueryable.json"/>
         </extensions>
 
     <themes mini="true">

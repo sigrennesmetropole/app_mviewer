@@ -19,7 +19,7 @@
     </baselayers>
 
     <extensions>
-				<extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_SitesOrgRVA.json"/>
+				<extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_CadastreRVA.json"/>
     </extensions>
 
     <themes mini="true">

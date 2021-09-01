@@ -21,7 +21,11 @@ var searchRM = (function () {
             "right": "0","width": "220px", "margin-bottom": "0px", "height": "10px","margin-top":"-10px"});
           $("#searchresults").css({"right": "75px", "top": "115px"});
           $("#fieldWrapper #searchfield").css({"height": "28px","border-radius":"4px"});
-          $("#fieldWrapper #buttonSearchField").css({"height": "28px"});
+          $("#fieldWrapper #buttonSearchField").css({"height": "30px"});
+          $(".searchRVALibelle").css({'right': '140px','position': 'relative','top': '13px'});
+          $("#parcelSelectorsLegend").css({'top':'5px','position':'relative','width':'175px'});
+          $('#searchRM-custom-component').css({'font-weight':'bold','font-size':'small'});
+          $("#fieldWrapper .input-group-btn").css({"border-radius": "4px","border":"solid 1px #ffffff"});
         }
 
         if(API.mode === 'u'){
@@ -30,8 +34,12 @@ var searchRM = (function () {
           $("#searchresults").css({"right": "55px", "top": "55px"});
           $("#fieldWrapper").css({"border": "1px solid #aaa", "border-radius": "4px", "background-color" : "white",
             "right": "0","width": "220px", "margin-bottom": "0px", "height": "10px","margin-top":"-10px"});
-          $("#fieldWrapper #searchfield").css({"height": "28px","border-radius":"4px"});
-          $("#fieldWrapper #buttonSearchField").css({"height": "28px"});
+          $("#fieldWrapper #searchfield").css({"height": "28px","border":"","border-radius":"4px"});
+          $("#fieldWrapper #buttonSearchField").css({"height": "30px"});
+          $(".searchRVALibelle").css({'right': '140px','position': 'relative','top': '13px'});
+          $("#parcelSelectorsLegend").css({'top':'5px','position':'relative','width':'175px'});
+          $('#searchRM-custom-component').css({'font-weight':'bold','font-size':'small'});
+          $("#fieldWrapper .input-group-btn").css({"border-radius": "4px","border":"solid 1px #ffffff"});
         }
 
         if(API.mode === 's'){
@@ -39,9 +47,13 @@ var searchRM = (function () {
             "right": "0","width": "220px", "margin-bottom": "0px", "height": "10px","margin-top":"-10px"});
           $("#searchresults").css({"right": "75px", "top": "115px"});
           $("#fieldWrapper #searchfield").css({"height": "28px","border-radius":"4px"});
-          $("#fieldWrapper #buttonSearchField").css({"height": "28px"});
+          $("#fieldWrapper #buttonSearchField").css({"height": "30px"});
           $("#searchtool").css({'right': '35px'});
           $("#searchresults").css({"right": "55px"});
+          $(".searchRVALibelle").css({'right': '140px','position': 'relative','top': '13px'});
+          $("#parcelSelectorsLegend").css({'top':'5px','position':'relative','width':'175px'});
+          $('#searchRM-custom-component').css({'font-weight':'bold','font-size':'small'});
+          $("#fieldWrapper .input-group-btn").css({"border-radius": "4px","border":"solid 1px #ffffff"});
         }
         var confdata = _getConfigPerso();
         _configureSearch(confdata);
@@ -234,6 +246,11 @@ var searchRM = (function () {
         var cities = [];
         var lane = [];
         var address = [];
+        // console.log('displayautocompletedata');
+        var queryMapOnClick;
+        getQueryMapOnClick(function(response){
+          queryMapOnClick = response;
+        });
         allResult.forEach( function (data) {
             str += '<a class="geoportail list-group-item disabled" id="list-group-'+ data.categoryName +'">'+ data.categoryName +'</a>';
             var dataFiltered = [];
@@ -248,10 +265,12 @@ var searchRM = (function () {
                     var coordNewProj = proj4('EPSG:3948', 'EPSG:4326', [x, y]);
                     str += '" onclick="searchRM.displayLocation('+
                     coordNewProj[0] + ',' +
-                    coordNewProj[1] + ',' + data.zoom + ',' + search.options.querymaponclick +', \'EPSG:4326\');">' + elem.name + '</a>';
+                    coordNewProj[1] + ',' + data.zoom + ',' + queryMapOnClick +', \'EPSG:4326\');">' + elem.name + '</a>';
                     nbItem++;
                 });
                 cities.push(dataFiltered);
+                // console.log('queryMapOnClick:');
+                // console.log(queryMapOnClick);
                 break;
             case 'Voies':
                 //dataFiltered =  data.result.rva.answer.lanes.slice(0,data.nbItemDisplay);
@@ -263,7 +282,7 @@ var searchRM = (function () {
                     var coordNewProj = proj4('EPSG:3948', 'EPSG:4326', [x, y]);
                     str += '" onclick="searchRM.displayLocation('+
                     coordNewProj[0] + ',' +
-                    coordNewProj[1] + ',' + data.zoom + ',' + search.options.querymaponclick +', \'EPSG:4326\');">' + elem.name4 + '</a>';
+                    coordNewProj[1] + ',' + data.zoom + ',' + queryMapOnClick +', \'EPSG:4326\');">' + elem.name4 + '</a>';
                     nbItem++;
                 });
                 lane.push(dataFiltered);
@@ -276,7 +295,7 @@ var searchRM = (function () {
                     var coordNewProj = proj4('EPSG:3948', 'EPSG:4326', [elem.x, elem.y]);
                     str += '" onclick="searchRM.displayLocationMarker('+
                     coordNewProj[0] + ',' +
-                    coordNewProj[1] + ',' + data.zoom + ',' + search.options.querymaponclick +', \'EPSG:4326\');">' + elem.addr3 + '</a>';
+                    coordNewProj[1] + ',' + data.zoom + ',' + queryMapOnClick +', \'EPSG:4326\');">' + elem.addr3 + '</a>';
                     nbItem++;
                 });
                 address.push(dataFiltered);
@@ -294,7 +313,7 @@ var searchRM = (function () {
                     var mainSite = _getMainSite(elem);
                     str += "<a class=\"geoportail list-group-item autocompleteRmItem\" id=\"autocompleteRmItem_" + nbItem + "\" href=\"#\" title=\"" + mainSite
                     + ' " onclick="searchRM.displayOrganism(this,' + data.zoom
-                    + ','+ search.options.querymaponclick + ')">' + elemName + '</a>';
+                    + ','+ queryMapOnClick + ')">' + elemName + '</a>';
                     nbItem++;
                 });
                 break;
@@ -317,6 +336,37 @@ var searchRM = (function () {
             address: address
         }
     };
+
+    var getQueryMapOnClick = function(callback){
+      var extensions = configuration.getConfiguration().extensions;
+      var configPerso;
+      var trueOrFalse = 'false';
+      for (index in extensions.extension){
+          // console.log(extensions.extension);
+          configPerso = extensions.extension[index];
+          if(extensions.extension[index].id=="searchRM"){
+              if (extensions.extension[index].configFile != undefined) {
+                  configPerso=extensions.extension[index].configFile;
+              } else {
+                  console.log("Err : l'attribut configfile du fichier de personnalisation de la recherche est manquant sur l'extension");
+              }
+          break;
+          }
+      }
+     if (configPerso != 'undefined') {
+       $.ajax({
+         url: '.' + configPerso,
+         method: 'GET',
+         async: false
+       }).done(function(response){
+         if(response.queryMapOnClick === true){
+           callback(true);
+         }else{
+           callback(false);
+         }
+       });
+      }
+    }
 
     var displayLocation = function (coordX, coordY, zoom, querymaponclick) {
         mviewer.zoomToLocation(coordX, coordY, zoom, querymaponclick);

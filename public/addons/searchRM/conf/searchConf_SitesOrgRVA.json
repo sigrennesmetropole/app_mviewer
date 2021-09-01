@@ -2,6 +2,7 @@
     "RVA" : true,
     "SitesOrg" : true,
     "cadastre" : false,
+    "queryMapOnClick" : false,
     "searchContent": [
         {
             "categoryName": "Communes",
