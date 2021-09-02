@@ -386,13 +386,9 @@ const categories = (function() {
             console.log(e.coordinate);
           });
 
-          //_map.on('singleclick', function(e){
+
           document.addEventListener('clickedNbFeaturesEvt', function(e){
-            console.log("NbFeatures Event DETECTE");
-              //if (rmOptionsManager.getClickNbItems() == 0) {
               if ( e.detail.nbfeatures == 0) {
-                //var ptResult = ol.proj.transform(e.coordinate, mviewer.getProjection().getCode(), mviewer.getProjection().getCode());
-                //_createBtn.setPosition(ptResult);
                 _createBtn.setPosition( e.detail.position);
                 $("#createPointOnMapTooltip").show();
               }else {
