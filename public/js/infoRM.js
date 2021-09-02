@@ -191,7 +191,7 @@ var info = (function () {
                      }
                 }
             });
-            
+
             //CBR : affichage des features des couches vectorielles par onglet
             for(var layerid in vectorLayers) {
                 if (mviewer.customLayers[layerid] && mviewer.customLayers[layerid].handle) {
@@ -232,21 +232,21 @@ var info = (function () {
                             "html": html_result
                         });
                         */
-                        
+
                         for (var i = 0; i < features.length; i++) {
                         //features.forEach(function(feature) {
-                            var feature = features[i]; 
+                            var feature = features[i];
          //                   if (typeof layerCount !== 'undefined') {
          //                       if (layerCount.trim().length > 0 && layerCount.replace(':', '') === layerid) {
                                     nbItemsSelectedLayer++;
          //                       }
-         //                   }                            
+         //                   }
                             pos++;
                             if (i > 0) {
                                 id = id + i;
                             }
-                            
-                            
+
+
                             var uniqueFeature = [];
                             uniqueFeature.push(feature);
                             if (l.template) {
@@ -264,17 +264,17 @@ var info = (function () {
                                 "name": name,
                                 "layerid": layerid,
                                 "theme_icon": theme_icon,
-                                "cat_color": 'not-def',                                
+                                "cat_color": 'not-def',
                                 "index": pos,
                                 "html": html_result
                             });
                         }
-                        //});        
+                        //});
                         if (pos > 1) {
                             views[panel].multiple = true;
                         } else {
                             views[panel].multiple = false;
-                        }                        
+                        }
                         // FIN MODIF CBR
                      }
                 }
@@ -315,7 +315,7 @@ var info = (function () {
                 nbItemsSelectedLayer = 0;
                 // fin
                 // AJOUT CBR - calcul de l'ordre des résultats en fonction des couches de gauche
-                var orderedFeatures = [];                
+                var orderedFeatures = [];
                 for (var j = 0; j < urls.length; j++) {
                     var layerinfo = urls[j].layerinfos;
                     orderedFeatures.push(featureInfoByLayer.find(obj => {return (obj.layerinfos.id === layerinfo.id && obj.layerinfos.url === layerinfo.url)}));
@@ -449,7 +449,7 @@ var info = (function () {
                                 "html": html_result[i],
                         		"pin": showPin
                             });
-                        
+
                             if (pos > 1) {
                                 views[panel].multiple = true;
                             } else {
@@ -479,7 +479,7 @@ var info = (function () {
             }
             mviewer.setInfoLayers(infoLayers);
             // debut modif CT 31/01/2020
-	        rmOptionsManager.setClickNbItems(pos);
+	          rmOptionsManager.setClickNbItems(pos, evt.coordinate);
             // fin
 
                 $.each(views, function (panel, view) {
@@ -539,7 +539,7 @@ var info = (function () {
                         mviewer.highlightSubFeature(selectedFeature[0]);
                         */
                         // FIN MODIF CBR
-                    });                    
+                    });
                     // change layer of sub selection
                     if (configuration.getConfiguration().mobile) {
                         $('.panel-heading').on('click', function (e) {
@@ -573,14 +573,14 @@ var info = (function () {
             // AJOUT CBR 22/04/2020
             formatter.rmFormatTabs();
             // FIN AJOUT CBR 22/04/2020
-                
+
             _mvReady = true;
 
         };
 
         var changeSubFeatureLayer = function (e) {
             _firstlayerFeatures = _queriedFeatures.filter(feature => {
-                return feature.get("mviewerid") == e.currentTarget.dataset.layerid; 
+                return feature.get("mviewerid") == e.currentTarget.dataset.layerid;
             })
             // MODIF CBR
             /*
@@ -640,9 +640,9 @@ var info = (function () {
         $("#map").css("cursor", "");
 
         var feature = _map.forEachFeatureAtPixel(pixel, function (feature, layer) {
-            if (!layer 
-                || layer.get('mviewerid') === 'featureoverlay' 
-                || layer.get('mviewerid') === 'selectoverlay' 
+            if (!layer
+                || layer.get('mviewerid') === 'featureoverlay'
+                || layer.get('mviewerid') === 'selectoverlay'
                 || layer.get('mviewerid') === 'subselectoverlay'
             ) {
                 return;
@@ -709,7 +709,7 @@ var info = (function () {
                     feature.getProperties()["title"] || feature.getProperties()["nom"] ||
                     feature.getProperties()[l.fields[0]]);
             }
-            
+
             _featureTooltip.css({
                 left: (parseInt($("#map").css('margin-left'))+ pixel[0]) + 'px',
                 top: (pixel[1] - 15) + 'px'
@@ -723,7 +723,7 @@ var info = (function () {
 
      /**
      * Private Method: _parseWMSGetFeatureInfo used to parse GML response
-     from wms servers. Tries to use bbox as geometry if no geometry returned 
+     from wms servers. Tries to use bbox as geometry if no geometry returned
      * @ param xml {Geography Markup Language}
      */
     var _parseWMSGetFeatureInfo = function (xml, layerid) {
@@ -829,7 +829,7 @@ var info = (function () {
               fields_kv = [];
               keys = Object.keys(this);
               for (i = 0 ; i < keys.length ; i++ ) {
-                if (keys[i] == "fields_kv" || keys[i] == "serialized" 
+                if (keys[i] == "fields_kv" || keys[i] == "serialized"
                     || keys[i] === "feature_ol_uid" || keys[i] === "mviewerid" || typeof this[keys[i]] === "object") {
                   continue;
                 }

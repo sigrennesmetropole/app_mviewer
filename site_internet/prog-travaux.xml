@@ -27,8 +27,8 @@
             url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
             attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/ec837b51-eee5-4f95-b3fe-458ad4f3d2b9&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
         </baselayer>
-        <baselayer visible="false" id="ortho2017" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS"
-            url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2017" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false"
+        <baselayer visible="false" id="ortho2020" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS"
+            url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2020" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false"
             attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/ec837b51-eee5-4f95-b3fe-458ad4f3d2b9&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
         </baselayer>
     </baselayers>

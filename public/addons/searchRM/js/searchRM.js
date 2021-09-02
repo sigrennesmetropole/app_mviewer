@@ -375,7 +375,6 @@ var searchRM = (function () {
 
     var displayLocationMarker = function (coordX, coordY, zoom, querymaponclick, proj) {
         mviewer.zoomToLocation(coordX, coordY, zoom, querymaponclick);
-        $("#mv_marker").show();
         mviewer.showLocation(proj, coordX, coordY);
     };
 
@@ -385,7 +384,6 @@ var searchRM = (function () {
         var coord = await _getSiteCoordinates(site.site[0].id);
         var coordNewProj = proj4('EPSG:3948', 'EPSG:4326', [coord.x, coord.y]);
         mviewer.zoomToLocation(coordNewProj[0], coordNewProj[1], zoom, querymaponclick);
-        $("#mv_marker").show();
         mviewer.showLocation('EPSG:4326', coordNewProj[0], coordNewProj[1]);
     };
 

@@ -1,19 +1,19 @@
-// CustomComponent = gestion de l'expérience utilisateur (fenêtre, actions, etc.). Communique avec le customLayer 
+// CustomComponent = gestion de l'expérience utilisateur (fenêtre, actions, etc.). Communique avec le customLayer
 const _config = mviewer.customComponents.gestionPointsRM.config;
 const l_markers = _config.options.icones;
 const _map = mviewer.getMap();
 
 
 const categories = (function() {
-    
+
     //TODO : ajout de point par coordonnées (utile ?)
     //TODO : Activation/désactivation de la recherche par adresse / par organisme
-    
+
     var localisations = mviewer.customLayers.meslocalisations;
     var allcategories = [];
-    
 
-  
+
+
   function _getCategorieById(id){
       for (categ in allcategories) {
           if (allcategories[categ].getId() == id){
@@ -21,42 +21,42 @@ const categories = (function() {
           }
       }
   }
-  
+
   function _getCategoryNameOnForm(categorieid){
       return $("#"+categorieid+"-nameconf").val();
   }
-  
+
   function _setCategoryNameOnForm(categorieid, name){
       $("#"+categorieid+"-nameconf").val(name);
   }
-  
+
   function _getSelectedColor(categorieid){
       return $("#"+categorieid+"-markercolor ").val();
   }
-  
+
   function _setSelectedColor(categorieid, color){
       $("#"+categorieid+"-markercolor ").val(color);
   }
-  
+
   function _getSelectedShape(categorieid){
       return $("#"+categorieid+"-markershape option:selected").text();
   }
-  
+
   function _getSelectedShapeURL(categorieid){
       return $("#"+categorieid+"-markershape option:selected").val();
   }
-  
+
   function _setSelectedShapeURL(categorieid, url){
       $("#"+categorieid+"-markershape option[value='"+url+"']").prop('selected', true);
   }
-  
+
   function _updateCategorie(id){
       var nom = _getCategoryNameOnForm(id);
       var forme = _getSelectedShape(id);
       var formeSrc= _getSelectedShapeURL(id);
       var couleur = _getSelectedColor(id);
       var scale = 1;
-      
+
       // update attributs Categorie
       _getCategorieById(id).updateCategorie(nom, forme,couleur);
       // update shown marker
@@ -67,24 +67,24 @@ const categories = (function() {
       _updateFicheInfoCateg();
       _refreshLegend();
   }
-  
-  
+
+
   function _refreshSvgMarker(categorieId){
       _showSvgMarker("showmarker"+categorieId, _getSelectedShapeURL(categorieId), _getSelectedColor(categorieId));
 
   }
-  
+
       // retourne le style par défaut paramétré dans le fichier config
   function _setDefaultStyle(){
       icone = _config.options.defaultstyle["icone"];
       couleur = _config.options.defaultstyle["couleur"];
       src = l_markers[icone].src;
       anchor = l_markers[icone].anchor;
-      
+
       setTimeout(_calculateStyle(null, src, couleur, anchor), 150); // Attente du chargement de la lib Snap
-      
+
   }
-  
+
   function _calculateStyle(id, url, couleur, anchor){
       // calcul de l'échelle par rapport à l'image svg
       var maxwidth=_config.options.maxmarkerwidth;
@@ -105,12 +105,12 @@ const categories = (function() {
       });
   }
 
-  
+
   function _showSvgMarker(svgid, url, color) {
-      
+
       var s = Snap("#"+svgid);
       if (s) {
-          var svgMarker = Snap.load(url, function ( f ) { 
+          var svgMarker = Snap.load(url, function ( f ) {
             var g = f.select("g");
             g.attr({fill: color});
             g.parent().attr({width:'100%', height:'100%'});
@@ -119,7 +119,7 @@ const categories = (function() {
             });
       }
   }
-  
+
   function _showAllStyles(){
       // vider le tableau
       $("#configLCateg tr").remove();
@@ -130,7 +130,7 @@ const categories = (function() {
         _addCategInConfigWindow(allcategories[categ].getId(), allcategories[categ].getNom(), allcategories[categ].getIconeURL(), allcategories[categ].getCouleur());
       }
   }
-  
+
   function _addCategInConfigWindow(id, nom, iconeURL, couleur) {
       var newCateg=false;
       if ( id == undefined) {
@@ -142,19 +142,19 @@ const categories = (function() {
           html += '    <select id="'+id+'-markershape" class="icones-value" onchange="categories.updateCategorie('+id+');">';
           html += _getAvailableIconsHTMLList();
           html += '</select>';
-          html += '    <input id="'+id+'-markercolor" type="color" list="presetColors" onchange="categories.updateCategorie('+id+');" />'; 
+          html += '    <input id="'+id+'-markercolor" type="color" list="presetColors" onchange="categories.updateCategorie('+id+');" />';
           html += '      <datalist id="presetColors"><option>#f78b12</option><option>#e04a3c</option><option>#33919d</option><option>#aa0c8b</option><option>#737543</option><option>#3e476c</option></datalist>';
           html += '<svg id="showmarker'+id+'" preserveAspectRatio="xMidYMid meet" class="confImg" ></svg></td>';
-          html += '<td class="alig-center"><button id="delcategbtn'+id+'" type="button" class="btn btn-default navbar-btn mv-navbar-btn" data-toggle="modal" data-target="#delete-modal" i18n="help.modal.doc" title="Supprimer la catégorie"><i class="btn fa fa-trash-alt" ></i></button></td></tr>'; 
-          
+          html += '<td class="alig-center"><button id="delcategbtn'+id+'" type="button" class="btn btn-default navbar-btn mv-navbar-btn" data-toggle="modal" data-target="#delete-modal" i18n="help.modal.doc" title="Supprimer la catégorie"><i class="btn fa fa-trash-alt" ></i></button></td></tr>';
+
           $("#configLCateg").prepend(html);
           $("#"+id +"-nameconf").focus();
-          
+
           $("#delcategbtn"+id).on("click",  function () {
               $("#categorieASuppr").attr('categid', id);
           });
-          
-          
+
+
           // ajout de la nouvelle catégorie dans la liste des catégories
           if (newCateg == true){
               allcategories.push(new Categorie(id, $("#"+ id +"-nameconf").attr("value"), $("#"+ id +"-markershape option:selected").text, couleur));
@@ -167,7 +167,7 @@ const categories = (function() {
               _updateFicheInfoCateg();
           }
   }
-  
+
   function _getNextCategorieId(){
       let nextid=1;
       for (index in allcategories) {
@@ -177,9 +177,9 @@ const categories = (function() {
       }
       return nextid;
   }
-  
 
-  
+
+
   function _getAvailableIconsHTMLList(){
       var html="";
       for (const [nom, url] of Object.entries(l_markers)) {
@@ -187,7 +187,7 @@ const categories = (function() {
       }
       return html;
   }
-  
+
   function _getOLStyle(couleur, IconeSrc, echelle, anchor){
       var style = new ol.style.Style({
             image: new ol.style.Icon({
@@ -200,18 +200,18 @@ const categories = (function() {
       if (anchor != undefined){style.getImage().setAnchor(anchor);}
       return style;
   }
-  
+
   // retourne le style par défaut paramétré dans le fichier config
   function _getDefaultStyle(){
       icone = _config.options.defaultstyle["icone"];
       couleur = _config.options.defaultstyle["couleur"];
       src = l_markers[icone].src;
       anchor = l_markers[icone].anchor;
-      
+
       var style = _getOLStyle(couleur, src, echelle, anchor)
       return style;
   }
-  
+
   function _delCategorie(id, removePoints){
       // update configuration
       for (categ in allcategories) {
@@ -226,7 +226,7 @@ const categories = (function() {
       _showAllStyles();
       _refreshLegend();
   }
-  
+
   function _initDefaultCategConfig() {
       nom = "Points sans catégorie";
       var defaultStyle;
@@ -247,12 +247,12 @@ const categories = (function() {
           html += '    <input id="default-color" type="color" value="'+ couleurHex +'" disabled />';
           html += '<svg id="default-showmarker" preserveAspectRatio="xMidYMid meet" class="confImg" ></svg></td>';
           html += '<td></td></tr>';
-          
+
       $("#configLCateg").append(html);
-      
+
       _showSvgMarker("default-showmarker", iconUrl, couleurHex);
   }
-  
+
   // Met à jour la liste des catégories des fiches d'info ouvertes
   function _updateFicheInfoCateg () {
     var categorieTrouvee = false;
@@ -271,8 +271,8 @@ const categories = (function() {
     // ajouter la catégorie par défaut en tete
     $(".categ-choice").prepend(new Option("-- Sans catégorie (défaut) --", "0", !categorieTrouvee, !categorieTrouvee));
   }
-  
-  
+
+
   function _refreshLegend(){
       legend_div=$("#leg-loctable");
       legend_div.empty();
@@ -298,12 +298,12 @@ const categories = (function() {
           legend_div.append(htmldef);
       _showSvgMarker("legendmarker-default", iconUrl, couleurHex);
   }
-  
+
   /** Fonctions liées aux points **/
   function _createNewEmptyPoint(coordonees){
       localisations.addNewFeature(coordonees);
   }
-  
+
   function _delPoint(id){
       localisations.deleteFeature(id);
       $("#mv_marker").hide();
@@ -316,7 +316,7 @@ const categories = (function() {
       }
       $("#mv_marker").hide();
   }
-  
+
   function _updatePoint(id){
       var fiche = $(".item[featId='"+id+"']");
       var nom = fiche.find(".nomdupoint").val();
@@ -324,10 +324,10 @@ const categories = (function() {
       var categorie = _getCategorieById(selectedCateg);
       $(".categ-choice").attr("ptcategorie",selectedCateg);
       var description = fiche.find(".descriptiondupoint").val();
-      
+
       localisations.updateFeature(id, nom, categorie, description);
   }
-  
+
   function _refreshCoordDisplay(pointid, newcoord) {
       $("#mv_marker").hide();
       $("#createPointOnMapTooltip").hide();
@@ -337,21 +337,21 @@ const categories = (function() {
           fiche.find(".latval")[0].innerHTML = newcoord[1];
       }
   }
-  
+
   /** Export des points **/
   function _exportGeoJSON(){
       jsfeatures = localisations.featuresToGeoJSON();
       jsFeatures_str = JSON.stringify(jsfeatures);
       filename = ""+new Date().getFullYear() + "" +(new Date().getMonth() + 1) + "" + new Date().getDate() +"_localisations.geojson";
-      
-      
+
+
       var link = document.createElement('a');
       link.download = filename;
       var blob = new Blob([jsFeatures_str], {type: 'application/json'});
       link.href = window.URL.createObjectURL(blob);
       link.click();
   }
-  
+
   /** Fonctions liées aux couleurs **/
   function _componentToHex(c) {
       var hex = c.toString(16);
@@ -361,34 +361,45 @@ const categories = (function() {
   function _rgbToHex(r, g, b) {
       return "#" + _componentToHex(r) + _componentToHex(g) + _componentToHex(b);
     }
-    
-  
+
+
   /** Fonctions d'initialisation **/
   function _initGUI () {
       $( document ).ready( function() {
           //Bouton acces configuration
           $("#iconconfig").prependTo($("#iconhelp").parent());
-          
+
           //Affichage du titre de la carte
           $('#mapTitleInput').on('input', function (e) {
               $('.mv-title')[0].text = $('#mapTitleInput').val();
             });
-            
+
           // Affichage de la légende
           $("#legend li[data-layerid='meslocalisations'] div.layerdisplay-legend").append ($("#legend-localisations"));
-          
+
           // Bouton de creation de point
           _createBtn = new ol.Overlay({ positioning: 'top-center', element: $("#createPointOnMapTooltip")[0], stopEvent: true});
           _map.addOverlay(_createBtn);
+
           _map.on('singleclick', function(e){
-              if (rmOptionsManager.getClickNbItems() == 0) {
-                var ptResult = ol.proj.transform(e.coordinate, mviewer.getProjection().getCode(), mviewer.getProjection().getCode());
-                _createBtn.setPosition(ptResult);
+            console.log("CLICK EVENT DETECTE");
+            console.log(e.coordinate);
+          });
+
+          //_map.on('singleclick', function(e){
+          document.addEventListener('clickedNbFeaturesEvt', function(e){
+            console.log("NbFeatures Event DETECTE");
+              //if (rmOptionsManager.getClickNbItems() == 0) {
+              if ( e.detail.nbfeatures == 0) {
+                //var ptResult = ol.proj.transform(e.coordinate, mviewer.getProjection().getCode(), mviewer.getProjection().getCode());
+                //_createBtn.setPosition(ptResult);
+                _createBtn.setPosition( e.detail.position);
                 $("#createPointOnMapTooltip").show();
               }else {
                 $("#createPointOnMapTooltip").hide();
               }
           });
+
           $("#createPointOnMapTooltip").on('click', function(e){
               let coord = _createBtn.getPosition();
               let coordProj = proj4('EPSG:3857', 'EPSG:4326', coord);
@@ -404,21 +415,21 @@ const categories = (function() {
                     info.queryMap(ex);
                 };
                 setTimeout(i, 250); // timeout utile le temps que le point s'affiche sur la carte
-              
+
           });
-          
+
       });
   }
-  
-  
+
+
   return {
       init : ()  => {
           mviewer.getMap().once('rendercomplete', function(e) {
               // code d'initialisation
               _initGUI();
-              
+
           });
-          
+
           $(document).on('shown.bs.modal', $("#config-modal"), function() {
               _showAllStyles();
             });
@@ -430,7 +441,7 @@ const categories = (function() {
       delAllPoints: _delAllPoints,
       updateFicheInfoCateg: _updateFicheInfoCateg,
       updatePoint: _updatePoint,
-      exportGeoJSON : _exportGeoJSON, 
+      exportGeoJSON : _exportGeoJSON,
       refreshCoordDisplay : _refreshCoordDisplay,
       setDefaultStyle: _setDefaultStyle,
    };
@@ -445,14 +456,14 @@ new CustomComponent("categories", categories.init());
 /****** Classe Catégorie **************/
 /**************************************/
 class Categorie {
-    
+
   constructor(id, nom, icone, couleur) {
     this.id = id;
     this.nom = nom;
     this.icone = icone;
     this.couleur = couleur;
   }
-  
+
    getId(){return this.id;}
    setId(id) {this.id=id;}
    getNom(){return this.nom;}
@@ -471,7 +482,7 @@ class Categorie {
     getIconeURL() {
       return l_markers[this.icone].src;
     }
-    
+
     getIconeAnchor() {
       // si non précisé, l'ancre est [0.5,0.5] au départ de l'angle haut-gauche. Ce qui indique un point d'ancrage au centre de l'icone
       return l_markers[this.icone].anchor;

@@ -1,6 +1,6 @@
 var rmOptionsManager = (function () {
 
-  
+
     proj4.defs([
         ["EPSG:4326", "+title=WGS 84, +proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"],
         ["EPSG:3857", "+title=Web Spherical Mercator, +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs"],
@@ -25,7 +25,7 @@ var rmOptionsManager = (function () {
 
      */
     var _clickNbItems = 0;
-    
+
 
     var init = function () {
 
@@ -49,7 +49,7 @@ var rmOptionsManager = (function () {
                     theme.layer.forEach(function (confLayer) {
 
                         if (layers[layer].layername === confLayer.id) {
-    
+
                             if (confLayer.tooltipWMS === "true") {
                                 layers[layer].tooltipWMS = true;
                                 layers[layer].tooltipWMSContent = confLayer.tooltipWMSContent;
@@ -57,59 +57,59 @@ var rmOptionsManager = (function () {
                                 layers[layer].tooltipWMS = false;
                                 layers[layer].tooltipWMSContent = '';
                             }
-    
+
                             if (confLayer.disableOpacity === "true") {
                                 interfaceModifying.disableLayerOpacity(confLayer.id);
-    
+
                                 $(document).on('click', function () {
                                     interfaceModifying.disableLayerOpacity(confLayer.id);
                                 });
-    
+
                             }
-    
+
                             if (typeof confLayer.nameIcon !== 'undefined') {
                                 if (confLayer.nameIcon.trim() !== '' ) {
                                     interfaceModifying.addIconToLayerName(layers[layer].layername, confLayer.nameIcon);
                                 }
-                                
+
                             }
-    
+
                             if (confLayer.hideLayerName == 'true') {
                                 interfaceModifying.hideLayerName(layers[layer].layerid);
                             }
 
-                            
+
                             // AJOUT - Rechargement des données de la couche au click sur la carte
                             if (confLayer.refreshOnClick === 'true') {
                                 interfaceModifying.refreshMap(layers[layer].id);
                             }
                             // FIN AJOUT
-    
+
                         }
-        
+
                     });
 
                 }
-    
+
             });
-                        
+
          }
- 
+
          for (const layer in layers) {
-     
+
             if (layers[layer].tooltipWMS) {
              tooltipWMS.activatetooltipWMS(layers[layer].layername, layers[layer].tooltipWMSContent);
             }
- 
+
          }
 
 
-         // MODIF CBR 
+         // MODIF CBR
          //if (applicationOptions.refreshInfoPanel === 'true') {
             interfaceModifying.refreshInfoPanel();
          //}
          // FIN MODIF CBR
-         
+
         // MODIF CBR
         if(applicationOptions.tutorial === 'true' && applicationOptions.tutorialFile.trim() !== '' && !configuration.getConfiguration().mobile){
             rmTools.initTutorial();
@@ -127,8 +127,8 @@ var rmOptionsManager = (function () {
         // FIN MODIF CBR
 
     };
-    
-    
+
+
     var getLayerCount = function () {
 
         return configuration.getConfiguration().application.layerCount;
@@ -160,15 +160,15 @@ var rmOptionsManager = (function () {
                             if (addInfoPanel) {
                                 infoPanels.push(layers[layer].infospanel);
                             }
-    
+
                         }
-        
+
                     });
 
                 }
-    
+
             });
-                    
+
          }
         return infoPanels;
 
@@ -178,7 +178,7 @@ var rmOptionsManager = (function () {
      * get configuration of node application in configuration file
      */
     var getApplicationConfiguration = function () {
-        
+
         return configuration.getConfiguration().application;
 
     };
@@ -190,7 +190,7 @@ var rmOptionsManager = (function () {
     var _getThemesConfiguration = function () {
 
         return configuration.getConfiguration().themes.theme;
-        
+
     };
 
     /**
@@ -204,7 +204,7 @@ var rmOptionsManager = (function () {
         var res = null;
 
         themesConf.forEach(function (theme) {
-            
+
             if ( ('theme-layers-' + theme.id) === themeId) {
                 res = theme;
             }
@@ -221,18 +221,19 @@ var rmOptionsManager = (function () {
     var getClickNbItems = function () {
 
         return _clickNbItems;
- 
+
      };
 
       /**
      * Public Method: getClickNbItems
      */
-    var setClickNbItems = function (value) {
-
+    var setClickNbItems = function (value, position) {
         _clickNbItems = value;
- 
+        // déclenchement d'un évenement pour gérer une simulation de clic (la fonction mviewer.zoomToLocation ne génère pas d'événement de type singleclick)
+        let event = new CustomEvent('clickedNbFeaturesEvt', { detail: {'nbfeatures': value, 'position': position}});
+        document.dispatchEvent(event);
      };
-  
+
     return {
         init: init,
         getLayerCount: getLayerCount,
