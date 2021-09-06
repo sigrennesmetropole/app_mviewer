@@ -41,11 +41,11 @@ table.rm-popup-text-feature {
 table.rm-popup-text-feature td:nth-child(1) {
   width: 20%;
   }
-  
+
 table.rm-popup-text-feature td:nth-child(2) {
   width: 80%;
   }
-  
+
 table.rm-popup-text-feature td {
     padding : 5px;
 }
@@ -56,7 +56,7 @@ table.rm-popup-text-feature td>input,td>select, td>textarea {
 
 /****** FENETRE CONFIG         *******/
 
-#config-modal{  
+#config-modal{
   /*z-index: 1030;*/
 }
 
@@ -82,25 +82,27 @@ table.rm-popup-text-feature td>input,td>select, td>textarea {
     padding:10px 0 15px 0;
 }
 
-.lightkbtn, .lightkbtn:focus {
-    font-size: 14px;
+.lightbtn, .lightbtn:focus {
+    font-size: 12px!important;
     background-color:var(--gris_clair);
     color:var(--gris_fonce);
     border-color: var(--gris_clair);
 }
 .lightbtn:hover{
+    font-size: 12px!important;
     background-color:var(--gris_fonce);
     color:var(--gris_clair);
     --border-color: var(--gris_clair);
 }
 
 .darkbtn, .darkbtn:focus {
-    font-size: 12px;
+    font-size: 12px!important;
     background-color:var(--gris_fonce);
     color:var(--gris_clair);
     border-color: var(--gris_fonce);
 }
 .darkbtn:hover{
+    font-size: 12px!important;
     background-color:var(--gris_clair);
     color:var(--gris_fonce);
     --border-color: var(--gris_fonce);
@@ -176,10 +178,9 @@ table.rm-popup-text-feature td>input,td>select, td>textarea {
   }
 
 #leg-loctable td:nth-child(2) {
-  padding: 5px; 
+  padding: 5px;
 }
 
 #leg-loctable .legendcategname{
   font-style: italic;
 }
-
