@@ -3,33 +3,32 @@
     <application
         title="Permanences droit de la consommation et surendettement"
         logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"
-        titlehelp="À propos des cartes thématiques" 
+        titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
         exportpng="false"
         style="apps/site_internet/css/site_internet_gris.css"
-        measuretools="false" 
-        togglealllayersfromtheme="false" 
+        measuretools="false"
+        togglealllayersfromtheme="false"
          />
-    
-        <!-- 
-        stats="true" 
+
+        <!--
+        stats="true"
         statsurl="../ws/kartenn/log.php"
- 
+
         templaterightinfopanel="accordion"
-        
+
         -->
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-183890.24433942206,6125725.984905125" zoom="13" />
-    <baselayers style="default"><!-- style="default"||gallery" -->     
+    <baselayers style="default"><!-- style="default"||gallery" -->
         <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/56ace7a5-e6d0-4e1e-8685-e18d98ee151d&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
-        <baselayer visible="false" id="ortho2017" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2017" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/56ace7a5-e6d0-4e1e-8685-e18d98ee151d&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+        <baselayer visible="false" id="ortho2020" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2020" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/56ace7a5-e6d0-4e1e-8685-e18d98ee151d&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
     </baselayers>
     <!-- <proxy url="../proxy/?url="/>	 -->
-    
+
     <!-- <olscompletion url="../olscompletion"/> -->
     <!-- <elasticsearch url="https://ows.region-bretagne.fr/kartenn/_search" geometryfield="geometry" linkid="search_id" querymode="match" version="current" /> -->
-    <searchparameters bbox="false" localities="false" features="false" static="false"/>
-    
+
     <themes mini="true">
         <theme id="theme-20200827150815" name="Permanences droit de la consommation et surendettement" collapsed="true" icon="fas fa-child">
             <layer

@@ -3,7 +3,7 @@
     <application
         title="PLUi Rennes Métropole"
         logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"
-        titlehelp="Carte interactive du PLUi de Rennes Métropole" 
+        titlehelp="Carte interactive du PLUi de Rennes Métropole"
         help="apps/PLUi/html/plui_help.html"
         showhelp="true"
         exportpng="false"
@@ -19,17 +19,22 @@
     <!-- searchCadastre="true" -->
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-176970.72,6128725.98" zoom="11" />
     <baselayers style="default">
-        <baselayer visible="true" id="PLUi" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Fond de plan PLUi" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:plui_fond_plan" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;"  ></baselayer> 
-        <baselayer visible="false" id="ortho2017" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2017" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;"  ></baselayer>
+        <baselayer visible="true" id="PLUi" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Fond de plan PLUi" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:plui_fond_plan" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;"  ></baselayer>
+        <baselayer visible="false" id="ortho2020" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2020" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;"  ></baselayer>
     </baselayers>
 
-    <searchparameters bbox="false" localities="false" features="false" static="false" querymaponclick="true"
-        searchRM="true" searchCadastre="true" 
-        searchRMConf="apps/PLUi/addons/data/searchAddressConf.json" 
+    <!-- <searchparameters bbox="false" localities="false" features="false" static="false" querymaponclick="true"
+        searchRM="true" searchCadastre="true"
+        searchRMConf="apps/PLUi/addons/data/searchAddressConf.json"
         disableSearchExtentLimitation="true"
-        inputlabel="Adresse" />
-    
-    <themes mini="true"> 
+        inputlabel="Adresse" /> -->
+
+        <extensions>
+    				 <extension type="component" id="searchRM" path="apps/public/addons"
+               configFile="/apps/public/addons/searchRM/conf/searchConf_CadastreRVAQueryable.json"/>
+        </extensions>
+
+    <themes mini="true">
         <theme id="theme-20200130112616" name="Contexte" collapsed="false" icon="fas fa-map-signs">
             <layer
                 id="commune"
@@ -45,8 +50,8 @@
                 <template url="apps/PLUi/templates/PLUi_Parcelle.mst"></template>
             </layer>
         </theme>
-        <theme id="theme-20180827150815" name="Plans de zonage" collapsed="false" 	alwaysOpen="true" icon="far fa-map"> 
-            <layer 
+        <theme id="theme-20180827150815" name="Plans de zonage" collapsed="false" 	alwaysOpen="true" icon="far fa-map">
+            <layer
                 id="app_urbanisme_parcelle"
                 name="Parcelle"
                 type="wms"
@@ -61,8 +66,8 @@
                 hideLayerName="true"
                 infopanel="right-panel">
                 <template url="apps/PLUi/templates/PLUi_Parcelle.mst"></template>
-            </layer> 
-            <layer 
+            </layer>
+            <layer
                 id="plui_zone_urba"
                 name="Limites de zones"
                 type="wms"
@@ -74,8 +79,8 @@
                 queryable="false"
                 infopanel="right-panel">
                 <template url="apps/PLUi/templates/PLUi_Parcelle.mst"></template>
-            </layer> 
-            <layer 
+            </layer>
+            <layer
                 id="plui_plan_zonage"
                 name="Autres règles graphiques"
                 type="wms"
@@ -87,8 +92,8 @@
                 queryable="false"
                 infopanel="right-panel">
                 <template url="apps/PLUi/templates/PLUi_Parcelle.mst"></template>
-            </layer> 
-            <layer 
+            </layer>
+            <layer
                 id="plui_plan_zonage_simplifie"
                 name="Zonage simplifié (couleur)"
                 type="wms"
@@ -103,10 +108,10 @@
                 opacity="0.5"
                 infopanel="right-panel">
                 <template url="apps/PLUi/templates/PLUi_Parcelle.mst"></template>
-            </layer> 
-        </theme> 
+            </layer>
+        </theme>
         <theme id="theme-20190827150815" name="Plans thématiques" collapsed="true" icon="fas fa-tags">
-            <layer 
+            <layer
                 id="plui_theme_stationnement"
                 name="Stationnement"
                 type="wms"
@@ -118,8 +123,8 @@
                 queryable="true"
                 infopanel="right-panel">
                 <template url="apps/PLUi/templates/PLUi_Stationnement.mst"></template>
-            </layer> 
-            <layer 
+            </layer>
+            <layer
                 id="plui_theme_mixitesociale"
                 name="Mixité sociale"
                 type="wms"
@@ -132,7 +137,7 @@
                 infopanel="right-panel">
                 <template url="apps/PLUi/templates/PLUi_MixiteSociale.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="plui_theme_oap"
                 name="Périmètres des orientations d'Aménagement et de programmation"
                 type="wms"
@@ -145,7 +150,7 @@
                 infopanel="right-panel">
                 <template url="apps/PLUi/templates/PLUi_OAP.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="plui_theme_hauteur"
                 name="Hauteurs"
                 type="wms"
@@ -158,7 +163,7 @@
                 infopanel="right-panel">
                 <template url="apps/PLUi/templates/PLUi_Hauteurs.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="plui_theme_coeffveget"
                 name="Coefficient de végétalisation"
                 type="wms"
@@ -171,7 +176,7 @@
                 infopanel="right-panel">
                 <template url="apps/PLUi/templates/PLUi_CoeffVeget.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="plui_theme_airbruitht"
                 name="Zones de vigilance Air/bruit - lignes HT/THT"
                 type="wms"
@@ -184,7 +189,7 @@
                 infopanel="right-panel">
                 <template url="apps/PLUi/templates/PLUi_VigiAirBruit_THT.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="plui_theme_risque_mouvmt_terrain"
                 name="Mouvements de terrain"
                 type="wms"
@@ -197,7 +202,7 @@
                 infopanel="right-panel">
                 <template url="apps/PLUi/templates/PLUi_MvtTerrain.mst"></template>
             </layer>
-            <layer 
+            <layer
                 id="plui_theme_gestioneauxpluviales"
                 name="Gestion des eaux pluviales"
                 type="wms"
@@ -210,6 +215,6 @@
                 infopanel="right-panel">
                 <template url="apps/PLUi/templates/PLUi_GestionEP.mst"></template>
             </layer>
-        </theme> 
+        </theme>
     </themes>
 </config>

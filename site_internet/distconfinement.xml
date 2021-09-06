@@ -12,25 +12,21 @@
         measuretools="true"
         />
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-190690,6128726" zoom="11" />
-    
-    <baselayers style="default"><!-- style="default"||gallery" -->     
+
+    <baselayers style="default"><!-- style="default"||gallery" -->
         <baselayer visible="true" id="osm_positron" thumbgallery="img/basemap/positron.png" label="OpenStreetMap" title="OpenSTreetMap" type="OSM" url="https://cartodb-basemaps-b.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"  attribution="Données : les contributeurs d'&lt;a href='http://www.openstreetmap.org/' target='_blank'>OpenStreetMap &lt;/a>,  &lt;a     href='http://www.openstreetmap.org/copyright' target='_blank'>ODbL &lt;/a>" ></baselayer>
         <!--
         <baselayer visible="false" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9bd66532-036e-44c8-957d-9156362e5576&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
         -->
-        <baselayer visible="false" id="ortho2017" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2017" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+        <baselayer visible="false" id="ortho2020" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2020" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
     </baselayers>
-    
-    <searchparameters bbox="false" localities="false" features="false" static="false"
-          searchRM="true" searchRMConf="apps/site_internet/json/searchRVAConf_covid.json" querymaponclick="true"  
-        disableSearchExtentLimitation="true" inputlabel="Adresse"/>
-          
-    
+
     <extensions>
-         <extension type="javascript" src="apps/site_internet/addons/adresse_confinement.js"/> 
+         <extension type="javascript" src="apps/site_internet/addons/adresse_confinement.js"/>
+         <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchRVAConf_covid.json"/>
     </extensions>
-    
-    
+
+
     <themes mini="true">
         <theme id="theme-20180827150815" name="Distance de déplacement autorisé - Covid19" collapsed="true" icon="fas fa-walking">
             <layer
@@ -60,9 +56,9 @@
                 legendurl="apps/site_internet/img/legend/dist_1km.png"
                 opacity="1"
                 visible="true"
-                tooltip="false" /> 
+                tooltip="false" />
             -->
-            
+
         </theme>
     </themes>
 </config>

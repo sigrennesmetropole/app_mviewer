@@ -304,7 +304,7 @@ mviewer = (function () {
         $("#page-content-wrapper").prepend("<div id='popup-number-results'></div>");
         _popup = new ol.Overlay({ positioning: 'center', element: $("#popup-number-results")[0], stopEvent: false})
         overlays.push(_popup);
-        // fin 
+        // fin
         _map = new ol.Map({
             target: 'map',
             controls: [
@@ -341,7 +341,7 @@ mviewer = (function () {
                 center: _center,
                 enableRotation: _rotation,
                 zoom: _zoom,
-                extent: mapoptions.maxextent 
+                extent: mapoptions.maxextent
                     ? mapoptions.maxextent.split(",").map(function(item) {return parseFloat(item);})
                     : undefined
             })
@@ -576,7 +576,7 @@ mviewer = (function () {
                 template: mviewer.templates.tooltip
             });
         }
-        
+
         // AJOUT CBR
         rmOptionsManager.init();
         // FIN AJOUT CBR
@@ -1965,7 +1965,7 @@ mviewer = (function () {
         getMap: function () {
             return _map;
         },
-		
+
 		/**
          * Public Method: getMarker
          *
@@ -2064,7 +2064,7 @@ mviewer = (function () {
             $("#mv_marker").show();
             // debut modif CT 31/01/2020
             var nbItems = rmOptionsManager.getClickNbItems();
-            if (nbItems > 1 && rmOptionsManager.getApplicationConfiguration().showClickNbItems !== "false") {                 
+            if (nbItems > 1 && rmOptionsManager.getApplicationConfiguration().showClickNbItems !== "false") {
                _popup.setPosition(ptResult);
                $("#popup-number-results").html(rmOptionsManager.getClickNbItems() + ' résultats');
 
@@ -2102,7 +2102,7 @@ mviewer = (function () {
                 _sourceSubSelectOverlay.addFeature(feature);
             }
         },
-        
+
         /**
          * Public Method: print
          *
@@ -2316,8 +2316,8 @@ mviewer = (function () {
             if (layer.expandedoptions) {
                 this.toggleLayerOptions($('.mv-layer-details[data-layerid="'+layer.id+'"]')[0]);
             }
-            // FIN AJOUT       
-            
+            // FIN AJOUT
+
 
             //Dynamic vector Legend
             if (layer.vectorlegend  && mviewer.customLayers[layer.layerid] && mviewer.customLayers[layer.layerid].legend) {

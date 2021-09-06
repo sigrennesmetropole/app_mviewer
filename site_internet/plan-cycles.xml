@@ -3,34 +3,32 @@
     <application
         title="Plan des aménagements cyclables"
         logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"
-        titlehelp="À propos des cartes thématiques" 
+        titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
         exportpng="false"
         style="apps/site_internet/css/site_internet_gris.css"
-        measuretools="false" 
-        togglealllayersfromtheme="false" 
+        measuretools="false"
+        togglealllayersfromtheme="false"
          />
 
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-190690.24433942206,6128725.984905125" zoom="11" />
-    
-    <searchparameters bbox="false" localities="false" features="false" static="false"/>
-    
-    <baselayers style="default">
-        <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
-        <baselayer visible="false" id="ortho2017" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2017" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
-    </baselayers>
-    
+
     <searchparameters bbox="false" localities="false" features="false" static="false"/>
 
-    <themes mini="true">     
+    <baselayers style="default">
+        <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+        <baselayer visible="false" id="ortho2020" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2020" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+    </baselayers>
+
+    <themes mini="true">
         <theme id="theme-20180824152940" name="Stations de vélo libre service" collapsed="true" icon="fas fa-bicycle">
             <layer
                 id="stations_vls"
                 name="Stations de vélo libre service"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/trp_doux/ows"
-                style="stations_vls_levelostar"   
+                style="stations_vls_levelostar"
                 dynamiclegend="false"
                 scalemin="99" scalemax="50000"
                 visible="true"
@@ -39,16 +37,16 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/03268497-3416-4326-9119-48744df1a3c2"
                 queryable="true"
                 featurecount="3"
-                infopanel="right-panel">            
+                infopanel="right-panel">
                 <template url="apps/site_internet/templates/station-velo-ls.mst"></template>
             </layer>
             <layer
                 id="v_reparation_velo"
                 name="Gonflage et réparation de vélo"
                 type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/trp_doux/ows"  
+                url="https://public.sig.rennesmetropole.fr/geoserver/trp_doux/ows"
                 dynamiclegend="false"
-                scalemin="99" scalemax="50000" 
+                scalemin="99" scalemax="50000"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
@@ -63,7 +61,7 @@
                 name="Parcs vélos sécurisés"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/trp_doux/ows"
-                scalemin="99" scalemax="50000" 
+                scalemin="99" scalemax="50000"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
@@ -77,7 +75,7 @@
                 id="v_support_velo"
                 name="Supports vélos"
                 type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/trp_doux/ows"   
+                url="https://public.sig.rennesmetropole.fr/geoserver/trp_doux/ows"
                 dynamiclegend="false"
                 scalemin="99" scalemax="50000"
                 visible="true"
