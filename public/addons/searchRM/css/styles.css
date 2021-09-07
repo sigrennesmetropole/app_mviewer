@@ -74,12 +74,12 @@ searchresults-title .close:hover{
   padding: 0.5% 4% 0.5% 2%;
 }
 
-@media (min-width: 768px) and (max-width: 813px) {
+@media (max-width: 767px) {
   .parcelSelectors {
-    top: 110px;
+    right: 50px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .parcelSelectors {
     right: 105px;
   }
@@ -109,4 +109,73 @@ searchresults-title .close:hover{
 #modal-panel-selector .rm-popup-footer {
   position: relative;
   bottom: 0px !important;
+}
+
+/*Gestion des CSS pour la recherche RVA & sitesOrg*/
+.background-custom-searchtool{
+  background-color: rgba(170, 170, 170, 0.5);
+  width:358px;
+  height:42px;
+  position: relative;
+  right: 100px;
+  border-radius: 4px;
+}
+
+#fieldWrapper{
+  border: 1px solid #aaa;
+  right: -135px;
+  width: 220px;
+  top:-5px;
+  border-radius: 4px;
+  background-color : white;
+  margin-top: -10px;
+}
+
+#fieldWrapper #searchfield{
+  border-radius: 4px;
+}
+
+.searchRVALibelle{
+  top: 12px;
+  position: relative;
+  right: -3px;
+}
+
+#buttonSearchField{
+  height: 30px;
+}
+
+/*Gestion des css pour la recherche cadastrale*/
+.background-custom-parcelSelectors{
+  background-color: rgba(170, 170, 170, 0.5);
+  width:502px;
+  height:34px;
+  right: -55px;
+  position: relative;
+  border-radius: 4px;
+  top:-5px;
+}
+
+.background-custom-parcelSelectors #communeSearchContainer{
+  right:156px;
+  position: absolute;
+  top:3px;
+}
+
+.background-custom-parcelSelectors #sectionInputContainer{
+  right: 80px;
+  position: absolute;
+  top:3px;
+}
+
+.background-custom-parcelSelectors #parcelleInputContainer{
+  right: 3px;
+  position: absolute;
+  top:3px;
+}
+
+.background-custom-parcelSelectors #parcelSelectorsLegend{
+  right: 370px;
+  position: absolute;
+  top:9px;
 }
