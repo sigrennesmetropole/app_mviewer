@@ -28,6 +28,10 @@
     <!-- <olscompletion url="../olscompletion"/> -->
     <!-- <elasticsearch url="https://ows.region-bretagne.fr/kartenn/_search" geometryfield="geometry" linkid="search_id" querymode="match" version="current" /> -->
 
+    <extensions>
+      <extension type="component" id="GUICustom" path="apps/public/addons"/>
+    </extensions>
+    
     <themes mini="true">
         <theme id="theme-20180625145740" name="Communes de Rennes Métropole" collapsed="true" icon="fas fa-map-marker-alt">
             <layer

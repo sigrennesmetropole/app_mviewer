@@ -33,6 +33,10 @@
         </baselayer>
     </baselayers>
 
+    <extensions>
+      <extension type="component" id="GUICustom" path="apps/public/addons"/>
+    </extensions>
+
     <themes mini="true">
         <theme id="lrs-travaux" name="Programmation des travaux" collapsed="true" icon="fas fa-road">
             <layer

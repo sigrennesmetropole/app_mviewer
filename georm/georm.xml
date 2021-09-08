@@ -48,7 +48,8 @@
     <extensions>
          <extension type="component" id="carousel_photo" path="apps/public/addons"/>
 				 <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_SitesOrgRVA.json"/>
-    </extensions>
+				 <extension type="component" id="GUICustom" path="apps/public/addons"/>
+		</extensions>
 
 	<themes mini="true">
 		<theme id="theme-transport" name="Transport" collapsed="true" icon="fas fa-bus">
