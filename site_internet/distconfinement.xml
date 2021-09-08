@@ -24,6 +24,7 @@
     <extensions>
          <extension type="javascript" src="apps/site_internet/addons/adresse_confinement.js"/>
          <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchRVAConf_covid.json"/>
+         <extension type="component" id="GUICustom" path="apps/public/addons"/>
     </extensions>
 
 

@@ -1,0 +1,9 @@
+{
+    "js": [
+      "js/fixNavbar.js",
+      "js/fixRightPanel.js"
+    ],
+    "css": "css/styles.css",
+    "html": "html/index.html",
+    "target": "page-content-wrapper"
+}
