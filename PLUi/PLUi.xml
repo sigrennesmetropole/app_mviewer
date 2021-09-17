@@ -32,6 +32,7 @@
         <extensions>
     				 <extension type="component" id="searchRM" path="apps/public/addons"
                configFile="/apps/public/addons/searchRM/conf/searchConf_CadastreRVAQueryable.json"/>
+             <extension type="component" id="GUICustom" path="apps/public/addons" />
         </extensions>
 
     <themes mini="true">

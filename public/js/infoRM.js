@@ -130,6 +130,16 @@ var info = (function () {
     };
 
     /**
+    * Public Method: getClickNbItems
+    */
+    var setClickNbItems = function (value, position) {
+      _clickNbItems = value;
+      // déclenchement d'un évenement pour gérer une simulation de clic (la fonction mviewer.zoomToLocation ne génère pas d'événement de type singleclick)
+      let event = new CustomEvent('clickedNbFeaturesEvt', { detail: {'nbfeatures': value, 'position': position}});
+      document.dispatchEvent(event);
+    };
+
+    /**
      * Private Method: _queryMap()
      * @param evt {ol.MapBrowserEvent}
      * @param options {type: 'feature' || 'map', layer: {ol.layer.Layer}, featureid:'featureid'}
@@ -638,7 +648,6 @@ var info = (function () {
         // default tooltip state or reset tooltip
         _featureTooltip.tooltip('hide');
         $("#map").css("cursor", "");
-
         var feature = _map.forEachFeatureAtPixel(pixel, function (feature, layer) {
             if (!layer
                 || layer.get('mviewerid') === 'featureoverlay'
