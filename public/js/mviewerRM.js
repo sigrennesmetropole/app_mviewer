@@ -204,10 +204,6 @@ mviewer = (function () {
 
     var _marker = null;
 
-    // debut modif CT 03/02/2020
-    var _popup = null;
-    //
-
     var _topLayer = false;
 
     var _exclusiveLayer;
@@ -300,11 +296,6 @@ mviewer = (function () {
         //Create overlay (red pin) used by showLocation method
         _marker = new ol.Overlay({ positioning: 'bottom-center', element: $("#mv_marker")[0], stopEvent: false});
         overlays.push(_marker);
-        // debut modif CT 03/02/2020
-        $("#page-content-wrapper").prepend("<div id='popup-number-results'></div>");
-        _popup = new ol.Overlay({ positioning: 'center', element: $("#popup-number-results")[0], stopEvent: false})
-        overlays.push(_popup);
-        // fin
         _map = new ol.Map({
             target: 'map',
             controls: [
@@ -577,9 +568,6 @@ mviewer = (function () {
             });
         }
 
-        // AJOUT CBR
-        rmOptionsManager.init();
-        // FIN AJOUT CBR
     };
 
     var _initShare = function () {
@@ -2062,20 +2050,6 @@ mviewer = (function () {
             var ptResult = ol.proj.transform([x, y], proj, _projection.getCode());
             _marker.setPosition(ptResult);
             $("#mv_marker").show();
-            // debut modif CT 31/01/2020
-            var nbItems = rmOptionsManager.getClickNbItems();
-            if (nbItems > 1 && rmOptionsManager.getApplicationConfiguration().showClickNbItems !== "false") {
-               _popup.setPosition(ptResult);
-               $("#popup-number-results").html(rmOptionsManager.getClickNbItems() + ' résultats');
-
-               $("#popup-number-results").show();
-
-            } else {
-
-                $("#popup-number-results").hide();
-
-            }
-            // fin
             _map.render();
         },
 

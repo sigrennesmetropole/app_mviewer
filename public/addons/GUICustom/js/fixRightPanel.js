@@ -4,11 +4,11 @@ var observer = new MutationObserver(function(mutations) {
     if (mutation.attributeName === "class") {
       var attributeValue = $(mutation.target).prop(mutation.attributeName);
       if(attributeValue === 'active'){
-        $('#searchtool').css({'right':'360px'});
-        $('#parcelSelectors').css({'right':'377px'});
+        $('#searchtool').animate({'right':'360px'});
+        $('#parcelSelectors').animate({'right':'377px'});
       }else{
-        $('#searchtool').css({'right':'90px'});
-        $('#parcelSelectors').css({'right':'105px'});
+        $('#searchtool').animate({'right':'90px'});
+        $('#parcelSelectors').animate({'right':'105px'});
       }
     }
   });
