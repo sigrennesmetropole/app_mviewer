@@ -13,7 +13,6 @@
         togglealllayersfromtheme="false"
         openMultipleTheme="true"
         tutorial="true"
-        tutorialFile="apps/PLUi/addons/data/didacticielPlui.json"
         showClickNbItems="false"
     />
     <!-- searchCadastre="true" -->
@@ -33,6 +32,7 @@
     				 <extension type="component" id="searchRM" path="apps/public/addons"
                configFile="/apps/public/addons/searchRM/conf/searchConf_CadastreRVAQueryable.json"/>
              <extension type="component" id="GUICustom" path="apps/public/addons" />
+             <extension type="component" id="tutorial" path="apps/public/addons" configFile="apps/public/addons/tutorial/addons/data/didacticielPlui.json"/>
         </extensions>
 
     <themes mini="true">
