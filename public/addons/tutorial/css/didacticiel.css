@@ -9,17 +9,18 @@
 .note {
   color: #333;
   position: relative;
-  width: 90%;
+  width: 100%;
   font-family: "VistaSansOT_regular";
-  font-size: 12px;
+  font-size: 11px;
   box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.3);
   display: block;
-  text-align: justify;
+  text-align: left;
   padding-top: 20px;
 }
 
 .postit {
-  background: #eae672;
+  /* background: #eae672; */
+  background: #e5b6dc;
   -webkit-transform: rotate(2deg);
   -moz-transform: rotate(2deg);
   -o-transform: rotate(2deg);
@@ -39,11 +40,14 @@
 }
 
 .pin:after {
-  background-color: #A31;
-  background-image: radial-gradient(25% 25%, circle, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3));
+  background-color: #AE1910;
+  background-image: radial-gradient(25% 25%, circle, hsla(0,0%,100%,.3), hsla(0,0%,0%,.3));
   border-radius: 50%;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), inset 3px 3px 3px rgba(255, 255, 255, 0.2), inset -3px -3px 3px rgba(0, 0, 0, 0.2), 23px 20px 3px rgba(0, 0, 0, 0.15);
-  content: "";
+  box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.1),
+              inset 3px 3px 3px hsla(0,0%,100%,.2),
+              inset -3px -3px 3px hsla(0,0%,0%,.2),
+              23px 20px 3px hsla(0,0%,0%,.15);
+  content: '';
   height: 12px;
   left: -5px;
   position: absolute;
@@ -52,24 +56,26 @@
 }
 
 .pin:before {
-  background-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.1);
-  content: "";
-  height: 24px;
+  background-color: hsla(0,0%,0%,0.1);
+  box-shadow: 0 0 .25em hsla(0,0%,0%,.1);
+  content: '';
+
+  height: 18px;
   width: 2px;
   left: 0;
   position: absolute;
-  top: 8px;
-  transform: rotate(57.5deg);
-  -moz-transform: rotate(57.5deg);
-  -webkit-transform: rotate(57.5deg);
-  -o-transform: rotate(57.5deg);
-  -ms-transform: rotate(57.5deg);
-  transform-origin: 50% 100%;
-  -moz-transform-origin: 50% 100%;
-  -webkit-transform-origin: 50% 100%;
-  -ms-transform-origin: 50% 100%;
-  -o-transform-origin: 50% 100%;
+  top: 5px;
+
+  transform: rotate(76deg)!important;
+  -moz-transform: rotate(76deg)!important;
+  -webkit-transform: rotate(76deg)!important;
+  -o-transform: rotate(76deg)!important;
+  -ms-transform: rotate(76deg)!important;
+  transform-origin: 50% 100%!important;
+  -moz-transform-origin: 50% 100%!important;
+  -webkit-transform-origin: 50% 100%!important;
+  -ms-transform-origin: 50% 100%!important;
+  -o-transform-origin: 50% 100%!important;
 }
 
 .quote-container blockquote {
@@ -95,7 +101,7 @@
   left: 0;
   top: 0;
   height: 100%;
-  width: 90%;
+  width: 100%;
   overflow: auto;
   /*background-color: rgba(0, 0, 0, 0.5);*/
 }
@@ -105,6 +111,15 @@
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
   position: relative;
+}
+
+.tutocontainer {
+  display: block;
+  position:fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1040
 }
 
 /*# sourceMappingURL=didacticiel.css.map */

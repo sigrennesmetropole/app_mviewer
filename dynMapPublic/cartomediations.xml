@@ -16,7 +16,6 @@
         togglealllayersfromtheme="false"
         printMap="false"
         tutorial="true"
-        tutorialFile="apps/dynMapPublic/addon/didacticiel/didacticiel.json"
         >
 
     </application>
@@ -45,6 +44,7 @@
     <extensions>
         <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_SitesOrgRVAQueryable.json"/>
         <extension type="component" id="gestionPointsRM" path="apps/dynMapPublic/addon" />
+        <extension type="component" id="tutorial" path="apps/public/addons" configFile="apps/public/addons/tutorial/addons/data/didacticielPlui.json"/>
     </extensions>
 
     <themes mini="true">
