@@ -36,7 +36,6 @@
 
 <script>
 
-	console.log($('#urlNru').val());
 	var urlNruVal = $('#urlNru').val();
 
 	var content =  '<p>'
