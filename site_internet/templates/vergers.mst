@@ -1,0 +1,15 @@
+{{#features}}
+	<li class="item" >
+		<h5 class="rm-popup-title-feature">{{nom}}</h5>
+		<span class="rm-popup-subtitle-feature" > {{type}} </span>
+		<p class="rm-popup-text-feature">
+			{{#quartier}}<span class='rm-popup-label'> Quartier :</span> {{{quartier}}}<br/>{{/quartier}}
+			{{#situation}}<span class='rm-popup-label'> Localisation :</span> {{{situation}}}<br/>{{/situation}}
+			{{#surface}}<span class='rm-popup-label'> Surface :</span> {{{surface}}} m²<br/>{{/surface}}
+			{{#complement}}<span class='rm-popup-label'> Accès :</span> {{{complement}}}<br/>{{/complement}}
+		</p>
+		<p class="rm-popup-text-feature">
+			{{#essences}}<span class='rm-popup-label'> Essences :</span> <br/>{{{essences}}}<br/>{{/essences}}
+		</p>
+	</li>
+{{/features}}

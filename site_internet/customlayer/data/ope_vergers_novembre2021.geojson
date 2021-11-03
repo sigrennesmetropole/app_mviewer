@@ -1,0 +1,124 @@
+{
+    "type": "FeatureCollection",
+    "name": "données_vergers_ponctuels",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:EPSG::3857"
+        }
+    },
+    "features": [{
+            "type": "Feature",
+            "properties": {
+                "id": 1,
+                "type":"Verger",
+                "situation": "En face du groupe scolaire Nelson Mandela",
+                "complement": "En face du 11 rue Gina Pané",
+                "quartier": "Beauregard",
+                "surface": 900,
+                "essences": "DIOSPYROS/KAKI (1)<br/>MALUS/DOMESTICA/MONDIAL GALA (1)<br/>MALUS/DOMESTICA/GRISE DU CANADA (1)<br/>MALUS/DOMESTICA/REINE DES REINETTES (1)<br/>MALUS/DOMESTICA/GRANNY SMITH (1)<br/>MALUS/DOMESTICA/REINETTE DU MANS (1)<br/>PRUNUS/CERASUS/BIGARREAU NAPOLEON (1)<br/>PYRUS/COMMUNIS/CONFERENCE  (1)<br/>PRUNUS/PERSICA/SANGUINE VINEUSE (1)<br/>PYRUS/COMMUNIS/WILLIAM (1)<br/>PRUNUS/PERSICA/AMSDEN (1)<br/>PYRUS/COMMUNIS/WILLIAM ROUGE (1)<br/>PRUNUS/PERSICA/DIXIRED (1)<br/>PYRUS/COMMUNIS/COMPTESSE DE PARIS (1)<br/>PRUNUS/DOMESTICA/REINE CLAUDE DOREE (1)<br/>PRUNUS/DOMESTICA/REINE CLAUDE D'OULLINS (1)<br/>PRUNUS/DOMESTICA/QUETSCHE D'ALSACE (1)<br/>RIBES/NIGRUM/WELLINGTON (5)<br/>RIBES/RUBRUM/JONKHEER VANTETS (5)<br/>RIBES/RUBRUM/VERSAILLAISE BLANCHE (5)<br/>RUBUS/IDAEUS/MAILLING PROMISE (5)<br/>RUBUS/IDAEUS/SURPRISE D'AUTOMNE (5)",
+                "nom": "Groupe Nelson Mandela"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-188993.031598621601006, 6129090.625733928754926]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "id": 2,
+                "type":"Verger",
+                "situation": "Parc des Gayeulles",
+                "complement": "Espaces communs des jardins familiaux",
+                "quartier": "Maurepas-Patton-Les Gayeulles",
+                "surface": 900,
+                "essences": "PRUNIERS (12)",
+                "nom": "Parc des Gayeulles, jardins familiaux"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-182365.617311574198538, 6129412.15279991645366]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "id": 3,
+                "type":"Verger",
+                "situation": "Parc de la Guérinais",
+                "complement": "Derrière les 65, 67 et 69 boulevard de la Guérinais",
+                "quartier": "Cleunay-Arsenal Redon",
+                "surface": 3500,
+                "essences": "PYRUS/COMMUNIS/BEURRE HARDY (2)<br/>PYRUS/COMMUNIS/CONFERENCE (2)<br/>PYRUS/COMMUNIS/WILLIAM (2)<br/>MALUS/REINETTE/CLOCHARD (3)<br/>MALUS/ROYAL/GALA (3)<br/>MALUS/REINETTE/ARMORIQUE (3)<br/>JUGLANS/REGLA/CORNE DU PÉRIGORD (2)<br/>JUGLANS/REGLA/MAYETTE (2)<br/>JUGLANS/REGLA/FRANQUETTE (2)<br/>PRUNUS/CERASUS/VAN (2)<br/>PRUNUS/CERASUS/NAPOLEON (2)<br/>PRUNUS/CERASUS/BIGAREAU HATIF BURLAT (2)<br/>PRUNUS/DOMESTICA/REINE CLAUDE VIOLETTE (2)<br/>PRUNUS/DOMESTICA/MIRABELLE DE METZ (2)<br/>PRUNUS/PERSICA/SANGUINE (2)<br/>PUNICA/GRANATUM (2)",
+                "nom": "Parc de la Guérinais"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-190551.176147367339581, 6123226.08971852529794]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "id": 4,
+                "type":"Verger",
+                "situation": "Parc de Bréquigny",
+                "complement": "Côté avenue du Canada\/ rue des Loriettes",
+                "quartier": "Bréquigny",
+                "surface": 1100,
+                "essences": "MALUS/COMMUNIS/BELLE DE BOSKOOP (3)<br/>MALUS/COMMUNIS/COX ORANGE (3)<br/>MALUS/COMMUNIS/REINETTE GRISE DU CANADA (3)<br/>MALUS/COMMUNIS/CHAILLEUX (3)<br/>MALUS/COMMUNIS/REINE DES REINETTES (3)<br/>MALUS/COMMUNIS/MELROSE (3)<br/>PYRUS/COMMUNIS/BEURRE HARDY (3)<br/>PYRUS/COMMUNIS/CONFERENCE (3)<br/>PYRUS/COMMUNIS/DOYENNE DU COMICE (3)<br/>PRUNUS/DOMESTICA/REINE CLAUDE VIOLETTE (1)<br/>PRUNUS/DOMESTICA/REINE CLAUDE D OULLINS (1)<br/>PRUNUS/DOMESTICA/MIRABELLE DE NANCY (1)<br/>PRUNUS/AVIUM/BIGARREAU MOREAU (1)<br/>PRUNUS/AVIUM/ATIF DE BURLAT (1)",
+                "nom": "Parc de Bréquigny"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-187636.222390008595539, 6120675.90976246073842]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "id": 5,
+                "type":"Verger",
+                "situation": "Promenade de la Bédelière",
+                "complement": "Accès en face du 44 square Ludovic Trarieux",
+                "quartier": "Fransisco-Ferrer \/ Vern \/ La poterie",
+                "surface": 1700,
+                "essences": "MALUS/COMMUNIS/BELLE DE BOSKOOP (1)<br/>MALUS/COMMUNIS/COX ORANGE (1)<br/>MALUS/COMMUNIS/REINETTE GRISE DU CANADA (1)<br/>MALUS/COMMUNIS/CHAILLEUX (1)<br/>PYRUS/COMMUNIS/BEURRE HARDY (1)<br/>PYRUS/COMMUNIS/CONFERENCE (1)<br/>PYRUS/COMMUNIS/DOYENNE DU COMICE (1)<br/>PYRUS/COMMUNIS/WILLIAM (1)<br/>FICUS/CARICA (1)<br/>PRUNUS/ARMENIACA/BERGERON (1)<br/>",
+                "nom": "Bédelière"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-182112.080208824714646, 6122275.666737320832908]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "id": 6,
+                "type":"Micro-forêt",
+                "situation": "Avenue d'Italie",
+                "complement": "Entre le 2 et le 6 avenue d'Italie",
+                "quartier": "Le Blosne",
+                "surface": null,
+                "essences": "ACER/CAMPESTRE (90)<br/>ACER/MONSPESSULANUM (90)<br/>CARPINUS/BETULUS (20)<br/>CASTANEA/SATIVA (90)<br/>CORYLUS/AVELLANA (90)<br/>FRAXINUS/EXCELSIOR (20)<br/>ILEX/AQUIFOLIUM (20)<br/>LIGUSTRUM/VULGARE (20)<br/>MALUS/SYLVESTRIS (20)<br/>MESPILUS/GERMANICA (20)<br/>PRUNUS/AVIUM (90)<br/>PYRUS/CORDATA (20)<br/>PYRUS/PYRASTER (20)<br/>QUERCUS/PETRAEA (110)<br/>QUERCUS/PETRAEA (430)<br/>RHAMNUS/FRANGULA (20)<br/>SAMBUCUS/NIGRA (20)<br/>SORBUS/AUCUPARIA (20)<br/>SORBUS/DOMESTICA (20)<br/>SORBUS/TORMINALIS (90)<br/>ULMUS/MINOR (20)<br/>VIBURNUM/OPULUS (20)",
+                "nom": "Micro-forêt"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-185686.633061778557021, 6121414.315983546897769]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "id": 7,
+                "type":"Exposition",
+                "situation": "Jardin du palais Saint-Georges",
+                "complement": null,
+                "quartier": "Thabor/ Saint-Hélier",
+                "surface": null,
+                "essences": null,
+                "nom": "L'arbre et les gens (MCE)"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186370.86848016316071153, 6125362.33548373449593782]
+            }
+        }
+    ]
+}
