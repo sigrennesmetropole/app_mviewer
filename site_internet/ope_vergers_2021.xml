@@ -35,7 +35,7 @@
                 visible="true"
                 tooltip="true"
                 tooltipenabled="true"
-                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{id}} - {{nom}}&lt;/span&gt;"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{nom}}&lt;/span&gt;"
                 metadata="undefined"
                 queryable="true"
                 featurecount="3"
