@@ -1,6 +1,5 @@
 {
     "js": [
-      "js/fixNavbar.js",
       "js/fixRightPanel.js"
     ],
     "css": "css/styles.css",
