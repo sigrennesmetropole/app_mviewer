@@ -6,11 +6,17 @@ mviewer.customLayers.ope_vergers_nov21= (function() {
     function getcolor(feature) {
         let type = feature.get('type');
         
+        /*
         var color = '#f78b12'; 
         if (type == 'Exposition'){
             color = '#e04a3c';
         } else if (type == 'Verger') {
             color = '#818355'; //8FBC8F
+        }
+        */
+        var color = '#318073'; //e04a3c
+        if (type == 'Exposition'){
+            color = '#e04a3c'; //3e476c
         }
         return color;
     }

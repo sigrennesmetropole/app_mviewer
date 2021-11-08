@@ -51,7 +51,7 @@
                 type="customlayer"
                 url="apps/site_internet/customlayer/vergers_existants.js"
                 legendurl="apps/site_internet/img/legend/vergers.svg"
-                opacity="0.7"
+                opacity="0.6"
                 visible="true"
                 tooltip="false"
                 tooltipenabled="false"
