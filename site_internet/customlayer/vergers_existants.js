@@ -15,7 +15,7 @@ mviewer.customLayers.vergers= (function() {
     function vergerStyle_pct() {
         let style = new ol.style.Style({
                 image: new ol.style.Icon({
-                  color: '#d485c5', 
+                  color: '#ba8e02', 
                   crossOrigin: 'anonymous',
                   scale:1,
                   anchor:[0.5,1],
