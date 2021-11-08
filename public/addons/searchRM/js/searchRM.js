@@ -17,8 +17,6 @@ var searchRM = (function () {
         $("#searchtool input").attr("placeholder", mviewer.customComponents.searchRM.config.options.libelles.placeholderRVA);
 
         if(API.mode !== 'u' && API.mode !== 's'){
-          $(".background-custom-searchtool").css({"right":"84px"});
-          $("#searchresults").css({"right": "50px", "top": "142px"});
           if(screen.width <= 767){
             $('#searchtool').css({'cssText': 'right: -98px;top: 58px'});
             $('#btn-mode-su-menu').css({'cssText': 'top: 142px'});
