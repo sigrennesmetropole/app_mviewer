@@ -1,0 +1,712 @@
+{
+    "type": "FeatureCollection",
+    "name": "vergers_existants",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:EPSG::3857"
+        }
+    },
+    "features": [{
+            "type": "Feature",
+            "properties": {
+                "site": "ESPLANADE DU CHAMP DE MARS",
+                "localisation": "ESPLANADE DU CHAMP DE MARS",
+                "quartier": "Thabor - Saint-Hélier - Alphonse Guérin - Baud-Chardonnet",
+                "creation": "2019",
+                "surface": 150,
+                "nombre_arb": 8,
+                "surf_arb": 100,
+                "convention": "OUI",
+                "nom_verger": "VERGER DU CHAMPS DE MARS",
+                "SHAPE_Leng": 108.662800859,
+                "SHAPE_Area": 157.33715037499999,
+                "id": "24"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186446.487299154978245, 6124281.005016935989261]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "ESPLANADE DU CHAMP DE MARS",
+                "localisation": "ESPLANADE DU CHAMP DE MARS",
+                "quartier": "Thabor - Saint-Hélier - Alphonse Guérin - Baud-Chardonnet",
+                "creation": "2019",
+                "surface": 150,
+                "nombre_arb": 11,
+                "surf_arb": 100,
+                "convention": "OUI",
+                "nom_verger": "VERGER LES CHAMPS LIBRES",
+                "SHAPE_Leng": 173.46369281099999,
+                "SHAPE_Area": 152.78266824,
+                "id": "25"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186443.991570171812782, 6124298.463605807162821]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "CLOITRE SAINT MELAINE ET ABORDS",
+                "localisation": "1 PLACE SAINT MELAINE",
+                "quartier": "Thabor - Saint-Hélier - Alphonse Guérin - Baud-Chardonnet",
+                "creation": "2017",
+                "surface": 50,
+                "nombre_arb": 2,
+                "surf_arb": 10,
+                "convention": "OUI",
+                "nom_verger": "VERGER DE JEAN ZAY",
+                "SHAPE_Leng": 36.047040628300003,
+                "SHAPE_Area": 50.907143669600003,
+                "id": "15"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186223.377830257028108, 6126025.248176033608615]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "JARDIN DU PAPIER TIMBRE",
+                "localisation": "RUE DU PAPIER TIMBRE",
+                "quartier": "Centre",
+                "creation": "2019",
+                "surface": 25,
+                "nombre_arb": 3,
+                "surf_arb": 25,
+                "convention": "OUI",
+                "nom_verger": "VERGER DU PAPIER TIMBRE",
+                "SHAPE_Leng": 23.931345501799999,
+                "SHAPE_Area": 25.79165253,
+                "id": "26"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-187420.621279243147001, 6124355.641603435389698]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "PARC DU THABOR",
+                "localisation": "RUE DE LA PALESTINE",
+                "quartier": "Thabor - Saint-Hélier - Alphonse Guérin - Baud-Chardonnet",
+                "creation": "2019",
+                "surface": 300,
+                "nombre_arb": 12,
+                "surf_arb": 100,
+                "convention": "OUI",
+                "nom_verger": "VERGER DU THABOR",
+                "SHAPE_Leng": 71.37491738,
+                "SHAPE_Area": 311.85139274599999,
+                "id": "27"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-185613.231346068787389, 6125997.690075535327196]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "PARC DU THABOR",
+                "localisation": "CARRE DUGUESCLIN",
+                "quartier": "Thabor - Saint-Hélier - Alphonse Guérin - Baud-Chardonnet",
+                "creation": "2014",
+                "surface": 50,
+                "nombre_arb": 68,
+                "surf_arb": 50,
+                "convention": "NON",
+                "nom_verger": "VIGNES DU THABOR",
+                "SHAPE_Leng": 202.11452203299999,
+                "SHAPE_Area": 46.117884228999998,
+                "id": "10"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186212.220195333007723, 6125804.287497650831938]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "JARDIN ANNE COGNE",
+                "localisation": "RUE DU PERE GRIGNION",
+                "quartier": "Bourg l'Evesque - La Touche - Moulin du Comte",
+                "creation": "2019",
+                "surface": 65,
+                "nombre_arb": 23,
+                "surf_arb": 15,
+                "convention": "OUI",
+                "nom_verger": "VERGER ANNE COGNE",
+                "SHAPE_Leng": 138.95877867799999,
+                "SHAPE_Area": 69.280395203200001,
+                "id": "28"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-187913.500514492217917, 6125433.315264753997326]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "PRAIRIES PREVALAYE",
+                "localisation": "LA SAUDRAIS",
+                "quartier": "Cleunay - Arsenal - Redon - La Courrouze",
+                "creation": null,
+                "surface": 8000,
+                "nombre_arb": 29,
+                "surf_arb": 0,
+                "convention": "NON",
+                "nom_verger": "VERGER DU LILLION",
+                "SHAPE_Leng": 473.669219779,
+                "SHAPE_Area": 8022.3895693799996,
+                "id": "01"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-193895.200861243065447, 6121677.712508705444634]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "JARDIN VOLTAIRE",
+                "localisation": "ANGLE VOLTAIRE - MABILAIS",
+                "quartier": "Cleunay - Arsenal - Redon - La Courrouze",
+                "creation": "2016",
+                "surface": 800,
+                "nombre_arb": 5,
+                "surf_arb": 0,
+                "convention": "NON",
+                "nom_verger": "VERGER DE LA MABILAIS",
+                "SHAPE_Leng": 140.441092903,
+                "SHAPE_Area": 793.53581045199996,
+                "id": "12"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-189042.694688620744273, 6124398.476570282131433]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "ALLEE ALFRED JARRY",
+                "localisation": "ANGLE MARTEVILLE - BLANQUI",
+                "quartier": "Bourg l'Evesque - La Touche - Moulin du Comte",
+                "creation": "2019",
+                "surface": 560,
+                "nombre_arb": 29,
+                "surf_arb": 50,
+                "convention": "OUI",
+                "nom_verger": "VERGER MARTEVILLE",
+                "SHAPE_Leng": 88.597722137399998,
+                "SHAPE_Area": 502.29443607600001,
+                "id": "29"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-188081.167204533179756, 6126008.949843229725957]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "STADE MOULIN DU COMTE\/CRAPA",
+                "localisation": "FOSSE PITEUX - HALAGE",
+                "quartier": "Cleunay - Arsenal - Redon - La Courrouze",
+                "creation": "2016",
+                "surface": 1100,
+                "nombre_arb": 18,
+                "surf_arb": 40,
+                "convention": "OUI",
+                "nom_verger": "VERGER MOULIN DU COMTE",
+                "SHAPE_Leng": 201.79628052499999,
+                "SHAPE_Area": 1163.0712666,
+                "id": "13"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-190567.318224495393224, 6124535.804910705424845]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "PARC DU DOMAINE SAINT-CYR",
+                "localisation": "SAINT-CYR PARTIE HAUTE",
+                "quartier": "Cleunay - Arsenal - Redon - La Courrouze",
+                "creation": "2016",
+                "surface": 500,
+                "nombre_arb": 39,
+                "surf_arb": 60,
+                "convention": "OUI",
+                "nom_verger": "VERGER PARC SAINT-CYR",
+                "SHAPE_Leng": 142.731512143,
+                "SHAPE_Area": 450.81183655500001,
+                "id": "14"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-189160.224104046821594, 6125317.807821145281196]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "PARC EQUESTRE DE LA PREVALAYE",
+                "localisation": "ROUTE DES BRULAIS",
+                "quartier": "Cleunay - Arsenal - Redon - La Courrouze",
+                "creation": "2012",
+                "surface": 5000,
+                "nombre_arb": 43,
+                "surf_arb": 0,
+                "convention": "NON",
+                "nom_verger": "LE VERGER DE PLEIN VENT",
+                "SHAPE_Leng": 323.56574717699999,
+                "SHAPE_Area": 5068.3329244500001,
+                "id": "09"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-192407.969671051308978, 6122101.495050475932658]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "PRAIRIES SAINT MARTIN",
+                "localisation": "94-98 CANAL SAINT-MARTIN",
+                "quartier": "Saint Martin",
+                "creation": "2018",
+                "surface": 2300,
+                "nombre_arb": 62,
+                "surf_arb": 0,
+                "convention": null,
+                "nom_verger": "VERGER NORD PRAIRIES SAINT-MARTIN",
+                "SHAPE_Leng": 457.67444385200002,
+                "SHAPE_Area": 2368.8027598,
+                "id": "19"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186333.747133983561071, 6127723.491086976602674]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "PRAIRIES SAINT MARTIN",
+                "localisation": "80 CANAL SAINT-MARTIN",
+                "quartier": "Saint Martin",
+                "creation": "2018",
+                "surface": 1000,
+                "nombre_arb": 38,
+                "surf_arb": 0,
+                "convention": null,
+                "nom_verger": "VERGER SUD PRAIRIES SAINT-MARTIN",
+                "SHAPE_Leng": 191.722022708,
+                "SHAPE_Area": 1058.1658334700001,
+                "id": "20"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186352.38645047362661, 6127507.283898385241628]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "BASSIN TAMPON  BADEROT",
+                "localisation": "PROMENADE PIERRE ROLAND GIOT",
+                "quartier": "Villejean - Beauregard",
+                "creation": "2018",
+                "surface": 550,
+                "nombre_arb": 17,
+                "surf_arb": 60,
+                "convention": "OUI",
+                "nom_verger": "VERGER DES 3 RUISSEAUX",
+                "SHAPE_Leng": 100.451608581,
+                "SHAPE_Area": 567.41640357899996,
+                "id": "21"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-188482.943193179322407, 6128572.441700651310384]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "CHAMBRES BOCAGERES BEAUREGARD",
+                "localisation": "47 RUE FRANCOIS TANGUY-PRIGENT",
+                "quartier": "Villejean - Beauregard",
+                "creation": "1990",
+                "surface": 450,
+                "nombre_arb": 5,
+                "surf_arb": 0,
+                "convention": "NON",
+                "nom_verger": "VERGER CHAMBRE BOCAGERE BEAUREGARD",
+                "SHAPE_Leng": 146.95643008,
+                "SHAPE_Area": 443.65861123600001,
+                "id": "04"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-189431.205280696885893, 6128292.882208781316876]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "AVENUE H. FREVILLE SECTION 2",
+                "localisation": "SECTION ALBERT 1ER - YSER",
+                "quartier": "Sud gare",
+                "creation": "2011",
+                "surface": 6200,
+                "nombre_arb": 104,
+                "surf_arb": 0,
+                "convention": "NON",
+                "nom_verger": "VERGER HENRI FREVILLE - SECTION 2",
+                "SHAPE_Leng": 600.94668962599997,
+                "SHAPE_Area": 6124.8415150800001,
+                "id": "08"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186407.763876810175134, 6121906.29986038338393]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "MERLON DU BOIS HAREL",
+                "localisation": "38-42 RUE D'ANGLETERRE",
+                "quartier": "Bréquigny",
+                "creation": null,
+                "surface": 200,
+                "nombre_arb": 5,
+                "surf_arb": 0,
+                "convention": "NON",
+                "nom_verger": "VERGER DES BUTTES DE BOBERIL",
+                "SHAPE_Leng": 72.285227507800002,
+                "SHAPE_Area": 180.262140061,
+                "id": "34"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-188431.250432975473814, 6120249.33546703029424]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "LIAISON PIETONNE CUCILLE\/PRIGENT",
+                "localisation": "ANGLE CUCILLE - JULIE D'ANCENNES",
+                "quartier": "Villejean - Beauregard",
+                "creation": "1990",
+                "surface": 250,
+                "nombre_arb": 6,
+                "surf_arb": 0,
+                "convention": "NON",
+                "nom_verger": "VERGER CUCILLE BEAUREGARD",
+                "SHAPE_Leng": 67.23337402,
+                "SHAPE_Area": 253.47341207400001,
+                "id": "05"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-189239.066428041463951, 6128287.592971070669591]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "JARDINS FAMILIAUX DU BREIL",
+                "localisation": "RUE DE LANDE DU BREIL",
+                "quartier": "Villejean - Beauregard",
+                "creation": "2019",
+                "surface": 800,
+                "nombre_arb": 32,
+                "surf_arb": 0,
+                "convention": "NON",
+                "nom_verger": "VERGER DU BREIL",
+                "SHAPE_Leng": 243.697860808,
+                "SHAPE_Area": 805.217997416,
+                "id": "30"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-190851.74589691782603, 6128224.984429026022553]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "PARC DE VILLEJEAN",
+                "localisation": "ENTREE PONT-LAGOT",
+                "quartier": "Villejean - Beauregard",
+                "creation": "2019",
+                "surface": 470,
+                "nombre_arb": 17,
+                "surf_arb": 120,
+                "convention": "OUI",
+                "nom_verger": "VERGER DU PARC DE VILLEJEAN",
+                "SHAPE_Leng": 223.207604049,
+                "SHAPE_Area": 603.85927353500006,
+                "id": "33"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-191812.820664173021214, 6127209.54032251983881]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "JARDINS FAMILIAUX GAYEULLES",
+                "localisation": "ESPACE COMMUN DES JARDINS FAMILIAUX",
+                "quartier": "Maurepas - Bellangerais",
+                "creation": "2018",
+                "surface": 2400,
+                "nombre_arb": 12,
+                "surf_arb": 50,
+                "convention": "NON",
+                "nom_verger": "VERGER JARDINS FAMILIAUX GAYEULLES",
+                "SHAPE_Leng": 284.24971414200002,
+                "SHAPE_Area": 2406.6002088199998,
+                "id": "22"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-182385.385997265577316, 6129625.723425164818764]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "CENTRE SOCIAL DES LONGS PRES",
+                "localisation": "PATIO CENTRE SOCIAL DES LONGS PRES",
+                "quartier": "Maurepas - Bellangerais",
+                "creation": "2019",
+                "surface": 150,
+                "nombre_arb": 5,
+                "surf_arb": 0,
+                "convention": null,
+                "nom_verger": "VERGER DES LONGS PRES",
+                "SHAPE_Leng": 49.875968109699997,
+                "SHAPE_Area": 155.452601805,
+                "id": "31"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-184338.966639176534954, 6128951.699489145539701]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "PROMENADE DES PETITES COURS",
+                "localisation": "RUE DE SAINT-LAURENT - ABORDS CIMETIERE",
+                "quartier": "Maurepas - Bellangerais",
+                "creation": "2017",
+                "surface": 1100,
+                "nombre_arb": 20,
+                "surf_arb": 70,
+                "convention": "NON",
+                "nom_verger": "VERGER DES PETITES COURS",
+                "SHAPE_Leng": 294.44074939900003,
+                "SHAPE_Area": 1134.9660453199999,
+                "id": "16"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-184105.919181134406244, 6129744.298638578504324]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "JARDIN DU NANCON",
+                "localisation": "RUE DES LONGS PRES - NORD DU 10 SQUARE DE SENDAI",
+                "quartier": "Maurepas - Bellangerais",
+                "creation": null,
+                "surface": 200,
+                "nombre_arb": 8,
+                "surf_arb": 0,
+                "convention": "NON",
+                "nom_verger": "VERGER DU NANCON",
+                "SHAPE_Leng": 61.759680244899997,
+                "SHAPE_Area": 211.353618235,
+                "id": "02"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-184207.373360907135066, 6129037.861942538060248]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "JARDIN DU BONHEUR",
+                "localisation": "RUE CHARLES MARIE WIDOR",
+                "quartier": "Maurepas - Bellangerais",
+                "creation": "2017",
+                "surface": 2100,
+                "nombre_arb": 31,
+                "surf_arb": 47,
+                "convention": "NON",
+                "nom_verger": "VERGER DU JARDIN DU BONHEUR",
+                "SHAPE_Leng": 360.97623972000002,
+                "SHAPE_Area": 1579.02617803,
+                "id": "17"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-184701.025300438224804, 6127762.419097638688982]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "PARC DU LANDRY",
+                "localisation": "109 RUE DE LA POTERIE",
+                "quartier": "Francisco Ferrer - Landry - Poterie",
+                "creation": "2018",
+                "surface": 700,
+                "nombre_arb": 68,
+                "surf_arb": 0,
+                "convention": "OUI",
+                "nom_verger": "VERGER FORET NOURRICIERE DU PARC DU LANDRY",
+                "SHAPE_Leng": 111.4279361,
+                "SHAPE_Area": 736.13384076900002,
+                "id": "23"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-182808.53820019584964, 6122572.064392283558846]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "PARC DU LANDRY",
+                "localisation": "196 RUE DE CHATEAUGIRON - 109 RUE DE LA POTERIE",
+                "quartier": "Francisco Ferrer - Landry - Poterie",
+                "creation": "1955",
+                "surface": 6400,
+                "nombre_arb": 100,
+                "surf_arb": 0,
+                "convention": "NON",
+                "nom_verger": "VERGER DU PARC DU LANDRY",
+                "SHAPE_Leng": 854.25496844099996,
+                "SHAPE_Area": 6026.86261698,
+                "id": "03"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-182791.993042271904415, 6122795.934460298158228]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "JARDINS FAMILIAUX DE LA POTERIE",
+                "localisation": "RUE MICHEL GERARD",
+                "quartier": "Francisco Ferrer - Landry - Poterie",
+                "creation": "2019",
+                "surface": 700,
+                "nombre_arb": 28,
+                "surf_arb": 50,
+                "convention": "OUI",
+                "nom_verger": "VERGER DES JARDINS FAMILIAUX DE LA POTERIE",
+                "SHAPE_Leng": 183.052874471,
+                "SHAPE_Area": 1401.67612807,
+                "id": "32"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-182175.090466802299488, 6121440.656573839485645]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "GS OSCAR LEROUX",
+                "localisation": "6 BOULEVARD GAETAN HERVE",
+                "quartier": "Sud gare",
+                "creation": "2017",
+                "surface": 300,
+                "nombre_arb": 8,
+                "surf_arb": 30,
+                "convention": "NON",
+                "nom_verger": "VERGER OSCAR LEROUX",
+                "SHAPE_Leng": 71.265831521699994,
+                "SHAPE_Area": 303.38330799699997,
+                "id": "18"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186019.770856285671471, 6121952.041356881149113]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "SQUARE DE SETUBAL",
+                "localisation": "NORD EST DU RESTAURANT MUNICIPAL",
+                "quartier": "Le Blosne",
+                "creation": "2010",
+                "surface": 380,
+                "nombre_arb": 13,
+                "surf_arb": 0,
+                "convention": "NON",
+                "nom_verger": "VERGER DE SETUBAL",
+                "SHAPE_Leng": 89.710623687699993,
+                "SHAPE_Area": 427.35119002200003,
+                "id": "07"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-185705.949341515544802, 6120926.675756786949933]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "AVENUE H. FREVILLE SECTION 4",
+                "localisation": "SECTION PORTUGAL - BOSPHORE",
+                "quartier": "Le Blosne",
+                "creation": "2009",
+                "surface": 1500,
+                "nombre_arb": 16,
+                "surf_arb": 0,
+                "convention": "NON",
+                "nom_verger": "VERGER SUD HENRI FREVILLE - SECTION 4",
+                "SHAPE_Leng": 226.405738945,
+                "SHAPE_Area": 1753.22361054,
+                "id": "06"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186434.408863497374114, 6121000.817740833386779]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "AVENUE H. FREVILLE SECTION 4",
+                "localisation": "SECTION BOSPHORE - SUEDE",
+                "quartier": "Le Blosne",
+                "creation": "2014",
+                "surface": 2600,
+                "nombre_arb": 35,
+                "surf_arb": 0,
+                "convention": "NON",
+                "nom_verger": "VERGER NORD HENRI FREVILLE - SECTION 4",
+                "SHAPE_Leng": 218.39193150599999,
+                "SHAPE_Area": 2011.8646992199999,
+                "id": "11"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186424.014422283944441, 6121188.27475490886718]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "site": "SQUARE GENERAL JOHN S. WOOD",
+                "localisation": "17-29 SQUARE GENERAL JOHN S. WOOD",
+                "quartier": "Maurepas - Bellangerais",
+                "creation": "2021",
+                "surface": 250,
+                "nombre_arb": 0,
+                "surf_arb": 0,
+                "convention": null,
+                "nom_verger": "SQUARE GENERAL JOHN S. WOOD",
+                "SHAPE_Leng": 317.44275885799999,
+                "SHAPE_Area": 4434.6772467700002,
+                "id": "47"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-184295.582490659697214, 6130380.675468292087317]
+            }
+        }
+    ]
+}

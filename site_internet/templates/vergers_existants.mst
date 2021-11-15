@@ -1,0 +1,17 @@
+{{#features}}
+	<li class="item" >
+		<h5 class="rm-popup-title-feature">{{nom_verger}}</h5>
+		<span class="rm-popup-subtitle-feature" > verger </span>
+		<p class="rm-popup-text-feature">
+			{{#quartier}}<span class='rm-popup-label'> Quartier :</span> {{{quartier}}}<br/>{{/quartier}}
+			{{#site}}<span class='rm-popup-label'> Localisation :</span> {{{site}}}<br/>{{/site}}
+			{{#surface}}<span class='rm-popup-label'> Surface :</span> {{{surface}}} m²<br/>{{/surface}}
+			{{#Nombre_arb}}<span class='rm-popup-label'> Nombre d'arbres :</span> {{{Nombre_arb}}} m²<br/>{{/Nombre_arb}}
+			{{#localisation}}<span class='rm-popup-label'> Accès :</span> {{{localisation}}}<br/>{{/localisation}}
+			{{#creation}}<span class='rm-popup-label'> Créé en :</span> {{{creation}}}<br/>{{/creation}}
+		</p>
+		<p class="rm-popup-text-feature">
+			{{#essences}}<span class='rm-popup-label'> Essences :</span> <br/>{{{essences}}}<br/>{{/essences}}
+		</p>
+	</li>
+{{/features}}
