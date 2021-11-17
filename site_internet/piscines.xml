@@ -35,12 +35,12 @@
                 visible="true"
                 tooltip="true"
                 tooltipenabled="true"
-                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{nom_usage}}&lt;/span&gt;"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{nomUsage}}&lt;/span&gt;"
                 metadata="undefined"
                 queryable="true"
                 featurecount="3"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/organisme.mst"></template>
+                <!--<template url="apps/site_internet/templates/organisme.mst"></template>-->
             </layer>
         </theme>
     </themes>
