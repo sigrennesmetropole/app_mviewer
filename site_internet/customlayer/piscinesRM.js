@@ -73,6 +73,13 @@ mviewer.customLayers.piscinesRM= (function() {
             // organisme principal = données principales de la piscine
             feature.set('idOrganisme', org_data.response.idOrganisme);
             feature.set('nomUsage', org_data.response.nomUsage);
+            feature.set('descriptif', org_data.response.descriptif);
+            //champs adresse
+            feature.set('adresse_postale_adr', org_data.response.sites[0].adressePostaleAdr);
+            feature.set('adresse_postale_bp_cs', org_data.response.sites[0].adressePostaleBpCs);
+            feature.set('adresse_postale_cp', org_data.response.sites[0].adressePostaleCp);
+            feature.set('adresse_postale_comm', org_data.response.sites[0].adressePostaleComm);
+            feature.set('adresse_postale_cedex', org_data.response.sites[0].adressePostaleCedex);
             feature.set('horairesOuvertures', org_data.response.horairesOuvertures);
             feature.set('joursFermes', org_data.response.joursFermes);
         } else{
