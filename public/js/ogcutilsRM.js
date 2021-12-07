@@ -80,7 +80,7 @@ function getLegendGraphicUrl(serviceUri, params) {
       'FORMAT': encodeURIComponent('image/png'),
       /*'WIDTH': '30',
       'HEIGHT': '20',*/
-      'LEGEND_OPTIONS': encodeURIComponent('fontName:Open Sans;fontAntiAliasing:true;fontColor:0x777777;fontSize:10;dpi:96'),
+      'LEGEND_OPTIONS': encodeURIComponent('forceLabels:on;fontName:Open Sans;fontAntiAliasing:true;fontColor:0x777777;fontSize:10;dpi:96'),
       'TRANSPARENT': true
     };
 
