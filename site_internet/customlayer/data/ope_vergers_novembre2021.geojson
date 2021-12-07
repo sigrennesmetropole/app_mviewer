@@ -103,22 +103,6 @@
                 "type": "Point",
                 "coordinates": [-185686.633061778557021, 6121414.315983546897769]
             }
-        }, {
-            "type": "Feature",
-            "properties": {
-                "id": 7,
-                "type":"Exposition",
-                "situation": "Jardin du palais Saint-Georges",
-                "complement": null,
-                "quartier": "Thabor/ Saint-Hélier",
-                "surface": null,
-                "essences": null,
-                "nom": "L'arbre et les gens (MCE)"
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-186370.86848016316071153, 6125362.33548373449593782]
-            }
         }
     ]
 }
