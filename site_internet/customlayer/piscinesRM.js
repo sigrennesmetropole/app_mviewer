@@ -83,8 +83,8 @@ mviewer.customLayers.piscinesRM= (function() {
             feature.set('adresse_postale_cedex', org_data.response.sites[0].adressePostaleCedex);
             feature.set('horairesOuvertures', org_data.response.horairesOuvertures);
             feature.set('joursFermes', org_data.response.joursFermes);
-            // console.log(feature);
-            // console.log(feature.values_.nom_site);
+            console.log(feature.values_.nom_site);
+            console.log(feature);
             var content = feature.values_.horairesOuvertures;
             content.forEach((periode, i) => {
               var testedHoraires = 0;
@@ -108,9 +108,6 @@ mviewer.customLayers.piscinesRM= (function() {
               bassins.forEach((bassin, i) => {
                 if(bassin.horairesOuvertures){
                   bassin.horairesOuvertureBassins = bassin.horairesOuvertures;
-                  if(bassin.horairesOuvertures.length === 0){
-                    bassin.horairesOuvertureBassins = null;
-                  };
                   delete bassin.horairesOuvertures;
                 }
               });
