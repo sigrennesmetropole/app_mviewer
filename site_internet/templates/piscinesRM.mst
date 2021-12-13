@@ -6,54 +6,61 @@
 		<span class='rm-popup-label'> Adresse :</span> {{adresse_postale_adr}} {{adresse_postale_cp}} {{adresse_postale_comm}}<br/>
 		<!-- {{#nom_org_principal}}<span class='rm-popup-label'> Nom du site :</span> {{{nom_org_principal}}}<br/>{{/nom_org_principal}} -->
 		<!-- {{#descriptif}}<span class='rm-popup-label'> Descriptif :</span> {{{descriptif}}}<br/>{{/descriptif}} -->
-		<span class='rm-popup-label'> Horaires de la {{nomUsage}}:</span><br>
-		<section>
-			<div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p">
-				{{#horairesOuvertures}}
-					<div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}}">
-						<p class="inSliderPClass">
-							{{#dateDebut}}
-									<span class='rm-popup-label'>A partir du <span class='date_in_french_format'>{{dateDebut}}</span> {{#dateFin}}au <span class='date_in_french_format'>{{dateFin}}</span>{{/dateFin}}</span><br>
-							{{/dateDebut}}
-
-							{{#horaires}}
-								{{#libJour}}
-										<span class='rm-popup-label'>{{libJour}}:</span> {{#ouvert1}}{{#ferme1}}<span class='hour_in_french_format'>{{ouvert1}}</span>h - <span class='hour_in_french_format'>{{ferme1}}</span>h{{/ferme1}}{{/ouvert1}}	{{^ouvert1}} - {{/ouvert1}}
-										{{#ouvert2}} /{{#ferme2}}<span class='hour_in_french_format'>{{ouvert2}}</span>h - <span class='hour_in_french_format'>{{ferme2}}</span>h{{/ferme2}}{{/ouvert2}}
-										{{#ouvert3}} /{{#ferme3}}<span class='hour_in_french_format'>{{ouvert3}}</span>h - <span class='hour_in_french_format'>{{ferme3}}</span>h{{/ferme3}}{{/ouvert3}}
-								{{/libJour}}<br>
-							{{/horaires}}{{^horaires}} Pas de jours d'ouverture sur cette période.<br> {{/horaires}}
-
-						</p>
-					</div>
-					{{/horairesOuvertures}}
-				</div>
-		</section>
-
-		{{#bassins}}
+		<span class='rm-popup-label'> Horaires:</span><br>
+		{{#horairesOuvertures.length}}
 			<h6 class="rm-popup-title-feature">{{nomUsage}}</h6>
 			<section>
 				<div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p">
-					{{#horairesOuvertureBassins}}
+					{{#horairesOuvertures}}
 						<div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}}">
 							<p class="inSliderPClass">
 								{{#dateDebut}}
 										<span class='rm-popup-label'>A partir du <span class='date_in_french_format'>{{dateDebut}}</span> {{#dateFin}}au <span class='date_in_french_format'>{{dateFin}}</span>{{/dateFin}}</span><br>
 								{{/dateDebut}}
 
-								{{#horaires}}
-									{{#libJour}}
-											<span class='rm-popup-label'>{{libJour}}:</span> {{#ouvert1}}{{#ferme1}}<span class='hour_in_french_format'>{{ouvert1}}</span>h - <span class='hour_in_french_format'>{{ferme1}}</span>h{{/ferme1}}{{/ouvert1}}	{{^ouvert1}} - {{/ouvert1}}
-											{{#ouvert2}} /{{#ferme2}}<span class='hour_in_french_format'>{{ouvert2}}</span>h - <span class='hour_in_french_format'>{{ferme2}}</span>h{{/ferme2}}{{/ouvert2}}
-											{{#ouvert3}} /{{#ferme3}}<span class='hour_in_french_format'>{{ouvert3}}</span>h - <span class='hour_in_french_format'>{{ferme3}}</span>h{{/ferme3}}{{/ouvert3}}
-									{{/libJour}}<br>
-								{{/horaires}}{{^horaires}} Pas de jours d'ouverture sur cette période.<br> {{/horaires}}
+									{{#horaires}}
+										{{#libJour}}
+												<span class='rm-popup-label'>{{libJour}}:</span> {{#ouvert1}}{{#ferme1}}<span class='hour_in_french_format'>{{ouvert1}}</span>h - <span class='hour_in_french_format'>{{ferme1}}</span>h{{/ferme1}}{{/ouvert1}}	{{^ouvert1}} - {{/ouvert1}}
+												{{#ouvert2}} /{{#ferme2}}<span class='hour_in_french_format'>{{ouvert2}}</span>h - <span class='hour_in_french_format'>{{ferme2}}</span>h{{/ferme2}}{{/ouvert2}}
+												{{#ouvert3}} /{{#ferme3}}<span class='hour_in_french_format'>{{ouvert3}}</span>h - <span class='hour_in_french_format'>{{ferme3}}</span>h{{/ferme3}}{{/ouvert3}}
+										{{/libJour}}<br>
+									{{/horaires}}{{^horaires}} Pas de jours d'ouverture sur cette période.<br> {{/horaires}}
+
 							</p>
 						</div>
-						{{/horairesOuvertureBassins}}{{^horairesOuvertureBassins}} Pas d'ouverture déclarée.<br> {{/horairesOuvertureBassins}}
-					</div>
+					{{/horairesOuvertures}}
+				</div>
 			</section>
-		{{/bassins}}
+		{{/horairesOuvertures.length}}
+
+		{{#bassins.length}}
+			{{#bassins}}
+				<section>
+					<h6 class="rm-popup-title-feature">{{nomUsage}}</h6>
+					{{#horairesOuvertureBassins.length}}
+						<div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p">
+							{{#horairesOuvertureBassins}}
+								<div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}}">
+									<p class="inSliderPClass">
+										{{#dateDebut}}
+												<span class='rm-popup-label'>A partir du <span class='date_in_french_format'>{{dateDebut}}</span> {{#dateFin}}au <span class='date_in_french_format'>{{dateFin}}</span>{{/dateFin}}</span><br>
+										{{/dateDebut}}
+
+										{{#horaires}}
+											{{#libJour}}
+													<span class='rm-popup-label'>{{libJour}}:</span> {{#ouvert1}}{{#ferme1}}<span class='hour_in_french_format'>{{ouvert1}}</span>h - <span class='hour_in_french_format'>{{ferme1}}</span>h{{/ferme1}}{{/ouvert1}}	{{^ouvert1}} - {{/ouvert1}}
+													{{#ouvert2}} /{{#ferme2}}<span class='hour_in_french_format'>{{ouvert2}}</span>h - <span class='hour_in_french_format'>{{ferme2}}</span>h{{/ferme2}}{{/ouvert2}}
+													{{#ouvert3}} /{{#ferme3}}<span class='hour_in_french_format'>{{ouvert3}}</span>h - <span class='hour_in_french_format'>{{ferme3}}</span>h{{/ferme3}}{{/ouvert3}}
+											{{/libJour}}<br>
+										{{/horaires}}{{^horaires}} Pas de jours d'ouverture sur cette période.<br> {{/horaires}}
+									</p>
+								</div>
+								{{/horairesOuvertureBassins}}
+							{{/horairesOuvertureBassins.length}}{{^horairesOuvertureBassins.length}} Pas d'ouverture déclarée.<br> {{/horairesOuvertureBassins.length}}
+						</div>
+					</section>
+				{{/bassins}}
+			{{/bassins.length}}{{^bassins.length}} Pas d'ouverture déclarée.<br> {{/bassins.length}}
 
 		</span><br>
 		<!-- {{#infos_horaires}}<span class='rm-popup-label'> Informations :</span> {{{infos_horaires}}}<br/>{{/infos_horaires}} -->
