@@ -1,6 +1,7 @@
 
 mviewer.customLayers.artville= (function() {
-    let data_url = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=ptou_lois:art_ville&outputFormat=application/json&srsName=EPSG:4326';
+    //let data_url = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=ptou_lois:art_ville&outputFormat=application/json&srsName=EPSG:4326';
+    let data_url='https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=ptou_lois:v_art_ville&outputFormat=application/json&srsName=EPSG:4326';
     
     
     function markerStyle(feature) {

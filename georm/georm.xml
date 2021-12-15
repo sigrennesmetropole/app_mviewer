@@ -377,13 +377,12 @@
                 <template url="apps/georm/templates/organismes.mst"></template>
 			</layer>
 			<layer
-				id="art_ville"
+				id="v_art_ville"
 				name="Street art"
 				type="wms"
 				url="https://public.sig.rennesmetropole.fr/geoserver/ptou_lois/ows"
 				visible="false"
 				infoformat="application/vnd.ogc.gml"
-				sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/georm_street-art.sld"
 				metadata="undefined"
 				metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168"
 				queryable="true"
@@ -393,13 +392,12 @@
                 <template url="apps/georm/templates/georm_street-art.mst"></template>
 			</layer>
 			<layer
-				id="art_ville"
+				id="v_art_ville"
 				name="Art sur l'espace public"
 				type="wms"
 				url="https://public.sig.rennesmetropole.fr/geoserver/ptou_lois/ows"
 				visible="false"
 				infoformat="application/vnd.ogc.gml"
-				sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/georm_art-ville.sld"
 				metadata="undefined"
 				metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/5451cbf0-6353-47ad-a274-f237001aed10"
 				queryable="true"
@@ -409,13 +407,12 @@
                 <template url="apps/georm/templates/georm_art-ville.mst"></template>
 			</layer>
             <layer
-				id="art_ville"
+				id="v_art_ville"
 				name="Art dans un bâtiment"
 				type="wms"
 				url="https://public.sig.rennesmetropole.fr/geoserver/ptou_lois/ows"
 				visible="false"
 				infoformat="application/vnd.ogc.gml"
-				sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/georm_art-ville.sld"
 				metadata="undefined"
 				metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/5451cbf0-6353-47ad-a274-f237001aed10"
 				queryable="true"
@@ -425,13 +422,13 @@
                 <template url="apps/georm/templates/georm_art-ville.mst"></template>
 			</layer>
             <layer
-				id="art_ville"
+				id="v_art_ville"
 				name="Art pour la mémoire"
 				type="wms"
 				url="https://public.sig.rennesmetropole.fr/geoserver/ptou_lois/ows"
 				visible="false"
 				infoformat="application/vnd.ogc.gml"
-				sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/georm_art-ville.sld"
+			    style="v_art_ville_memoire"
 				metadata="undefined"
 				metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/5451cbf0-6353-47ad-a274-f237001aed10"
 				queryable="true"
