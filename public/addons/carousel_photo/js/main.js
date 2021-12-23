@@ -85,11 +85,15 @@
                       slidesToScroll: 1,
                       autoplay: false,
                       arrows : true,
-                      centerMode: true,
+                      centerMode: false,
                       variableWidth: true,
-                      lazyLoad: 'ondemand'
+                      lazyLoad: 'ondemand',
+                      infinite:false
                   });
-                  $('.slick-slide').css({'width':'310px'});
+                  $('.slick-slide').css({'width':'1.495%'});
+                  if(screen.width <= '500'){
+                    $('.slick-slide').css({'width':'1.065%'});
+                  }
                   $('.inSliderPClass').css({'height':'143px'});
                 }else{
                   $('.'+carousel_cls).not('.slick-initialized').slick({
