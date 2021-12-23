@@ -85,6 +85,11 @@ mviewer.customLayers.piscinesRM= (function() {
             feature.set('joursFermes', org_data.response.joursFermes);
             // console.log(feature.values_.nom_site);
             // console.log(feature);
+            // ma_string='';
+            // for (jf in org_data.response.joursFermes){
+            //   ma_string += org_data.response.joursFermes[jf].value;
+            // }
+            // feature.set('jours_excep_fermes', ma_string);
             var content = feature.values_.horairesOuvertures;
             content.forEach((periode, i) => {
               var testedHoraires = 0;

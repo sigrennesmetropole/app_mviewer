@@ -1,21 +1,29 @@
 {{#features}}
 <li class="item">
-	<h5 class="rm-popup-title-feature">{{nomUsage}}</h5>
+	<h5 class="rm-popup-title-feature" id="popupTitle">{{nomUsage}}</h5>
 
 	<p class="rm-popup-text-feature">
 		<span class='rm-popup-label'> Adresse :</span> {{adresse_postale_adr}} {{adresse_postale_cp}} {{adresse_postale_comm}}<br/>
 		<!-- {{#nom_org_principal}}<span class='rm-popup-label'> Nom du site :</span> {{{nom_org_principal}}}<br/>{{/nom_org_principal}} -->
 		<!-- {{#descriptif}}<span class='rm-popup-label'> Descriptif :</span> {{{descriptif}}}<br/>{{/descriptif}} -->
-		<span class='rm-popup-label'> Horaires:</span><br>
+		<span class='rm-popup-label'> Horaires:</span>
 		{{#horairesOuvertures.length}}
-			<h6 class="rm-popup-title-feature">{{nomUsage}}</h6>
 			<section>
-				<div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p">
+				<div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p sliderTopMargin">
 					{{#horairesOuvertures}}
 						<div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}}">
 							<p class="inSliderPClass">
 								{{#dateDebut}}
-										<span class='rm-popup-label'>A partir du <span class='date_in_french_format'>{{dateDebut}}</span> {{#dateFin}}au <span class='date_in_french_format'>{{dateFin}}</span>{{/dateFin}}</span><br>
+										<span class='rm-popup-label'>A partir du
+											<span class='date_in_french_format'>
+												{{dateDebut}}
+											</span>
+											{{#dateFin}}au
+												<span class='date_in_french_format'>
+													{{dateFin}}
+												</span>
+											{{/dateFin}}
+										</span><br>
 								{{/dateDebut}}
 
 									{{#horaires}}
@@ -33,12 +41,22 @@
 			</section>
 		{{/horairesOuvertures.length}}
 
+
+		<div id="jours_excep_fermes">
+			{{#jours_excep_fermes}}
+				<span class='rm-popup-label'> Fermetures exceptionnelles :</span> <br/>
+				<span>{{{jours_excep_fermes}}}</span>
+			{{/jours_excep_fermes}}
+		</div>
+		<br>
+
+		<span class='rm-popup-label'> Horaires des bassins:</span>
 		{{#bassins.length}}
 			{{#bassins}}
 				<section>
-					<h6 class="rm-popup-title-feature">{{nomUsage}}</h6>
+					<h6 class="rm-popup-title-feature bassinsTitle">{{nomUsage}}</h6>
 					{{#horairesOuvertureBassins.length}}
-						<div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p">
+						<div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p sliderTopMargin">
 							{{#horairesOuvertureBassins}}
 								<div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}}">
 									<p class="inSliderPClass">
@@ -58,42 +76,11 @@
 								{{/horairesOuvertureBassins}}
 							{{/horairesOuvertureBassins.length}}{{^horairesOuvertureBassins.length}} Pas d'ouverture déclarée.<br> {{/horairesOuvertureBassins.length}}
 						</div>
-					</section>
+					</section><br>
 				{{/bassins}}
 			{{/bassins.length}}{{^bassins.length}} Pas d'ouverture déclarée.<br> {{/bassins.length}}
 
 		</span><br>
-		<!-- {{#infos_horaires}}<span class='rm-popup-label'> Informations :</span> {{{infos_horaires}}}<br/>{{/infos_horaires}} -->
-		{{#variationCongesScolaires}}<span class='variationvac'> ???? </span>{{/variationCongesScolaires}}
-
-		{{#joursFermes}}
-		{{#commentaire}}{{commentaire}}<br><br>{{/commentaire}}
-		{{#commentaireVariationCongesScolaires}}{{commentaireVariationCongesScolaires}}<br><br>{{/commentaireVariationCongesScolaires}}
-		<span class='rm-popup-label'> Fermetures :</span><br>
-		{{#fermeArmistice1918}}Fermeture le 11 Novembre<br>{{/fermeArmistice1918}}
-		{{#fermeAscension}}Fermeture pour l'ascension<br>{{/fermeAscension}}
-		{{#fermeAssomption}}Fermeture pour l'assomption<br>{{/fermeAssomption}}
-		{{#fermeFeteNationale}}Fermeture le 14 juillet<br>{{/fermeFeteNationale}}
-		{{#fermeFeteTravail}}Fermeture 1er mai<br>{{/fermeFeteTravail}}
-		{{#fermeJourAn}}Fermeture le 1er janvier<br>{{/fermeJourAn}}
-		{{#fermeLundiPaques}}Fermeture pour pâques<br>{{/fermeLundiPaques}}
-		{{#fermeLundiPentecote}}Fermeture pour la pentecôte<br>{{/fermeLundiPentecote}}
-		{{#fermeNoel}}Fermeture le 25 décembre<br>{{/fermeNoel}}
-		{{#fermeToussaint}}Fermeture pour la Toussaint<br>{{/fermeToussaint}}
-		{{#fermeVacancesEte}}Fermé pour les vacances d'été<br>{{/fermeVacancesEte}}
-		{{#fermeVacancesHiver}}Fermeture pour les vacances d'hiver<br>{{/fermeVacancesHiver}}
-		{{#fermeVacancesNoel}}Fermeture pour les vacances de noël<br>{{/fermeVacancesNoel}}
-		{{#fermeVacancesPrintemps}}Fermeture pour les vacances de printemps<br>{{/fermeVacancesPrintemps}}
-		{{#fermeVacancesToussaint}}Fermeture pour les vacances de la Toussaint<br>{{/fermeVacancesToussaint}}
-		{{#fermeVictoire1945}}Fermeture le 8 mai<br>{{/fermeVictoire1945}}
-		<!-- {{#jour_periode_ferme}} <span class='daysOff'> {{{jour_periode_ferme}}} </span>{{/jour_periode_ferme}} -->
-		<!-- {{#com_fermeture_conges}}<span class='comfermeture'> {{{com_fermeture_conges}}}</span>{{/com_fermeture_conges}} -->
-		{{/joursFermes}}
-
-		<!-- {{#jours_excep_fermes}}
-		<span class='rm-popup-label'> Fermetures exceptionnelles :</span> <br/>
-		<span class="exceptionalClosures">{{{jours_excep_fermes}}}</span>
-		{{/jours_excep_fermes}} -->
 
 		<!-- {{#mails}}<span class='rm-popup-label'> Courriel :</span> {{{mails}}}<br/>{{/mails}}
 		{{#telephones}}<span class='rm-popup-label'> Téléphone :</span> {{{telephones}}}<br/>{{/telephones}}
