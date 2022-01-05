@@ -94,7 +94,8 @@
                   if(screen.width <= '500'){
                     $('.slick-slide').css({'width':'1.065%'});
                   }
-                  $('.inSliderPClass').css({'height':'143px'});
+                  $('.inSliderPClass').css({'height':'100%'});
+                  $('.thumbnail').css({'width':'250%'});
                 }else{
                   $('.'+carousel_cls).not('.slick-initialized').slick({
                       dots: true,
