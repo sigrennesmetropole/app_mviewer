@@ -625,99 +625,6 @@ var formatter = (function () {
         return retour;
     }
 
-    function formatPiscines(){
-      let piscines = mviewer.getLayers().piscinesRM.layer.getSource().getFeatures();
-      for (site in piscines) {
-          // récupération des données du site pour obtenir la liste des organismes liés
-          sitesorgs_data('https://api-sitesorg.sig.rennesmetropole.fr/v1/sites/' + piscines[site].get('id_site')).then(function(result_site){
-              let piscines_org = result_site.response.organismes;
-              for (org in piscines_org) {
-                  // récupération des données de chaque organisme (pour les grilles horaires)
-                  sitesorgs_data('https://api-sitesorg.sig.rennesmetropole.fr/v1/organismes/' + piscines_org[org].idOrganisme.idOrganisme, piscines_org[org].flagOrganismePrincipal).then(function (org_data) {
-                      let org_detail = org_data.response;
-                      var feature = getFeatureFromIdSite(org_data.response.sites[0].idSite.idSite);
-                      var li_feries_st = [];
-                      var li_vac_st = [];
-                      if (feature != undefined && org_data.org_principal){
-                        var li_tab = feature;
-                        if(feature.values_.joursFermes){
-                          if(feature.values_.joursFermes.fermeArmistice1918 === true){
-                            li_feries_st.push('Armistice 1918');
-                          }
-                          if(feature.values_.joursFermes.fermeAscension === true){
-                            li_feries_st.push('Ascension');
-                          }
-                          if(feature.values_.joursFermes.fermeAssomption === true){
-                            li_feries_st.push('Assomption');
-                          }
-                          if(feature.values_.joursFermes.fermeFeteNationale === true){
-                            li_feries_st.push('Fête Nationale');
-                          }
-                          if(feature.values_.joursFermes.fermeFeteTravail === true){
-                            li_feries_st.push('Fête du Travail');
-                          }
-                          if(feature.values_.joursFermes.fermeJourAn === true){
-                            li_feries_st.push('Jour de l\'an');
-                          }
-                          if(feature.values_.joursFermes.fermeLundiPaques === true){
-                            li_feries_st.push('Lundi de Pâques');
-                          }
-                          if(feature.values_.joursFermes.fermeLundiPentecote === true){
-                            li_feries_st.push('Lundi de Pentecote');
-                          }
-                          if(feature.values_.joursFermes.fermeNoel === true){
-                            li_feries_st.push('Noël');
-                          }
-                          if(feature.values_.joursFermes.fermeToussaint === true){
-                            li_feries_st.push('Toussaint');
-                          }
-                          if(feature.values_.joursFermes.fermeVacancesEte === true){
-                            li_vac_st.push('Vacances d\'Ete');
-                          }
-                          if(feature.values_.joursFermes.fermeVacancesHiver === true){
-                            li_vac_st.push('Vacances d\'Hiver');
-                          }
-                          if(feature.values_.joursFermes.fermeVacancesNoel === true){
-                            li_vac_st.push('Vacances de Noël');
-                          }
-                          if(feature.values_.joursFermes.fermeVacancesPrintemps === true){
-                            li_vac_st.push('Vacances de Printemps');
-                          }
-                          if(feature.values_.joursFermes.fermeVacancesToussaint === true){
-                            li_vac_st.push('Vacances de Toussaint');
-                          }
-                          if(feature.values_.joursFermes.fermeVictoire1945 === true){
-                            li_feries_st.push('Victoire 1945');
-                          }
-
-                          var li_fermetures = [];
-                          // Traitement des Jours fériés
-                          var liste_feries = fermeturesFerie(li_feries_st);
-                          li_fermetures=li_fermetures.concat(liste_feries);
-
-                          // Traitement des Vacances
-                          var liste_vacs = fermeturesVacances(li_vac_st);
-                          li_fermetures=li_fermetures.concat(liste_vacs);
-                          feature.set('jours_excep_fermes', li_fermetures[0]);
-                          var div_jours_excep_fermes = document.getElementById('jours_excep_fermes');
-                          if(document.getElementById('popupTitle').textContent === feature.values_.nomUsage){
-                            if(div_jours_excep_fermes.children.length === 0){
-                              div_jours_excep_fermes.innerHTML =
-                              '<span class=\'rm-popup-label\'> Fermetures exceptionnelles :</span> <br/>' +
-                              '<span>' + li_fermetures[0] + '</span>'
-                            }
-                          }
-                        }
-                      }
-
-                  });
-
-              }
-          });
-      }
-    }
-
-
     // Mise en forme des composants des panneaux d'information (appelée à chaque chargement de panel)
     var _rmFormatTabs = function rmFormatTabs() {
         formatHoraires();
@@ -736,7 +643,6 @@ var formatter = (function () {
         rmTraficStatus();
         rmArtVilleType();
         formatDateInFrenchWithLetters();
-        formatPiscines();
     };
 
     return {
