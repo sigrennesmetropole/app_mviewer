@@ -1,7 +1,7 @@
 {{#features}}
 	<li class="item">
 		<h5 class="rm-popup-title-feature">{{nom_usage}}</h5>
-        
+
 		<p class="rm-popup-text-feature">
 			<span class='rm-popup-label'> Adresse :</span> {{adresse_postale_adr}} {{adresse_postale_cp}} {{adresse_postale_comm}}<br/>
 			{{#nom_site_principal}}<span class='rm-popup-label'> Nom du site :</span> {{{nom_site_principal}}}<br/>{{/nom_site_principal}}
