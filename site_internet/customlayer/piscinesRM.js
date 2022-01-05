@@ -83,8 +83,8 @@ mviewer.customLayers.piscinesRM= (function() {
             feature.set('adresse_postale_cedex', org_data.response.sites[0].adressePostaleCedex);
             feature.set('horairesOuvertures', org_data.response.horairesOuvertures);
             feature.set('joursFermes', org_data.response.joursFermes);
-            // console.log(feature.values_.nom_site);
-            // console.log(feature);
+            console.log(feature);
+            // console.log(feature.values_.bassins);
             // ma_string='';
             // for (jf in org_data.response.joursFermes){
             //   ma_string += org_data.response.joursFermes[jf].value;
@@ -104,7 +104,16 @@ mviewer.customLayers.piscinesRM= (function() {
 
             });
 
-        } else{
+            // var output = Object.keys(feature.values_.joursFermes)
+            //   .map(function(i) {
+            //   return [+i, feature.values_.joursFermes[i]];
+            // });
+            // feature.values_.joursFermes = output;
+
+            fermetures(true,feature)
+            fermetures(false,feature)
+
+        } else if(org_data.response.nomenclatures[0].idSpecialite.code=='9.2.1'){
             // organisme secondaire = bassin
             feature.get('bassins').push(org_data.response);
             if (feature != undefined && org_data.response){
@@ -132,6 +141,113 @@ mviewer.customLayers.piscinesRM= (function() {
         return retour;
     }
 
+    function fermetures(piscines,feature){
+      if(piscines){
+        fermeturesLogic(feature.values_.joursFermes,feature,true);
+      }else{
+        items = feature.values_.bassins;
+        if(items.length > 0){
+          items.forEach((item, i) => {
+            fermeturesLogic(item.joursFermes,feature,false,i);
+          });
+        }
+      }
+    }
+
+    function fermeturesLogic(horaires,feature,isPiscine,bassinNumber = 0){
+      var li_feries_st = [];
+      var li_vac_st = [];
+      if (horaires != undefined){
+        if(horaires){
+          if(horaires.fermeArmistice1918 === true){
+            li_feries_st.push('Armistice 1918');
+          }
+          if(horaires.fermeAscension === true){
+            li_feries_st.push('Ascension');
+          }
+          if(horaires.fermeAssomption === true){
+            li_feries_st.push('Assomption');
+          }
+          if(horaires.fermeFeteNationale === true){
+            li_feries_st.push('Fête Nationale');
+          }
+          if(horaires.fermeFeteTravail === true){
+            li_feries_st.push('Fête du Travail');
+          }
+          if(horaires.fermeJourAn === true){
+            li_feries_st.push('Jour de l\'an');
+          }
+          if(horaires.fermeLundiPaques === true){
+            li_feries_st.push('Lundi de Pâques');
+          }
+          if(horaires.fermeLundiPentecote === true){
+            li_feries_st.push('Lundi de Pentecote');
+          }
+          if(horaires.fermeNoel === true){
+            li_feries_st.push('Noël');
+          }
+          if(horaires.fermeToussaint === true){
+            li_feries_st.push('Toussaint');
+          }
+          if(horaires.fermeVacancesEte === true){
+            li_vac_st.push('Vacances d\'Ete');
+          }
+          if(horaires.fermeVacancesHiver === true){
+            li_vac_st.push('Vacances d\'Hiver');
+          }
+          if(horaires.fermeVacancesNoel === true){
+            li_vac_st.push('Vacances de Noël');
+          }
+          if(horaires.fermeVacancesPrintemps === true){
+            li_vac_st.push('Vacances de Printemps');
+          }
+          if(horaires.fermeVacancesToussaint === true){
+            li_vac_st.push('Vacances de Toussaint');
+          }
+          if(horaires.fermeVictoire1945 === true){
+            li_feries_st.push('Victoire 1945');
+          }
+
+          var li_fermetures = [];
+          // Traitement des Jours fériés
+          // var liste_feries = fermeturesFerie(li_feries_st);
+          li_fermetures = li_fermetures.concat('<span class=\'rm-popup-label\'>Jours ou périodes de fermeture</span> : ');
+          li_fermetures = li_fermetures.concat(li_feries_st);
+          // console.log(li_feries_st);
+
+          // Traitement des Vacances
+          // var liste_vacs = fermeturesVacances(li_vac_st);
+          li_fermetures = li_fermetures.concat(li_vac_st);
+          li_fermetures = li_fermetures.toString();
+          li_fermetures = li_fermetures.replace(' ,', ' ');
+          if(isPiscine){
+            feature.set('jours_fermes', li_fermetures);
+          }else{
+            feature.values_.bassins[bassinNumber].jours_fermes = li_fermetures;
+            // console.log(feature);
+          }
+        }
+      }
+    }
+
+    function getElemANotInListB(listA, listB){
+        // elements = copie de la liste A
+        var elements=Array.from(listA);
+
+        for (var i = 0, lenB = listB.length; i < lenB; i++) {
+            //var match = null;
+            for (var j = 0, lenA = elements.length; j < lenA; j++) {
+                if (listB[i].toUpperCase().trim() === elements[j].toUpperCase().trim()) {
+                    // correspondance, on supprime l'entrée de la copie de la liste A
+                    //match = j;
+                    elements.splice(j, 1);
+                    break;
+                }
+            }
+
+        }
+        return elements;
+    }
 
     function cleanedHoraires(horairesColl){
         var valide = [];
