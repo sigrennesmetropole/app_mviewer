@@ -83,13 +83,7 @@ mviewer.customLayers.piscinesRM= (function() {
             feature.set('adresse_postale_cedex', org_data.response.sites[0].adressePostaleCedex);
             feature.set('horairesOuvertures', org_data.response.horairesOuvertures);
             feature.set('joursFermes', org_data.response.joursFermes);
-            console.log(feature);
-            // console.log(feature.values_.bassins);
-            // ma_string='';
-            // for (jf in org_data.response.joursFermes){
-            //   ma_string += org_data.response.joursFermes[jf].value;
-            // }
-            // feature.set('jours_excep_fermes', ma_string);
+
             var content = feature.values_.horairesOuvertures;
             content.forEach((periode, i) => {
               var testedHoraires = 0;
@@ -101,14 +95,8 @@ mviewer.customLayers.piscinesRM= (function() {
               if(testedHoraires === 0) {
                 delete periode.horaires;
               };
-
             });
 
-            // var output = Object.keys(feature.values_.joursFermes)
-            //   .map(function(i) {
-            //   return [+i, feature.values_.joursFermes[i]];
-            // });
-            // feature.values_.joursFermes = output;
 
             fermetures(true,feature)
             fermetures(false,feature)
@@ -117,7 +105,6 @@ mviewer.customLayers.piscinesRM= (function() {
             // organisme secondaire = bassin
             feature.get('bassins').push(org_data.response);
             if (feature != undefined && org_data.response){
-              // console.log(feature);
               var bassins = feature.values_.bassins;
               bassins.forEach((bassin, i) => {
                 if(bassin.horairesOuvertures){
@@ -210,21 +197,31 @@ mviewer.customLayers.piscinesRM= (function() {
 
           var li_fermetures = [];
           // Traitement des Jours fériés
-          // var liste_feries = fermeturesFerie(li_feries_st);
-          li_fermetures = li_fermetures.concat('<span class=\'rm-popup-label\'>Jours ou périodes de fermeture</span> : ');
+          //li_fermetures = li_fermetures.concat('Jours ou périodes de fermeture : ');
           li_fermetures = li_fermetures.concat(li_feries_st);
-          // console.log(li_feries_st);
+          
 
           // Traitement des Vacances
-          // var liste_vacs = fermeturesVacances(li_vac_st);
           li_fermetures = li_fermetures.concat(li_vac_st);
           li_fermetures = li_fermetures.toString();
           li_fermetures = li_fermetures.replace(' ,', ' ');
+          
+          // Traitement des fermetures exceptionnelles
+          var li_fermex;
+          if (horaires.joursExcept.length > 0){
+              li_fermex = JSON.stringify(horaires.joursExcept).replace(/,/g, '|');
+          }
+          
           if(isPiscine){
             feature.set('jours_fermes', li_fermetures);
-          }else{
+            if (li_fermex!= undefined){
+                feature.set('fermetures_excepts', li_fermex);
+            }
+          } else {
             feature.values_.bassins[bassinNumber].jours_fermes = li_fermetures;
-            // console.log(feature);
+            if (li_fermex!= undefined){
+                feature.values_.bassins[bassinNumber].fermetures_excepts= li_fermex;
+            }
           }
         }
       }
@@ -329,11 +326,6 @@ mviewer.customLayers.piscinesRM= (function() {
 
     layer.getSource().once('change',() =>{
         getSiteData();
-        /*
-        layer.getSource().on('change',() =>{
-            console.log(layer.getSource().getFeatures());
-        });
-        */
     });
 
     return {
