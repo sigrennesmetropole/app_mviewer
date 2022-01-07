@@ -95,7 +95,9 @@
                     $('.slick-slide').css({'width':'1.065%'});
                   }
                   $('.inSliderPClass').css({'height':'100%'});
-                  $('.thumbnail').css({'width':'250%'});
+                  $('.thumbnail').css({'width':'250px'});
+                  $('.slick-slide').css({'display':'none'});
+                  $('.slick-current').css({'display':'block'});
                 }else{
                   $('.'+carousel_cls).not('.slick-initialized').slick({
                       dots: true,
