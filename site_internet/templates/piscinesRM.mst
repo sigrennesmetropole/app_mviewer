@@ -7,8 +7,8 @@
 		<span class='rm-popup-label'> Adresse :</span> {{adresse_postale_adr}} {{adresse_postale_cp}} {{adresse_postale_comm}}<br/>
 		<!-- {{#nom_org_principal}}<span class='rm-popup-label'> Nom du site :</span> {{{nom_org_principal}}}<br/>{{/nom_org_principal}} -->
 		<!-- {{#descriptif}}<span class='rm-popup-label'> Descriptif :</span> {{{descriptif}}}<br/>{{/descriptif}} -->
-		<span class='rm-popup-label'> Horaires:</span>
 		{{#horairesOuvertures.length}}
+		<span class='rm-popup-label'> Horaires:</span>
 		<section>
 			<div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p sliderTopMargin">
 				{{#horairesOuvertures}}
@@ -56,7 +56,8 @@
 				{{/horairesOuvertures}}
 			</div>
 		</section>
-		{{/horairesOuvertures.length}}{{^horairesOuvertures.length}} <span>Pas d'ouverture déclarée.</span> {{/horairesOuvertures.length}}
+		{{/horairesOuvertures.length}}
+		<!-- {{^horairesOuvertures.length}} <span> Pas de jours d'ouverture sur cette période.</span> {{/horairesOuvertures.length}} -->
 
 
 		<div id="jours_excep_fermes">
@@ -73,9 +74,9 @@
 		</div>
 		<br>
 
-		<span class='rm-popup-label'> Bassins:</span>
 		{{#bassins.length}}
 		{{#bassins}}
+		<span class='rm-popup-label'> Bassins:</span>
 		<section>
 			<h6 class="rm-popup-title-feature bassinsTitle">{{nomUsage}}</h6>
 			{{#descriptif}}
@@ -121,7 +122,8 @@
 					</p>
 				</div>
 				{{/horairesOuvertureBassins}}
-				{{/horairesOuvertureBassins.length}}{{^horairesOuvertureBassins.length}} Pas d'ouverture déclarée.<br> {{/horairesOuvertureBassins.length}}
+				{{/horairesOuvertureBassins.length}}
+				<!-- {{^horairesOuvertureBassins.length}} Pas d'ouverture déclarée.<br> {{/horairesOuvertureBassins.length}} -->
 			</div>
 		</section>
 
@@ -149,7 +151,8 @@
 		</div>
 
 		{{/bassins}}
-		{{/bassins.length}}{{^bassins.length}} <span>Pas d'ouverture déclarée.</span> {{/bassins.length}}
+		{{/bassins.length}}
+		<!-- {{^bassins.length}} <span>Pas d'ouverture déclarée.</span> {{/bassins.length}} -->
 		<br>
 
 </p>
