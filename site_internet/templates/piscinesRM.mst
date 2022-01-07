@@ -6,9 +6,10 @@
 	<p class="rm-popup-text-feature">
 		<span class='rm-popup-label'> Adresse :</span> {{adresse_postale_adr}} {{adresse_postale_cp}} {{adresse_postale_comm}}<br/>
 		<!-- {{#nom_org_principal}}<span class='rm-popup-label'> Nom du site :</span> {{{nom_org_principal}}}<br/>{{/nom_org_principal}} -->
-		<!-- {{#descriptif}}<span class='rm-popup-label'> Descriptif :</span> {{{descriptif}}}<br/>{{/descriptif}} -->
+		{{#descriptif}}<span class='rm-popup-label'> Descriptif :</span> {{{descriptif}}}<br/>{{/descriptif}}
 		{{#horairesOuvertures.length}}
 		<span class='rm-popup-label'> Horaires:</span>
+		{{#joursFermes.variationCongesScolaires}}<br/><span><i> Les horaires sont susceptibles de varier durant les congés scolaires.</i></span>{{/joursFermes.variationCongesScolaires}}
 		<section>
 			<div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p sliderTopMargin">
 				{{#horairesOuvertures}}
@@ -30,24 +31,26 @@
 						{{#horaires}}
 						{{#libJour}}
 						<span class='rm-popup-label'>{{libJour}}:</span>
-						{{#ouvert1}}
-						{{#ferme1}}
-						<span class='hour_in_french_format'>{{ouvert1}}</span>h -
-						<span class='hour_in_french_format'>{{ferme1}}</span>h
-						{{/ferme1}}
-						{{/ouvert1}}{{^ouvert1}} - {{/ouvert1}}
-						{{#ouvert2}} /
-						{{#ferme2}}
-						<span class='hour_in_french_format'>{{ouvert2}}</span>h -
-						<span class='hour_in_french_format'>{{ferme2}}</span>h
-						{{/ferme2}}
-						{{/ouvert2}}
-						{{#ouvert3}} /
-						{{#ferme3}}
-						<span class='hour_in_french_format'>{{ouvert3}}</span>h -
-						<span class='hour_in_french_format'>{{ferme3}}</span>h
-						{{/ferme3}}
-						{{/ouvert3}}
+						<span class='rm-popup-text-feature'>
+							{{#ouvert1}}
+							{{#ferme1}}
+							<span class='hour_in_french_format'>{{ouvert1}}</span>h -
+							<span class='hour_in_french_format'>{{ferme1}}</span>h
+							{{/ferme1}}
+							{{/ouvert1}}{{^ouvert1}} - {{/ouvert1}}
+							{{#ouvert2}} /
+							{{#ferme2}}
+							<span class='hour_in_french_format'>{{ouvert2}}</span>h -
+							<span class='hour_in_french_format'>{{ferme2}}</span>h
+							{{/ferme2}}
+							{{/ouvert2}}
+							{{#ouvert3}} /
+							{{#ferme3}}
+							<span class='hour_in_french_format'>{{ouvert3}}</span>h -
+							<span class='hour_in_french_format'>{{ferme3}}</span>h
+							{{/ferme3}}
+							{{/ouvert3}}
+						</span>
 						{{/libJour}}<br>
 						{{/horaires}}{{^horaires}} Pas de jours d'ouverture sur cette période.<br> {{/horaires}}
 
@@ -60,101 +63,97 @@
 		<!-- {{^horairesOuvertures.length}} <span> Pas de jours d'ouverture sur cette période.</span> {{/horairesOuvertures.length}} -->
 
 
-		<div id="jours_excep_fermes">
-			{{#jours_fermes}}
-			<span>{{{jours_fermes}}}</span>
-			{{/jours_fermes}}
-		</div>
-		<br>
-		<div id="jours_excep_fermes">
-			{{#jours_excep_fermes}}
-			<span class="rm-popup-label">Jours exceptionellement fermés: </span>
-			<span class="exceptionalClosures">{{{jours_excep_fermes}}}</span>
-			{{/jours_excep_fermes}}
-		</div>
-		<br>
+		<span class='rm-popup-text-feature rm_orga_fermetures'>
+			<span class='rm-popup-label'> Fermetures :</span> <span class='rm-fermetures'></span>
+			{{#jours_fermes}} <span class='daysOff'> {{{jours_fermes}}} </span>{{/jours_fermes}}
 
-		{{#bassins.length}}
-		{{#bassins}}
-		<span class='rm-popup-label'> Bassins:</span>
-		<section>
-			<h6 class="rm-popup-title-feature bassinsTitle">{{nomUsage}}</h6>
-			{{#descriptif}}
-			<p>
-				{{{descriptif}}}
+			{{#joursFermes.commentaireVariationCongesScolaires}}<span class='comfermeture'> {{{joursFermes.commentaireVariationCongesScolaires}}}</span>{{/joursFermes.commentaireVariationCongesScolaires}}
+		</span>
+
+		{{#fermetures_excepts}}
+		<span class='rm-popup-text-feature'>
+			<br>
+			<span class="rm-popup-label">Fermetures exceptionnelles : </span>
+			<span class="exceptionalClosures">{{{fermetures_excepts}}}</span>
+			<br>
+		</span>
+		{{/fermetures_excepts}}
+
+		<p>
+			{{#bassins.length}}
+			<p style="text-align: center;">
+				{{#bassins}}
+				<section>
+					<h6 class="rm-popup-title-feature bassinsTitle">{{nomUsage}}</h6>
+					{{#descriptif}}<p>{{{descriptif}}}</p>{{/descriptif}}
+					{{#horairesOuvertureBassins.length}}
+					<div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p sliderTopMargin">
+						{{#horairesOuvertureBassins}}
+						<div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}}">
+							<p class="inSliderPClass">
+								{{#dateDebut}}
+								<span class='rm-popup-label'>A partir du <span class='date_in_french_format'>{{dateDebut}}</span>
+								{{#dateFin}}
+								au <span class='date_in_french_format'>{{dateFin}}</span>
+								{{/dateFin}}</span><br>
+								{{/dateDebut}}
+
+								{{#horaires}}
+								{{#libJour}}
+								<span class='rm-popup-label'>{{libJour}}:</span>
+								<span class='rm-popup-text-feature'>
+									{{#ouvert1}}
+									{{#ferme1}}
+									<span class='hour_in_french_format'>{{ouvert1}}</span>h -
+									<span class='hour_in_french_format'>{{ferme1}}</span>h
+									{{/ferme1}}
+									{{/ouvert1}}{{^ouvert1}} - {{/ouvert1}}
+									{{#ouvert2}} /
+									{{#ferme2}}
+									<span class='hour_in_french_format'>{{ouvert2}}</span>h -
+									<span class='hour_in_french_format'>{{ferme2}}</span>h
+									{{/ferme2}}
+									{{/ouvert2}}
+									{{#ouvert3}} /
+									{{#ferme3}}
+									<span class='hour_in_french_format'>{{ouvert3}}</span>h -
+									<span class='hour_in_french_format'>{{ferme3}}</span>h
+									{{/ferme3}}
+									{{/ouvert3}}
+								</span>
+								{{/libJour}}<br>
+								{{/horaires}}{{^horaires}} Pas de jours d'ouverture sur cette période. {{/horaires}}
+							</p>
+						</div>
+						{{/horairesOuvertureBassins}}
+						{{/horairesOuvertureBassins.length}}
+						<!-- {{^horairesOuvertureBassins.length}} Pas d'ouverture déclarée.<br> {{/horairesOuvertureBassins.length}} -->
+					</div>
+				</section>
+
+				{{#jours_fermes}}
+				<span class='rm-popup-text-feature rm_orga_fermetures'>
+					<span class='rm-popup-label'> Fermetures :</span> <span class='rm-fermetures'></span>
+					<span class='daysOff'> {{jours_fermes}} </span>
+					{{#joursFermes.commentaireVariationCongesScolaires}}<span class='comfermeture'> {{{joursFermes.commentaireVariationCongesScolaires}}}</span>{{/joursFermes.commentaireVariationCongesScolaires}}
+				</span>
+				{{/jours_fermes}}
+
+				{{#fermetures_excepts}}
+				<span class='rm-popup-text-feature'>
+					<br>
+					<span class="rm-popup-label">Fermetures exceptionnelles : </span>
+					<span class="exceptionalClosures">{{{fermetures_excepts}}}</span>
+					<br>
+				</span>
+				{{/fermetures_excepts}}
+
+				{{/bassins}}
 			</p>
-			{{/descriptif}}
-			{{#horairesOuvertureBassins.length}}
-			<div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p sliderTopMargin">
-				{{#horairesOuvertureBassins}}
-				<div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}}">
-					<p class="inSliderPClass">
-						{{#dateDebut}}
-						<span class='rm-popup-label'>A partir du <span class='date_in_french_format'>{{dateDebut}}</span>
-						{{#dateFin}}
-						au <span class='date_in_french_format'>{{dateFin}}</span>
-						{{/dateFin}}</span><br>
-						{{/dateDebut}}
+			<br/>
+			{{/bassins.length}}
+			<!-- {{^bassins.length}} <span>Pas d'ouverture déclarée.</span> {{/bassins.length}} -->
 
-						{{#horaires}}
-						{{#libJour}}
-						<span class='rm-popup-label'>{{libJour}}:</span>
-						{{#ouvert1}}
-						{{#ferme1}}
-						<span class='hour_in_french_format'>{{ouvert1}}</span>h -
-						<span class='hour_in_french_format'>{{ferme1}}</span>h
-						{{/ferme1}}
-						{{/ouvert1}}{{^ouvert1}} - {{/ouvert1}}
-						{{#ouvert2}} /
-						{{#ferme2}}
-						<span class='hour_in_french_format'>{{ouvert2}}</span>h -
-						<span class='hour_in_french_format'>{{ferme2}}</span>h
-						{{/ferme2}}
-						{{/ouvert2}}
-						{{#ouvert3}} /
-						{{#ferme3}}
-						<span class='hour_in_french_format'>{{ouvert3}}</span>h -
-						<span class='hour_in_french_format'>{{ferme3}}</span>h
-						{{/ferme3}}
-						{{/ouvert3}}
-						{{/libJour}}<br>
-						{{/horaires}}{{^horaires}} Pas de jours d'ouverture sur cette période. {{/horaires}}
-					</p>
-				</div>
-				{{/horairesOuvertureBassins}}
-				{{/horairesOuvertureBassins.length}}
-				<!-- {{^horairesOuvertureBassins.length}} Pas d'ouverture déclarée.<br> {{/horairesOuvertureBassins.length}} -->
-			</div>
-		</section>
-
-		<div id="jours_excep_fermes">
-			{{#jours_fermes}}
-			<span>{{{jours_fermes}}}</span>
-			<br>
-			{{/jours_fermes}}
-		</div>
-		<div id="jours_excep_fermes">
-			{{#jours_excep_fermes}}
-			<br>
-			<span class="rm-popup-label">Jours exceptionellement fermés: </span>
-			<span class="exceptionalClosures">{{{jours_excep_fermes}}}</span>
-			<br>
-			{{/jours_excep_fermes}}
-		</div>
-		<div id="jours_excep_fermes">
-			{{#commentaire}}
-			<br>
-			<span class="rm-popup-label">Commentaires: </span>
-			<span>{{{commentaire}}}</span>
-			<br>
-			{{/commentaire}}
-		</div>
-
-		{{/bassins}}
-		{{/bassins.length}}
-		<!-- {{^bassins.length}} <span>Pas d'ouverture déclarée.</span> {{/bassins.length}} -->
-		<br>
-
-</p>
-</li>
-{{/features}}
+		</p>
+	</li>
+	{{/features}}

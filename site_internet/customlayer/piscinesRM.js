@@ -83,7 +83,7 @@ mviewer.customLayers.piscinesRM= (function() {
             feature.set('adresse_postale_cedex', org_data.response.sites[0].adressePostaleCedex);
             feature.set('horairesOuvertures', org_data.response.horairesOuvertures);
             feature.set('joursFermes', org_data.response.joursFermes);
-            console.log(feature);
+            // console.log(feature);
             // console.log(feature.values_.bassins);
             // ma_string='';
             // for (jf in org_data.response.joursFermes){
