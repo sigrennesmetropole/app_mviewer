@@ -153,7 +153,9 @@ var formatter = (function () {
     // Affichage mode réduit des jours fériés et des vacances scolaires pour les organismes
     //var _rmFermeturesOrga = function rmFermeturesOrga() {
     function rmFermeturesOrga() {
-        var li_tab = document.getElementsByClassName("carousel slide");
+        //var li_tab = document.getElementsByClassName("carousel slide");
+        var li_tab = document.getElementsByClassName("rm_orga_fermetures");
+        
         for (var cpt = 0, len_cpt = li_tab.length; cpt < len_cpt; cpt++) {
 
             var fermetures_html=li_tab[cpt].getElementsByClassName("rm-fermetures")[0];
@@ -332,7 +334,6 @@ var formatter = (function () {
     };
 
     // Liste des déchets acceptés dans les décheteries
-    //var _rmListeDechets = function rmListeDechets() {
     function rmListeDechets() {
         var ul_element=document.getElementsByClassName("liste_dechets");
         var list_retenue='';
@@ -415,7 +416,6 @@ var formatter = (function () {
         if (my_links){
             for (var i = 0; i < my_links.length; i++) {
                 var adresse = my_links[i].getAttribute("href");
-                //console.log("adresse = " + adresse);
                 if (adresse !== null) {
 
                     if (adresse.substr(0, 4) != "http") {
@@ -462,7 +462,6 @@ var formatter = (function () {
             var contenu="";
             if(span_elements[i].innerHTML) {
                 contenu = span_elements[i].innerHTML;
-                //console.log("contenu["+i+"] = "+contenu);
                 var date_tab = [];
                 date_tab = contenu.split('-', 3);
                 if(date_tab.length===3){
@@ -480,7 +479,6 @@ var formatter = (function () {
             var contenu="";
             if(span_elements[i].innerHTML) {
                 contenu = span_elements[i].innerHTML;
-                //console.log("contenu["+i+"] = "+contenu);
                 var date_tab = [];
                 date_tab = contenu.split('T');
                 if(date_tab.length===2){
@@ -497,7 +495,6 @@ var formatter = (function () {
             var contenu="";
             if(span_elements[i].innerHTML) {
                 contenu = span_elements[i].innerHTML;
-                //console.log("contenu["+i+"] = "+contenu);
                 var date_tab = [];
                 var months = new Array('Janvier', 'Fevrier', 'Mars',
                       'Avril', 'Mai', 'Juin', 'Juillet', 'Aout',
