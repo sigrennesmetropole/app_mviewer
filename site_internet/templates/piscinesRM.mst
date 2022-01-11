@@ -82,9 +82,10 @@
 		<p>
 			{{#bassins.length}}
 			<p style="text-align: center;">
+      <span class='rm-popup-headerLevel2'> Bassins </span>
 				{{#bassins}}
 				<section>
-					<h6 class="rm-popup-title-feature bassinsTitle">{{nomUsage}}</h6>
+					<h6 class="rm-popup-title-level2">{{nomUsage}}</h6>
 					{{#descriptif}}<p>{{{descriptif}}}</p>{{/descriptif}}
 					{{#horairesOuvertureBassins.length}}
 					<div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p sliderTopMargin">
