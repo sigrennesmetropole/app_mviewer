@@ -9,6 +9,7 @@ var initTutorial = function () {
 };
 
 var displayTutorial = function (tutorialFile) {
+            initTutorial();
             $.getJSON(tutorialFile, function (tutorialData) {
 
             var tutorialCode = ''; // code of all tutorial
@@ -105,7 +106,6 @@ var applicationOptions = rmOptionsManager.getApplicationConfiguration();
 var configFile = getExtensionConfigFile();
 if(applicationOptions.tutorial === 'true' && configFile !== '' && !configuration.getConfiguration().mobile){
     if (applicationOptions.showhelp === 'true') {
-        initTutorial();
         $('#help').addClass('showtuto');
             $('#help').on('hidden.bs.modal', function () {
                 if ($('#help').hasClass('showtuto')){
