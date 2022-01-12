@@ -64,7 +64,29 @@
 #mv-navbar a.navbar-brand, .mv-title{
 	color:#ffffff!important;
 	font-family: 'vistaSansOT_regular', Arial, Sans-serif;
-	font-size: 20px;
+}
+
+@media screen and (max-width: 1000px){
+  #mv-navbar a.mv-title{
+    max-width: 100%;
+    position:relative;
+  }
+}
+
+@media screen and (max-width: 850px){
+  #mv-navbar a.mv-title{
+    font-size: 1.1em;
+    max-width: 100%;
+    position:relative;
+  }
+}
+
+@media screen and (max-width: 500px){
+  #mv-navbar a.mv-title{
+    font-size: 0.65em;
+    max-width: 100%;
+    position:relative;
+  }
 }
 
 p.navbar-text.mv-title{

@@ -162,29 +162,25 @@ searchresults-title .close:hover{
   top:9px;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1000px){
   #mv-navbar a.mv-title{
-    font-size: 15px;
-    max-width: 350px;
-    top:-10px;
+    max-width: 100%;
+    position:relative;
+  }
+}
+
+@media screen and (max-width: 850px){
+  #mv-navbar a.mv-title{
+    font-size: 1.1em;
+    max-width: 100%;
     position:relative;
   }
 }
 
 @media screen and (max-width: 500px){
   #mv-navbar a.mv-title{
-    font-size: 10px;
-    max-width: 250px;
-    top:-10px;
-    position:relative;
-  }
-}
-
-@media screen and (max-width: 350px){
-  #mv-navbar a.mv-title{
-    font-size: 5px;
-    max-width: 150px;
-    top:-10px;
+    font-size: 0.65em;
+    max-width: 100%;
     position:relative;
   }
 }
