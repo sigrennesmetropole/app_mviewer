@@ -307,7 +307,7 @@ mviewer.customLayers.piscinesRM= (function() {
     function markerstyle() {
         let style = new ol.style.Style({
                 image: new ol.style.Icon({
-                  color: '#ba8e02',  //ba8e02
+                  color: '#e45e52',  //ba8e02
                   crossOrigin: 'anonymous',
                   scale:1,
                   anchor:[0.5,1],
