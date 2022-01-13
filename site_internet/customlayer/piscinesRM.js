@@ -62,6 +62,8 @@ mviewer.customLayers.piscinesRM= (function() {
 
                 }
             });
+            
+            console.log(piscines[site]);
         }
     }
 
@@ -283,7 +285,15 @@ mviewer.customLayers.piscinesRM= (function() {
             }
           }
         });
-
+// code pour tester les grilles horaires
+/*
+if (l_cleaned.length >0) {
+    for (var k = 0; k < Math.floor(Math.random() * 10);k++){
+        l_cleaned.push(l_cleaned[0]);
+    }
+console.log(l_cleaned);
+}
+*/
         return l_cleaned;
     }
 
