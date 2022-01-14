@@ -270,21 +270,21 @@ mviewer.customLayers.piscinesRM= (function() {
             }
         }
         // consever uniquement les horaires dont début >= refDebut
-        let l_cleaned = [];
-        for ( let j=0; j < valide.length; j++){
-            if (new Date(valide[j].dateDebut) >= refDebut) {
-                l_cleaned.push(valide[j]);
-            }
-        }
-
-        l_cleaned.sort(compareHoraires);
-        l_cleaned.forEach((item, i) => {
-          if(i<l_cleaned.length-1){
-            if(item.dateFin === null && Date.parse(item.dateDebut) < Date.parse(l_cleaned[i+1].dateDebut)){
-              item.dateFin = l_cleaned[i+1].dateDebut;
-            }
-          }
-        });
+        // let l_cleaned = [];
+        // for ( let j=0; j < valide.length; j++){
+        //     if (new Date(valide[j].dateDebut) >= refDebut) {
+        //         l_cleaned.push(valide[j]);
+        //     }
+        // }
+        //
+        // l_cleaned.sort(compareHoraires);
+        // l_cleaned.forEach((item, i) => {
+        //   if(i<l_cleaned.length-1){
+        //     if(item.dateFin === null && Date.parse(item.dateDebut) < Date.parse(l_cleaned[i+1].dateDebut)){
+        //       item.dateFin = l_cleaned[i+1].dateDebut;
+        //     }
+        //   }
+        // });
 // code pour tester les grilles horaires
 
 if (l_cleaned.length >0) {
