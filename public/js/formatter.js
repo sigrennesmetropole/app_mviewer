@@ -155,7 +155,7 @@ var formatter = (function () {
     function rmFermeturesOrga() {
         //var li_tab = document.getElementsByClassName("carousel slide");
         var li_tab = document.getElementsByClassName("rm_orga_fermetures");
-        
+
         for (var cpt = 0, len_cpt = li_tab.length; cpt < len_cpt; cpt++) {
 
             var fermetures_html=li_tab[cpt].getElementsByClassName("rm-fermetures")[0];
@@ -640,6 +640,12 @@ var formatter = (function () {
         rmTraficStatus();
         rmArtVilleType();
         formatDateInFrenchWithLetters();
+
+        var divs = document.getElementsByClassName("iframe-popup");
+        for(var i = 0; i < divs.length; i++) {
+          divs[i].parentNode.style = "text-align:left";
+        };
+
     };
 
     return {

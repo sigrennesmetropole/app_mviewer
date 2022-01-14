@@ -74,6 +74,7 @@
 .iframe-popup {
     cursor: pointer;
     margin: auto;
+		text-align: center;
 }
 
 .carousel-inner{

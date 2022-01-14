@@ -62,8 +62,8 @@ mviewer.customLayers.piscinesRM= (function() {
 
                 }
             });
-            
-            console.log(piscines[site]);
+
+            // console.log(piscines[site]);
         }
     }
 
@@ -207,19 +207,19 @@ mviewer.customLayers.piscinesRM= (function() {
           // Traitement des Jours fériés
           //li_fermetures = li_fermetures.concat('Jours ou périodes de fermeture : ');
           li_fermetures = li_fermetures.concat(li_feries_st);
-          
+
 
           // Traitement des Vacances
           li_fermetures = li_fermetures.concat(li_vac_st);
           li_fermetures = li_fermetures.toString();
           li_fermetures = li_fermetures.replace(' ,', ' ');
-          
+
           // Traitement des fermetures exceptionnelles
           var li_fermex;
           if (horaires.joursExcept.length > 0){
               li_fermex = JSON.stringify(horaires.joursExcept).replace(/,/g, '|');
           }
-          
+
           if(isPiscine){
             feature.set('jours_fermes', li_fermetures);
             if (li_fermex!= undefined){
@@ -270,30 +270,31 @@ mviewer.customLayers.piscinesRM= (function() {
             }
         }
         // consever uniquement les horaires dont début >= refDebut
-        let l_cleaned = [];
-        for ( let j=0; j < valide.length; j++){
-            if (new Date(valide[j].dateDebut) >= refDebut) {
-                l_cleaned.push(valide[j]);
-            }
-        }
-
-        l_cleaned.sort(compareHoraires);
-        l_cleaned.forEach((item, i) => {
-          if(i<l_cleaned.length-1){
-            if(item.dateFin === null && Date.parse(item.dateDebut) < Date.parse(l_cleaned[i+1].dateDebut)){
-              item.dateFin = l_cleaned[i+1].dateDebut;
-            }
-          }
-        });
+        // let l_cleaned = [];
+        // for ( let j=0; j < valide.length; j++){
+        //     if (new Date(valide[j].dateDebut) >= refDebut) {
+        //         l_cleaned.push(valide[j]);
+        //     }
+        // }
+        //
+        // l_cleaned.sort(compareHoraires);
+        // l_cleaned.forEach((item, i) => {
+        //   if(i<l_cleaned.length-1){
+        //     if(item.dateFin === null && Date.parse(item.dateDebut) < Date.parse(l_cleaned[i+1].dateDebut)){
+        //       item.dateFin = l_cleaned[i+1].dateDebut;
+        //     }
+        //   }
+        // });
 // code pour tester les grilles horaires
-/*
+
 if (l_cleaned.length >0) {
     for (var k = 0; k < Math.floor(Math.random() * 10);k++){
         l_cleaned.push(l_cleaned[0]);
     }
 console.log(l_cleaned);
 }
-*/
+
+//fin code test grilles horaires
         return l_cleaned;
     }
 
