@@ -5,17 +5,14 @@
 /*  Import du style du site internet  */
 @import url("site_internet_gris.css");
 
-
 /* FICHE INFO */
 #right-panel.active {
     width:30%!important;
 }
 
-
 .rm-popup-text-feature {
     margin-top: 5%;
 }
-
 
 .text-credit{
     font-family:"vistaSansOT_bold";
@@ -44,4 +41,3 @@
 .art-memoire {
     color:#8f9169;
 }
-

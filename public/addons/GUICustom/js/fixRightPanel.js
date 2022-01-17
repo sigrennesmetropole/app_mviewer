@@ -4,13 +4,20 @@ var observer = new MutationObserver(function(mutations) {
     if (mutation.attributeName === "class") {
       var attributeValue = $(mutation.target).prop(mutation.attributeName);
       if(attributeValue === 'active'){
-        $('#searchtool').animate({'right':'400px'});
-        $('#parcelSelectors').animate({'right':'417px'});
-        $('#zoomtoolbar').animate({'right':'325px'});
-        $('#toolstoolbar').animate({'right':'325px'});
-        $('#backgroundlayerstoolbar-default').animate({'right':'325px'});
+        setTimeout(function(){
+          var toolbarWidth = $div.outerWidth() + 5;
+          var searchToolBar = toolbarWidth + 45;
+          var searchToolBar2 = toolbarWidth + 92;
+          toolbarWidth = toolbarWidth + 'px';
+          searchToolBar = searchToolBar + 'px';
+          $('#searchtool').animate({'right':searchToolBar});
+          $('#parcelSelectors').animate({'right':searchToolBar2});
+          $('#zoomtoolbar').animate({'right':toolbarWidth});
+          $('#toolstoolbar').animate({'right':toolbarWidth});
+          $('#backgroundlayerstoolbar-default').animate({'right':toolbarWidth});
+        }, 1000);
       }else{
-        $('#searchtool').animate({'right':'90px'});
+        $('#searchtool').animate({'right':'60px'});
         $('#parcelSelectors').animate({'right':'105px'});
         $('#zoomtoolbar').animate({'right':'10px'});
         $('#toolstoolbar').animate({'right':'10px'});
