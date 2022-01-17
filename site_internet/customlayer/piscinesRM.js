@@ -1,8 +1,7 @@
 
 mviewer.customLayers.piscinesRM= (function() {
 
-    // TODO : cacher la clé d'API dans un fihcier de conf
-    var apiKey = 'c583383089f1c7e544e32cdf44c11045';
+    var apiKey = rmOptionsManager.getApplicationConfiguration().apiKey;
 
     let data_site = 'https://public.sig.rennesmetropole.fr/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=v_sitorg_site&outputFormat=application%2Fjson&srsname=EPSG:3857&CQL_FILTER=id_specialite_principale=95';
 
@@ -270,29 +269,29 @@ mviewer.customLayers.piscinesRM= (function() {
             }
         }
         // consever uniquement les horaires dont début >= refDebut
-        // let l_cleaned = [];
-        // for ( let j=0; j < valide.length; j++){
-        //     if (new Date(valide[j].dateDebut) >= refDebut) {
-        //         l_cleaned.push(valide[j]);
-        //     }
-        // }
-        //
-        // l_cleaned.sort(compareHoraires);
-        // l_cleaned.forEach((item, i) => {
-        //   if(i<l_cleaned.length-1){
-        //     if(item.dateFin === null && Date.parse(item.dateDebut) < Date.parse(l_cleaned[i+1].dateDebut)){
-        //       item.dateFin = l_cleaned[i+1].dateDebut;
-        //     }
-        //   }
-        // });
+        let l_cleaned = [];
+        for ( let j=0; j < valide.length; j++){
+            if (new Date(valide[j].dateDebut) >= refDebut) {
+                l_cleaned.push(valide[j]);
+            }
+        }
+
+        l_cleaned.sort(compareHoraires);
+        l_cleaned.forEach((item, i) => {
+          if(i<l_cleaned.length-1){
+            if(item.dateFin === null && Date.parse(item.dateDebut) < Date.parse(l_cleaned[i+1].dateDebut)){
+              item.dateFin = l_cleaned[i+1].dateDebut;
+            }
+          }
+        });
 // code pour tester les grilles horaires
 
-if (l_cleaned.length >0) {
-    for (var k = 0; k < Math.floor(Math.random() * 10);k++){
-        l_cleaned.push(l_cleaned[0]);
-    }
-console.log(l_cleaned);
-}
+// if (l_cleaned.length >0) {
+//     for (var k = 0; k < Math.floor(Math.random() * 10);k++){
+//         l_cleaned.push(l_cleaned[0]);
+//     }
+// console.log(l_cleaned);
+// }
 
 //fin code test grilles horaires
         return l_cleaned;
