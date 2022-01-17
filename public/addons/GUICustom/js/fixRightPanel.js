@@ -8,14 +8,12 @@ var observer = new MutationObserver(function(mutations) {
           var toolbarWidth = $div.outerWidth() + 5;
           var searchToolBar = toolbarWidth + 45;
           var searchToolBar2 = toolbarWidth + 92;
-          toolbarWidth = toolbarWidth + 'px';
-          searchToolBar = searchToolBar + 'px';
           $('#searchtool').animate({'right':searchToolBar});
           $('#parcelSelectors').animate({'right':searchToolBar2});
           $('#zoomtoolbar').animate({'right':toolbarWidth});
           $('#toolstoolbar').animate({'right':toolbarWidth});
           $('#backgroundlayerstoolbar-default').animate({'right':toolbarWidth});
-        }, 1000);
+        }, 500);
       }else{
         $('#searchtool').animate({'right':'60px'});
         $('#parcelSelectors').animate({'right':'105px'});
