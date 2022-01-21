@@ -13,7 +13,7 @@
 		<section>
 			<div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p sliderTopMargin">
 				{{#horairesOuvertures}}
-				<div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}}">
+				<div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}}" id="pisc">
 					<p class="inSliderPClass">
 						{{#dateDebut}}
 						<span class='rm-popup-label'>A partir du

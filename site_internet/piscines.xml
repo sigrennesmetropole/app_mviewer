@@ -9,6 +9,7 @@
         exportpng="false"
         style="apps/site_internet/css/art_ville.css"
         measuretools="false"
+        apiKey="c583383089f1c7e544e32cdf44c11045"
         togglealllayersfromtheme="false" />
         <!-- style="apps/site_internet/css/art_ville.css" -->
 

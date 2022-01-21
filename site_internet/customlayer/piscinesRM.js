@@ -1,8 +1,7 @@
 
 mviewer.customLayers.piscinesRM= (function() {
 
-    // TODO : cacher la clé d'API dans un fihcier de conf
-    var apiKey = 'c583383089f1c7e544e32cdf44c11045';
+    var apiKey = rmOptionsManager.getApplicationConfiguration().apiKey;
 
     let data_site = 'https://public.sig.rennesmetropole.fr/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=v_sitorg_site&outputFormat=application%2Fjson&srsname=EPSG:3857&CQL_FILTER=id_specialite_principale=95';
 
@@ -62,8 +61,8 @@ mviewer.customLayers.piscinesRM= (function() {
 
                 }
             });
-            
-            console.log(piscines[site]);
+
+            // console.log(piscines[site]);
         }
     }
 
@@ -207,19 +206,19 @@ mviewer.customLayers.piscinesRM= (function() {
           // Traitement des Jours fériés
           //li_fermetures = li_fermetures.concat('Jours ou périodes de fermeture : ');
           li_fermetures = li_fermetures.concat(li_feries_st);
-          
+
 
           // Traitement des Vacances
           li_fermetures = li_fermetures.concat(li_vac_st);
           li_fermetures = li_fermetures.toString();
           li_fermetures = li_fermetures.replace(' ,', ' ');
-          
+
           // Traitement des fermetures exceptionnelles
           var li_fermex;
           if (horaires.joursExcept.length > 0){
               li_fermex = JSON.stringify(horaires.joursExcept).replace(/,/g, '|');
           }
-          
+
           if(isPiscine){
             feature.set('jours_fermes', li_fermetures);
             if (li_fermex!= undefined){
@@ -286,14 +285,15 @@ mviewer.customLayers.piscinesRM= (function() {
           }
         });
 // code pour tester les grilles horaires
-/*
-if (l_cleaned.length >0) {
-    for (var k = 0; k < Math.floor(Math.random() * 10);k++){
-        l_cleaned.push(l_cleaned[0]);
-    }
-console.log(l_cleaned);
-}
-*/
+
+// if (l_cleaned.length >0) {
+//     for (var k = 0; k < Math.floor(Math.random() * 10);k++){
+//         l_cleaned.push(l_cleaned[0]);
+//     }
+// console.log(l_cleaned);
+// }
+
+//fin code test grilles horaires
         return l_cleaned;
     }
 
