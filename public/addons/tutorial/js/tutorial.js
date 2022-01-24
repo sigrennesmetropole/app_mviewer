@@ -9,8 +9,8 @@ var initTutorial = function () {
 };
 
 var displayTutorial = function (tutorialFile) {
-            initTutorial();
             $.getJSON(tutorialFile, function (tutorialData) {
+              initTutorial();
 
             var tutorialCode = ''; // code of all tutorial
             var ordersTab = [];
