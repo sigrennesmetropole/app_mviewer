@@ -1,7 +1,8 @@
 
 mviewer.customLayers.piscinesRM= (function() {
 
-    var apiKey = rmOptionsManager.getApplicationConfiguration().apiKey;
+    // var apiKey = rmOptionsManager.getApplicationConfiguration().apiKey;
+    var apiKey = 'c583383089f1c7e544e32cdf44c11045';
 
     let data_site = 'https://public.sig.rennesmetropole.fr/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=v_sitorg_site&outputFormat=application%2Fjson&srsname=EPSG:3857&CQL_FILTER=id_specialite_principale=95';
 
