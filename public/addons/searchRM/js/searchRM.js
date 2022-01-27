@@ -17,43 +17,35 @@ var searchRM = (function () {
         $("#searchtool input").attr("placeholder", mviewer.customComponents.searchRM.config.options.libelles.placeholderRVA);
 
         if(API.mode !== 'u' && API.mode !== 's'){
-          $("#fieldWrapper").css({"border": "1px solid #aaa", "border-radius": "4px", "background-color" : "white",
-            "right": "0","width": "220px", "margin-bottom": "0px", "height": "10px","margin-top":"-10px"});
-          $("#searchresults").css({"right": "75px", "top": "115px"});
-          $("#fieldWrapper #searchfield").css({"height": "28px","border-radius":"4px"});
-          $("#fieldWrapper #buttonSearchField").css({"height": "30px"});
-          $(".searchRVALibelle").css({'right': '140px','position': 'relative','top': '13px'});
-          $("#parcelSelectorsLegend").css({'top':'5px','position':'relative','width':'175px'});
-          $('#searchRM-custom-component').css({'font-weight':'bold','font-size':'small'});
-          $("#fieldWrapper .input-group-btn").css({"border-radius": "4px","border":"solid 1px #ffffff"});
+          if(screen.width <= 767){
+            $('#searchtool').css({'cssText': 'right: -98px;top: 58px'});
+            $('#btn-mode-su-menu').css({'cssText': 'top: 142px'});
+            $('#zoomtoolbar').css({'cssText': 'top: 142px'});
+            $('#toolstoolbar').css({'cssText': 'top: 190px'});
+          }
         }
 
         if(API.mode === 'u'){
-          $("#searchtool").css({"top": "30px"});
-          $("#searchtool p").css({'right': '165px','position':'fixed','top':'5px'});
-          $("#searchresults").css({"right": "55px", "top": "55px"});
-          $("#fieldWrapper").css({"border": "1px solid #aaa", "border-radius": "4px", "background-color" : "white",
-            "right": "0","width": "220px", "margin-bottom": "0px", "height": "10px","margin-top":"-10px"});
-          $("#fieldWrapper #searchfield").css({"height": "28px","border":"","border-radius":"4px"});
-          $("#fieldWrapper #buttonSearchField").css({"height": "30px"});
-          $(".searchRVALibelle").css({'right': '140px','position': 'relative','top': '13px'});
-          $("#parcelSelectorsLegend").css({'top':'5px','position':'relative','width':'175px'});
-          $('#searchRM-custom-component').css({'font-weight':'bold','font-size':'small'});
-          $("#fieldWrapper .input-group-btn").css({"border-radius": "4px","border":"solid 1px #ffffff"});
+          $(".background-custom-searchtool").css({'right':'105px'});
+          $("#searchresults").css({"right": "50px", "top": "55px"});
+          if(screen.width <= 767){
+            $('#searchtool').css({'right': '-46px','top': '2px'});
+            $('#btn-mode-su-menu').css({'top': '47px'});
+            $('#zoomtoolbar').css({'top': '47px'});
+            $('#toolstoolbar').css({'top': '140px'});
+          }
         }
 
         if(API.mode === 's'){
-          $("#fieldWrapper").css({"border": "1px solid #aaa", "border-radius": "4px", "background-color" : "white",
-            "right": "0","width": "220px", "margin-bottom": "0px", "height": "10px","margin-top":"-10px"});
-          $("#searchresults").css({"right": "75px", "top": "115px"});
-          $("#fieldWrapper #searchfield").css({"height": "28px","border-radius":"4px"});
-          $("#fieldWrapper #buttonSearchField").css({"height": "30px"});
+          $(".background-custom-searchtool").css({'right':'135px'});
+          $("#searchresults").css({"right": "47px", "top": "105px"});
           $("#searchtool").css({'right': '35px'});
-          $("#searchresults").css({"right": "55px"});
-          $(".searchRVALibelle").css({'right': '140px','position': 'relative','top': '13px'});
-          $("#parcelSelectorsLegend").css({'top':'5px','position':'relative','width':'175px'});
-          $('#searchRM-custom-component').css({'font-weight':'bold','font-size':'small'});
-          $("#fieldWrapper .input-group-btn").css({"border-radius": "4px","border":"solid 1px #ffffff"});
+          if(screen.width <= 767){
+            $('#searchtool').css({'cssText': 'right: -149px;top: 58px'});
+            $('#btn-mode-su-menu').css({'cssText': 'top: 105px'});
+            $('#zoomtoolbar').css({'cssText': 'top: 105px'});
+            $('#toolstoolbar').css({'cssText': 'top: 190px'});
+          }
         }
         var confdata = _getConfigPerso();
         _configureSearch(confdata);

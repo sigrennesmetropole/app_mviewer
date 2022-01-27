@@ -1,0 +1,9 @@
+{
+    "js": [
+      "js/fixRightPanel.js",
+      "js/tooltip.js"
+    ],
+    "css": "css/styles.css",
+    "html": "html/index.html",
+    "target": "page-content-wrapper"
+}

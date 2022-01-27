@@ -9,7 +9,7 @@ var rmOptionsManager = (function () {
     ]);
 
     var mapOptions;
-    var applicationOptions;
+    // var applicationOptions;
     var configurationTheme;
     var layers;
 
@@ -30,7 +30,7 @@ var rmOptionsManager = (function () {
     var init = function () {
 
         mapOptions = configuration.getConfiguration().mapoptions;
-        applicationOptions = getApplicationConfiguration();
+        // applicationOptions = getApplicationConfiguration();
         configurationTheme = _getThemesConfiguration();
 
         layers = mviewer.getLayers();
@@ -109,22 +109,6 @@ var rmOptionsManager = (function () {
             interfaceModifying.refreshInfoPanel();
          //}
          // FIN MODIF CBR
-
-        // MODIF CBR
-        if(applicationOptions.tutorial === 'true' && applicationOptions.tutorialFile.trim() !== '' && !configuration.getConfiguration().mobile){
-            rmTools.initTutorial();
-            if (applicationOptions.showhelp === 'true') {
-                $('#help').addClass('showtuto');
-                    $('#help').on('hidden.bs.modal', function () {
-                        if ($('#help').hasClass('showtuto')){
-                            rmTools.displayTutorial(applicationOptions.tutorialFile);
-                        }
-                    });
-            } else {
-                rmTools.displayTutorial(applicationOptions.tutorialFile);
-            }
-        }
-        // FIN MODIF CBR
 
     };
 

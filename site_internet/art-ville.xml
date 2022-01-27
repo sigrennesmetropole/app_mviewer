@@ -21,6 +21,7 @@
 
     <extensions>
          <extension type="component" id="carousel_photo" path="apps/public/addons"/>
+         <extension type="component" id="GUICustom" path="apps/public/addons"/>
     </extensions>
 
     <themes mini="true" legendmini="false">

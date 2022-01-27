@@ -20,7 +20,7 @@
 
 
 /* SLIDER PHOTO */
-.slick-prev:before, .slick-next:before { 
+.slick-prev:before, .slick-next:before {
     color: #555 !important;
 }
 
@@ -74,11 +74,12 @@
 .iframe-popup {
     cursor: pointer;
     margin: auto;
+		text-align: center;
 }
 
 .carousel-inner{
     padding-left: 30px;
-    color: white;
+    /* color: white; */
     width:auto!important;
     overflow: auto!important;
 }

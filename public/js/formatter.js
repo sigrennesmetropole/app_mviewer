@@ -2,17 +2,20 @@
  * Functions to format the data display on the right panel
  */
 
-    
+
 var formatter = (function () {
     const l_ref_feries = ['jour de l\'An', 'lundi de Pâques', 'fête du Travail', 'Victoire 1945', 'Ascension', 'lundi de Pentecôte', 'fête nationale', 'Assomption', 'Toussaint', 'Armistice 1918', 'Noël'];
     const l_ref_vacances = ['Vacances de la Toussaint', 'Vacances de Noël', 'Vacances d\'hiver', 'Vacances de printemps', 'Vacances d\'été'];
 
+    // TODO : cacher la clé d'API dans un fihcier de conf
+    var apiKey = 'c583383089f1c7e544e32cdf44c11045';
+
     /**
      *  -- Organizations functions --
      */
-    
+
     /****** Fonctions utiles *******/
-    
+
     // TODO : à vérifier / à déplacer dans RMUtils.js / à commenter
     var getDateFromFrench = function getDateFromFrench(date) {
         var val = date.split("/");
@@ -20,11 +23,11 @@ var formatter = (function () {
     };
 
     // TODO : à déplacer dans RMUtils.js
-    // sorting on start date 
+    // sorting on start date
     var sortByDate = function sortByDate(date1, date2) {
         return (date1[0]-date2[0]);
     };
-    
+
     // TODO : à déplacer dans un fichier RMUtils.js
     // Fonction générique qui retourne les éléments d'une liste A qui ne sont pas dans une liste B
     function getElemANotInListB(listA, listB){
@@ -35,7 +38,7 @@ var formatter = (function () {
             //var match = null;
             for (var j = 0, lenA = elements.length; j < lenA; j++) {
                 if (listB[i].toUpperCase().trim() === elements[j].toUpperCase().trim()) {
-                    // correspondance, on supprime l'entrée de la copie de la liste A 
+                    // correspondance, on supprime l'entrée de la copie de la liste A
                     //match = j;
                     elements.splice(j, 1);
                     break;
@@ -45,12 +48,12 @@ var formatter = (function () {
         }
         return elements;
     }
-    
-    
+
+
     // Fonctions de formattage
-    
+
     /****** HORAIRES ******/
-    
+
     // Mise en forme des horaires sous forme de liste
     //var _formatHoraires = function formatHoraires() {
     function formatHoraires() {
@@ -81,7 +84,7 @@ var formatter = (function () {
                             contenu += "<li>"+jours[jour_j]+"</li>";
                         }
                     }
-                    
+
                     if (variations.length > 0) {
                         contenu += "<li><i>" + variations[0].innerHTML+"</i></li>";
                     }
@@ -106,31 +109,31 @@ var formatter = (function () {
                     li_ouvert[j].innerHTML = contenu ;
                 }
                 // non affichage des noeuds inutiles
-                for (var k = 0, len_k = variations.length; k < len_k; k++) {variations[k].style.display="none";}   
+                for (var k = 0, len_k = variations.length; k < len_k; k++) {variations[k].style.display="none";}
             } else if (variations.length > 0) {//  cas des variations sans grille horaire définie
                 variations[0].innerHTML = "<span class='rm-popup-label'> Horaires :</span>" + variations[0].innerHTML+"<br/>";
-            } 
+            }
         }
     };
-    
+
     /****** FERMETURES ORGANISMES ******/
-    
+
     // analyse de la liste des jours fériés
     function fermeturesFerie(li_elements){
         var list_retenue=[];
-        
+
         if (li_elements.length === l_ref_feries.length) {
             list_retenue.push("Fermé les jours fériés");
         } else if (li_elements.length > 0) {
             list_retenue.push("Fermé les jours fériés sauf " + getElemANotInListB(l_ref_feries, li_elements.map(Function.prototype.call, String.prototype.trimStart)).join(', '));
-        } 
+        }
         return list_retenue;
     }
-    
+
     // analyse de la liste des vacances
     function fermeturesVacances(li_elements){
         var list_retenue=[];
-        
+
         if (li_elements.length === l_ref_vacances.length) {
             list_retenue.push ("Fermé pendant les vacances scolaires");
         } else if (li_elements.length > 0) {
@@ -142,26 +145,28 @@ var formatter = (function () {
                     list_retenue.push(li_elements[j].trimStart());
                 }
             }
-        } 
+        }
         return list_retenue;
     }
-    
-    
+
+
     // Affichage mode réduit des jours fériés et des vacances scolaires pour les organismes
     //var _rmFermeturesOrga = function rmFermeturesOrga() {
     function rmFermeturesOrga() {
-        var li_tab = document.getElementsByClassName("carousel slide");
+        //var li_tab = document.getElementsByClassName("carousel slide");
+        var li_tab = document.getElementsByClassName("rm_orga_fermetures");
+
         for (var cpt = 0, len_cpt = li_tab.length; cpt < len_cpt; cpt++) {
-        
+
             var fermetures_html=li_tab[cpt].getElementsByClassName("rm-fermetures")[0];
             var joursfermes = li_tab[cpt].getElementsByClassName("daysOff");
             var comfermeture = li_tab[cpt].getElementsByClassName("comfermeture");
 
 
-            //for (var i = 0, len_ul = elements.length; i < len_ul; i++) {            
-            var li_fermetures = [];    
+            //for (var i = 0, len_ul = elements.length; i < len_ul; i++) {
+            var li_fermetures = [];
             if (joursfermes.length > 0) {
-                var daysOffInfo = joursfermes[0]; 
+                var daysOffInfo = joursfermes[0];
             //if (daysOffInfo.trim() == "") {
                 var days ;
                 if (daysOffInfo.innerHTML.indexOf(':')>0){
@@ -174,11 +179,11 @@ var formatter = (function () {
                 var li_vac_st = [];
 
                 // différencier les fériés des vacances scolaires
-                for (var j = 0, len_j = li_fermetures_st.length; j < len_j; j++) { 
+                for (var j = 0, len_j = li_fermetures_st.length; j < len_j; j++) {
                     if (li_fermetures_st[j].indexOf("Vacance") > 0){
                         li_vac_st.push(li_fermetures_st[j]);
                     } else {
-                        li_feries_st.push(li_fermetures_st[j]);   
+                        li_feries_st.push(li_fermetures_st[j]);
                     }
                 }
 
@@ -202,7 +207,7 @@ var formatter = (function () {
                 st_html=" - <br/>";
             } else if (li_fermetures.length === 1) {
                 st_html= li_fermetures[0]+ "<br/>";
-            } 
+            }
             else {
                 st_html="<br/><ul>"
                 //elements[i].innerHTML="<br/><ul>";
@@ -222,14 +227,14 @@ var formatter = (function () {
             for (var k = 0, len_k = comfermeture.length; k < len_k; k++) {comfermeture[k].style.display="none";}
         }
     };
-    
-    
+
+
     // TODO : à commenter
     //var _exceptionalClosure = function exceptionalClosure() {
     function exceptionalClosure() {
         var li_tab = document.getElementsByClassName("carousel slide");
         for (var cpt = 0, len_cpt = li_tab.length; cpt < len_cpt; cpt++) {
-        
+
             var elements = li_tab[cpt].getElementsByClassName("exceptionalClosures");
             for (var a = 0; a < elements.length; a++) {
                 var closureInfo = elements[a];
@@ -260,7 +265,7 @@ var formatter = (function () {
                             }
                         }
 
-                        // sorting array on start date  
+                        // sorting array on start date
                         closure_array.sort(sortByDate);
                     }
 
@@ -279,21 +284,21 @@ var formatter = (function () {
             }
         }
     };
-    
+
     /****** DECHETERIES ******/
-    
+
     // Affichage mode réduit des jours fériés et des vacances scolaires pour les décheteries
     //var _rmFermeturesDecheterie = function rmFermeturesDecheterie() {
     function rmFermeturesDecheterie() {
-        
+
         var li_tab = document.getElementsByClassName("carousel slide");
         for (var cpt = 0, len_cpt = li_tab.length; cpt < len_cpt; cpt++) {
 
 
             var ul_element=li_tab[cpt].getElementsByClassName("l_fermetures");
 
-            for (var i = 0, len_ul = ul_element.length; i < len_ul; i++) {            
-                var li_fermetures = []; 
+            for (var i = 0, len_ul = ul_element.length; i < len_ul; i++) {
+                var li_fermetures = [];
 
                 // Cas des jours fériés
                 var li_feries = ul_element[i].getElementsByClassName("ferie_true");
@@ -314,7 +319,7 @@ var formatter = (function () {
                     ul_element[i].innerHTML=" - <br/>";
                 } else if (li_fermetures.length === 1) {
                     ul_element[i].innerHTML= li_fermetures[0]+ "<br/>";
-                } 
+                }
                 else {
                     ul_element[i].innerHTML="<br/><ul>";
                     for (var k = 0, len_k = li_fermetures.length; k < len_k; k++) {
@@ -325,11 +330,10 @@ var formatter = (function () {
                 }
             }
         }
-        
+
     };
-    
+
     // Liste des déchets acceptés dans les décheteries
-    //var _rmListeDechets = function rmListeDechets() {
     function rmListeDechets() {
         var ul_element=document.getElementsByClassName("liste_dechets");
         var list_retenue='';
@@ -342,7 +346,7 @@ var formatter = (function () {
             ul_element[0].innerHTML="<ul>"+list_retenue+"</ul>";
         }
     };
-    
+
     // TODO : à commenter
     function exceptionalClosureDechet() {
         var elements = document.getElementsByClassName("exceptionalClosuresDechet");
@@ -373,7 +377,7 @@ var formatter = (function () {
                     }
                 }
 
-                // sorting on start date 
+                // sorting on start date
                 closure_array.sort(sortByDate);
 
                 // output corresponding string
@@ -387,8 +391,8 @@ var formatter = (function () {
             }
         }
     };
-    
-    
+
+
     /****** EQUIPEMENTS / LISTES AVEC GESTION BOOLEEN ******/
     // Liste des équipements (exemeple : broyeurs)
     function rmListeEquipt() {
@@ -412,7 +416,6 @@ var formatter = (function () {
         if (my_links){
             for (var i = 0; i < my_links.length; i++) {
                 var adresse = my_links[i].getAttribute("href");
-                //console.log("adresse = " + adresse);
                 if (adresse !== null) {
 
                     if (adresse.substr(0, 4) != "http") {
@@ -425,7 +428,7 @@ var formatter = (function () {
                         }
                     }
                 }
-           
+
             }
         }
     };
@@ -438,19 +441,19 @@ var formatter = (function () {
                 var source = mypic[i].getAttribute("src");
                 var photo = source.split("|")[0];
                 var credit = source.split("|")[1];
-                
+
                 if (credit !== undefined && credit !== "") {
                     mypic[i].setAttribute("src", photo.trim());
                     mypic[i].parentNode.getElementsByClassName("text-credit")[0].innerHTML=credit.trimStart();
                     mypic[i].parentNode.getElementsByClassName("text-credit")[0].style.display = "block";;
                 }
-           
+
             }
         }
     };
-    
+
     /****** DATES ******/
-    
+
     // TODO : à commenter
     //var _formatDateInFrench = function formatDateInFrench() {
     function formatDateInFrench() {
@@ -459,7 +462,6 @@ var formatter = (function () {
             var contenu="";
             if(span_elements[i].innerHTML) {
                 contenu = span_elements[i].innerHTML;
-                //console.log("contenu["+i+"] = "+contenu);
                 var date_tab = [];
                 date_tab = contenu.split('-', 3);
                 if(date_tab.length===3){
@@ -468,7 +470,43 @@ var formatter = (function () {
             }
         }
     };
-    
+
+    // TODO : à commenter
+    //var formatHourInFrench = function formatHourInFrench() {
+    function formatHourInFrench() {
+        var span_elements = document.getElementsByClassName("hour_in_french_format");
+        for (var i = 0; i < span_elements.length; i++) {
+            var contenu="";
+            if(span_elements[i].innerHTML) {
+                contenu = span_elements[i].innerHTML;
+                var date_tab = [];
+                date_tab = contenu.split('T');
+                if(date_tab.length===2){
+                    span_elements[i].innerHTML = date_tab[1].substr(0,2);
+                }
+            }
+        }
+    };
+
+    //var formatDateInFrenchWithLetters = function formatDateInFrenchWithLetters() {
+    function formatDateInFrenchWithLetters() {
+        var span_elements = document.getElementsByClassName("date_in_french_format");
+        for (var i = 0; i < span_elements.length; i++) {
+            var contenu="";
+            if(span_elements[i].innerHTML) {
+                contenu = span_elements[i].innerHTML;
+                var date_tab = [];
+                var months = new Array('Janvier', 'Fevrier', 'Mars',
+                      'Avril', 'Mai', 'Juin', 'Juillet', 'Aout',
+                      'Septembre', 'Octobre', 'Novembre', 'Décembre');
+                date_tab = contenu.split('-', 3);
+                if(date_tab.length===3){
+                    span_elements[i].innerHTML = date_tab[2].substr(0,2) + "/" + months[date_tab[1]] + "/" + date_tab[0];
+                }
+            }
+        }
+    };
+
     function formatDateTimeInFrench() {
         var dates = document.getElementsByClassName("datetimeField");
         var heure = '';
@@ -489,8 +527,8 @@ var formatter = (function () {
             }
         }
     };
-    
-    
+
+
     /****** QUARTIERS ******/
     function rmQuartiers() {
         var l_element=document.getElementsByClassName("rm-quartier");
@@ -506,7 +544,7 @@ var formatter = (function () {
 
     function rmTraficStatus() {
         var trafficStatus = document.getElementsByClassName("trafficStatus");
-        for (var j = 0; j < trafficStatus.length; j++) {    
+        for (var j = 0; j < trafficStatus.length; j++) {
             var text = trafficStatus[j].innerText;
             var newText = '';
             switch (text) {
@@ -531,8 +569,8 @@ var formatter = (function () {
             trafficStatus[j].innerText = newText;
         }
     };
-    
-    
+
+
     /****** DONNEES ART DANS LA VILLE ******/
     function rmArtVilleType() {
         $( ".rm_artville" ).each(function () {
@@ -556,7 +594,33 @@ var formatter = (function () {
             }
         });
     };
-    
+
+    /**
+    * Requete http avec header (API S&O qui nécessite une clé en header)
+    **/
+    function sitesorgs_data(requestUrl, principal=false) {
+        return new Promise(resolve => {
+            $.ajax({
+                url: requestUrl,
+                context: document.body,
+                headers: {'X-API-KEY': apiKey}
+            }).done(function (res) {
+                resolve({'response': res, 'category': 'sitesorg','org_principal' : principal});
+            });
+        });
+    };
+
+    function getFeatureFromIdSite(idSite) {
+        var features = mviewer.getLayers().piscinesRM.layer.getSource().getFeatures();
+        var retour;
+        for (feat in features){
+            if(idSite == features[feat].get('id_site')) {
+                retour = features[feat];
+                break;
+            }
+        };
+        return retour;
+    }
 
     // Mise en forme des composants des panneaux d'information (appelée à chaque chargement de panel)
     var _rmFormatTabs = function rmFormatTabs() {
@@ -570,14 +634,21 @@ var formatter = (function () {
         corrWebAddr();
         splitphotocredit();
         formatDateInFrench();
+        formatHourInFrench();
         formatDateTimeInFrench();
         rmQuartiers();
         rmTraficStatus();
         rmArtVilleType();
+        formatDateInFrenchWithLetters();
+
+        var divs = document.getElementsByClassName("iframe-popup");
+        for(var i = 0; i < divs.length; i++) {
+          divs[i].parentNode.style = "text-align:left";
+        };
+
     };
 
     return {
         rmFormatTabs: _rmFormatTabs
     };
 })();
-

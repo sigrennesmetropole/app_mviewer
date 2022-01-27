@@ -47,8 +47,10 @@
 
     <extensions>
          <extension type="component" id="carousel_photo" path="apps/public/addons"/>
-				 <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_SitesOrgRVA.json"/>
-    </extensions>
+				 <!-- <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_SitesOrgRVA.json"/> -->
+				 <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_CadastreRVAQueryable.json"/>
+				 <extension type="component" id="GUICustom" path="apps/public/addons"/>
+		</extensions>
 
 	<themes mini="true">
 		<theme id="theme-transport" name="Transport" collapsed="true" icon="fas fa-bus">
@@ -428,12 +430,11 @@
 				url="https://public.sig.rennesmetropole.fr/geoserver/ptou_lois/ows"
 				visible="false"
 				infoformat="application/vnd.ogc.gml"
-			    style="v_art_ville_memoire"
+			  style="v_art_ville_memoire"
 				metadata="undefined"
 				metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/5451cbf0-6353-47ad-a274-f237001aed10"
 				queryable="true"
                 featurecount="5"
-                filter="etat='Pour mémoire'"
 				infopanel="right-panel">
                 <template url="apps/georm/templates/georm_art-ville.mst"></template>
 			</layer>
