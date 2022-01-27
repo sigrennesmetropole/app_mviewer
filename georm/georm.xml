@@ -430,7 +430,7 @@
 				url="https://public.sig.rennesmetropole.fr/geoserver/ptou_lois/ows"
 				visible="false"
 				infoformat="application/vnd.ogc.gml"
-                style="v_art_ville_memoire"
+			  style="v_art_ville_memoire"
 				metadata="undefined"
 				metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/5451cbf0-6353-47ad-a274-f237001aed10"
 				queryable="true"
