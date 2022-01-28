@@ -1,27 +1,51 @@
 var baladesAddon = (function () {
 
-    var configFile;
-    var balades;
-    var pointsBalades;
-    var couleurBalades;
-    var layer_balades;
-    var layer_points;
+    var configFile; // fichier de configuration
+    var layer_balades; // nom du customlayer des balades
+    var layer_points; // nom du customlayer des points
+
+    var baladeId; // id de chaque balade
+    var couleurBalades; // nom de l'attribut couleur sur chaque balade
+    var idBalade; // id de la balade sur chaque point
+    var defaultColor; // couleur de base des points si la couleur n'est pas valide
 
     var init = function() {
         configFile = _getConfigPerso();
         _setConfigVariable(configFile, styleBalades);
+        // console.log(map);
     };
 
     var styleBalades = function(){
         var features = mviewer.customLayers[layer_balades].layer.getSource().getFeatures();
+        var featuresCouleur = [];
+        // changement de couleur des entitées linéraires
         features.forEach(balade => {
-            console.log(balade);
+            featuresCouleur.push({"id": balade.get(baladeId), "couleur": balade.get(couleurBalades)});
+            var couleurFeature = balade.get(couleurBalades);
+            if (!isColor(couleurFeature))
+                couleurFeature = defaultColor;
             var style = new ol.style.Style({
-                stroke: new ol.style.Stroke({ color: balade.get(couleurBalades), width: 3 })
+                stroke: new ol.style.Stroke({ color: couleurFeature, width: 3 })
             });
             balade.setStyle(style);
         });
-
+        // changement de couleur des points 
+        features = mviewer.customLayers[layer_points].layer.getSource().getFeatures();
+        features.forEach(point => {
+            var couleurPoint = featuresCouleur.find(x => x['id'] == point.get(idBalade)).couleur;
+            if (!isColor(couleurPoint))
+                couleurPoint = defaultColor;
+            var style = new ol.style.Style({
+                image: new ol.style.Icon({
+                    color: couleurPoint,  
+                    crossOrigin: 'anonymous',
+                    scale:1,
+                    anchor:[0.5,1],
+                    src: 'apps/site_internet/customlayer/picture/marker.svg',
+                }),
+            });
+            point.setStyle(style);
+        });
     }
 
     function _getConfigPerso(){
@@ -51,12 +75,19 @@ var baladesAddon = (function () {
     }
 
     function _setSearchParameters(data, callback){
-        balades = data.balades;
-        pointsBalades = data.pointsBalades;
-        couleurBalades = data.couleurBalades;
-        layer_balades = data.layer_balades;
-        layer_points = data.layer_points;
+        pointsBalades = data.balades.pointsBalades;
+        couleurBalades = data.balades.couleurBalades;
+        layer_balades = data.balades.layer_balades;
+        layer_points = data.points.layer_points;
+        idBalade = data.points.idBalade;
+        baladeId = data.balades.id;
+        defaultColor = data.points.defaultColor;
         callback();
+    }
+
+    function isColor(strColor){
+        var reg = /^#([0-9a-f]{3}){1,2}$/i;
+        return reg.test(strColor);
     }
 
     return {

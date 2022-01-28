@@ -1,7 +1,13 @@
-{
-    "balades": "balades",
-    "pointsBalades": "balades_points",
-    "couleurBalades": "couleur",
-    "layer_balades": "balades",
-    "layer_points": "balades_points"
+{   
+    "balades": {
+        "layer_balades": "balades",
+        "id": "id",
+        "pointsBalades": "balades_points",
+        "couleurBalades": "couleur"
+    },
+    "points": {
+        "layer_points": "balades_points",
+        "idBalade": "idbalade",
+        "defaultColor": "#ba8e02"
+    }
 }
