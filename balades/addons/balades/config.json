@@ -1,0 +1,10 @@
+{
+    "js": [
+      "js/baladesAddon.js"
+    ],
+    "css": "css/styles.css",
+    "html": "html/balades.html",
+    "target": "page-content-wrapper",
+    "options": {
+    }
+}

@@ -1,5 +1,5 @@
 
-mviewer.customLayers.balades= (function() {
+mviewer.customLayers.balades = (function() {
     
     var data_bal = 'apps/balades/customlayer/data/balades_3857.geojson';
     
@@ -34,17 +34,6 @@ mviewer.customLayers.balades= (function() {
         }),
         style: baladeStyle_lin,
     });
-    
-    
-    /*
-    let POILayer = new ol.layer.Vector({
-        source: new ol.source.Vector({
-            url: data_poi,
-            format: new ol.format.GeoJSON(),
-        }),
-        style: baladeStyle_pct,
-    });
-    */
     
     return {
         layer: baladeslayer,
