@@ -1,0 +1,20 @@
+{
+"type": "FeatureCollection",
+"name": "points_3857",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "label": "premier point d'arrêt", "rang": 1, "balade": 1 }, "geometry": { "type": "Point", "coordinates": [ -186927.825530661386438, 6125148.251698105596006 ] } },
+{ "type": "Feature", "properties": { "id": 2, "label": "deuxième point", "rang": 2, "balade": 1 }, "geometry": { "type": "Point", "coordinates": [ -186938.264107203314779, 6125403.509263847954571 ] } },
+{ "type": "Feature", "properties": { "id": 3, "label": "test label", "rang": 3, "balade": 1 }, "geometry": { "type": "Point", "coordinates": [ -186774.981394704809645, 6125517.738257091492414 ] } },
+{ "type": "Feature", "properties": { "id": 4, "label": "dernier point de la balade", "rang": 4, "balade": 1 }, "geometry": { "type": "Point", "coordinates": [ -186715.330782831850229, 6126000.312214252538979 ] } },
+{ "type": "Feature", "properties": { "id": 5, "label": "début balade numéro 2", "rang": 1, "balade": 2 }, "geometry": { "type": "Point", "coordinates": [ -186716.509800418833038, 6126054.827086172997952 ] } },
+{ "type": "Feature", "properties": { "id": 6, "label": "balade 2", "rang": 2, "balade": 2 }, "geometry": { "type": "Point", "coordinates": [ -186345.068232354416978, 6125944.149806890636683 ] } },
+{ "type": "Feature", "properties": { "id": 7, "label": "balade", "rang": 3, "balade": 2 }, "geometry": { "type": "Point", "coordinates": [ -186054.032083959114971, 6125863.046794401481748 ] } },
+{ "type": "Feature", "properties": { "id": 8, "label": "label", "rang": 4, "balade": 2 }, "geometry": { "type": "Point", "coordinates": [ -185624.296161817997927, 6125918.198343646712601 ] } },
+{ "type": "Feature", "properties": { "id": 9, "label": "fin de la balade", "rang": 5, "balade": 2 }, "geometry": { "type": "Point", "coordinates": [ -185798.353644784045173, 6126002.646971128880978 ] } },
+{ "type": "Feature", "properties": { "id": 10, "label": "test", "rang": 1, "balade": 3 }, "geometry": { "type": "Point", "coordinates": [ -187047.061160751472926, 6125936.809755854308605 ] } },
+{ "type": "Feature", "properties": { "id": 11, "label": "batiment", "rang": 2, "balade": 3 }, "geometry": { "type": "Point", "coordinates": [ -187132.180177365778945, 6125985.444431500509381 ] } },
+{ "type": "Feature", "properties": { "id": 12, "label": "saint-anne", "rang": 3, "balade": 3 }, "geometry": { "type": "Point", "coordinates": [ -187199.903979539580178, 6125747.09756207279861 ] } },
+{ "type": "Feature", "properties": { "id": 13, "label": "Place saint-Anne", "rang": 4, "balade": 3 }, "geometry": { "type": "Point", "coordinates": [ -187314.525514885754092, 6125729.174198868684471 ] } }
+]
+}
