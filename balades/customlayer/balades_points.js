@@ -1,5 +1,5 @@
 
-mviewer.customLayers.balades_points= (function() {
+mviewer.customLayers.balades_points = (function() {
     
     var data_poi = 'apps/balades/customlayer/data/points_3857.geojson';
     
@@ -26,7 +26,6 @@ mviewer.customLayers.balades_points= (function() {
         }),
         style: baladeStyle_pct,
     });
-    
     
     return {
         layer: POILayer,
