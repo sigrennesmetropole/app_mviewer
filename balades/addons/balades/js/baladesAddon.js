@@ -23,24 +23,40 @@ var baladesAddon = (function () {
         var map = mviewer.getMap();
         var feature = map.forEachFeatureAtPixel(e.pixel, function (feature) { return feature; });
         if (feature) {
-            if (feature.getStyle().getStroke().getColor().length == 9){
+            if (feature.getGeometry().getType() == 'LineString' && feature.getStyle().getStroke().getColor().length == 9){
                 var colorFeature = feature.getStyle().getStroke().getColor().slice(0, 7);
                 var style = new ol.style.Style({
-                    stroke: new ol.style.Stroke({ color: colorFeature, width: 3 })
+                    stroke: new ol.style.Stroke({ color: colorFeature, width: 4 })
                 });
-                // feature.setStyle(style);
                 featuresBalades.find(x => x.get('id') == feature.get('id')).setStyle(style);
+            } else if (feature.getGeometry().getType() == 'Point' && feature.getStyle().getImage().getOpacity() != 1) {
+                var balade = featuresBalades.find(x => x.get('id') === feature.get(idBalade))
+                feature.getStyle().getImage().setOpacity(0.3);
             }
         }
+        // Mettre l'opacité basse pour les balades non sélectionnées
         featuresBalades.map(feat => {
-            if (feature && feat.get('id') != feature.get('id')){
+            if ((feature && feature.getGeometry().getType() == 'LineString' && feat.get('id') != feature.get('id')) || (feature && feature.getGeometry().getType() == 'Point' && feat.get('id') != feature.get(idBalade))){
                 var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7) + "4D";
-                var style = new ol.style.Style({
-                    stroke: new ol.style.Stroke({ color: colorFeature, width: 3 })
-                });
-                featuresBalades.find(x => x.get('id') == feat.get('id')).setStyle(style);
+            } else {
+                var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7);
             }
-        })
+            var style = new ol.style.Style({
+                stroke: new ol.style.Stroke({ color: colorFeature, width: 4 })
+            });
+            featuresBalades.find(x => x.get('id') == feat.get('id')).setStyle(style);
+        });
+        // Mettre l'opacité basse pour les points non sélectionnés
+        featuresPoints.map(feat => {
+            if (feature && feature.getGeometry().getType() == 'LineString' && feat.get(idBalade) != feature.get('id')){
+                feat.getStyle().getImage().setOpacity(0.3);
+            } else if (feature && feature.getGeometry().getType() == 'Point' && feat.get(idBalade) != feature.get(idBalade)) {
+                feat.getStyle().getImage().setOpacity(0.3);
+            } else {
+                feat.getStyle().getImage().setOpacity(1);
+            }
+        });
+        mviewer.customLayers[layer_points].layer.changed();
     };
 
     var styleBalades = function(){
@@ -56,7 +72,7 @@ var baladesAddon = (function () {
             if (!isColor(couleurFeature))
                 couleurFeature = defaultColor;
             var style = new ol.style.Style({
-                stroke: new ol.style.Stroke({ color: couleurFeature, width: 3 })
+                stroke: new ol.style.Stroke({ color: couleurFeature, width: 4 })
             });
             balade.setStyle(style);
         });
