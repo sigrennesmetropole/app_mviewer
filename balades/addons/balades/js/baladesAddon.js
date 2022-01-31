@@ -9,13 +9,44 @@ var baladesAddon = (function () {
     var idBalade; // id de la balade sur chaque point
     var defaultColor; // couleur de base des points si la couleur n'est pas valide
 
+    var featuresBalades; // liste des balades
+    var featuresPoints; // liste des points
+
     var init = function() {
         configFile = _getConfigPerso();
         _setConfigVariable(configFile, styleBalades);
-        // console.log(map);
+        // changement d'opacité des balades
+        mviewer.getMap().on('click', changeOpacityOnClick);
+    };
+
+    function changeOpacityOnClick(e) {
+        var map = mviewer.getMap();
+        var feature = map.forEachFeatureAtPixel(e.pixel, function (feature) { return feature; });
+        if (feature) {
+            if (feature.getStyle().getStroke().getColor().length == 9){
+                var colorFeature = feature.getStyle().getStroke().getColor().slice(0, 7);
+                var style = new ol.style.Style({
+                    stroke: new ol.style.Stroke({ color: colorFeature, width: 3 })
+                });
+                // feature.setStyle(style);
+                featuresBalades.find(x => x.get('id') == feature.get('id')).setStyle(style);
+            }
+        }
+        featuresBalades.map(feat => {
+            if (feature && feat.get('id') != feature.get('id')){
+                var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7) + "4D";
+                var style = new ol.style.Style({
+                    stroke: new ol.style.Stroke({ color: colorFeature, width: 3 })
+                });
+                featuresBalades.find(x => x.get('id') == feat.get('id')).setStyle(style);
+            }
+        })
     };
 
     var styleBalades = function(){
+        featuresBalades = mviewer.customLayers[layer_balades].layer.getSource().getFeatures();
+        featuresPoints = mviewer.customLayers[layer_points].layer.getSource().getFeatures();
+
         var features = mviewer.customLayers[layer_balades].layer.getSource().getFeatures();
         var featuresCouleur = [];
         // changement de couleur des entitées linéraires

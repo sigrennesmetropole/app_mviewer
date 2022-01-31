@@ -4,7 +4,5 @@
     ],
     "css": "css/styles.css",
     "html": "html/balades.html",
-    "target": "page-content-wrapper",
-    "options": {
-    }
+    "target": "page-content-wrapper"
 }
