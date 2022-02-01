@@ -1,0 +1,12 @@
+{{#features}}
+	<li class="item">
+		<div id="idbalade" style="display: none">{{{idbalade}}}</div>
+
+        <h4 class="rm-popup-title-feature">Idbalade : {{{idbalade}}}</h4>
+		<p class="rm-popup-text-feature">
+			{{#label}}<span class='rm-popup-label'> Label : {{{label}}}</span><br/> {{/label}}
+            <span class='rm-popup-label'> Idbalade : {{{idbalade}}}</span><br/>
+		</p>
+	</li>
+{{/features}}
+

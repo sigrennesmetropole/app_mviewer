@@ -11,13 +11,36 @@ var baladesAddon = (function () {
 
     var featuresBalades; // liste des balades
     var featuresPoints; // liste des points
+    var opacity = 0.4;
 
     var init = function() {
         configFile = _getConfigPerso();
         _setConfigVariable(configFile, styleBalades);
         // changement d'opacité des balades
         mviewer.getMap().on('click', changeOpacityOnClick);
+        mviewer.setInfoPanelTitle = setInfoPanelTitleFunction;
     };
+
+    var setInfoPanelTitleFunction = function setInfoPanelTitle(el, panel) {
+        var title = $(el).attr("data-original-title");
+        $("#"+panel +" .mv-header h5").text(title);
+        // console.log($("#"+panel +" .popup-content h5").text());
+        var idBaladeSelected = $("#" + panel + " " + $(el).attr("href") + " h5").text();
+        featuresBalades.map(feat => {
+            if (feat.get('id') != idBaladeSelected){
+                var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7) + "66";
+            } else {
+                var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7);
+            }
+            var style = new ol.style.Style({
+                stroke: new ol.style.Stroke({ color: colorFeature, width: 4 })
+            });
+            console.log("changement " + colorFeature + " " + feat.get('id'));
+            featuresBalades.find(x => x.get('id') == feat.get('id')).setStyle(style);
+            // myLayer.getSource().removeFeature(feature);
+        });
+        
+    }
 
     function changeOpacityOnClick(e) {
         var map = mviewer.getMap();
@@ -31,13 +54,13 @@ var baladesAddon = (function () {
                 featuresBalades.find(x => x.get('id') == feature.get('id')).setStyle(style);
             } else if (feature.getGeometry().getType() == 'Point' && feature.getStyle().getImage().getOpacity() != 1) {
                 var balade = featuresBalades.find(x => x.get('id') === feature.get(idBalade))
-                feature.getStyle().getImage().setOpacity(0.3);
+                feature.getStyle().getImage().setOpacity(opacity);
             }
         }
         // Mettre l'opacité basse pour les balades non sélectionnées
         featuresBalades.map(feat => {
             if ((feature && feature.getGeometry().getType() == 'LineString' && feat.get('id') != feature.get('id')) || (feature && feature.getGeometry().getType() == 'Point' && feat.get('id') != feature.get(idBalade))){
-                var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7) + "4D";
+                var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7) + "66";
             } else {
                 var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7);
             }
@@ -49,9 +72,9 @@ var baladesAddon = (function () {
         // Mettre l'opacité basse pour les points non sélectionnés
         featuresPoints.map(feat => {
             if (feature && feature.getGeometry().getType() == 'LineString' && feat.get(idBalade) != feature.get('id')){
-                feat.getStyle().getImage().setOpacity(0.3);
+                feat.getStyle().getImage().setOpacity(opacity);
             } else if (feature && feature.getGeometry().getType() == 'Point' && feat.get(idBalade) != feature.get(idBalade)) {
-                feat.getStyle().getImage().setOpacity(0.3);
+                feat.getStyle().getImage().setOpacity(opacity);
             } else {
                 feat.getStyle().getImage().setOpacity(1);
             }
@@ -122,13 +145,12 @@ var baladesAddon = (function () {
     }
 
     function _setSearchParameters(data, callback){
-        pointsBalades = data.balades.pointsBalades;
         couleurBalades = data.balades.couleurBalades;
         layer_balades = data.balades.layer_balades;
         layer_points = data.points.layer_points;
         idBalade = data.points.idBalade;
         baladeId = data.balades.id;
-        defaultColor = data.points.defaultColor;
+        defaultColor = data.balades.defaultColor;
         callback();
     }
 
