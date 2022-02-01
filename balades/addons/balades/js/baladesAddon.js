@@ -25,7 +25,7 @@ var baladesAddon = (function () {
         var title = $(el).attr("data-original-title");
         $("#"+panel +" .mv-header h5").text(title);
         // console.log($("#"+panel +" .popup-content h5").text());
-        var idBaladeSelected = $("#" + panel + " " + $(el).attr("href") + " h5").text();
+        var idBaladeSelected = $("#" + panel + " " + $(el).attr("href") + " #idbalade").text();
         featuresBalades.map(feat => {
             if (feat.get('id') != idBaladeSelected){
                 var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7) + "66";
