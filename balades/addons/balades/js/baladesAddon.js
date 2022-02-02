@@ -24,7 +24,6 @@ var baladesAddon = (function () {
     var setInfoPanelTitleFunction = function setInfoPanelTitle(el, panel) {
         var title = $(el).attr("data-original-title");
         $("#"+panel +" .mv-header h5").text(title);
-        // console.log($("#"+panel +" .popup-content h5").text());
         var idBaladeSelected = $("#" + panel + " " + $(el).attr("href") + " #idbalade").text();
         featuresBalades.map(feat => {
             if (feat.get('id') != idBaladeSelected){
@@ -35,11 +34,17 @@ var baladesAddon = (function () {
             var style = new ol.style.Style({
                 stroke: new ol.style.Stroke({ color: colorFeature, width: 4 })
             });
-            console.log("changement " + colorFeature + " " + feat.get('id'));
-            featuresBalades.find(x => x.get('id') == feat.get('id')).setStyle(style);
-            // myLayer.getSource().removeFeature(feature);
+            feat.setStyle(style);
         });
-        
+        featuresPoints.map(feat => {
+            if (feat.get(idBalade) != idBaladeSelected){
+                feat.getStyle().getImage().setOpacity(opacity);
+            } else {
+                feat.getStyle().getImage().setOpacity(1);
+            }
+        });
+        mviewer.customLayers[layer_points].layer.changed();
+        mviewer.customLayers[layer_balades].layer.changed();
     }
 
     function changeOpacityOnClick(e) {
