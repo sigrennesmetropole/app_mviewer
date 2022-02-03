@@ -1,1 +1,56 @@
-/* CSS */
+#prevButton {
+    position: fixed;
+    width: 140px;
+    height: 40px;
+    bottom: 10%;
+    left: 26%;
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+#prevButton:hover, #nextButton:hover {
+    background-color: #23272B;
+}
+
+#prevButton:active, #nextButton:active {
+    background-color: #343a40;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+#nextButton {
+    position: fixed;
+    width: 140px;
+    height: 40px;
+    bottom: 10%;
+    left: 40%;
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+@media screen and (max-width: 1200px) {
+    #prevButton {
+       left: 22%;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    #prevButton {
+        left: 25%;
+    }
+    #nextButton {
+        left: 55%;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    #prevButton {
+        left: 22%;
+        width: 100px;
+    }
+    #nextButton {
+        left: 60%;
+        width: 100px;
+    }
+}
