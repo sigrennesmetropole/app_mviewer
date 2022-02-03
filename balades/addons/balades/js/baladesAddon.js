@@ -19,7 +19,14 @@ var baladesAddon = (function () {
         // changement d'opacité des balades
         mviewer.getMap().on('click', changeOpacityOnClick);
         mviewer.setInfoPanelTitle = setInfoPanelTitleFunction;
+
+        // var selectInteraction = new ol.interaction.Select();
+        $('#prevButton').click(clickPrevButtonFunction);
     };
+
+    var clickPrevButtonFunction = function clickPrevButton(){
+        console.log("click !");
+    }
 
     var setInfoPanelTitleFunction = function setInfoPanelTitle(el, panel) {
         var title = $(el).attr("data-original-title");
@@ -49,6 +56,7 @@ var baladesAddon = (function () {
 
     function changeOpacityOnClick(e) {
         var map = mviewer.getMap();
+        // console.log("#right-panel .mv-header h5")
         var feature = map.forEachFeatureAtPixel(e.pixel, function (feature) { return feature; });
         if (feature) {
             if (feature.getGeometry().getType() == 'LineString' && feature.getStyle().getStroke().getColor().length == 9){
@@ -58,7 +66,6 @@ var baladesAddon = (function () {
                 });
                 featuresBalades.find(x => x.get('id') == feature.get('id')).setStyle(style);
             } else if (feature.getGeometry().getType() == 'Point' && feature.getStyle().getImage().getOpacity() != 1) {
-                var balade = featuresBalades.find(x => x.get('id') === feature.get(idBalade))
                 feature.getStyle().getImage().setOpacity(opacity);
             }
         }
