@@ -6,6 +6,8 @@ var searchRM = (function () {
   var currentRmAutocompleteItem = -1;
   var apiSitesOrgkey = '';
   var getPersoConfData;
+  var apiRvaKey = '';
+  var apiSitesorgKey = '';
 
   var previousRequest;
 
@@ -14,6 +16,12 @@ var searchRM = (function () {
         // $("#parcelSelectors").show();
         // var configapp = mviewer.customComponents.searchRM;
         // console.log(configapp);
+
+        $.getJSON("apps/public/addons/env.json", function(json) {
+          apiRvaKey = json.searchRM[0].apiRVAKey;
+          apiSitesorgKey = json.searchRM[0].apiSitesorgKey;
+        });
+
         $("#searchtool input").attr("placeholder", mviewer.customComponents.searchRM.config.options.libelles.placeholderRVA);
 
         if(API.mode !== 'u' && API.mode !== 's'){
@@ -186,19 +194,18 @@ var searchRM = (function () {
 
         confData.searchContent.forEach( function (content) {
             var ajaxSetting = {type: 'GET', crossDomain: true,  dataType: "json"};
-            apiSitesOrgkey = configOptionsValues.apiSitesorgKey;
             switch (content.categoryName) {
                 case 'Communes':
                     ajaxSetting.url = apiRvaBaseUrl;
-                    ajaxSetting.data = {key: configOptionsValues.apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getcities', 'insee':'all'};
+                    ajaxSetting.data = {key: apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getcities', 'insee':'all'};
                     break;
                 case 'Voies':
                     ajaxSetting.url = apiRvaBaseUrl;
-                    ajaxSetting.data = {key: configOptionsValues.apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getlanes', 'insee':'all', "query": value};
+                    ajaxSetting.data = {key: apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getlanes', 'insee':'all', "query": value};
                     break;
                 case 'Adresses':
                     ajaxSetting.url = apiRvaBaseUrl;
-                    ajaxSetting.data =  {key: configOptionsValues.apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getfulladdresses',"query": value};
+                    ajaxSetting.data =  {key: apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getfulladdresses',"query": value};
                     break;
                 case 'Organismes':
                     ajaxSetting.url = apiSitesOrg_url_recherche;
