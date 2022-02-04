@@ -42,7 +42,7 @@
                 <template url="apps/balades/templates/balade.mst"></template>
             </layer>
         </theme>
-        <theme id="theme-202201280955" name="Points" collapsed="true" icon="fas fa-map-marker-alt">
+        <theme id="theme-202201280956" name="Points" collapsed="true" icon="fas fa-map-marker-alt">
             <layer
                 id="balades_points"
                 name="Points d'intérêt"
