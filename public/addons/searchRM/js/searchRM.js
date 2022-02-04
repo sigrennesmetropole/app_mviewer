@@ -6,7 +6,7 @@ var searchRM = (function () {
   var currentRmAutocompleteItem = -1;
   var apiSitesOrgkey = '';
   var getPersoConfData;
-  var apiRvaKey = '';
+  var apiRVAKey = '';
   var apiSitesorgKey = '';
 
   var previousRequest;
@@ -18,7 +18,7 @@ var searchRM = (function () {
         // console.log(configapp);
 
         $.getJSON("apps/public/addons/env.json", function(json) {
-          apiRvaKey = json.searchRM[0].apiRVAKey;
+          apiRVAKey = json.searchRM[0].apiRVAKey;
           apiSitesorgKey = json.searchRM[0].apiSitesorgKey;
         });
 
