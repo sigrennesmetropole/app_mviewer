@@ -25,23 +25,6 @@
     </extensions>
 
     <themes mini="true" legendmini="false">
-        <theme id="theme-202201280955" name="Balades de test" collapsed="true" icon="fas fa-route">
-            <layer
-                id="balades"
-                name="Données de test de balades"
-                type="customlayer"
-                url="apps/balades/customlayer/balades.js"
-                visible="true"
-                tooltip="false"
-                tooltipenabled="false"
-                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{label}}&lt;/span&gt;"
-                metadata="undefined"
-                queryable="true"
-                featurecount="3"
-                infopanel="right-panel">
-                <template url="apps/balades/templates/balade.mst"></template>
-            </layer>
-        </theme>
         <theme id="theme-202201280956" name="Points" collapsed="true" icon="fas fa-map-marker-alt">
             <layer
                 id="balades_points"
@@ -57,6 +40,23 @@
                 featurecount="3"
                 infopanel="right-panel">
                 <template url="apps/balades/templates/point.mst"></template>
+            </layer>
+        </theme>
+        <theme id="theme-202201280955" name="Balades de test" collapsed="true" icon="fas fa-route">
+            <layer
+                id="balades"
+                name="Données de test de balades"
+                type="customlayer"
+                url="apps/balades/customlayer/balades.js"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="false"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{label}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="3"
+                infopanel="right-panel">
+                <template url="apps/balades/templates/balade.mst"></template>
             </layer>
         </theme>
     </themes>
