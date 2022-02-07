@@ -30,11 +30,10 @@ var baladesAddon = (function () {
     var clickPrevButtonFunction = function clickPrevButton(){
         currentPointBalade--;
         var geometryPoint = featuresPoints.find(x => x.get('idbalade') == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
-        console.log(geometryPoint);
         if (geometryPoint){
             document.getElementById('nextButton').disabled = false;
             geometryPoint = ol.proj.transform([geometryPoint[0], geometryPoint[1]], 'EPSG:3857', 'EPSG:4326');
-            mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1], 16, true);
+            mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, 16, true);
         }
         if (!featuresPoints.find(x => x.get('idbalade') == currentIdBalade && x.get('rang') == currentPointBalade-1)){
             document.getElementById('prevButton').disabled = true;
@@ -44,11 +43,10 @@ var baladesAddon = (function () {
     var clickNextButtonFunction = function clickNextButton(){
         currentPointBalade++;
         var geometryPoint = featuresPoints.find(x => x.get('idbalade') == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
-        console.log(geometryPoint);
         if (geometryPoint){
             document.getElementById('prevButton').disabled = false;
             geometryPoint = ol.proj.transform([geometryPoint[0], geometryPoint[1]], 'EPSG:3857', 'EPSG:4326');
-            mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1], 16, true);
+            mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, 16, true);
         }
         if (!featuresPoints.find(x => x.get('idbalade') == currentIdBalade && x.get('rang') == currentPointBalade+1)){
             document.getElementById('nextButton').disabled = true;
@@ -64,7 +62,12 @@ var baladesAddon = (function () {
         currentPointBalade = 1;
         var geometryPoint = featuresPoints.find(x => x.get('idbalade') == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
         geometryPoint = ol.proj.transform([geometryPoint[0], geometryPoint[1]], 'EPSG:3857', 'EPSG:4326');
-        mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1], 16, true);
+        mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, 16, true);
+        // layerVector = new ol.layer.Vector({
+        //     source:new ol.source.Vector()
+        // });
+        // var vecSource = layerVector.getSource();
+        // vecSource.clear();
     }
 
     function updateButton(){
@@ -109,8 +112,9 @@ var baladesAddon = (function () {
 
     function changeOpacityOnClick(e) {
         var map = mviewer.getMap();
-        // console.log("#right-panel .mv-header h5")
-        var feature = map.forEachFeatureAtPixel(e.pixel, function (feature) { return feature; });
+        var feature = map.forEachFeatureAtPixel(e.pixel, function (feature, layer) { 
+            return feature;
+        });
         // Mettre l'opacité basse pour les balades non sélectionnées
         featuresBalades.map(feat => {
             if ((feature && feature.getGeometry().getType() == 'LineString' && feat.get('id') != feature.get('id')) || (feature && feature.getGeometry().getType() == 'Point' && feat.get('id') != feature.get(idBalade))){
@@ -136,7 +140,7 @@ var baladesAddon = (function () {
         });
         mviewer.customLayers[layer_points].layer.changed();
         if (!feature)
-        currentIdBalade = -1;
+            currentIdBalade = -1;
         updateButton();
     };
 
