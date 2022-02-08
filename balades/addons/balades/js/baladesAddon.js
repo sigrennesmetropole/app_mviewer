@@ -21,7 +21,7 @@ var baladesAddon = (function () {
         // changement d'opacité des balades
         mviewer.getMap().on('click', changeOpacityOnClick);
         mviewer.setInfoPanelTitle = setInfoPanelTitleFunction;
-
+        
         $('#prevButton').click(clickPrevButtonFunction);
         $('#nextButton').click(clickNextButtonFunction);
         $('#startButton').click(clickStartButtonFunction);
@@ -29,26 +29,26 @@ var baladesAddon = (function () {
 
     var clickPrevButtonFunction = function clickPrevButton(){
         currentPointBalade--;
-        var geometryPoint = featuresPoints.find(x => x.get('idbalade') == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
+        var geometryPoint = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
         if (geometryPoint){
             document.getElementById('nextButton').disabled = false;
             geometryPoint = ol.proj.transform([geometryPoint[0], geometryPoint[1]], 'EPSG:3857', 'EPSG:4326');
             mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, 16, true);
         }
-        if (!featuresPoints.find(x => x.get('idbalade') == currentIdBalade && x.get('rang') == currentPointBalade-1)){
+        if (!featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade-1)){
             document.getElementById('prevButton').disabled = true;
         }
     }
 
     var clickNextButtonFunction = function clickNextButton(){
         currentPointBalade++;
-        var geometryPoint = featuresPoints.find(x => x.get('idbalade') == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
+        var geometryPoint = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
         if (geometryPoint){
             document.getElementById('prevButton').disabled = false;
             geometryPoint = ol.proj.transform([geometryPoint[0], geometryPoint[1]], 'EPSG:3857', 'EPSG:4326');
             mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, 16, true);
         }
-        if (!featuresPoints.find(x => x.get('idbalade') == currentIdBalade && x.get('rang') == currentPointBalade+1)){
+        if (!featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade+1)){
             document.getElementById('nextButton').disabled = true;
         }
     }
@@ -60,14 +60,9 @@ var baladesAddon = (function () {
         document.getElementById('nextButton').style.display = 'block';
         document.getElementById('startButton').style.display = 'none';
         currentPointBalade = 1;
-        var geometryPoint = featuresPoints.find(x => x.get('idbalade') == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
+        var geometryPoint = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
         geometryPoint = ol.proj.transform([geometryPoint[0], geometryPoint[1]], 'EPSG:3857', 'EPSG:4326');
         mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, 16, true);
-        // layerVector = new ol.layer.Vector({
-        //     source:new ol.source.Vector()
-        // });
-        // var vecSource = layerVector.getSource();
-        // vecSource.clear();
     }
 
     function updateButton(){
@@ -178,6 +173,50 @@ var baladesAddon = (function () {
             });
             point.setStyle(style);
         });
+
+        // Gestion de la balade par défaut
+        var baladeParDefaut = configuration.getConfiguration().extensions.extension.find(x => x.id == "balades").defaut;
+        if (baladeParDefaut){
+            var featureDefaut = mviewer.customLayers[layer_points].layer.getSource().getFeatures().find(x => x.get(idBalade) == baladeParDefaut && x.get('rang') == 1);
+            if (featureDefaut){
+                var geometryPoint = ol.proj.transform([featureDefaut.getGeometry().getCoordinates()[0], featureDefaut.getGeometry().getCoordinates()[1]], 'EPSG:3857', 'EPSG:4326');
+                mviewer.zoomToLocation(geometryPoint[0] + 0.00002,  geometryPoint[1] + 0.00002, 16, true);
+                currentIdBalade = featureDefaut.get(idBalade);
+                currentPointBalade = 1;
+                document.getElementById('prevButton').style.display = 'block';
+                document.getElementById('prevButton').disabled = true;
+                document.getElementById('nextButton').disabled = false; 
+                document.getElementById('nextButton').style.display = 'block';
+                document.getElementById('startButton').style.display = 'none';
+                // Mettre l'opacité basse pour les balades non sélectionnées
+                feature = featureDefaut;
+                featuresBalades.map(feat => {
+                    if (feature && feat.get('id') != feature.get(idBalade)){
+                        var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7) + "66";
+                    } else {
+                        var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7);
+                        currentIdBalade = feat.get('id');
+                    }
+                    var style = new ol.style.Style({
+                        stroke: new ol.style.Stroke({ color: colorFeature, width: 4 })
+                    });
+                    featuresBalades.find(x => x.get('id') == feat.get('id')).setStyle(style);
+                });
+                // Mettre l'opacité basse pour les points non sélectionnés
+                featuresPoints.map(feat => {
+                    if (feature && feature.getGeometry().getType() == 'Point' && feat.get(idBalade) != feature.get(idBalade)) {
+                        feat.getStyle().getImage().setOpacity(opacity);
+                    } else {
+                        feat.getStyle().getImage().setOpacity(1);
+                    }
+                });
+                mviewer.customLayers[layer_points].layer.changed();
+            } else {
+                console.log("Extension balades : id de la balade par défaut non valide");
+            }
+        } else {
+            console.log("Extension balades : id de la balade par défaut non valide");
+        }
     }
 
     function _getConfigPerso(){
