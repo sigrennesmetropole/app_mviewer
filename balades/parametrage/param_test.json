@@ -8,6 +8,6 @@
     "points": {
         "layer_points": "balades_points",
         "idBalade": "idbalade",
-        "couleurPointActif": "#ffffff"
+        "couleurPointActif": "#e74c3c"
     }
 }
