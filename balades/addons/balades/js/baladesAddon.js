@@ -56,7 +56,7 @@ var baladesAddon = (function () {
     var clickPrevButtonFunction = function clickPrevButton(){
         currentPointBalade--;
         var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
-        if (geometryPoint){
+        if (geometryPointFeature){
             document.getElementById('nextButton').disabled = false;
             geometryPoint = ol.proj.transform([geometryPointFeature[0], geometryPointFeature[1]], 'EPSG:3857', 'EPSG:4326');
             mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, 16, true);
@@ -70,7 +70,7 @@ var baladesAddon = (function () {
     var clickNextButtonFunction = function clickNextButton(){
         currentPointBalade++;
         var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
-        if (geometryPoint){
+        if (geometryPointFeature){
             document.getElementById('prevButton').disabled = false;
             geometryPoint = ol.proj.transform([geometryPointFeature[0], geometryPointFeature[1]], 'EPSG:3857', 'EPSG:4326');
             mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, 16, true);
@@ -214,6 +214,9 @@ var baladesAddon = (function () {
             if (featureDefaut){
                 var geometryPoint = ol.proj.transform([featureDefaut.getGeometry().getCoordinates()[0], featureDefaut.getGeometry().getCoordinates()[1]], 'EPSG:3857', 'EPSG:4326');
                 mviewer.zoomToLocation(geometryPoint[0] + 0.00002,  geometryPoint[1] + 0.00002, 16, true);
+                highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([featureDefaut.getGeometry().getCoordinates()[0], featureDefaut.getGeometry().getCoordinates()[1]]);
+                mviewer.getMap().getLayers().push(highlightLayer);
+                $("#mv_marker").attr('fill-opacity', '0');
                 currentIdBalade = featureDefaut.get(idBalade);
                 currentPointBalade = 1;
                 document.getElementById('prevButton').style.display = 'block';
@@ -284,8 +287,8 @@ var baladesAddon = (function () {
         baladeId = data.balades.id;
         defaultColor = data.balades.defaultColor;
         couleurPointActif = data.points.couleurPointActif;
-        callback();
         createLayerHighlight();
+        callback();
     }
 
     function isColor(strColor){
