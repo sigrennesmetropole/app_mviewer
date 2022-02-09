@@ -8,6 +8,8 @@ var baladesAddon = (function () {
     var couleurBalades; // nom de l'attribut couleur sur chaque balade
     var idBalade; // id de la balade sur chaque point
     var defaultColor; // couleur de base des points si la couleur n'est pas valide
+    var couleurPointActif; // couleur du point actif de la balade
+    var highlightLayer; // Layer highlight du point actif
 
     var featuresBalades; // liste des balades
     var featuresPoints; // liste des points
@@ -27,13 +29,38 @@ var baladesAddon = (function () {
         $('#startButton').click(clickStartButtonFunction);
     };
 
+    function createLayerHighlight(){    
+        var stylePointHighlight = new ol.style.Style({
+            image: new ol.style.Icon({
+                color: couleurPointActif,  
+                crossOrigin: 'anonymous',
+                scale:1,
+                anchor:[0.5,1],
+                src: 'apps/site_internet/customlayer/picture/marker.svg',
+            })
+        });
+        let HighlightLayer = new ol.layer.Vector({
+            source: new ol.source.Vector(),
+            style: stylePointHighlight,
+        });
+        HighlightLayer.mviewerid='communeOverlay';
+        var geometry = new ol.geom.Point([-187047.06116075147, 6125936.809755854]);
+        var feature = new ol.Feature({
+            name: "id",
+            geometry: geometry
+        });
+        HighlightLayer.getSource().addFeature(feature);
+        highlightLayer = HighlightLayer;
+    }  
+
     var clickPrevButtonFunction = function clickPrevButton(){
         currentPointBalade--;
-        var geometryPoint = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
+        var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
         if (geometryPoint){
             document.getElementById('nextButton').disabled = false;
-            geometryPoint = ol.proj.transform([geometryPoint[0], geometryPoint[1]], 'EPSG:3857', 'EPSG:4326');
+            geometryPoint = ol.proj.transform([geometryPointFeature[0], geometryPointFeature[1]], 'EPSG:3857', 'EPSG:4326');
             mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, 16, true);
+            highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([geometryPointFeature[0], geometryPointFeature[1]]);
         }
         if (!featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade-1)){
             document.getElementById('prevButton').disabled = true;
@@ -42,11 +69,12 @@ var baladesAddon = (function () {
 
     var clickNextButtonFunction = function clickNextButton(){
         currentPointBalade++;
-        var geometryPoint = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
+        var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
         if (geometryPoint){
             document.getElementById('prevButton').disabled = false;
-            geometryPoint = ol.proj.transform([geometryPoint[0], geometryPoint[1]], 'EPSG:3857', 'EPSG:4326');
+            geometryPoint = ol.proj.transform([geometryPointFeature[0], geometryPointFeature[1]], 'EPSG:3857', 'EPSG:4326');
             mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, 16, true);
+            highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([geometryPointFeature[0], geometryPointFeature[1]]);
         }
         if (!featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade+1)){
             document.getElementById('nextButton').disabled = true;
@@ -60,9 +88,12 @@ var baladesAddon = (function () {
         document.getElementById('nextButton').style.display = 'block';
         document.getElementById('startButton').style.display = 'none';
         currentPointBalade = 1;
-        var geometryPoint = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
-        geometryPoint = ol.proj.transform([geometryPoint[0], geometryPoint[1]], 'EPSG:3857', 'EPSG:4326');
+        var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
+        geometryPoint = ol.proj.transform([geometryPointFeature[0], geometryPointFeature[1]], 'EPSG:3857', 'EPSG:4326');
         mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, 16, true);
+        highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([geometryPointFeature[0], geometryPointFeature[1]]);
+        mviewer.getMap().getLayers().push(highlightLayer);
+        $("#mv_marker").attr('fill-opacity', '0');
     }
 
     function updateButton(){
@@ -75,6 +106,8 @@ var baladesAddon = (function () {
             document.getElementById('prevButton').style.display = 'none';
             document.getElementById('nextButton').style.display = 'none';
         }
+        mviewer.getMap().removeLayer(highlightLayer);
+        $("#mv_marker").attr('fill-opacity', '1');
     }
 
     var setInfoPanelTitleFunction = function setInfoPanelTitle(el, panel) {
@@ -214,8 +247,6 @@ var baladesAddon = (function () {
             } else {
                 console.log("Extension balades : id de la balade par défaut non valide");
             }
-        } else {
-            console.log("Extension balades : id de la balade par défaut non valide");
         }
     }
 
@@ -252,7 +283,9 @@ var baladesAddon = (function () {
         idBalade = data.points.idBalade;
         baladeId = data.balades.id;
         defaultColor = data.balades.defaultColor;
+        couleurPointActif = data.points.couleurPointActif;
         callback();
+        createLayerHighlight();
     }
 
     function isColor(strColor){
