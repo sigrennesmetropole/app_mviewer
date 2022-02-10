@@ -13,10 +13,10 @@ var baladesAddon = (function () {
 
     var featuresBalades; // liste des balades
     var featuresPoints; // liste des points
-    var opacity = 0.4;
+    var opacity = 0.4; // opacité des points des balades non actifs
     var currentIdBalade = -1; // id de la balade visible dans le pannel
-    var currentPointBalade = -1;
-    var pointsAtStart = true;
+    var currentPointBalade = -1; // point courant lors de la balade
+    var pointsAtStart = true; // option d'affichage des points d'arrêt
 
     var init = function() {
         configFile = _getConfigPerso();
