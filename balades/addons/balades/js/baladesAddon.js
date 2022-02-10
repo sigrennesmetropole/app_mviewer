@@ -16,6 +16,7 @@ var baladesAddon = (function () {
     var opacity = 0.4;
     var currentIdBalade = -1; // id de la balade visible dans le pannel
     var currentPointBalade = -1;
+    var pointsAtStart = true;
 
     var init = function() {
         configFile = _getConfigPerso();
@@ -163,7 +164,10 @@ var baladesAddon = (function () {
             } else if (feature && feature.getGeometry().getType() == 'Point' && feat.get(idBalade) != feature.get(idBalade)) {
                 feat.getStyle().getImage().setOpacity(opacity);
             } else {
-                feat.getStyle().getImage().setOpacity(1);
+                if (feature || pointsAtStart == "true")
+                    feat.getStyle().getImage().setOpacity(1);
+                else 
+                    feat.getStyle().getImage().setOpacity(0);
             }
         });
         mviewer.customLayers[layer_points].layer.changed();
@@ -175,7 +179,13 @@ var baladesAddon = (function () {
     var styleBalades = function(){
         featuresBalades = mviewer.customLayers[layer_balades].layer.getSource().getFeatures();
         featuresPoints = mviewer.customLayers[layer_points].layer.getSource().getFeatures();
-
+        // Gestion de l'option des points au démarrage (pointsAtStart)
+        if (configuration.getConfiguration().extensions.extension.find(x => x.id == "balades").pointsAtStart){
+            pointsAtStart = configuration.getConfiguration().extensions.extension.find(x => x.id == "balades").pointsAtStart;
+            if (pointsAtStart == "false"){
+                opacity = 0;
+            }
+        }
         var features = mviewer.customLayers[layer_balades].layer.getSource().getFeatures();
         var featuresCouleur = [];
         // changement de couleur des entitées linéraires
@@ -205,9 +215,11 @@ var baladesAddon = (function () {
                 }),
             });
             point.setStyle(style);
+            if (pointsAtStart == "false")
+                point.getStyle().getImage().setOpacity(0);
         });
 
-        // Gestion de la balade par défaut
+        // Gestion de l'option de la balade par défaut (defaut)
         var baladeParDefaut = configuration.getConfiguration().extensions.extension.find(x => x.id == "balades").defaut;
         if (baladeParDefaut){
             var featureDefaut = mviewer.customLayers[layer_points].layer.getSource().getFeatures().find(x => x.get(idBalade) == baladeParDefaut && x.get('rang') == 1);
