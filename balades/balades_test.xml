@@ -22,7 +22,7 @@
 
     <extensions>
         <extension type="component" id="GUICustom" path="apps/public/addons"/>
-        <extension type="component" id="balades" path="apps/balades/addons" configFile="/apps/balades/parametrage/param_test.json" defaut="22"/>
+        <extension type="component" id="balades" path="apps/balades/addons" configFile="/apps/balades/parametrage/param_test.json" pointsAtStart="false"/>
     </extensions>
 
     <themes mini="true" legendmini="false">
