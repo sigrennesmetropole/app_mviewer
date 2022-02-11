@@ -16,7 +16,8 @@ var baladesAddon = (function () {
     var opacity = 0.4; // opacité des points des balades non actifs
     var currentIdBalade = -1; // id de la balade visible dans le pannel
     var currentPointBalade = -1; // point courant lors de la balade
-    var pointsAtStart = true; // option d'affichage des points d'arrêt
+    var pointsVisible = true; // option d'affichage des points d'arrêt
+    var baladeParDefaut; // option de balade par défaut
 
     var init = function() {
         configFile = _getConfigPerso();
@@ -164,7 +165,7 @@ var baladesAddon = (function () {
             } else if (feature && feature.getGeometry().getType() == 'Point' && feat.get(idBalade) != feature.get(idBalade)) {
                 feat.getStyle().getImage().setOpacity(opacity);
             } else {
-                if (feature || pointsAtStart == "true")
+                if (feature || pointsVisible == "true")
                     feat.getStyle().getImage().setOpacity(1);
                 else 
                     feat.getStyle().getImage().setOpacity(0);
@@ -179,12 +180,9 @@ var baladesAddon = (function () {
     var styleBalades = function(){
         featuresBalades = mviewer.customLayers[layer_balades].layer.getSource().getFeatures();
         featuresPoints = mviewer.customLayers[layer_points].layer.getSource().getFeatures();
-        // Gestion de l'option des points au démarrage (pointsAtStart)
-        if (configuration.getConfiguration().extensions.extension.find(x => x.id == "balades").pointsAtStart){
-            pointsAtStart = configuration.getConfiguration().extensions.extension.find(x => x.id == "balades").pointsAtStart;
-            if (pointsAtStart == "false"){
-                opacity = 0;
-            }
+        // Gestion de l'option des points au démarrage (pointsVisible)
+        if (pointsVisible == "false"){
+            opacity = 0;
         }
         var features = mviewer.customLayers[layer_balades].layer.getSource().getFeatures();
         var featuresCouleur = [];
@@ -215,13 +213,12 @@ var baladesAddon = (function () {
                 }),
             });
             point.setStyle(style);
-            if (pointsAtStart == "false")
+            if (pointsVisible == "false")
                 point.getStyle().getImage().setOpacity(0);
         });
 
         // Gestion de l'option de la balade par défaut (defaut)
-        var baladeParDefaut = configuration.getConfiguration().extensions.extension.find(x => x.id == "balades").defaut;
-        if (baladeParDefaut){
+        if (baladeParDefaut != ""){
             var featureDefaut = mviewer.customLayers[layer_points].layer.getSource().getFeatures().find(x => x.get(idBalade) == baladeParDefaut && x.get('rang') == 1);
             if (featureDefaut){
                 var geometryPoint = ol.proj.transform([featureDefaut.getGeometry().getCoordinates()[0], featureDefaut.getGeometry().getCoordinates()[1]], 'EPSG:3857', 'EPSG:4326');
@@ -299,6 +296,8 @@ var baladesAddon = (function () {
         baladeId = data.balades.id;
         defaultColor = data.balades.defaultColor;
         couleurPointActif = data.points.couleurPointActif;
+        pointsVisible = data.points.pointsVisible;
+        baladeParDefaut = data.balades.baladeParDefaut;
         createLayerHighlight();
         callback();
     }
