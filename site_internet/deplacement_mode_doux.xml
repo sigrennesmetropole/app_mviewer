@@ -25,7 +25,7 @@
       <extension type="component" id="GUICustom" path="apps/public/addons"/>
     </extensions>
 
-    <themes mini="true" legendmini="true">
+    <themes mini="false" legendmini="true">
         <theme id="20220110134700-VOIES" name="Voies" collapsed="true" icon="fas fa-road">
             <layer
                 id="v_troncon_denom"
@@ -42,7 +42,7 @@
                 infopanel="right-panel">
             </layer>
         </theme>
-        <theme id="20220216092600-EQUIPEMENTS" name="Équipements" collapsed="true" icon="fas fa-map-marker-alt">
+        <theme id="20220216092600-EQUIPEMENTS" name="Équipements" collapsed="false" icon="fas fa-map-marker-alt">
             <layer
                 id="sv_sitorg_environnement"
                 name="Parcs et loisirs"
