@@ -346,6 +346,17 @@ var formatter = (function () {
             ul_element[0].innerHTML="<ul>"+list_retenue+"</ul>";
         }
     };
+    
+    // Liste des déchets acceptés dans les décheteries
+    function rmGestionnaireDecheterie() {
+        var ul_elements=document.getElementsByClassName("dechetgestionnaire");
+        
+        for (var i = 0; i < ul_elements.length; i++) {
+            if ( ul_elements[i].getAttribute("gestionnaire") == 'Rennes Métropole') {
+                ul_elements[i].parentNode.removeChild(ul_elements[i]);
+            }
+        }
+    };
 
     // TODO : à commenter
     function exceptionalClosureDechet() {
@@ -628,6 +639,7 @@ var formatter = (function () {
         rmFermeturesOrga();
         exceptionalClosure();
         rmFermeturesDecheterie();
+        rmGestionnaireDecheterie();
         rmListeDechets();
         exceptionalClosureDechet();
         rmListeEquipt();
