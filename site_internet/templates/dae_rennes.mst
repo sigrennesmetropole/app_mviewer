@@ -1,0 +1,13 @@
+{{#features}}
+    <li class="item" >
+        <h5 class="rm-popup-title-feature">{{c_nom}}</h5>
+        <p class="rm-popup-text-feature">
+            <span class='rm-popup-label'> Adresse :</span> {{c_adr_num}} {{c_adr_voie}} {{c_com_cp}} {{c_com_nom}}<br/>
+            {{#c_acc_etg}}<span class='rm-popup-label'> Étage :</span> {{{c_acc_etg}}} <br/>{{/c_acc_etg}}
+            <!-- {{#c_acc}}<span class='rm-popup-label'> Accès :</span> {{{c_acc}}}<br/>{{/c_acc}} -->
+            {{#c_acc_complt}}<span class='rm-popup-label'> Complément :</span> {{{c_acc_complt}}} <br/>{{/c_acc_complt}}
+            
+            <!--{{#c_etat_valid}}<span class='rm-popup-label'> État de validation :</span> {{{c_etat_valid}}}<br/>{{/c_etat_valid}}-->
+        </p>
+    </li>
+{{/features}}
