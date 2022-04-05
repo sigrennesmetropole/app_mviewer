@@ -4,10 +4,10 @@ var searchRM = (function () {
 
   var nbResults = 0;
   var currentRmAutocompleteItem = -1;
-  var apiSitesOrgkey = '';
+  
   var getPersoConfData;
   var apiRVAKey = '';
-  var apiSitesorgKey = '';
+  var apiSitesOrgkey = '';
 
   var previousRequest;
 
@@ -19,7 +19,7 @@ var searchRM = (function () {
 
         $.getJSON("apps/public/addons/env.json", function(json) {
           apiRVAKey = json.searchRM[0].apiRVAKey;
-          apiSitesorgKey = json.searchRM[0].apiSitesorgKey;
+          apiSitesOrgkey = json.searchRM[0].apiSitesOrgkey;
         });
 
         $("#searchtool input").attr("placeholder", mviewer.customComponents.searchRM.config.options.libelles.placeholderRVA);
