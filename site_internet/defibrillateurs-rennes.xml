@@ -30,7 +30,7 @@
                 name="DAE de Rennes"
                 type="customlayer"
                 url="apps/site_internet/customlayer/defibrillateurs.js"
-                legendurl="apps/site_internet/img/legend/leg_ope_vergers.svg"
+                legendurl="apps/site_internet/img/legend/leg_dae.svg"
                 visible="true"
                 tooltip="false"
                 tooltipenabled="false"
