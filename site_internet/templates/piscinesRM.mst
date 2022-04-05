@@ -1,16 +1,16 @@
 {{#features}}
 <li class="item">
 	<h5 class="rm-popup-title-feature" id="popupTitle">{{nomUsage}}</h5>
-	{{#descriptif}}<p>{{{descriptif}}}</p>{{/descriptif}}
 
 	<p class="rm-popup-text-feature">
 		<span class='rm-popup-label'> Adresse :</span> {{adresse_postale_adr}} {{adresse_postale_cp}} {{adresse_postale_comm}}<br/>
 		<!-- {{#nom_org_principal}}<span class='rm-popup-label'> Nom du site :</span> {{{nom_org_principal}}}<br/>{{/nom_org_principal}} -->
 		{{#descriptif}}<span class='rm-popup-label'> Descriptif :</span> {{{descriptif}}}<br/>{{/descriptif}}
+<!--
 		{{#horairesOuvertures.length}}
 		<span class='rm-popup-label'> Horaires:</span>
 		{{#joursFermes.variationCongesScolaires}}<br/><span><i> Les horaires sont susceptibles de varier durant les congés scolaires.</i></span>{{/joursFermes.variationCongesScolaires}}
-		<section>
+			<section>
 			<div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p sliderTopMargin">
 				{{#horairesOuvertures}}
 				<div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}}" id="pisc">
@@ -60,8 +60,7 @@
 			</div>
 		</section>
 		{{/horairesOuvertures.length}}
-		<!-- {{^horairesOuvertures.length}} <span> Pas de jours d'ouverture sur cette période.</span> {{/horairesOuvertures.length}} -->
-
+-->
 
 		<span class='rm-popup-text-feature rm_orga_fermetures'>
 			<span class='rm-popup-label'> Fermetures :</span> <span class='rm-fermetures'></span>
