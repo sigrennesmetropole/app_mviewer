@@ -1,0 +1,45 @@
+{{#features}}
+    <li class="item" >
+        <h5 class="rm-popup-title-feature">Arrêt n°{{N_ARRET}}</h5>
+        <p style="margin-top : 8px;">
+            {{#TITRE}}{{{TITRE}}}<br/>{{/TITRE}}
+        </p>
+        <p class="rm-popup-text-feature">
+            {{#DESCRIPTIF}}<span class='rm-popup-label'> Description :</span> {{{DESCRIPTIF}}}<br/>{{/DESCRIPTIF}}
+            {{#RARETE}}<span class='rm-popup-label'> Rareté :</span> {{{RARETE}}} {{/RARETE}}
+        </p>
+        <p>
+            {{#photo1}}<img src="{{{photo1}}}" style="width: 100%;border: 2px solid #555; margin-bottom: 2px;"  />{{/photo1}}
+            {{#photo2}}<img src="{{{photo2}}}" style="width: 100%;border: 2px solid #555; margin-bottom: 2px;" />{{/photo2}}
+            {{#photo3}}<img src="{{{photo3}}}" style="width: 100%;border: 2px solid #555;" />{{/photo3}}
+        </p>
+        
+        <!--
+        {{#photo1}}
+            <section>
+                <div id="slideauto{{{N_ARRET}}}" class="slide-feature slideA{{{N_ARRET}}}">
+                    {{#photo1}}<div class="thumbnail iframe-popup slide-feature{{{N_ARRET}}}" onclick='carousel.getpopupslide("slideauto{{{N_ARRET}}}", 0);'>
+                        <img src="{{{photo1}}}" class="slick-slide-image photo_credit" loading="lazy" style="height: 150px;" />
+                        
+                        </div>{{/photo1}}
+                    {{#photo2}}<div class="thumbnail iframe-popup slide-feature{{{N_ARRET}}}" onclick='carousel.getpopupslide("slideauto{{{N_ARRET}}}", 1);'>
+                        <img src="{{{photo2}}}" class="slick-slide-image photo_credit" loading="lazy" style="height: 150px;" />
+                        
+                        </div>{{/photo2}}
+                    {{#photo3}}<div class="thumbnail iframe-popup slide-feature{{{N_ARRET}}}" onclick='carousel.getpopupslide("slideauto{{{N_ARRET}}}", 2);'>
+                        <img src="{{{photo3}}}" class="slick-slide-image photo_credit" loading="lazy" style="height: 150px;" />
+                        
+                        </div>{{/photo3}}
+                </div>
+            </section>
+        {{/photo1}}
+        -->
+        <!--
+        {{#video1}}
+        <div class="rm-video-div">
+            <video width="100%"  controls><source src="{{video1}}" ></video>
+        </div>
+        {{/video1}}
+        -->
+    </li>
+{{/features}}
