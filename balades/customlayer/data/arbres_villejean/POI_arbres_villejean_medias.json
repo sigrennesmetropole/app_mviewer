@@ -1,0 +1,1134 @@
+{
+	"type" : "FeatureCollection",
+	"name" : "POI_arbres_villejean",
+	"features" : [
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.709595943, 48.1205955354 ]
+			},
+			"properties" : {
+				"OBJECTID" : 28125,
+				"ID_POI" : 14,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Espèce forestière exploitée aux USA, bois tendre et parfumé. Variété crée en 1854, l'espèce type ayant un feuillage totalement vert. Cône réduit à 2 écailles, graines ailées mûres en septembre. Age max. : 500 ans. Haut. max. : 45m.",
+				"RARETE" : "rare",
+				"CODE" : null,
+				"TITRE" : "Cèdre blanc ou à l'encens, Calocèdre variant doré (Calocedrus decurrens f. aureovariata)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 1,
+				"REF_AN" : 1,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA1_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA1_image2.jpg",
+				"photo3" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA1_image3.jpg",
+				"video1" : "apps/balades/customlayer/data/arbres_villejean/Videos/P3_NA1_video1.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7106957007, 48.1201571319 ]
+			},
+			"properties" : {
+				"OBJECTID" : 73923,
+				"ID_POI" : 15,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Introduit en Europe en 1901 (origine : Japon). Sa caractéristique est une floraison progressive lors des périodes douces : depuis l'automne jusqu'au printemps.",
+				"RARETE" : "commun",
+				"CODE" : "consommable",
+				"TITRE" : "Cerisier à fleurs (Prunus subhirtella automnalis)",
+				"ANECDOTE" : "Les dates de floraison des cerisiers sont notées depuis 2000ans au Japon, ce qui permet de calculer l'évolution climatique. Le début de la floraison est une véritable fête nationale dans ce pays.",
+				"N_ARRET" : 2,
+				"REF_AN" : 2,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA2_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA2_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.710404156, 48.1198274774 ]
+			},
+			"properties" : {
+				"OBJECTID" : 2889,
+				"ID_POI" : 16,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Europe. Variété crée en 1883. Espèce forestière: bois très dur, le meilleur bois de chauffage. Vie possible sur plusieurs siècles. Utilisé en haies (Charmille), car  garde les feuilles séchées durant l'hiver (effet coupe vent).\r\n\r\n",
+				"RARETE" : "peu commun",
+				"CODE" : null,
+				"TITRE" : "Charme commun variant fastigié (Carpinus betulus f. fastigiata)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 3,
+				"REF_AN" : 4,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA3_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA3_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7104197922, 48.1196130041 ]
+			},
+			"properties" : {
+				"OBJECTID" : 7683,
+				"ID_POI" : 17,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Espèce forestière importante.Origine : Europe. Graines (ou « faines ») en forme de micro châtaigne, elles servent de nourriture au gibier et servaient aux  cochons en vaine pâture ainsi que  pour faire de l'huile. Haut.  max. : 35m.",
+				"RARETE" : "commun",
+				"CODE" : null,
+				"TITRE" : "Hêtre pourpre (Fagus sylvatica f. purpurea)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 4,
+				"REF_AN" : 5,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA4_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA4_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7096049068, 48.1197337705 ]
+			},
+			"properties" : {
+				"OBJECTID" : 68405,
+				"ID_POI" : 18,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Corse, Sardaigne, Italie du sud. Bois tendre : pâte à papier. Age max.: 100ans. Haut. max. : 30m. Essence d'association en boisement avorisant la croissance des autres espèces. Espèce la moins exigeante en eau de tous les Aulnes.",
+				"RARETE" : "commun",
+				"CODE" : null,
+				"TITRE" : "Aulne de corse (Aulnus cordata)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 5,
+				"REF_AN" : 10,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA5_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA5_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7091511247, 48.1197100787 ]
+			},
+			"properties" : {
+				"OBJECTID" : 20158,
+				"ID_POI" : 19,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : S-O des USA. Grandes grappes de  fleurs blanches en juin qui donnent des fruits en forme de longs haricots. Haut. max :15m . Age max. : 100ans. Espèce de ville par l'importance de son ombrage. considérée comme un bon dépollueur.",
+				"RARETE" : "peu commun",
+				"CODE" : null,
+				"TITRE" : "Catalpa commun (Catalpa bignonioides)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 6,
+				"REF_AN" : 12,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA6_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA6_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7092812401, 48.1194816401 ]
+			},
+			"properties" : {
+				"OBJECTID" : 74241,
+				"ID_POI" : 20,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : chaîne de l'Atlas, Algérie, Maroc. Haut. max. : 40m. Age max. : 500ans. Importante essence forestière à bois durable et parfumé en zone méditerranéenne.",
+				"RARETE" : "commun",
+				"CODE" : null,
+				"TITRE" : "Cèdre de l' Atlas variant bleu (Cedrus atlantica f. glauca)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 7,
+				"REF_AN" : 14,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA7_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA7_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7088164612, 48.1202385385 ]
+			},
+			"properties" : {
+				"OBJECTID" : 53017,
+				"ID_POI" : 21,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Clone créé en Allemagne en 1869. L'espèce type est présente dans toute l'Europe. Haut. max. : 25m. Age max. : 500ans  Bois de bonne qualité, l'espèce type est utilisée en reboisement.",
+				"RARETE" : "rare",
+				"CODE" : null,
+				"TITRE" : "Erable plane à feuilles rouges (Acer planatoïdes f. schwedleri)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 8,
+				"REF_AN" : 16,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA8_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA8_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7086796702, 48.1203010617 ]
+			},
+			"properties" : {
+				"OBJECTID" : 54605,
+				"ID_POI" : 22,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Floraison au printemps, fruits (ou marrons) matures à l'automne et  protégés par une bogue,  ils ne sont pas comestibles et utilisés en pharmacie (circulation sanguine). Bois médiocre. Haut max. : 15m. Age max. 200ans.",
+				"RARETE" : "commun",
+				"CODE" : "toxique",
+				"TITRE" : "Marronier rouge (Aesculus x carnea f. briotii)",
+				"ANECDOTE" : "Pour le parent hippocastanum, il reste un exemplaire planté en 1606 à Vézac (Cantal)",
+				"N_ARRET" : 9,
+				"REF_AN" : 17,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA9_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA9_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7086557335, 48.1189006047 ]
+			},
+			"properties" : {
+				"OBJECTID" : 54692,
+				"ID_POI" : 23,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "le Cyprès de Lawson est un arbre forestier très apprécié aux USA. Le cultivar 'wisseli' a été créé en 1893 en Hollande, il se couvre au printemps de nombreuses fleurs mâles rouge vif. Ce variant est rare  et il peux dépasser 15m.",
+				"RARETE" : "très rare",
+				"CODE" : null,
+				"TITRE" : "Cyprès de Lawson variant wisseli (Chamaecyparis lawsoniana f. wesselii)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 10,
+				"REF_AN" : 19,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA10_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA10_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7087211389, 48.1180900649 ]
+			},
+			"properties" : {
+				"OBJECTID" : 23012,
+				"ID_POI" : 24,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : USA. Arbre mythique, à bois rouge de qualité moyenne, pouvant vivre plus de 3000ans, atteindre 100m de haut et 10m de diamètre, certains exemplaires ont un chemin forestier entre les racines, où un véhicule de tourisme peut passer.",
+				"RARETE" : "peu commun",
+				"CODE" : null,
+				"TITRE" : "Séquoia géant (Sequoiadendron giganteum)",
+				"ANECDOTE" : "Arbre souvent atteint par la foudre, son écorce très fibreuse et épaisse lui permet de résister aux incendies, qui en nettoyant le sol, favorisent la germination de ses graines",
+				"N_ARRET" : 11,
+				"REF_AN" : 20,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA11_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA11_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7083634612, 48.1181286028 ]
+			},
+			"properties" : {
+				"OBJECTID" : 71883,
+				"ID_POI" : 25,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Eurasie, de la Grèce à la Chine. Petit arbre de 5-6m de hauteur. Intérêt décoratif par la couleur de ses feuilles et la forme de ses inflorescences. Son bois peut servir à fabriquer des petits objets et on peut en tirer un colorant.",
+				"RARETE" : "peu commun",
+				"CODE" : null,
+				"TITRE" : "Arbre à perruque (Cotinus coggygria)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 12,
+				"REF_AN" : 21,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA12_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA12_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7080913689, 48.117585685 ]
+			},
+			"properties" : {
+				"OBJECTID" : 14243,
+				"ID_POI" : 26,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : USA. Cette espèce fut introduite en Europe à la fin du 17ième. Haut. max. : 35m, longévité : 100ans. Bois de qualité moyenne, nerveux et dur à travailler. Interessant comme arbre urbain, car résiste bien aux polluants.",
+				"RARETE" : "peu commun",
+				"CODE" : null,
+				"TITRE" : "Chêne rouge des marais - alignement (Quercus palustris)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 13,
+				"REF_AN" : 22,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA13_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA13_image2.jpg",
+				"photo3" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA13_image3.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7083659682, 48.1164476593 ]
+			},
+			"properties" : {
+				"OBJECTID" : 6757,
+				"ID_POI" : 27,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : USA. Introduite en Europe au milieu du 18ième. Haut. max. : 40m. Intérêt ornemental par sa couleur bleutée et ses longues épines recourbées vers le haut, ses cônes dressés à couleur violacée qui ne tombent pas.",
+				"RARETE" : "peu commun",
+				"CODE" : null,
+				"TITRE" : "Sapin bleu du Colorado (Abies concolor f. glauca)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 14,
+				"REF_AN" : 23,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA14_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA14_image2.jpg",
+				"photo3" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA14_image3.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7072733474, 48.1164007938 ]
+			},
+			"properties" : {
+				"OBJECTID" : 17631,
+				"ID_POI" : 28,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Europe. Variant décrit en 1789. Haut. max. : 40m, longévité : 150ans. Bois de qualité aux multiples usages, grâce à sa souplesse et à sa dureté. Plante médicinale, permet aussi de faire une boisson : la frênette.",
+				"RARETE" : "peu commun",
+				"CODE" : null,
+				"TITRE" : "Frêne commun variant - alignement (Fraxinus excelsior j. diversifolia )",
+				"ANECDOTE" : null,
+				"N_ARRET" : 15,
+				"REF_AN" : 24,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA15_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA15_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7051198468, 48.1163385321 ]
+			},
+			"properties" : {
+				"OBJECTID" : 67996,
+				"ID_POI" : 29,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Iran au Japon. Arbre ornemental par son feuillage très fin et des fleurs estivales plumeuses variant du blanc (rare) au rouge, le plus souvent rose, fruit en forme de haricot. Haut. max. : 10m, longévité : 50ans.",
+				"RARETE" : "rare",
+				"CODE" : null,
+				"TITRE" : "Arbre à soie, Acacia de Constantinople(Albizzia julibrissin)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 16,
+				"REF_AN" : 25,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA16_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA16_image2.jpg",
+				"photo3" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA16_image3.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7069141086, 48.1165238384 ]
+			},
+			"properties" : {
+				"OBJECTID" : 16250,
+				"ID_POI" : 30,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Sud USA. Bois apprécié dans son aire d'origine, utilisation ornementale en Europe. Cônes sphériques à graines non ailées, souvent très abondants et persistant plusieurs années sur l'arbre. Haut. max. : 30m, longévité : 300ans.",
+				"RARETE" : "peu commun",
+				"CODE" : null,
+				"TITRE" : "Cyprès bleu de l'Arizona (Cupressus arizonica f.glauca)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 17,
+				"REF_AN" : 26,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA17_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA17_image2.jpg",
+				"photo3" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA17_image3.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7070561115, 48.1171991009 ]
+			},
+			"properties" : {
+				"OBJECTID" : 17441,
+				"ID_POI" : 31,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Est des USA. Introduit en Europe à la fin du 16ième. Arbre très décoratif par son feuillage jaune d'or et par sa floraison sous forme de tulipes. Bois jaunâtre de bonne qualité à usages multiples. Croissance rapide (intérêt forestier).",
+				"RARETE" : "commun",
+				"CODE" : null,
+				"TITRE" : "Tulipier de Virginie (Liriodendron tulipifera)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 18,
+				"REF_AN" : 261,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA18_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA18_image2.jpg",
+				"photo3" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA18_image3.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7069629413, 48.1176330619 ]
+			},
+			"properties" : {
+				"OBJECTID" : 21757,
+				"ID_POI" : 32,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Eurasie. Petit arbre de 3-5m pouvant atteindre 13m. Bois très dur. Floraison sous forme de petites fleurs jaunes, fruit rouge carmin en forme d'olive, consommables en confiture ou à l'eau de vie. Longévité : plusieurs siècles.",
+				"RARETE" : "commun",
+				"CODE" : "consommable",
+				"TITRE" : "Cornouiller mâle (Cornus mas)",
+				"ANECDOTE" : "Bois servant à la fabrication de manches d'outils, d'échelles",
+				"N_ARRET" : 19,
+				"REF_AN" : 27,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA19_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA19_image2.jpg",
+				"photo3" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA19_image3.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7070345957, 48.1179197072 ]
+			},
+			"properties" : {
+				"OBJECTID" : 36603,
+				"ID_POI" : 33,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Himalaya. Petit arbre de 3-4m, ressemblant à un noisetier, très rare en France. Fleur mimant  une fleur d'églantier blanche à étamines longues et jaunes, s'épanouissant en mai. Fruit multicoque.",
+				"RARETE" : "très rare",
+				"CODE" : null,
+				"TITRE" : "Parrotiopsis (Parrotiopsis jacquemontiana)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 20,
+				"REF_AN" : 28,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA20_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA20_image2.jpg",
+				"video1" : "apps/balades/customlayer/data/arbres_villejean/Videos/P3_NA20_video1.avi"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7071789243, 48.1178345959 ]
+			},
+			"properties" : {
+				"OBJECTID" : 19846,
+				"ID_POI" : 34,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Indes, introduit au Moyen Orient avant d'arriver en France au début du 16ième . Petit arbre de 2-3m aux fleurs bleu violet florissant tout l'été. Graines plumeuses dans une capsule déhiscente à l'automne. Longévité: 40 ans.",
+				"RARETE" : "rare",
+				"CODE" : null,
+				"TITRE" : "Mauve en arbre, Althea  (Hibiscus syriacus)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 21,
+				"REF_AN" : 29,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA21_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA21_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7075544312, 48.1182168304 ]
+			},
+			"properties" : {
+				"OBJECTID" : 54662,
+				"ID_POI" : 35,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Europe centrale. Se distingue des autres tilleuls par l'aspect gris argenté (face inférieure des feuilles). Espèce décorative, mellifère et résistante à la pollution des villes. Haut. max. : 30m, longévité 150ans.",
+				"RARETE" : "commun",
+				"CODE" : "consommable",
+				"TITRE" : "Tilleul argenté (Tilia tomentosa)",
+				"ANECDOTE" : "Fleurs à « effet narcotique » sur les abeilles.",
+				"N_ARRET" : 22,
+				"REF_AN" : 30,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA22_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA22_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7074851001, 48.118692973 ]
+			},
+			"properties" : {
+				"OBJECTID" : 54362,
+				"ID_POI" : 36,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Introduit en France au 16ième en provenance de Perse, probablement originaire de Chine. Arbre nain pour balcon, de 1 m maximum. Il est très décoratif par ses feuilles d'un  rouge foncé et ses fruits rouge foncé.",
+				"RARETE" : "très rare",
+				"CODE" : "consommable",
+				"TITRE" : "Pêcher à feuille rouge (Prunus persica f.crimson bonfire)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 23,
+				"REF_AN" : 33,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA23_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA23_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.707551478, 48.1186952694 ]
+			},
+			"properties" : {
+				"OBJECTID" : 40997,
+				"ID_POI" : 37,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Pourtour de la Méditerranée. Haut. max. : 10m, longévité : 1000ans. Arbre mythique aux fruits et huile appréciés depuis l'Antiquité et aux vertus médicinales (écorce). Bois dur servant à la fabrication de nombreux objets.",
+				"RARETE" : "commun",
+				"CODE" : "consommable",
+				"TITRE" : "Olivier commun (Olea europeanae)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 24,
+				"REF_AN" : 34,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA24_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA24_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7077692434, 48.1186688941 ]
+			},
+			"properties" : {
+				"OBJECTID" : 63873,
+				"ID_POI" : 38,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Méditerranée jusqu'à l'Iran. Arbre caractéristique du paysage provençal, rare plus au Nord où il fut implanté surtout dans les lieux religieux, puis dans les cimetières. Haut. max. :  50m, longévité :+de 1000ans. Bois imputrescible et parfumé.",
+				"RARETE" : "commun",
+				"CODE" : null,
+				"TITRE" : "Cyprès d'Italie, Cyprès de Provence (Cupressus sempervirens)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 25,
+				"REF_AN" : 35,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA25_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA25_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7078264935, 48.1185410838 ]
+			},
+			"properties" : {
+				"OBJECTID" : 54849,
+				"ID_POI" : 39,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Europe, hybridation entre Sorbus aria et Sorbus aucuparia. Haut.max. :16m, longévité 100ans. Fleurs blanches de printemps, fruits se colorant fin juin, pour atteindre un orange profond à l'automne, apprécié des oiseaux et consommable (confiture",
+				"RARETE" : "rare",
+				"CODE" : "consommable",
+				"TITRE" : "Alisier hybride (Sorbus x thuringiaca)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 26,
+				"REF_AN" : 36,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA26_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA26_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7078367233, 48.1185850583 ]
+			},
+			"properties" : {
+				"OBJECTID" : 41004,
+				"ID_POI" : 40,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Europe, surtout en montagne. Haut. max. :15m, longévité:150ans. Bois de qualité d'ébénisterie, rosâtre à rouge. Fruits très appréciés des oiseaux et qui étaient utilisés pour attirer les grives. A consommer en confitures ou à l'eau de vie.",
+				"RARETE" : "peu commun",
+				"CODE" : "consommable",
+				"TITRE" : "Sorbier des oiseleurs (Sorbus aucuparia)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 27,
+				"REF_AN" : 37,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA27_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA27_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7078821795, 48.1189584943 ]
+			},
+			"properties" : {
+				"OBJECTID" : 40996,
+				"ID_POI" : 41,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : SE des USA. Haut. max. : 25m, longévité: 200ans. Arbre à grandes feuilles coriaces persistantes et brillantes dessus. Grande fleur blanche ressemblant à des tulipes qui atteint 18 à 20cm ouverte. Espèce ornementale.",
+				"RARETE" : "commun",
+				"CODE" : null,
+				"TITRE" : "Magnolia à grandes fleurs (Magnolia grandiflora)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 28,
+				"REF_AN" : 38,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA28_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA28_image2.jpg",
+				"photo3" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA28_image3.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7073776344, 48.1190915071 ]
+			},
+			"properties" : {
+				"OBJECTID" : 74242,
+				"ID_POI" : 42,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Chine introduit en Europe en 1794. Haut. max. :12m. Feuilles persistantes. Fleurs présentes de l'été à l'automne, parfumées. Fruits : petites baies noires non comestibles. Bois dur, de couleur ambrée. Espèce ornementale en Europe.",
+				"RARETE" : "rare",
+				"CODE" : null,
+				"TITRE" : "Troène dit de Chine (Ligustrum lucidum)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 29,
+				"REF_AN" : 39,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA29_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA29_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7076791857, 48.1193655928 ]
+			},
+			"properties" : {
+				"OBJECTID" : 54213,
+				"ID_POI" : 43,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "L'Erable de l'Amour s'étend du centre de l'Europe à la Chine. Il se caractérise par des feuilles étroites rouges à l'automne. Ce petit arbre de 10m maximum, peu longévif, a un intérêt ornemental par sa rusticité et ses couleurs.",
+				"RARETE" : "peu commun",
+				"CODE" : null,
+				"TITRE" : "Erable de l' Amour (Acer tartaricum subsp ginnala)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 30,
+				"REF_AN" : 40,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA30_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA30_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7068932148, 48.1188722466 ]
+			},
+			"properties" : {
+				"OBJECTID" : 10141,
+				"ID_POI" : 44,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Himalaya. Forme crée en 1866. Haut. max. : 70m, longévité: 200ans. Ce cèdre se distingue des autres espèces par le port retombant de ses branches et par ses aiguilles plus longues (3 à 5 cm). Essence forestière à bois parfumé mais peu durable.",
+				"RARETE" : "rare",
+				"CODE" : null,
+				"TITRE" : "Cèdre de l'Himalaya variant doré (Cedrus deodora f. aurea )",
+				"ANECDOTE" : null,
+				"N_ARRET" : 31,
+				"REF_AN" : 41,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA31_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA31_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7069930286, 48.1187380675 ]
+			},
+			"properties" : {
+				"OBJECTID" : 12554,
+				"ID_POI" : 45,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Partie Nord du Moyen Orient. Haut. max. :10m, longévité : 100ans. Bois très dur exploité dans l'aire d'origine. Introduit en Europe en 1840. Cet arbre se caractérise par les couleurs vives de ses feuilles à l'automne.",
+				"RARETE" : "rare",
+				"CODE" : null,
+				"TITRE" : "Arbre de fer (Parrotia persica)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 32,
+				"REF_AN" : 42,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA32_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA32_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7069629345, 48.1183676034 ]
+			},
+			"properties" : {
+				"OBJECTID" : 7775,
+				"ID_POI" : 46,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Chine.  Le plus bel exemplaire d'Europe figure à Paris (hauteur de 20m pour 120 ans). Présente de grandes feuilles et des fleurs ayant un puissant parfum. Les fruits en grappe sont jaunes à l'automne et sont consommables, mais peut goûteux.",
+				"RARETE" : "très rare",
+				"CODE" : "consommable",
+				"TITRE" : "Cabrillet, Ehrétia de Dickson (Ehretia dicksonii)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 33,
+				"REF_AN" : 43,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA33_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA33_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7066824605, 48.1185218761 ]
+			},
+			"properties" : {
+				"OBJECTID" : 65703,
+				"ID_POI" : 47,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : USA. Haut. max 40m. Peuplements forestiers de la forme verte et de la forme bleutée (glauca). Le variant 'Koster', ayant un bleu plus prononcé, fut obtenu en 1901. Espèce forestière dans certaines zone de l'Europe du Sud.",
+				"RARETE" : "peu commun",
+				"CODE" : null,
+				"TITRE" : "Epicéa bleu du Colorado (Picea pungens f. glauca 'Koster')",
+				"ANECDOTE" : null,
+				"N_ARRET" : 34,
+				"REF_AN" : 44,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA34_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA34_image2.jpg",
+				"photo3" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA34_image3.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7066983131, 48.1187385945 ]
+			},
+			"properties" : {
+				"OBJECTID" : 3259,
+				"ID_POI" : 48,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Europe et Asie mineure. Haut. max. : 20 m, longévité : 200ans. Bois dur permettant la fabrication de petits objets très apprécié en marqueterie jusqu'au 18ième. Graines ailées en automne. Avec l'âge le tronc s'ornemente d'un liège peu épais.",
+				"RARETE" : "commun",
+				"CODE" : null,
+				"TITRE" : "Erable  champêtre (variant) (alignement) (Acer campestre)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 35,
+				"REF_AN" : 45,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA35_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA35_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7067761447, 48.119070587 ]
+			},
+			"properties" : {
+				"OBJECTID" : 57476,
+				"ID_POI" : 49,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Pourtour Méditerranée depuis l'Italie jusqu'au Liban, puis jusqu'à l'Iran. Haut. max. : 10m, longévité : 100 ans. Intérêt avant tout ornemental. D'après la légende, Judas se serait pendu à cet arbre après avoir trahit le Christ.",
+				"RARETE" : "commun",
+				"CODE" : null,
+				"TITRE" : "Arbre de Judée, Gainier, Arbre de Judas (Cercis siliquastrum)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 36,
+				"REF_AN" : 46,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA36_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA36_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7059397717, 48.119098969 ]
+			},
+			"properties" : {
+				"OBJECTID" : 24885,
+				"ID_POI" : 50,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : USA. Longtemps considéré comme le conifère le plus haut (120m), en Europe il atteint 60m. Longévité : 200 à 300 ans. Très importante espèce de reboisement depuis 60 ans en France, car croissance rapide et le  \r\nbois de bonne qualité.",
+				"RARETE" : "commun",
+				"CODE" : null,
+				"TITRE" : "Sapin de Douglas (Pseudostuga menziesii (ex douglasii))",
+				"ANECDOTE" : null,
+				"N_ARRET" : 37,
+				"REF_AN" : 48,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA37_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA37_image2.jpg",
+				"video1" : "apps/balades/customlayer/data/arbres_villejean/Videos/P3_NA37_video1.avi"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7056225001, 48.1190492188 ]
+			},
+			"properties" : {
+				"OBJECTID" : 70180,
+				"ID_POI" : 51,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Europe jusqu'à l'Oural. Espèce type. Haut. max. : 40m, longévité : 150ans. Bois de qualité aux multiples usages grâce à sa souplesse et sa dureté. Arbre considéré depuis peu comme envahissant les prairies dans le sud ouest. Plante médicinale.",
+				"RARETE" : "commun",
+				"CODE" : "consommable",
+				"TITRE" : "Frêne commun (Fraxinus excelsior)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 38,
+				"REF_AN" : 49,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA38_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA38_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7051322822, 48.1194892079 ]
+			},
+			"properties" : {
+				"OBJECTID" : 57918,
+				"ID_POI" : 52,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : de l'Italie à la Turquie. Haut. max. : 20m, longévité : 150ans. Résistant à la sécheresse, mais demandant de l'humidité atmosphérique au cours de la croissance. Bois très dur, intérêt semblable au Charme commun.",
+				"RARETE" : "rare",
+				"CODE" : null,
+				"TITRE" : "Charme houblon, Charme d'Italie (Ostrya carpinifolia)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 39,
+				"REF_AN" : 50,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA39_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA39_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7051491047, 48.1196766299 ]
+			},
+			"properties" : {
+				"OBJECTID" : 35750,
+				"ID_POI" : 53,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Europe, Russie. Haut. max. : 30m, longévité : 500ans. Bois clair à grain fin, apprécié pour divers objets. Espèce mellifère recherchée par les abeilles car fleurs précoces. Intérêt ornemental par ses très nombreux variants de couleurs variées.",
+				"RARETE" : "commun",
+				"CODE" : null,
+				"TITRE" : "Erable plane, Erable blanc (Acer platanoides)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 40,
+				"REF_AN" : 52,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA40_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA40_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7051493556, 48.1199721302 ]
+			},
+			"properties" : {
+				"OBJECTID" : 25557,
+				"ID_POI" : 54,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Est du Canada. Haut. max. : 50m,  longévité : 200ans. Espèce forestière introduite vers 1700 en Europe, mais une maladie limite son extension. Cônes pendant, longs de 10 à 20cm, souvent résineux, larguant les graines ailées précocement.",
+				"RARETE" : "peu commun",
+				"CODE" : null,
+				"TITRE" : "Pin de Weymouth(Pinus strobus)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 41,
+				"REF_AN" : 53,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA41_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA41_image2.jpg",
+				"photo3" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA41_image3.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7052719334, 48.1199345909 ]
+			},
+			"properties" : {
+				"OBJECTID" : 49866,
+				"ID_POI" : 55,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : partie nord du pourtour méditerranéen. Haut max. : 10m, longévité : 100ans. Fleurs blanches en mai, odorantes, mellifères, en panicules épais, d'où un aspect très décoratif, certains individus paraissent complètement blancs.",
+				"RARETE" : "peu commun",
+				"CODE" : null,
+				"TITRE" : "Frêne à fleurs (Fraxinus ornus)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 42,
+				"REF_AN" : 54,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA42_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA42_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7055333384, 48.1199554748 ]
+			},
+			"properties" : {
+				"OBJECTID" : 29239,
+				"ID_POI" : 56,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Japon, cultivar importé en Europe en 1850. Haut. max :  10m . Cette variété ornementale ressemble à un genévrier. Elle présente la particularité de changer de couleur l'hiver en devenant roussâtre, voire violacées (comme gelées).",
+				"RARETE" : "très rare",
+				"CODE" : null,
+				"TITRE" : "Cryptomeria du Japon variant (Cryptomeria japonica f. elegans)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 43,
+				"REF_AN" : 55,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA43_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA43_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7056852381, 48.1198602907 ]
+			},
+			"properties" : {
+				"OBJECTID" : 20190,
+				"ID_POI" : 57,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Est de l'Asie. Haut. max. : 10m. Espèce ornementale dont les fruits, constitués de petites grappes de baies marron, ressemblent  à du petit raisin. Les pédoncules de chaque grain peuvent être consommés sec mais pas le fruit car trop coriace.",
+				"RARETE" : "rare",
+				"CODE" : "consommable",
+				"TITRE" : "Hovénia, Arbre aux raisins (Hovenia Dulcis)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 44,
+				"REF_AN" : 551,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA44_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA44_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7067869522, 48.1199668257 ]
+			},
+			"properties" : {
+				"OBJECTID" : 48617,
+				"ID_POI" : 58,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Est des USA. Introduite en Europe en 1725. Haut. max. : 40m, longévité :150ans. Intérêt ornemental, bois tendre et cassant. Graines probablement les plus grandes des érables, mâtures dés mai juin contrairement à la plupart des autres érables.",
+				"RARETE" : "commun",
+				"CODE" : null,
+				"TITRE" : "Erable argenté variant wieri (Acer saccharinum f. wieri)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 45,
+				"REF_AN" : 56,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA45_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA45_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7071159795, 48.120076675 ]
+			},
+			"properties" : {
+				"OBJECTID" : 41363,
+				"ID_POI" : 59,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : USA. Introduit en Europe en 1724.Haut. max. : 40m, longévité : 100ans. Sa croissance rapide en fait un arbre de reboisement, son bois est plus tendre que celui les espèces autochtones, il est aussi plus coloré, légèrement rosé.",
+				"RARETE" : "commun",
+				"CODE" : null,
+				"TITRE" : "Chêne rouge d'Amérique (Quercus rubra)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 46,
+				"REF_AN" : 57,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA46_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA46_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7080658208, 48.1197479735 ]
+			},
+			"properties" : {
+				"OBJECTID" : 28126,
+				"ID_POI" : 60,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Est de Asie. Introduite en Europe en 1910. Haut. max. : 6m, croissance lente.Les fruits ressemblent à des fraises et sont comestibles. A chair jaune, avec de nombreuses graines, elles sont guère savoureuses.",
+				"RARETE" : "rare",
+				"CODE" : "consommable",
+				"TITRE" : "Cornouiller du Japon, Arbre aux fraises (Cornus kousa)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 47,
+				"REF_AN" : 58,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA47_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA47_image2.jpg",
+				"photo3" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA47_image3.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.706210728, 48.1206069706 ]
+			},
+			"properties" : {
+				"OBJECTID" : 22463,
+				"ID_POI" : 61,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : SE des USA. Espèce introduite en Europe en 1641.  Haut. max. : 40m, longévité 150ans. Bien que n'étant pas un conifère, le bois exulte une résine à chaque blessure qui sert à faire un baume utilisé en parfumerie.",
+				"RARETE" : "rare",
+				"CODE" : null,
+				"TITRE" : "Liquidambar, Copalme d'Amérique (Liquidambar styraciflua)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 48,
+				"REF_AN" : 59,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA48_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA48_image2.jpg",
+				"video1" : "apps/balades/customlayer/data/arbres_villejean/Videos/P3_NA48_video1.avi"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7056513217, 48.120823978 ]
+			},
+			"properties" : {
+				"OBJECTID" : 46242,
+				"ID_POI" : 62,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Tout le massif de Himalaya. Haut. max. : 50m, longévité : 100ans. Aspect pleureur. Introduit en Europe en 1824. Bois fragile. Résine abondante et exploitée. Arbre ornemental résistant en ville.",
+				"RARETE" : "commun",
+				"CODE" : null,
+				"TITRE" : "Pin de l'Himalaya (Pinus wallichiana)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 49,
+				"REF_AN" : 60,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA49_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA49_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7048857107, 48.1213815938 ]
+			},
+			"properties" : {
+				"OBJECTID" : 5540,
+				"ID_POI" : 63,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Baie de Monterey en Californie. Cette espèce est certainement le résineux le plus planté au monde (croissance rapide), nécessite un climat doux. Haut.max. : 40m, longévité : 300ans. Cône lourd qui peut rester sur l'arbre 15 à 20 ans.",
+				"RARETE" : "peu commun",
+				"CODE" : null,
+				"TITRE" : "Pin de Monterrey, pin radié (Pinus radiata)",
+				"ANECDOTE" : "Des cônes sont visibles sur de grosses branches de cet arbre qui doivent avoir au moins 15 ans",
+				"N_ARRET" : 50,
+				"REF_AN" : 61,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA50_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA50_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7061084737, 48.1215947133 ]
+			},
+			"properties" : {
+				"OBJECTID" : 23822,
+				"ID_POI" : 64,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : NE de l'Asie.  Haut. max. : 25m. Bois d'intérêt forestier mais utilisé en Europe depuis 1962 comme arbre d'ornement, surtout en ville. Son feuillage prend, pour la plupart des individus, de belles couleurs dans les rouges à l'automne.",
+				"RARETE" : "rare",
+				"CODE" : null,
+				"TITRE" : "Zelkova du Japon ( alignement) (Zelkova serrata)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 51,
+				"REF_AN" : 62,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA51_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA51_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7063463922, 48.1216825844 ]
+			},
+			"properties" : {
+				"OBJECTID" : 10679,
+				"ID_POI" : 65,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Asie de l'Ouest introduite en Europe au 16ième. Arbre apprécié pour sa croissance, son ombre et ses fruits comestibles d'été. Plante médicinale. Nourriture du ver à soie. Haut. max. : 10m, longévité: 150ans.",
+				"RARETE" : "peu commun",
+				"CODE" : "consommable",
+				"TITRE" : "Murier (alignement) (Morus kagayamae)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 52,
+				"REF_AN" : 63,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA52_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA52_image2.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7065881511, 48.1224623625 ]
+			},
+			"properties" : {
+				"OBJECTID" : 43476,
+				"ID_POI" : 66,
+				"ID_PROM" : 3,
+				"DESCRIPTIF" : "Origine : Japon, mais répartition naturelle confuse. Haut. max. : 20m. Intérêt ornemental : apprécié par  sa croissance faible et ses aiguilles bleutées.",
+				"RARETE" : "rare",
+				"CODE" : null,
+				"TITRE" : "Pin blanc du Japon (Pinus parviflora)",
+				"ANECDOTE" : null,
+				"N_ARRET" : 53,
+				"REF_AN" : 64,
+				"photo1" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA53_image1.jpg",
+				"photo2" : "apps/balades/customlayer/data/arbres_villejean/Photos/P3_NA53_image2.jpg"
+			}
+		}
+	]
+}
