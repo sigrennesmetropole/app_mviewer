@@ -3,10 +3,12 @@ var baladesAddon = (function () {
     var configFile; // fichier de configuration
     var layer_balades; // nom du customlayer des balades
     var layer_points; // nom du customlayer des points
+    var zoomPendantBalade = 16; //zoom appliqué à la carte pendant la balade
 
     var baladeId; // id de chaque balade
     var couleurBalades; // nom de l'attribut couleur sur chaque balade
     var idBalade; // id de la balade sur chaque point
+    var champRang='rang'; // rang de chaque point
     var defaultColor; // couleur de base des points si la couleur n'est pas valide
     var couleurPointActif; // couleur du point actif de la balade
     var highlightLayer; // Layer highlight du point actif
@@ -57,28 +59,28 @@ var baladesAddon = (function () {
 
     var clickPrevButtonFunction = function clickPrevButton(){
         currentPointBalade--;
-        var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
+        var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade).getGeometry().getCoordinates();
         if (geometryPointFeature){
             document.getElementById('nextButton').disabled = false;
             geometryPoint = ol.proj.transform([geometryPointFeature[0], geometryPointFeature[1]], 'EPSG:3857', 'EPSG:4326');
-            mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, 16, true);
+            mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, zoomPendantBalade, true);
             highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([geometryPointFeature[0], geometryPointFeature[1]]);
         }
-        if (!featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade-1)){
+        if (!featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade-1)){
             document.getElementById('prevButton').disabled = true;
         }
     }
 
     var clickNextButtonFunction = function clickNextButton(){
         currentPointBalade++;
-        var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
+        var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade).getGeometry().getCoordinates();
         if (geometryPointFeature){
             document.getElementById('prevButton').disabled = false;
             geometryPoint = ol.proj.transform([geometryPointFeature[0], geometryPointFeature[1]], 'EPSG:3857', 'EPSG:4326');
-            mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, 16, true);
+            mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, zoomPendantBalade, true);
             highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([geometryPointFeature[0], geometryPointFeature[1]]);
         }
-        if (!featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade+1)){
+        if (!featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade+1)){
             document.getElementById('nextButton').disabled = true;
         }
     }
@@ -90,9 +92,9 @@ var baladesAddon = (function () {
         document.getElementById('nextButton').style.display = 'block';
         document.getElementById('startButton').style.display = 'none';
         currentPointBalade = 1;
-        var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get('rang') == currentPointBalade).getGeometry().getCoordinates();
+        var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade).getGeometry().getCoordinates();
         geometryPoint = ol.proj.transform([geometryPointFeature[0], geometryPointFeature[1]], 'EPSG:3857', 'EPSG:4326');
-        mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, 16, true);
+        mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, zoomPendantBalade, true);
         highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([geometryPointFeature[0], geometryPointFeature[1]]);
         mviewer.getMap().getLayers().push(highlightLayer);
         $("#mv_marker").attr('fill-opacity', '0');
@@ -151,7 +153,8 @@ var baladesAddon = (function () {
                 var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7) + "66";
             } else {
                 var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7);
-                currentIdBalade = feat.get('id');
+                //currentIdBalade = feat.get('id');
+                currentIdBalade = feat.get(baladeId);
             }
             var style = new ol.style.Style({
                 stroke: new ol.style.Stroke({ color: colorFeature, width: 4 })
@@ -219,10 +222,10 @@ var baladesAddon = (function () {
 
         // Gestion de l'option de la balade par défaut (defaut)
         if (baladeParDefaut != ""){
-            var featureDefaut = mviewer.customLayers[layer_points].layer.getSource().getFeatures().find(x => x.get(idBalade) == baladeParDefaut && x.get('rang') == 1);
+            var featureDefaut = mviewer.customLayers[layer_points].layer.getSource().getFeatures().find(x => x.get(idBalade) == baladeParDefaut && x.get(champRang) == 1);
             if (featureDefaut){
                 var geometryPoint = ol.proj.transform([featureDefaut.getGeometry().getCoordinates()[0], featureDefaut.getGeometry().getCoordinates()[1]], 'EPSG:3857', 'EPSG:4326');
-                mviewer.zoomToLocation(geometryPoint[0] + 0.00002,  geometryPoint[1] + 0.00002, 16, true);
+                mviewer.zoomToLocation(geometryPoint[0] + 0.00002,  geometryPoint[1] + 0.00002, zoomPendantBalade, true);
                 highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([featureDefaut.getGeometry().getCoordinates()[0], featureDefaut.getGeometry().getCoordinates()[1]]);
                 mviewer.getMap().getLayers().push(highlightLayer);
                 $("#mv_marker").attr('fill-opacity', '0');
@@ -240,7 +243,8 @@ var baladesAddon = (function () {
                         var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7) + "66";
                     } else {
                         var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7);
-                        currentIdBalade = feat.get('id');
+                        //currentIdBalade = feat.get('id');
+                        currentIdBalade = feat.get(baladeId);
                     }
                     var style = new ol.style.Style({
                         stroke: new ol.style.Stroke({ color: colorFeature, width: 4 })
@@ -289,10 +293,12 @@ var baladesAddon = (function () {
     }
 
     function _setSearchParameters(data, callback){
+        zoomPendantBalade = data.carte.zoomPendantBalade;
         couleurBalades = data.balades.couleurBalades;
         layer_balades = data.balades.layer_balades;
         layer_points = data.points.layer_points;
         idBalade = data.points.idBalade;
+        champRang = data.points.champRang;
         baladeId = data.balades.id;
         defaultColor = data.balades.defaultColor;
         couleurPointActif = data.points.couleurPointActif;
