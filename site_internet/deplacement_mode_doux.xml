@@ -25,7 +25,7 @@
       <extension type="component" id="GUICustom" path="apps/public/addons"/>
     </extensions>
 
-    <themes mini="true" legendmini="true">
+    <themes mini="false" legendmini="true">
         <theme id="20220110134700-VOIES" name="Voies" collapsed="true" icon="fas fa-road">
             <layer
                 id="v_troncon_denom"
@@ -42,7 +42,7 @@
                 infopanel="right-panel">
             </layer>
         </theme>
-        <theme id="20220216092600-EQUIPEMENTS" name="Équipements" collapsed="true" icon="fas fa-map-marker-alt">
+        <theme id="20220216092600-EQUIPEMENTS" name="Équipements" collapsed="false" icon="fas fa-map-marker-alt">
             <layer
                 id="sv_sitorg_environnement"
                 name="Parcs et loisirs"
@@ -74,6 +74,24 @@
                 tooltip="false"
                 tooltipcontent="nom_usage"
                 tooltipenabled="app:sv_sitorg_education"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/georm/templates/organismes.mst"></template>
+            </layer>
+            <layer
+                id="sv_sitorg_sante"
+                name="Santé, action sociale"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/app/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="app:sv_sitorg_sante"
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
@@ -132,6 +150,24 @@
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
                 <template url="apps/georm/templates/organismes.mst"></template>
+            </layer>
+            <layer
+                id="sv_sitorg_economie"
+                name="Commerces et marchés"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/app/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="app:sv_sitorg_economie"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/georm/templates/organismes_ouvertures.mst"></template>
             </layer>
         </theme>
     </themes>

@@ -2,6 +2,7 @@
 
     <li class="item" >
 		<h5 class="rm-popup-title-feature">{{nom_court}}</h5>
+        <span class="rm-popup-subtitle-feature dechetgestionnaire" gestionnaire='{{gestionnaire}}' > Cette déchèterie n'est pas gérée par Rennes Métropole. Son usage est réservé aux habitants et professionnels de la commune gestionnaire. Pour obtenir plus d'informations, veuillez prendre contact avec la commune sur laquelle elle se situe.</span>
 
         <p class="rm-popup-text-feature">
 			{{#adresse}}<span class='rm-popup-label'> Adresse :</span> {{{adresse}}}<br/>{{/adresse}}<br/>
