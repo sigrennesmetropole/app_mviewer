@@ -7,7 +7,6 @@ var searchRM = (function () {
   var apiSitesOrgkey = '';
   var getPersoConfData;
   var apiRVAKey = '';
-  var apiSitesorgKey = '';
 
   var previousRequest;
 
@@ -19,7 +18,7 @@ var searchRM = (function () {
 
         $.getJSON("apps/public/addons/env.json", function(json) {
           apiRVAKey = json.searchRM[0].apiRVAKey;
-          apiSitesorgKey = json.searchRM[0].apiSitesorgKey;
+          apiSitesOrgkey = json.searchRM[0].apiSitesorgKey;
         });
 
         $("#searchtool input").attr("placeholder", mviewer.customComponents.searchRM.config.options.libelles.placeholderRVA);
@@ -34,6 +33,14 @@ var searchRM = (function () {
         }
 
         if(API.mode === 'u'){
+          $('#page-content-wrapper').append(
+          '<div id="searchresults" class="list-group">' +
+            '<div class="searchresults-title">' +
+              'Résultats' +
+              '<button type="button" class="close">x</button>' +
+            '</div>' +
+          '</div>'
+          );
           $(".background-custom-searchtool").css({'right':'105px'});
           $("#searchresults").css({"right": "50px", "top": "55px"});
           if(screen.width <= 767){
@@ -43,6 +50,12 @@ var searchRM = (function () {
             $('#toolstoolbar').css({'top': '140px'});
           }
         }
+
+        $(".searchresults-title .close").click(function () {
+            $('#searchresults a').remove();
+            $('#searchresults').hide();
+            $('#searchfield').val('');
+        });
 
         if(API.mode === 's'){
           $(".background-custom-searchtool").css({'right':'135px'});
