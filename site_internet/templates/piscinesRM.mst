@@ -6,61 +6,61 @@
 		<span class='rm-popup-label'> Adresse :</span> {{adresse_postale_adr}} {{adresse_postale_cp}} {{adresse_postale_comm}}<br/>
 		<!-- {{#nom_org_principal}}<span class='rm-popup-label'> Nom du site :</span> {{{nom_org_principal}}}<br/>{{/nom_org_principal}} -->
 		{{#descriptif}}<span class='rm-popup-label'> Descriptif :</span> {{{descriptif}}}<br/>{{/descriptif}}
-<!--
-		{{#horairesOuvertures.length}}
-		<span class='rm-popup-label'> Horaires:</span>
-		{{#joursFermes.variationCongesScolaires}}<br/><span><i> Les horaires sont susceptibles de varier durant les congés scolaires.</i></span>{{/joursFermes.variationCongesScolaires}}
-			<section>
-			<div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p sliderTopMargin">
-				{{#horairesOuvertures}}
-				<div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}}" id="pisc">
-					<p class="inSliderPClass">
-						{{#dateDebut}}
-						<span class='rm-popup-label'>A partir du
-							<span class='date_in_french_format'>
-								{{dateDebut}}
-							</span>
-							{{#dateFin}}au
-							<span class='date_in_french_format'>
-								{{dateFin}}
-							</span>
-							{{/dateFin}}
-						</span><br>
-						{{/dateDebut}}<br>
+        {{^bassins.length}}
+            {{#horairesOuvertures.length}}
+            <span class='rm-popup-label'> Horaires:</span>
+            {{#joursFermes.variationCongesScolaires}}<br/><span><i> Les horaires sont susceptibles de varier durant les congés scolaires.</i></span>{{/joursFermes.variationCongesScolaires}}
+                <section>
+                <div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p sliderTopMargin">
+                    {{#horairesOuvertures}}
+                    <div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}}" id="pisc">
+                        <p class="inSliderPClass">
+                            {{#dateDebut}}
+                            <span class='rm-popup-label'>A partir du
+                                <span class='date_in_french_format'>
+                                    {{dateDebut}}
+                                </span>
+                                {{#dateFin}}au
+                                <span class='date_in_french_format'>
+                                    {{dateFin}}
+                                </span>
+                                {{/dateFin}}
+                            </span><br>
+                            {{/dateDebut}}<br>
 
-						{{#horaires}}
-						{{#libJour}}
-						<span class='rm-popup-label'>{{libJour}}:</span>
-						<span class='rm-popup-text-feature'>
-							{{#ouvert1}}
-							{{#ferme1}}
-							<span class='hour_in_french_format'>{{ouvert1}}</span>h -
-							<span class='hour_in_french_format'>{{ferme1}}</span>h
-							{{/ferme1}}
-							{{/ouvert1}}{{^ouvert1}} - {{/ouvert1}}
-							{{#ouvert2}} /
-							{{#ferme2}}
-							<span class='hour_in_french_format'>{{ouvert2}}</span>h -
-							<span class='hour_in_french_format'>{{ferme2}}</span>h
-							{{/ferme2}}
-							{{/ouvert2}}
-							{{#ouvert3}} /
-							{{#ferme3}}
-							<span class='hour_in_french_format'>{{ouvert3}}</span>h -
-							<span class='hour_in_french_format'>{{ferme3}}</span>h
-							{{/ferme3}}
-							{{/ouvert3}}
-						</span>
-						{{/libJour}}<br>
-						{{/horaires}}{{^horaires}} Pas de jours d'ouverture sur cette période.<br> {{/horaires}}
+                            {{#horaires}}
+                            {{#libJour}}
+                            <span class='rm-popup-label'>{{libJour}}:</span>
+                            <span class='rm-popup-text-feature'>
+                                {{#ouvert1}}
+                                {{#ferme1}}
+                                <span class='hour_in_french_format'>{{ouvert1}}</span>h -
+                                <span class='hour_in_french_format'>{{ferme1}}</span>h
+                                {{/ferme1}}
+                                {{/ouvert1}}{{^ouvert1}} - {{/ouvert1}}
+                                {{#ouvert2}} /
+                                {{#ferme2}}
+                                <span class='hour_in_french_format'>{{ouvert2}}</span>h -
+                                <span class='hour_in_french_format'>{{ferme2}}</span>h
+                                {{/ferme2}}
+                                {{/ouvert2}}
+                                {{#ouvert3}} /
+                                {{#ferme3}}
+                                <span class='hour_in_french_format'>{{ouvert3}}</span>h -
+                                <span class='hour_in_french_format'>{{ferme3}}</span>h
+                                {{/ferme3}}
+                                {{/ouvert3}}
+                            </span>
+                            {{/libJour}}<br>
+                            {{/horaires}}{{^horaires}} Pas de jours d'ouverture sur cette période.<br> {{/horaires}}
 
-					</p>
-				</div>
-				{{/horairesOuvertures}}
-			</div>
-		</section>
-		{{/horairesOuvertures.length}}
--->
+                        </p>
+                    </div>
+                    {{/horairesOuvertures}}
+                </div>
+            </section>
+            {{/horairesOuvertures.length}}
+        {{/bassins.length}}
 
 		<span class='rm-popup-text-feature rm_orga_fermetures'>
 			<span class='rm-popup-label'> Fermetures :</span> <span class='rm-fermetures'></span>
@@ -81,7 +81,7 @@
 		<p>
 			{{#bassins.length}}
 			<p style="text-align: center;">
-      <span class='rm-popup-headerLevel2'> Bassins </span>
+            <!--<span class='rm-popup-headerLevel2'> Bassins </span> -->
 				{{#bassins}}
 				<section>
 					<h6 class="rm-popup-title-level2">{{nomUsage}}</h6>
@@ -130,7 +130,7 @@
 						<!-- {{^horairesOuvertureBassins.length}} Pas d'ouverture déclarée.<br> {{/horairesOuvertureBassins.length}} -->
 					</div>
 				</section>
-
+<!--
 				{{#jours_fermes}}
 				<span class='rm-popup-text-feature rm_orga_fermetures'>
 					<span class='rm-popup-label'> Fermetures :</span> <span class='rm-fermetures'></span>
@@ -147,7 +147,7 @@
 					<br>
 				</span>
 				{{/fermetures_excepts}}
-
+-->
 				{{/bassins}}
 			</p>
 			<br/>

@@ -2,7 +2,7 @@
 <config>
     <application
         title="Piscines"
-        logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"
+        logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_transp.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
@@ -26,7 +26,8 @@
     </extensions>
 
     <themes mini="true" legendmini="false">
-        <theme id="theme-202103090939" name="Les piscines" collapsed="true" icon="fas fa-swimming-pool">
+        <!--<theme id="theme-202103090939" name="Les piscines" collapsed="true" icon="fas fa-swimming-pool">-->
+        <theme id="theme-202103090939" name="Les piscines" collapsed="true" icon=".piscineicon">
             <layer
                 id="piscinesRM"
                 name="Piscines"

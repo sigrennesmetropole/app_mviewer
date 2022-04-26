@@ -321,8 +321,9 @@ mviewer.customLayers.piscinesRM= (function() {
                   color: '#e45e52',  //ba8e02
                   crossOrigin: 'anonymous',
                   scale:1,
-                  anchor:[0.5,1],
-                  src: 'apps/site_internet/customlayer/picture/marker.svg',
+                  anchor:[1,1],
+                  src: 'apps/site_internet/customlayer/picture/sportCulture17-01.svg',
+                  //src: 'apps/site_internet/customlayer/picture/marker.svg',
                 }),
               });
         return [style];
