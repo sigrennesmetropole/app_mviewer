@@ -30,7 +30,7 @@
     
     <themes mini="true">
         <theme id="theme-20180625145740" name="Arbres d'alignement de voirie" collapsed="true" icon="fas fa-map-marker-alt">
-            <layer
+            <!--<layer
                 id="gev_aali"
                 name="Arbre d'alignement"
                 type="wms"
@@ -43,6 +43,59 @@
                 featurecount="6"
                 infopanel="right-panel">
             <template url="apps/site_internet/templates/arbres_alignement.mst"></template>
+            </layer>
+            -->
+            <layer
+                id="arbresrecents"
+                name="Plantés cette année"
+                type="customlayer"
+                url="apps/site_internet/customlayer/pat_arbres_recents.js"
+                legendurl="apps/site_internet/img/legend/pat_arbres_recents.svg"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                tooltip="false"
+                tooltipenabled="false"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt; Bureau de vote N°{{num_bureau}}&lt;/span&gt;"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6db35b05-e8bc-4339-a49b-828da0d3fd9f"
+                queryable="true"
+                featurecount="10"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/arbres_alignement.mst"></template>
+            </layer>
+            <layer
+                id="arbresanciens"
+                name="Arbres anciens"
+                type="customlayer"
+                url="apps/site_internet/customlayer/pat_arbres_anciens.js"
+                legendurl="apps/site_internet/img/legend/pat_arbres_anciens.svg"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                tooltip="false"
+                tooltipenabled="false"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6db35b05-e8bc-4339-a49b-828da0d3fd9f"
+                queryable="true"
+                featurecount="10"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/arbres_alignement.mst"></template>
+            </layer>
+            <layer
+                id="arbresautres"
+                name="Autres"
+                type="customlayer"
+                url="apps/site_internet/customlayer/pat_arbres_autres.js"
+                legendurl="apps/site_internet/img/legend/pat_arbres_autres.svg"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                tooltip="false"
+                tooltipenabled="false"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6db35b05-e8bc-4339-a49b-828da0d3fd9f"
+                queryable="true"
+                featurecount="10"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/arbres_alignement.mst"></template>
             </layer>
         </theme>
     </themes>

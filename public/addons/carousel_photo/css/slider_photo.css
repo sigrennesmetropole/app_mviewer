@@ -3,20 +3,6 @@
 ********************************************************************************/
 
 
-/* SCROLLBAR */
-.carousel-inner::-webkit-scrollbar-track
-{
-}
-
-.carousel-inner::-webkit-scrollbar
-{
-	width: 8px;
-}
-
-.carousel-inner::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-}
 
 
 /* SLIDER PHOTO */
@@ -89,7 +75,7 @@
 
 .modal-title{
 		font-family:"vistaSansOT_regular";
-		color:#555;
+		/*color:#555;*/
 		font-size:16px;
 }
 
