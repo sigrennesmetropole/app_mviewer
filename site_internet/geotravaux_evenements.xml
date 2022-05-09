@@ -43,7 +43,7 @@ attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/s
                 name="Trafic routier"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/ows"
-                visible="true"
+                visible="false"
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
                 queryable="true"
