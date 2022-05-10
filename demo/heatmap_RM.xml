@@ -2,7 +2,7 @@
 <config>    
     <application 
         title="Démo HEATMAP" 
-		logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"
+		logo="apps/public/img/logo/logo_mviewer_transp.png"
         help="demo/demo_sirene_help.html" 
         showhelp="false" 
         exportpng="false" 
