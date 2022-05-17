@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <application
-        title="Travaux du jour et survenant dans la semaine"
+        title="Travaux en cours à Rennes Métropole"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/geotravaux_help.html"

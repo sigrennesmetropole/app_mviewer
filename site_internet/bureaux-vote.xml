@@ -10,6 +10,7 @@
         exportpng="false"
         coordinates="false"
         measuretools="false"
+        togglealllayersfromtheme="true"
         />
 
     <mapoptions maxzoom="22" minzoom="11" projection="EPSG:3857" center="-185600.24433942206,6125077.984905125" zoom="14" />
@@ -24,8 +25,8 @@
       <extension type="component" id="GUICustom" path="apps/public/addons"/>
     </extensions>
 
-    <themes mini="true">
-        <theme id="theme-20180827150815" name="Sites de distribution Covid19" collapsed="true" icon="fas fa-person-booth">
+    <themes mini="false" legendmini="true">
+        <theme id="theme-20180827150815" name="Bureaux et centres de vote" collapsed="true" icon="fas fa-person-booth">
             <layer
                 id="v_election_centre"
                 name="Centres de vote"
@@ -74,7 +75,34 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/vote_bureau.mst"></template>
             </layer>
+        </theme>
+        <theme id="theme-20220517104215" name="Cantons et circonscriptions" collapsed="true" icon="fas fa-map">
+            <layer
+                id="v_canton"
+                name="Cantons d'Ille-et-Vilaine"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/ladm_terri/ows"
+                visible="false"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/5e05c5f1-3690-4177-9210-661c9fa641bb"
+                tooltip="false"
+                queryable="false"
+                infopanel="right-panel">
+            </layer>
             
+            <layer
+                id="v_circonscription"
+                name="Circonscriptions d'Ille-et-Vilaine"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/ladm_terri/ows"
+                visible="false"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6db35b05-e8bc-4339-a49b-828da0d3fd9f"
+                queryable="false"
+                infopanel="right-panel">
+            </layer>
         </theme>
     </themes>
 </config>
