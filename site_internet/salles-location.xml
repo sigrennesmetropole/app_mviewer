@@ -35,7 +35,7 @@
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/476f7ce0-f846-4c42-bf2f-a27cd81405be"
                 queryable="true"
-                featurecount="3"
+                featurecount="6"
                 filter="active='true'"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/salles-location.mst"></template>
