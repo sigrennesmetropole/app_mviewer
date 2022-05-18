@@ -491,7 +491,7 @@ h4.title{
 
 .rm-popup-headerLevel2{
     font-family: 'vistaSansOT_bold';
-    font-size: 19px;
+    font-size: 15px;
     color: #555;
     text-decoration: underline;
 }
@@ -523,7 +523,7 @@ h4.title{
     color:#555;
     /*color: #863030;*/
     font-size:13px;
-    margin-top:10%;
+    margin-top:10px;
 }
 
 
