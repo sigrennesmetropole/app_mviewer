@@ -1,0 +1,25 @@
+{{#features}}
+    <li class="item">
+        <h5 class="rm-popup-title-feature">{{nom_salle}}</h5>
+        
+        <p class="rm-popup-text-feature">
+            <span class='rm-popup-label'> Adresse :</span> {{adresse_postale_adr}} {{adresse_postale_cp}} {{adresse_postale_comm}}<br/>
+        </p>
+        <p class="rm-popup-text-feature">
+            <!--<span class='rm-popup-headerLevel2'> RÉSERVATION </span><br/>-->
+            {{#telephone}}<span class='rm-popup-label'> Téléphone :</span> {{{telephone}}}<br/>{{/telephone}}
+            {{#mail}}<span class='rm-popup-label'> Courriel :</span> {{{mail}}}<br/>{{/mail}}
+        </p>
+        <p class="rm-popup-text-feature">
+            <!--<span class='rm-popup-headerLevel2'> INFORMATIONS SUR LA SALLE </span><br/>-->
+            {{#superficie}}<span class='rm-popup-label'> Superficie :</span> {{{superficie}}} m²<br/>{{/superficie}}
+            {{#capacite_assise}}<span class='rm-popup-label'> Places assises :</span> {{{capacite_assise}}}<br/>{{/capacite_assise}}
+            {{#capacite_debout}}<span class='rm-popup-label'> Places debout :</span> {{{capacite_debout}}}<br/>{{/capacite_debout}}
+            {{#type_utilisation}}<span class='rm-popup-label'> Type d'utilisation :</span> {{{type_utilisation}}}<br/>{{/type_utilisation}}
+            {{#horaire_occupation}}<span class='rm-popup-label'> Horaires d'occupation :</span> {{{horaire_occupation}}}<br/>{{/horaire_occupation}}
+            {{#equipement_suppl}}<span class='rm-popup-label'> Équipements disponibles :</span> {{{equipement_suppl}}}<br/>{{/equipement_suppl}}
+            {{#information_suppl}}<span class='rm-popup-label'> Autres informations :</span> {{{information_suppl}}}<br/>{{/information_suppl}}
+            {{#lien_reservation}}<span class='rm-popup-label'> Lien :</span> {{{lien_reservation}}}<br/>{{/lien_reservation}}
+        </p>
+    </li>
+{{/features}}
