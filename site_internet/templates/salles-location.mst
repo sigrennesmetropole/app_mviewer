@@ -12,7 +12,7 @@
         </p>
         <p class="rm-popup-text-feature">
             <!--<span class='rm-popup-headerLevel2'> INFORMATIONS SUR LA SALLE </span><br/>-->
-            {{#superficie}}<span class='rm-popup-label'> Superficie :</span>{{{superficie}}}<br/>{{/superficie}}
+            {{#superficie}}<span class='rm-popup-label'> Superficie :</span> {{{superficie}}} m²<br/>{{/superficie}}
             {{#capacite_assise}}<span class='rm-popup-label'> Places assises :</span> {{{capacite_assise}}}<br/>{{/capacite_assise}}
             {{#capacite_debout}}<span class='rm-popup-label'> Places debout :</span> {{{capacite_debout}}}<br/>{{/capacite_debout}}
             {{#type_utilisation}}<span class='rm-popup-label'> Type d'utilisation :</span> {{{type_utilisation}}}<br/>{{/type_utilisation}}
