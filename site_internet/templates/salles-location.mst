@@ -3,6 +3,7 @@
         <h5 class="rm-popup-title-feature">{{nom_salle}}</h5>
         
         <p class="rm-popup-text-feature">
+            {{#nom_site}}<span class='rm-popup-label'> Site :</span> {{{nom_site}}}<br/>{{/nom_site}}
             <span class='rm-popup-label'> Adresse :</span> {{adresse_postale_adr}} {{adresse_postale_cp}} {{adresse_postale_comm}}<br/>
         </p>
         <p class="rm-popup-text-feature">
