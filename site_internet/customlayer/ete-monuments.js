@@ -1,7 +1,7 @@
 
 mviewer.customLayers.ete_monuments= (function() {
     let data_url='https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=eq_poi:v_sitorg_organisme&outputFormat=application/json&srsname=EPSG:3857';
-    let l_id_org=[5120,319,659,50,5434,245,4705,6276,1217,4849,4780,5084];
+    let l_id_org=[5120,319,659,50,5434,245,4705,6276,1217,4849,4780,5084, 6804];
     let markercolor='#d9762b';
     
     function pctStyle() {
