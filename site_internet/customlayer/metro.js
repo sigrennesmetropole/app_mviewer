@@ -1,15 +1,15 @@
 
-mviewer.customLayers.stat_payant= (function() {
-    let data_url='https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=trp_statio:stationnement_payant&outputFormat=application/json&srsName=EPSG:4326';
+mviewer.customLayers.lignes_metro= (function() {
+    let data_url='https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=trp_coll:metro_trace_axe&outputFormat=application/json&srsName=EPSG:4326';
     
     
     function markerStyle(feature) {
-        let type = feature.get('zone_tarif');
+        let type = feature.get('ligne');
         
-        if (type == "Rouge") {
-            return featureMarker('#eb5046');
+        if (type == "a") {
+            return featureMarker('#000000');
         } else {
-            return featureMarker('#95c351');
+            return featureMarker('#757575');
         }
     }
     
@@ -18,7 +18,7 @@ mviewer.customLayers.stat_payant= (function() {
             new ol.style.Style({
                 stroke: new ol.style.Stroke({
                     color: color,
-                    width: 3
+                    width: 2
                   })
             })
         ];

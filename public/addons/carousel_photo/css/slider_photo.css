@@ -182,3 +182,17 @@ text-align: center!important;
     margin-left: auto;
     cursor: pointer;
 }
+
+.inSliderPClass {
+    text-align: left;
+}
+.inSliderPClassTitle {
+    text-align: center;
+}
+
+.thumbtextcarousel{
+    border : 0!important;
+}
+.textcarousel{
+    font-size:14px;
+}

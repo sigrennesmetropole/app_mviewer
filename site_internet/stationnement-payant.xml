@@ -43,6 +43,22 @@
             </layer>
             <layer
                 index="2"
+                id="lignes_metro"
+                name="Lignes de métro"
+                type="customlayer"
+                url="apps/site_internet/customlayer/metro.js"
+                visible="true"
+                legendurl="apps/site_internet/img/legend/metro_trace.png"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/31cd10dc-1245-4554-8ca9-232f925d4402"
+                queryable="false"
+                featurecount="6"
+                infopanel="right-panel">
+            </layer>
+            <!--
+            <layer
+                index="2"
                 id="metro_trace_axe"
                 name="Lignes de métro"
                 type="wms"
@@ -56,6 +72,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/stationnement-reserve.mst"></template>
             </layer>
+            -->
         </theme>
         <theme id="theme-20180827150815" name="Stationnement payant" collapsed="true" icon="fas fa-parking"> 
             <layer
@@ -103,10 +120,10 @@
                 tooltipenabled="false"
                 tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{nom}}&lt;/span&gt;"
                 metadata="https://data.explore.star.fr/explore/dataset/tco-parcsrelais-star-etat-tr/information/"
-                queryable="true"
+                queryable="false"
                 featurecount="3"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/vergers.mst"></template>
+                <!--<template url="apps/site_internet/templates/vergers.mst"></template>-->
             </layer>
             <!--
             <layer
