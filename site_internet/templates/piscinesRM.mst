@@ -3,20 +3,20 @@
 	<h5 class="rm-popup-title-feature" id="popupTitle">{{nomUsage}}</h5>
 
 	<p class="rm-popup-text-feature">
-		<span class='rm-popup-label'> Adresse :</span> {{adresse_postale_adr}} {{adresse_postale_cp}} {{adresse_postale_comm}}<br/>
-		<!-- {{#nom_org_principal}}<span class='rm-popup-label'> Nom du site :</span> {{{nom_org_principal}}}<br/>{{/nom_org_principal}} -->
-		{{#descriptif}}<span class='rm-popup-label'> Descriptif :</span> {{{descriptif}}}<br/>{{/descriptif}}
+		<span class='rm-popup-label'> ADRESSE :</span> {{adresse_postale_adr}} {{adresse_postale_cp}} {{adresse_postale_comm}}<br/>
+		<!-- {{#nom_org_principal}}<span class='rm-popup-label'> NOM DU SITE :</span> {{{nom_org_principal}}}<br/>{{/nom_org_principal}} -->
+		{{#descriptif}}<span class='rm-popup-label'> DESCRIPTIF :</span> {{{descriptif}}}<br/>{{/descriptif}}
         {{^bassins.length}}
             {{#horairesOuvertures.length}}
-            <span class='rm-popup-label'> Horaires:</span>
+            <span class='rm-popup-label'> HORAIRES:</span>
             {{#joursFermes.variationCongesScolaires}}<br/><span><i> Les horaires sont susceptibles de varier durant les congés scolaires.</i></span>{{/joursFermes.variationCongesScolaires}}
                 <section>
                 <div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p sliderTopMargin">
                     {{#horairesOuvertures}}
-                    <div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}}" id="pisc">
+                    <div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}} thumbtextcarousel" id="pisc">
                         <p class="inSliderPClass">
                             {{#dateDebut}}
-                            <span class='rm-popup-label'>A partir du
+                            <span class='rm-popup-label textcarousel'>A partir du
                                 <span class='date_in_french_format'>
                                     {{dateDebut}}
                                 </span>
@@ -30,7 +30,7 @@
 
                             {{#horaires}}
                             {{#libJour}}
-                            <span class='rm-popup-label'>{{libJour}}:</span>
+                            <span class='rm-popup-label'>{{libJour}} :</span>
                             <span class='rm-popup-text-feature'>
                                 {{#ouvert1}}
                                 {{#ferme1}}
@@ -63,7 +63,7 @@
         {{/bassins.length}}
 
 		<span class='rm-popup-text-feature rm_orga_fermetures'>
-			<span class='rm-popup-label'> Fermetures :</span> <span class='rm-fermetures'></span>
+			<span class='rm-popup-label'> FERMETURES :</span> <span class='rm-fermetures'></span>
 			{{#jours_fermes}} <span class='daysOff'> {{{jours_fermes}}} </span>{{/jours_fermes}}
 
 			{{#joursFermes.commentaireVariationCongesScolaires}}<span class='comfermeture'> {{{joursFermes.commentaireVariationCongesScolaires}}}</span>{{/joursFermes.commentaireVariationCongesScolaires}}
@@ -72,7 +72,7 @@
 		{{#fermetures_excepts}}
 		<span class='rm-popup-text-feature'>
 			<br>
-			<span class="rm-popup-label">Fermetures exceptionnelles : </span>
+			<span class="rm-popup-label">FERMETURES EXCEPTIONNELLES : </span>
 			<span class="exceptionalClosures">{{{fermetures_excepts}}}</span>
 			<br>
 		</span>
@@ -80,7 +80,7 @@
 
 		<p>
 			{{#bassins.length}}
-			<p style="text-align: center;">
+			<p >
             <!--<span class='rm-popup-headerLevel2'> Bassins </span> -->
 				{{#bassins}}
 				<section>
@@ -89,18 +89,18 @@
 					{{#horairesOuvertureBassins.length}}
 					<div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p sliderTopMargin">
 						{{#horairesOuvertureBassins}}
-						<div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}}">
-							<p class="inSliderPClass">
-								{{#dateDebut}}
-								<span class='rm-popup-label'>A partir du <span class='date_in_french_format'>{{dateDebut}}</span>
-								{{#dateFin}}
-								au <span class='date_in_french_format'>{{dateFin}}</span>
-								{{/dateFin}}</span><br>
+						<div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}} thumbtextcarousel">
+							<p class="inSliderPClassTitle">
+                                {{#dateDebut}}
+								<span class='rm-popup-label textcarousel'>A partir du <span class='date_in_french_format'>{{dateDebut}}</span>
+                                    {{#dateFin}} au <span class='date_in_french_format'>{{dateFin}}</span>{{/dateFin}}
+                                </span><br>
 								{{/dateDebut}}
-
+                            </p>
+							<p class="inSliderPClass">
 								{{#horaires}}
 								{{#libJour}}
-								<span class='rm-popup-label'>{{libJour}}:</span>
+								<span class='rm-popup-label'>{{libJour}} :</span>
 								<span class='rm-popup-text-feature'>
 									{{#ouvert1}}
 									{{#ferme1}}
@@ -133,7 +133,7 @@
 <!--
 				{{#jours_fermes}}
 				<span class='rm-popup-text-feature rm_orga_fermetures'>
-					<span class='rm-popup-label'> Fermetures :</span> <span class='rm-fermetures'></span>
+					<span class='rm-popup-label'> FERMETURES :</span> <span class='rm-fermetures'></span>
 					<span class='daysOff'> {{jours_fermes}} </span>
 					{{#joursFermes.commentaireVariationCongesScolaires}}<span class='comfermeture'> {{{joursFermes.commentaireVariationCongesScolaires}}}</span>{{/joursFermes.commentaireVariationCongesScolaires}}
 				</span>
@@ -142,7 +142,7 @@
 				{{#fermetures_excepts}}
 				<span class='rm-popup-text-feature'>
 					<br>
-					<span class="rm-popup-label">Fermetures exceptionnelles : </span>
+					<span class="rm-popup-label">FERMETURES EXCEPTIONNELLES : </span>
 					<span class="exceptionalClosures">{{{fermetures_excepts}}}</span>
 					<br>
 				</span>

@@ -519,7 +519,8 @@ h4.title{
 }
 
 .rm-popup-text-feature{
-    font-family: 'vistaSansOT_light', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_light', Arial, Sans-serif;*/
+    font-family: 'vistaSansOT_regular', Arial, Sans-serif;
     color:#555;
     /*color: #863030;*/
     font-size:13px;
@@ -1038,7 +1039,7 @@ button.btn.btn-default.navbar-btn.mv-navbar-btn:focus{
      display: inline-block;
      height: 2em;
      width: 2em;
-     background: url(../img/icons/sportCulture17-01.svg) no-repeat scroll;
+     background: url(../img/icons/piscine-01.svg) no-repeat scroll;
      background-size: contain;
  }
 !a>.piscineicon{

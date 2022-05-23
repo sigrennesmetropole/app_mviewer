@@ -6,6 +6,14 @@ mviewer.customLayers.piscinesRM= (function() {
 
     let data_site = 'https://public.sig.rennesmetropole.fr/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=v_sitorg_site&outputFormat=application%2Fjson&srsname=EPSG:3857&CQL_FILTER=id_specialite_principale=95';
 
+    let svgIcon='apps/site_internet/customlayer/picture/piscine-01.svg'
+    //let svgIcon='apps/site_internet/customlayer/picture/piscine-02.svg'; 
+    let stylesrc='apps/site_internet/customlayer/picture/marker.svg';
+    let iconwidth = 35;
+    let iconheight = 35;
+    //let iconcolor = '#eb5046'; 
+    //let iconcolor = '#95c351';
+    let iconcolor ='#ffffff';
 
     /********************************
     * ***        DATA             ***
@@ -318,19 +326,41 @@ mviewer.customLayers.piscinesRM= (function() {
     function markerstyle() {
         let style = new ol.style.Style({
                 image: new ol.style.Icon({
-                  color: '#e45e52',  //ba8e02
+                  //color: '#e45e52',  //ba8e02
+                  color: iconcolor,
                   crossOrigin: 'anonymous',
-                  scale:1,
                   anchor:[1,1],
-                  src: 'apps/site_internet/customlayer/picture/sportCulture17-01.svg',
+                  src: stylesrc,
+                  //src: 'apps/site_internet/customlayer/picture/sportCulture17-01.svg',
+                  //src: 'apps/site_internet/customlayer/picture/piscine-02.svg',
                   //src: 'apps/site_internet/customlayer/picture/marker.svg',
                 }),
               });
+        
         return [style];
     }
 
-
-
+    
+    function calculateStyleIcon(){
+        var name,xhr;
+        // on est enfin prêt à récupérer le svg sur le serveur
+        xhr=new XMLHttpRequest;
+        xhr.onreadystatechange=function() {
+            if (this.readyState==4 && this.status==200) {
+                let s=this.responseText;
+                // le svg est arrivé
+                // on lui impose une taille
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(s, "image/svg+xml");
+                doc.getElementsByTagName("svg")[0].setAttribute('width', iconwidth);
+                doc.getElementsByTagName("svg")[0].setAttribute('heigth', iconheight);
+                // on applique le svg au style
+                stylesrc = 'data:image/svg+xml;utf8,' + encodeURIComponent(doc.getElementsByTagName("svg")[0].outerHTML);
+            }
+        };
+        xhr.open('get',svgIcon); 
+        xhr.send();
+    }
 
     let layer = new ol.layer.Vector({
         source: new ol.source.Vector({
@@ -343,6 +373,7 @@ mviewer.customLayers.piscinesRM= (function() {
 
 
     layer.getSource().once('change',() =>{
+        calculateStyleIcon();
         getSiteData();
     });
 
