@@ -1,6 +1,7 @@
 {
     "js": [
       "js/fixRightPanel.js",
+      "js/navTabs.js",
       "js/tooltip.js"
     ],
     "css": "css/styles.css",
