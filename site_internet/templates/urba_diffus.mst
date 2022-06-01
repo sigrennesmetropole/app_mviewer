@@ -1,0 +1,10 @@
+{{#features}}
+    <li class="item">
+        <h5 class="rm-popup-title-feature">{{{nom}}}</h5>
+        <p class="rm-popup-text-feature">
+             {{#etape}}<span class='rm-popup-label'> ÉTAPE :</span> {{{etape}}}<br/>{{/etape}}
+             {{#nb_logements}}<span class='rm-popup-label'> NOMBRE DE LOGEMENTS :</span> {{nb_logements}} <br/>{{/nb_logements}}
+        </p>
+    </li>
+{{/features}}
+
