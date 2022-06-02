@@ -9,7 +9,10 @@ mviewer.customLayers.site_kifekoi= (function() {
         if (idsite != undefined && idsite.trim()!='') {
             console.log('FILTRE SUR IDSITE');
             // rechercher le site dans la couche des sites
-            return base_url + "&cql_filter=etat_site='actif'%20AND%20id_site=" + idsite;
+            var url = base_url + "&cql_filter=etat_site='actif' AND id_site=" + idsite;
+            
+            console.log('URL = ' + url);
+            return url;
             // rechercher les sites autour ?
         } else {
             console.log('PAS DE DONNEE');
@@ -19,6 +22,7 @@ mviewer.customLayers.site_kifekoi= (function() {
     
     function markerStyle(feature) {
         let id_s = feature.get('id_site');
+        console.log("Stylage de la feature :" + feature);
         
         if (idsite != undefined && id_s == idsite) {
             //return featureMarker('#C93991');
@@ -36,7 +40,7 @@ mviewer.customLayers.site_kifekoi= (function() {
                   crossOrigin: 'anonymous',
                   scale:0.03,
                   anchor:[0.5,1],
-                  src: 'apps/georm/picture/marker_blanc.svg',
+                  src: 'apps/intranet/picture/marker.svg',
                 }),
               })
         ];
@@ -44,6 +48,7 @@ mviewer.customLayers.site_kifekoi= (function() {
     
     function _zoomtoFeature() {
         let evt = dataLayer.once('postrender', function(e) {
+            console.log(dataLayer.getSource().getFeatures());
             if (dataLayer.getSource().getState() == 'ready') {
                 // Zoom To Location
                 var feat = dataLayer.getSource().getFeatures()[0];

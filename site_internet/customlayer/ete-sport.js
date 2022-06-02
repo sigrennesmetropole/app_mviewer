@@ -1,7 +1,7 @@
 
 mviewer.customLayers.ete_sport= (function() {
     let data_url='https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=eq_poi:v_sitorg_organisme&outputFormat=application/json&srsname=EPSG:3857';
-    let l_id_org=[4883,307,57,6792,1025,4699,98,857,966,4795,1527,1092,4954,4798,1477,5562,4883,914,383,6245,6795,6796,86,1471];
+    let l_id_org=[4883,307,57,6792,1025,4699,98,857,966,4795,4954,4798,1477,5562,4883,914,383,6245,6795,6796, 993];
     let markercolor='#62bcf5';
     
     
