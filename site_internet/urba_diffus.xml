@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <application
-        title="Projets d'urbanisme diffus"
+        title="Projets d'urbanisme diffus - PROTOTYPE"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
@@ -36,9 +36,9 @@
                     metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
                     queryable="true"
                     featurecount="3"
-                    filter="commune = 'Rennes' AND nature='En diffus' AND etape IN ('En chantier', 'En projet', 'En étude') AND (nb_logements > 15 OR nb_logements = 0)"
+                    filter="commune = 'Rennes' AND nature='En diffus' AND etape IN ('En chantier', 'En projet', 'En étude') AND (nb_logements > 15 )"
                     infopanel="right-panel">
-                    <template url="apps/site_internet/templates/urba_diffus.mst"/>
+                    <!--<template url="apps/site_internet/templates/urba_diffus.mst"/>-->
             </layer>
         </theme>
     </themes>
