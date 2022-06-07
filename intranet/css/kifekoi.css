@@ -1,0 +1,14 @@
+/******************************************************************************
+--------------------------- CSS THEME MVIEWER / Story des projets urbains -----
+********************************************************************************/
+
+/*  Import du style du site internet  */
+@import url("../../site_internet/css/site_internet_gris.css");
+
+#legend{
+    display:none;
+}
+
+#btn-mode-su-menu{
+    display:none;
+}

@@ -6,8 +6,9 @@
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
+        mouseposition="true"
         iconhelp=""
-        style="apps/site_internet/css/site_internet_gris.css"
+        style="apps/intranet/css/kifekoi.css"
         measuretools="false"
         stats="false"
         statsurl=""
@@ -15,7 +16,7 @@
         printMap="false"
         >
     </application>
-    <mapoptions maxzoom="20" minzoom="10" projection="EPSG:3857" center="-186098.36482879001,6125889.9088213602" zoom="12" />
+    <mapoptions maxzoom="20" minzoom="10" projection="EPSG:3857" center="-186098.36482879001,6125889.9088213602" zoom="18" />
 
 
     <baselayers style="default">
@@ -45,7 +46,7 @@
                 name="Site Kifékoi"
                 type="customlayer"
                 url="apps/intranet/customlayer/site_kifekoi.js"
-                legendurl="apps/site_internet/img/legend/leg_art_ville.svg"
+                legendurl="apps/intranet/picture/legend/marker_leg.svg"
                 visible="true"
                 tooltip="true"
                 tooltipenabled="true"

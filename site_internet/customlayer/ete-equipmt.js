@@ -1,7 +1,7 @@
 
 mviewer.customLayers.ete_equipements= (function() {
     let data_url='https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=eq_poi:v_sitorg_organisme&outputFormat=application/json&srsname=EPSG:3857';
-    let l_id_org=[377,5025,357,4795,5061,286,1429,88,1506,121,484,335,6397,5611,6793,1158,6786,5127, 5171, 5121, 6371, 48990, 948];
+    let l_id_org=[377,5025,357,4795,5061,286,1429,88,1506,121,484,335,6397,5611,6793,1158,6786,5127, 5171, 5121, 6371, 48990, 948, 6812, 6811];
     let markercolor='#faca50';
     
     function pctStyle() {
