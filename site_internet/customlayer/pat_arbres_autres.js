@@ -4,6 +4,21 @@ mviewer.customLayers.arbresautres= (function() {
     let daterefmax = new Date().getFullYear();
     let data_url = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=espub_esv:gev_aali&CQL_FILTER=date_plant>='+ daterefmin +' AND date_plant<'+ daterefmax +'&outputFormat=application/json&srsName=EPSG:4326';
     
+    function markerStyle() {
+        return [
+            new ol.style.Style({
+                image: new ol.style.Icon({
+                  color: '#5DADE2', 
+                  crossOrigin: 'anonymous',
+                  //scale:0.1,
+                  //anchor:[0.5,1],
+                  //src: 'apps/site_internet/customlayer/picture/arbre.svg',
+                  src: 'apps/site_internet/customlayer/picture/rond_default.svg',
+                }),
+              })
+        ];
+    }
+    
     
     function rondStyle() {
         let style = new ol.style.Style({
@@ -28,7 +43,7 @@ mviewer.customLayers.arbresautres= (function() {
             url: data_url,
             format: new ol.format.GeoJSON()
         }),
-        style: rondStyle,
+        style: markerStyle,
     });
     
     
