@@ -31,7 +31,7 @@
                 url="https://public.sig.rennesmetropole.fr/geoserver/eq_autres/ows"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
-                sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/location-salle2.sld"
+                sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/location-salle.sld"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/476f7ce0-f846-4c42-bf2f-a27cd81405be"
                 queryable="true"
