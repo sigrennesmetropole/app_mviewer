@@ -9,8 +9,8 @@ mviewer.customLayers.piscinesRM= (function() {
     let svgIcon='apps/site_internet/customlayer/picture/piscine-01.svg'
     //let svgIcon='apps/site_internet/customlayer/picture/piscine-02.svg'; 
     let stylesrc='apps/site_internet/customlayer/picture/marker.svg';
-    let iconwidth = 35;
-    let iconheight = 35;
+    let iconwidth = '35px';
+    let iconheight = '35px';
     //let iconcolor = '#eb5046'; 
     //let iconcolor = '#95c351';
     let iconcolor ='#ffffff';
@@ -327,14 +327,13 @@ mviewer.customLayers.piscinesRM= (function() {
         let style = new ol.style.Style({
                 image: new ol.style.Icon({
                   //color: '#e45e52',  //ba8e02
-                  color: iconcolor,
-                  crossOrigin: 'anonymous',
-                  anchor:[1,1],
+                  //color: iconcolor,
+                  anchor:[0.5,0.5],
                   src: stylesrc,
                   //src: 'apps/site_internet/customlayer/picture/sportCulture17-01.svg',
                   //src: 'apps/site_internet/customlayer/picture/piscine-02.svg',
                   //src: 'apps/site_internet/customlayer/picture/marker.svg',
-                }),
+                })
               });
         
         return [style];
@@ -353,9 +352,14 @@ mviewer.customLayers.piscinesRM= (function() {
                 var parser = new DOMParser();
                 var doc = parser.parseFromString(s, "image/svg+xml");
                 doc.getElementsByTagName("svg")[0].setAttribute('width', iconwidth);
-                doc.getElementsByTagName("svg")[0].setAttribute('heigth', iconheight);
+                doc.getElementsByTagName("svg")[0].setAttribute('height', iconheight);
+                doc.getElementsByTagName("svg")[0].setAttribute('x', '0px');
+                doc.getElementsByTagName("svg")[0].setAttribute('y', '0px');
+                console.log("SVG =" +doc.getElementsByTagName("svg")[0].outerHTML);
                 // on applique le svg au style
-                stylesrc = 'data:image/svg+xml;utf8,' + encodeURIComponent(doc.getElementsByTagName("svg")[0].outerHTML);
+                stylesrc = 'data:image/svg+xml;utf8, ' + encodeURIComponent(doc.getElementsByTagName("svg")[0].outerHTML);
+                
+                console.log("SRC = "+ stylesrc);
             }
         };
         xhr.open('get',svgIcon); 
