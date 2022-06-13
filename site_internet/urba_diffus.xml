@@ -25,20 +25,65 @@
 
     <themes mini="true">
         <theme id="theme-20220531100030" name="Projets d'urbanisme diffus" collapsed="true" icon="fas fa-building">
+           <!-- <layer
+                id="tabou_v_oa_programme"
+                name="En projet"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/app/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                queryable="true"
+                featurecount="3"
+                filter="commune = 'Rennes' AND nature='En diffus' AND etape IN ('En chantier', 'En projet', 'En étude') AND (nb_logements > 15 )"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/urba_diffus.mst"/>
+            </layer>
+            -->
             <layer
-                    id="tabou_v_oa_programme"
-                    name="Projets diffus"
-                    type="wms"
-                    url="https://public.sig.rennesmetropole.fr/geoserver/app/ows"
-                    visible="true"
-                    infoformat="application/vnd.ogc.gml"
-                    metadata="undefined"
-                    metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
-                    queryable="true"
-                    featurecount="3"
-                    filter="commune = 'Rennes' AND nature='En diffus' AND etape IN ('En chantier', 'En projet', 'En étude') AND (nb_logements > 15 )"
-                    infopanel="right-panel">
-                    <!--<template url="apps/site_internet/templates/urba_diffus.mst"/>-->
+                id="urbadiffus_en_projet"
+                name="En projet"
+                type="customlayer"
+                url="apps/site_internet/customlayer/urba_diffus_projets.js"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                queryable="true"
+                featurecount="5"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/urba_diffus.mst"/>
+            </layer>
+            
+            <layer
+                id="urbadiffus_en_etude"
+                name="En étude"
+                type="customlayer"
+                url="apps/site_internet/customlayer/urba_diffus_etude.js"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                queryable="true"
+                featurecount="5"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/urba_diffus.mst"/>
+            </layer>
+            
+            <layer
+                id="urbadiffus_en_chantier"
+                name="En chantier"
+                type="customlayer"
+                url="apps/site_internet/customlayer/urba_diffus_chantier.js"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                queryable="true"
+                featurecount="5"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/urba_diffus.mst"/>
             </layer>
         </theme>
     </themes>
