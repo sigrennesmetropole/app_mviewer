@@ -70,7 +70,6 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/urba_diffus.mst"/>
             </layer>
-            
             <layer
                 id="urbadiffus_en_chantier"
                 name="En chantier"
