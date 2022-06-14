@@ -2,7 +2,7 @@ mviewer.customLayers.urbadiffus_en_projet= (function() {
     const fillcolor='#eb5046';
     const nb_logements_min=15;
     let data_url="https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=app:tabou_v_oa_programme&outputFormat=application/json&srsName=EPSG:3857";
-    let filter = "commune='Rennes' AND nature = 'En diffus' AND diffusion_restreinte=false AND etape='En projet'";
+    let filter = "commune='Rennes' AND nature = 'En diffus' AND diffusion_restreinte=false AND etape='En projet' AND (nb_logements >= " + nb_logements_min + " OR num_ads IS NOT NULL)";
     
     let complete_url = data_url + '&CQL_FILTER='+ encodeURIComponent(filter);
 
@@ -47,7 +47,6 @@ mviewer.customLayers.urbadiffus_en_projet= (function() {
                  } 
              }
              for (ads in grp_features){
-                 console.log(grp_features[ads]);
                  if (grp_features[ads].length > 1){
                     // si plusieurs entrées, fusionner le shape
                     let nb_niv=0;
@@ -97,20 +96,15 @@ mviewer.customLayers.urbadiffus_en_projet= (function() {
     }
     
     function cleanData(){
+        // suppression des programmes qui ont moins de 15 logements
         dataLayer.getSource().forEachFeature((feature) => {
             if (feature.get("nb_logements")< nb_logements_min){
                 dataLayer.getSource().removeFeature(feature);
             }
         });
-    }
-    
-
-    let dataLayer = new ol.layer.Vector({
-        source: new ol.source.Vector({
-            url: complete_url,
-            format: new ol.format.GeoJSON()
-        }),
-        style: new ol.style.Style({
+        // mise à jour du style
+        dataLayer.setStyle(
+            new ol.style.Style({
                 fill:new ol.style.Fill({
                    color: fillcolor,
                  }),
@@ -119,9 +113,22 @@ mviewer.customLayers.urbadiffus_en_projet= (function() {
                     width: 2
                   })
             })
+        );
+    }
+    
+    let dataLayer = new ol.layer.Vector({
+        visible: false,
+        source: new ol.source.Vector({
+            url: complete_url,
+            format: new ol.format.GeoJSON()
+        }),
+        style: new ol.style.Style({
+                fill:new ol.style.Fill({
+                   color: '#ffffff00',
+                 })
+            }),
     });
     
-
     dataLayer.getSource().once('change',() =>{
         getADSData();
     });
