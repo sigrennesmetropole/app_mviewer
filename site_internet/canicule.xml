@@ -94,7 +94,6 @@
               metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
               queryable="true"
               featurecount="3"
-              filter="description = 'Brumisateurs'"
               infopanel="right-panel">
               <template url="apps/site_internet/templates/brumisateurs.mst"></template>
           </layer>
