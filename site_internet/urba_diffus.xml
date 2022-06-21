@@ -43,7 +43,7 @@
             -->
             <layer
                 id="urbadiffus_en_projet"
-                name="En projet"
+                name="En réflexion"
                 type="customlayer"
                 url="apps/site_internet/customlayer/urba_diffus_projets.js"
                 legendurl="apps/site_internet/img/legend/urba_diffus_projet.svg"
@@ -59,7 +59,7 @@
             
             <layer
                 id="urbadiffus_en_etude"
-                name="En étude"
+                name="En cours d'instruction"
                 type="customlayer"
                 url="apps/site_internet/customlayer/urba_diffus_etude.js"
                 legendurl="apps/site_internet/img/legend/urba_diffus_etude.svg"
@@ -74,7 +74,7 @@
             </layer>
             <layer
                 id="urbadiffus_en_chantier"
-                name="En chantier"
+                name="Permis de construire accepté"
                 type="customlayer"
                 url="apps/site_internet/customlayer/urba_diffus_chantier.js"
                 legendurl="apps/site_internet/img/legend/urba_diffus_chantier.svg"
