@@ -1,5 +1,5 @@
 mviewer.customLayers.urbadiffus_en_projet= (function() {
-    const fillcolor='#eb5046';
+    const fillcolor='#FF9027';
     const nb_logements_min=15;
     let data_url="https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=app:tabou_v_oa_programme&outputFormat=application/json&srsName=EPSG:3857";
     let filter = "commune='Rennes' AND nature = 'En diffus' AND diffusion_restreinte=false AND etape='En projet' AND (nb_logements >= " + nb_logements_min + " OR num_ads IS NOT NULL)";
