@@ -188,9 +188,8 @@ var baladesAddon = (function () {
             document.getElementById('startButton').style.display = 'none';
             var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade).getGeometry().getCoordinates();
             geometryPoint = ol.proj.transform([geometryPointFeature[0], geometryPointFeature[1]], 'EPSG:3857', 'EPSG:4326');
-            mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, zoomPendantBalade, true);
-            highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([geometryPointFeature[0], geometryPointFeature[1]]);
             mviewer.getMap().removeLayer(highlightLayer);
+            highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([geometryPointFeature[0], geometryPointFeature[1]]);
             mviewer.getMap().getLayers().push(highlightLayer);
             $("#mv_marker").attr('fill-opacity', '0');
         } else {

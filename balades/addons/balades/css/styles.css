@@ -57,6 +57,9 @@
     #nextButton {
         left: 55%;
     }
+    #accordion .panel-collapse.collapse.in {
+        max-height: 28vh;
+    }
 }
 
 @media screen and (max-width: 500px) {
