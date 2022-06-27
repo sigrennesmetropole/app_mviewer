@@ -1,4 +1,7 @@
 {   
+    "carte": {
+        "zoomPendantBalade" : 18
+    },
     "balades": {
         "layer_balades": "balades",
         "id": "id",
@@ -9,7 +12,8 @@
     "points": {
         "layer_points": "balades_points",
         "idBalade": "idbalade",
+        "champRang": "rang",
         "couleurPointActif": "#e74c3c",
-        "pointsVisible": "false"
+        "pointsVisible": "true"
     }
 }
