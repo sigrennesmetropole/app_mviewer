@@ -8,7 +8,7 @@ var baladesAddon = (function () {
     var baladeId; // id de chaque balade
     var couleurBalades; // nom de l'attribut couleur sur chaque balade
     var idBalade; // id de la balade sur chaque point
-    var champRang='rang'; // rang de chaque point
+    var champRang = 'rang'; // rang de chaque point
     var defaultColor; // couleur de base des points si la couleur n'est pas valide
     var couleurPointActif; // couleur du point actif de la balade
     var highlightLayer; // Layer highlight du point actif
@@ -175,9 +175,27 @@ var baladesAddon = (function () {
             }
         });
         mviewer.customLayers[layer_points].layer.changed();
-        if (!feature)
-            currentIdBalade = -1;
-        updateButton();
+        // if (!feature)
+        //    currentIdBalade = -1;
+        if (feature && feature.getGeometry().getType() == 'Point' && feature.get(champRang) > 1){
+            document.getElementById('prevButton').style.display = 'block';
+            document.getElementById('prevButton').disabled = false;
+            document.getElementById('nextButton').disabled = true;
+            currentPointBalade = feature.get(champRang);
+            if (featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade+1))
+                document.getElementById('nextButton').disabled = false;
+            document.getElementById('nextButton').style.display = 'block';
+            document.getElementById('startButton').style.display = 'none';
+            var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade).getGeometry().getCoordinates();
+            geometryPoint = ol.proj.transform([geometryPointFeature[0], geometryPointFeature[1]], 'EPSG:3857', 'EPSG:4326');
+            mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, zoomPendantBalade, true);
+            highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([geometryPointFeature[0], geometryPointFeature[1]]);
+            mviewer.getMap().removeLayer(highlightLayer);
+            mviewer.getMap().getLayers().push(highlightLayer);
+            $("#mv_marker").attr('fill-opacity', '0');
+        } else {
+            updateButton();
+        }
     };
 
     var styleBalades = function(){
