@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <application
+        title="Projets d'urbanisme diffus - PROTOTYPE"
+        logo="apps/public/img/logo/logo_mviewer_transp.png"
+        titlehelp="À propos des cartes thématiques"
+        help="apps/site_internet/html/site_internet_help.html"
+        showhelp="false"
+        exportpng="false"
+        style="apps/site_internet/css/site_internet_gris.css"
+        measuretools="false"
+        togglealllayersfromtheme="false"
+         />
+
+    <mapoptions maxzoom="22" minzoom="11" projection="EPSG:3857" center="-185600.24433942206,6125077.984905125" zoom="14" />
+
+    <baselayers style="default"><!-- style="default"||gallery" -->
+        <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+        <baselayer visible="false" id="ortho2020" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2020" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+    </baselayers>
+    
+    <extensions>
+      <extension type="component" id="GUICustom" path="apps/public/addons"/>
+    </extensions>
+
+    <themes mini="true">
+        <theme id="theme-20220531100030" name="Projets d'urbanisme diffus" collapsed="true" icon="fas fa-building">
+           <!-- <layer
+                id="tabou_v_oa_programme"
+                name="En projet"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/app/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                queryable="true"
+                featurecount="3"
+                filter="commune = 'Rennes' AND nature='En diffus' AND etape IN ('En chantier', 'En projet', 'En étude') AND (nb_logements > 15 )"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/urba_diffus.mst"/>
+            </layer>
+            -->
+            <layer
+                id="urbadiffus_en_projet"
+                name="En réflexion"
+                type="customlayer"
+                url="apps/site_internet/customlayer/urba_diffus_projets.js"
+                legendurl="apps/site_internet/img/legend/urba_diffus_projet.svg"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                queryable="true"
+                featurecount="5"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/urba_diffus.mst"/>
+            </layer>
+            
+            <layer
+                id="urbadiffus_en_etude"
+                name="En cours d'instruction"
+                type="customlayer"
+                url="apps/site_internet/customlayer/urba_diffus_etude.js"
+                legendurl="apps/site_internet/img/legend/urba_diffus_etude.svg"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                queryable="true"
+                featurecount="5"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/urba_diffus.mst"/>
+            </layer>
+            <layer
+                id="urbadiffus_en_chantier"
+                name="Permis de construire accepté"
+                type="customlayer"
+                url="apps/site_internet/customlayer/urba_diffus_chantier.js"
+                legendurl="apps/site_internet/img/legend/urba_diffus_chantier.svg"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                queryable="true"
+                featurecount="5"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/urba_diffus.mst"/>
+            </layer>
+        </theme>
+    </themes>
+</config>

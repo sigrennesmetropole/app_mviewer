@@ -1,0 +1,27 @@
+{{#features}}
+    <li class="item">
+        <h5 class="rm-popup-title-feature">{{nom_salle}}</h5>
+        
+        <p class="rm-popup-text-feature">
+            {{#nom_site}}<span class='rm-popup-label'> SITE :</span> {{{nom_site}}}<br/>{{/nom_site}}
+            <span class='rm-popup-label'> ADRESSE :</span> {{adresse_postale_adr}} {{adresse_postale_cp}} {{adresse_postale_comm}}<br/>
+        </p>
+        <p class="rm-popup-text-feature">
+            <!--<span class='rm-popup-headerLevel2'> RÉSERVATION </span><br/>-->
+            {{#telephone}}<span class='rm-popup-label'> TÉLÉPHONE :</span> {{{telephone}}}<br/>{{/telephone}}
+            {{#mail}}<span class='rm-popup-label'> COURRIEL :</span> {{{mail}}}<br/>{{/mail}}
+        </p>
+        <p class="rm-popup-text-feature">
+            <!--<span class='rm-popup-headerLevel2'> INFORMATIONS SUR LA SALLE </span><br/>-->
+            {{#superficie}}<span class='rm-popup-label'> SUPERFICIE :</span> {{{superficie}}} m²<br/>{{/superficie}}
+            {{#capacite_assise}}<span class='rm-popup-label'> PLACES ASSISES :</span> {{{capacite_assise}}}<br/>{{/capacite_assise}}
+            {{#capacite_debout}}<span class='rm-popup-label'> PLACES DEBOUT :</span> {{{capacite_debout}}}<br/>{{/capacite_debout}}
+            {{#type_utilisation}}<span class='rm-popup-label'> TYPE D'UTILISATION :</span> {{{type_utilisation}}}<br/>{{/type_utilisation}}
+            {{#horaire_occupation}}<span class='rm-popup-label'> HORAIRES D'OCCUPATION :</span> {{{horaire_occupation}}}<br/>{{/horaire_occupation}}
+            {{#equipement_suppl}}<span class='rm-popup-label'> ÉQUIPEMENTS DISPONIBLES :</span> {{{equipement_suppl}}}<br/>{{/equipement_suppl}}
+            {{#information_suppl}}<span class='rm-popup-label'> AUTRES INFORMATIONS :</span> {{{information_suppl}}}<br/>{{/information_suppl}}
+            <!--{{#lien_reservation}}<span class='rm-popup-label'> LIEN :</span> {{{lien_reservation}}}<br/>{{/lien_reservation}}-->
+            {{#lien_reservation}}<span class='rm-popup-label'> LIEN :</span><a id='lienweb' class='lienweb' href="{{{lien_reservation}}}" target="_blank" title="{{{lien_reservation}}}"> Cliquez ici </a> {{/lien_reservation}}
+        </p>
+    </li>
+{{/features}}

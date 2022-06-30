@@ -2,7 +2,7 @@
 <config>
     <application
         title="Permanences droits des étrangers"
-        logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"
+        logo="apps/public/img/logo/logo_mviewer_transp.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"

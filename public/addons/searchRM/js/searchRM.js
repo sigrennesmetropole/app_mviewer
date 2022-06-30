@@ -4,8 +4,10 @@ var searchRM = (function () {
 
   var nbResults = 0;
   var currentRmAutocompleteItem = -1;
-  var apiSitesOrgkey = '';
+  
   var getPersoConfData;
+  var apiRVAKey = '';
+  var apiSitesOrgkey = '';
 
   var previousRequest;
 
@@ -14,6 +16,12 @@ var searchRM = (function () {
         // $("#parcelSelectors").show();
         // var configapp = mviewer.customComponents.searchRM;
         // console.log(configapp);
+
+        $.getJSON("apps/public/addons/env.json", function(json) {
+          apiRVAKey = json.searchRM[0].apiRVAKey;
+          apiSitesOrgkey = json.searchRM[0].apiSitesOrgkey;
+        });
+
         $("#searchtool input").attr("placeholder", mviewer.customComponents.searchRM.config.options.libelles.placeholderRVA);
 
         if(API.mode !== 'u' && API.mode !== 's'){
@@ -26,6 +34,14 @@ var searchRM = (function () {
         }
 
         if(API.mode === 'u'){
+          $('#page-content-wrapper').append(
+          '<div id="searchresults" class="list-group">' +
+            '<div class="searchresults-title">' +
+              'Résultats' +
+              '<button type="button" class="close">x</button>' +
+            '</div>' +
+          '</div>'
+          );
           $(".background-custom-searchtool").css({'right':'105px'});
           $("#searchresults").css({"right": "50px", "top": "55px"});
           if(screen.width <= 767){
@@ -35,6 +51,12 @@ var searchRM = (function () {
             $('#toolstoolbar').css({'top': '140px'});
           }
         }
+
+        $(".searchresults-title .close").click(function () {
+            $('#searchresults a').remove();
+            $('#searchresults').hide();
+            $('#searchfield').val('');
+        });
 
         if(API.mode === 's'){
           $(".background-custom-searchtool").css({'right':'135px'});
@@ -186,19 +208,18 @@ var searchRM = (function () {
 
         confData.searchContent.forEach( function (content) {
             var ajaxSetting = {type: 'GET', crossDomain: true,  dataType: "json"};
-            apiSitesOrgkey = configOptionsValues.apiSitesorgKey;
             switch (content.categoryName) {
                 case 'Communes':
                     ajaxSetting.url = apiRvaBaseUrl;
-                    ajaxSetting.data = {key: configOptionsValues.apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getcities', 'insee':'all'};
+                    ajaxSetting.data = {key: apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getcities', 'insee':'all'};
                     break;
                 case 'Voies':
                     ajaxSetting.url = apiRvaBaseUrl;
-                    ajaxSetting.data = {key: configOptionsValues.apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getlanes', 'insee':'all', "query": value};
+                    ajaxSetting.data = {key: apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getlanes', 'insee':'all', "query": value};
                     break;
                 case 'Adresses':
                     ajaxSetting.url = apiRvaBaseUrl;
-                    ajaxSetting.data =  {key: configOptionsValues.apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getfulladdresses',"query": value};
+                    ajaxSetting.data =  {key: apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getfulladdresses',"query": value};
                     break;
                 case 'Organismes':
                     ajaxSetting.url = apiSitesOrg_url_recherche;

@@ -2,7 +2,7 @@
 <config>
     <application
         title="Lieux culturels"
-        logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"
+        logo="apps/public/img/logo/logo_mviewer_transp.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
@@ -38,7 +38,8 @@
                 queryable="true"
                 featurecount="3"
                 filter="etat_organisme = 'actif' AND code_nomenclature_principale='7.6'"
-                infopanel="right-panel">
+                infopanel="right-panel"
+                tabColor="#bb3da2">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
             <layer
@@ -54,7 +55,8 @@
                 queryable="true"
                 featurecount="3"
                 filter="etat_organisme = 'actif' AND code_nomenclature_principale LIKE '7.3.%'"
-                infopanel="right-panel">
+                infopanel="right-panel"
+                tabColor="#8f9169">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
             <layer
@@ -70,7 +72,8 @@
                 queryable="true"
                 featurecount="3"
                 filter="etat_organisme = 'actif' AND code_nomenclature_principale LIKE '7.5.%'"
-                infopanel="right-panel">
+                infopanel="right-panel"
+                tabColor="#33919d">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
             <layer
@@ -86,7 +89,8 @@
                 queryable="true"
                 featurecount="3"
                 filter="etat_organisme = 'actif' AND code_nomenclature_principale LIKE '7.7.%'"
-                infopanel="right-panel">
+                infopanel="right-panel"
+                tabColor="#e45e52">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
         </theme>

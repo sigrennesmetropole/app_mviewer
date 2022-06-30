@@ -2,12 +2,12 @@
 <config>
     <application
         title="Piscines"
-        logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"
+        logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_transp.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
         exportpng="false"
-        style="apps/site_internet/css/art_ville.css"
+        style="apps/site_internet/css/site_info_large.css"
         measuretools="false"
         togglealllayersfromtheme="false" />
         <!-- apiKey="c583383089f1c7e544e32cdf44c11045" -->
@@ -26,13 +26,14 @@
     </extensions>
 
     <themes mini="true" legendmini="false">
-        <theme id="theme-202103090939" name="Les piscines" collapsed="true" icon="fas fa-swimming-pool">
+        <!--<theme id="theme-202103090939" name="Les piscines" collapsed="true" icon="fas fa-swimming-pool">-->
+        <theme id="theme-202103090939" name="Les piscines" collapsed="true" icon=".piscineicon">
             <layer
                 id="piscinesRM"
                 name="Piscines"
                 type="customlayer"
                 url="apps/site_internet/customlayer/piscinesRM.js"
-                legendurl="apps/site_internet/img/legend/piscines.svg"
+                legendurl="apps/site_internet/img/legend/piscine-01.svg"
                 vectorlegend="true"
                 visible="true"
                 tooltip="true"

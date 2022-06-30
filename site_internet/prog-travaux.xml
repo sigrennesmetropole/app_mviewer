@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <application
-        title="Programmation des travaux sur Rennes Métropole"
-        logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"
-        titlehelp="À propos des cartes thématiques"
-        help="apps/site_internet/html/site_internet_help.html"
-        showhelp="false"
+        title="Programmation des travaux sur Rennes Métropole [Document de travail]"
+        logo="apps/public/img/logo/logo_mviewer_transp.png"
+        titlehelp="À propos..."
+        help="apps/site_internet/html/prog_travaux_help.html"
+        showhelp="true"
         exportpng="true"
         geoloc="true"
         style="apps/site_internet/css/site_internet_gris.css"

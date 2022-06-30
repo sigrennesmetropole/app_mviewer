@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <application
-        title="Travaux du jour et survenant dans la semaine"
-        logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"
+        title="Travaux en cours à Rennes Métropole"
+        logo="apps/public/img/logo/logo_mviewer_transp.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/geotravaux_help.html"
         showhelp="false"
@@ -43,7 +43,7 @@ attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/s
                 name="Trafic routier"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/ows"
-                visible="true"
+                visible="false"
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
                 queryable="true"
