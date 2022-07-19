@@ -3,7 +3,7 @@ var baladesAddon = (function () {
     var configFile; // fichier de configuration
     var layer_balades; // nom du customlayer des balades
     var layer_points; // nom du customlayer des points
-    var zoomPendantBalade = 16; //zoom appliqué à la carte pendant la balade
+    var zoomPendantBalade = 16; // zoom appliqué à la carte pendant la balade
 
     var baladeId; // id de chaque balade
     var couleurBalades; // nom de l'attribut couleur sur chaque balade
@@ -177,7 +177,7 @@ var baladesAddon = (function () {
         mviewer.customLayers[layer_points].layer.changed();
         // if (!feature)
         //    currentIdBalade = -1;
-        if (feature && feature.getGeometry().getType() == 'Point' && feature.get(champRang) > 1){
+        if (feature && feature.getGeometry().getType() == 'Point'){
             document.getElementById('prevButton').style.display = 'block';
             document.getElementById('prevButton').disabled = false;
             document.getElementById('nextButton').disabled = true;
