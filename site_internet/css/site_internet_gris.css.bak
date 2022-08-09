@@ -276,7 +276,7 @@ span.state-icon.fas{
 	color: var(--darkmain);
 	font-family: 'vistaSansOT_bold', Arial, Sans-serif;
     text-align: left;
-    /*display: inline-block;*/
+    display: inline-block;
 }
 
 .form-group label {
@@ -610,12 +610,11 @@ ul ul {
     border-width: 0px 0px 1px 1px;
     border-color:#bcbcbc;
     border-style: solid;
-    border-left: 2px solid #000000!important;
+    border-left: thick solid #000000!important;
 }
 
 .popup-content .nav-tabs > li.active  {
-    border-left-width: 4px!important;
-    border-left-color: var(--titlecolor)!important;
+    border-left-width: medium!important;
     padding-bottom: 0px!important;
 }
 
@@ -625,7 +624,6 @@ ul ul {
     border-width: 0px 0px 0px 0px;
 }
 .popup-content .nav-tabs > li.active > a { background-color: #000000!important;}
-/*
 .popup-content .nav-tabs > li.active > a.background-not-def { background-color: #000000!important;}
 .popup-content .nav-tabs > li.active > a.background-goutte_vert { background-color: #8f9169!important;}
 .popup-content .nav-tabs > li.active > a.background-goutte_bleu { background-color: #33919d!important;}
@@ -633,25 +631,21 @@ ul ul {
 .popup-content .nav-tabs > li.active > a.background-goutte_violet { background-color: #bb3da2!important;}
 .popup-content .nav-tabs > li.active > a.background-goutte_rouge { background-color: #e45e52!important;}
 .popup-content .nav-tabs > li.active > a.background-goutte_orange { background-color: #f9a241!important;}
-*/
+
 
 /* li.a.fa */
-.popup-content .nav-tabs > li > a > .fa {
+/* .popup-content .nav-tabs > li > a > .fa {
     color: #000000!important;
     opacity: 0.55!important;
-}
+} */
 
-/*.popup-content .nav-tabs > li > a.background-goutte_vert > .fa { color: #8f9169!important;}
+.popup-content .nav-tabs > li > a.background-goutte_vert > .fa { color: #8f9169!important;}
 .popup-content .nav-tabs > li > a.background-goutte_bleu > .fa { color: #33919d!important;}
 .popup-content .nav-tabs > li > a.background-goutte_vert-eau > .fa { color: #33c49d!important;}
 .popup-content .nav-tabs > li > a.background-goutte_violet > .fa { color: #bb3da2!important;}
 .popup-content .nav-tabs > li > a.background-goutte_rouge > .fa { color: #e45e52!important;}
 .popup-content .nav-tabs > li > a.background-goutte_orange > .fa { color: #f9a241!important;}
-*/
-.popup-content .nav-tabs > li.active > a > .fa {
-    color: white!important;
-    opacity: 1!important;
-}
+
 /* item number */
 .popup-content .nav-tabs > li > a.bg-colored > .item-number {
     position: absolute;

@@ -10,6 +10,8 @@
         exportpng="false"
         coordinates="false"
         measuretools="true"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
         />
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-190690,6128726" zoom="11" />
 

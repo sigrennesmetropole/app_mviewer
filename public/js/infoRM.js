@@ -20,7 +20,9 @@ var info = (function () {
      */
 
     var _mvReady = true;
+
     var _panelsTemplate = {"right-panel": "default", "bottom-panel": "default", "modal-panel": "default"};
+
     /**
      * Property: _overLayers
      * {object} hash of all overlay Layers (static)
@@ -78,7 +80,7 @@ var info = (function () {
 
     var _sourceOverlay;
 
-/**
+    /**
      * Property: _queriedFeatures
      * Array of ol.Feature
      * Used to store features retrieved on click
@@ -91,10 +93,17 @@ var info = (function () {
      * Used to store features of firstlayer retrieved on click
      */
     var _firstlayerFeatures;
-    // debut modif CT 31/01/2020
-    var nbItemsSelectedLayer = 0;
-    //var layerCount  = "";
-    // fin
+    
+    // CBR : tri selon la toc ou la légende
+    // contribution geobretagne #issue 644
+     /**
+     * Property: _tocsertedlayers
+     * Array of string
+     * Used to store all layerids sorted according to the toc
+     */
+    var _tocsertedlayers;
+    // fin CBR : tri selon la toc ou la légende
+    
 
     /**
      * Private Method: _customizeHTML
@@ -130,16 +139,6 @@ var info = (function () {
     };
 
     /**
-    * Public Method: getClickNbItems
-    */
-    var setClickNbItems = function (value, position) {
-      _clickNbItems = value;
-      // déclenchement d'un évenement pour gérer une simulation de clic (la fonction mviewer.zoomToLocation ne génère pas d'événement de type singleclick)
-      let event = new CustomEvent('clickedNbFeaturesEvt', { detail: {'nbfeatures': value, 'position': position}});
-      document.dispatchEvent(event);
-    };
-
-    /**
      * Private Method: _queryMap()
      * @param evt {ol.MapBrowserEvent}
      * @param options {type: 'feature' || 'map', layer: {ol.layer.Layer}, featureid:'featureid'}
@@ -147,15 +146,10 @@ var info = (function () {
      */
 
     var _queryMap = function (evt, options) {
-    	_queriedFeatures = [];
+        var isClick = evt.type === 'singleclick';
+        _queriedFeatures = [];
         _firstlayerFeatures = [];
-        // MODIF CBR
-        //var showPin = false;
-        var showPin = true;
-        // FIN MODIF CBR
-        // AJOUT CBR
-        var pos = 0;
-        // FIN AJOUT
+        var showPin = false;
         var queryType = "map"; // default behaviour
         var views = {
             "right-panel":{ "panel": "right-panel", "layers": []},
@@ -181,9 +175,12 @@ var info = (function () {
             var pixel = evt.pixel;
             var vectorLayers = {};
             var format = new ol.format.GeoJSON();
+            // CBR : gestion du template allintabs (layers with a unique feature)
+            // contribution geobretagne #issue 633
+            var f_idx=0;
+            //FIN CBR  : gestion du template allintabs
             _map.forEachFeatureAtPixel(pixel, function(feature, layer) {
-                //var l = layer.get('mviewerid');
-                var l = (layer!= null ? layer.get('mviewerid'): null);
+                var l = layer.get('mviewerid');
                 if (l && l != 'featureoverlay' && l != 'selectoverlay' && l != 'subselectoverlay' && l != 'elasticsearch' ) {
                     var queryable = _overLayers[l].queryable;
                     if (queryable) {
@@ -195,21 +192,39 @@ var info = (function () {
                         if (vectorLayers[l] && vectorLayers[l].features) {
                             vectorLayers[l].features.push(feature);
                         } else {
+                            //CBR : gestion du template allintabs (layers with a unique feature)
+                            // contribution geobretagne #issue 633
+                            if (_overLayers[l] && _panelsTemplate[_overLayers[l].infospanel]=='allintabs') {
+                                l = l + '_' + f_idx;
+                                f_idx++;
+                            }
+                            //FIN CBR  : gestion du template allintabs
                             vectorLayers[l] = {features:[]};
                             vectorLayers[l].features.push(feature);
                         }
                      }
                 }
             });
-
-            //CBR : affichage des features des couches vectorielles par onglet
             for(var layerid in vectorLayers) {
-                if (mviewer.customLayers[layerid] && mviewer.customLayers[layerid].handle) {
+                //CBR : gestion du template allintabs (layers with a unique feature)
+                // contribution geobretagne #issue 633
+                var originLayer = (layerid.lastIndexOf("_") < 0 ? layerid : layerid.substring(0, layerid.lastIndexOf("_")) );
+                
+                /*if (mviewer.customLayers[layerid] && mviewer.customLayers[layerid].handle) {
                     mviewer.customLayers[layerid].handle(vectorLayers[layerid].features, views);
                 } else if (mviewer.customControls[layerid] && mviewer.customControls[layerid].handle){
                     mviewer.customControls[layerid].handle(vectorLayers[layerid].features);
                 } else {
                     var l = _overLayers[layerid];
+                */
+                if (mviewer.customLayers[originLayer] && mviewer.customLayers[originLayer].handle) {
+                    mviewer.customLayers[originLayer].handle(vectorLayers[originLayer].features, views);
+                } else if (mviewer.customControls[originLayer] && mviewer.customControls[originLayer].handle){
+                    mviewer.customControls[originLayer].handle(vectorLayers[originLayer].features);
+                } else {
+                    var l = _overLayers[originLayer];
+                // FIN CBR : gestion du template allintabs (layers with a unique feature)
+                    
                     if (l) {
                         var panel = l.infospanel;
                         if (configuration.getConfiguration().mobile) {
@@ -222,8 +237,6 @@ var info = (function () {
                         //Create html content from features
                         var html_result = "";
                         var features = vectorLayers[layerid].features;
-                        // MODIF CBR
-                        /*
                         if (l.template) {
                             html_result = applyTemplate(features, l);
                         } else {
@@ -233,59 +246,19 @@ var info = (function () {
                         views[panel].layers.push({
                             "panel": panel,
                             "id": id,
-                            "firstlayer": (id === 1),
+                            //"firstlayer": (id === 1), // firstlayer attribute is calculated after ordering layers with orderViewsLayersByMap
+                            "firstlayer": false,
                             "manyfeatures": (features.length > 1),
                             "nbfeatures": features.length,
                             "name": name,
                             "layerid": layerid,
+                            //CBR : gestion du template allintabs (layers with a unique feature)
+                            // contribution geobretagne #issue 633
+                            "initiallayerid": originLayer,
+                            //FIN CBR : gestion du template allintabs (layers with a unique feature)
                             "theme_icon": theme_icon,
                             "html": html_result
                         });
-                        */
-
-                        for (var i = 0; i < features.length; i++) {
-                        //features.forEach(function(feature) {
-                            var feature = features[i];
-         //                   if (typeof layerCount !== 'undefined') {
-         //                       if (layerCount.trim().length > 0 && layerCount.replace(':', '') === layerid) {
-                                    nbItemsSelectedLayer++;
-         //                       }
-         //                   }
-                            pos++;
-                            if (i > 0) {
-                                id = id + i;
-                            }
-
-
-                            var uniqueFeature = [];
-                            uniqueFeature.push(feature);
-                            if (l.template) {
-                                html_result = applyTemplate(uniqueFeature, l);
-                            } else {
-                                html_result = createContentHtml(uniqueFeature, l);
-                            }
-                            //Set view with layer info & html formated features
-                            views[panel].layers.push({
-                                "panel": panel,
-                                "id": id,
-                                "firstlayer": (id === 1),
-                                //"manyfeatures": (features.length > 1),
-                                //"nbfeatures": features.length,
-                                "name": name,
-                                "layerid": layerid,
-                                "theme_icon": theme_icon,
-                                "cat_color": 'not-def',
-                                "index": pos,
-                                "html": html_result
-                            });
-                        }
-                        //});
-                        if (pos > 1) {
-                            views[panel].multiple = true;
-                        } else {
-                            views[panel].multiple = false;
-                        }
-                        // FIN MODIF CBR
                      }
                 }
             }
@@ -293,223 +266,306 @@ var info = (function () {
         //Request wms layers
         var featureInfoByLayer = [];
         var visibleLayers = [];
-            if (layer) {
-                 visibleLayers.push(_overLayers[layer].layer);
-            } else {
-                visibleLayers =  $.grep( _queryableLayers, function( l, i ) {return l.getVisible();});
+        if (layer) {
+            visibleLayers.push(_overLayers[layer].layer);
+        } else {
+            visibleLayers =  $.grep( _queryableLayers, function( l, i ) {return l.getVisible();});
+        }
+        $(".popup-content").html('');
+        _clickCoordinates = evt.coordinate;
+        var urls = [];
+        var params;
+        for (var i = 0; i < visibleLayers.length; i++) {
+            if (visibleLayers[i] instanceof ol.layer.BaseVector === false) {
+                params = {'INFO_FORMAT': _overLayers[visibleLayers[i].get("mviewerid")].infoformat,
+                    'FEATURE_COUNT': _overLayers[visibleLayers[i].get("mviewerid")].featurecount
+                };
+                var url = visibleLayers[i].getSource().getFeatureInfoUrl(
+                    evt.coordinate, _map.getView().getResolution(), _map.getView().getProjection(), params
+                );
+                urlParams = new URLSearchParams(url)
+                cql = new URLSearchParams(url).get("CQL_FILTER")
+                if (layer && featureid) {
+                    // create new cql to insert feature id
+                    attributeFilter = _overLayers[layer].searchid+'%3D%27'+featureid+'%27';
+                    // create new cql filter
+                    urlParams.delete("CQL_FILTER");
+                    cql = `&CQL_FILTER=${cql || ""}${cql ? " AND " : ""}${attributeFilter}`;
+                    // force to decode to string result and avoid unreadable params
+                    url = decodeURIComponent(urlParams.toString()) + cql;
+                }
+                urls.push({url:url, layerinfos: _overLayers[visibleLayers[i].get('mviewerid')]});
             }
-            $(".popup-content").html('');
-            _clickCoordinates = evt.coordinate;
-            var urls = [];
-            var params;
-            for (var i = 0; i < visibleLayers.length; i++) {
-                if (visibleLayers[i] instanceof ol.layer.BaseVector === false) {
-                    params = {'INFO_FORMAT': _overLayers[visibleLayers[i].get("mviewerid")].infoformat,
-                        'FEATURE_COUNT': _overLayers[visibleLayers[i].get("mviewerid")].featurecount
-                    };
-                    var url = visibleLayers[i].getSource().getFeatureInfoUrl(
-                        evt.coordinate, _map.getView().getResolution(), _map.getView().getProjection(), params
-                    );
-                    if (layer && featureid) {
-                        url+= '&CQL_FILTER='+_overLayers[layer].searchid+'%3D%27'+featureid+'%27';
-                    }
-                    urls.push({url:url, layerinfos: _overLayers[visibleLayers[i].get('mviewerid')]});
+        }
+
+        var requests = [];
+        var carrousel=false;
+
+        /**
+         * This method test mime type from string content
+         * because of bad contentType on GetFeatureInfo response (QGIS SERVER)
+         * @param  {variant} content
+         * @param  {string} contentType (from GetFeatureInfo response header)
+         */
+        var _checkMimeType = function (content,contentType ) {
+            var mimeType = contentType.split(";")[0];
+            //Test string content to check if content is XML or HTML
+            if (typeof content === 'string') {
+                if (content.indexOf('<wfs:FeatureCollection') > 0 ) {
+                    mimeType = "application/vnd.ogc.gml";
+                } else if (content.indexOf('<div') >= 0 ) {
+                    mimeType = "text/html";
                 }
             }
+            return mimeType;
+        }
 
-            var requests = [];
-            var carrousel=false;
-            var callback = function (result) {
-                // debut modif CT 31/01/2020
-                //var pos = 0;
-                nbItemsSelectedLayer = 0;
-                // fin
-                // AJOUT CBR - calcul de l'ordre des résultats en fonction des couches de gauche
-                var orderedFeatures = [];
-                for (var j = 0; j < urls.length; j++) {
-                    var layerinfo = urls[j].layerinfos;
-                    orderedFeatures.push(featureInfoByLayer.find(obj => {return (obj.layerinfos.id === layerinfo.id && obj.layerinfos.url === layerinfo.url)}));
+        /**
+         * Order views layers according to map zindex order
+         * @param {Array} viewsLayers - contain each views and layers by view
+         * @returns array
+         */
+        var orderViewsLayersByMap = function (viewsLayers) {
+            var mapLayers = mviewer.getMap().getLayers().getArray();
+            mapLayers = mapLayers.map(l => l.getProperties().mviewerid).filter(l => l);
+
+            var mapLayersOrder = [];
+            viewsLayers.forEach(lv => {
+                //CBR : gestion du template allintabs (layers with a unique feature)
+                // contribution geobretagne #issue 633
+                //mapLayersOrder[mapLayers.indexOf(lv.layerid)] = lv;
+                
+                if (mapLayers.indexOf(lv.layerid) > -1){
+                    mapLayersOrder[mapLayers.indexOf(lv.layerid)] = lv;
+                } else {
+                    // When display is allInTabs all layers are virtually renamed (one fictive layer per feature)
+                    mapLayersOrder[lv.id] = lv;
                 }
-                featureInfoByLayer=[...orderedFeatures];
-                // FIN AJOUT CBR
-                $.each(featureInfoByLayer, function (index, response) {
-                    var layerinfos = response.layerinfos;
-                    var panel = layerinfos.infospanel;
-                    if (configuration.getConfiguration().mobile) {
-                        panel = 'modal-panel';
+                //FIN CBR : gestion du template allintabs (layers with a unique feature)
+            })
+            // CBR : tri selon la toc ou la légende
+            // contribution geobretagne #issue 644
+            //return mapLayersOrder.filter(f => f).reverse();
+            var infoLayers = mapLayersOrder.filter(f => f);
+            var orderedlayers = [];
+            if (configuration.getConfiguration().application.sortlayersinfopanel && configuration.getConfiguration().application.sortlayersinfopanel=='toc'){ //toc order
+                // les couches de la toc dans l'ordre 
+                for (var j = 0; j < infoLayers.length; j++) {// layers not shown in toc but queried first
+                    if (_tocsertedlayers.indexOf(infoLayers[j].initiallayerid ? infoLayers[j].initiallayerid:infoLayers[j].layerid) === -1){
+                        orderedlayers.push(infoLayers[j]);
                     }
-                    var contentType = response.contenttype;
-                    var layerResponse = response.response;
-                    var name = layerinfos.name;
-                    var theme = layerinfos.theme;
-                    var layerid = layerinfos.layerid;
-                    var theme_icon = layerinfos.icon;
-                    var infohighlight = layerinfos.infohighlight;
-                    // debut modif CT 03/02/2020
-                    var color_back = interfaceModifying.getColorBack(layerinfos.sld);
-                    // fin
-                    var id = views[panel].layers.length + 1;
-                    var manyfeatures = false;
-                    var html_result = [];
+                }
+                for (var i = 0; i < _tocsertedlayers.length; i++) {
+                    for (var j = 0; j < infoLayers.length; j++) {
+                        if ((infoLayers[j].initiallayerid ? infoLayers[j].initiallayerid:infoLayers[j].layerid) == _tocsertedlayers[i]){
+                            orderedlayers.push(infoLayers[j]);
+                        }
+                    }
+                }
+            } else { // ordered with legend (=map order)
+                orderedlayers = infoLayers.reverse();
+            }
+            return orderedlayers
+            // FIN CBR : tri selon la toc ou la légende
+        }
 
-                    var xml = null;
-                    var html = null;
+        /**
+         * Return infos according to map click event behavior.
+         * This callback is return when all request are resolved (like promiseAll behavior)
+         * @param {object} result
+         */
+        var callback = function (result) {
+            $.each(featureInfoByLayer, function (index, response) {
+                var layerinfos = response.layerinfos;
+                var panel = layerinfos.infospanel;
+                if (configuration.getConfiguration().mobile) {
+                    panel = 'modal-panel';
+                }
+                var contentType = response.contenttype;
+                var layerResponse = response.response;
+                var mimeType = _checkMimeType(layerResponse, contentType);
+                var name = layerinfos.name;
+                var theme = layerinfos.theme;
+                var layerid = layerinfos.layerid;
+                var theme_icon = layerinfos.icon;
+                var infohighlight = layerinfos.infohighlight;
+                var id = views[panel].layers.length + 1;
+                var manyfeatures = false;
+                var html_result = [];
 
-                    switch (contentType.split(";")[0]) {
-                        case "text/html":
-                            if ((typeof layerResponse === 'string')
-                                && (layerResponse.search('<!--nodatadetect--><!--nodatadetect-->')<0)
-                                && (layerResponse.search('<!--nodatadetect-->\n<!--nodatadetect-->')<0)) {
-                                html = layerResponse;
+                var xml = null;
+                var html = null;
+
+                switch (mimeType) {
+                    case "text/html":
+                        if ((typeof layerResponse === 'string')
+                            && (layerResponse.search('<!--nodatadetect--><!--nodatadetect-->')<0)
+                            && (layerResponse.search('<!--nodatadetect-->\n<!--nodatadetect-->')<0)) {
+                            html = layerResponse;
                             // no geometry in html
                             showPin = true;
-                            }
-                            break;
-                        case "application/vnd.ogc.gml":
-                            if ($.isXMLDoc(layerResponse)) {
-                                xml = layerResponse;
-                            } else {
-                                xml = $.parseXML(layerResponse);
-                            }
-                            break;
-                        case "application/vnd.esri.wms_raw_xml":
-                        case "application/vnd.esri.wms_featureinfo_xml":
-                            if ($.isXMLDoc(layerResponse)) {
-                                xml = layerResponse;
-                            } else {
-                                xml = $.parseXML(layerResponse);
-                            }
-                            break;
-                        default :
-                            mviewer.alert("Ce format de réponse : " + contentType +" n'est pas pris en charge", "alert-warning");
+                        }
+                        break;
+                    case "application/vnd.ogc.gml":
+                        if ($.isXMLDoc(layerResponse)) {
+                            xml = layerResponse;
+                        } else {
+                            xml = $.parseXML(layerResponse);
+                        }
+                        break;
+                    case "application/vnd.esri.wms_raw_xml":
+                    case "application/vnd.esri.wms_featureinfo_xml":
+                        if ($.isXMLDoc(layerResponse)) {
+                            xml = layerResponse;
+                        } else {
+                            xml = $.parseXML(layerResponse);
+                        }
+                        break;
+                    default :
+                        mviewer.alert("Ce format de réponse : " + contentType +" n'est pas pris en charge", "alert-warning");
+                }
+                if (html) {
+                    //test si présence d'une classe .feature eg template geoserver.
+                    //Chaque élément trouvé est une feature avec ses propriétés
+                    // Be carefull .carrousel renamed to mv-features
+                    var features = $(layerResponse).find(".mv-features li").addClass("item");
+                    if(features.length == 0){
+                        html_result.push('<li class="item active">'+layerResponse+'</li>');
                     }
-                    if (html) {
-                        //test si présence d'une classe .feature eg template geoserver.
-                        //Chaque élément trouvé est une feature avec ses propriétés
-                        // Be carefull .carrousel renamed to mv-features
-                        var features = $(layerResponse).find(".mv-features li").addClass("item");
-                        if(features.length == 0){
-                            html_result.push('<li class="item active">'+layerResponse+'</li>');
+                    else {
+                        $(features).each(function(i,feature) {
+                            html_result.push(feature);
+                        });
+                        html_result = _customizeHTML(html_result, features.length);
+                    }
+                } else {
+                    if (xml) {
+                        var getFeatureInfo = _parseWMSGetFeatureInfo(xml, layerid);
+                        if(!getFeatureInfo.hasGeometry || !getFeatureInfo.features.length || !infohighlight) {
+                            // no geometry could be found in gml
+                            showPin = true;
+                        } else {
+                            //Geometry is available
+                            _queriedFeatures.push.apply(_queriedFeatures, getFeatureInfo.features);
                         }
-                        else {
-                            $(features).each(function(i,feature) {
-                                html_result.push(feature);
-                            });
-                            html_result = _customizeHTML(html_result, features.length);
-                        }
-                    } else {
-                        if (xml) {
-                            var getFeatureInfo = _parseWMSGetFeatureInfo(xml, layerid);
-                            if(!getFeatureInfo.hasGeometry || !getFeatureInfo.features.length || !infohighlight) {
-                                showPin = true;
+                        var features = getFeatureInfo.features;
+                        if (features.length > 0) {
+                            
+                            //CBR : gestion du template allintabs (layers with a unique feature)
+                            // contribution geobretagne #issue 633
+                            /*
+                            if (layerinfos.template) {
+                                html_result.push(applyTemplate(features, layerinfos));
                             } else {
-                                // no geometry could be found in gml
-                                _queriedFeatures.push.apply(_queriedFeatures, getFeatureInfo.features);
-                                var features = getFeatureInfo.features;
-                                if (features.length > 0) {
-                                    // MODIF CBR pour gestion des multiples features
-                                    /*
+                                html_result.push(createContentHtml(features, layerinfos));
+                            }
+                            */
+                            if (_panelsTemplate[panel]=='allintabs') {
+                                features.forEach(function(feature, index) {
                                     if (layerinfos.template) {
-                                        html_result.push(applyTemplate(features, layerinfos));
+                                       html_result.push(applyTemplate([feature], layerinfos));
                                     } else {
-                                        html_result.push(createContentHtml(features, layerinfos));
+                                        html_result.push(createContentHtml([feature], layerinfos));
                                     }
-                                    */
-                                    var conf = configuration.getConfiguration();
-                                    // découper chaque feature en simulant une nouvelle couche
-                                    var uniqueFeature = [];
-                                    features.forEach(function(feature) {
-                                        var uniqueFeature = [];
-                                        uniqueFeature.push(feature);
-                                        if (layerinfos.template) {
-                                           html_result.push(applyTemplate(uniqueFeature.reverse(), layerinfos));
-                                        } else {
-                                            html_result.push(createContentHtml(uniqueFeature.reverse(), layerinfos));
-                                        }
-                                    });
-                                    showPin = true;
-                                    // FIN MODIF CBR
+                                    // push html_result into panel layers
+                                    
+                                });
+                            } else {
+                                 if (layerinfos.template) {
+                                    html_result.push(applyTemplate(features, layerinfos));
+                                } else {
+                                    html_result.push(createContentHtml(features, layerinfos));
                                 }
                             }
+                            //FIN CBR : gestion du template allintabs (layers with a unique feature)
                         }
                     }
-                    //If many results, append panels views
-                    if (html_result.length > 0) {
-                        // debut modif CT 31/01/2020
+                }
+                //If many results, append panels views
+                if (html_result.length > 0) {
+                    //Set view with layer info & html formated features
+                    //CBR : gestion du template allintabs (layers with a unique feature)
+                    // contribution geobretagne #issue 633
+                    /*
+                    views[panel].layers.push({
+                        "panel": panel,
+                        "id": id,
+                        "firstlayer": false,
+                        "manyfeatures": (features.length > 1),
+                        "nbfeatures": features.length,
+                        "name": name,
+                        "layerid": layerid,
+                        "theme_icon": theme_icon,
+                        "html": html_result.join(""),
+                        "pin": showPin
+                    });
+                    */
+                    if (_panelsTemplate[panel]=='allintabs') {
                         for (var i = 0; i < html_result.length; i++) {
-                            // debut modif CT 09/01/2020
-                             nbItemsSelectedLayer++;
-                            // fin
-                            pos++;
-                            if (i > 0) {
-                                id = id + 1;
-                            }
-                            //Set view with layer info & html formated features
                             views[panel].layers.push({
                                 "panel": panel,
-                                "id": id,
-                                "firstlayer": (id === 1),
-                                //"manyfeatures": (features.length > 1),
-                                //"nbfeatures": features.length,
+                                "id": views[panel].layers.length + 1,
+                                "firstlayer": false,
+                                "manyfeatures": false,
+                                "nbfeatures": 1,
                                 "name": name,
-                                "layerid": layerid,
+                                "layerid": layerid + '_' + i,
+                                "initiallayerid" : layerid,
                                 "theme_icon": theme_icon,
-                                "cat_color": color_back,
-                                "index": pos,
                                 "html": html_result[i],
-                        		"pin": showPin
+                                "pin": showPin
                             });
-
-                            if (pos > 1) {
-                                views[panel].multiple = true;
-                            } else {
-                                views[panel].multiple = false;
-                            }
                         }
-                        // fin
-
-                        //Set view with layer info & html formated features
-                        /*views[panel].layers.push({
+                    } else {
+                        views[panel].layers.push({
                             "panel": panel,
-                            "id": id,
+                            "id": views[panel].layers.length + 1,
                             "firstlayer": false,
                             "manyfeatures": (features.length > 1),
                             "nbfeatures": features.length,
                             "name": name,
                             "layerid": layerid,
                             "theme_icon": theme_icon,
-                        "html": html_result.join(""),
-                        "pin": showPin
-                    });*/
+                            "html": html_result.join(""),
+                            "pin": showPin
+                        });
                     }
-                });
+                    //FIN CBR : gestion du template allintabs (layers with a unique feature)
+                }
+            });
             var infoLayers = [];
             for (var panel in views) {
                 infoLayers = infoLayers.concat(views[panel].layers);
             }
             mviewer.setInfoLayers(infoLayers);
-            // debut modif CT 31/01/2020
-	          rmOptionsManager.setClickNbItems(pos, evt.coordinate);
-            // fin
 
-                $.each(views, function (panel, view) {
-                    if (views[panel].layers.length > 0){
-                        views[panel].layers[0].firstlayer=true;
-                        var template = "";
-                        if (configuration.getConfiguration().mobile) {
-                            template = Mustache.render(mviewer.templates.featureInfo.accordion, view);
-                        } else {
-                            template = Mustache.render(mviewer.templates.featureInfo[_panelsTemplate[panel]], view);
-                        }
-                        $("#"+panel+" .popup-content").append(template);
-                        //TODO reorder tabs like in theme panel
-
-                    var title = $("[href='#slide-"+panel+"-1']").closest("li").attr("title");
+            $.each(views, function (panel, view) {
+                if (view.layers.length > 0){
+                    view.layers = orderViewsLayersByMap(views[panel].layers);
+                    view.layers[0].firstlayer=true;
+                    var template = "";
+                    if (configuration.getConfiguration().mobile) {
+                        template = Mustache.render(mviewer.templates.featureInfo.accordion, view);
+                    } else {
+                        template = Mustache.render(mviewer.templates.featureInfo[_panelsTemplate[panel]], view);
+                    }
+                    $("#"+panel+" .popup-content").append(template);
+                    var title = $( `a[href*='slide-${panel}-']` ).closest("li").attr("title")
                     $("#"+panel+" .mv-header h5").text(title);
-
+                    // AJOUT CBR : Event sur info panel chargé
+                    // contribution geobretagne #issue 637
+                    const infoPanelReadyEvent = new CustomEvent('infopanel-ready', {
+                        detail: {
+                          panel: panel
+                        }
+                    });
+                    document.dispatchEvent(infoPanelReadyEvent);
+                    // FIN AJOUT CBR : Event sur info panel chargé
                     if (configuration.getConfiguration().mobile) {
                         $("#modal-panel").modal("show");
-                        $("#feature-info").tooltip("hide");
+                        if (_featureTooltip.getElement().children.length) {
+                            _featureTooltip.getElement().popover('hide')
+                        }
                     } else {
                         if (!$('#'+panel).hasClass("active")) {
                             $('#'+panel).toggleClass("active");
@@ -523,7 +579,7 @@ var info = (function () {
                             '<div class="loader">Loading...</div>',
                             '</div>'].join(""));
                     });
-                    $("#"+panel+" .popup-content img").click(function(){mviewer.popupPhoto($(this).attr("src"), $(this).parent().find(".text-credit").text())});
+                    $("#"+panel+" .popup-content img").click(function(){mviewer.popupPhoto($(this).attr("src"))});
                     $("#"+panel+" .popup-content img").on("vmouseover",function(){$(this).css('cursor', 'pointer');})
                         .attr("title","Cliquez pour agrandir cette image");
                     $(".popup-content .nav-tabs li>a").tooltip('destroy').tooltip({
@@ -533,22 +589,20 @@ var info = (function () {
                         placement: 'right',
                         html: true,
                         template: mviewer.templates.tooltip
-                   });
+                    });
                     // init sub selection
                     _firstlayerFeatures = _queriedFeatures.filter(feature => {
-                        return feature.get("mviewerid") == views[panel].layers[0].layerid;
-                    })
+                        return feature.get("mviewerid") == view.layers[0].layerid;
+                    });
                     // change feature of sub selection
-                   $('.carousel.slide').on('slide.bs.carousel', function (e) {
-                      $(e.currentTarget).find(".counter-slide").text($(e.relatedTarget).attr("data-counter"));
+                    $('.carousel.slide').on('slide.bs.carousel', function (e) {
+                        $(e.currentTarget).find(".counter-slide").text($(e.relatedTarget).attr("data-counter"));
                         var selectedFeature = _queriedFeatures.filter(feature => {
                             return feature.ol_uid == e.relatedTarget.id;
                         })
-                        // MODIF CBR
-                        /*
-                        mviewer.highlightSubFeature(selectedFeature[0]);
-                        */
-                        // FIN MODIF CBR
+                        if (!_queriedFeatures[0].get("features")) {
+                            mviewer.highlightSubFeature(selectedFeature[0]);
+                        }
                     });
                     // change layer of sub selection
                     if (configuration.getConfiguration().mobile) {
@@ -558,45 +612,36 @@ var info = (function () {
                     } else {
                         $('.nav-tabs li').on('click', function (e) {
                             changeSubFeatureLayer(e);
-                   });
+                        });
                     }
                 } else {
                     $('#'+panel).removeClass("active");
                 }
                 // highlight features and sub feature
-                // MODIF CBR
-                /*
-                mviewer.highlightFeatures(_queriedFeatures);
-                mviewer.highlightSubFeature(_firstlayerFeatures[0]);
-                */
-                // FIN MODIF CBR
+                if(_queriedFeatures[0] && _queriedFeatures[0].get("features")) {
+                    // cluster
+                    mviewer.highlightSubFeature(_queriedFeatures[0]);
+                } else {
+                    mviewer.highlightFeatures(_queriedFeatures);
+                    mviewer.highlightSubFeature(_firstlayerFeatures[0]);
+                }
                 // show pin as fallback if no geometry for wms layer
-                if (showPin || (!_queriedFeatures.length && !_firstlayerFeatures.length)) {
-                   mviewer.showLocation(_projection.getCode(), _clickCoordinates[0], _clickCoordinates[1]);
-
+                if (showPin || (!_queriedFeatures.length && !_firstlayerFeatures.length && !isClick)) {
+                    mviewer.showLocation(_projection.getCode(), _clickCoordinates[0], _clickCoordinates[1], !showPin ? search.options.banmarker : showPin);
                 } else {
                     $("#mv_marker").hide();
                 }
             });
             $('#loading-indicator').hide();
             search.clearSearchField();
-            // AJOUT CBR 22/04/2020
-            formatter.rmFormatTabs();
-            // FIN AJOUT CBR 22/04/2020
-
             _mvReady = true;
-
         };
 
         var changeSubFeatureLayer = function (e) {
             _firstlayerFeatures = _queriedFeatures.filter(feature => {
                 return feature.get("mviewerid") == e.currentTarget.dataset.layerid;
             })
-            // MODIF CBR
-            /*
             mviewer.highlightSubFeature(_firstlayerFeatures[0]);
-            */
-            // FIN MODIF CBR
         }
 
         var ajaxFunction = function () {
@@ -618,6 +663,7 @@ var info = (function () {
 
         // using $.when.apply() we can execute a function when all the requests
         // in the array have completed
+        // this is promiseAll equivalent
         $.when.apply(new ajaxFunction(), requests).done(function (result) {
             callback(result)
         });
@@ -634,21 +680,20 @@ var info = (function () {
             return;
         }
         if (!_featureTooltip) {
-            _featureTooltip = $('#feature-info');
-            _featureTooltip.tooltip({
-                animation: false,
-                trigger: 'manual',
-                container: 'body',
-                html: true,
-                template: mviewer.templates.tooltip
+            _featureTooltip = new ol.Overlay({
+                element: document.getElementById('feature-info'),
+                offset: [5, -10]
             });
+            mviewer.getMap().addOverlay(_featureTooltip);
         }
-        var pixel = _map.getEventPixel(evt.originalEvent);
-        var _o = mviewer.getLayers();
+        _featureTooltip.setPosition(evt.coordinate);
+        const popup = _featureTooltip.getElement();
+
+        var pixel = mviewer.getMap().getEventPixel(evt.originalEvent);
         // default tooltip state or reset tooltip
-        _featureTooltip.tooltip('hide');
+        $(popup).popover('destroy');
         $("#map").css("cursor", "");
-        var feature = _map.forEachFeatureAtPixel(pixel, function (feature, layer) {
+        var feature = mviewer.getMap().forEachFeatureAtPixel(pixel, function (feature, layer) {
             if (!layer
                 || layer.get('mviewerid') === 'featureoverlay'
                 || layer.get('mviewerid') === 'selectoverlay'
@@ -686,6 +731,11 @@ var info = (function () {
         });
         //hack to check if feature is yet overlayed
         var newFeature = false;
+        if(!feature) {
+            $("#map").css("cursor", "");
+            _sourceOverlay.clear();
+            return;
+        }
         if (feature && _sourceOverlay.getFeatures().length > 0) {
             if (feature.getProperties() === _sourceOverlay.getFeatures()[0].getProperties()) {
                 newFeature = false;
@@ -718,19 +768,19 @@ var info = (function () {
                     feature.getProperties()["title"] || feature.getProperties()["nom"] ||
                     feature.getProperties()[l.fields[0]]);
             }
-
-            _featureTooltip.css({
-                left: (parseInt($("#map").css('margin-left'))+ pixel[0]) + 'px',
-                top: (pixel[1] - 15) + 'px'
+            $(popup).popover({
+                container: popup,
+                placement: 'top',
+                animation: false,
+                html: true,
+                content: title,
+                template: mviewer.templates.tooltip
             });
-            _featureTooltip.tooltip('hide')
-                .attr('data-original-title', title)
-                .tooltip('fixTitle')
-                .tooltip('show');
+            $(popup).popover('show');
         }
     };
 
-     /**
+    /**
      * Private Method: _parseWMSGetFeatureInfo used to parse GML response
      from wms servers. Tries to use bbox as geometry if no geometry returned
      * @ param xml {Geography Markup Language}
@@ -750,7 +800,7 @@ var info = (function () {
                         var center = ol.extent.getCenter(properties[p]);
                         feature.setGeometry(new ol.geom.Point(center));
                         hasGeometry = true;
-            }
+                    }
                 }
             }
         })
@@ -758,7 +808,7 @@ var info = (function () {
             'features': features,
             'hasGeometry': hasGeometry
         };
-                    }
+    }
 
     /**
      * Private Method: createContentHtml
@@ -820,9 +870,17 @@ var info = (function () {
 
     var applyTemplate = function (olfeatures, olayer) {
         var tpl = olayer.template;
+        var _json = function (str) {
+            var result = null;
+            try {
+                result = JSON.parse(str);
+            } catch (e) {
+                result = str;
+            }
+            return result;
+        };
         var obj = {features: []};
         var activeAttributeValue = false;
-        var geojson = new ol.format.GeoJSON();
         // if attributeControl is used for this layer, get the active attribute value and
         // set this value as property like 'value= true'. This allows use this value in Mustache template
         if (olayer.attributefilter && olayer.layer.getSource().getParams()['CQL_FILTER']) {
@@ -830,31 +888,42 @@ var info = (function () {
             activeAttributeValue = activeFilter.split(olayer.attributeoperator).map(e=>e.replace(/[\' ]/g, ''))[1];
         }
         olfeatures.forEach(function(feature){
+            olayer.jsonfields.forEach(function (fld) {
+                if (feature.get(fld)) {
+                    var json = _json(feature.get(fld));
+                    // convert String value to JSON value
+                    // Great for use in Mustache template
+                    feature.set(fld,json);
+                }
+            });
             if (activeAttributeValue) {
                 feature.set(activeAttributeValue, true);
             }
-            // add a key_value array with all the fields, allowing to iterate through all fields in a mustache templaye
+            var geometryName = feature.getGeometryName();
+            var excludedPropNames = ['fields_kv', 'serialized', 'feature_ol_uid', 'mviewerid', geometryName];
+            var extractFeaturePropertiesFn = function (properties) {
+                return Object.keys(properties).reduce((filteredProps, propertyName) => {
+                    var value = properties[propertyName];
+                    if (!excludedPropNames.includes(propertyName) && typeof value !== 'object') {
+                        filteredProps[propertyName] = value;
+                    }
+                    return filteredProps;
+                }, {});
+            }
+
+            // add a key_value array with all the fields, allowing to iterate through all fields in a mustache template
             var fields_kv = function () {
-              fields_kv = [];
-              keys = Object.keys(this);
-              for (i = 0 ; i < keys.length ; i++ ) {
-                if (keys[i] == "fields_kv" || keys[i] == "serialized"
-                    || keys[i] === "feature_ol_uid" || keys[i] === "mviewerid" || typeof this[keys[i]] === "object") {
-                  continue;
-                }
-                field_kv = {
-                  'key': keys[i],
-                  'value': this[keys[i]]
-                }
-                fields_kv.push(field_kv);
-              }
-              return fields_kv;
+                var properties = extractFeaturePropertiesFn(this);
+                return Object.entries(properties).map(([key, value]) => {
+                    return {key, value};
+                })
             }
             feature.setProperties({'fields_kv': fields_kv});
             // add a serialized version of the object so it can easily be passed through HTML GET request
-            // you can deserialize it with `JSON.parse(data)` when data is the serialized data
+            // you can deserialize it with `JSON.parse(decodeURIComponent(feature.getProperties().serialized()))`
+            // when data is the serialized data
             var serialized = function () {
-              return encodeURIComponent(geojson.writeFeature(feature));
+                return encodeURIComponent(JSON.stringify(extractFeaturePropertiesFn(feature.getProperties())));
             }
             feature.setProperties({'serialized': serialized})
             // attach ol_uid to identify feature in DOM (not all features have a feature id as property)
@@ -914,6 +983,11 @@ var info = (function () {
         _projection = mviewer.getProjection();
         _overLayers = mviewer.getLayers();
         _captureCoordinatesOnClick = configuration.getCaptureCoordinates();
+        //CBR : tri selon la toc ou la légende
+        _tocsertedlayers = $(".mv-nav-item").map(function() {
+                return $(this).attr('data-layerid');
+            }).get();
+        //fin CBR : tri selon la toc ou la légende
         if (configuration.getConfiguration().application.templaterightinfopanel) {
             _panelsTemplate["right-panel"] = configuration.getConfiguration().application.templaterightinfopanel;
             _panelsTemplate["modal-panel"] = configuration.getConfiguration().application.templaterightinfopanel;
@@ -923,27 +997,11 @@ var info = (function () {
         }
         _sourceOverlay = mviewer.getSourceOverlay();
         $.each(_overLayers, function (i, layer) {
-            if (layer.queryable) {
+            // CBR : a non shownintoc layer could be queried
+            //if (layer.queryable && layer.showintoc) {
+            if (layer.queryable ) {
+            // fin CBR : a non shownintoc layer could be queried
                 _addQueryableLayer(layer);
-            }
-        });
-        // AJOUT CBR - ordre des couches qui correspond à la liste de gauche
-        _queryableLayers.reverse();
-        // FIN AJOUT
-        var noTooltipZone = [
-            "#layers-container-box",
-            "#sidebar-wrapper",
-            "#bottom-panel",
-            "#right-panel",
-            "#mv-navbar",
-            "#zoomtoolbar",
-            "#toolstoolbar",
-            "#backgroundlayerstoolbar-default",
-            "#backgroundlayerstoolbar-gallery"
-        ];
-        $(noTooltipZone.join(", ")).on('mouseover', function() {
-            if (_featureTooltip) {
-                $('#feature-info').tooltip('hide');
             }
         });
     };
@@ -992,6 +1050,16 @@ var info = (function () {
             enable();
         }
     };
+    
+    // AJOUT CBR pour disposer des features retenues par clic
+     /**
+     * Public Method: _getQueriedFeatures
+     *
+     */
+    var _getQueriedFeatures = function() {
+        return _queriedFeatures;
+    }
+    // FIN AJOUT CBR pour disposer des features retenues par clic
 
      /**
      * Public Method: toggleTooltipLayer
@@ -1035,7 +1103,8 @@ var info = (function () {
         queryMap: _queryMap,
         formatHTMLContent: createContentHtml,
         templateHTMLContent: applyTemplate,
-        addQueryableLayer: _addQueryableLayer
+        addQueryableLayer: _addQueryableLayer,
+        getQueriedFeatures: _getQueriedFeatures,
     };
 
 })();

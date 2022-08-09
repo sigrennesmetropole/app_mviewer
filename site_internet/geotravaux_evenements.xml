@@ -13,7 +13,10 @@
         coordinates="false"
         printMap="true"
         togglealllayersfromtheme="false"
-        showClickNbItems="false" />
+        showClickNbItems="false" 
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
+        />
     <mapoptions maxzoom="20" minzoom="13" projection="EPSG:3857" center="-186098.36482879001,6125889.9088213602" zoom="11" />
 
     <baselayers style="default">

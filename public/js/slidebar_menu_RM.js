@@ -1,3 +1,7 @@
+/**
+* Surcharge de la méthode initMenu de la librairie lib\simple-slidebar
+**/
+
 $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");

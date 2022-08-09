@@ -10,6 +10,8 @@
         style="apps/site_internet/css/site_internet_gris.css"
         measuretools="false"
         togglealllayersfromtheme="false"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
          />
 
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-185701.6581470431,6125244.605869446" zoom="13" />
