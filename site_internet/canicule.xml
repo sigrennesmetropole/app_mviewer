@@ -64,7 +64,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
-	       <layer
+        <!--    <layer
                 id="gev_font"
                 name="Fontaines d'eau potable"
                 type="wms"
@@ -79,6 +79,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/global.fontaines_djb.mst"></template>
             </layer>
+        -->
         </theme>
         <theme id="theme-20180625145800" name="Espaces de rafraichissement" collapsed="true" icon="fas fa-tint">
           <layer
