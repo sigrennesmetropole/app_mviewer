@@ -10,7 +10,10 @@
         geoloc="true"
         style="apps/site_internet/css/site_internet_gris.css"
         measuretools="false"
-        togglealllayersfromtheme="false" />
+        togglealllayersfromtheme="false"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
+        />
 
     <mapoptions maxzoom="20" minzoom="10" projection="EPSG:3857" center="-186098.36,6128582.53" zoom="11" />
 

@@ -15,16 +15,6 @@ var rmOptionsManager = (function () {
 
     var layerDisplayOpacity = [];
 
-    /**
-
-     * Property: _clickNbItems
-
-     * @type {integer}
-
-     * Used to show number of features on click
-
-     */
-    var _clickNbItems = 0;
 
 
     var init = function () {
@@ -41,15 +31,11 @@ var rmOptionsManager = (function () {
 
         // layers configuration
         for (const layer in layers) {
-
             configurationTheme.forEach(function (theme) {
-
                 if (typeof theme.layer !== 'undefined') {
-
                     theme.layer.forEach(function (confLayer) {
-
                         if (layers[layer].layername === confLayer.id) {
-
+                            
                             if (confLayer.tooltipWMS === "true") {
                                 layers[layer].tooltipWMS = true;
                                 layers[layer].tooltipWMSContent = confLayer.tooltipWMSContent;
@@ -60,79 +46,46 @@ var rmOptionsManager = (function () {
 
                             if (confLayer.disableOpacity === "true") {
                                 interfaceModifying.disableLayerOpacity(confLayer.id);
-
                                 $(document).on('click', function () {
                                     interfaceModifying.disableLayerOpacity(confLayer.id);
                                 });
-
                             }
 
                             if (typeof confLayer.nameIcon !== 'undefined') {
                                 if (confLayer.nameIcon.trim() !== '' ) {
                                     interfaceModifying.addIconToLayerName(layers[layer].layername, confLayer.nameIcon);
                                 }
-
                             }
-
-                            if (confLayer.hideLayerName == 'true') {
-                                interfaceModifying.hideLayerName(layers[layer].layerid);
-                            }
-
-
+    
                             // AJOUT - Rechargement des données de la couche au click sur la carte
                             if (confLayer.refreshOnClick === 'true') {
                                 interfaceModifying.refreshMap(layers[layer].id);
                             }
                             // FIN AJOUT
-
                         }
-
                     });
-
                 }
-
             });
-
          }
 
          for (const layer in layers) {
-
             if (layers[layer].tooltipWMS) {
              tooltipWMS.activatetooltipWMS(layers[layer].layername, layers[layer].tooltipWMSContent);
             }
-
          }
 
-
-         // MODIF CBR
-         //if (applicationOptions.refreshInfoPanel === 'true') {
-            interfaceModifying.refreshInfoPanel();
-         //}
-         // FIN MODIF CBR
+        interfaceModifying.refreshInfoPanel();
 
     };
 
-
-    var getLayerCount = function () {
-
-        return configuration.getConfiguration().application.layerCount;
-
-    };
 
     var getInfoPaneles = function () {
-
         var infoPanels = [];
-
         layers = mviewer.getLayers();
-
         for (const layer in layers) {
-
             configurationTheme.forEach(function (theme) {
-
                 if (typeof theme.layer !== 'undefined') {
-
                     theme.layer.forEach(function (confLayer) {
-
                         if (layers[layer].layername === confLayer.id) {
                             var addInfoPanel = true;
                             for (var i =0; i < infoPanels.length; i++) {
@@ -140,22 +93,15 @@ var rmOptionsManager = (function () {
                                     addInfoPanel = false;
                                 }
                             }
-
                             if (addInfoPanel) {
                                 infoPanels.push(layers[layer].infospanel);
                             }
-
                         }
-
                     });
-
                 }
-
             });
-
          }
         return infoPanels;
-
     };
 
     /**
@@ -199,34 +145,15 @@ var rmOptionsManager = (function () {
 
     };
 
-     /**
-     * Public Method: getClickNbItems
-     */
-    var getClickNbItems = function () {
-
-        return _clickNbItems;
-
-     };
-
-      /**
-     * Public Method: getClickNbItems
-     */
-    var setClickNbItems = function (value, position) {
-        _clickNbItems = value;
-        // déclenchement d'un évenement pour gérer une simulation de clic (la fonction mviewer.zoomToLocation ne génère pas d'événement de type singleclick)
-        let event = new CustomEvent('clickedNbFeaturesEvt', { detail: {'nbfeatures': value, 'position': position}});
-        document.dispatchEvent(event);
-     };
 
     return {
         init: init,
-        getLayerCount: getLayerCount,
         getInfoPaneles: getInfoPaneles,
         getApplicationConfiguration: getApplicationConfiguration,
         getThemesConfiguration: _getThemesConfiguration,
         getThemeConfiguration: getThemeConfiguration,
-        getClickNbItems: getClickNbItems,
-        setClickNbItems: setClickNbItems
     };
 
 })();
+
+rmOptionsManager.init();

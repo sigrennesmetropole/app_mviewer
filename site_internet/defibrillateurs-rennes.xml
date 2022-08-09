@@ -9,7 +9,10 @@
         exportpng="false"
         style="apps/site_internet/css/site_internet_gris.css"
         measuretools="false"
-        togglealllayersfromtheme="false" />
+        togglealllayersfromtheme="false" 
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
+        />
 
     <mapoptions maxzoom="22" minzoom="11" projection="EPSG:3857" center="-185600.24433942206,6125077.984905125" zoom="14" />
 

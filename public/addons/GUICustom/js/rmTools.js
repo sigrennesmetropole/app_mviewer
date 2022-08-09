@@ -36,6 +36,9 @@ var rmTools = (function() {
         return layersInformations;
     };
 
+    /*
+    * Opens a customized modal window with a specific message
+    */
     var displayMessageModal = function (message) {
 
         $('body').append('<div id="messageModalContainer"></div>');
@@ -58,6 +61,7 @@ var rmTools = (function() {
          });
 
     };
+
 
     var getVisibleLayers = function () {
 

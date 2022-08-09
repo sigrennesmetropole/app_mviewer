@@ -16,7 +16,7 @@ var formatter = (function () {
 
     /****** Fonctions utiles *******/
 
-    // TODO : à vérifier / à déplacer dans RMUtils.js / à commenter
+    // TODO : à vérifier / à déplacer dans RMTools.js / à commenter
     var getDateFromFrench = function getDateFromFrench(date) {
         var val = date.split("/");
         return new Date(val[2], val[1]-1 , val[0]);
@@ -664,3 +664,7 @@ var formatter = (function () {
         rmFormatTabs: _rmFormatTabs
     };
 })();
+
+
+document.addEventListener('infopanel-ready', (e) => formatter.rmFormatTabs());
+

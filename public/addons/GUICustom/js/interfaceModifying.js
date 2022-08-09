@@ -52,7 +52,7 @@ var interfaceModifying = (function () {
     /**
      * set tab position to first in description form panel
      */
-    var setTabFirstPosition = function () {
+/*    var setTabFirstPosition = function () {
         if (typeof $('#'+ panelFicheInfo +'-selector').find('.nav-tabs')[0] !== 'undefined') {
             var panelFicheInfo = '';
             var layerId = '';
@@ -101,13 +101,16 @@ var interfaceModifying = (function () {
             }
         }
     };
-    var hideLayerName = function (layerId) {
+*/    
+    //CBR : option hidelayername remplacé par option showintoc du core
+    /*var hideLayerName = function (layerId) {
         for (var i = 0; i < $('.mv-nav-item').length; i++) {
             if ( $('.mv-nav-item')[i].dataset.layerid === layerId ) {
                 $('.mv-nav-item')[i].hidden = true;
             }
         }
-    };
+    };*/
+    //fin CBR : option hidelayername remplacé par option showintoc du core
     var refreshInfoPanel = function() {
         var event = null;
         mviewer.getMap().on('singleclick', function (evt) {
@@ -119,14 +122,10 @@ var interfaceModifying = (function () {
 
             var activeRefresh = false;
             infoPanels.forEach(function (panelId) {
-                // MODIF CBR
-                //if ( $('#' + panelId).is(':visible') ) {
                 if ( $('#' + panelId).hasClass('active') ) {
-                // FIN MODIF CBR
                     activeRefresh = true;
                 }
             });
-			//if (activeRefresh && event !== null) {
             if (activeRefresh) {
 				if (event == null) {
 					event = {
@@ -135,11 +134,12 @@ var interfaceModifying = (function () {
                     };
 				}
                 info.queryMap(event);
+                refreshResultsNumber();
             }
          });
     };
 
-    var removeSameTabs = function () {
+/*    var removeSameTabs = function () {
 		var navTabsChildren = $('.nav-tabs')[0].children;
         var ficheInfoTexte = [];
 		for (var k = 0; k < navTabsChildren.length; k++) {
@@ -160,7 +160,8 @@ var interfaceModifying = (function () {
             $('.nav-tabs').addClass('multiple');
         }
     };
-    var getColorBack = function (sld) {
+*/
+ /*   var getColorBack = function (sld) {
         var color = 'not-def';
         if (sld) {
             if (sld.indexOf('bleu') != -1) {
@@ -179,6 +180,8 @@ var interfaceModifying = (function () {
         }
         return color;
     };
+    */
+    /*
     var queryMapModifications = function (html_result, layerid, layerCount, nbItemsSelectedLayer, pos, id, views, panel, name, layerid,
                                             theme_icon, color_back) {
         for (var i = 0; i < html_result.length; i++) {
@@ -215,6 +218,7 @@ var interfaceModifying = (function () {
             }
         }
     };
+    */
     var refreshMap = function (layerId) {
         $(document).on('click', '#map', function () {
             mviewer.getLayer(layerId).layer.getSource().updateParams({"time": Date.now()});
@@ -224,12 +228,12 @@ var interfaceModifying = (function () {
      return {
         disableLayerOpacity: disableLayerOpacity,
         addIconToLayerName: addIconToLayerName,
-        setTabFirstPosition: setTabFirstPosition,
+//        setTabFirstPosition: setTabFirstPosition,
         refreshInfoPanel: refreshInfoPanel,
-        hideLayerName: hideLayerName,
-        removeSameTabs: removeSameTabs,
-        getColorBack: getColorBack,
-        queryMapModifications: queryMapModifications,
+        //hideLayerName: hideLayerName,
+//        removeSameTabs: removeSameTabs,
+        //getColorBack: getColorBack,
+//        queryMapModifications: queryMapModifications,
         refreshMap: refreshMap
      };
 })();

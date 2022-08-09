@@ -9,7 +9,7 @@
 /*  Couleurs des titres des entités dans la fiche d'info  */
 .transportDeplacement { color: #1d94d2!important; }
 .cadreDeVie { color: #aecb1f!important; }
-.déchets { color: #8d4915!important; }
+.decheterie-title { color: #8d4915!important; }
 .educationEnfance { color :#662483!important; }
 .socialSanté { color: #d3131f!important; }
 .servicesPublics { color: #98231d!important; }
@@ -31,6 +31,7 @@
 .art-ville-title {color: #e6007e!important;}
 .immobilier-title {color: #dc4a18!important;}
 .stationnement_reserve-title {color:#1d94d2!important;}
+.commune-title { color : #000000!important; }
 
 
 /*  Ne pas afficher les éléments de cette classe  */

@@ -9,7 +9,10 @@
         exportpng="false"
         style="apps/site_internet/css/site_internet_gris.css"
         measuretools="false"
-        togglealllayersfromtheme="false" />
+        togglealllayersfromtheme="false" 
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
+        />
 
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-189920.7,6126711.35" zoom="18" />
 
@@ -33,7 +36,7 @@
                 legendurl="apps/balades/legend/default_line_legend.svg"
                 visible="true"
                 tooltip="true"
-                tooltipenabled="true"
+                tooltipenabled="false"
                 tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{TITRE}}&lt;/span&gt;"
                 metadata="undefined"
                 queryable="true"
@@ -48,9 +51,9 @@
                 url="apps/balades/customlayer/poi_arbres_villejean.js"
                 legendurl="apps/balades/legend/default_point_marker.svg"
                 visible="true"
-                tooltip="false"
-                tooltipenabled="false"
-                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{label}}&lt;/span&gt;"
+                tooltip="true"
+                tooltipenabled="true"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{TITRE}}&lt;/span&gt;"
                 metadata="undefined"
                 queryable="true"
                 featurecount="3"
