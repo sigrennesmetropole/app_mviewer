@@ -76,7 +76,8 @@
                 featurecount="6"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/global.fontaines_djb.mst"></template>
-            </layer> -->
+            </layer>
+        -->
         </theme>
         <theme id="theme-20180625145800" name="Espaces de rafraichissement" collapsed="true" icon="fas fa-tint">
           <layer
