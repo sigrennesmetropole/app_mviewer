@@ -355,11 +355,11 @@ mviewer.customLayers.piscinesRM= (function() {
                 doc.getElementsByTagName("svg")[0].setAttribute('height', iconheight);
                 doc.getElementsByTagName("svg")[0].setAttribute('x', '0px');
                 doc.getElementsByTagName("svg")[0].setAttribute('y', '0px');
-                console.log("SVG =" +doc.getElementsByTagName("svg")[0].outerHTML);
+                //console.log("SVG =" +doc.getElementsByTagName("svg")[0].outerHTML);
                 // on applique le svg au style
                 stylesrc = 'data:image/svg+xml;utf8, ' + encodeURIComponent(doc.getElementsByTagName("svg")[0].outerHTML);
                 
-                console.log("SRC = "+ stylesrc);
+                //console.log("SRC = "+ stylesrc);
             }
         };
         xhr.open('get',svgIcon); 
@@ -376,7 +376,8 @@ mviewer.customLayers.piscinesRM= (function() {
 
 
 
-    layer.getSource().once('change',() =>{
+    //layer.getSource().once('change',() =>{
+    layer.once('prerender',() =>{
         calculateStyleIcon();
         getSiteData();
     });

@@ -9,7 +9,10 @@
         exportpng="false"
         style="apps/story/css/projets_urba.css"
         measuretools="false"
-        togglealllayersfromtheme="false" />
+        togglealllayersfromtheme="false"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
+        />
 
     <mapoptions maxzoom="20" minzoom="10" projection="EPSG:3857" center="-183500,6126800" zoom="12" />
 
@@ -54,6 +57,7 @@
                 opacity="0.80"
                 visible="true"
                 queryable="true"
+                tabcolor="#e6334c"
                 featurecount="3"
                 infopanel="right-panel">
                 <template url="apps/story/templates/communes.mst"></template>
@@ -73,6 +77,7 @@
                 tooltipenabled="true"
                 tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{nom_ope}}&lt;/span&gt;"
                 queryable="true"
+                tabcolor="#e6334c"
                 featurecount="3"
                 infopanel="right-panel">
                 <template url="apps/story/templates/projets_urba.mst"></template>

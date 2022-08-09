@@ -10,6 +10,8 @@
         style="apps/site_internet/css/site_internet_gris.css"
         measuretools="false"
         togglealllayersfromtheme="false"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
          />
 
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-188244.25943429657,6125209.881604007" zoom="12" />
@@ -38,11 +40,11 @@
                 metadata="undefined"
                 metadata-csw=""
                 queryable="true"
-                featurecount="10"
+                featurecount="100"
                 infopanel="right-panel">
             </layer>
         </theme>
-        <theme id="capteurs_rennes" name="Capteurs permanents" collapsed="true" icon="fas fa-thermometer">
+        <!--<theme id="capteurs_rennes" name="Capteurs permanents" collapsed="true" icon="fas fa-thermometer">
             <layer
                 id="capteurs_exem"
                 name="Capteurs permanents"
@@ -59,5 +61,6 @@
                 infopanel="right-panel">
             </layer>
         </theme>
+        -->
     </themes>
 </config>

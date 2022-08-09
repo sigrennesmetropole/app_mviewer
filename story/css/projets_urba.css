@@ -336,3 +336,18 @@ a[href$=".pdf"]:hover,a[href^="http"]:hover{
 .car-text-credit{
 text-align: center!important;
 }
+
+.popup-content .nav-tabs > li.active > a {
+    background-color: var(--col_rennes2030)!important;
+}
+
+.popup-content .nav-tabs > li.active {
+    border-left-width: 4px!important;
+    border-left-color: #000000!important;
+    padding-bottom: 0px!important;
+}
+
+.popup-content .nav-tabs > li > a > .fa {
+    color: var(--col_rennes2030)!important;
+    opacity: 0.55!important;
+}

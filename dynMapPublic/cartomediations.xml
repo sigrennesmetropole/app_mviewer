@@ -16,11 +16,16 @@
         togglealllayersfromtheme="false"
         printMap="false"
         tutorial="true"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
         >
 
     </application>
     <mapoptions maxzoom="22" minzoom="11" projection="EPSG:3857" center="-185600.24433942206,6125077.984905125" zoom="13" />
 
+    <extensions>
+      <extension type="component" id="GUICustom" path="apps/public/addons"/>
+    </extensions>
 
     <baselayers style="default">
         <baselayer visible="true" id="pvcisimplegris" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville simple gris" type="WMTS"

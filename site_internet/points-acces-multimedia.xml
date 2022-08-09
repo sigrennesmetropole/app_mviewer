@@ -10,6 +10,8 @@
         style="apps/site_internet/css/site_internet_gris.css"
         measuretools="false"
         togglealllayersfromtheme="false"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
          />
 
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-190690.24433942206,6128725.984905125" zoom="11" />
@@ -24,7 +26,7 @@
     </extensions>
 
     <themes mini="true">
-        <theme id="theme-20180827150815" name="Points d'accès multimédia" collapsed="true" icon="fas fa-desktop">
+        <theme id="theme-20180827150815" name="Espaces numériques" collapsed="true" icon="fas fa-desktop">
             <layer
                 id="v_sitorg_organisme"
                 name="Espaces numériques"
@@ -38,6 +40,7 @@
                 queryable="true"
                 featurecount="3"
                 filter="etat_organisme = 'actif' AND code_nomenclature_principale = '7.5.3'"
+                infohighlight ="true"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
@@ -56,6 +59,7 @@
                 queryable="true"
                 featurecount="3"
                 filter="etat_organisme = 'actif' AND code_nomenclature_principale = '7.5.1'"
+                infohighlight ="true"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
