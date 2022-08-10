@@ -503,6 +503,7 @@ var configuration = (function () {
                     var mvid;
                     var oLayer = {};
                     // AJOUT CBR : initialisation du oLayer avec toutes les propriétés du layer => utile pour besoins de nouvelles propriétés d'extensions par exemple
+                    // contribution geobretagne #issue 639
                     Object.assign(oLayer, layer);
                     // FIN AJOUT CBR
                     var clean_ident = layerId.replace(/:|,| |\./g,'');
