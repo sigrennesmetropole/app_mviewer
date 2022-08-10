@@ -33,6 +33,7 @@
                 id="dp"
                 name="Droit de préemption"
                 type="wms"
+                tiled="true"
                 url="https://public.sig.rennesmetropole.fr/geoserver/urba_fonc/ows"
                 visible="true"
                 opacity="0.6"
