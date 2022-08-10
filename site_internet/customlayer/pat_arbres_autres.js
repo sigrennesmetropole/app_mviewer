@@ -1,4 +1,3 @@
-
 mviewer.customLayers.arbresautres= (function() {
     let daterefmin = new Date().getFullYear()-50;
     let daterefmax = new Date().getFullYear();
@@ -51,5 +50,4 @@ mviewer.customLayers.arbresautres= (function() {
         layer: dataLayer,
     }
 }());
-
 
