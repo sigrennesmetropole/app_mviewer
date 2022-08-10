@@ -984,6 +984,7 @@ var info = (function () {
         _overLayers = mviewer.getLayers();
         _captureCoordinatesOnClick = configuration.getCaptureCoordinates();
         //CBR : tri selon la toc ou la légende
+        // contribution geobretagne #issue 644
         _tocsertedlayers = $(".mv-nav-item").map(function() {
                 return $(this).attr('data-layerid');
             }).get();
@@ -998,6 +999,7 @@ var info = (function () {
         _sourceOverlay = mviewer.getSourceOverlay();
         $.each(_overLayers, function (i, layer) {
             // CBR : a non shownintoc layer could be queried
+            // contribution geobretagne #issue 641
             //if (layer.queryable && layer.showintoc) {
             if (layer.queryable ) {
             // fin CBR : a non shownintoc layer could be queried
@@ -1052,6 +1054,7 @@ var info = (function () {
     };
     
     // AJOUT CBR pour disposer des features retenues par clic
+    // contribution geobretagne #issue 635
      /**
      * Public Method: _getQueriedFeatures
      *

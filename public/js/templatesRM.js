@@ -307,7 +307,8 @@ mviewer.templates.featureInfo.accordion = [
         '</div>',
     '</div>'
 ].join("");
-
+// CBR : gestion du template allintabs (layers with a unique feature)
+// contribution geobretagne #issue 633
 mviewer.templates.featureInfo.allintabs = [
     '<div id="{{panel}}-selector">',
         '<div class="row">',
@@ -339,3 +340,4 @@ mviewer.templates.featureInfo.allintabs = [
         '</div>',
     '</div>'
 ].join("");
+// FIN CBR : gestion du template allintabs (layers with a unique feature)
