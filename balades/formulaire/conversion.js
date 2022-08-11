@@ -1,5 +1,5 @@
 
-document.getElementById('geojson').addEventListener('change', (event) => {
+document.getElementById('geojson').addEventListener('change', () => {
     const [file] = document.querySelector('#geojson').files;
     const reader = new FileReader();
     if (file) {
@@ -32,9 +32,13 @@ function conversionJSON(objetTexte){
     objetJSON.features.forEach(feature => {
         if (feature.geometry.type == "Point"){
             feature.geometry.coordinates = convertCoordinates4326to3857(feature.geometry.coordinates[0], feature.geometry.coordinates[1]);
+            feature.properties.id = parseInt(feature.properties.id);
+            feature.properties.rang = parseInt(feature.properties.rang);
+            feature.properties.idbalade = parseInt(feature.properties.idbalade);
             objetConvertPoints.features.push(feature);
         } else if (feature.geometry.type == "LineString"){
             feature.geometry.coordinates = feature.geometry.coordinates.map(coordinate => convertCoordinates4326to3857(coordinate[0], coordinate[1]));
+            feature.properties.id = parseInt(feature.properties.id);
             objetConvertLignes.features.push(feature);
         }
             
@@ -48,4 +52,4 @@ function convertCoordinates4326to3857(lon, lat) {
     var y = Math.log(Math.tan(((90 + lat) * Math.PI) / 360)) / (Math.PI / 180);
     y = (y * 20037508.34) / 180;
     return [x, y];
-  }
+}

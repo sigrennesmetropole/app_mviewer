@@ -49,6 +49,36 @@
     {
       "type": "Feature",
       "properties": {
+        "description": "description ;)",
+        "id": "2",
+        "couleur": "#8e44ad",
+        "label": "Deuxieme balade"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -1.66872,
+            48.115311
+          ],
+          [
+            -1.668119,
+            48.108692
+          ],
+          [
+            -1.652927,
+            48.109208
+          ],
+          [
+            -1.654387,
+            48.115139
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": "3",
         "idbalade": "1",
         "label": "troisième point",
@@ -91,6 +121,40 @@
         "coordinates": [
           -1.680286,
           48.114652
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "4",
+        "idbalade": "2",
+        "label": "1er point",
+        "rang": "1",
+        "description": "description"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.668978,
+          48.115368
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "5",
+        "idbalade": "2",
+        "label": "dernier point",
+        "rang": "2",
+        "description": "sfssfsf"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.654773,
+          48.115168
         ]
       }
     }
