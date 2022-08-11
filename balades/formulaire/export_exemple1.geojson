@@ -1,0 +1,126 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1",
+        "couleur": "#3498db",
+        "label": "Balade d'exemple"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -1.680114,
+            48.114652
+          ],
+          [
+            -1.679385,
+            48.11448
+          ],
+          [
+            -1.679277,
+            48.111801
+          ],
+          [
+            -1.677775,
+            48.111729
+          ],
+          [
+            -1.677797,
+            48.109867
+          ],
+          [
+            -1.677818,
+            48.107517
+          ],
+          [
+            -1.67769,
+            48.105941
+          ],
+          [
+            -1.676595,
+            48.105755
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "2",
+        "label": "deuxieme balade",
+        "couleur": "#2553FF"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -1.674085,
+            48.113936
+          ],
+          [
+            -1.673634,
+            48.112761
+          ],
+          [
+            -1.673656,
+            48.110383
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "3",
+        "idbalade": "1",
+        "label": "troisième point",
+        "rang": "3",
+        "description": "description !"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.67666,
+          48.105884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "2",
+        "idbalade": "1",
+        "label": "Deuxième point",
+        "rang": "2",
+        "description": "description exemple"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.677711,
+          48.111744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "1",
+        "idbalade": "1",
+        "label": "Premier point",
+        "rang": "1",
+        "description": "description exemple :)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.680286,
+          48.114652
+        ]
+      }
+    }
+  ]
+}

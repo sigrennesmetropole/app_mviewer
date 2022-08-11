@@ -184,6 +184,9 @@ var baladesAddon = (function () {
             currentPointBalade = feature.get(champRang);
             if (featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade+1))
                 document.getElementById('nextButton').disabled = false;
+            if (!featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade-1)){
+                document.getElementById('prevButton').disabled = true;
+            }
             document.getElementById('nextButton').style.display = 'block';
             document.getElementById('startButton').style.display = 'none';
             var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade).getGeometry().getCoordinates();

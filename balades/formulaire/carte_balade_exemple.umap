@@ -1,0 +1,150 @@
+{
+  "type": "umap",
+  "uri": "https://umap.openstreetmap.fr/fr/map/new/#16/48.1102/-1.6796",
+  "properties": {
+    "easing": true,
+    "embedControl": true,
+    "fullscreenControl": true,
+    "searchControl": true,
+    "datalayersControl": true,
+    "zoomControl": true,
+    "slideshow": {},
+    "captionBar": false,
+    "limitBounds": {},
+    "licence": "",
+    "description": "",
+    "name": "Carte sans nom",
+    "displayPopupFooter": false,
+    "miniMap": false,
+    "moreControl": true,
+    "scaleControl": true,
+    "scrollWheelZoom": true,
+    "zoom": 16
+  },
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -1.6795992851257326,
+      48.11020359339636
+    ]
+  },
+  "layers": [
+    {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "1",
+            "couleur": "#3498db",
+            "label": "Balade d'exemple"
+          },
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                -1.680114,
+                48.114652
+              ],
+              [
+                -1.679385,
+                48.11448
+              ],
+              [
+                -1.679277,
+                48.111801
+              ],
+              [
+                -1.677775,
+                48.111729
+              ],
+              [
+                -1.677797,
+                48.109867
+              ],
+              [
+                -1.677818,
+                48.107517
+              ],
+              [
+                -1.67769,
+                48.105941
+              ],
+              [
+                -1.676595,
+                48.105755
+              ]
+            ]
+          }
+        }
+      ],
+      "_umap_options": {
+        "displayOnLoad": true,
+        "browsable": true,
+        "id": 2362227,
+        "remoteData": {},
+        "name": "Balades"
+      }
+    },
+    {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "1",
+            "idbalade": "1",
+            "label": "Premier point",
+            "rang": "1"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -1.680286,
+              48.114652
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "2",
+            "idbalade": "1",
+            "label": "Deuxième point",
+            "rang": "2"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -1.677711,
+              48.111744
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
+            "id": "3",
+            "idbalade": "1",
+            "label": "troisième point",
+            "rang": "3"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -1.67666,
+              48.105884
+            ]
+          }
+        }
+      ],
+      "_umap_options": {
+        "displayOnLoad": true,
+        "browsable": true,
+        "remoteData": {},
+        "name": "Points",
+        "id": 2362228
+      }
+    }
+  ]
+}
