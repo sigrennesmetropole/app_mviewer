@@ -9,7 +9,7 @@ mviewer.getMap().addOverlay(_popup);
 
 
 _map.on('singleclick', function (evt) {
-    if ($('#popup-content') ){
+    if ($('#popup-content ul.nav-tabs>li').length > 0 ){
         showLocation(evt.coordinate);
     } else {
         document.addEventListener('infopanel-ready', () => {
