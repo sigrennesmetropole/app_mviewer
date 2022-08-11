@@ -362,6 +362,13 @@ const categories = (function() {
       return "#" + _componentToHex(r) + _componentToHex(g) + _componentToHex(b);
     }
 
+  function _hidecreatebtn(){
+      $("#createPointOnMapTooltip").hide();
+  }
+  
+    function _showcreatebtn(){
+      $("#createPointOnMapTooltip").show();
+  }
 
   /** Fonctions d'initialisation **/
   function _initGUI () {
@@ -382,20 +389,25 @@ const categories = (function() {
           _map.addOverlay(_createBtn);
 
           _map.on('singleclick', function(e){
-            console.log("CLICK EVENT DETECTE");
-            console.log(e.coordinate);
+            document.removeEventListener('infopanel-ready', _hidecreatebtn);
+            _createBtn.setPosition( e.coordinate);
+            _showcreatebtn();
+            if ($('.popup-content ul.nav-tabs>li').length > 0 ){
+                _hidecreatebtn();
+            } else {
+                document.addEventListener('infopanel-ready', _hidecreatebtn);
+            }
           });
 
-
+/*
           document.addEventListener('clickedNbFeaturesEvt', function(e){
-              if ( e.detail.nbfeatures == 0) {
-                _createBtn.setPosition( e.detail.position);
-                $("#createPointOnMapTooltip").show();
-              }else {
+          //document.addEventListener('infopanel-ready', (e) => {
+              console.log(e);
+              if ( e.detail.nbfeatures > 0) {
                 $("#createPointOnMapTooltip").hide();
               }
           });
-
+*/
           $("#createPointOnMapTooltip").on('click', function(e){
               let coord = _createBtn.getPosition();
               let coordProj = proj4('EPSG:3857', 'EPSG:4326', coord);

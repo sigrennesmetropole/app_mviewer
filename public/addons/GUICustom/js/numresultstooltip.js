@@ -9,7 +9,7 @@ mviewer.getMap().addOverlay(_popup);
 
 
 _map.on('singleclick', function (evt) {
-    if ($('#popup-content ul.nav-tabs>li').length > 0 ){
+    if ($('.popup-content ul.nav-tabs>li').length > 0 ){
         showLocation(evt.coordinate);
     } else {
         document.addEventListener('infopanel-ready', () => {
@@ -26,15 +26,15 @@ _map.on('movestart', function (evt) {
 
 
 function showLocation(coordinates, ) {
-  if(info.getQueriedFeatures().length > 1 && configuration.getConfiguration().application.showClickNbItems !== "false") {
-      document.dispatchEvent(new CustomEvent('clickedNbFeaturesEvt', { detail: {'nbfeatures': info.getQueriedFeatures().length, 'position': coordinates}}));
-    _popup.setPosition(coordinates);
-    $("#popup-number-results").html(info.getQueriedFeatures().length + ' résultats');
-    $("#popup-number-results").parent().show();
-  }else {
-    $("#popup-number-results").parent().hide();
-  }
-  _map.render();
+    if(info.getQueriedFeatures().length > 1 && configuration.getConfiguration().application.showClickNbItems !== "false") {
+        _popup.setPosition(coordinates);
+        $("#popup-number-results").html(info.getQueriedFeatures().length + ' résultats');
+        $("#popup-number-results").parent().show();
+    }else {
+        $("#popup-number-results").parent().hide();
+    }
+    document.dispatchEvent(new CustomEvent('clickedNbFeaturesEvt', { detail: {'nbfeatures': info.getQueriedFeatures().length, 'position': coordinates}}));
+    _map.render();
 }
 
 function refreshResultsNumber(){
