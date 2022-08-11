@@ -564,8 +564,10 @@ var info = (function () {
                     if (configuration.getConfiguration().mobile) {
                         $("#modal-panel").modal("show");
                         if (_featureTooltip.getElement().children.length) {
-                            //CBR : à vérifier avec geobretagne
-                            //_featureTooltip.getElement().popover('hide')
+                            // CBR : BUG sur la gestion du tooltip en mode mobile
+                            // contribution geobretagne #issue 646
+                            $(_featureTooltip.getElement()).popover('hide');
+                            // FIN CBR : BUG sur la gestion du tooltip en mode mobile
                         }
                     } else {
                         if (!$('#'+panel).hasClass("active")) {
