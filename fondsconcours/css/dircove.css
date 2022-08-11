@@ -1,0 +1,16 @@
+/******************************************************************************
+--------------------------- CSS THEME MVIEWER / CSS Fonds concours dircove -----
+********************************************************************************/
+
+/*  Import du style du site internet  */
+@import url("../../site_internet/css/site_internet_gris.css");
+
+/* FICHE INFO */
+.title-2019-2020 {
+    color:#f78b12;
+}
+
+.title-2021-2022 {
+    color:#b22496;
+}
+

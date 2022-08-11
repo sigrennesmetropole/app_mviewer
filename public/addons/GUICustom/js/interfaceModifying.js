@@ -133,8 +133,10 @@ var interfaceModifying = (function () {
                         pixel: _map.getPixelFromCoordinate(mviewer.getMarker().getPosition())
                     };
 				}
-                info.queryMap(event);
-                refreshResultsNumber();
+                setTimeout( function() {
+                    refreshResultsNumber();
+                    info.queryMap(event);
+                },250);
             }
          });
     };
