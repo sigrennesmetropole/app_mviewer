@@ -7,7 +7,7 @@ mviewer.customLayers.arbresautres= (function() {
         return [
             new ol.style.Style({
                 image: new ol.style.Icon({
-                  color: '#5DADE2', 
+                  color: '#BBDE91', 
                   crossOrigin: 'anonymous',
                   //scale:0.1,
                   //anchor:[0.5,1],
@@ -24,7 +24,7 @@ mviewer.customLayers.arbresautres= (function() {
             image: new ol.style.Circle({
                 radius: 5,
                 fill: new ol.style.Fill({
-                    color: '#5DADE2',
+                    color: '#BBDE91',
                 }),
                 stroke: new ol.style.Stroke({
                     color: '#ffffff',
