@@ -1,6 +1,6 @@
 [
     {
-        "content": "<div style='margin-left: 2px;display: flex;'><div style='margin-right: 2%;'>Cliquer sur <span class='fas fa-cog'></span> pour configurer la carte, la réinitialiser ou exporter les points</div><div style='display: flex;flex-direction: column;'><div style='margin-right: -20px;float: right;margin-top: -45px;'><img src='apps/site_internet/img/gui/icone arrow up2.png' style='vertical-align: bottom;'></div><div> </div></div></div>",
+        "content": "<div style='margin-left: 2px;display: flex;'><div style='margin-right: 2%;'>Cliquer sur <span class='fas fa-cog'></span> pour configurer la carte, la réinitialiser ou exporter les points</div><div style='display: flex;flex-direction: column;'><div style='margin-right: -20px;float: right;margin-top: -45px;'><img src='apps/site_internet/img/gui/icone arrow up2.png' style='vertical-align: bottom;'></div></div></div></div>",
         "order": 1,
         "width": "14em",
         "top": "-1em",
