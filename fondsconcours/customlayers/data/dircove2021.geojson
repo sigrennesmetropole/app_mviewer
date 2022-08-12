@@ -15,7 +15,7 @@
 				"montant_attrib" : 400000,
 				"intitulé" : "Construction d'un espace gym et activités corporelles - salle du Chevré",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Acigné"
 			}
 		},
@@ -33,7 +33,7 @@
 				"intitulé" : "Construction ateliers artistiques et loisirs créatifs - Ferme de Joval ",
 				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Acigné"
 			}
 		},
@@ -51,7 +51,7 @@
 				"intitulé" : "Réféction des joints des murs du théatre municipal",
 				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.5,
+				"taux" : 50,
 				"Maitrise d'ouvrage" : "Bécherel"
 			}
 		},
@@ -69,7 +69,7 @@
 				"intitulé" : "Reconstruction de la tour et du rempart ",
 				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.5,
+				"taux" : 50,
 				"Maitrise d'ouvrage" : "Bécherel"
 			}
 		},
@@ -87,7 +87,7 @@
 				"intitulé" : "Bilan sanitaire des remparts",
 				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.5,
+				"taux" : 50,
 				"Maitrise d'ouvrage" : "Bécherel"
 			}
 		},
@@ -104,7 +104,7 @@
 				"montant_attrib" : 3317,
 				"intitulé" : "Eclairage intérieur de l'église",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.5,
+				"taux" : 50,
 				"Maitrise d'ouvrage" : "Bécherel"
 			}
 		},
@@ -121,7 +121,7 @@
 				"montant_attrib" : 6220,
 				"intitulé" : "Reestructuration du logement de fonction",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Betton"
 			}
 		},
@@ -138,7 +138,7 @@
 				"montant_attrib" : 201959,
 				"intitulé" : "Extension et rénovation du restaurant scolaire",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Bourgbarré"
 			}
 		},
@@ -155,7 +155,7 @@
 				"montant_attrib" : 167700,
 				"intitulé" : "Création d'une micro-crèche",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Brécé"
 			}
 		},
@@ -173,7 +173,7 @@
 				"intitulé" : "Parcours sportif intégrant des enjeux de biodiversité",
 				"justificatif" : "PBIL",
 				"nature" : "3- Biodiversité",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Brécé"
 			}
 		},
@@ -190,7 +190,7 @@
 				"montant_attrib" : 159028,
 				"intitulé" : "Réhabilitation du moulin du Boël",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Bruz"
 			}
 		},
@@ -207,7 +207,7 @@
 				"montant_attrib" : 30000,
 				"intitulé" : "Végétalisation du cimetière pour entretien éco-responsable",
 				"nature" : "3- Biodiversité",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Bruz"
 			}
 		},
@@ -224,7 +224,7 @@
 				"montant_attrib" : 225000,
 				"intitulé" : "Extension de l'EHPAD la poterie",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Chartres de Bretagne"
 			}
 		},
@@ -241,7 +241,7 @@
 				"montant_attrib" : 140084,
 				"intitulé" : "Rénovation du centre culturel Bat B",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Chartres de Bretagne"
 			}
 		},
@@ -258,7 +258,7 @@
 				"montant_attrib" : 107944.5,
 				"intitulé" : "Extension du centre de loisir",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Chartres de Bretagne"
 			}
 		},
@@ -275,7 +275,7 @@
 				"montant_attrib" : 3440,
 				"intitulé" : "Mise aux normes d'un espave de coworking",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Chevaigné"
 			}
 		},
@@ -293,7 +293,7 @@
 				"intitulé" : "Travaux de réfection des toits plats de l'école publique élémentaire",
 				"justificatif" : "Performance énergétique",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Chevaigné"
 			}
 		},
@@ -311,7 +311,7 @@
 				"intitulé" : "Création d'un nouveau restaurant municipal",
 				"justificatif" : "Performance énergétique",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Corps-Nuds"
 			}
 		},
@@ -328,7 +328,7 @@
 				"montant_attrib" : 400000,
 				"intitulé" : "Extension et réhabilitation de la mairie",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Gevezé"
 			}
 		},
@@ -345,7 +345,7 @@
 				"montant_attrib" : 135000,
 				"intitulé" : "Restructuration et extension du centre social et de la maison de l'enfance",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.18,
+				"taux" : 18,
 				"Maitrise d'ouvrage" : "La Chapelle Chaussée"
 			}
 		},
@@ -362,7 +362,7 @@
 				"montant_attrib" : 130920,
 				"intitulé" : "Toiture de la salle des sports",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz"
 			}
 		},
@@ -379,7 +379,7 @@
 				"montant_attrib" : 412649,
 				"intitulé" : "Création d'un multi-accueil",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz"
 			}
 		},
@@ -397,7 +397,7 @@
 				"intitulé" : "Rénovation thermique des écoles",
 				"justificatif" : "Performance énergétique",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Laillé"
 			}
 		},
@@ -414,7 +414,7 @@
 				"montant_attrib" : 400000,
 				"intitulé" : "Construction d'un centre technique municipal",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Laillé"
 			}
 		},
@@ -432,7 +432,7 @@
 				"intitulé" : "Construction d'un city stade",
 				"justificatif" : "PPC ",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Laillé"
 			}
 		},
@@ -450,7 +450,7 @@
 				"intitulé" : "Maison de santé",
 				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Langan"
 			}
 		},
@@ -467,7 +467,7 @@
 				"montant_attrib" : 112080,
 				"intitulé" : "Maison des jeunes et des associations",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.5,
+				"taux" : 50,
 				"Maitrise d'ouvrage" : "Langan"
 			}
 		},
@@ -484,7 +484,7 @@
 				"montant_attrib" : 450000,
 				"intitulé" : "Construction d'un batiment périscolaire, ALSH et restauration",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Le Rheu"
 			}
 		},
@@ -502,7 +502,7 @@
 				"intitulé" : "Passerelle piéton et cycliste",
 				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "L'hermitage"
 			}
 		},
@@ -519,7 +519,7 @@
 				"montant_attrib" : 350000,
 				"intitulé" : "Rénovation ancien patronage et annexes",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.5,
+				"taux" : 50,
 				"Maitrise d'ouvrage" : "Miniac-Sous-Becherel"
 			}
 		},
@@ -536,7 +536,7 @@
 				"montant_attrib" : 179345.7,
 				"intitulé" : "Extension de la salle des sport Court de tennis",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Montgermont"
 			}
 		},
@@ -553,7 +553,7 @@
 				"montant_attrib" : 40882.5,
 				"intitulé" : "Rénovation de la salle de gymnastique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Mordelles"
 			}
 		},
@@ -571,7 +571,7 @@
 				"intitulé" : "Sentier d'interprétation sur la reconquête de l'eau et des milieux aquatiques",
 				"justificatif" : "Performance énergétique",
 				"nature" : "3- Biodiversité",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Mordelles"
 			}
 		},
@@ -589,7 +589,7 @@
 				"intitulé" : "Création d'un nouveau centre technique municipal",
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Nouvoitou"
 			}
 		},
@@ -607,7 +607,7 @@
 				"intitulé" : "Réalisation d'un pôle santé plurdisciplinaire",
 				"justificatif" : "PPC + Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Orgères"
 			}
 		},
@@ -624,7 +624,7 @@
 				"montant_attrib" : 36055,
 				"intitulé" : "Extension du bâtiment périscolaire",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.5,
+				"taux" : 50,
 				"Maitrise d'ouvrage" : "Parthenay-de-Bretagne"
 			}
 		},
@@ -641,7 +641,7 @@
 				"montant_attrib" : 9261,
 				"intitulé" : "Création d'une tiny-forest",
 				"nature" : "3- Biodiversité",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Parthenay-de-Bretagne"
 			}
 		},
@@ -658,7 +658,7 @@
 				"montant_attrib" : 25581,
 				"intitulé" : "City Parc",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Pont-Péan"
 			}
 		},
@@ -675,7 +675,7 @@
 				"montant_attrib" : 35497,
 				"intitulé" : "Rénovation du groupe scolaire - Programme 2020",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Romillé"
 			}
 		},
@@ -692,7 +692,7 @@
 				"montant_attrib" : 90000,
 				"intitulé" : "Requalification paysagère du chemin creux de la Houltais",
 				"nature" : "3- Biodiversité",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Romillé"
 			}
 		},
@@ -710,7 +710,7 @@
 				"intitulé" : "Travaux de rénovation des batiments scolaires (programme 2021)",
 				"justificatif" : "PPC",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Romillé"
 			}
 		},
@@ -727,7 +727,7 @@
 				"montant_attrib" : 88095,
 				"intitulé" : "Extension d'une cours d'école",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Saint-Armel"
 			}
 		},
@@ -744,7 +744,7 @@
 				"montant_attrib" : 54849.9,
 				"intitulé" : "Réaménagement des locaux de la salle associative Le Verger",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Saint-Erblon"
 			}
 		},
@@ -761,7 +761,7 @@
 				"montant_attrib" : 11603.1,
 				"intitulé" : "Pôle social",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Saint-Erblon"
 			}
 		},
@@ -779,7 +779,7 @@
 				"intitulé" : "Réhabilitation de l'école élémentaire J. Prévert ",
 				"justificatif" : "Performance énergétique",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Saint-Gilles"
 			}
 		},
@@ -796,7 +796,7 @@
 				"montant_attrib" : 99290.4,
 				"intitulé" : "Construction d'un local associatif",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Saint-Gilles"
 			}
 		},
@@ -813,7 +813,7 @@
 				"montant_attrib" : 90000,
 				"intitulé" : "Végétalisation du cimetière ",
 				"nature" : "3- Biodiversité",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Saint-Sulpice la Forêt"
 			}
 		},
@@ -830,7 +830,7 @@
 				"montant_attrib" : 27900,
 				"intitulé" : "Aménagement du Clos d'Orrière",
 				"nature" : "3- Biodiversité",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Vern-sur-Seiche"
 			}
 		}

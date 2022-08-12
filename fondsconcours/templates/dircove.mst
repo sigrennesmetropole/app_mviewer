@@ -4,11 +4,11 @@
         
 		<p class="rm-popup-text-feature">
 			{{#Maitrise d'ouvrage}}<span class='rm-popup-label'> Maîtrise d'ouvrage :</span> {{{Maitrise d'ouvrage}}}<br/>{{/Maitrise d'ouvrage}}
-			{{#année}}<span class='rm-popup-label'> Dispositif :</span> {{{année}}}<br/>{{/année}}
+			{{#année}}<span class='rm-popup-label'> Fonds de concours :</span> {{{année}}}<br/>{{/année}}
 			{{#nature}}<span class='rm-popup-label'> Catégorie :</span> {{{nature}}}<br/>{{/nature}}
 			{{#montant_attrib}}<span class='rm-popup-label'> Montant attribué :</span> {{{montant_attrib}}} €<br/>{{/montant_attrib}}
 			{{#cout_global}}<span class='rm-popup-label'> Coût global :</span> {{{cout_global}}} €<br/>{{/cout_global}}
-			{{#taux}}<span class='rm-popup-label'> Taux :</span> {{{taux}}} <br/>{{/taux}}
+			{{#taux}}<span class='rm-popup-label'> Aide métropolitaine :</span> {{{taux}}} %<br/>{{/taux}}
 			{{#justificatif}}<span class='rm-popup-label'> Justificatif :</span> {{{justificatif}}} <br/>{{/justificatif}}
 		</p>
 	</li>
