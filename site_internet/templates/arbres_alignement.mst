@@ -8,7 +8,6 @@
             {{#espece}}<br/><span class='rm-popup-label'> Espèce :</span> {{{espece}}} {{/espece}}
             {{#variete}}<br/><span class='rm-popup-label'> Variété :</span> {{{variete}}} {{/variete}}
         </p>
-
 	</li>
 {{/features}}
 

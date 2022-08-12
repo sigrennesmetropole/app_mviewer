@@ -5,7 +5,7 @@
         logo="apps/public/img/logo/logo_mviewer_transp.png"
         titlehelp="À propos..."
         help="apps/dynMapPublic/html/mesloc_help.html"
-        showhelp="false"
+        showhelp="true"
         iconhelp=""
         style="apps/site_internet/css/site_internet_gris.css"
         exportpng="true"
