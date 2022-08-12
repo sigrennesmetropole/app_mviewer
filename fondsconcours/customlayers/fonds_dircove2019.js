@@ -6,7 +6,7 @@ mviewer.customLayers.dircove2019= (function() {
     
     var _style = new ol.style.Style({
         image: new ol.style.Circle({
-            radius: 10,
+            radius: 8,
             fill: new ol.style.Fill({
                 color: '#f78b12',
             }),

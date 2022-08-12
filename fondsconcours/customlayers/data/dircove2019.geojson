@@ -12,7 +12,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -170773.5527057012, 6129108.4947641967 ]
+				"coordinates" : [ -171170.5730518597, 6129278.6793479845 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -47,7 +47,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -182593.1314662059, 6137246.6423822315 ]
+				"coordinates" : [ -183691.1269384319, 6136683.7717916928 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -64,7 +64,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -182593.1314662059, 6137246.6423822315 ]
+				"coordinates" : [ -183691.1269384319, 6136683.7717916928 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -81,7 +81,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -179689.3279516063, 6106018.1655807681 ]
+				"coordinates" : [ -179963.9133611965, 6105216.2288742736 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -98,7 +98,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -165084.3973539816, 6125285.600490707 ]
+				"coordinates" : [ -165211.9257047187, 6124602.9462833619 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -115,7 +115,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -165084.3973539816, 6125285.600490707 ]
+				"coordinates" : [ -165243.8911300517, 6125271.4713167753 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -132,7 +132,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -194367.7637610242, 6110924.1769641368 ]
+				"coordinates" : [ -191900.8405338681, 6110095.7000187449 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -150,7 +150,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -190054.306358759, 6113667.3618735792 ]
+				"coordinates" : [ -189499.7820089999, 6113669.4362249617 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -167,24 +167,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -199150.5719333619, 6115565.4723610114 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 567000,
-				"montant_attrib" : 170100,
-				"intitulé" : "TRAVAUX DE RESTRUCTURATION D'UN BATIMENT SCOLAIRE SATELLITE",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Chavagne"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -199150.5719333619, 6115565.4723610114 ]
+				"coordinates" : [ -199344.0352136125, 6115947.7567402311 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -218,7 +201,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -181507.2218047075, 6142212.7990077483 ]
+				"coordinates" : [ -181638.4796381551, 6142095.1013364485 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -235,7 +218,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -181507.2218047075, 6142212.7990077483 ]
+				"coordinates" : [ -181296.6878067727, 6141819.1293009846 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -253,7 +236,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -181507.2218047075, 6142212.7990077483 ]
+				"coordinates" : [ -181646.1785370023, 6142129.0189399291 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -287,7 +270,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -208443.4647561515, 6124483.3993909061 ]
+				"coordinates" : [ -208125.2401385265, 6124379.6692100763 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -315,6 +298,402 @@
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Clayes"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -192242.709122857, 6135977.6682799766 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 657683.62,
+				"montant_attrib" : 185007,
+				"intitulé" : "SALLE OMNISPORTS- RENOVATION INTERIEURE DE LA SALLE",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -192696.1098327954, 6136266.8923685225 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 716643.35,
+				"montant_attrib" : 214993,
+				"intitulé" : "GROUPE SCOLAIRE GEORGES MARTINAIS RENOVATION DE LA COUR MATERNELLE, CONSTRUCTION D'UN PREAU ET D'UN LOCAL ALSH",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -207639.4877334214, 6127603.3064856417 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 902560,
+				"montant_attrib" : 280000,
+				"intitulé" : "MEDIATHEQUE",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "La Chapelle Thouarault"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -191619.6303726629, 6103322.5066459952 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 34105.96,
+				"montant_attrib" : 10231.79,
+				"intitulé" : "RENOVATION THERMIQUE DE LA MAIRIE",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Laillé"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -205957.1840573018, 6147041.9281242676 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 168353.26,
+				"montant_attrib" : 50506,
+				"intitulé" : "REALISATION D'UN PLATEAU SPORTIF ET INTERGENERATIONNEL",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Langan"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -197107.2093760927, 6120296.1341958139 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 1730000,
+				"montant_attrib" : 185134,
+				"intitulé" : "AMENAGEMENT DE LA CUISINE CENTRALE L'ORME ROBIN",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Le Rheu"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -200488.4226052839, 6123593.027886048 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 716219,
+				"montant_attrib" : 214866,
+				"intitulé" : "EXTENSION DE L'ECOLE MATERNELLE DU CLOS JOURY",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Le Rheu"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -202364.0465635361, 6128098.6827237923 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1231573,
+				"montant_attrib" : 280000,
+				"intitulé" : "REHABILITATION ET EXTENSION DE LA MAIRIE",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "L'hermitage"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -185096.0608540314, 6113481.0411381256 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 443968.81,
+				"montant_attrib" : 133191,
+				"intitulé" : "RESTRUCTURATION ET ISOLATION DE LA TOITURE DE LA SALLE DE SPORT RAYMOND PERRIN",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Noyal Chatillon sur Seiche"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -185839.7183892348, 6106218.2286525108 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 415555,
+				"montant_attrib" : 124667,
+				"intitulé" : "REHABILITATION ESPACE MULTIFONCTION ACCUEILLANT DES ARTISTES EN ESPACE CULTUREL ET DE COWORKING",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Orgères"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -185605.5162168077, 6106302.943425009 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 677639.25,
+				"montant_attrib" : 78563,
+				"intitulé" : "EXTENSION DU RESTAURANT SCOLAIRE ",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Orgères"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -186164.6232547281, 6106821.786117089 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 479519.6,
+				"montant_attrib" : 143856,
+				"intitulé" : "AMENAGEMENT D'UN TERRAIN FOOTBALL STABILISE EN TERRAIN FOOTBAL SYNTHETIQUE",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Orgères"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -196808.6272344154, 6132244.1971796658 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 1642650,
+				"montant_attrib" : 200000,
+				"intitulé" : "CONSTRUCTION D'UNE SALLE DE SPORTS",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Pacé"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -196913.1309839728, 6132373.1846648594 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 84250,
+				"montant_attrib" : 25275,
+				"intitulé" : "REHABILITATION ENERGETIQUE COMPLEXE SPORTIF CHASSEBOEUF",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Pacé"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -189990.8026099133, 6109885.1720776381 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 415015,
+				"montant_attrib" : 120000,
+				"intitulé" : "TRAVAUX DE RENOVATION ENERGETIQUE DU GROUPE SCOLAIRE  LUCIE AUBRAC",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Pont-Péan"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -210898.1213388037, 6143207.5362600423 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 376184.2,
+				"montant_attrib" : 150474,
+				"intitulé" : "REHABILITATION ET MISE AUX NORMES DE SALLE CULTURELLE DU PRE VERT",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Romillé"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -211198.3182438971, 6143123.4536511675 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 676920,
+				"montant_attrib" : 203076,
+				"intitulé" : "REALISATION D'UN TERRAIN DE FOOTBALL SYNTHETIQUE",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Romillé"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -177378.0957785473, 6109266.5098799933 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 119783.34,
+				"montant_attrib" : 35935,
+				"intitulé" : "DESAMIANTAGE ET REFECTION DES SOLS DU GROUPE SCOLAIRE DES BOSCHAUX",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint-Armel"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -183835.4924757626, 6109862.1515563857 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 144666,
+				"montant_attrib" : 43400,
+				"intitulé" : "BATIMENT MAIRIE RENOVATION",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint-Erblon"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -175591.3564239444, 6132137.8979525119 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 3009700,
+				"montant_attrib" : 275463,
+				"intitulé" : "CREATION D'UN POLE ASSOCIATIF, CULTUREL ET ARTISTIQUE A LA MORINAIS",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "THORIGNE-FOUILLARD"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -176072.3026131599, 6132499.8986962903 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 150124.17,
+				"montant_attrib" : 45037,
+				"intitulé" : "REFECTION TOITURE TERRASSE DE L'ECOLE DES PRES-VERTS ",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "THORIGNE-FOUILLARD"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -195508.5656362415, 6126464.856662347 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 177150,
+				"montant_attrib" : 53145,
+				"intitulé" : "RENOVATION SALLE PERISCOLAIRE ET SANITAIRE ECOLE ERIC TABARLY",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "VEZIN LE COQUET"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -199150.5719333619, 6115565.4723610114 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 567000,
+				"montant_attrib" : 170100,
+				"intitulé" : "TRAVAUX DE RESTRUCTURATION D'UN BATIMENT SCOLAIRE SATELLITE",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chavagne"
 			}
 		},
 		{
@@ -391,126 +770,6 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -192870.4764360155, 6136377.7249334622 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 657683.62,
-				"montant_attrib" : 185007,
-				"intitulé" : "SALLE OMNISPORTS- RENOVATION INTERIEURE DE LA SALLE",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -192870.4764360155, 6136377.7249334622 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 716643.35,
-				"montant_attrib" : 214993,
-				"intitulé" : "GROUPE SCOLAIRE GEORGES MARTINAIS RENOVATION DE LA COUR MATERNELLE, CONSTRUCTION D'UN PREAU ET D'UN LOCAL ALSH",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -207760.7472309897, 6127465.8980893577 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 902560,
-				"montant_attrib" : 280000,
-				"intitulé" : "MEDIATHEQUE",
-				"justificatif" : "Performance énergétique",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "La Chapelle Thouarault"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -191619.6303726629, 6103322.5066459952 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 34105.96,
-				"montant_attrib" : 10231.79,
-				"intitulé" : "RENOVATION THERMIQUE DE LA MAIRIE",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Laillé"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -206418.4055622802, 6147617.486929032 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 168353.26,
-				"montant_attrib" : 50506,
-				"intitulé" : "REALISATION D'UN PLATEAU SPORTIF ET INTERGENERATIONNEL",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Langan"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -199720.5543474852, 6123595.7625305941 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 1730000,
-				"montant_attrib" : 185134,
-				"intitulé" : "AMENAGEMENT DE LA CUISINE CENTRALE L'ORME ROBIN",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Le Rheu"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -199720.5543474852, 6123595.7625305941 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 716219,
-				"montant_attrib" : 214866,
-				"intitulé" : "EXTENSION DE L'ECOLE MATERNELLE DU CLOS JOURY",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Le Rheu"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
 				"coordinates" : [ -215134.7996839899, 6118642.3485056367 ]
 			},
 			"properties" : {
@@ -572,24 +831,6 @@
 				"montant_attrib" : 120000,
 				"intitulé" : "EXTENSION ECOLE ELEMENTAIRE PUBLIQUE ET DE L'ALSH ",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "L'hermitage"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -202364.0465635361, 6128098.6827237923 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 1231573,
-				"montant_attrib" : 280000,
-				"intitulé" : "REHABILITATION ET EXTENSION DE LA MAIRIE",
-				"justificatif" : "Performance énergétique",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
 				"Maitrise d'ouvrage" : "L'hermitage"
 			}
@@ -667,23 +908,6 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -185011.0164871613, 6113964.2134027304 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 443968.81,
-				"montant_attrib" : 133191,
-				"intitulé" : "RESTRUCTURATION ET ISOLATION DE LA TOITURE DE LA SALLE DE SPORT RAYMOND PERRIN",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Noyal Chatillon sur Seiche"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
 				"coordinates" : [ -185640.1622226944, 6106136.1747061145 ]
 			},
 			"properties" : {
@@ -695,92 +919,6 @@
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Orgères"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -185640.1622226944, 6106136.1747061145 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 415555,
-				"montant_attrib" : 124667,
-				"intitulé" : "REHABILITATION ESPACE MULTIFONCTION ACCUEILLANT DES ARTISTES EN ESPACE CULTUREL ET DE COWORKING",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Orgères"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -185640.1622226944, 6106136.1747061145 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 677639.25,
-				"montant_attrib" : 78563,
-				"intitulé" : "EXTENSION DU RESTAURANT SCOLAIRE ",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Orgères"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -185640.1622226944, 6106136.1747061145 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 479519.6,
-				"montant_attrib" : 143856,
-				"intitulé" : "AMENAGEMENT D'UN TERRAIN FOOTBALL STABILISE EN TERRAIN FOOTBAL SYNTHETIQUE",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Orgères"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -197347.0334526413, 6131298.366243192 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 1642650,
-				"montant_attrib" : 200000,
-				"intitulé" : "CONSTRUCTION D'UNE SALLE DE SPORTS",
-				"justificatif" : "Performance énergétique",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "Pacé"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -197347.0334526413, 6131298.366243192 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 84250,
-				"montant_attrib" : 25275,
-				"intitulé" : "REHABILITATION ENERGETIQUE COMPLEXE SPORTIF CHASSEBOEUF",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Pacé"
 			}
 		},
 		{
@@ -810,23 +948,6 @@
 			"properties" : {
 				"année" : "2019-2020",
 				"armature" : "Pôle de proximité ",
-				"cout_global" : 415015,
-				"montant_attrib" : 120000,
-				"intitulé" : "TRAVAUX DE RENOVATION ENERGETIQUE DU GROUPE SCOLAIRE  LUCIE AUBRAC",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Pont-Péan"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -189914.079175776, 6108650.3309512343 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
 				"cout_global" : 3274211,
 				"montant_attrib" : 280000,
 				"intitulé" : "REHABILITATION DU BATIMENT ADMINISTRATIF DE LA MINE",
@@ -834,41 +955,6 @@
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
 				"Maitrise d'ouvrage" : "Pont-Péan"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -210664.6301039114, 6142784.7439473979 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 376184.2,
-				"montant_attrib" : 150474,
-				"intitulé" : "REHABILITATION ET MISE AUX NORMES DE SALLE CULTURELLE DU PRE VERT",
-				"justificatif" : "Performance énergétique",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "Romillé"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -210664.6301039114, 6142784.7439473979 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 676920,
-				"montant_attrib" : 203076,
-				"intitulé" : "REALISATION D'UN TERRAIN DE FOOTBALL SYNTHETIQUE",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Romillé"
 			}
 		},
 		{
@@ -886,40 +972,6 @@
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Saint-Armel"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -177409.7454856446, 6109190.9685981739 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 119783.34,
-				"montant_attrib" : 35935,
-				"intitulé" : "DESAMIANTAGE ET REFECTION DES SOLS DU GROUPE SCOLAIRE DES BOSCHAUX",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Saint-Armel"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -183835.4924757626, 6109862.1515563857 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 144666,
-				"montant_attrib" : 43400,
-				"intitulé" : "BATIMENT MAIRIE RENOVATION",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Saint-Erblon"
 			}
 		},
 		{
@@ -984,45 +1036,10 @@
 			"properties" : {
 				"année" : "2019-2020",
 				"armature" : "Pôle de proximité ",
-				"cout_global" : 3009700,
-				"montant_attrib" : 275463,
-				"intitulé" : "CREATION D'UN POLE ASSOCIATIF, CULTUREL ET ARTISTIQUE A LA MORINAIS",
-				"justificatif" : "Performance énergétique",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "THORIGNE-FOUILLARD"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -176064.679778217, 6132414.4112320859 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
 				"cout_global" : 265000,
 				"montant_attrib" : 79500,
 				"intitulé" : "REMPLACEMENT DES BAIES VITREES DE L'EHPAD",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "THORIGNE-FOUILLARD"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -176064.679778217, 6132414.4112320859 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 150124.17,
-				"montant_attrib" : 45037,
-				"intitulé" : "REFECTION TOITURE TERRASSE DE L'ECOLE DES PRES-VERTS ",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "THORIGNE-FOUILLARD"
 			}
@@ -1042,23 +1059,6 @@
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Vern-sur-Seiche"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -195383.5805683352, 6126686.827000129 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 177150,
-				"montant_attrib" : 53145,
-				"intitulé" : "RENOVATION SALLE PERISCOLAIRE ET SANITAIRE ECOLE ERIC TABARLY",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "VEZIN LE COQUET"
 			}
 		}
 	]
