@@ -22,7 +22,7 @@
 				"intitulé" : "RENOVATION ET EXTENSION DU POLE ENFANCE - LA PASSERELLE",
 				"justificatif" : "Performance énergétique",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Acigné"
 			}
 		},
@@ -39,7 +39,7 @@
 				"montant_attrib" : 29473,
 				"intitulé" : "TRAVAUX DE REAMENAGEMENT DES ESPACES D'ACCUEIL DE LA MAIRIE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Bécherel"
 			}
 		},
@@ -56,7 +56,7 @@
 				"montant_attrib" : 100000,
 				"intitulé" : "RENOVATION ECOLE MATERNELLE DES OMBLAIS",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Betton"
 			}
 		},
@@ -73,7 +73,7 @@
 				"montant_attrib" : 300000,
 				"intitulé" : "CONSTRUCTION D'UNE CANTINE AU SEIN DU GROUPE SCOLAIRE OMBLAIS",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Betton"
 			}
 		},
@@ -90,7 +90,7 @@
 				"montant_attrib" : 53034,
 				"intitulé" : "RENOVATION ET ISOLATION DE LA TOITURE DE LA SALLE DES SPORTS",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Bourgbarré"
 			}
 		},
@@ -107,7 +107,7 @@
 				"montant_attrib" : 210000,
 				"intitulé" : "RENOVATION SALLE DES SPORTS",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Brécé"
 			}
 		},
@@ -124,7 +124,7 @@
 				"montant_attrib" : 39561.6,
 				"intitulé" : "RENOVATION DES COURSIVES DU GROUPE SCOLAIRE",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Brécé"
 			}
 		},
@@ -142,7 +142,7 @@
 				"intitulé" : "EXTENSION ET REHABILITATION DE LA MAISON DES ENFANTS",
 				"justificatif" : "Performance énergétique",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Bruz"
 			}
 		},
@@ -159,7 +159,7 @@
 				"montant_attrib" : 300000,
 				"intitulé" : "RENOVATION DE L ECOLE DE L AUDITOIRE ",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Chartres de Bretagne"
 			}
 		},
@@ -176,7 +176,7 @@
 				"montant_attrib" : 170100,
 				"intitulé" : "TRAVAUX DE RESTRUCTURATION D'UN BATIMENT SCOLAIRE SATELLITE",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Chavagne"
 			}
 		},
@@ -193,7 +193,7 @@
 				"montant_attrib" : 216681,
 				"intitulé" : "TRAVAUX DE RESTRUCTURATION DE L'ECOLE ELEMENTAIRE PUBLIQUE",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Chavagne"
 			}
 		},
@@ -210,7 +210,7 @@
 				"montant_attrib" : 10500,
 				"intitulé" : "RENOVATION DE L'ACCUEIL DE LA MAIRIE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Chevaigné"
 			}
 		},
@@ -227,7 +227,7 @@
 				"montant_attrib" : 7496,
 				"intitulé" : "RENOVATION TOTALE SANITAIRES ELEMENTAIRES ECOLE JULES VERNE",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Chevaigné"
 			}
 		},
@@ -245,7 +245,7 @@
 				"intitulé" : "CONSTRUCTION D'UN POLE ASSOCIATIF ET CULTUREL",
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Chevaigné"
 			}
 		},
@@ -262,7 +262,7 @@
 				"montant_attrib" : 6900,
 				"intitulé" : "RENOVATION SANITAIRES ECOLE PUBLIQUE SECTION MATERNELLE  ECOLE JULES VERNE",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Chevaigné"
 			}
 		},
@@ -279,7 +279,7 @@
 				"montant_attrib" : 44400,
 				"intitulé" : "REHABILITATION DE LA MAIRIE APRES SINISTRE ",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Cintré"
 			}
 		},
@@ -296,7 +296,7 @@
 				"montant_attrib" : 4919,
 				"intitulé" : "REMPLACEMENT DES MENUISERIES DU RESTAURANT SCOLAIRE AVEC AJOUT DE VOLETS ROULANTS",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Cintré"
 			}
 		},
@@ -313,7 +313,7 @@
 				"montant_attrib" : 174221,
 				"intitulé" : "RESTRUCTURATION ET EXTENSION DE LA MAIRIE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Clayes"
 			}
 		},
@@ -330,7 +330,7 @@
 				"montant_attrib" : 136573,
 				"intitulé" : "NOUVELLE BIBLIOTHEQUE MUNICIPALE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Corps-Nuds"
 			}
 		},
@@ -347,7 +347,7 @@
 				"montant_attrib" : 192543,
 				"intitulé" : "RENOVATION DE LA SALLE DE SPORT POLE VOLLEY BALL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Corps-Nuds"
 			}
 		},
@@ -365,7 +365,7 @@
 				"intitulé" : "CREATION D'UN NOUVEL EQUIPEMENT SPORTIF",
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Gevezé"
 			}
 		},
@@ -383,7 +383,7 @@
 				"intitulé" : "REHABILITATION D'UN BATIMENT COMMUNAL POUR LA CREATION D'UNE MEDIATHEQUE",
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "La Chapelle Chaussée"
 			}
 		},
@@ -400,7 +400,7 @@
 				"montant_attrib" : 185007,
 				"intitulé" : "SALLE OMNISPORTS- RENOVATION INTERIEURE DE LA SALLE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz"
 			}
 		},
@@ -417,7 +417,7 @@
 				"montant_attrib" : 214993,
 				"intitulé" : "GROUPE SCOLAIRE GEORGES MARTINAIS RENOVATION DE LA COUR MATERNELLE, CONSTRUCTION D'UN PREAU ET D'UN LOCAL ALSH",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz"
 			}
 		},
@@ -435,7 +435,7 @@
 				"intitulé" : "MEDIATHEQUE",
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "La Chapelle Thouarault"
 			}
 		},
@@ -452,7 +452,7 @@
 				"montant_attrib" : 10231.79,
 				"intitulé" : "RENOVATION THERMIQUE DE LA MAIRIE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Laillé"
 			}
 		},
@@ -469,7 +469,7 @@
 				"montant_attrib" : 50506,
 				"intitulé" : "REALISATION D'UN PLATEAU SPORTIF ET INTERGENERATIONNEL",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Langan"
 			}
 		},
@@ -486,7 +486,7 @@
 				"montant_attrib" : 185134,
 				"intitulé" : "AMENAGEMENT DE LA CUISINE CENTRALE L'ORME ROBIN",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Le Rheu"
 			}
 		},
@@ -503,7 +503,7 @@
 				"montant_attrib" : 214866,
 				"intitulé" : "EXTENSION DE L'ECOLE MATERNELLE DU CLOS JOURY",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Le Rheu"
 			}
 		},
@@ -521,7 +521,7 @@
 				"intitulé" : "REHABILITATION ET  SECURISATION DE L'ECOLE PUBLIQUE DE LA VALLE DU ROHUEL",
 				"justificatif" : "Performance énergétique",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Le Verger"
 			}
 		},
@@ -538,7 +538,7 @@
 				"montant_attrib" : 20580,
 				"intitulé" : "EXTENSION DE L'ATELIER MUNICIPAL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Le Verger"
 			}
 		},
@@ -555,7 +555,7 @@
 				"montant_attrib" : 13517,
 				"intitulé" : "CONSTRUCTION D'UN CITY STADE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Le Verger"
 			}
 		},
@@ -572,7 +572,7 @@
 				"montant_attrib" : 120000,
 				"intitulé" : "EXTENSION ECOLE ELEMENTAIRE PUBLIQUE ET DE L'ALSH ",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "L'hermitage"
 			}
 		},
@@ -590,7 +590,7 @@
 				"intitulé" : "REHABILITATION ET EXTENSION DE LA MAIRIE",
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "L'hermitage"
 			}
 		},
@@ -608,7 +608,7 @@
 				"intitulé" : "RENOVATION ET EXTENSION BATIMENT PERISCOLAIRE",
 				"justificatif" : "Performance énergétique",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Montgermont"
 			}
 		},
@@ -625,7 +625,7 @@
 				"montant_attrib" : 163750,
 				"intitulé" : "REALISATION D'UN ESPACE ENFANCE JEUNESSE / VIE ASSOCIATIVE \"38 LECLERC\"",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Mordelles"
 			}
 		},
@@ -642,7 +642,7 @@
 				"montant_attrib" : 175443,
 				"intitulé" : "RENVOATION DE LA SALLE DE SPORT ET DES ESPACES SPORTIFS ",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Nouvoitou"
 			}
 		},
@@ -659,7 +659,7 @@
 				"montant_attrib" : 224557,
 				"intitulé" : "EXTENSION ECOLE DU CHÊNE CENTENAIRE",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Nouvoitou"
 			}
 		},
@@ -676,7 +676,7 @@
 				"montant_attrib" : 133191,
 				"intitulé" : "RESTRUCTURATION ET ISOLATION DE LA TOITURE DE LA SALLE DE SPORT RAYMOND PERRIN",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Noyal Chatillon sur Seiche"
 			}
 		},
@@ -693,7 +693,7 @@
 				"montant_attrib" : 52914,
 				"intitulé" : "EXTENSION GROUPE SCOLAIRE LES GRAINS D'ORGES ET RESTRUCTURATION DE LA SALLE DES REPAS DU RESTAURANT SCOLAIRE",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Orgères"
 			}
 		},
@@ -710,7 +710,7 @@
 				"montant_attrib" : 124667,
 				"intitulé" : "REHABILITATION ESPACE MULTIFONCTION ACCUEILLANT DES ARTISTES EN ESPACE CULTUREL ET DE COWORKING",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Orgères"
 			}
 		},
@@ -727,7 +727,7 @@
 				"montant_attrib" : 78563,
 				"intitulé" : "EXTENSION DU RESTAURANT SCOLAIRE ",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Orgères"
 			}
 		},
@@ -744,7 +744,7 @@
 				"montant_attrib" : 143856,
 				"intitulé" : "AMENAGEMENT D'UN TERRAIN FOOTBALL STABILISE EN TERRAIN FOOTBAL SYNTHETIQUE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Orgères"
 			}
 		},
@@ -762,7 +762,7 @@
 				"intitulé" : "CONSTRUCTION D'UNE SALLE DE SPORTS",
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Pacé"
 			}
 		},
@@ -779,7 +779,7 @@
 				"montant_attrib" : 25275,
 				"intitulé" : "REHABILITATION ENERGETIQUE COMPLEXE SPORTIF CHASSEBOEUF",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Pacé"
 			}
 		},
@@ -797,7 +797,7 @@
 				"intitulé" : "CREATION D'UNE NOUVELLE MEDIATHEQUE 3ème lieu",
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Parthenay-de-Bretagne"
 			}
 		},
@@ -814,7 +814,7 @@
 				"montant_attrib" : 120000,
 				"intitulé" : "TRAVAUX DE RENOVATION ENERGETIQUE DU GROUPE SCOLAIRE  LUCIE AUBRAC",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Pont-Péan"
 			}
 		},
@@ -832,7 +832,7 @@
 				"intitulé" : "REHABILITATION DU BATIMENT ADMINISTRATIF DE LA MINE",
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Pont-Péan"
 			}
 		},
@@ -850,7 +850,7 @@
 				"intitulé" : "REHABILITATION ET MISE AUX NORMES DE SALLE CULTURELLE DU PRE VERT",
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Romillé"
 			}
 		},
@@ -867,7 +867,7 @@
 				"montant_attrib" : 203076,
 				"intitulé" : "REALISATION D'UN TERRAIN DE FOOTBALL SYNTHETIQUE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Romillé"
 			}
 		},
@@ -884,7 +884,7 @@
 				"montant_attrib" : 8650,
 				"intitulé" : "ETUDE  DE LOCALISATION ET DE PROGRAMMATION DES EQUIPEMENTS PUBLICS (DONT PRE-OPERATIONNEL EQUIPEMENT SCOLAIRE)",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Saint-Armel"
 			}
 		},
@@ -901,7 +901,7 @@
 				"montant_attrib" : 35935,
 				"intitulé" : "DESAMIANTAGE ET REFECTION DES SOLS DU GROUPE SCOLAIRE DES BOSCHAUX",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Saint-Armel"
 			}
 		},
@@ -918,7 +918,7 @@
 				"montant_attrib" : 43400,
 				"intitulé" : "BATIMENT MAIRIE RENOVATION",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Saint-Erblon"
 			}
 		},
@@ -935,7 +935,7 @@
 				"montant_attrib" : 73040,
 				"intitulé" : "RENOVATION DE L'ANCIEN PRESBYTERE EN MAISON DES ASSOCIATIONS",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Saint-Gilles"
 			}
 		},
@@ -953,7 +953,7 @@
 				"intitulé" : "CONSTRUCTION D'UN BATIMENT MUTUALISE POUR LES SERVICES PERISCOLAIRES ET ACCUEIL LOISIRS",
 				"justificatif" : "Performance énergétique",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Saint-Gilles"
 			}
 		},
@@ -971,7 +971,7 @@
 				"intitulé" : "CONSTRUCTION D'UN ALSH ET D'UNE CLASSE DE MATERNELLE",
 				"justificatif" : "Performance énergétique",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "Saint-Sulpice la Forêt"
 			}
 		},
@@ -989,7 +989,7 @@
 				"intitulé" : "CREATION D'UN POLE ASSOCIATIF, CULTUREL ET ARTISTIQUE A LA MORINAIS",
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.4,
+				"taux" : 40,
 				"Maitrise d'ouvrage" : "THORIGNE-FOUILLARD"
 			}
 		},
@@ -1006,7 +1006,7 @@
 				"montant_attrib" : 79500,
 				"intitulé" : "REMPLACEMENT DES BAIES VITREES DE L'EHPAD",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "THORIGNE-FOUILLARD"
 			}
 		},
@@ -1023,7 +1023,7 @@
 				"montant_attrib" : 45037,
 				"intitulé" : "REFECTION TOITURE TERRASSE DE L'ECOLE DES PRES-VERTS ",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "THORIGNE-FOUILLARD"
 			}
 		},
@@ -1040,7 +1040,7 @@
 				"montant_attrib" : 300000,
 				"intitulé" : "CREATION MAISON PETITE ENFANCE",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "Vern-sur-Seiche"
 			}
 		},
@@ -1057,7 +1057,7 @@
 				"montant_attrib" : 53145,
 				"intitulé" : "RENOVATION SALLE PERISCOLAIRE ET SANITAIRE ECOLE ERIC TABARLY",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 0.3,
+				"taux" : 30,
 				"Maitrise d'ouvrage" : "VEZIN LE COQUET"
 			}
 		}
