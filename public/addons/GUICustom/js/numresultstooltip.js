@@ -26,15 +26,16 @@ _map.on('movestart', function (evt) {
 
 
 function showLocation(coordinates, ) {
-    if(info.getQueriedFeatures().length > 1 && configuration.getConfiguration().application.showClickNbItems !== "false") {
-        _popup.setPosition(coordinates);
-        $("#popup-number-results").html(info.getQueriedFeatures().length + ' résultats');
-        $("#popup-number-results").parent().show();
-    }else {
-        $("#popup-number-results").parent().hide();
-    }
-    document.dispatchEvent(new CustomEvent('clickedNbFeaturesEvt', { detail: {'nbfeatures': info.getQueriedFeatures().length, 'position': coordinates}}));
-    _map.render();
+    setTimeout(function(){
+        if(info.getQueriedFeatures().length > 1 && configuration.getConfiguration().application.showClickNbItems !== "false") {
+            _popup.setPosition(coordinates);
+            $("#popup-number-results").html(info.getQueriedFeatures().length + ' résultats');
+            $("#popup-number-results").parent().show();
+        }else {
+            $("#popup-number-results").parent().hide();
+        }
+        document.dispatchEvent(new CustomEvent('clickedNbFeaturesEvt', { detail: {'nbfeatures': info.getQueriedFeatures().length, 'position': coordinates}}));
+    },250);
 }
 
 function refreshResultsNumber(){
