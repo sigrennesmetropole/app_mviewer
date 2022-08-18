@@ -12,7 +12,7 @@
         togglealllayersfromtheme="false"
         templaterightinfopanel="allintabs"
         sortlayersinfopanel="toc"
-        />
+        /> 
 
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-185701.6581470431,6125244.605869446" zoom="11" />
 
@@ -20,12 +20,13 @@
         <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
         <baselayer visible="false" id="ortho2020" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2020" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
     </baselayers>
-
+<!--
     <extensions>
          <extension type="component" id="GUICustom" path="apps/public/addons"/>
     </extensions>
-
+-->
     <themes mini="true" legendmini="false">
+        <!--
         <theme id="theme-202103090939" name="Dispositif DIRCOVE" collapsed="true" icon="fas fa-city">
             <layer
                 id="dircove2021"
@@ -61,7 +62,68 @@
                 infopanel="right-panel">
                 <template url="apps/fondsconcours/templates/dircove.mst"></template>
             </layer>
-            
         </theme>
+        -->
+        
+        <theme id="theme-202208180927" name="Projets enfance" collapsed="true" icon="fas fa-child">
+            <layer
+                id="dircove_enfance"
+                name="Petite enfance/scolaire/périscolaire"
+                type="customlayer"
+                url="apps/fondsconcours/customlayers/fonds_dircove_enfance.js"
+                legendurl="apps/fondsconcours/img/legend_dircove_enfance.svg"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="true"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{Maitrise d'ouvrage}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tabcolor='#b22496'
+                infopanel="right-panel">
+                <template url="apps/fondsconcours/templates/dircove.mst"></template>
+            </layer>
+        </theme>
+        
+        <theme id="theme-202208180940" name="Biodiversité" collapsed="true" icon="fas fa-leaf">
+            <layer
+                id="dircove_biodiv"
+                name="Biodiversité"
+                type="customlayer"
+                url="apps/fondsconcours/customlayers/fonds_dircove_biodiversite.js"
+                legendurl="apps/fondsconcours/img/legend_dircove_biodiversite.svg"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="true"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{Maitrise d'ouvrage}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tabcolor='#f78b12'
+                infopanel="right-panel">
+                <template url="apps/fondsconcours/templates/dircove.mst"></template>
+            </layer>
+        </theme>
+        
+        <theme id="theme-202208180950" name="Autres" collapsed="true" icon="fas fa-landmark">
+            <layer
+                id="dircove_autres"
+                name="Équipement et autres projets"
+                type="customlayer"
+                url="apps/fondsconcours/customlayers/fonds_dircove_autres.js"
+                legendurl="apps/fondsconcours/img/legend_dircove_autres.svg"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="true"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{Maitrise d'ouvrage}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tabcolor='#dd3627'
+                infopanel="right-panel">
+                <template url="apps/fondsconcours/templates/dircove.mst"></template>
+            </layer>
+        </theme>
+        
     </themes>
 </config>
