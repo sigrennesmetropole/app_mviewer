@@ -64,27 +64,6 @@
             </layer>
         </theme>
         -->
-        
-        <theme id="theme-202208180927" name="Projets enfance" collapsed="true" icon="fas fa-child">
-            <layer
-                id="dircove_enfance"
-                name="Petite enfance/scolaire/périscolaire"
-                type="customlayer"
-                url="apps/fondsconcours/customlayers/fonds_dircove_enfance.js"
-                legendurl="apps/fondsconcours/img/legend_dircove_enfance.svg"
-                visible="true"
-                tooltip="false"
-                tooltipenabled="true"
-                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{Maitrise d'ouvrage}}&lt;/span&gt;"
-                metadata="undefined"
-                queryable="true"
-                featurecount="5"
-                tabcolor='#b22496'
-                infopanel="right-panel">
-                <template url="apps/fondsconcours/templates/dircove.mst"></template>
-            </layer>
-        </theme>
-        
         <theme id="theme-202208180940" name="Biodiversité" collapsed="true" icon="fas fa-leaf">
             <layer
                 id="dircove_biodiv"
@@ -100,6 +79,26 @@
                 queryable="true"
                 featurecount="5"
                 tabcolor='#f78b12'
+                infopanel="right-panel">
+                <template url="apps/fondsconcours/templates/dircove.mst"></template>
+            </layer>
+        </theme>
+
+        <theme id="theme-202208180927" name="Projets enfance" collapsed="true" icon="fas fa-child">
+            <layer
+                id="dircove_enfance"
+                name="Petite enfance/scolaire/périscolaire"
+                type="customlayer"
+                url="apps/fondsconcours/customlayers/fonds_dircove_enfance.js"
+                legendurl="apps/fondsconcours/img/legend_dircove_enfance.svg"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="true"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{Maitrise d'ouvrage}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tabcolor='#b22496'
                 infopanel="right-panel">
                 <template url="apps/fondsconcours/templates/dircove.mst"></template>
             </layer>
