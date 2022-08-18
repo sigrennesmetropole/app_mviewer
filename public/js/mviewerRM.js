@@ -797,7 +797,11 @@ mviewer = (function () {
                 }
             });
         }
-        _map.addLayer(l);
+        // CBR : Bug sur chargement de customlayer qui doublonne certaines données
+        // CONTRIBUTION #649
+        //_map.addLayer(l);
+        setTimeout(function(){_map.addLayer(l);},100);
+        // FIN CBR
         if (oLayer.type === "customlayer" && mviewer.customLayers[oLayer.id]) {
             mviewer.customLayers[oLayer.id].config = oLayer;
         }
