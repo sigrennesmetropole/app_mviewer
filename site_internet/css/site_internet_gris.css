@@ -795,23 +795,17 @@ ul ul {
 
 /* Custom-tooltip-infopanel */
 .mv-tooltip.tooltip-inner {
-    /*background-color: var(--darkmain);
-    padding: 8px 8px 8px;
-    color: #fff;
-    font-family: "vistaSansOT_regular", Arial, Sans-serif;
-    font-size: 11px;
-    letter-spacing: 1;*/
     font-family: 'vistaSansOT_light', Arial, Sans-serif;
-    /*width: 100px;*/
     border: 1px solid #555;
+    border-color: transparent;
     border-radius: 5px;
     background-color: #333;
     color: #fff;
     padding: 10px;
     text-align: center;
-    margin-left: -50px;
-    margin-top: -80px;
 }
+
+
 .rm-tooltip-title {
     font-family: 'vistaSansOT_regular', Arial, Sans-serif;
     color: #FFFFFF;
