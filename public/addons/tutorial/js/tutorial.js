@@ -78,7 +78,7 @@ function _waittostart() {
     } else {
         document.dispatchEvent(tutoStartEvent);
     }
-    document.removeEventListener('tutoDOM-ready');
+    document.removeEventListener('tutoDOM-ready', function(){});
 }
 
 function _nextmessage(){

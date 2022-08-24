@@ -97,11 +97,11 @@ var info = (function () {
     // CBR : tri selon la toc ou la légende
     // contribution geobretagne #issue 644
      /**
-     * Property: _tocsertedlayers
+     * Property: _tocsortedlayers
      * Array of string
      * Used to store all layerids sorted according to the toc
      */
-    var _tocsertedlayers;
+    var _tocsortedlayers;
     // fin CBR : tri selon la toc ou la légende
     
 
@@ -351,13 +351,13 @@ var info = (function () {
             if (configuration.getConfiguration().application.sortlayersinfopanel && configuration.getConfiguration().application.sortlayersinfopanel=='toc'){ //toc order
                 // les couches de la toc dans l'ordre 
                 for (var j = 0; j < infoLayers.length; j++) {// layers not shown in toc but queried first
-                    if (_tocsertedlayers.indexOf(infoLayers[j].initiallayerid ? infoLayers[j].initiallayerid:infoLayers[j].layerid) === -1){
+                    if (_tocsortedlayers.indexOf(infoLayers[j].initiallayerid ? infoLayers[j].initiallayerid:infoLayers[j].layerid) === -1){
                         orderedlayers.push(infoLayers[j]);
                     }
                 }
-                for (var i = 0; i < _tocsertedlayers.length; i++) {
+                for (var i = 0; i < _tocsortedlayers.length; i++) {
                     for (var j = 0; j < infoLayers.length; j++) {
-                        if ((infoLayers[j].initiallayerid ? infoLayers[j].initiallayerid:infoLayers[j].layerid) == _tocsertedlayers[i]){
+                        if ((infoLayers[j].initiallayerid ? infoLayers[j].initiallayerid:infoLayers[j].layerid) == _tocsortedlayers[i]){
                             orderedlayers.push(infoLayers[j]);
                         }
                     }
@@ -988,7 +988,7 @@ var info = (function () {
         _captureCoordinatesOnClick = configuration.getCaptureCoordinates();
         //CBR : tri selon la toc ou la légende
         // contribution geobretagne #issue 644
-        _tocsertedlayers = $(".mv-nav-item").map(function() {
+        _tocsortedlayers = $(".mv-nav-item").map(function() {
                 return $(this).attr('data-layerid');
             }).get();
         //fin CBR : tri selon la toc ou la légende

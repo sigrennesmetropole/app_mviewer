@@ -2454,6 +2454,9 @@ mviewer = (function () {
                 attribution: layer.attribution,
                 modifiedDate: layer.modifiedDate,
                 metadata: layer.metadata,
+                // AJOUT CBR - gestion options dépliées par défaut dans la légende
+                expandedoptions: layer.expandedoptions,
+                // FIN AJOUT CBR
                 tooltipControl: false,
                 styleControl: false,
                 attributeControl: false,
@@ -2507,6 +2510,13 @@ mviewer = (function () {
             } else {
                 $("#layers-container").prepend(item);
             }
+
+            // AJOUT CBR - Options de la couche visibles par défaut
+            if (layer.expandedoptions) {
+                this.toggleLayerOptions($('.mv-layer-details[data-layerid="'+layer.id+'"]')[0]);
+            }
+            // FIN AJOUT
+
 
             //Dynamic vector Legend
             if (layer.vectorlegend  && mviewer.customLayers[layer.layerid] && mviewer.customLayers[layer.layerid].legend) {

@@ -3,6 +3,7 @@
     <application
         title="PLUi Rennes Métropole"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="Carte interactive du PLUi de Rennes Métropole"
         help="apps/PLUi/html/plui_help.html"
         showhelp="true"
@@ -101,7 +102,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9bd66532-036e-44c8-957d-9156362e5576"
                 queryable="false"
                 displayOpacityByDefault="true"
-                expandedoptions="true"
+                expanded="true"
                 opacity="0.5"
                 infopanel="right-panel">
                 <template url="apps/PLUi/templates/PLUi_Parcelle.mst"></template>
