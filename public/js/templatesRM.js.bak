@@ -64,6 +64,7 @@ mviewer.templates.layerControl = [
                 '<span class="lock-icon glyphicon glyphicon-lock" aria-hidden="true"></span>',
             '</button>',
             '{{/secure_layer}}',
+            /*'<i class="state-icon glyphicon glyphicon-chevron-down" onclick="mviewer.toggleLayerOptions(this);"></i><a onclick="mviewer.toggleLayerOptions(this);">{{title}}</a>',*/
             '<a href="#" class="mv-layer-remove" aria-label="close" onclick="mviewer.removeLayer(this)" title="Supprimer" i18n="theme.layers.remove">',
                 '<span class="glyphicon glyphicon-remove"></span>',
             '</a>',
@@ -181,9 +182,11 @@ mviewer.templates.layerControl = [
         '{{/timeControl}}',
             '<div class="mv-custom-controls" data-layerid="{{layerid}}"></div>',
         '</div>',
+        	
             '<a href="#" aria-label="Options" onclick="mviewer.toggleLayerOptions(this);" title="Options" i18n="theme.layers.options" class="icon-options">',
                 '<span class="state-icon glyphicon glyphicon-chevron-down"></span>',
             '</a>',
+            
     '</li>'].join("");
 
 mviewer.templates.backgroundLayerControlGallery = [
