@@ -5,13 +5,13 @@
       "js/ogcutilsRM.js",
       "js/fixRightPanel.js",
       "js/navTabs.js",
-      "js/legendeRM.js",
       "js/rmTools.js",
       "js/infoformatter.js",
       "js/numresultstooltip.js",
       "js/nohighlight.js",
       "js/printMap.js",
       "js/rmCustomization.js",
+      "js/legendeRM.js",
       "js/svg_marker.js"
     ],
     "css": [
