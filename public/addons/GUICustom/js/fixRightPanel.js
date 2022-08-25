@@ -1,3 +1,6 @@
+/**
+* Déplace la toolbar à l'ouverture et à la fermeture du panneau de droite
+**/
 var $div = $("#right-panel");
 var observer = new MutationObserver(function(mutations) {
   mutations.forEach(function(mutation) {

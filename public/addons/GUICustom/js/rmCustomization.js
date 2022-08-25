@@ -77,7 +77,12 @@
             }
          }
         
-        document.addEventListener('map-ready', _adjustLegend());
+        
+        document.addEventListener('map-ready', function(){console.log("INIT LEGENDE");});
+        
+    //    const observer = new MutationObserver(_modifiedLegend);
+    //    observer.observe(document.getElementById('layers-container'), { childList: true });
+
         _refreshInfoPanel();
 
     };
@@ -225,22 +230,6 @@
     };
     
     
-    function _adjustLegend(layerId) {
-        $('#layers-container .icon-options').remove();
-        $('#layers-container .layerdisplay-title>i.mv-grip').replaceWith('<i class="state-icon glyphicon glyphicon-chevron-down" onclick="mviewer.toggleLayerOptions(this);"></i>');
-        $('#layers-container .layerdisplay-title>a').attr( "onClick", "mviewer.toggleLayerOptions(this);" );
-        
-        $('#layers-container .layerdisplay-title>a').on("click", function(){_switchchevron ($( this )); });
-        $('#layers-container .layerdisplay-title>i.state-icon').on("click", function(){_switchchevron ($( this )); });
-    };
-    
-    function _switchchevron(clickedElem){
-        if (clickedElem.closest("li").find(".state-icon").hasClass("glyphicon glyphicon-chevron-down")) {
-            clickedElem.closest("li").find(".state-icon").removeClass("glyphicon glyphicon-chevron-down").addClass("glyphicon glyphicon-chevron-up");
-        } else {
-            clickedElem.closest("li").find(".state-icon").removeClass("glyphicon glyphicon-chevron-up").addClass("glyphicon glyphicon-chevron-down");
-        }
-    }
     
 /********************************/
 
