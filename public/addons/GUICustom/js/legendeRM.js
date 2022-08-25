@@ -1,4 +1,6 @@
-
+/**
+ * Interdit la suppression de couche depuis la légende en cas d'affichage en mode mobile
+ **/
 $('#legend-modal').on('show.bs.modal', function (e) {
     if (configuration.getConfiguration().mobile) {
     $("#legend").addClass("active");
