@@ -1,6 +1,4 @@
 var coordinate;
-var nbResultats = 0;
-var fired = false;
 
 
 $("#page-content-wrapper").prepend("<div id='popup-number-results'></div>");
