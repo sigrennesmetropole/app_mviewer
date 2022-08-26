@@ -388,7 +388,7 @@ var searchRM = (function () {
 
     var displayLocationMarker = function (coordX, coordY, zoom, querymaponclick, proj) {
         mviewer.zoomToLocation(coordX, coordY, zoom, querymaponclick);
-        mviewer.showLocation(proj, coordX, coordY);
+        setTimeout(function(){mviewer.showLocation(proj, coordX, coordY)},500);
     };
 
     var displayOrganism = async function (elem, zoom, querymaponclick) {
