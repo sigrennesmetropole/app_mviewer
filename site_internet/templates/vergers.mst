@@ -1,7 +1,6 @@
 {{#features}}
 	<li class="item" >
 		<h5 class="rm-popup-title-feature">{{nom}}</h5>
-		<span class="rm-popup-subtitle-feature" > {{type}} </span>
 		<p class="rm-popup-text-feature">
 			{{#quartier}}<span class='rm-popup-label'> Quartier :</span> {{{quartier}}}<br/>{{/quartier}}
 			{{#situation}}<span class='rm-popup-label'> Localisation :</span> {{{situation}}}<br/>{{/situation}}
