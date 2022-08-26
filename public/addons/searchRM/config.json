@@ -1,5 +1,6 @@
 {
     "js": [
+      "js/proj4_defs.js",
       "js/searchRM.js",
       "js/searchCadastreRM.js",
       "js/searchRMCustom.js"
