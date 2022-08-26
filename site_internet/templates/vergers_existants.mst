@@ -1,7 +1,6 @@
 {{#features}}
 	<li class="item" >
 		<h5 class="rm-popup-title-feature">{{nom_verger}}</h5>
-		<span class="rm-popup-subtitle-feature" > verger </span>
 		<p class="rm-popup-text-feature">
 			{{#quartier}}<span class='rm-popup-label'> Quartier :</span> {{{quartier}}}<br/>{{/quartier}}
 			{{#site}}<span class='rm-popup-label'> Localisation :</span> {{{site}}}<br/>{{/site}}
