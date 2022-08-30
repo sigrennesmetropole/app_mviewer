@@ -2,7 +2,6 @@ mviewer.customLayers.arbresautres= (function() {
     let daterefmin = new Date().getFullYear()-50;
     let daterefmax = new Date().getFullYear();
     let data_url = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=espub_esv:gev_aali&CQL_FILTER=date_plant>='+ daterefmin +' AND date_plant<'+ daterefmax +'&outputFormat=application/json&srsName=EPSG:4326';
-    //let datacolor = '#BBDE91'
     let datacolor = '#DCEAAE'
     
     function markerStyle() {

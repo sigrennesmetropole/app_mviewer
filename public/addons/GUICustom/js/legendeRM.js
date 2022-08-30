@@ -41,9 +41,9 @@ function _initListeners(){
 function _adjustLegend() {
     $('#layers-container .icon-options').remove();
     $('#layers-container .layerdisplay-title>i.mv-grip').replaceWith('<i class="state-icon glyphicon glyphicon-chevron-down" onclick="mviewer.toggleLayerOptions(this);"></i>');
-    $('#layers-container .layerdisplay-title>a').attr( "onClick", "mviewer.toggleLayerOptions(this);" );
+    $('#layers-container .layerdisplay-title>a:not(.mv-layer-remove)').attr( "onClick", "mviewer.toggleLayerOptions(this);" );
     
-    $('#layers-container .layerdisplay-title>a').on("click", function(){_switchchevron ($( this )); });
+    $('#layers-container .layerdisplay-title>a:not(.mv-layer-remove)').on("click", function(){_switchchevron ($( this )); });
     $('#layers-container .layerdisplay-title>i.state-icon').on("click", function(){_switchchevron ($( this )); });
 };
 
