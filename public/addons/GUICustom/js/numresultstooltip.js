@@ -1,4 +1,4 @@
-var coordinate;
+var coordinate = _map.getView().getCenter();
 
 
 $("#page-content-wrapper").prepend("<div id='popup-number-results'></div>");
@@ -7,40 +7,37 @@ mviewer.getMap().addOverlay(_popup);
 
 
 _map.on('singleclick', function (evt) {
-    if ($('.popup-content ul.nav-tabs>li').length > 0 ){
-        showLocation(evt.coordinate);
-    } else {
-        document.addEventListener('infopanel-ready', () => {
-            showLocation(evt.coordinate);
-        }, { once: true });
-    }
+    $("#popup-number-results").parent().hide();
+    coordinate = evt.coordinate;
 });
-
-
 
 _map.on('movestart', function (evt) {
   $("#popup-number-results").parent().hide();
 });
 
+document.addEventListener('infopanel-ready', () => {showLocation();});
 
-function showLocation(coordinates, ) {
-    setTimeout(function(){
+document.addEventListener('refresh-panels', () => {refreshResultsNumber();});
+
+
+function showLocation() {
+    setTimeout(function(){ // laisser le temps de mise à jour des coordonnées au clic
         if(info.getQueriedFeatures().length > 1 && configuration.getConfiguration().application.showClickNbItems !== "false") {
-            _popup.setPosition(coordinates);
+            _popup.setPosition(coordinate);
             $("#popup-number-results").html(info.getQueriedFeatures().length + ' résultats');
             $("#popup-number-results").parent().show();
         }else {
             $("#popup-number-results").parent().hide();
         }
-        document.dispatchEvent(new CustomEvent('clickedNbFeaturesEvt', { detail: {'nbfeatures': info.getQueriedFeatures().length, 'position': coordinates}}));
+        document.dispatchEvent(new CustomEvent('clickedNbFeaturesEvt', { detail: {'nbfeatures': info.getQueriedFeatures().length, 'position': coordinate}}));
     },250);
 }
 
 function refreshResultsNumber(){
     if ($("#popup-number-results")) {
-        document.addEventListener('infopanel-ready', () => {
+        if (info.getQueriedFeatures().length > 0) {
             $("#popup-number-results").html(info.getQueriedFeatures().length + ' résultats');
             setTimeout(function(){ $("#mv_marker").show(); },250);
-          }, { once: true });
+        } else {$("#popup-number-results").parent().hide();}
     }
 }
