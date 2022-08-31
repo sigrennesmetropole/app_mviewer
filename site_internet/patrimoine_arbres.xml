@@ -33,7 +33,7 @@
     </extensions>
     
     <themes mini="true">
-        <theme id="theme-20180625145740" name="Arbres d'alignement de voirie" collapsed="true" icon="fas fa-map-marker-alt">
+        <theme id="theme-20180625145740" name="Arbres d'alignement de voirie" collapsed="true" icon="fas fa-tree">
             <!--<layer
                 id="gev_aali"
                 name="Arbre d'alignement"
@@ -63,7 +63,7 @@
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6db35b05-e8bc-4339-a49b-828da0d3fd9f"
                 queryable="true"
-                tabcolor="#6ac400"
+                tabcolor="#2BE612"
                 featurecount="10"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/arbres_alignement.mst"></template>
@@ -81,7 +81,7 @@
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6db35b05-e8bc-4339-a49b-828da0d3fd9f"
                 queryable="true"
-                tabcolor="#407403"
+                tabcolor="#628A31"
                 featurecount="10"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/arbres_alignement.mst"></template>
@@ -99,7 +99,7 @@
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6db35b05-e8bc-4339-a49b-828da0d3fd9f"
                 queryable="true"
-                tabcolor="#bbde91"
+                tabcolor="#DCEAAE"
                 featurecount="10"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/arbres_alignement.mst"></template>
