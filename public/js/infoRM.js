@@ -563,11 +563,12 @@ var info = (function () {
                     // FIN AJOUT CBR : Event sur info panel chargé
                     if (configuration.getConfiguration().mobile) {
                         $("#modal-panel").modal("show");
-                        if (_featureTooltip.getElement().children.length) {
-                            // CBR : BUG sur la gestion du tooltip en mode mobile
+                        // CBR : BUG sur la gestion du tooltip en mode mobile
+                        if (_featureTooltip && _featureTooltip.getElement().children.length) {
+                        // if (_featureTooltip.getElement().children.length) {
                             // contribution geobretagne #issue 646
                             $(_featureTooltip.getElement()).popover('hide');
-                            // FIN CBR : BUG sur la gestion du tooltip en mode mobile
+                        // FIN CBR : BUG sur la gestion du tooltip en mode mobile
                         }
                     } else {
                         if (!$('#'+panel).hasClass("active")) {
