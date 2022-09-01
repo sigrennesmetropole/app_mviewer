@@ -79,7 +79,7 @@
                 metadata="undefined"
                 queryable="true"
                 featurecount="5"
-                tabcolor='#97be28'
+                tabcolor='#97BE28'
                 infopanel="right-panel"
                 index="1">
                 <template url="apps/fondsconcours/templates/dircove.mst"></template>
@@ -100,7 +100,7 @@
                 metadata="undefined"
                 queryable="true"
                 featurecount="5"
-                tabcolor='#a596c8'
+                tabcolor='#948CBE'
                 infopanel="right-panel"
                 index="2">
                 <template url="apps/fondsconcours/templates/dircove.mst"></template>
@@ -121,7 +121,7 @@
                 metadata="undefined"
                 queryable="true"
                 featurecount="5"
-                tabcolor='#79c7c8'
+                tabcolor='#61C3D7'
                 infopanel="right-panel"
                 index="3">
                 <template url="apps/fondsconcours/templates/dircove.mst"></template>
