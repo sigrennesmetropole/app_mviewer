@@ -681,23 +681,6 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7890000261, 48.0523322245 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 567000,
-				"montant_attrib" : 170100,
-				"intitulé" : "TRAVAUX DE RESTRUCTURATION D'UN BATIMENT SCOLAIRE SATELLITE",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Chavagne"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
 				"coordinates" : [ -1.721348427, 47.9787631499 ]
 			},
 			"properties" : {
