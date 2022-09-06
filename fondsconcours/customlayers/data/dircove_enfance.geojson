@@ -543,7 +543,7 @@
 				"coordinates" : [ -1.5934145451, 48.0144943066 ]
 			},
 			"properties" : {
-				"année" : "2021-2022",
+				"année" : "2019-2020",
 				"armature" : "Pôle de proximité à conforter",
 				"cout_global" : 119783.34,
 				"montant_attrib" : 35935,
@@ -578,7 +578,7 @@
 				"coordinates" : [ -1.8281292915, 48.1524588698 ]
 			},
 			"properties" : {
-				"année" : "2021-2022",
+				"année" : "2019-2020",
 				"armature" : "Pôle de proximité ",
 				"cout_global" : 817399,
 				"montant_attrib" : 326960,
@@ -675,23 +675,6 @@
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Mordelles"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.7890000261, 48.0523322245 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 567000,
-				"montant_attrib" : 170100,
-				"intitulé" : "TRAVAUX DE RESTRUCTURATION D'UN BATIMENT SCOLAIRE SATELLITE",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Chavagne"
 			}
 		},
 		{
