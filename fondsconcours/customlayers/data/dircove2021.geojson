@@ -59,6 +59,42 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
+				"coordinates" : [ -1.9427347183, 48.2963314494 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 23329,
+				"montant_attrib" : 11664,
+				"intitulé" : "Reconstruction de la tour et du rempart ",
+				"justificatif" : "PPC + PBIL",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Bécherel"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.9427347183, 48.2963314494 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 43898,
+				"montant_attrib" : 21949,
+				"intitulé" : "Bilan sanitaire des remparts",
+				"justificatif" : "PPC + PBIL",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Bécherel"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
 				"coordinates" : [ -1.9433784485, 48.2952536513 ]
 			},
 			"properties" : {
@@ -76,6 +112,23 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
+				"coordinates" : [ -1.6402620077, 48.1823588188 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 20733,
+				"montant_attrib" : 6220,
+				"intitulé" : "Restructuration du logement de fonction",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Betton"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
 				"coordinates" : [ -1.6141095323, 47.9923715227 ]
 			},
 			"properties" : {
@@ -87,6 +140,41 @@
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Bourgbarré"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.482055, 48.110245 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 559000,
+				"montant_attrib" : 167700,
+				"intitulé" : "Création d'une micro-crèche",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Brécé"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.4839053154, 48.105864033 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 142000,
+				"montant_attrib" : 42600,
+				"intitulé" : "Parcours sportif intégrant des enjeux de biodiversité",
+				"justificatif" : "PBIL",
+				"nature" : "3- Biodiversité",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Brécé"
 			}
 		},
 		{
@@ -138,6 +226,40 @@
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Chartres de Bretagne"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.695482762, 48.0388636062 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 359815,
+				"montant_attrib" : 107944.5,
+				"intitulé" : "Extension du centre de loisir",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chartres de Bretagne"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6309821442, 48.2115150509 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 11648,
+				"montant_attrib" : 3440,
+				"intitulé" : "Mise aux normes d'un espace de coworking",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chevaigné"
 			}
 		},
 		{
@@ -248,6 +370,58 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
+				"coordinates" : [ -1.7169570923, 47.9834158196 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 88721,
+				"montant_attrib" : 26616,
+				"intitulé" : "Construction d'un city stade",
+				"justificatif" : "PPC ",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Laillé"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8003952503, 48.1007467137 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 2719125,
+				"montant_attrib" : 450000,
+				"intitulé" : "Construction d'un batiment périscolaire, ALSH et restauration",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Le Rheu"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.928936354, 48.2846432416 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 700000,
+				"montant_attrib" : 350000,
+				"intitulé" : "Rénovation ancien patronage et annexes",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Miniac-Sous-Becherel"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
 				"coordinates" : [ -1.8411819121, 48.0717105974 ]
 			},
 			"properties" : {
@@ -257,6 +431,24 @@
 				"montant_attrib" : 40882.5,
 				"intitulé" : "Rénovation de la salle de gymnastique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Mordelles"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8635129929, 48.0738782533 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 411991,
+				"montant_attrib" : 90000,
+				"intitulé" : "Muséo - Sentier d'interprétation sur la reconquête de l'eau et des milieux aquatiques",
+				"justificatif" : "Performance énergétique",
+				"nature" : "3- Biodiversité",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Mordelles"
 			}
@@ -283,6 +475,24 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
+				"coordinates" : [ -1.6703242064, 47.9945276852 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 3058847,
+				"montant_attrib" : 100000,
+				"intitulé" : "Réalisation d'un pôle santé plurdisciplinaire",
+				"justificatif" : "PPC + Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Orgères"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
 				"coordinates" : [ -1.8307713206, 48.1928844167 ]
 			},
 			"properties" : {
@@ -294,6 +504,41 @@
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 50,
 				"Maitrise d'ouvrage" : "Parthenay-de-Bretagne"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8903619051, 48.2141108735 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 141987,
+				"montant_attrib" : 35497,
+				"intitulé" : "Rénovation du groupe scolaire - Programme 2020",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Romillé"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8898415565, 48.2147364201 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 99888,
+				"montant_attrib" : 24970,
+				"intitulé" : "Travaux de rénovation des batiments scolaires (programme 2021)",
+				"justificatif" : "PPC",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Romillé"
 			}
 		},
 		{
@@ -369,7 +614,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8292892549, 48.1545644835 ]
+				"coordinates" : [ -1.8246102333, 48.1558229028 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -403,88 +648,17 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.9457307458, 48.2965687761 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 23329,
-				"montant_attrib" : 11664,
-				"intitulé" : "Reconstruction de la tour et du rempart ",
-				"justificatif" : "PPC + PBIL",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 50,
-				"Maitrise d'ouvrage" : "Bécherel"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.9457307458, 48.2965687761 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 43898,
-				"montant_attrib" : 21949,
-				"intitulé" : "Bilan sanitaire des remparts",
-				"justificatif" : "PPC + PBIL",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 50,
-				"Maitrise d'ouvrage" : "Bécherel"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.6402620077, 48.1823588188 ]
+				"coordinates" : [ -1.6043571945, 48.0479006285 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
 				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 20733,
-				"montant_attrib" : 6220,
-				"intitulé" : "Reestructuration du logement de fonction",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Betton"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.4829783731, 48.1106665983 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 559000,
-				"montant_attrib" : 167700,
-				"intitulé" : "Création d'une micro-crèche",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Brécé"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.4829783731, 48.1106665983 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 142000,
-				"montant_attrib" : 42600,
-				"intitulé" : "Parcours sportif intégrant des enjeux de biodiversité",
-				"justificatif" : "PBIL",
+				"cout_global" : 93000,
+				"montant_attrib" : 27900,
+				"intitulé" : "Aménagement du Clos d'Orrière",
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Brécé"
+				"Maitrise d'ouvrage" : "Vern-sur-Seiche"
 			}
 		},
 		{
@@ -502,40 +676,6 @@
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Bruz"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.7072868821, 48.0409331844 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 359815,
-				"montant_attrib" : 107944.5,
-				"intitulé" : "Extension du centre de loisir",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Chartres de Bretagne"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.6305071153, 48.2120956029 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 11648,
-				"montant_attrib" : 3440,
-				"intitulé" : "Mise aux normes d'un espave de coworking",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Chevaigné"
 			}
 		},
 		{
@@ -570,24 +710,6 @@
 				"intitulé" : "Construction d'un centre technique municipal",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Laillé"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.721348427, 47.9787631499 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 88721,
-				"montant_attrib" : 26616,
-				"intitulé" : "Construction d'un city stade",
-				"justificatif" : "PPC ",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
 				"Maitrise d'ouvrage" : "Laillé"
 			}
 		},
@@ -630,23 +752,6 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7941202652, 48.1005299556 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 2719125,
-				"montant_attrib" : 450000,
-				"intitulé" : "Construction d'un batiment périscolaire, ALSH et restauration",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Le Rheu"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
 				"coordinates" : [ -1.8178671598, 48.1275366873 ]
 			},
 			"properties" : {
@@ -665,23 +770,6 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.9308759304, 48.2843511996 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 700000,
-				"montant_attrib" : 350000,
-				"intitulé" : "Rénovation ancien patronage et annexes",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 50,
-				"Maitrise d'ouvrage" : "Miniac-Sous-Becherel"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
 				"coordinates" : [ -1.7161798047, 48.1558502166 ]
 			},
 			"properties" : {
@@ -693,42 +781,6 @@
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Montgermont"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8468391669, 48.0732055894 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 411991,
-				"montant_attrib" : 90000,
-				"intitulé" : "Sentier d'interprétation sur la reconquête de l'eau et des milieux aquatiques",
-				"justificatif" : "Performance énergétique",
-				"nature" : "3- Biodiversité",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Mordelles"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.6676339507, 47.9956800229 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 3058847,
-				"montant_attrib" : 100000,
-				"intitulé" : "Réalisation d'un pôle santé plurdisciplinaire",
-				"justificatif" : "PPC + Performance énergétique",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "Orgères"
 			}
 		},
 		{
@@ -774,64 +826,12 @@
 			"properties" : {
 				"année" : "2021-2022",
 				"armature" : "Pôle de proximité ",
-				"cout_global" : 141987,
-				"montant_attrib" : 35497,
-				"intitulé" : "Rénovation du groupe scolaire - Programme 2020",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Romillé"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8924325705, 48.2155192362 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
 				"cout_global" : 599654,
 				"montant_attrib" : 90000,
 				"intitulé" : "Requalification paysagère du chemin creux de la Houltais",
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Romillé"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8924325705, 48.2155192362 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 99888,
-				"montant_attrib" : 24970,
-				"intitulé" : "Travaux de rénovation des batiments scolaires (programme 2021)",
-				"justificatif" : "PPC",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Romillé"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.6016689616, 48.0446618576 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 93000,
-				"montant_attrib" : 27900,
-				"intitulé" : "Aménagement du Clos d'Orrière",
-				"nature" : "3- Biodiversité",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Vern-sur-Seiche"
 			}
 		}
 	]
