@@ -92,6 +92,23 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
+				"coordinates" : [ -1.482055, 48.110245 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 559000,
+				"montant_attrib" : 167700,
+				"intitulé" : "Création d'une micro-crèche",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Brécé"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
 				"coordinates" : [ -1.7238745809, 48.0194768465 ]
 			},
 			"properties" : {
@@ -282,6 +299,23 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
+				"coordinates" : [ -1.8003952503, 48.1007467137 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 2719125,
+				"montant_attrib" : 450000,
+				"intitulé" : "Construction d'un batiment périscolaire, ALSH et restauration",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Le Rheu"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
 				"coordinates" : [ -1.7706441879, 48.0807310798 ]
 			},
 			"properties" : {
@@ -310,6 +344,93 @@
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Le Rheu"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.9305360317, 48.0694908182 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 72043.05,
+				"montant_attrib" : 28817,
+				"intitulé" : "REHABILITATION ET  SECURISATION DE L'ECOLE PUBLIQUE DE LA VALLE DU ROHUEL",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Le Verger"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5818920049, 47.9826692018 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1390119,
+				"montant_attrib" : 120000,
+				"intitulé" : "EXTENSION ECOLE ELEMENTAIRE PUBLIQUE ET DE L'ALSH ",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "L'hermitage"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7153155804, 48.1564205323 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1340432,
+				"montant_attrib" : 400000,
+				"intitulé" : "RENOVATION ET EXTENSION BATIMENT PERISCOLAIRE",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Montgermont"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5431968853, 48.040675739 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 748523.5,
+				"montant_attrib" : 224557,
+				"intitulé" : "EXTENSION ECOLE DU CHÊNE CENTENAIRE",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Nouvoitou"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6675809439, 47.9972348734 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 176379.25,
+				"montant_attrib" : 52914,
+				"intitulé" : "EXTENSION GROUPE SCOLAIRE LES GRAINS D'ORGES ET RESTRUCTURATION DE LA SALLE DES REPAS DU RESTAURANT SCOLAIRE",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Orgères"
 			}
 		},
 		{
@@ -361,6 +482,41 @@
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Pont-Péan"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8903619051, 48.2141108735 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 141987,
+				"montant_attrib" : 35497,
+				"intitulé" : "Rénovation du groupe scolaire - Programme 2020",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Romillé"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8898415565, 48.2147364201 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 99888,
+				"montant_attrib" : 24970,
+				"intitulé" : "Travaux de rénovation des batiments scolaires (programme 2021)",
+				"justificatif" : "PPC",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Romillé"
 			}
 		},
 		{
@@ -419,6 +575,42 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
+				"coordinates" : [ -1.8281292915, 48.1524588698 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 817399,
+				"montant_attrib" : 326960,
+				"intitulé" : "CONSTRUCTION D'UN BATIMENT MUTUALISE POUR LES SERVICES PERISCOLAIRES ET ACCUEIL LOISIRS",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Saint-Gilles"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5785256028, 48.2177711062 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 1375400,
+				"montant_attrib" : 400000,
+				"intitulé" : "CONSTRUCTION D'UN ALSH ET D'UNE CLASSE DE MATERNELLE",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Saint-Sulpice la Forêt"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
 				"coordinates" : [ -1.5816844055, 48.1539197208 ]
 			},
 			"properties" : {
@@ -430,6 +622,23 @@
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "THORIGNE-FOUILLARD"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5993923495, 48.0411473302 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 1312787,
+				"montant_attrib" : 300000,
+				"intitulé" : "CREATION MAISON PETITE ENFANCE",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Vern-sur-Seiche"
 			}
 		},
 		{
@@ -452,18 +661,20 @@
 		{
 			"type" : "Feature",
 			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.4829783731, 48.1106665983 ]
+				"type" : "MultiPoint",
+				"coordinates" : [
+					[ -1.8467447338, 48.0737120314 ]
+				]
 			},
 			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 559000,
-				"montant_attrib" : 167700,
-				"intitulé" : "Création d'une micro-crèche",
+				"année" : "2019-2020",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 545834,
+				"montant_attrib" : 163750,
+				"intitulé" : "REALISATION D'UN ESPACE ENFANCE JEUNESSE / VIE ASSOCIATIVE \"38 LECLERC\"",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Brécé"
+				"Maitrise d'ouvrage" : "Mordelles"
 			}
 		},
 		{
@@ -499,215 +710,6 @@
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Laillé"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.7941202652, 48.1005299556 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 2719125,
-				"montant_attrib" : 450000,
-				"intitulé" : "Construction d'un batiment périscolaire, ALSH et restauration",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Le Rheu"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.932588787, 48.0708049437 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 72043.05,
-				"montant_attrib" : 28817,
-				"intitulé" : "REHABILITATION ET  SECURISATION DE L'ECOLE PUBLIQUE DE LA VALLE DU ROHUEL",
-				"justificatif" : "Performance énergétique",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "Le Verger"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8178671598, 48.1275366873 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 1390119,
-				"montant_attrib" : 120000,
-				"intitulé" : "EXTENSION ECOLE ELEMENTAIRE PUBLIQUE ET DE L'ALSH ",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "L'hermitage"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.7161798047, 48.1558502166 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 1340432,
-				"montant_attrib" : 400000,
-				"intitulé" : "RENOVATION ET EXTENSION BATIMENT PERISCOLAIRE",
-				"justificatif" : "Performance énergétique",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "Montgermont"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8468391669, 48.0732055894 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 545834,
-				"montant_attrib" : 163750,
-				"intitulé" : "REALISATION D'UN ESPACE ENFANCE JEUNESSE / VIE ASSOCIATIVE \"38 LECLERC\"",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Mordelles"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.5461905977, 48.041902908 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 748523.5,
-				"montant_attrib" : 224557,
-				"intitulé" : "EXTENSION ECOLE DU CHÊNE CENTENAIRE",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Nouvoitou"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.6676339507, 47.9956800229 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 176379.25,
-				"montant_attrib" : 52914,
-				"intitulé" : "EXTENSION GROUPE SCOLAIRE LES GRAINS D'ORGES ET RESTRUCTURATION DE LA SALLE DES REPAS DU RESTAURANT SCOLAIRE",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Orgères"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8924325705, 48.2155192362 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 141987,
-				"montant_attrib" : 35497,
-				"intitulé" : "Rénovation du groupe scolaire - Programme 2020",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Romillé"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8924325705, 48.2155192362 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 99888,
-				"montant_attrib" : 24970,
-				"intitulé" : "Travaux de rénovation des batiments scolaires (programme 2021)",
-				"justificatif" : "PPC",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Romillé"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8292892549, 48.1545644835 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 817399,
-				"montant_attrib" : 326960,
-				"intitulé" : "CONSTRUCTION D'UN BATIMENT MUTUALISE POUR LES SERVICES PERISCOLAIRES ET ACCUEIL LOISIRS",
-				"justificatif" : "Performance énergétique",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "Saint-Gilles"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.5785184335, 48.2187542342 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 1375400,
-				"montant_attrib" : 400000,
-				"intitulé" : "CONSTRUCTION D'UN ALSH ET D'UNE CLASSE DE MATERNELLE",
-				"justificatif" : "Performance énergétique",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "Saint-Sulpice la Forêt"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.6016689616, 48.0446618576 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 1312787,
-				"montant_attrib" : 300000,
-				"intitulé" : "CREATION MAISON PETITE ENFANCE",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Vern-sur-Seiche"
 			}
 		}
 	]
