@@ -131,7 +131,7 @@ mviewer.customLayers.urbadiffus_en_etude= (function() {
     });
     
     dataLayer.getSource().once('change',() =>{
-        console.log("ETUDE - complétude données");
+        //console.log("ETUDE - complétude données");
         getADSData();
     });
     
