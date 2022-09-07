@@ -131,7 +131,7 @@ mviewer.customLayers.urbadiffus_en_chantier= (function() {
     });
     
     dataLayer.getSource().once('change',() =>{
-        console.log("CHANTIER - complétude données");
+        //console.log("CHANTIER - complétude données");
         getADSData();
     });
     
