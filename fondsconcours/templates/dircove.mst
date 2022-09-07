@@ -10,6 +10,22 @@
 			{{#cout_global}}<span class='rm-popup-label'> Coût global :</span> {{{cout_global}}} €<br/>{{/cout_global}}
 			{{#taux}}<span class='rm-popup-label'> Aide métropolitaine :</span> {{{taux}}} %<br/>{{/taux}}
 			{{#justificatif}}<span class='rm-popup-label'> Justificatif :</span> {{{justificatif}}} <br/>{{/justificatif}}
+            {{#photo}}
+            <section>
+                <!--<div id="slideauto" class="slide-feature slideA">
+                    <div class="thumbnail iframe-popup slide-feature" onclick='carousel.getpopupslide("slideauto", 0);'>
+                        <img src="{{{photo}}}" class="slick-slide-image" 
+                            loading="lazy" style="height: 150px;" />
+                        </div>
+                </div>
+                -->
+                <div id="slideauto" style="display: block;">
+                    <img src="{{{photo}}}" loading="lazy" style="height: 150px;">
+                    <p class="labelPictureEnlarge rm-popup-label">Cliquez pour agrandir cette image</p>
+                </div>
+            </section>
+            {{/photo}}
+            
 		</p>
 	</li>
 {{/features}}

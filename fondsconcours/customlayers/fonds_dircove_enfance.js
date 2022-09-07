@@ -68,8 +68,22 @@ mviewer.customLayers.dircove_enfance= (function() {
         xhr.send();
     }
     
+    function checkPhotos(){
+        let features = _layer.getSource().getFeatures();
+        for (feat in features) {
+            let myFeat=features[feat];
+            let urlphoto = features[feat].get('photo');
+            $.get(urlphoto, function() {}).fail(function() {
+                console.log("URL inconnue : " + urlphoto);
+                myFeat.unset('photo', true);
+                console.log(myFeat.getProperties());
+            });
+        }
+    }
+    
     _layer.once('prerender',() =>{
         calculateStyleIcon();
+        checkPhotos();
     });
     
     /*
