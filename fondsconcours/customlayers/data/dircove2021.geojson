@@ -34,7 +34,8 @@
 				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Acigné"
+				"Maitrise d'ouvrage" : "Acigné",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/4551.JPG"
 			}
 		},
 		{
@@ -191,7 +192,8 @@
 				"intitulé" : "Réhabilitation du moulin du Boël",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Bruz"
+				"Maitrise d'ouvrage" : "Bruz",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/1615.jpg"
 			}
 		},
 		{
@@ -450,7 +452,8 @@
 				"justificatif" : "Performance énergétique",
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Mordelles"
+				"Maitrise d'ouvrage" : "Mordelles",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/5452.jpg"
 			}
 		},
 		{

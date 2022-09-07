@@ -684,7 +684,7 @@ ul ul {
     max-height: -webkit-fill-available;
     max-width: 100%;
 }
-.text-credit{
+.text-credit {
     font-family:"vistaSansOT_bold";
     color:#555;
     font-size:10px;
@@ -692,12 +692,12 @@ ul ul {
     padding-left: 10px;
 }
 
-// Photo dans fenetre modale
-.popphoto{
+/* Photo dans fenetre modale*/
+.popphoto {
     cursor: default!important;
 }
 
-.popphotocredit{
+.popphotocredit {
     text-align:center;
 }
 

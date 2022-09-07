@@ -34,7 +34,8 @@
 				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Acigné"
+				"Maitrise d'ouvrage" : "Acigné",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/4551.JPG"
 			}
 		},
 		{
@@ -173,7 +174,8 @@
 				"intitulé" : "RENOVATION SALLE DES SPORTS",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Brécé"
+				"Maitrise d'ouvrage" : "Brécé",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/1485.JPG"
 			}
 		},
 		{
@@ -190,7 +192,8 @@
 				"intitulé" : "Réhabilitation du moulin du Boël",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Bruz"
+				"Maitrise d'ouvrage" : "Bruz",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/1615.jpg"
 			}
 		},
 		{
@@ -379,7 +382,8 @@
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Gevezé"
+				"Maitrise d'ouvrage" : "Gevezé",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/5448.jpg"
 			}
 		},
 		{
@@ -414,7 +418,8 @@
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "La Chapelle Chaussée"
+				"Maitrise d'ouvrage" : "La Chapelle Chaussée",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/4579.jpg"
 			}
 		},
 		{
@@ -780,7 +785,8 @@
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Romillé"
+				"Maitrise d'ouvrage" : "Romillé",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/3121.JPG"
 			}
 		},
 		{
@@ -987,7 +993,8 @@
 				"intitulé" : "REHABILITATION ESPACE MULTIFONCTION ACCUEILLANT DES ARTISTES EN ESPACE CULTUREL ET DE COWORKING",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Orgères"
+				"Maitrise d'ouvrage" : "Orgères",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/6563.jpg"
 			}
 		},
 		{

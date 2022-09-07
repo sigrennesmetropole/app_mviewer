@@ -108,7 +108,8 @@
 				"intitulé" : "RENOVATION SALLE DES SPORTS",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Brécé"
+				"Maitrise d'ouvrage" : "Brécé",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/1485.JPG"
 			}
 		},
 		{
@@ -349,7 +350,8 @@
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Gevezé"
+				"Maitrise d'ouvrage" : "Gevezé",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/5448.jpg"
 			}
 		},
 		{
@@ -367,7 +369,8 @@
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "La Chapelle Chaussée"
+				"Maitrise d'ouvrage" : "La Chapelle Chaussée",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/4579.jpg"
 			}
 		},
 		{
@@ -470,7 +473,8 @@
 				"intitulé" : "AMENAGEMENT DE LA CUISINE CENTRALE L'ORME ROBIN",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Le Rheu"
+				"Maitrise d'ouvrage" : "Le Rheu",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/5158.jpg"
 			}
 		},
 		{
@@ -592,7 +596,8 @@
 				"justificatif" : "Performance énergétique",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Montgermont"
+				"Maitrise d'ouvrage" : "Montgermont",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/2549.JPG"
 			}
 		},
 		{
@@ -626,7 +631,8 @@
 				"intitulé" : "EXTENSION ECOLE DU CHÊNE CENTENAIRE",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Nouvoitou"
+				"Maitrise d'ouvrage" : "Nouvoitou",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/2682.JPG"
 			}
 		},
 		{
@@ -800,7 +806,8 @@
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Romillé"
+				"Maitrise d'ouvrage" : "Romillé",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/3121.JPG"
 			}
 		},
 		{
@@ -992,7 +999,8 @@
 				"intitulé" : "REHABILITATION ESPACE MULTIFONCTION ACCUEILLANT DES ARTISTES EN ESPACE CULTUREL ET DE COWORKING",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Orgères"
+				"Maitrise d'ouvrage" : "Orgères",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/6563.jpg"
 			}
 		},
 		{
