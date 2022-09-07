@@ -83,7 +83,7 @@ mviewer.customLayers.dircove_enfance= (function() {
     
     _layer.once('prerender',() =>{
         calculateStyleIcon();
-        checkPhotos();
+        //checkPhotos();
     });
     
     /*

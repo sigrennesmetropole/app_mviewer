@@ -83,7 +83,7 @@ mviewer.customLayers.dircove_biodiv= (function() {
     
     _layer.once('prerender',() =>{
         calculateStyleIcon();
-        checkPhotos();
+        //checkPhotos();
     });
     
     /*

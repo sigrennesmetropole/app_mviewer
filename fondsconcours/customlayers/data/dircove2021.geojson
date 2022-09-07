@@ -6,6 +6,668 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
+				"coordinates" : [ -1.539427042, 48.1360005604 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 2456952,
+				"montant_attrib" : 400000,
+				"intitulé" : "Construction d'un espace gym et activités corporelles - salle du Chevré",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Acigné"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5197181702, 48.1383919604 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1239854,
+				"montant_attrib" : 180000,
+				"intitulé" : "Construction ateliers artistiques et loisirs créatifs - Ferme de Joval ",
+				"justificatif" : "PPC + PBIL",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Acigné",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/4551.JPG"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.9473713939, 48.2955525704 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 5000,
+				"montant_attrib" : 2500,
+				"intitulé" : "Réféction des joints des murs du théatre municipal",
+				"justificatif" : "PPC + PBIL",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Bécherel"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.9427347183, 48.2963314494 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 23329,
+				"montant_attrib" : 11664,
+				"intitulé" : "Reconstruction de la tour et du rempart ",
+				"justificatif" : "PPC + PBIL",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Bécherel"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.9427347183, 48.2963314494 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 43898,
+				"montant_attrib" : 21949,
+				"intitulé" : "Bilan sanitaire des remparts",
+				"justificatif" : "PPC + PBIL",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Bécherel"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.9433784485, 48.2952536513 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 6633,
+				"montant_attrib" : 3317,
+				"intitulé" : "Eclairage intérieur de l'église",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Bécherel"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6402620077, 48.1823588188 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 20733,
+				"montant_attrib" : 6220,
+				"intitulé" : "Restructuration du logement de fonction",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Betton"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6141095323, 47.9923715227 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 673197,
+				"montant_attrib" : 201959,
+				"intitulé" : "Extension et rénovation du restaurant scolaire",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Bourgbarré"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.482055, 48.110245 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 559000,
+				"montant_attrib" : 167700,
+				"intitulé" : "Création d'une micro-crèche",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Brécé"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.4839053154, 48.105864033 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 142000,
+				"montant_attrib" : 42600,
+				"intitulé" : "Parcours sportif intégrant des enjeux de biodiversité",
+				"justificatif" : "PBIL",
+				"nature" : "3- Biodiversité",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Brécé"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7541172397, 47.9929104498 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 607159,
+				"montant_attrib" : 159028,
+				"intitulé" : "Réhabilitation du moulin du Boël",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Bruz",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/1615.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.708891954, 48.0425496614 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 2089358,
+				"montant_attrib" : 225000,
+				"intitulé" : "Extension de l'EHPAD la poterie",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chartres de Bretagne"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6955422902, 48.0416114593 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 480168,
+				"montant_attrib" : 140084,
+				"intitulé" : "Rénovation du centre culturel Bat B",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chartres de Bretagne"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.695482762, 48.0388636062 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 359815,
+				"montant_attrib" : 107944.5,
+				"intitulé" : "Extension du centre de loisir",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chartres de Bretagne"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6309821442, 48.2115150509 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 11648,
+				"montant_attrib" : 3440,
+				"intitulé" : "Mise aux normes d'un espace de coworking",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chevaigné"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6316862244, 48.2113910423 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 24774,
+				"montant_attrib" : 7432,
+				"intitulé" : "Travaux de réfection des toits plats de l'école publique élémentaire",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chevaigné"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5856206686, 47.9787891422 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 2182142,
+				"montant_attrib" : 600000,
+				"intitulé" : "Création d'un nouveau restaurant municipal",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Corps-Nuds"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7889261246, 48.2207198339 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1074382,
+				"montant_attrib" : 400000,
+				"intitulé" : "Extension et réhabilitation de la mairie",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Gevezé"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8535599016, 48.2726903094 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 750295,
+				"montant_attrib" : 135000,
+				"intitulé" : "Restructuration et extension du centre social et de la maison de l'enfance",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 18,
+				"Maitrise d'ouvrage" : "La Chapelle Chaussée"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7269456387, 48.1747575767 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 436400,
+				"montant_attrib" : 130920,
+				"intitulé" : "Toiture de la salle des sports",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7333802581, 48.1784116791 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 1375000,
+				"montant_attrib" : 412649,
+				"intitulé" : "Création d'un multi-accueil",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7169570923, 47.9834158196 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 88721,
+				"montant_attrib" : 26616,
+				"intitulé" : "Construction d'un city stade",
+				"justificatif" : "PPC ",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Laillé"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8003952503, 48.1007467137 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 2719125,
+				"montant_attrib" : 450000,
+				"intitulé" : "Construction d'un batiment périscolaire, ALSH et restauration",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Le Rheu"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.928936354, 48.2846432416 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 700000,
+				"montant_attrib" : 350000,
+				"intitulé" : "Rénovation ancien patronage et annexes",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Miniac-Sous-Becherel"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8411819121, 48.0717105974 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 136275,
+				"montant_attrib" : 40882.5,
+				"intitulé" : "Rénovation de la salle de gymnastique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Mordelles"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8635129929, 48.0738782533 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 411991,
+				"montant_attrib" : 90000,
+				"intitulé" : "Muséo - Sentier d'interprétation sur la reconquête de l'eau et des milieux aquatiques",
+				"justificatif" : "Performance énergétique",
+				"nature" : "3- Biodiversité",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Mordelles",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/5452.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5560460091, 48.0408055591 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 934000,
+				"montant_attrib" : 373486,
+				"intitulé" : "Création d'un nouveau centre technique municipal",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Nouvoitou"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6703242064, 47.9945276852 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 3058847,
+				"montant_attrib" : 100000,
+				"intitulé" : "Réalisation d'un pôle santé plurdisciplinaire",
+				"justificatif" : "PPC + Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Orgères"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8307713206, 48.1928844167 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 78311,
+				"montant_attrib" : 36055,
+				"intitulé" : "Extension du bâtiment périscolaire",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Parthenay-de-Bretagne"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8903619051, 48.2141108735 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 141987,
+				"montant_attrib" : 35497,
+				"intitulé" : "Rénovation du groupe scolaire - Programme 2020",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Romillé"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8898415565, 48.2147364201 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 99888,
+				"montant_attrib" : 24970,
+				"intitulé" : "Travaux de rénovation des batiments scolaires (programme 2021)",
+				"justificatif" : "PPC",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Romillé"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5934145451, 48.0144943066 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 227511,
+				"montant_attrib" : 88095,
+				"intitulé" : "Extension d'une cours d'école",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Saint-Armel"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.653083659, 48.0203434258 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 182833,
+				"montant_attrib" : 54849.9,
+				"intitulé" : "Réaménagement des locaux de la salle associative Le Verger",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint-Erblon"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6534129451, 48.0208089534 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 38677,
+				"montant_attrib" : 11603.1,
+				"intitulé" : "Pôle social",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint-Erblon"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8284887075, 48.1524588698 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 90436,
+				"montant_attrib" : 22609,
+				"intitulé" : "Réhabilitation de l'école élémentaire J. Prévert ",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint-Gilles"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8246102333, 48.1558229028 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 248226,
+				"montant_attrib" : 99290.4,
+				"intitulé" : "Construction d'un local associatif",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Saint-Gilles"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.577680707, 48.2189148753 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 400000,
+				"montant_attrib" : 90000,
+				"intitulé" : "Végétalisation du cimetière ",
+				"nature" : "3- Biodiversité",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint-Sulpice la Forêt"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6043571945, 48.0479006285 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 93000,
+				"montant_attrib" : 27900,
+				"intitulé" : "Aménagement du Clos d'Orrière",
+				"nature" : "3- Biodiversité",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Vern-sur-Seiche"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
 				"coordinates" : [ -1.7460353293, 48.0244546199 ]
 			},
 			"properties" : {
@@ -173,703 +835,6 @@
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Romillé"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.539427042, 48.1360005604 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 2456952,
-				"montant_attrib" : 400000,
-				"intitulé" : "Construction d'un espace gym et activités corporelles - salle du Chevré",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "Acigné",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/1178.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.5197181702, 48.1383919604 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 1239854,
-				"montant_attrib" : 180000,
-				"intitulé" : "Construction ateliers artistiques et loisirs créatifs - Ferme de Joval ",
-				"justificatif" : "PPC + PBIL",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Acigné",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/4551.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.9473713939, 48.2955525704 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 5000,
-				"montant_attrib" : 2500,
-				"intitulé" : "Réféction des joints des murs du théatre municipal",
-				"justificatif" : "PPC + PBIL",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 50,
-				"Maitrise d'ouvrage" : "Bécherel",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/1270.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.9427347183, 48.2963314494 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 23329,
-				"montant_attrib" : 11664,
-				"intitulé" : "Reconstruction de la tour et du rempart ",
-				"justificatif" : "PPC + PBIL",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 50,
-				"Maitrise d'ouvrage" : "Bécherel",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/5450.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.9427347183, 48.2963314494 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 43898,
-				"montant_attrib" : 21949,
-				"intitulé" : "Bilan sanitaire des remparts",
-				"justificatif" : "PPC + PBIL",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 50,
-				"Maitrise d'ouvrage" : "Bécherel",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/5450.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.9433784485, 48.2952536513 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 6633,
-				"montant_attrib" : 3317,
-				"intitulé" : "Eclairage intérieur de l'église",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 50,
-				"Maitrise d'ouvrage" : "Bécherel",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/1285.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.6402620077, 48.1823588188 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 20733,
-				"montant_attrib" : 6220,
-				"intitulé" : "Restructuration du logement de fonction",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Betton",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/544.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.6141095323, 47.9923715227 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 673197,
-				"montant_attrib" : 201959,
-				"intitulé" : "Extension et rénovation du restaurant scolaire",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Bourgbarré",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/1445.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.482055, 48.110245 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 559000,
-				"montant_attrib" : 167700,
-				"intitulé" : "Création d'une micro-crèche",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Brécé",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/5447.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.4839053154, 48.105864033 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 142000,
-				"montant_attrib" : 42600,
-				"intitulé" : "Parcours sportif intégrant des enjeux de biodiversité",
-				"justificatif" : "PBIL",
-				"nature" : "3- Biodiversité",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Brécé",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/1462.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.7541172397, 47.9929104498 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 607159,
-				"montant_attrib" : 159028,
-				"intitulé" : "Réhabilitation du moulin du Boël",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "Bruz",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/1615.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.708891954, 48.0425496614 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 2089358,
-				"montant_attrib" : 225000,
-				"intitulé" : "Extension de l'EHPAD la poterie",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Chartres de Bretagne",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/688.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.6955422902, 48.0416114593 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 480168,
-				"montant_attrib" : 140084,
-				"intitulé" : "Rénovation du centre culturel Bat B",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Chartres de Bretagne",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/668.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.695482762, 48.0388636062 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 359815,
-				"montant_attrib" : 107944.5,
-				"intitulé" : "Extension du centre de loisir",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Chartres de Bretagne",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/2025.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.6309821442, 48.2115150509 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 11648,
-				"montant_attrib" : 3440,
-				"intitulé" : "Mise aux normes d'un espace de coworking",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Chevaigné",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/5451.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.6316862244, 48.2113910423 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 24774,
-				"montant_attrib" : 7432,
-				"intitulé" : "Travaux de réfection des toits plats de l'école publique élémentaire",
-				"justificatif" : "Performance énergétique",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Chevaigné",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/2151.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.5856206686, 47.9787891422 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 2182142,
-				"montant_attrib" : 600000,
-				"intitulé" : "Création d'un nouveau restaurant municipal",
-				"justificatif" : "Performance énergétique",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "Corps-Nuds",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/2270.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.7889261246, 48.2207198339 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 1074382,
-				"montant_attrib" : 400000,
-				"intitulé" : "Extension et réhabilitation de la mairie",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "Gevezé",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/556.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8535599016, 48.2726903094 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 750295,
-				"montant_attrib" : 135000,
-				"intitulé" : "Restructuration et extension du centre social et de la maison de l'enfance",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 18,
-				"Maitrise d'ouvrage" : "La Chapelle Chaussée",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/1899.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.7269456387, 48.1747575767 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 436400,
-				"montant_attrib" : 130920,
-				"intitulé" : "Toiture de la salle des sports",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/1955.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.7333802581, 48.1784116791 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 1375000,
-				"montant_attrib" : 412649,
-				"intitulé" : "Création d'un multi-accueil",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/1931.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.7169570923, 47.9834158196 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 88721,
-				"montant_attrib" : 26616,
-				"intitulé" : "Construction d'un city stade",
-				"justificatif" : "PPC ",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Laillé",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/2427.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8003952503, 48.1007467137 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 2719125,
-				"montant_attrib" : 450000,
-				"intitulé" : "Construction d'un batiment périscolaire, ALSH et restauration",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Le Rheu",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/3051.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.928936354, 48.2846432416 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 700000,
-				"montant_attrib" : 350000,
-				"intitulé" : "Rénovation ancien patronage et annexes",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 50,
-				"Maitrise d'ouvrage" : "Miniac-Sous-Becherel",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/5456.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8411819121, 48.0717105974 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 136275,
-				"montant_attrib" : 40882.5,
-				"intitulé" : "Rénovation de la salle de gymnastique",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Mordelles",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/2583.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8635129929, 48.0738782533 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 411991,
-				"montant_attrib" : 90000,
-				"intitulé" : "Muséo - Sentier d'interprétation sur la reconquête de l'eau et des milieux aquatiques",
-				"justificatif" : "Performance énergétique",
-				"nature" : "3- Biodiversité",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Mordelles",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/5452.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.5560460091, 48.0408055591 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 934000,
-				"montant_attrib" : 373486,
-				"intitulé" : "Création d'un nouveau centre technique municipal",
-				"justificatif" : "Performance énergétique",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "Nouvoitou",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/2710.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.6703242064, 47.9945276852 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 3058847,
-				"montant_attrib" : 100000,
-				"intitulé" : "Réalisation d'un pôle santé plurdisciplinaire",
-				"justificatif" : "PPC + Performance énergétique",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "Orgères",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/5446.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8307713206, 48.1928844167 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 78311,
-				"montant_attrib" : 36055,
-				"intitulé" : "Extension du bâtiment périscolaire",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 50,
-				"Maitrise d'ouvrage" : "Parthenay-de-Bretagne",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/2958.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8903619051, 48.2141108735 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 141987,
-				"montant_attrib" : 35497,
-				"intitulé" : "Rénovation du groupe scolaire - Programme 2020",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Romillé",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/3128.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8898415565, 48.2147364201 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 99888,
-				"montant_attrib" : 24970,
-				"intitulé" : "Travaux de rénovation des batiments scolaires (programme 2021)",
-				"justificatif" : "PPC",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Romillé",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/3127.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.5934145451, 48.0144943066 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 227511,
-				"montant_attrib" : 88095,
-				"intitulé" : "Extension d'une cours d'école",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "Saint-Armel",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/3170.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.653083659, 48.0203434258 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 182833,
-				"montant_attrib" : 54849.9,
-				"intitulé" : "Réaménagement des locaux de la salle associative Le Verger",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Saint-Erblon",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/3197.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.6534129451, 48.0208089534 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 38677,
-				"montant_attrib" : 11603.1,
-				"intitulé" : "Pôle social",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Saint-Erblon",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/3238.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8284887075, 48.1524588698 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 90436,
-				"montant_attrib" : 22609,
-				"intitulé" : "Réhabilitation de l'école élémentaire J. Prévert ",
-				"justificatif" : "Performance énergétique",
-				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Saint-Gilles",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/3255.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.8246102333, 48.1558229028 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 248226,
-				"montant_attrib" : 99290.4,
-				"intitulé" : "Construction d'un local associatif",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 40,
-				"Maitrise d'ouvrage" : "Saint-Gilles",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/4470.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.577680707, 48.2189148753 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle de proximité à conforter",
-				"cout_global" : 400000,
-				"montant_attrib" : 90000,
-				"intitulé" : "Végétalisation du cimetière ",
-				"nature" : "3- Biodiversité",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Saint-Sulpice la Forêt",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/3521.JPG"
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -1.6043571945, 48.0479006285 ]
-			},
-			"properties" : {
-				"année" : "2021-2022",
-				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
-				"cout_global" : 93000,
-				"montant_attrib" : 27900,
-				"intitulé" : "Aménagement du Clos d'Orrière",
-				"nature" : "3- Biodiversité",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Vern-sur-Seiche",
-				"photo" : "https://documents.carto.datarennes.fr/dircov/705.JPG"
 			}
 		}
 	]
