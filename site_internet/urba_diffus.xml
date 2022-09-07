@@ -26,7 +26,7 @@
       <extension type="component" id="GUICustom" path="apps/public/addons"/>
     </extensions>
 
-    <themes mini="true">
+    <themes mini="true"  legendmini="false">
         <theme id="theme-20220531100030" name="Projets d'urbanisme diffus" collapsed="true" icon="fas fa-building">
            <!-- <layer
                 id="tabou_v_oa_programme"
