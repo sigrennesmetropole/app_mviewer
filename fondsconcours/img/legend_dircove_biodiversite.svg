@@ -9,9 +9,9 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    id="Calque_1"
    data-name="Calque 1"
-   viewBox="0 0 441.70587 111.80724"
+   viewBox="0 0 441.70587 116.52252"
    width="111.66408"
-   height="28.265081"
+   height="29.457113"
    version="1.1"
    sodipodi:docname="legend_dircove_biodiversite.svg"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
@@ -41,9 +41,9 @@
      inkscape:window-height="1017"
      id="namedview8"
      showgrid="false"
-     inkscape:zoom="4.3402821"
-     inkscape:cx="105.07642"
-     inkscape:cy="-13.417904"
+     inkscape:zoom="4.225539"
+     inkscape:cx="138.99049"
+     inkscape:cy="54.947904"
      inkscape:window-x="1672"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -51,13 +51,13 @@
      inkscape:document-rotation="0" />
   <circle
      cx="55.330002"
-     cy="56.477242"
+     cy="61.19252"
      r="55.330002"
      style="fill:#97be28"
      id="circle2" />
   <g
      id="i84PbB.tif"
-     transform="translate(-4.8999977,-3.5427589)">
+     transform="translate(-4.8999977,1.1725184)">
     <path
        d="m 49.8,94.73 c 2.56,-7.87 2.46,-13.68 1.85,-17.32 -0.35,-2.07 -0.85,-4 -4.47,-2.53 -3.62,1.47 -5.44,0.57 -8.68,-0.17 A 13.87,13.87 0 0 1 31.6,71 c -2.46,-2.52 -2.94,-4.51 -3.13,-9.06 -0.22,-5.1 2.26,-9.23 6.43,-12.16 a 0.64,0.64 0 0 0 0.24,-0.7 14.26,14.26 0 0 1 0.26,-8.77 12.65,12.65 0 0 1 11.89,-8.48 0.94,0.94 0 0 0 0.88,-0.51 c 3,-4.88 7.53,-7.2 13.37,-6.53 a 13.77,13.77 0 0 1 10.33,7.53 0.67,0.67 0 0 0 0.66,0.42 15,15 0 0 1 2.32,0.24 13.4,13.4 0 0 1 10.6,15.52 0.61,0.61 0 0 0 0.33,0.73 13.28,13.28 0 0 1 5.85,8.21 c 0.16,0.62 0.25,1.25 0.37,1.89 v 2.44 c 0,0.09 -0.25,1.51 -0.44,2.7 a 12.68,12.68 0 0 1 -2.56,6 c -2,2.47 -10.19,8.23 -17.2,5.16 -2.67,-1.16 -2.9,0.41 -3.17,3 -0.47,4.51 0,11 2.35,16"
        style="fill:none;stroke:#ffffff;stroke-width:6px;stroke-linecap:round;stroke-miterlimit:10"
@@ -65,13 +65,13 @@
   </g>
   <circle
      cx="219.29224"
-     cy="55.330002"
+     cy="60.04528"
      r="55.330002"
      style="fill:#97be28;stroke-width:1"
      id="circle2-3" />
   <g
      id="i84PbB.tif-1"
-     transform="translate(159.06223,-4.6899988)">
+     transform="translate(159.06223,0.02527847)">
     <path
        d="m 49.8,94.73 c 2.56,-7.87 2.46,-13.68 1.85,-17.32 -0.35,-2.07 -0.85,-4 -4.47,-2.53 -3.62,1.47 -5.44,0.57 -8.68,-0.17 A 13.87,13.87 0 0 1 31.6,71 c -2.46,-2.52 -2.94,-4.51 -3.13,-9.06 -0.22,-5.1 2.26,-9.23 6.43,-12.16 a 0.64,0.64 0 0 0 0.24,-0.7 14.26,14.26 0 0 1 0.26,-8.77 12.65,12.65 0 0 1 11.89,-8.48 0.94,0.94 0 0 0 0.88,-0.51 c 3,-4.88 7.53,-7.2 13.37,-6.53 a 13.77,13.77 0 0 1 10.33,7.53 0.67,0.67 0 0 0 0.66,0.42 15,15 0 0 1 2.32,0.24 13.4,13.4 0 0 1 10.6,15.52 0.61,0.61 0 0 0 0.33,0.73 13.28,13.28 0 0 1 5.85,8.21 c 0.16,0.62 0.25,1.25 0.37,1.89 v 2.44 c 0,0.09 -0.25,1.51 -0.44,2.7 a 12.68,12.68 0 0 1 -2.56,6 c -2,2.47 -10.19,8.23 -17.2,5.16 -2.67,-1.16 -2.9,0.41 -3.17,3 -0.47,4.51 0,11 2.35,16"
        style="fill:none;stroke:#ffffff;stroke-width:6px;stroke-linecap:round;stroke-miterlimit:10"
@@ -83,7 +83,7 @@
        id="style11">.cls-1{fill:#ffe02b;}.cls-1,.cls-2{stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:9px;}.cls-2{fill:none;}</style>
   </defs>
   <g
-     transform="matrix(0.16106061,0,0,0.15708083,218.89641,-3.6388328)"
+     transform="matrix(0.1493328,-0.06033437,0.05884351,0.14564281,205.74677,9.8711607)"
      id="g19">
     <path
        class="cls-1"
@@ -98,11 +98,11 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.1939px;line-height:1.25;font-family:Calibri;-inkscape-font-specification:Calibri;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.95567"
      x="278.38992"
-     y="105.29238"
+     y="110.00766"
      id="text850"><tspan
        sodipodi:role="line"
        id="tspan848"
        x="278.38992"
-       y="105.29238"
+       y="110.00766"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.1939px;font-family:Calibri;-inkscape-font-specification:Calibri;stroke-width:3.95567">Ecobonus</tspan></text>
 </svg>
