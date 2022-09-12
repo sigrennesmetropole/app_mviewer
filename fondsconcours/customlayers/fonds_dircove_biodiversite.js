@@ -82,11 +82,12 @@ mviewer.customLayers.dircove_biodiv= (function() {
                 */
                 // proposition 3
                 let _g = document.createElementNS("http://www.w3.org/2000/svg", 'g');
-                _g.setAttributeNS(null, "transform", "matrix(0.16106061,0,0,0.15708083,62.281098,-3.1012135)");
+                _g.setAttributeNS(null, "transform", "matrix(0.1493328,-0.06033437,0.05884351,0.14564281,46.023617,11.313834)");
                 while (svgEcusson.firstChild){
                     _g.appendChild(svgEcusson.firstChild);
                 }
                 doc.getElementsByTagName("svg")[0].appendChild(_g);
+                //console.log(doc.getElementsByTagName("svg")[0].outerHTML);
                 _markerEcoB = 'data:image/svg+xml;utf8, ' + encodeURIComponent(doc.getElementsByTagName("svg")[0].outerHTML);
             }
         };

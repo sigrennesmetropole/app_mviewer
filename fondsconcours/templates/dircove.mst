@@ -4,7 +4,7 @@
         
         {{#ecobonus}}
             <p class="rm-popup-text-feature"> 
-                <img src="apps/fondsconcours/img/écusson1.svg"  style="height: 30px;"/> ECOBONUS 
+                <img class="ecobns" src="apps/fondsconcours/img/écusson1.svg"  style="height: 30px;"/> ECOBONUS 
             </p>
         {{/ecobonus}}
         <p class="rm-popup-text-feature">
