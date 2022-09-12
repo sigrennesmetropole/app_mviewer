@@ -17,7 +17,9 @@
 				"justificatif" : "PBIL",
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Brécé"
+				"Maitrise d'ouvrage" : "Brécé",
+				"Code INSEE" : 35039,
+				"id site" : 1462
 			}
 		},
 		{
@@ -36,6 +38,9 @@
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Mordelles",
+				"Code INSEE" : 35196,
+				"id site" : 5452,
+				"ecobonus" : "true",
 				"photo" : "https://documents.carto.datarennes.fr/dircov/5452.jpg"
 			}
 		},
@@ -53,7 +58,9 @@
 				"intitulé" : "Végétalisation du cimetière ",
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Saint-Sulpice la Forêt"
+				"Maitrise d'ouvrage" : "Saint-Sulpice la Forêt",
+				"Code INSEE" : 35315,
+				"id site" : 3521
 			}
 		},
 		{
@@ -70,7 +77,9 @@
 				"intitulé" : "Aménagement du Clos d'Orrière",
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Vern-sur-Seiche"
+				"Maitrise d'ouvrage" : "Vern-sur-Seiche",
+				"Code INSEE" : 35352,
+				"id site" : 705
 			}
 		},
 		{
@@ -87,7 +96,8 @@
 				"intitulé" : "Végétalisation du cimetière pour entretien éco-responsable",
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Bruz"
+				"Maitrise d'ouvrage" : "Bruz",
+				"Code INSEE" : 35047
 			}
 		},
 		{
@@ -104,7 +114,8 @@
 				"intitulé" : "Création d'une tiny-forest",
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Parthenay-de-Bretagne"
+				"Maitrise d'ouvrage" : "Parthenay-de-Bretagne",
+				"Code INSEE" : 35216
 			}
 		},
 		{
@@ -121,7 +132,8 @@
 				"intitulé" : "Requalification paysagère du chemin creux de la Houltais",
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Romillé"
+				"Maitrise d'ouvrage" : "Romillé",
+				"Code INSEE" : 35245
 			}
 		}
 	]

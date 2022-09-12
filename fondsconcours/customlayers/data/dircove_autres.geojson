@@ -16,7 +16,9 @@
 				"intitulé" : "Construction d'un espace gym et activités corporelles - salle du Chevré",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Acigné"
+				"Maitrise d'ouvrage" : "Acigné",
+				"Code INSEE" : 35001,
+				"id site" : 1178
 			}
 		},
 		{
@@ -35,6 +37,8 @@
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Acigné",
+				"Code INSEE" : 35001,
+				"id site" : 4551,
 				"photo" : "https://documents.carto.datarennes.fr/dircov/4551.JPG"
 			}
 		},
@@ -52,7 +56,9 @@
 				"intitulé" : "TRAVAUX DE REAMENAGEMENT DES ESPACES D'ACCUEIL DE LA MAIRIE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Bécherel"
+				"Maitrise d'ouvrage" : "Bécherel",
+				"Code INSEE" : 35022,
+				"id site" : 947
 			}
 		},
 		{
@@ -70,7 +76,9 @@
 				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 50,
-				"Maitrise d'ouvrage" : "Bécherel"
+				"Maitrise d'ouvrage" : "Bécherel",
+				"Code INSEE" : 35022,
+				"id site" : 1270
 			}
 		},
 		{
@@ -88,7 +96,9 @@
 				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 50,
-				"Maitrise d'ouvrage" : "Bécherel"
+				"Maitrise d'ouvrage" : "Bécherel",
+				"Code INSEE" : 35022,
+				"id site" : 5450
 			}
 		},
 		{
@@ -106,7 +116,9 @@
 				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 50,
-				"Maitrise d'ouvrage" : "Bécherel"
+				"Maitrise d'ouvrage" : "Bécherel",
+				"Code INSEE" : 35022,
+				"id site" : 5450
 			}
 		},
 		{
@@ -123,7 +135,9 @@
 				"intitulé" : "Eclairage intérieur de l'église",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 50,
-				"Maitrise d'ouvrage" : "Bécherel"
+				"Maitrise d'ouvrage" : "Bécherel",
+				"Code INSEE" : 35022,
+				"id site" : 1285
 			}
 		},
 		{
@@ -140,7 +154,9 @@
 				"intitulé" : "Restructuration du logement de fonction",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Betton"
+				"Maitrise d'ouvrage" : "Betton",
+				"Code INSEE" : 35024,
+				"id site" : 544
 			}
 		},
 		{
@@ -157,7 +173,9 @@
 				"intitulé" : "RENOVATION ET ISOLATION DE LA TOITURE DE LA SALLE DES SPORTS",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Bourgbarré"
+				"Maitrise d'ouvrage" : "Bourgbarré",
+				"Code INSEE" : 35032,
+				"id site" : 1429
 			}
 		},
 		{
@@ -175,6 +193,8 @@
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Brécé",
+				"Code INSEE" : 35039,
+				"id site" : 1485,
 				"photo" : "https://documents.carto.datarennes.fr/dircov/1485.JPG"
 			}
 		},
@@ -193,6 +213,8 @@
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
 				"Maitrise d'ouvrage" : "Bruz",
+				"Code INSEE" : 35047,
+				"id site" : 1615,
 				"photo" : "https://documents.carto.datarennes.fr/dircov/1615.jpg"
 			}
 		},
@@ -210,7 +232,9 @@
 				"intitulé" : "Extension de l'EHPAD la poterie",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Chartres de Bretagne"
+				"Maitrise d'ouvrage" : "Chartres de Bretagne",
+				"Code INSEE" : 35066,
+				"id site" : 688
 			}
 		},
 		{
@@ -227,7 +251,9 @@
 				"intitulé" : "Rénovation du centre culturel Bat B",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Chartres de Bretagne"
+				"Maitrise d'ouvrage" : "Chartres de Bretagne",
+				"Code INSEE" : 35066,
+				"id site" : 668
 			}
 		},
 		{
@@ -244,7 +270,9 @@
 				"intitulé" : "Extension du centre de loisir",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Chartres de Bretagne"
+				"Maitrise d'ouvrage" : "Chartres de Bretagne",
+				"Code INSEE" : 35066,
+				"id site" : 2025
 			}
 		},
 		{
@@ -261,7 +289,9 @@
 				"intitulé" : "RENOVATION DE L'ACCUEIL DE LA MAIRIE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Chevaigné"
+				"Maitrise d'ouvrage" : "Chevaigné",
+				"Code INSEE" : 35079,
+				"id site" : 552
 			}
 		},
 		{
@@ -279,7 +309,10 @@
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Chevaigné"
+				"Maitrise d'ouvrage" : "Chevaigné",
+				"Code INSEE" : 35079,
+				"id site" : 4378,
+				"ecobonus" : "true"
 			}
 		},
 		{
@@ -296,7 +329,9 @@
 				"intitulé" : "Mise aux normes d'un espace de coworking",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Chevaigné"
+				"Maitrise d'ouvrage" : "Chevaigné",
+				"Code INSEE" : 35079,
+				"id site" : 5451
 			}
 		},
 		{
@@ -313,7 +348,9 @@
 				"intitulé" : "REHABILITATION DE LA MAIRIE APRES SINISTRE ",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Cintré"
+				"Maitrise d'ouvrage" : "Cintré",
+				"Code INSEE" : 35080,
+				"id site" : 553
 			}
 		},
 		{
@@ -330,7 +367,9 @@
 				"intitulé" : "RESTRUCTURATION ET EXTENSION DE LA MAIRIE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Clayes"
+				"Maitrise d'ouvrage" : "Clayes",
+				"Code INSEE" : 35081,
+				"id site" : 554
 			}
 		},
 		{
@@ -347,7 +386,9 @@
 				"intitulé" : "NOUVELLE BIBLIOTHEQUE MUNICIPALE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Corps-Nuds"
+				"Maitrise d'ouvrage" : "Corps-Nuds",
+				"Code INSEE" : 35088,
+				"id site" : 4566
 			}
 		},
 		{
@@ -364,7 +405,9 @@
 				"intitulé" : "RENOVATION DE LA SALLE DE SPORT POLE VOLLEY BALL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Corps-Nuds"
+				"Maitrise d'ouvrage" : "Corps-Nuds",
+				"Code INSEE" : 35088,
+				"id site" : 2253
 			}
 		},
 		{
@@ -383,6 +426,9 @@
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
 				"Maitrise d'ouvrage" : "Gevezé",
+				"Code INSEE" : 35120,
+				"id site" : 5448,
+				"ecobonus" : "true",
 				"photo" : "https://documents.carto.datarennes.fr/dircov/5448.jpg"
 			}
 		},
@@ -400,7 +446,9 @@
 				"intitulé" : "Extension et réhabilitation de la mairie",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Gevezé"
+				"Maitrise d'ouvrage" : "Gevezé",
+				"Code INSEE" : 35120,
+				"id site" : 556
 			}
 		},
 		{
@@ -419,6 +467,9 @@
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
 				"Maitrise d'ouvrage" : "La Chapelle Chaussée",
+				"Code INSEE" : 35058,
+				"id site" : 4579,
+				"ecobonus" : "true",
 				"photo" : "https://documents.carto.datarennes.fr/dircov/4579.jpg"
 			}
 		},
@@ -436,7 +487,9 @@
 				"intitulé" : "Toiture de la salle des sports",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz"
+				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz",
+				"Code INSEE" : 35059,
+				"id site" : 1955
 			}
 		},
 		{
@@ -453,7 +506,9 @@
 				"intitulé" : "Création d'un multi-accueil",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz"
+				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz",
+				"Code INSEE" : 35059,
+				"id site" : 1931
 			}
 		},
 		{
@@ -470,7 +525,9 @@
 				"intitulé" : "SALLE OMNISPORTS- RENOVATION INTERIEURE DE LA SALLE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz"
+				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz",
+				"Code INSEE" : 35059,
+				"id site" : 1955
 			}
 		},
 		{
@@ -488,7 +545,10 @@
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "La Chapelle Thouarault"
+				"Maitrise d'ouvrage" : "La Chapelle Thouarault",
+				"Code INSEE" : 35065,
+				"id site" : 4464,
+				"ecobonus" : "true"
 			}
 		},
 		{
@@ -505,7 +565,9 @@
 				"intitulé" : "RENOVATION THERMIQUE DE LA MAIRIE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Laillé"
+				"Maitrise d'ouvrage" : "Laillé",
+				"Code INSEE" : 35139,
+				"id site" : 875
 			}
 		},
 		{
@@ -523,7 +585,9 @@
 				"justificatif" : "PPC ",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Laillé"
+				"Maitrise d'ouvrage" : "Laillé",
+				"Code INSEE" : 35139,
+				"id site" : 2427
 			}
 		},
 		{
@@ -540,7 +604,9 @@
 				"intitulé" : "EXTENSION DE L'ATELIER MUNICIPAL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Le Verger"
+				"Maitrise d'ouvrage" : "Le Verger",
+				"Code INSEE" : 35351,
+				"id site" : 3647
 			}
 		},
 		{
@@ -557,7 +623,9 @@
 				"intitulé" : "CONSTRUCTION D'UN CITY STADE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Le Verger"
+				"Maitrise d'ouvrage" : "Le Verger",
+				"Code INSEE" : 35351,
+				"id site" : 5352
 			}
 		},
 		{
@@ -575,7 +643,10 @@
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "L'hermitage"
+				"Maitrise d'ouvrage" : "L'hermitage",
+				"Code INSEE" : 35131,
+				"id site" : 557,
+				"ecobonus" : "true"
 			}
 		},
 		{
@@ -592,7 +663,9 @@
 				"intitulé" : "Rénovation ancien patronage et annexes",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 50,
-				"Maitrise d'ouvrage" : "Miniac-Sous-Becherel"
+				"Maitrise d'ouvrage" : "Miniac-Sous-Becherel",
+				"Code INSEE" : 35180,
+				"id site" : 5456
 			}
 		},
 		{
@@ -609,7 +682,9 @@
 				"intitulé" : "Rénovation de la salle de gymnastique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Mordelles"
+				"Maitrise d'ouvrage" : "Mordelles",
+				"Code INSEE" : 35196,
+				"id site" : 2583
 			}
 		},
 		{
@@ -627,7 +702,10 @@
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Nouvoitou"
+				"Maitrise d'ouvrage" : "Nouvoitou",
+				"Code INSEE" : 35204,
+				"id site" : 2710,
+				"ecobonus" : "true"
 			}
 		},
 		{
@@ -644,7 +722,9 @@
 				"intitulé" : "RENVOATION DE LA SALLE DE SPORT ET DES ESPACES SPORTIFS ",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Nouvoitou"
+				"Maitrise d'ouvrage" : "Nouvoitou",
+				"Code INSEE" : 35204,
+				"id site" : 2679
 			}
 		},
 		{
@@ -661,7 +741,9 @@
 				"intitulé" : "RESTRUCTURATION ET ISOLATION DE LA TOITURE DE LA SALLE DE SPORT RAYMOND PERRIN",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Noyal Chatillon sur Seiche"
+				"Maitrise d'ouvrage" : "Noyal Chatillon sur Seiche",
+				"Code INSEE" : 35206,
+				"id site" : 2776
 			}
 		},
 		{
@@ -678,7 +760,9 @@
 				"intitulé" : "AMENAGEMENT D'UN TERRAIN FOOTBALL STABILISE EN TERRAIN FOOTBAL SYNTHETIQUE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Orgères"
+				"Maitrise d'ouvrage" : "Orgères",
+				"Code INSEE" : 35208,
+				"id site" : 2825
 			}
 		},
 		{
@@ -696,7 +780,10 @@
 				"justificatif" : "PPC + Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Orgères"
+				"Maitrise d'ouvrage" : "Orgères",
+				"Code INSEE" : 35208,
+				"id site" : 5446,
+				"ecobonus" : "true"
 			}
 		},
 		{
@@ -714,7 +801,10 @@
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Pacé"
+				"Maitrise d'ouvrage" : "Pacé",
+				"Code INSEE" : 35210,
+				"id site" : 5265,
+				"ecobonus" : "true"
 			}
 		},
 		{
@@ -731,7 +821,9 @@
 				"intitulé" : "REHABILITATION ENERGETIQUE COMPLEXE SPORTIF CHASSEBOEUF",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Pacé"
+				"Maitrise d'ouvrage" : "Pacé",
+				"Code INSEE" : 35210,
+				"id site" : 2829
 			}
 		},
 		{
@@ -749,7 +841,10 @@
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Parthenay-de-Bretagne"
+				"Maitrise d'ouvrage" : "Parthenay-de-Bretagne",
+				"Code INSEE" : 35216,
+				"id site" : 4474,
+				"ecobonus" : "true"
 			}
 		},
 		{
@@ -767,7 +862,10 @@
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Pont-Péan"
+				"Maitrise d'ouvrage" : "Pont-Péan",
+				"Code INSEE" : 35363,
+				"id site" : 3875,
+				"ecobonus" : "true"
 			}
 		},
 		{
@@ -786,6 +884,9 @@
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
 				"Maitrise d'ouvrage" : "Romillé",
+				"Code INSEE" : 35245,
+				"id site" : 3121,
+				"ecobonus" : "true",
 				"photo" : "https://documents.carto.datarennes.fr/dircov/3121.JPG"
 			}
 		},
@@ -803,7 +904,9 @@
 				"intitulé" : "Réaménagement des locaux de la salle associative Le Verger",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Saint-Erblon"
+				"Maitrise d'ouvrage" : "Saint-Erblon",
+				"Code INSEE" : 35266,
+				"id site" : 3197
 			}
 		},
 		{
@@ -820,7 +923,9 @@
 				"intitulé" : "Pôle social",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Saint-Erblon"
+				"Maitrise d'ouvrage" : "Saint-Erblon",
+				"Code INSEE" : 35266,
+				"id site" : 3238
 			}
 		},
 		{
@@ -837,7 +942,9 @@
 				"intitulé" : "BATIMENT MAIRIE RENOVATION",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Saint-Erblon"
+				"Maitrise d'ouvrage" : "Saint-Erblon",
+				"Code INSEE" : 35266,
+				"id site" : 572
 			}
 		},
 		{
@@ -854,7 +961,9 @@
 				"intitulé" : "Construction d'un local associatif",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Saint-Gilles"
+				"Maitrise d'ouvrage" : "Saint-Gilles",
+				"Code INSEE" : 35275,
+				"id site" : 4470
 			}
 		},
 		{
@@ -872,7 +981,10 @@
 				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "THORIGNE-FOUILLARD"
+				"Maitrise d'ouvrage" : "THORIGNE-FOUILLARD",
+				"Code INSEE" : 35334,
+				"id site" : 3562,
+				"ecobonus" : "true"
 			}
 		},
 		{
@@ -889,7 +1001,9 @@
 				"intitulé" : "REMPLACEMENT DES BAIES VITREES DE L'EHPAD",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "THORIGNE-FOUILLARD"
+				"Maitrise d'ouvrage" : "THORIGNE-FOUILLARD",
+				"Code INSEE" : 35334,
+				"id site" : 693
 			}
 		},
 		{
@@ -906,7 +1020,8 @@
 				"intitulé" : "Construction d'un centre technique municipal",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Laillé"
+				"Maitrise d'ouvrage" : "Laillé",
+				"Code INSEE" : 35139
 			}
 		},
 		{
@@ -924,7 +1039,8 @@
 				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Langan"
+				"Maitrise d'ouvrage" : "Langan",
+				"Code INSEE" : 35144
 			}
 		},
 		{
@@ -941,7 +1057,8 @@
 				"intitulé" : "Maison des jeunes et des associations",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 50,
-				"Maitrise d'ouvrage" : "Langan"
+				"Maitrise d'ouvrage" : "Langan",
+				"Code INSEE" : 35144
 			}
 		},
 		{
@@ -959,7 +1076,8 @@
 				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "L'hermitage"
+				"Maitrise d'ouvrage" : "L'hermitage",
+				"Code INSEE" : 35131
 			}
 		},
 		{
@@ -976,7 +1094,8 @@
 				"intitulé" : "Extension de la salle des sport Court de tennis",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Montgermont"
+				"Maitrise d'ouvrage" : "Montgermont",
+				"Code INSEE" : 35189
 			}
 		},
 		{
@@ -994,6 +1113,8 @@
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Orgères",
+				"Code INSEE" : 35208,
+				"id site" : 6563,
 				"photo" : "https://documents.carto.datarennes.fr/dircov/6563.jpg"
 			}
 		},
@@ -1011,7 +1132,8 @@
 				"intitulé" : "City Parc",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Pont-Péan"
+				"Maitrise d'ouvrage" : "Pont-Péan",
+				"Code INSEE" : 35363
 			}
 		},
 		{
@@ -1028,7 +1150,9 @@
 				"intitulé" : "REALISATION D'UN TERRAIN DE FOOTBALL SYNTHETIQUE",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Romillé"
+				"Maitrise d'ouvrage" : "Romillé",
+				"Code INSEE" : 35245,
+				"id site" : 6117
 			}
 		},
 		{
@@ -1045,7 +1169,8 @@
 				"intitulé" : "ETUDE  DE LOCALISATION ET DE PROGRAMMATION DES EQUIPEMENTS PUBLICS (DONT PRE-OPERATIONNEL EQUIPEMENT SCOLAIRE)",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
-				"Maitrise d'ouvrage" : "Saint-Armel"
+				"Maitrise d'ouvrage" : "Saint-Armel",
+				"Code INSEE" : 35250
 			}
 		},
 		{
@@ -1062,7 +1187,8 @@
 				"intitulé" : "RENOVATION DE L'ANCIEN PRESBYTERE EN MAISON DES ASSOCIATIONS",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
-				"Maitrise d'ouvrage" : "Saint-Gilles"
+				"Maitrise d'ouvrage" : "Saint-Gilles",
+				"Code INSEE" : 35275
 			}
 		}
 	]
