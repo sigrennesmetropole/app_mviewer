@@ -79,7 +79,6 @@ mviewer.customLayers.dircove_autres= (function() {
                 // proposition 3
                 let _g = document.createElementNS("http://www.w3.org/2000/svg", 'g');
                 _g.setAttributeNS(null, "transform", "matrix(0.16106061,0,0,0.15708083,62.281098,-3.1012135)");
-                var children = svgEcusson.childNodes;
                 while (svgEcusson.firstChild){
                     _g.appendChild(svgEcusson.firstChild);
                 }
