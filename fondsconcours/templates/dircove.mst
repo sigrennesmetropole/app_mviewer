@@ -2,6 +2,11 @@
     <li class="item" >
         <h5 class="rm-popup-title-feature ">{{intitulé}}</h5>
         
+        {{#ecobonus}}
+            <p class="rm-popup-text-feature"> 
+                <img src="apps/fondsconcours/img/écusson1.svg"  style="height: 30px;"/> ECOBONUS 
+            </p>
+        {{/ecobonus}}
         <p class="rm-popup-text-feature">
             {{#Maitrise d'ouvrage}}<span class='rm-popup-label'> Maîtrise d'ouvrage :</span> {{{Maitrise d'ouvrage}}}<br/>{{/Maitrise d'ouvrage}}
             {{#année}}<span class='rm-popup-label'> Fonds de concours :</span> {{{année}}}<br/>{{/année}}

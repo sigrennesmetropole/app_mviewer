@@ -180,9 +180,13 @@ function _waitForRefreshInfoPanel() {
 
 function _refreshInfoPanel() {
     if (_event == null) {
+        let _coordinates=_map.getView().getCenter();
+        /*if(mviewer.getMarker()!= 'undefined'){
+            _coordinates = mviewer.getMarker().getPosition();
+        }*/
         _event = {
-            coordinate:mviewer.getMarker().getPosition(),
-            pixel: _map.getPixelFromCoordinate(mviewer.getMarker().getPosition())
+            coordinate: _coordinates,
+            pixel: _map.getPixelFromCoordinate(_coordinates)
         };
     }
     setTimeout( function() {
