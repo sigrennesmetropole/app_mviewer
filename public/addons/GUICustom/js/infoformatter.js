@@ -481,6 +481,20 @@ var formatter = (function () {
             }
         }
     };
+    
+    
+    function formatLargeNumbers() {
+        console.log("FORMAT LARGE NUMBERS");
+        var span_elements = document.getElementsByClassName("rm-large-number");
+        for (var i = 0; i < span_elements.length; i++) {
+            var contenu="";
+            if(span_elements[i].innerHTML) {
+                contenu = span_elements[i].innerHTML;
+                span_elements[i].innerHTML = Number(contenu).toLocaleString();
+            }
+        }
+    };
+    
 
     // TODO : à commenter
     //var formatHourInFrench = function formatHourInFrench() {
@@ -652,6 +666,7 @@ var formatter = (function () {
         rmTraficStatus();
         rmArtVilleType();
         formatDateInFrenchWithLetters();
+        formatLargeNumbers();
 
         var divs = document.getElementsByClassName("iframe-popup");
         for(var i = 0; i < divs.length; i++) {

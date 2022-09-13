@@ -108,20 +108,11 @@ mviewer.customLayers.dircove_enfance= (function() {
     _getEcussonCode();
     calculateStyleIcon();
     
-    function checkPhotos(){
-        let features = _layer.getSource().getFeatures();
-        for (feat in features) {
-            let myFeat=features[feat];
-            let urlphoto = features[feat].get('photo');
-            $.get(urlphoto, function() {}).fail(function() {
-                console.log("URL inconnue : " + urlphoto);
-                myFeat.unset('photo', true);
-                console.log(myFeat.getProperties());
-            });
-        }
-    }
+    const num = 1268309.65;
+    console.log("Montant = "+num+" €");
+    console.log("LOCAL STRING = " + num.toLocaleString() + " €");
     
-    
+
     let _layer = new ol.layer.Vector({
         source: new ol.source.Vector({
             url: data,
