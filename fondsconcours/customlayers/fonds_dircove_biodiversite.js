@@ -33,13 +33,7 @@ mviewer.customLayers.dircove_biodiv= (function() {
         ];
     }
     
-    let _layer = new ol.layer.Vector({
-        source: new ol.source.Vector({
-            url: data,
-            format: new ol.format.GeoJSON(),
-        }),
-        style: _markerStyle,
-    });
+    
     
     function calculateStyleIcon(){
         var name,xhr;
@@ -89,6 +83,8 @@ mviewer.customLayers.dircove_biodiv= (function() {
                 doc.getElementsByTagName("svg")[0].appendChild(_g);
                 //console.log(doc.getElementsByTagName("svg")[0].outerHTML);
                 _markerEcoB = 'data:image/svg+xml;utf8, ' + encodeURIComponent(doc.getElementsByTagName("svg")[0].outerHTML);
+                
+                
             }
         };
         xhr.open('get',svgIcon); 
@@ -113,24 +109,16 @@ mviewer.customLayers.dircove_biodiv= (function() {
         xhr.send();
     }
     _getEcussonCode();
+    calculateStyleIcon();
     
-    function checkPhotos(){
-        let features = _layer.getSource().getFeatures();
-        for (feat in features) {
-            let myFeat=features[feat];
-            let urlphoto = features[feat].get('photo');
-            $.get(urlphoto, function() {}).fail(function() {
-                console.log("URL inconnue : " + urlphoto);
-                myFeat.unset('photo', true);
-                console.log(myFeat.getProperties());
-            })
-        }
-    }
     
-    //_layer.once('prerender',() =>{
-        calculateStyleIcon();
-        //checkPhotos();
-    //});
+    let _layer = new ol.layer.Vector({
+        source: new ol.source.Vector({
+            url: data,
+            format: new ol.format.GeoJSON(),
+        }),
+        style: _markerStyle,
+    });
     
     
     return {

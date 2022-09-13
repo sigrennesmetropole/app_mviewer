@@ -32,14 +32,6 @@ mviewer.customLayers.dircove_enfance= (function() {
         ];
     }
     
-    let _layer = new ol.layer.Vector({
-        source: new ol.source.Vector({
-            url: data,
-            format: new ol.format.GeoJSON(),
-        }),
-        style: _markerStyle,
-    });
-    
     function calculateStyleIcon(){
         var name,xhr;
         // on est enfin prêt à récupérer le svg sur le serveur
@@ -113,6 +105,7 @@ mviewer.customLayers.dircove_enfance= (function() {
         xhr.send();
     }
     _getEcussonCode();
+    calculateStyleIcon();
     
     function checkPhotos(){
         let features = _layer.getSource().getFeatures();
@@ -128,10 +121,13 @@ mviewer.customLayers.dircove_enfance= (function() {
     }
     
     
-    //_layer.once('prerender',() =>{
-        calculateStyleIcon();
-        //checkPhotos();
-    //});
+    let _layer = new ol.layer.Vector({
+        source: new ol.source.Vector({
+            url: data,
+            format: new ol.format.GeoJSON(),
+        }),
+        style: _markerStyle,
+    });
     
     
     return {
