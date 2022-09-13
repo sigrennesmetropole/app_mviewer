@@ -77,6 +77,7 @@ mviewer.customLayers.dircove_enfance= (function() {
                     _g.appendChild(svgEcusson.firstChild);
                 }
                 doc.getElementsByTagName("svg")[0].appendChild(_g);
+                console.log(doc.getElementsByTagName("svg")[0].outerHTML);
                 _markerEcoB = 'data:image/svg+xml;utf8, ' + encodeURIComponent(doc.getElementsByTagName("svg")[0].outerHTML);
             }
         };
@@ -111,6 +112,7 @@ mviewer.customLayers.dircove_enfance= (function() {
     console.log("Montant = "+num+" €");
     console.log("LOCAL STRING = " + num.toLocaleString() + " €");
     
+
     let _layer = new ol.layer.Vector({
         source: new ol.source.Vector({
             url: data,

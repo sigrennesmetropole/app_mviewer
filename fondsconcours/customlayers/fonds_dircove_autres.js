@@ -102,6 +102,7 @@ mviewer.customLayers.dircove_autres= (function() {
     _getEcussonCode();
     calculateStyleIcon();
     
+
     let _layer = new ol.layer.Vector({
         source: new ol.source.Vector({
             url: data,
