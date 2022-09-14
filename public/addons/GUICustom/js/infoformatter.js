@@ -490,7 +490,7 @@ var formatter = (function () {
             var contenu="";
             if(span_elements[i].innerHTML) {
                 contenu = span_elements[i].innerHTML;
-                span_elements[i].innerHTML = Number(contenu).toLocaleString();
+                span_elements[i].innerHTML = Number(contenu).toLocaleString(undefined,{minimumFractionDigits: 0, maximumFractionDigits: 0});
             }
         }
     };

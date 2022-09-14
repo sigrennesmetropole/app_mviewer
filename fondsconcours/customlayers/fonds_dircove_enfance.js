@@ -108,11 +108,6 @@ mviewer.customLayers.dircove_enfance= (function() {
     _getEcussonCode();
     calculateStyleIcon();
     
-    const num = 1268309.65;
-    console.log("Montant = "+num+" €");
-    console.log("LOCAL STRING = " + num.toLocaleString() + " €");
-    
-
     let _layer = new ol.layer.Vector({
         source: new ol.source.Vector({
             url: data,
