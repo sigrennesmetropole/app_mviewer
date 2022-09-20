@@ -14,11 +14,13 @@
 				"cout_global" : 2456952,
 				"montant_attrib" : 400000,
 				"intitulé" : "Construction d'un espace gym et activités corporelles - salle du Chevré",
+				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
 				"Maitrise d'ouvrage" : "Acigné",
 				"Code INSEE" : 35001,
-				"id site" : 1178
+				"id site" : 1178,
+				"ecobonus" : "true"
 			}
 		},
 		{
@@ -33,7 +35,6 @@
 				"cout_global" : 1239854,
 				"montant_attrib" : 180000,
 				"intitulé" : "Construction ateliers artistiques et loisirs créatifs - Ferme de Joval ",
-				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Acigné",
@@ -114,6 +115,7 @@
 				"cout_global" : 6633,
 				"montant_attrib" : 3317,
 				"intitulé" : "Eclairage intérieur de l'église",
+				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 50,
 				"Maitrise d'ouvrage" : "Bécherel",
@@ -190,7 +192,7 @@
 				"cout_global" : 142000,
 				"montant_attrib" : 42600,
 				"intitulé" : "Parcours sportif intégrant des enjeux de biodiversité",
-				"justificatif" : "PBIL",
+				"justificatif" : "Biodiversité",
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Brécé",
@@ -210,6 +212,7 @@
 				"cout_global" : 607159,
 				"montant_attrib" : 159028,
 				"intitulé" : "Réhabilitation du moulin du Boël",
+				"justificatif" : "PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
 				"Maitrise d'ouvrage" : "Bruz",
@@ -267,7 +270,7 @@
 				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
 				"cout_global" : 359815,
 				"montant_attrib" : 107944.5,
-				"intitulé" : "Extension du centre de loisir",
+				"intitulé" : "Extension du centre de loisirs",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Chartres de Bretagne",
@@ -306,13 +309,11 @@
 				"cout_global" : 24774,
 				"montant_attrib" : 7432,
 				"intitulé" : "Travaux de réfection des toits plats de l'école publique élémentaire",
-				"justificatif" : "Performance énergétique",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Chevaigné",
 				"Code INSEE" : 35079,
-				"id site" : 2151,
-				"ecobonus" : "true"
+				"id site" : 2151
 			}
 		},
 		{
@@ -348,11 +349,13 @@
 				"cout_global" : 1074382,
 				"montant_attrib" : 400000,
 				"intitulé" : "Extension et réhabilitation de la mairie",
+				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
 				"Maitrise d'ouvrage" : "Gevezé",
 				"Code INSEE" : 35120,
-				"id site" : 556
+				"id site" : 556,
+				"ecobonus" : "true"
 			}
 		},
 		{
@@ -424,7 +427,6 @@
 				"cout_global" : 88721,
 				"montant_attrib" : 26616,
 				"intitulé" : "Construction d'un city stade",
-				"justificatif" : "PPC ",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Laillé",
@@ -463,11 +465,13 @@
 				"cout_global" : 700000,
 				"montant_attrib" : 350000,
 				"intitulé" : "Rénovation ancien patronage et annexes",
+				"justificatif" : "PPC + Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 50,
 				"Maitrise d'ouvrage" : "Miniac-Sous-Becherel",
 				"Code INSEE" : 35180,
-				"id site" : 5456
+				"id site" : 5456,
+				"ecobonus" : "true"
 			}
 		},
 		{
@@ -500,14 +504,13 @@
 				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
 				"cout_global" : 411991,
 				"montant_attrib" : 90000,
-				"intitulé" : "Muséo - Sentier d'interprétation sur la reconquête de l'eau et des milieux aquatiques",
-				"justificatif" : "Performance énergétique",
+				"intitulé" : "Sentier d'interprétation sur la reconquête de l'eau et des milieux aquatiques",
+				"justificatif" : "Biodiversité",
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Mordelles",
 				"Code INSEE" : 35196,
 				"id site" : 5452,
-				"ecobonus" : "true",
 				"photo" : "https://documents.carto.datarennes.fr/dircov/5452.jpg"
 			}
 		},
@@ -544,7 +547,7 @@
 				"cout_global" : 3058847,
 				"montant_attrib" : 100000,
 				"intitulé" : "Réalisation d'un pôle santé plurdisciplinaire",
-				"justificatif" : "PPC + Performance énergétique",
+				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
 				"Maitrise d'ouvrage" : "Orgères",
@@ -565,11 +568,13 @@
 				"cout_global" : 78311,
 				"montant_attrib" : 36055,
 				"intitulé" : "Extension du bâtiment périscolaire",
+				"justificatif" : "PPC + Performance énergétique",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 50,
 				"Maitrise d'ouvrage" : "Parthenay-de-Bretagne",
 				"Code INSEE" : 35216,
-				"id site" : 2958
+				"id site" : 2958,
+				"ecobonus" : "true"
 			}
 		},
 		{
@@ -603,7 +608,6 @@
 				"cout_global" : 99888,
 				"montant_attrib" : 24970,
 				"intitulé" : "Travaux de rénovation des batiments scolaires (programme 2021)",
-				"justificatif" : "PPC",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Romillé",
@@ -623,6 +627,7 @@
 				"cout_global" : 227511,
 				"montant_attrib" : 88095,
 				"intitulé" : "Extension d'une cours d'école",
+				"justificatif" : "PPC",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 40,
 				"Maitrise d'ouvrage" : "Saint-Armel",
@@ -680,13 +685,11 @@
 				"cout_global" : 90436,
 				"montant_attrib" : 22609,
 				"intitulé" : "Réhabilitation de l'école élémentaire J. Prévert ",
-				"justificatif" : "Performance énergétique",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Saint-Gilles",
 				"Code INSEE" : 35275,
-				"id site" : 3255,
-				"ecobonus" : "true"
+				"id site" : 3255
 			}
 		},
 		{
@@ -701,11 +704,13 @@
 				"cout_global" : 248226,
 				"montant_attrib" : 99290.4,
 				"intitulé" : "Construction d'un local associatif",
+				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
 				"Maitrise d'ouvrage" : "Saint-Gilles",
 				"Code INSEE" : 35275,
-				"id site" : 4470
+				"id site" : 4470,
+				"ecobonus" : "true"
 			}
 		},
 		{
@@ -720,6 +725,7 @@
 				"cout_global" : 400000,
 				"montant_attrib" : 90000,
 				"intitulé" : "Végétalisation du cimetière ",
+				"justificatif" : "Biodiversité",
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Saint-Sulpice la Forêt",
@@ -739,6 +745,7 @@
 				"cout_global" : 93000,
 				"montant_attrib" : 27900,
 				"intitulé" : "Aménagement du Clos d'Orrière",
+				"justificatif" : "Biodiversité",
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Vern-sur-Seiche",
@@ -758,6 +765,7 @@
 				"cout_global" : 100000,
 				"montant_attrib" : 30000,
 				"intitulé" : "Végétalisation du cimetière pour entretien éco-responsable",
+				"justificatif" : "Biodiversité",
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Bruz",
@@ -776,12 +784,10 @@
 				"cout_global" : 208369,
 				"montant_attrib" : 51290,
 				"intitulé" : "Rénovation thermique des écoles",
-				"justificatif" : "Performance énergétique",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Laillé",
-				"Code INSEE" : 35139,
-				"ecobonus" : "true"
+				"Code INSEE" : 35139
 			}
 		},
 		{
@@ -796,10 +802,12 @@
 				"cout_global" : 2333500,
 				"montant_attrib" : 400000,
 				"intitulé" : "Construction d'un centre technique municipal",
+				"justificatif" : "Performance énergétique",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
 				"Maitrise d'ouvrage" : "Laillé",
-				"Code INSEE" : 35139
+				"Code INSEE" : 35139,
+				"ecobonus" : "true"
 			}
 		},
 		{
@@ -814,7 +822,7 @@
 				"cout_global" : 328162.4,
 				"montant_attrib" : 32830,
 				"intitulé" : "Maison de santé",
-				"justificatif" : "PPC + PBIL",
+				"justificatif" : "PPC",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 40,
 				"Maitrise d'ouvrage" : "Langan",
@@ -833,6 +841,7 @@
 				"cout_global" : 348317,
 				"montant_attrib" : 112080,
 				"intitulé" : "Maison des jeunes et des associations",
+				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 50,
 				"Maitrise d'ouvrage" : "Langan",
@@ -851,7 +860,6 @@
 				"cout_global" : 1945926,
 				"montant_attrib" : 300000,
 				"intitulé" : "Passerelle piéton et cycliste",
-				"justificatif" : "PPC + PBIL",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "L'hermitage",
@@ -888,6 +896,7 @@
 				"cout_global" : 30870,
 				"montant_attrib" : 9261,
 				"intitulé" : "Création d'une tiny-forest",
+				"justificatif" : "Biodiversité",
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Parthenay-de-Bretagne",
@@ -924,6 +933,7 @@
 				"cout_global" : 599654,
 				"montant_attrib" : 90000,
 				"intitulé" : "Requalification paysagère du chemin creux de la Houltais",
+				"justificatif" : "Biodiversité",
 				"nature" : "3- Biodiversité",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Romillé",

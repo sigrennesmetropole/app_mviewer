@@ -109,7 +109,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -165211.9257047187, 6124602.9462833619 ]
+				"coordinates" : [ -165211.9257047187, 6124602.94628336 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -226,7 +226,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -181638.4796381551, 6142095.1013364485 ]
+				"coordinates" : [ -181638.4796381551, 6142095.1013364503 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -290,7 +290,7 @@
 			"properties" : {
 				"année" : "2019-2020",
 				"armature" : "Pôle de proximité ",
-				"cout_global" : 148000,
+				"cout_global" : 172260,
 				"montant_attrib" : 44400,
 				"intitulé" : "REHABILITATION DE LA MAIRIE APRES SINISTRE ",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
@@ -380,7 +380,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -199600.9674238672, 6143337.1209095968 ]
+				"coordinates" : [ -199600.9674238672, 6143337.120909594 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -402,7 +402,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -206418.6525689807, 6152034.2668255838 ]
+				"coordinates" : [ -206418.6525689807, 6152034.2668255856 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -483,7 +483,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -191619.6303726629, 6103322.5066459952 ]
+				"coordinates" : [ -191619.6303726629, 6103322.5066459933 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -502,7 +502,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -205957.1840573018, 6147041.9281242676 ]
+				"coordinates" : [ -205957.1840573018, 6147041.9281242667 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -627,11 +627,13 @@
 				"cout_global" : 1390119,
 				"montant_attrib" : 120000,
 				"intitulé" : "EXTENSION ECOLE ELEMENTAIRE PUBLIQUE ET DE L'ALSH ",
+				"justificatif" : "Performance énergétique",
 				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
 				"taux" : 40,
 				"Maitrise d'ouvrage" : "L'hermitage",
 				"Code INSEE" : 35131,
-				"id site" : 2278
+				"id site" : 2278,
+				"ecobonus" : "true"
 			}
 		},
 		{
@@ -688,7 +690,7 @@
 				"armature" : "Pôle de proximité ",
 				"cout_global" : 879829.71,
 				"montant_attrib" : 175443,
-				"intitulé" : "RENVOATION DE LA SALLE DE SPORT ET DES ESPACES SPORTIFS ",
+				"intitulé" : "RENOVATION DE LA SALLE DE SPORT ET DES ESPACES SPORTIFS ",
 				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Nouvoitou",
@@ -857,7 +859,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -189990.8026099133, 6109885.1720776381 ]
+				"coordinates" : [ -189990.8026099133, 6109885.172077639 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -919,7 +921,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -177378.0957785473, 6109266.5098799933 ]
+				"coordinates" : [ -177378.0957785473, 6109266.5098799923 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -932,25 +934,6 @@
 				"Maitrise d'ouvrage" : "Saint-Armel",
 				"Code INSEE" : 35250,
 				"id site" : 3170
-			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "Point",
-				"coordinates" : [ -183835.4924757626, 6109862.1515563857 ]
-			},
-			"properties" : {
-				"année" : "2019-2020",
-				"armature" : "Pôle de proximité ",
-				"cout_global" : 144666,
-				"montant_attrib" : 43400,
-				"intitulé" : "BATIMENT MAIRIE RENOVATION",
-				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
-				"taux" : 30,
-				"Maitrise d'ouvrage" : "Saint-Erblon",
-				"Code INSEE" : 35266,
-				"id site" : 572
 			}
 		},
 		{
@@ -1174,7 +1157,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -203635.5483701044, 6132607.4863033528 ]
+				"coordinates" : [ -203635.5483701044, 6132607.4863033546 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
