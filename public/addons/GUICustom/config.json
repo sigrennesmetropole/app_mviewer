@@ -12,7 +12,8 @@
       "js/printMap.js",
       "js/rmCustomization.js",
       "js/legendeRM.js",
-      "js/svg_marker.js"
+      "js/svg_marker.js",
+      "js/center.js"
     ],
     "css": [
       "css/styles.css",
