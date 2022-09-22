@@ -35,6 +35,7 @@
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/toilettes_publiques_bleu.sld"
+                legendurl="apps/site_internet/img/legend/leg_marker_bleu.svg"
                 metadata="undefined"
                 queryable="true"
                 featurecount="5"

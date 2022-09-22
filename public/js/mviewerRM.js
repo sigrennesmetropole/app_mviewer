@@ -523,6 +523,10 @@ mviewer = (function () {
             style: mviewer.featureStyles.highlight
         });
         _overlayFeatureLayer.set('mviewerid', 'featureoverlay');
+        // DEBUT FeatureHighlight layer always on top
+        //TODO : partager avec la communauté
+        _overlayFeatureLayer.set('zIndex', '99');
+        // FeatureHighlight layer always on top
         _map.addLayer(_overlayFeatureLayer);
     };
 

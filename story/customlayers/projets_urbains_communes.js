@@ -5,12 +5,12 @@ mviewer.customLayers.projurbains_communes = (function() {
         return [
             new ol.style.Style({
                 image: new ol.style.Icon({
-                    anchor: [0.5, 46],
-                    anchorXUnits: 'fraction',
-                    anchorYUnits: 'pixels',
-                    scale:0.25,
-                    src: 'https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_orange.png',
-                  })
+                  color: '#f9a241', 
+                  crossOrigin: 'anonymous',
+                  scale:1,
+                  anchor:[0.5,1],
+                  src: 'apps/site_internet/customlayer/picture/marker.svg',
+                })
             })
         ];
     }
@@ -30,7 +30,7 @@ mviewer.customLayers.projurbains_communes = (function() {
         });
         return [style];
     }
-    
+
     
     let communeLayer = new ol.layer.Vector({
         source: new ol.source.Vector({

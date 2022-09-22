@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  
+  nom du SLD : v_sitorg_organisme_goutte_rouge_unisize
+  
+  couche source dans la base :  espub_mob.v_aire_jeu_rm
+  layer cible du style       :  espub_mob:v_aire_jeu_rm
+  
+  objet : goutte bleu pour les cartes de la DG Comm mais taille unique car peu d'objets à afficher en même temps
+  
+  Historique des versions :
+  date        |  auteur              |  description
+  17/05/2021  |  Cédric BRIAND         |  version initiale
+  
+-->
+<StyledLayerDescriptor version="1.1.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" xmlns="http://www.opengis.net/sld" 
+xmlns:ogc="http://www.opengis.net/ogc" xmlns:se="http://www.opengis.net/se" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <NamedLayer>
+    <se:Name>espub_mob:v_aire_jeu_rm</se:Name>
+    <UserStyle>
+      <se:Name>v_siteinternet_goutte_rouge_unisize</se:Name>
+        <se:Description>
+          <se:Title>Organismes (picto rouge)</se:Title>
+          <se:Abstract>Style simple : goutte d'eau rouge</se:Abstract>
+        </se:Description>
+      <se:FeatureTypeStyle>
+      
+        <!-- picto de taille unique -->
+        <se:Rule>
+          <se:Name>Organisme</se:Name>
+          <se:MinScaleDenominator>1</se:MinScaleDenominator>
+          <se:MaxScaleDenominator>500000</se:MaxScaleDenominator>
+          <se:PointSymbolizer>
+            <se:Graphic>
+              <se:ExternalGraphic>
+                <se:OnlineResource  xlink:type="simple" xlink:href="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sldmarker.svg?fill=#e45e52" />
+                <se:Format>image/svg+xml</se:Format>
+              </se:ExternalGraphic>
+              <se:Size>25</se:Size>
+              <se:Displacement>
+                <se:DisplacementX>0</se:DisplacementX>
+                <se:DisplacementY>-15</se:DisplacementY>
+              </se:Displacement>
+            </se:Graphic>
+          </se:PointSymbolizer>
+        </se:Rule>
+      
+      </se:FeatureTypeStyle>
+    </UserStyle>
+  </NamedLayer>
+</StyledLayerDescriptor>

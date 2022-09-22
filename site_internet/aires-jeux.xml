@@ -69,6 +69,7 @@
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/aires_jeux.sld"
+                legendurl="apps/site_internet/img/legend/leg_marker_rouge.svg"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
                 queryable="true"
