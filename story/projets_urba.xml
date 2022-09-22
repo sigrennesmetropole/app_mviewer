@@ -71,7 +71,7 @@
                 type="customlayer"
                 url="apps/story/customlayers/projets_urbains.js"
                 style=""
-                legendurl="apps/story/img/legend_pj_urbains.png"
+                legendurl="apps/story/img/legend_pj_urbains.svg"
                 opacity="1"
                 visible="true"
                 tooltip="true"
