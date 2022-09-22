@@ -1,11 +1,13 @@
 var multihighlight = (function() {
-
+    
+    var rennes2030color = '#e6334c';
     var _overlayer=null;
     var _communeoverlayer=null;
     
     /*
     * HighlightStyle
     */ 
+    /*
     var highlightGoutteStyle = new ol.style.Style({
       image: new ol.style.Icon({
         anchor: [0.5, 46],
@@ -15,7 +17,19 @@ var multihighlight = (function() {
         src: 'https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_rennes2030_3.png',
       }),
     });
+    */
     
+    var highlightGoutteStyle = new ol.style.Style({
+        image: new ol.style.Icon({
+          color : rennes2030color,
+          crossOrigin: 'anonymous',
+          scale:1,
+          anchor:[0.5,1],
+          src: 'apps/story/customlayers/img/sldmarker_rennes2030.svg',
+        }),
+      });
+    
+    /*
     var highlightRondStyle = new ol.style.Style({
       image: new ol.style.Icon({
         anchor: [0.5, 46],
@@ -25,6 +39,16 @@ var multihighlight = (function() {
         src: 'https://public.sig.rennesmetropole.fr/ressources/img/mviewer/rond_rennes2030.png',
       }),
     });
+    */
+    var highlightRondStyle = new ol.style.Style({
+        image: new ol.style.Icon({
+            color: rennes2030color, 
+            crossOrigin: 'anonymous',
+            scale:1,
+            src: 'apps/story/customlayers/img/sldcommune_rennes2030.svg',
+        }),
+    });
+    
     
     /*
     * Gestion des features de la couche overlay

@@ -28,19 +28,20 @@
     <themes mini="true">
         <theme id="theme-20180827150815" name="epiceries" collapsed="true" icon="fas fa-shopping-basket">
             <layer
-                    id="v_sitorg_organisme"
-                    name="Epiceries sociales"
-                    type="wms"
-                    url="https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows"
-                    visible="true"
-                    infoformat="application/vnd.ogc.gml"
-                    sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/organisme_bleu.sld"
-                    metadata="undefined"
-                    metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9bd66532-036e-44c8-957d-9156362e5576"
-                    queryable="true"
-                    featurecount="3"
-                    filter="etat_organisme='actif' and (code_nomenclature_principale='8.2.9' or code_nomenclature_secondaire like '%8.2.9%')"
-                    infopanel="right-panel">
+                id="v_sitorg_organisme"
+                name="Epiceries sociales"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/organisme_bleu.sld"
+                legendurl="apps/site_internet/img/legend/leg_marker_bleu.svg"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9bd66532-036e-44c8-957d-9156362e5576"
+                queryable="true"
+                featurecount="3"
+                filter="etat_organisme='actif' and (code_nomenclature_principale='8.2.9' or code_nomenclature_secondaire like '%8.2.9%')"
+                infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
         </theme>

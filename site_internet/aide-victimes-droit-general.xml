@@ -39,19 +39,20 @@
     <themes mini="true">
         <theme id="theme-20180827150815" name="Permanences généralistes" collapsed="true" icon="child">
             <layer
-                    id="v_sitorg_sites_par_organisme"
-                    name="Permanences généralistes"
-                    type="wms"
-                    url="https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows"
-                    visible="true"
-                    infoformat="application/vnd.ogc.gml"
-                    sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/sites_organisme_bleu.sld"
-                    metadata="undefined"
-                    metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
-                    queryable="true"
-                    featurecount="5"
-                    filter="etat_organisme = 'actif' AND (code_nomenclature_principale = '5.3.1' OR code_nomenclature_secondaire like '%5.3.1%') AND adresse_commune_site = 'Rennes'"
-                    infopanel="right-panel">
+                id="v_sitorg_sites_par_organisme"
+                name="Permanences généralistes"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/sites_organisme_bleu.sld"
+                legendurl="apps/site_internet/img/legend/leg_marker_bleu.svg"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                queryable="true"
+                featurecount="5"
+                filter="etat_organisme = 'actif' AND (code_nomenclature_principale = '5.3.1' OR code_nomenclature_secondaire like '%5.3.1%') AND adresse_commune_site = 'Rennes'"
+                infopanel="right-panel">
                 <template url="apps/site_internet/templates/aide-victimes.mst"></template>
             </layer>
         </theme>

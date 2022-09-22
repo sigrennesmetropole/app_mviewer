@@ -1,6 +1,6 @@
 mviewer.customLayers.projurbains = (function() {
     let data_proj = "apps/story/data/projets_urba_mviewer.geojson";
-    
+    /*
     function markerStyle(feature) {
         let categ = feature.get('categorie');
         
@@ -23,6 +23,32 @@ mviewer.customLayers.projurbains = (function() {
                     src: url,
                   })
             })
+        ];
+    }
+    */
+    
+    function markerStyle(feature) {
+        let categ = feature.get('categorie');
+        
+        if (categ == "Projet d'aménagement") {
+            return featureMarker('#33919d');
+        } 
+        else if (categ == "Espace public") {
+            return featureMarker('#8f9169');
+        }
+    }
+    
+    function featureMarker(couleur) {
+        return [
+            new ol.style.Style({
+                image: new ol.style.Icon({
+                  color: couleur, 
+                  crossOrigin: 'anonymous',
+                  scale:1,
+                  anchor:[0.5,1],
+                  src: 'apps/site_internet/customlayer/picture/marker.svg',
+                }),
+              })
         ];
     }
     
