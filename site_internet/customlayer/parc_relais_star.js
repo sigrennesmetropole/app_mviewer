@@ -39,6 +39,8 @@ mviewer.customLayers.parcs_relais= (function() {
                 } else {
                     console.log('fail request');
                 }
+                
+                console.log(_layer.getSource().getFeatures());
             };
             xhr.send();
         

@@ -1,0 +1,22 @@
+{{#features}}
+    <li class="item">
+        <h5 class="rm-popup-title-feature">{{libelle}}</h5>
+        <p class="rm-popup-text-feature">
+             {{#annee_budget}}<br/><span class='rm-popup-label'> Année du budget participatif :</span> {{{annee_budget}}}  {{/annee_budget}} 
+             {{#realise}}<br/><span class='rm-popup-label'> Étape :</span> {{{realise}}}{{/realise}}
+             {{#quartier}}<br/><span class='rm-popup-label'> Quartier :</span> {{{quartier}}}  {{/quartier}} 
+             {{#description}}<br/><span class='rm-popup-label'> Description :</span> {{{description}}}{{/description}}
+             {{#lien_page_projet}}<br/><span class='rm-popup-label'> Site internet :</span><a id='lienweb' class='lienweb' href="{{{lien_page_projet}}}" target="_blank" title="{{{lien_page_projet}}}"> Cliquez ici </a> <br/>{{/lien_page_projet}}
+            {{#photo}}
+                <section>
+                    <div id="slideauto" style="display: block;text-align: center;">
+                        <img class="photo" src="{{{photo}}}" loading="lazy" style="height: 150px;">
+                        <p class="labelPictureEnlarge rm-popup-label">Cliquez pour agrandir cette image</p>
+                    </div>
+                </section>
+            {{/photo}}
+        </p>
+
+    </li>
+{{/features}}
+

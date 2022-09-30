@@ -96,6 +96,7 @@
                 name="Zonage simplifié (couleur)"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/urba_docs_plui/ows"
+                legendurl="https://public.sig.rennesmetropole.fr/ressources/app/georchestra/legendes/urba_docs_plui/plui_plan_zonage_simplifie.png"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"

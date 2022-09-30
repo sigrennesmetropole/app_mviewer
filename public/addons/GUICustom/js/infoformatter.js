@@ -484,7 +484,6 @@ var formatter = (function () {
     
     
     function formatLargeNumbers() {
-        console.log("FORMAT LARGE NUMBERS");
         var span_elements = document.getElementsByClassName("rm-large-number");
         for (var i = 0; i < span_elements.length; i++) {
             var contenu="";
