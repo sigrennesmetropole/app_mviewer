@@ -52,7 +52,6 @@ mviewer.customLayers.urbadiffus_en_projet= (function() {
             }),
     });
     
-
     
     return {
         layer: dataLayer,

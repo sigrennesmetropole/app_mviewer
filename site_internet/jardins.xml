@@ -45,7 +45,7 @@
                 filter="etat_organisme='actif' and (code_nomenclature_principale='4.1.2' or code_nomenclature_secondaire like '%4.1.2%')"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
-            </layer>
+            </layer>-->
             <layer
                 id="v_sitorg_organisme"
                 name="Jardins partagés"
@@ -62,6 +62,24 @@
                 filter="etat_organisme='actif' and (code_nomenclature_principale='4.1.1' or code_nomenclature_secondaire like '%4.1.1%')"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
+            </layer>-->
+        </theme>
+        <theme id="theme-202103090939" name="Vergers partagés" collapsed="true" icon="fas fa-apple-alt">
+            <layer
+                id="vergers"
+                name="Vergers partagés"
+                type="customlayer"
+                url="apps/site_internet/customlayer/vergers.js"
+                legendurl="apps/site_internet/img/legend/vergers2.svg"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="false"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{nom_verger}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="3"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/vergers_existants.mst"></template>
             </layer>
         </theme>
         <theme id="theme-202210201401" name="Arbres d'ornement" collapsed="true" icon="fas fa-tree">
