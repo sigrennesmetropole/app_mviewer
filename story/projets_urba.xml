@@ -2,19 +2,23 @@
 <config>
     <application
         title="Opérations d'aménagement publiques conduites par la ville de  Rennes et par Rennes Métropole"
-        logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_transp.png"
+        logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/story/html/site_internet_help.html"
         showhelp="false"
         exportpng="false"
         style="apps/story/css/projets_urba.css"
         measuretools="false"
-        togglealllayersfromtheme="false" />
+        togglealllayersfromtheme="false"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
+        />
 
     <mapoptions maxzoom="20" minzoom="10" projection="EPSG:3857" center="-183500,6126800" zoom="12" />
 
     <baselayers style="default"><!-- style="default"||gallery" -->
-	    <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://applications.region-bretagne.fr/geonetwork/?uuid=3a0ac2e3-7af1-4dec-9f36-dae6b5a8c731&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+        <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://applications.region-bretagne.fr/geonetwork/?uuid=3a0ac2e3-7af1-4dec-9f36-dae6b5a8c731&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
         <baselayer visible="false" id="ortho2020" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2020" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://applications.region-bretagne.fr/geonetwork/?uuid=3a0ac2e3-7af1-4dec-9f36-dae6b5a8c731&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
     </baselayers>
 
@@ -54,6 +58,7 @@
                 opacity="0.80"
                 visible="true"
                 queryable="true"
+                tabcolor="#e6334c"
                 featurecount="3"
                 infopanel="right-panel">
                 <template url="apps/story/templates/communes.mst"></template>
@@ -66,13 +71,14 @@
                 type="customlayer"
                 url="apps/story/customlayers/projets_urbains.js"
                 style=""
-                legendurl="apps/story/img/legend_pj_urbains.png"
+                legendurl="apps/story/img/legend_pj_urbains.svg"
                 opacity="1"
                 visible="true"
                 tooltip="true"
                 tooltipenabled="true"
                 tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{nom_ope}}&lt;/span&gt;"
                 queryable="true"
+                tabcolor="#e6334c"
                 featurecount="3"
                 infopanel="right-panel">
                 <template url="apps/story/templates/projets_urba.mst"></template>

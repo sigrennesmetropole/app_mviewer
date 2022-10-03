@@ -3,6 +3,7 @@
     <application
         title="Points d'accès multimédia"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
@@ -10,6 +11,8 @@
         style="apps/site_internet/css/site_internet_gris.css"
         measuretools="false"
         togglealllayersfromtheme="false"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
          />
 
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-190690.24433942206,6128725.984905125" zoom="11" />
@@ -24,7 +27,7 @@
     </extensions>
 
     <themes mini="true">
-        <theme id="theme-20180827150815" name="Points d'accès multimédia" collapsed="true" icon="fas fa-desktop">
+        <theme id="theme-20180827150815" name="Espaces numériques" collapsed="true" icon="fas fa-desktop">
             <layer
                 id="v_sitorg_organisme"
                 name="Espaces numériques"
@@ -33,11 +36,13 @@
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/organisme_bleu.sld"
+                legendurl="apps/site_internet/img/legend/leg_marker_bleu.svg"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
                 queryable="true"
                 featurecount="3"
                 filter="etat_organisme = 'actif' AND code_nomenclature_principale = '7.5.3'"
+                infohighlight ="true"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
@@ -51,11 +56,13 @@
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/organisme_vert.sld"
+                legendurl="apps/site_internet/img/legend/leg_marker_vert.svg"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
                 queryable="true"
                 featurecount="3"
                 filter="etat_organisme = 'actif' AND code_nomenclature_principale = '7.5.1'"
+                infohighlight ="true"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>

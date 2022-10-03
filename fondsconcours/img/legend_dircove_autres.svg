@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="Calque_1"
+   data-name="Calque 1"
+   viewBox="0 0 434.12465 116.58017"
+   width="109.74754"
+   height="29.471685"
+   version="1.1"
+   sodipodi:docname="legend_dircove_autres.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <metadata
+     id="metadata38">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview36"
+     showgrid="false"
+     inkscape:zoom="1.905572"
+     inkscape:cx="96.055529"
+     inkscape:cy="-17.994919"
+     inkscape:window-x="1672"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Calque_1"
+     inkscape:document-rotation="0" />
+  <circle
+     cx="55.330002"
+     cy="61.250156"
+     r="55.330002"
+     style="fill:#61c3d7"
+     id="circle2" />
+  <polyline
+     points="52.54 37.66 52.54 29.26 89.23 29.26 89.23 90.59 29.57 90.59 29.57 65.65 47.04 49.21 63.87 65.65 63.87 90.59"
+     style="fill:none;stroke:#ffffff;stroke-width:6px;stroke-linecap:round;stroke-miterlimit:10"
+     id="polyline4"
+     transform="translate(-4.0700021,1.320157)" />
+  <line
+     x1="42.830002"
+     y1="78.920151"
+     x2="42.830002"
+     y2="91.580154"
+     style="fill:none;stroke:#ffffff;stroke-width:6px;stroke-linecap:round;stroke-miterlimit:10"
+     id="line6" />
+  <circle
+     cx="60.580002"
+     cy="43.970158"
+     r="3.3800001"
+     style="fill:#ffffff"
+     id="circle8" />
+  <circle
+     cx="72.869995"
+     cy="43.970158"
+     r="3.3800001"
+     style="fill:#ffffff"
+     id="circle10" />
+  <circle
+     cx="72.869995"
+     cy="56.640156"
+     r="3.3800001"
+     style="fill:#ffffff"
+     id="circle12" />
+  <circle
+     cx="72.869995"
+     cy="70.190155"
+     r="3.3800001"
+     style="fill:#ffffff"
+     id="circle14" />
+  <circle
+     cx="215.22223"
+     cy="60.692085"
+     r="55.330002"
+     style="fill:#61c3d7"
+     id="circle2-3" />
+  <g
+     id="i84PbB.tif-1"
+     transform="translate(154.99223,0.67208557)">
+    <polyline
+       points="52.54 37.66 52.54 29.26 89.23 29.26 89.23 90.59 29.57 90.59 29.57 65.65 47.04 49.21 63.87 65.65 63.87 90.59"
+       style="fill:none;stroke:#ffffff;stroke-width:6px;stroke-linecap:round;stroke-miterlimit:10"
+       id="polyline17" />
+    <line
+       x1="46.900002"
+       y1="77.599998"
+       x2="46.900002"
+       y2="90.260002"
+       style="fill:none;stroke:#ffffff;stroke-width:6px;stroke-linecap:round;stroke-miterlimit:10"
+       id="line19" />
+    <circle
+       cx="64.650002"
+       cy="42.650002"
+       r="3.3800001"
+       style="fill:#ffffff"
+       id="circle21" />
+    <circle
+       cx="76.940002"
+       cy="42.650002"
+       r="3.3800001"
+       style="fill:#ffffff"
+       id="circle23" />
+    <circle
+       cx="76.940002"
+       cy="55.32"
+       r="3.3800001"
+       style="fill:#ffffff"
+       id="circle25" />
+    <circle
+       cx="76.940002"
+       cy="68.870003"
+       r="3.3800001"
+       style="fill:#ffffff"
+       id="circle27" />
+  </g>
+  <defs
+     id="defs13">
+    <style
+       id="style11">.cls-1{fill:#ffe02b;}.cls-1,.cls-2{stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:9px;}.cls-2{fill:none;}</style>
+  </defs>
+  <g
+     transform="matrix(0.1493328,-0.06033437,0.05884351,0.14564281,201.6506,9.8711607)"
+     id="g19">
+    <path
+       class="cls-1"
+       d="m 296.95,252.1 c 6.54,-7.17 12.27,-15.03 17.09,-23.44 v 0 l 0.12,-0.4 C 350.26,164.63 327.94,83.78 264.31,47.69 200.68,11.59 119.83,33.91 83.74,97.54 55.87,146.66 62.22,208.05 99.54,250.44 78.31,286.79 54.25,327.81 54.25,327.81 l 58.15,8.86 35.85,46.58 49.7,-84.87 48.32,85.56 36.6,-45.99 58.17,-7.96 -44.08,-77.87"
+       id="path15" />
+    <path
+       class="cls-2"
+       d="m 122.36,162.54 c 0.32,-42.36 34.93,-76.44 77.29,-76.11 42.36,0.32 76.44,34.93 76.12,77.29 -0.32,42.35 -34.92,76.43 -77.27,76.12 -42.34,-0.29 -76.43,-34.86 -76.13,-77.2 0,-0.03 0,-0.06 0,-0.09"
+       id="path17" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.1938px;line-height:1.25;font-family:Calibri;-inkscape-font-specification:Calibri;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.95567"
+     x="270.80911"
+     y="108.43122"
+     id="text850"><tspan
+       sodipodi:role="line"
+       id="tspan848"
+       x="270.80911"
+       y="108.43122"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:42.1938px;font-family:Calibri;-inkscape-font-specification:Calibri;stroke-width:3.95567">Ecobonus</tspan></text>
+</svg>

@@ -9,9 +9,9 @@
         exportpng="false"
         style="apps/site_internet/css/site_info_large.css"
         measuretools="false"
-        togglealllayersfromtheme="false" />
-        <!-- apiKey="c583383089f1c7e544e32cdf44c11045" -->
-        <!-- style="apps/site_internet/css/art_ville.css" -->
+        togglealllayersfromtheme="false"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc" />
 
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-185600.24433942206,6125077.984905125" zoom="12" />
 

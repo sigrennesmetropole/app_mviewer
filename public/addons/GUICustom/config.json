@@ -1,10 +1,23 @@
 {
     "js": [
+      "lib/select2-4.0.13/select2.min.js",
+      "lib/FileSaver.min.js",
+      "js/ogcutilsRM.js",
       "js/fixRightPanel.js",
       "js/navTabs.js",
-      "js/tooltip.js"
+      "js/rmTools.js",
+      "js/infoformatter.js",
+      "js/numresultstooltip.js",
+      "js/nohighlight.js",
+      "js/printMap.js",
+      "js/rmCustomization.js",
+      "js/legendeRM.js",
+      "js/svg_marker.js"
     ],
-    "css": "css/styles.css",
+    "css": [
+      "css/styles.css",
+      "lib/select2-4.0.13/select2.min.css"
+    ],
     "html": "html/index.html",
     "target": "page-content-wrapper"
 }

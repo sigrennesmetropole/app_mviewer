@@ -7,7 +7,7 @@
              {{#nomopa}}<span class='rm-popup-label'> OPÉRATION :</span> {{nomopa}} <br/>{{/nomopa}}
              {{#num_ads}}<span class='rm-popup-label'> PERMIS DE CONSTRUIRE :</span> {{num_ads}} <br/>{{/num_ads}}
              {{#nb_logements}}<span class='rm-popup-label'> NOMBRE DE LOGEMENTS :</span><span class="zeroNonDef"> {{nb_logements}} </span><br/>{{/nb_logements}}
-             {{#programme}}<span class='rm-popup-label'> PROGRAMME :</span> {{programme}} <br/>{{/programme}}
+             {{#description}}<span class='rm-popup-label'> PROGRAMME :</span> {{description}} <br/>{{/description}}
              
              {{#niveau}}<span class='rm-popup-label'> NIVEAUX :</span> {{niveau}} <br/>{{/niveau}}
              {{#aire_geo}}<span class='rm-popup-label'> AIRE TOTALE :</span> {{aire_geo}} m² <br/>{{/aire_geo}}

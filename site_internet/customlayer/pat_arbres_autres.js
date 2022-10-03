@@ -1,14 +1,14 @@
-
 mviewer.customLayers.arbresautres= (function() {
     let daterefmin = new Date().getFullYear()-50;
     let daterefmax = new Date().getFullYear();
     let data_url = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=espub_esv:gev_aali&CQL_FILTER=date_plant>='+ daterefmin +' AND date_plant<'+ daterefmax +'&outputFormat=application/json&srsName=EPSG:4326';
+    let datacolor = '#DCEAAE'
     
     function markerStyle() {
         return [
             new ol.style.Style({
                 image: new ol.style.Icon({
-                  color: '#5DADE2', 
+                  color: datacolor, 
                   crossOrigin: 'anonymous',
                   //scale:0.1,
                   //anchor:[0.5,1],
@@ -19,13 +19,13 @@ mviewer.customLayers.arbresautres= (function() {
         ];
     }
     
-    
+    /*
     function rondStyle() {
         let style = new ol.style.Style({
             image: new ol.style.Circle({
                 radius: 5,
                 fill: new ol.style.Fill({
-                    color: '#5DADE2',
+                    color: datacolor,
                 }),
                 stroke: new ol.style.Stroke({
                     color: '#ffffff',
@@ -36,7 +36,7 @@ mviewer.customLayers.arbresautres= (function() {
         });
         return [style];
     }
-    
+    */
     
     let dataLayer = new ol.layer.Vector({
         source: new ol.source.Vector({
@@ -51,5 +51,4 @@ mviewer.customLayers.arbresautres= (function() {
         layer: dataLayer,
     }
 }());
-
 

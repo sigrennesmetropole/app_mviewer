@@ -3,6 +3,7 @@
     <application
         title="Sites des collectivités"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
@@ -14,8 +15,9 @@
         statsurl=""
         togglealllayersfromtheme="false"
         printMap="false"
-        >
-    </application>
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
+        />
     <mapoptions maxzoom="20" minzoom="10" projection="EPSG:3857" center="-186098.36482879001,6125889.9088213602" zoom="18" />
 
 

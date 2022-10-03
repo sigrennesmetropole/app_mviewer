@@ -3,6 +3,7 @@
     <application
         title="Données des antennes et capteurs electromagnétiques de l'ANFR"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
@@ -10,6 +11,8 @@
         style="apps/site_internet/css/site_internet_gris.css"
         measuretools="false"
         togglealllayersfromtheme="false"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
          />
 
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-188244.25943429657,6125209.881604007" zoom="12" />

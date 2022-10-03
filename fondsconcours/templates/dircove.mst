@@ -1,0 +1,29 @@
+{{#features}}
+    <li class="item" >
+        <h5 class="rm-popup-title-feature ">{{intitulé}}</h5>
+        
+        {{#ecobonus}}
+            <p class="rm-popup-text-feature"> 
+                <img class="ecobns" src="apps/fondsconcours/img/écusson1.svg"  style="height: 30px;"/> ECOBONUS 
+            </p>
+        {{/ecobonus}}
+        <p class="rm-popup-text-feature">
+            {{#Maitrise d'ouvrage}}<span class='rm-popup-label'> Maîtrise d'ouvrage :</span> {{{Maitrise d'ouvrage}}}<br/>{{/Maitrise d'ouvrage}}
+            {{#année}}<span class='rm-popup-label'> Fonds de concours :</span> {{{année}}}<br/>{{/année}}
+            {{#nature}}<span class='rm-popup-label'> Catégorie :</span> {{{nature}}}<br/>{{/nature}}
+            {{#montant_attrib}}<span class='rm-popup-label'> Montant attribué :</span> <span class='rm-large-number'>{{{montant_attrib}}}</span> €<br/>{{/montant_attrib}}
+            {{#cout_global}}<span class='rm-popup-label'> Coût global :</span> <span class='rm-large-number'>{{{cout_global}}}</span> €<br/>{{/cout_global}}
+            {{#taux}}<span class='rm-popup-label'> Aide métropolitaine :</span> {{{taux}}} %<br/>{{/taux}}
+            {{#justificatif}}<span class='rm-popup-label'> Justificatif :</span> {{{justificatif}}} <br/>{{/justificatif}}
+            {{#photo}}
+            <section>
+                <div id="slideauto" style="display: block;text-align: center;">
+                    <img class="photo" src="{{{photo}}}" loading="lazy" style="height: 150px;">
+                    <p class="labelPictureEnlarge rm-popup-label">Cliquez pour agrandir cette image</p>
+                </div>
+            </section>
+            {{/photo}}
+            
+        </p>
+    </li>
+{{/features}}

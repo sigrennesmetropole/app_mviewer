@@ -1,0 +1,144 @@
+{
+	"type" : "FeatureCollection",
+	"name" : "geojson_biodiv",
+	"features" : [
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.4839053154, 48.105864033 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 142000,
+				"montant_attrib" : 42600,
+				"intitulé" : "Parcours sportif intégrant des enjeux de biodiversité",
+				"justificatif" : "Biodiversité",
+				"nature" : "3- Biodiversité",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Brécé",
+				"Code INSEE" : 35039,
+				"id site" : 1462
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8635129929, 48.0738782533 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 411991,
+				"montant_attrib" : 90000,
+				"intitulé" : "Sentier d'interprétation sur la reconquête de l'eau et des milieux aquatiques",
+				"justificatif" : "Biodiversité",
+				"nature" : "3- Biodiversité",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Mordelles",
+				"Code INSEE" : 35196,
+				"id site" : 5452,
+				"photo" : "https://documents.carto.datarennes.fr/dircov/5452.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.577680707, 48.2189148753 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 400000,
+				"montant_attrib" : 90000,
+				"intitulé" : "Végétalisation du cimetière ",
+				"justificatif" : "Biodiversité",
+				"nature" : "3- Biodiversité",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint-Sulpice la Forêt",
+				"Code INSEE" : 35315,
+				"id site" : 3521
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6043571945, 48.0479006285 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 93000,
+				"montant_attrib" : 27900,
+				"intitulé" : "Aménagement du Clos d'Orrière",
+				"justificatif" : "Biodiversité",
+				"nature" : "3- Biodiversité",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Vern-sur-Seiche",
+				"Code INSEE" : 35352,
+				"id site" : 705
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7460353293, 48.0244546199 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 100000,
+				"montant_attrib" : 30000,
+				"intitulé" : "Végétalisation du cimetière pour entretien éco-responsable",
+				"justificatif" : "Biodiversité",
+				"nature" : "3- Biodiversité",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Bruz",
+				"Code INSEE" : 35047
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8314019475, 48.1917295205 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 30870,
+				"montant_attrib" : 9261,
+				"intitulé" : "Création d'une tiny-forest",
+				"justificatif" : "Biodiversité",
+				"nature" : "3- Biodiversité",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Parthenay-de-Bretagne",
+				"Code INSEE" : 35216
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8924325705, 48.2155192362 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 599654,
+				"montant_attrib" : 90000,
+				"intitulé" : "Requalification paysagère du chemin creux de la Houltais",
+				"justificatif" : "Biodiversité",
+				"nature" : "3- Biodiversité",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Romillé",
+				"Code INSEE" : 35245
+			}
+		}
+	]
+}

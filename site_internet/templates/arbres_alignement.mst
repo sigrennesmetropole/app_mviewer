@@ -1,13 +1,14 @@
 {{#features}}
-	<li class="item">
-		<h5 class="rm-popup-title-feature">{{denomination}}</h5>
+    <li class="item">
+        <h5 class="rm-popup-title-feature">{{nom_commun}}</h5>
         <p class="rm-popup-text-feature">
-             {{#date_plant}}<span class='rm-popup-label'> Plantation :</span> {{{date_plant}}}{{/date_plant}}
-             {{#genre}}<br/><span class='rm-popup-label'> Genre :</span> {{{genre}}} {{/genre}}
-             {{#espece}}<br/><span class='rm-popup-label'> Espèce :</span> {{{espece}}} {{/espece}}
-             {{#variete}}<br/><span class='rm-popup-label'> Variété :</span> {{{variete}}} {{/variete}}
+            {{#denomination}}<span class='rm-popup-label'> Localisation :</span> {{{denomination}}}{{/denomination}}
+            {{#date_plant}}<br/><span class='rm-popup-label'> Plantation :</span> {{{date_plant}}} {{/date_plant}}
+            {{#genre}}<br/><span class='rm-popup-label'> Genre :</span> {{{genre}}} {{/genre}}
+            {{#espece}}<br/><span class='rm-popup-label'> Espèce :</span> {{{espece}}} {{/espece}}
+            {{#variete}}<br/><span class='rm-popup-label'> Variété :</span> {{{variete}}} {{/variete}}
         </p>
-
-	</li>
+        {{#complement}}<span class="rm-popup-subtitle-feature" > {{complement}} </span>{{/complement}}
+    </li>
 {{/features}}
 

@@ -338,6 +338,13 @@ mviewer = (function () {
             })
         });
 
+        const mapReadyEvent = new CustomEvent('map-ready', {
+            detail: {
+              map: _map
+            }
+        });
+        document.dispatchEvent(mapReadyEvent);
+
          _map.on('moveend', _mapChange);
         //Handle zoom change
         _map.getView().on('change:resolution', _mapZoomChange);
@@ -364,14 +371,13 @@ mviewer = (function () {
         delete _overLayers[layername];
     };
 
-    var _getlegendurl = function (layer, scale) {
-        var legendUrl = "";
-        if (layer.legendurl && !layer.styles) {
-            legendUrl = layer.legendurl;
-        } else if (layer.legendurl && layer.styles && (layer.styles.split(",").length === 1)) {
-            legendUrl = layer.legendurl;
-        } else {
-            var getLegendParams = {
+    /**
+     * Get legend params object.
+     * @param {ol.layer} layer
+     * @returns params object
+     */
+    var _getLegendParams = (layer) => {
+        var legendParams = {
                 'LAYER': layer.layername,
                 'STYLE': layer.style,
                 'FORMAT': 'image/png',
@@ -379,12 +385,27 @@ mviewer = (function () {
             };
 
             if (layer.sld) {
-                getLegendParams['SLD'] = encodeURIComponent(layer.sld);
+            legendParams['SLD'] = encodeURIComponent(layer.sld);
             } else {
-                getLegendParams['STYLE'] = encodeURIComponent(layer.style);
+            legendParams['STYLE'] = encodeURIComponent(layer.style);
             }
+        return legendParams;
+    }
 
-            legendUrl = getLegendGraphicUrl(layer.url, getLegendParams);
+    /**
+     *
+     * @param {object} layer - ol.layer object
+     * @param {*} scale - usefull with dynamicLegend is true
+     * @returns
+     */
+    var _getlegendurl = function (layer, scale) {
+        var legendUrl = "";
+        if (layer.legendurl && !layer.styles) {
+            legendUrl = layer.legendurl;
+        } else if (layer.legendurl && layer.styles && (layer.styles.split(",").length === 1)) {
+            legendUrl = layer.legendurl;
+        } else {
+            legendUrl = getLegendGraphicUrl(layer.url, _getLegendParams(layer));
         }
         if (layer.dynamiclegend) {
             if (!scale) {
@@ -502,6 +523,10 @@ mviewer = (function () {
             style: mviewer.featureStyles.highlight
         });
         _overlayFeatureLayer.set('mviewerid', 'featureoverlay');
+        // DEBUT FeatureHighlight layer always on top
+        //TODO : partager avec la communauté
+        _overlayFeatureLayer.set('zIndex', '99');
+        // FeatureHighlight layer always on top
         _map.addLayer(_overlayFeatureLayer);
     };
 
@@ -512,10 +537,36 @@ mviewer = (function () {
      */
 
     var _initSelectOverlay = function () {
+        var default_selection_style = {
+            point: {
+                radius: "7",
+                fillcolor: "82, 98, 217",
+                opacity: "0.5",
+                strokecolor: "82, 98, 217",
+                strokewidth: "4"
+            },
+            line: {
+                opacity: "1",
+                strokecolor: "82, 98, 217",
+                strokewidth: "4"
+            },
+            polygon: {
+                fillcolor: "82, 98, 217",
+                opacity: "0.5",
+                strokecolor: "82, 98, 217",
+                strokewidth: "4"
+            }
+        };
+        var selection_style = {};
+        if (configuration.getConfiguration().styles && configuration.getConfiguration().styles.selectionstyle) {
+            selection_style = Object.assign({}, default_selection_style, configuration.getConfiguration().styles.selectionstyle);
+        } else {
+            selection_style = default_selection_style;
+        }
         _sourceSelectOverlay = new ol.source.Vector();
         _selectOverlayFeatureLayer = new ol.layer.Vector({
             source: _sourceSelectOverlay,
-            style: getSelectStyle.bind(this, '82, 98, 217', 4),
+            style: getSelectStyle.bind(this, selection_style),
             mviewerid: 'selectoverlay'
         });
         _map.addLayer(_selectOverlayFeatureLayer);
@@ -528,13 +579,61 @@ mviewer = (function () {
      */
 
     var _initSubSelectOverlay = function () {
+        var default_subselection_style = {
+            point: {
+                radius: "7",
+                fillcolor: "252, 186, 3",
+                opacity: "0.5",
+                strokecolor: "82, 98, 217",
+                strokewidth: "2"
+            },
+            line: {
+                opacity: "1",
+                strokecolor: "252, 186, 3",
+                strokewidth: "2"
+            },
+            polygon: {
+                fillcolor: "252, 186, 3",
+                opacity: "0.5",
+                strokecolor: "252, 186, 3",
+                strokewidth: "2"
+            }
+        };
+        var subselection_style = {};
+        if (configuration.getConfiguration().styles && configuration.getConfiguration().styles.subselectionstyle) {
+            subselection_style = Object.assign({}, default_subselection_style, configuration.getConfiguration().styles.subselectionstyle);
+        } else {
+            subselection_style = default_subselection_style;
+        }
         _sourceSubSelectOverlay = new ol.source.Vector();
         _subSelectOverlayFeatureLayer = new ol.layer.Vector({
             source: _sourceSubSelectOverlay,
-            style: getSelectStyle.bind(this, '252, 186, 3', 2),
+            style: getSelectStyle.bind(this, subselection_style),
             mviewerid: 'subselectoverlay'
         });
         _map.addLayer(_subSelectOverlayFeatureLayer);
+    };
+
+    var _initTooltip = function () {
+        //Activate tooltips on tools buttons
+        if (!configuration.getConfiguration().mobile) {
+            $("[title]").each((i,el) => {
+                [placement, trigger, html, container, template] = ['left', 'hover', true, 'body', mviewer.templates.tooltip];
+                if ($(el).attr('tooltip')) {
+                    // element with "tooltip" params used to custom tooltip element
+                    [placement, trigger, html, container, template] = $(el).attr('tooltip').split(",");//.map(e => `${e}`);
+                    template = template.split(".").forEach(e => t = t ? t[e] : window[e]);
+                }
+                // create tooltip
+                $(el).tooltip({
+                    placement: placement,
+                    trigger: trigger,
+                    html: html,
+                    container: container,
+                    template: template
+                });
+            });
+        }
     };
 
     /**
@@ -549,25 +648,27 @@ mviewer = (function () {
         //GetFeatureInfo tool
         mviewer.tools.info = info;
         mviewer.tools.info.init();
+        const appconfig = configuration.getConfiguration().application;
+
         //Measure tool
-        if (configuration.getConfiguration().application.measuretools === "true") {
-            //Load measure moadule
+        if (appconfig.measuretools === "true") {
+            //Load measure module
             mviewer.tools.measure = measure;
             mviewer.tools.measure.init();
         }
         //Activate GetFeatureInfo tool
         mviewer.setTool('info');
-        //Activate tooltips on tools buttons
-        if (!configuration.getConfiguration().mobile) {
-            $("#backgroundlayersbtn, #zoomtoolbar button, #toolstoolbar button, #toolstoolbar a").tooltip({
-                placement: 'left',
-                trigger: 'hover',
-                html: true,
-                container: 'body',
-                template: mviewer.templates.tooltip
-            });
+        
+        //Measure tools
+        const zoomBtnActivate = appconfig.zoomtools === "true" || !appconfig.zoomtools;
+        const zoomToExtentBtnActivate = appconfig.initialextenttool === "true" || !appconfig.initialextenttool;
+        if (zoomToExtentBtnActivate || zoomBtnActivate) {
+            //Load zoom toolbar module if one of button is activate
+            mviewer.tools.zoom = zoom;
+            zoom.init();
         }
-
+        if (zoomToExtentBtnActivate) zoom.initExtentBtn();
+        if (zoomBtnActivate) zoom.initZoomBtn();
     };
 
     var _initShare = function () {
@@ -700,7 +801,11 @@ mviewer = (function () {
                 }
             });
         }
-        _map.addLayer(l);
+        // CBR : Bug sur chargement de customlayer qui doublonne certaines données
+        // CONTRIBUTION #649
+        //_map.addLayer(l);
+        setTimeout(function(){_map.addLayer(l);},100);
+        // FIN CBR
         if (oLayer.type === "customlayer" && mviewer.customLayers[oLayer.id]) {
             mviewer.customLayers[oLayer.id].config = oLayer;
         }
@@ -744,9 +849,20 @@ mviewer = (function () {
             configuration.getConfiguration().mobile = true;
             if (displayMode) {
                  $("#wrapper, #main").addClass("mode-" + displayMode);
-                 $("#page-content-wrapper").append(['<a id="btn-mode-su-menu" class="btn btn-sm btn-default" ',
-                    'type="button" href="#" data-toggle="modal" data-target="#legend-modal">',
-                    '<span class="glyphicon glyphicon-menu-hamburger"></span></a>'].join(""));
+				$("#page-content-wrapper").append(`
+                    <a 
+                        id="btn-mode-su-menu"
+                        class="btn btn-sm btn-default"
+                        type="button"
+                        href="#"
+                        data-toggle="modal"
+                        data-target="#legend-modal"
+                        title="Afficher la légende"
+                        i18n="data.toggle">
+                        <i class="fas fa-layer-group"></i>
+                        <span i18n="data.toggle"> Afficher la légende</span>
+                    </a>`
+                );                 
                  if (displayMode === "u") {
                     $("#mv-navbar").remove();
                  }
@@ -865,7 +981,9 @@ mviewer = (function () {
                 $.each(_themes[theme.id].groups, function (id, group) {
                     var grp = {title: group.name, layers: [] };
                     $.each(group.layers, function (id, layer) {
+                        if (layer.showintoc) {
                         grp.layers.unshift(layer);
+                        }
                     });
                     groups.push(grp);
                 });
@@ -874,7 +992,10 @@ mviewer = (function () {
             //NO GROUPS
             } else {
                  $.each(_themes[theme.id].layers, function (id, layer) {
+                    if (layer.showintoc) {
                     reverse_layers.push(layer);
+                    }
+
                 });
                 view.layers = reverse_layers.reverse();
                 view.cls = classes.join(" ");
@@ -897,12 +1018,6 @@ mviewer = (function () {
         } else if(legendmini && !panelMini && legendmini != null) {
             // display legend panel
             mviewer.toggleLegend(false);
-        }
-        if (configuration.getConfiguration().mobile) {
-            $('#legend-modal').on('show.bs.modal', function (e) {
-                $("#legend").addClass("active");
-                $("#legend .mv-layer-remove").hide();
-            })
         }
         $("#menu").html(htmlListGroup);
         initMenu();
@@ -1026,7 +1141,7 @@ mviewer = (function () {
         var l;
         function setBaseOpacity(layer, value){
             if(layer && value) {
-                layer.setOpacity(value);
+                layer.setOpacity(Number(value));
             }
         }
         switch (baselayer.type) {
@@ -1156,7 +1271,7 @@ mviewer = (function () {
         var layers = [];
         $.each(_overLayers, function (i, item) {
             var layerparams = [];
-            if (item.layer.getVisible()) {
+            if (item.layer.getVisible() && item.showintoc) {
                 layerparams.push(item.layerid);
                 if (item.type === "wms") {
                     //get current style if many styles
@@ -1193,7 +1308,7 @@ mviewer = (function () {
     var _setVisibleOverLayers = function (lst) {
         var errors = [];
         var errorLayers =[];
-        var layers = decodeURIComponent(lst).split(",");
+        var layers = lst.split(",");
         var layersWithOptions = {};
         layers.forEach(function (layer, i) {
             //search layer by id or by name in overLayers collection
@@ -1217,7 +1332,8 @@ mviewer = (function () {
             }
 
             var l = false;
-            if (mviewer.getLayers()[layerIdOrName] && mviewer.getLayers()[layerIdOrName].layer) {
+            if (mviewer.getLayers()[layerIdOrName] && mviewer.getLayers()[layerIdOrName].showintoc
+                && mviewer.getLayers()[layerIdOrName].layer) {
                 //layerIdOrName is layerid
                 l =  mviewer.getLayers()[layerIdOrName].layer;
                 richLayer.layerid = layerIdOrName;
@@ -1283,6 +1399,7 @@ mviewer = (function () {
             if (layerOptions.style && layerControler.type === "wms") {
                 layerControler.layer.getSource().getParams()['STYLES'] = layerOptions.style;
                 layerControler.style = layerOptions.style;
+                layerControler.legendurl = _getlegendurl(layerControler);
             }
             if (layerOptions.filter && layerControler.type === "wms") {
                 layerControler.layer.getSource().getParams()['CQL_FILTER'] = layerOptions.filter;
@@ -1301,7 +1418,7 @@ mviewer = (function () {
 
         var hideLayer = function (layerControler) {
             layerControler.checked = false;
-            if (layerControler.layer) {
+            if (layerControler.layer && layerControler.showintoc) {
                 layerControler.layer.setVisible(false);
             }
             layerControler.visiblebydefault = false;
@@ -1722,26 +1839,6 @@ mviewer = (function () {
         },
 
         /**
-         * Public Method: zoomOut
-         *
-         */
-
-        zoomOut: function () {
-           var v = _map.getView();
-           v.animate({zoom: v.getZoom() - 1});
-        },
-
-        /**
-         * Public Method: zoomIn
-         *
-         */
-
-        zoomIn: function () {
-            var v = _map.getView();
-            v.animate({zoom: v.getZoom() + 1});
-        },
-
-        /**
          * Public Method: zoomToInitialExtent
          *
          */
@@ -1871,7 +1968,7 @@ mviewer = (function () {
             var oldIndex = layers.indexOf(layer);
             layers.splice(newIndex, 0, layers.splice(oldIndex, 1)[0]);
             _map.render();
-
+            mviewer.orderLegendByMap();
         },
 
         orderLayer: function (actionMove) {
@@ -1896,6 +1993,136 @@ mviewer = (function () {
                 _map.render();
             }
         },
+
+        /**
+         * Reorder layers according to layer rank.
+         * Rank is define by xml config file input (not by index or toplayer)
+         */
+        showLayersByAttrOrder: function(layers, reverse) {
+            // to keep baseLayer as first map layers
+            var baseLayersCount = configuration.getConfiguration().baselayers.baselayer.length;
+            let layersByRank = _.mapValues(_.invert(_.invert(layers)),parseInt);
+            var ids = reverse ? _.keys(layersByRank).reverse() : _.keys(layersByRank);
+            ids.forEach((id, pos) => {
+                var layer = _map.getLayers().getArray().filter(olLyr => olLyr.get("mviewerid") === id);
+                if(layer.length) mviewer.reorderLayer(layer[0], pos + baseLayersCount);
+            })
+            // now, order legend items according to map layers order
+            mviewer.orderTopLayer();
+            mviewer.orderLegendByMap();
+        },
+
+        /**
+         * Find layer into legend and set new legend position according to map visibility
+         * @param {String} layerId
+         * @param {Number} position
+         */
+        setLegendLayerPos: function(layerId, position) {
+            if(layerId) {
+                var legendItem = $(`#layers-container>li[data-layerid="${layerId}"]`);
+                // change layer position into legend
+                switch(position) {
+                    case 0:
+                        // first element
+                        $('#layers-container').prepend(legendItem);
+                        break;
+                    default:
+                        // others
+                        legendItem.insertBefore($(`#layers-container li:eq(${position})`));
+                        break;
+                }
+            }
+        },
+
+        /**
+         * Order layers according to map layers order and visibility
+         */
+        orderLegendByMap: function() {
+            var mviewerLayersId = Object.keys(mviewer.getLayers());
+            var mapLayers = mviewer.getMap().getLayers().getArray();
+            // get mapLayers and remove them from layers order
+            var countBaseLayers = configuration.getConfiguration().baselayers.baselayer.length;
+            mapLayers = mapLayers.slice(countBaseLayers);
+            // to only get visible layers and layers from themes
+            mapLayers = mapLayers.filter(layer => layer.getVisible() && mviewerLayersId.indexOf(layer.getProperties().mviewerid)>-1);
+            // only keep id and reverse to get order as we need on map
+            mapLayers = mapLayers.map(layer => layer.getProperties().mviewerid).reverse();
+            // now, we could order legend by map layers
+            $(`#layers-container>li[data-layerid]`).each((i,li)=> {
+                // get legend element
+                var legendLayerId = $(li).attr('data-layerid');
+                // get map position
+                mviewer.setLegendLayerPos(legendLayerId, mapLayers.indexOf(legendLayerId));
+            })
+        },
+
+        /**
+         * Return object to identify a given attribute value for each layer
+         * @param {String} attr
+         */
+        getLayersAttribute: function(attr) {
+            if(!attr) return;
+            var mLayers = Object.keys(mviewer.getLayers());
+            mLayers = mLayers.map(m => [m, mviewer.getLayers()[m][attr]]);
+            return Object.fromEntries(mLayers);
+        },
+
+        /**
+         * Get index param for each layer and order layers according to layer's index
+         */
+        orderLayerByIndex: function() {
+            var layersIndex = _.omitBy(mviewer.getLayersAttribute('index'), _.isNull);
+            var ids = _.keys(layersIndex);
+            if(!ids.length) return;
+            var newOrder = _.keys(_.mapValues(_.invert(_.invert(layersIndex)),parseInt));
+
+            // now we search null index position according to xml
+            var rankLayers = mviewer.getLayersAttribute('rank');
+            var rankLyrOrder = _.keys(_.mapValues(_.invert(_.invert(rankLayers)),parseInt));
+            var rankLyrWithoutindex = rankLyrOrder.filter(id => !newOrder.includes(id)).reverse();
+            newOrder = newOrder.concat(rankLyrWithoutindex);
+            newOrder = newOrder.filter(item => item) // remove null or undefined
+            mviewer.showLayersByAttrOrder(_.mapValues(_.invert(newOrder),parseInt),true);
+        },
+
+        /**
+         * Get toplayer according to xml order and pass all top layer to the top
+         */
+        orderTopLayer: function() {
+            var topLayers = mviewer.getLayersAttribute('toplayer');
+            var topLayersId = Object.keys(topLayers).filter(lyr => topLayers[lyr]).reverse();
+            // break if no top layers
+            if(!topLayersId.length) return;
+
+            // count base layers
+            var countLayers = configuration.getConfiguration().baselayers.baselayer.length;
+            // count themes layers
+            var themes = configuration.getConfiguration().themes.theme;
+            var topLayersByTheme = [];
+            themes.forEach(e => {
+                if(e.group && e.group.length) {
+                    countLayers += e.group.map(d => d.layer.length).reduce((a, b) => a + b, 0);
+                    e.group.forEach(g => {
+                        topLayersByTheme = [...topLayersByTheme, ...g.layer.filter(x => x.toplayer === "true")];
+                    })
+                }
+                if(e.layer && e.layer.length) {
+                    countLayers += e.layer.length;
+                    topLayersByTheme = [...topLayersByTheme, ...e.layer.filter(x => x.toplayer === "true")];
+                }
+            });
+            // get top layers id by xml order
+            let topLayersByXmlOrder = topLayersByTheme.reverse().map(l => l.id);
+            // parse top layers by xml order and be sur to dlisplay in this order
+            topLayersByXmlOrder.forEach(id => {
+                var layer = mviewer.getLayer(id).layer;
+                if(!layer) return; // no top layer to display
+
+                // set first layer over others theme or background layers and before system layers
+                mviewer.reorderLayer(layer, countLayers);
+            })
+        },
+
         /**
          * Public Method: openStudio
          */
@@ -1939,7 +2166,19 @@ mviewer = (function () {
             }
             linkParams.mode = $('input[name=mv-display-mode]:checked').val();
 
-            var url = window.location.href.split('#')[0].split('?')[0] + '?' + $.param(linkParams);
+            //Get extra params from API. Params has to begin with c_
+            let reg = /^c_(.*)/;
+            for (const [key, value] of Object.entries(API)) {
+                if (key.match(reg)) {
+                    linkParams[key] = encodeURIComponent(API[key]);
+                }
+            }
+
+            function params(data) {
+                return Object.keys(data).map(key => `${key}=${data[key]}`).join('&');
+            }
+
+            var url = window.location.href.split('#')[0].split('?')[0] + '?' + params(linkParams);
             $("#permalinklink").attr('href',url).attr("target", "_blank");
             $("#permaqr").attr("src","http://chart.apis.google.com/chart?cht=qr&chs=140x140&chl=" + encodeURIComponent(url));
             return url;
@@ -1955,15 +2194,6 @@ mviewer = (function () {
         },
 
 		/**
-         * Public Method: getMarker
-         *
-         */
-
-        getMarker: function () {
-            return _marker;
-        },
-
-        /**
          * Public Method: init
          *
          */
@@ -1996,12 +2226,11 @@ mviewer = (function () {
          *
          */
 
-        popupPhoto: function (src, credit) {
+        popupPhoto: function (src ) {
             $("#imagepopup").find("img").attr("src",src);
-            if (credit !== undefined && credit.trim() !==""){$("#imagepopup").find(".popphotocredit").html (credit);}
             $("#imagepopup").modal('show');
         },
-
+        
         /**
          * Public Method: zoomToLocation
          *
@@ -2045,11 +2274,14 @@ mviewer = (function () {
          *
          */
 
-        showLocation: function (proj,x, y) {
+        showLocation: function (proj,x, y, showMarker) {
             //marker
+            $("#mv_marker").hide();
             var ptResult = ol.proj.transform([x, y], proj, _projection.getCode());
+            if(showMarker != false || showMarker === undefined) {
             _marker.setPosition(ptResult);
             $("#mv_marker").show();
+            }
             _map.render();
         },
 
@@ -2151,7 +2383,6 @@ mviewer = (function () {
          */
 
         sendToGeorchestra: function () {
-            //console.log("test");
             var params = {
                 "services": [],
                 "layers" : []
@@ -2197,7 +2428,7 @@ mviewer = (function () {
         },
 
         addLayer: function (layer) {
-            if (!layer) {
+            if (!layer || !layer.showintoc) {
                 return;
             }
             if (layer.exclusive) {
@@ -2227,12 +2458,6 @@ mviewer = (function () {
                 attribution: layer.attribution,
                 modifiedDate: layer.modifiedDate,
                 metadata: layer.metadata,
-                // AJOUT CBR - gestion options dépliées par défaut dans la légende
-                expandedoptions: layer.expandedoptions,
-                // FIN AJOUT CBR
-                // AJOUT CBR - gestion couche permanente qui ne peut pas être supprimée
-                permanentlayer: layer.permanentlayer,
-                // FIN AJOUT CBR
                 tooltipControl: false,
                 styleControl: false,
                 attributeControl: false,
@@ -2255,6 +2480,7 @@ mviewer = (function () {
             if (layer.attributefilter && layer.attributevalues != "undefined" && layer.attributefield != "undefined") {
                 view.attributeControl = true;
                 view.attributeLabel = layer.attributelabel;
+                view.styleTitle = layer.styletitle;
                 var options = [];
                 if (layer.attributefilterenabled === false) {
                     options.push({"label": "Par défaut", "attribute": "all"});
@@ -2281,17 +2507,10 @@ mviewer = (function () {
             }
 
             if (_topLayer && $("#layers-container .toplayer").length > 0) {
-                $("#layers-container .toplayer").after(item);
+                $("#layers-container .toplayer").last().after(item);
             } else {
                 $("#layers-container").prepend(item);
             }
-
-            // AJOUT CBR - Options de la couche visibles par défaut
-            if (layer.expandedoptions) {
-                this.toggleLayerOptions($('.mv-layer-details[data-layerid="'+layer.id+'"]')[0]);
-            }
-            // FIN AJOUT
-
 
             //Dynamic vector Legend
             if (layer.vectorlegend  && mviewer.customLayers[layer.layerid] && mviewer.customLayers[layer.layerid].legend) {
@@ -2477,7 +2696,9 @@ mviewer = (function () {
             //Only for second and more loads
             if (oLayer.attributefilter && oLayer.layer.getSource().getParams()['CQL_FILTER']) {
                 var activeFilter = oLayer.layer.getSource().getParams()['CQL_FILTER'];
-                var activeAttributeValue = activeFilter.split(oLayer.attributeoperator)[1].replace(/\%|'/g, "").trim();
+                var wildcard = oLayer.wildcardpattern.split("value")[0];
+                var reg = new RegExp(wildcard + "|'", "g");
+                var activeAttributeValue = activeFilter.split(oLayer.attributeoperator)[1].replace(reg, "").trim();
                 $("#"+layer.layerid+"-attributes-selector option[value='"+activeAttributeValue+"']").prop("selected", true);
                 $('.mv-layer-details[data-layerid="'+layer.layerid+'"] .layerdisplay-subtitle .selected-attribute span')
                     .text(activeAttributeValue);
@@ -2488,8 +2709,13 @@ mviewer = (function () {
                 activeStyle = oLayer.layer.getSource().getParams()['STYLES'];
                 var refStyle= activeStyle;
                 //update legend image if nec.
+                var res = mviewer.getMap().getView().getResolution();
+                var ppi = 25.4/0.28;
+                var scale = res*ppi/0.0254;
+                if(layer.scale && scale >= layer.scale.min && scale <= layer.scale.max){
                 var legendUrl = _getlegendurl(layer);
                 $("#legend-" + layer.layerid).attr("src", legendUrl);
+            }
             }
             if (oLayer.styles ) {
                 var selectCtrl = $("#"+layer.layerid+"-styles-selector")[0];
@@ -2512,7 +2738,6 @@ mviewer = (function () {
 
             var li = $(".mv-nav-item[data-layerid='"+layer.layerid+"']");
             li.find("a span").removeClass("mv-unchecked").addClass("mv-checked");
-            li.find("a span").removeClass("far").addClass("fas");
             li.find("input").val(true);
             // activate custom controls
             if (layer.customcontrol && mviewer.customControls[layer.layerid]) {
@@ -2529,6 +2754,12 @@ mviewer = (function () {
                 var newStatus = _getThemeStatus(layer.theme);
                 _setThemeStatus(layer.theme, newStatus);
             }
+            mviewer.orderTopLayer();
+            mviewer.orderLegendByMap();
+            // display layer with permalink params
+            oLayer.layer.getSource().refresh()
+            // create tooltip for this layer legend UI
+            _initTooltip();
         },
         removeLayer: function (el) {
             var item;
@@ -2539,20 +2770,17 @@ mviewer = (function () {
             }
             var layerid = item.attr("data-layerid");
             var layer = _overLayers[layerid];
-            if (!layer.permanentlayer){
-                item.remove();
-                layer.layer.setVisible(false);
-                var li = $(".mv-nav-item[data-layerid='"+layerid+"']");
-                li.find("a span").removeClass("mv-checked").addClass("mv-unchecked");
-				li.find("a span").removeClass("fas").addClass("far");
-                li.find("input").val(false);
-                // deactivate custom controls
-                if (layer.customcontrol && mviewer.customControls[layer.layerid]) {
-                    mviewer.customControls[layer.layerid].destroy();
-                }
-                //Remove Layer infos in info panels
-                mviewer.removeLayerInfo(layer.layerid);
+            item.remove();
+            layer.layer.setVisible(false);
+            var li = $(".mv-nav-item[data-layerid='"+layerid+"']");
+            li.find("a span").removeClass("mv-checked").addClass("mv-unchecked");
+            li.find("input").val(false);
+            // deactivate custom controls
+            if (layer.customcontrol && mviewer.customControls[layer.layerid]) {
+                mviewer.customControls[layer.layerid].destroy();
             }
+            //Remove Layer infos in info panels
+            mviewer.removeLayerInfo(layer.layerid);
             //check if layers-container is empty
             if ($("#layers-container .list-group-item").length === 0) {
                 $("#legend").addClass("empty");
@@ -2561,6 +2789,8 @@ mviewer = (function () {
                 var newStatus = _getThemeStatus(layer.theme);
                 _setThemeStatus(layer.theme, newStatus);
             }
+            // clear tooltip
+            $(".mv-tooltip").remove();
         },
         removeAllLayers: function () {
             $("#layers-container .list-group-item").each( function (id, item) {
@@ -2616,20 +2846,11 @@ mviewer = (function () {
             $(el).closest("li").find(".mv-layer-options").slideToggle();
             //hack slider js
             $(el).closest("li").find(".mv-slider-timer").slider('relayout');
-            // MODIF CBR - Permet de changer l'icone déplier/replier les options peu importe le type de l'élement qui le porte
-            /*
             if ($(el).find("span.state-icon").hasClass("glyphicon glyphicon-chevron-down")) {
                 $(el).find("span.state-icon").removeClass("glyphicon glyphicon-chevron-down").addClass("glyphicon glyphicon-chevron-up");
             } else {
                 $(el).find("span.state-icon").removeClass("glyphicon glyphicon-chevron-up").addClass("glyphicon glyphicon-chevron-down");
             }
-            */
-            if ($(el).closest("li").find(".state-icon").hasClass("glyphicon glyphicon-chevron-down")) {
-                $(el).closest("li").find(".state-icon").removeClass("glyphicon glyphicon-chevron-down").addClass("glyphicon glyphicon-chevron-up");
-            } else {
-                $(el).closest("li").find(".state-icon").removeClass("glyphicon glyphicon-chevron-up").addClass("glyphicon glyphicon-chevron-down");
-            }
-            // FIN MODIF CBR
         },
 
         setLayerStyle: function (layerid, style, selectCtrl) {
@@ -2671,12 +2892,12 @@ mviewer = (function () {
 
         },
 
-        makeCQL_Filter: function (fld,operator,value) {
+        makeCQL_Filter: function (fld,operator,value, wildcardpattern) {
             var cql_filter = "";
             if (operator == "=") {
                     cql_filter = fld + " = " + "'" + value.replace("'","''") + "'";
                 } else if (operator == "like") {
-                    cql_filter = fld + " like " + "'%" + value.replace("'","''") + "%'";
+                    cql_filter = fld + " like " + "'" + wildcardpattern.replace("value", value.replace("'","''")) + "'";
                 }
             return cql_filter;
         },
@@ -2688,7 +2909,7 @@ mviewer = (function () {
                 delete _source.getParams()['CQL_FILTER'];
             } else {
                 var cql_filter = this.makeCQL_Filter(_layerDefinition.attributefield, _layerDefinition.attributeoperator,
-                    attributeValue);
+                    attributeValue, _layerDefinition.wildcardpattern);
                 _source.getParams()['CQL_FILTER'] = cql_filter;
             }
             if (_layerDefinition.attributestylesync) {
@@ -2966,6 +3187,8 @@ mviewer = (function () {
         overLayersReady: _overLayersReady,
 
         renderHTMLFromTemplate : _renderHTMLFromTemplate,
+
+        initToolTip: _initTooltip,
 
         events: function () { return _events; }
 

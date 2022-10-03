@@ -3,13 +3,17 @@
     <application
         title="Patrimoine arboré en accompagnement de voirie de la ville de Rennes"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
         exportpng="false"
         style="apps/site_internet/css/site_internet_gris.css"
         measuretools="false"
-        togglealllayersfromtheme="false" />
+        togglealllayersfromtheme="false"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
+        />
 
 
     <mapoptions maxzoom="22" minzoom="11" projection="EPSG:3857" center="-185600.24433942206,6125077.984905125" zoom="15" />
@@ -29,7 +33,7 @@
     </extensions>
     
     <themes mini="true">
-        <theme id="theme-20180625145740" name="Arbres d'alignement de voirie" collapsed="true" icon="fas fa-map-marker-alt">
+        <theme id="theme-20180625145740" name="Arbres d'alignement de voirie" collapsed="true" icon="fas fa-tree">
             <!--<layer
                 id="gev_aali"
                 name="Arbre d'alignement"
@@ -59,6 +63,7 @@
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6db35b05-e8bc-4339-a49b-828da0d3fd9f"
                 queryable="true"
+                tabcolor="#2BE612"
                 featurecount="10"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/arbres_alignement.mst"></template>
@@ -76,6 +81,7 @@
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6db35b05-e8bc-4339-a49b-828da0d3fd9f"
                 queryable="true"
+                tabcolor="#628A31"
                 featurecount="10"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/arbres_alignement.mst"></template>
@@ -93,6 +99,7 @@
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6db35b05-e8bc-4339-a49b-828da0d3fd9f"
                 queryable="true"
+                tabcolor="#DCEAAE"
                 featurecount="10"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/arbres_alignement.mst"></template>

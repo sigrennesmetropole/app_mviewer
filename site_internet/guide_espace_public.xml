@@ -3,6 +3,7 @@
     <application
         title="Guide de l'espace public"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
@@ -10,7 +11,9 @@
         style="apps/site_internet/css/site_internet_gris.css"
         measuretools="false"
         togglealllayersfromtheme="true"
-         />
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc" 
+        />
 
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-170690.24433942206,6128725.984905125" zoom="11" />
 

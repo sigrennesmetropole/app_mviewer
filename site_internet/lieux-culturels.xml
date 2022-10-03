@@ -3,6 +3,7 @@
     <application
         title="Lieux culturels"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
@@ -10,6 +11,8 @@
         style="apps/site_internet/css/site_internet_gris.css"
         measuretools="false"
         togglealllayersfromtheme="false"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
          />
 
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-188244.25943429657,6125209.881604007" zoom="11" />
@@ -33,13 +36,14 @@
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/organisme_violet.sld"
+                legendurl="apps/site_internet/img/legend/leg_marker_violet.svg"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
                 queryable="true"
                 featurecount="3"
                 filter="etat_organisme = 'actif' AND code_nomenclature_principale='7.6'"
                 infopanel="right-panel"
-                tabColor="#bb3da2">
+                tabcolor="#bb3da2">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
             <layer
@@ -50,13 +54,14 @@
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/organisme_vert.sld"
+                legendurl="apps/site_internet/img/legend/leg_marker_vert.svg"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
                 queryable="true"
                 featurecount="3"
                 filter="etat_organisme = 'actif' AND code_nomenclature_principale LIKE '7.3.%'"
                 infopanel="right-panel"
-                tabColor="#8f9169">
+                tabcolor="#8f9169">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
             <layer
@@ -67,13 +72,14 @@
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/organisme_bleu.sld"
+                legendurl="apps/site_internet/img/legend/leg_marker_bleu.svg"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
                 queryable="true"
                 featurecount="3"
                 filter="etat_organisme = 'actif' AND code_nomenclature_principale LIKE '7.5.%'"
                 infopanel="right-panel"
-                tabColor="#33919d">
+                tabcolor="#33919d">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
             <layer
@@ -84,13 +90,14 @@
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/organisme_rouge.sld"
+                legendurl="apps/site_internet/img/legend/leg_marker_rouge.svg"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
                 queryable="true"
                 featurecount="3"
                 filter="etat_organisme = 'actif' AND code_nomenclature_principale LIKE '7.7.%'"
                 infopanel="right-panel"
-                tabColor="#e45e52">
+                tabcolor="#e45e52">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
         </theme>

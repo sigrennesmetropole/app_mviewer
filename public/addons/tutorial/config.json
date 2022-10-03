@@ -4,5 +4,5 @@
     ],
     "css": "css/didacticiel.css",
     "html": "html/index.html",
-    "target": "page-content-wrapper"
+    "target": "main"
 }

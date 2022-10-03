@@ -9,7 +9,7 @@ var configuration = (function () {
 
     // Mviewer version a saisir manuellement
 
-    var VERSION = "3.4.1";
+    var VERSION = "3.8";
 
     var _showhelp_startup = false;
 
@@ -210,6 +210,9 @@ var configuration = (function () {
 
         console.log("Mviewer version " + VERSION);
 
+        // set infos bar text
+        $('#mviewerinfosbar').append(VERSION);
+
         _configuration = conf;
         utils.testConfiguration(conf);
         //apply application customization
@@ -228,7 +231,9 @@ var configuration = (function () {
         if (conf.application.title || API.title) {
             var title = API.title || conf.application.title;
             document.title = title;
-            $(".mv-title").text(title);
+            title = conf.application.htmltitle || title;
+            $(".mv-title").text("");
+            $(".mv-title").append(title);
         }
         if (conf.application.stats === "true" && conf.application.statsurl) {
             $.get(conf.application.statsurl +"?app=" + document.title);
@@ -497,6 +502,10 @@ var configuration = (function () {
                     }
                     var mvid;
                     var oLayer = {};
+                    // AJOUT CBR : initialisation du oLayer avec toutes les propriétés du layer => utile pour besoins de nouvelles propriétés d'extensions par exemple
+                    // contribution geobretagne #issue 639
+                    Object.assign(oLayer, layer);
+                    // FIN AJOUT CBR
                     var clean_ident = layerId.replace(/:|,| |\./g,'');
                     var _overLayers = mviewer.getLayers();
                     if (_overLayers[clean_ident] ) {
@@ -512,6 +521,7 @@ var configuration = (function () {
                     oLayer.type = layer.type || "wms";
                     oLayer.theme = themeid;
                     oLayer.rank = layerRank;
+                    oLayer.index = layer.index ? parseFloat(layer.index): null;
                     oLayer.name = layer.name;
                     oLayer.title = layer.name;
                     oLayer.layerid = mvid;
@@ -582,6 +592,8 @@ var configuration = (function () {
                         layer.attributefilter === "true") ? true : false;
                     oLayer.attributefield = layer.attributefield;
                     oLayer.attributeoperator = layer.attributeoperator || "=";
+                    oLayer.wildcardpattern = layer.wildcardpattern || "%value%";
+                    oLayer.styletitle = layer.styletitle;
                     oLayer.attributelabel = layer.attributelabel;
                     if (layer.attributevalues && layer.attributevalues.search(",")) {
                         oLayer.attributevalues = layer.attributevalues.split(",");
@@ -632,14 +644,9 @@ var configuration = (function () {
                     oLayer.vectorlegend =  (layer.vectorlegend === "true") ? true : false;
                     oLayer.nohighlight =  (layer.nohighlight === "true") ? true : false;
                     oLayer.infohighlight =  (layer.infohighlight === "false") ? false : true;
+                    oLayer.showintoc =  (layer.showintoc && layer.showintoc === "false") ? false : true;
                     oLayer.legendurl=(layer.legendurl)? layer.legendurl : mviewer.getLegendUrl(oLayer);
                     if (oLayer.legendurl === "false") {oLayer.legendurl = "";}
-                    // AJOUT CBR - déplier par défaut les options de la couche dans la légende
-                    oLayer.expandedoptions = (layer.expandedoptions === "true") ? true : false;
-                    // FIN AJOUT CBR
-                    // AJOUT CBR - interdire la suppression de couche permanente
-                    oLayer.permanentlayer = (layer.permanentlayer === "true") ? true : false;
-                    // FIN AJOUT CBR
                     oLayer.useproxy = (layer.useproxy === "true") ? true : false;
                     if (layer.fields) {
                         oLayer.fields = layer.fields.split(",");
@@ -648,6 +655,12 @@ var configuration = (function () {
                         } else {
                             oLayer.aliases = layer.fields.split(",");
                         }
+                    }
+
+                    if (layer.jsonfields) {
+                        oLayer.jsonfields = layer.jsonfields.split(",");
+                    } else {
+                        oLayer.jsonfields = [];
                     }
 
                     if (layer.scalemin || layer.scalemax) {
@@ -711,7 +724,7 @@ var configuration = (function () {
                         }
                         if (oLayer.attributefilter && oLayer.attributefilterenabled &&
                             oLayer.attributevalues.length > 1) {
-                            wms_params['CQL_FILTER'] = mviewer.makeCQL_Filter(oLayer.attributefield, oLayer.attributeoperator, oLayer.attributevalues[0]);
+                            wms_params['CQL_FILTER'] = mviewer.makeCQL_Filter(oLayer.attributefield, oLayer.attributeoperator, oLayer.attributevalues[0], oLayer.wildcardpattern);
                         }
                         if (oLayer.sld) {
                             wms_params['SLD'] = oLayer.sld;
@@ -878,32 +891,6 @@ var configuration = (function () {
         } // fin de else
 
          //Export PNG
-         /*******************************************/ 
-         //CORRECTION BUG EXPORT ISSUE #347 MViewer
-         /*******************************************/ 
-         /*
-        if (conf.application.exportpng === "true" && document.getElementById('exportpng')) {
-            var exportPNGElement = document.getElementById('exportpng');
-            if ('download' in exportPNGElement) {
-                exportPNGElement.addEventListener('click', function(e) {
-                    _map.once('postcompose', function(event) {
-                        try {
-                            var canvas = event.context.canvas;
-                            exportPNGElement.href = canvas.toDataURL('image/png');
-                        }
-                        catch(err) {
-                            mviewer.alert(err, "alert-info");
-                        }
-                    });
-                    _map.renderSync();
-                }, false);
-            } else {
-                $("#exportpng").hide();
-            }
-        } else {
-            $("#exportpng").hide();
-        }
-        */
         if (conf.application.exportpng === "true" && document.getElementById('exportpng')) {
             var exportPNGElement = document.getElementById('exportpng');
             if ('download' in exportPNGElement) {
@@ -917,8 +904,7 @@ var configuration = (function () {
                             var mapContext = mapCanvas.getContext('2d');
                             Array.prototype.forEach.call(document.querySelectorAll('.ol-layer canvas'), function(canvas) {
                               if (canvas.width > 0) {
-                                var opacity = canvas.parentNode.style.opacity;
-                                mapContext.globalAlpha = opacity === '' ? 1 : Number(opacity);
+                                mapContext.globalAlpha = 1;
                                 var transform = canvas.style.transform;
                                 // Get the transform parameters from the style's transform matrix
                                 var matrix = transform.match(/^matrix\(([^\(]*)\)$/)[1].split(',').map(Number);

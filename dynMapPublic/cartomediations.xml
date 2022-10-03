@@ -3,6 +3,7 @@
     <application
         title="Ma carte"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos..."
         help="apps/dynMapPublic/html/mesloc_help.html"
         showhelp="false"
@@ -15,7 +16,8 @@
         statsurl=""
         togglealllayersfromtheme="false"
         printMap="false"
-        tutorial="true"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
         >
 
     </application>
@@ -42,9 +44,11 @@
     </baselayers>
 
     <extensions>
+        <extension type="component" id="GUICustom" path="apps/public/addons"/>
         <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_SitesOrgRVAQueryable.json"/>
         <extension type="component" id="gestionPointsRM" path="apps/dynMapPublic/addon" />
-        <extension type="component" id="tutorial" path="apps/public/addons" configFile="apps/public/addons/tutorial/addons/data/didacticielPlui.json"/>
+        <extension type="component" id="tutorial" path="apps/public/addons" configFile="apps/dynMapPublic/addon/didacticiel/didacticiel.json"/>
+        <!--<extension type="component" id="tutorial" path="apps/public/addons" configFile="apps/PLUi/addons/didacticielPlui.json"/> -->
     </extensions>
 
     <themes mini="true">
@@ -55,7 +59,7 @@
                 type="customlayer"
                 url="apps/dynMapPublic/customlayer/mes_localisations.js"
                 visible="true"
-                permanentlayer="true"
+                showintoc="false"
                 tooltip="true"
                 tooltipenabled="true"
                 tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{nom}}&lt;/span&gt;"

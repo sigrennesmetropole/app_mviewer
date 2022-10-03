@@ -3,13 +3,17 @@
     <application
         title="Promenade autour des arbres de Villejean"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
         exportpng="false"
         style="apps/site_internet/css/site_internet_gris.css"
         measuretools="false"
-        togglealllayersfromtheme="false" />
+        togglealllayersfromtheme="false" 
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
+        />
 
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-189920.7,6126711.35" zoom="18" />
 
@@ -33,7 +37,7 @@
                 geojson="apps/balades/customlayer/data/arbres_villejean/balade_arbres_villejean.geojson"
                 legendurl="apps/balades/legend/default_line_legend.svg"
                 visible="true"
-                tooltip="false"
+                tooltip="true"
                 tooltipenabled="false"
                 tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{TITRE}}&lt;/span&gt;"
                 metadata="undefined"
@@ -50,9 +54,9 @@
                 geojson="apps/balades/customlayer/data/arbres_villejean/POI_arbres_villejean_medias.json"
                 legendurl="apps/balades/legend/default_point_marker.svg"
                 visible="true"
-                tooltip="false"
-                tooltipenabled="false"
-                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{label}}&lt;/span&gt;"
+                tooltip="true"
+                tooltipenabled="true"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{TITRE}}&lt;/span&gt;"
                 metadata="undefined"
                 queryable="true"
                 featurecount="3"

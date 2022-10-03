@@ -3,6 +3,7 @@
     <application
         title="Jardins familiaux et partagés"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
@@ -10,6 +11,8 @@
         style="apps/site_internet/css/site_internet_gris.css"
         measuretools="false"
         togglealllayersfromtheme="false"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
          />
 
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-190690.24433942206,6128725.984905125" zoom="11" />
@@ -25,7 +28,25 @@
 
     <themes mini="true">
         <theme id="theme-20180827150815" name="Jardins familiaux et partagés" collapsed="true" icon="fas fa-leaf">
-             <layer
+            <layer
+                id="v_sitorg_organisme"
+                name="Jardins familiaux"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/organisme_vert.sld"
+                legendurl="apps/site_internet/img/legend/leg_marker_vert.svg"
+                offsetY="-15"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                queryable="true"
+                featurecount="3"
+                filter="etat_organisme='actif' and (code_nomenclature_principale='4.1.2' or code_nomenclature_secondaire like '%4.1.2%')"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organisme.mst"></template>
+            </layer>
+            <!--<layer
                 id="v_sitorg_organisme"
                 name="Jardins familiaux"
                 type="wms"
@@ -40,8 +61,25 @@
                 filter="etat_organisme='actif' and (code_nomenclature_principale='4.1.2' or code_nomenclature_secondaire like '%4.1.2%')"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
-            </layer>
+            </layer>-->
             <layer
+                id="v_sitorg_organisme"
+                name="Jardins partagés"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/organisme_bleu.sld"
+                legendurl="apps/site_internet/img/legend/leg_marker_bleu.svg"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                queryable="true"
+                featurecount="3"
+                filter="etat_organisme='actif' and (code_nomenclature_principale='4.1.1' or code_nomenclature_secondaire like '%4.1.1%')"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organisme.mst"></template>
+            </layer>
+            <!--<layer
                 id="v_sitorg_organisme"
                 name="Espaces naturels et de loisirs"
                 type="wms"
@@ -56,6 +94,24 @@
                 filter="etat_organisme='actif' and (code_nomenclature_principale='4.1.1' or code_nomenclature_secondaire like '%4.1.1%')"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
+            </layer>-->
+        </theme>
+        <theme id="theme-202103090939" name="Vergers partagés" collapsed="true" icon="fas fa-apple-alt">
+            <layer
+                id="vergers"
+                name="Vergers partagés"
+                type="customlayer"
+                url="apps/site_internet/customlayer/vergers.js"
+                legendurl="apps/site_internet/img/legend/vergers2.svg"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="false"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{nom_verger}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="3"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/vergers_existants.mst"></template>
             </layer>
         </theme>
     </themes>

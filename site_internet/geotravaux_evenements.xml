@@ -3,6 +3,7 @@
     <application
         title="Travaux en cours à Rennes Métropole"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/geotravaux_help.html"
         showhelp="false"
@@ -13,7 +14,10 @@
         coordinates="false"
         printMap="true"
         togglealllayersfromtheme="false"
-        showClickNbItems="false" />
+        showClickNbItems="false" 
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
+        />
     <mapoptions maxzoom="20" minzoom="13" projection="EPSG:3857" center="-186098.36482879001,6125889.9088213602" zoom="11" />
 
     <baselayers style="default">

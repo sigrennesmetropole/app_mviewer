@@ -27,10 +27,10 @@ var printMap = (function() {
         });
     };
 
-        /*
-        * enable search print map functionality
-        */
-       var enable = function() {
+    /*
+    * enable search print map functionality
+    */
+    var enable = function() {
         $('#printMapbtn').show();
     };
 
@@ -106,8 +106,8 @@ var printMap = (function() {
     var print = function() {
       
 
-      var exportPNGElement = document.getElementById('printMapbtn');
-      _map.once('postcompose', function(event) {
+        var exportPNGElement = document.getElementById('printMapbtn');
+        _map.once('postcompose', function(event) {
           try {
               /***************************************/
               // CORRECTION passage ol6

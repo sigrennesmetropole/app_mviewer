@@ -1,0 +1,789 @@
+{
+	"type" : "FeatureCollection",
+	"name" : "geojson_petite_enfance",
+	"features" : [
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5376514196, 48.1346114925 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1224367,
+				"montant_attrib" : 400000,
+				"intitulé" : "RENOVATION ET EXTENSION DU POLE ENFANCE - LA PASSERELLE",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Acigné",
+				"Code INSEE" : 35001,
+				"id site" : 4550,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6501254689, 48.1789873243 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 1221557.77,
+				"montant_attrib" : 100000,
+				"intitulé" : "RENOVATION ECOLE MATERNELLE DES OMBLAIS",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Betton",
+				"Code INSEE" : 35024,
+				"id site" : 1312
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6501254689, 48.1789873243 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 1265485,
+				"montant_attrib" : 300000,
+				"intitulé" : "CONSTRUCTION D'UNE CANTINE AU SEIN DU GROUPE SCOLAIRE OMBLAIS",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Betton",
+				"Code INSEE" : 35024,
+				"id site" : 1312
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6141095323, 47.9923715227 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 673197,
+				"montant_attrib" : 201959,
+				"intitulé" : "Extension et rénovation du restaurant scolaire",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Bourgbarré",
+				"Code INSEE" : 35032,
+				"id site" : 1445
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.4844111301, 48.1105818515 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 131872,
+				"montant_attrib" : 39561.6,
+				"intitulé" : "RENOVATION DES COURSIVES DU GROUPE SCOLAIRE",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Brécé",
+				"Code INSEE" : 35039,
+				"id site" : 1465
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.482055, 48.110245 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 559000,
+				"montant_attrib" : 167700,
+				"intitulé" : "Création d'une micro-crèche",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Brécé",
+				"Code INSEE" : 35039,
+				"id site" : 5447
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7238745809, 48.0194768465 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 1910920,
+				"montant_attrib" : 400000,
+				"intitulé" : "EXTENSION ET REHABILITATION DE LA MAISON DES ENFANTS",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Bruz",
+				"Code INSEE" : 35047,
+				"id site" : 1527,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7023055052, 48.0409456432 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 1347727,
+				"montant_attrib" : 300000,
+				"intitulé" : "RENOVATION DE L ECOLE DE L AUDITOIRE ",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chartres de Bretagne",
+				"Code INSEE" : 35066,
+				"id site" : 2012
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7907379363, 48.0546277155 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 619090,
+				"montant_attrib" : 216681,
+				"intitulé" : "TRAVAUX DE RESTRUCTURATION DE L'ECOLE ELEMENTAIRE PUBLIQUE",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chavagne",
+				"Code INSEE" : 35076,
+				"id site" : 2102
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6316862244, 48.2113910423 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 24986.17,
+				"montant_attrib" : 7496,
+				"intitulé" : "RENOVATION TOTALE SANITAIRES ELEMENTAIRES ECOLE JULES VERNE",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chevaigné",
+				"Code INSEE" : 35079,
+				"id site" : 2151
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6317553848, 48.2115940805 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 23000,
+				"montant_attrib" : 6900,
+				"intitulé" : "RENOVATION SANITAIRES ECOLE PUBLIQUE SECTION MATERNELLE  ECOLE JULES VERNE",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chevaigné",
+				"Code INSEE" : 35079,
+				"id site" : 2190
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6316862244, 48.2113910423 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 24774,
+				"montant_attrib" : 7432,
+				"intitulé" : "Travaux de réfection des toits plats de l'école publique élémentaire",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chevaigné",
+				"Code INSEE" : 35079,
+				"id site" : 2151
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8696208423, 48.1052325378 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 16398,
+				"montant_attrib" : 4919,
+				"intitulé" : "REMPLACEMENT DES MENUISERIES DU RESTAURANT SCOLAIRE AVEC AJOUT DE VOLETS ROULANTS",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Cintré",
+				"Code INSEE" : 35080,
+				"id site" : 2213
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5856206686, 47.9787891422 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 2182142,
+				"montant_attrib" : 600000,
+				"intitulé" : "Création d'un nouveau restaurant municipal",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Corps-Nuds",
+				"Code INSEE" : 35088,
+				"id site" : 2270,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8535599016, 48.2726903094 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 750295,
+				"montant_attrib" : 135000,
+				"intitulé" : "Restructuration et extension du centre social et de la maison de l'enfance",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 18,
+				"Maitrise d'ouvrage" : "La Chapelle Chaussée",
+				"Code INSEE" : 35058,
+				"id site" : 1899
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7310186065, 48.176490148 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 716643.35,
+				"montant_attrib" : 214993,
+				"intitulé" : "GROUPE SCOLAIRE GEORGES MARTINAIS RENOVATION DE LA COUR MATERNELLE, CONSTRUCTION D'UN PREAU ET D'UN LOCAL ALSH",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz",
+				"Code INSEE" : 35059,
+				"id site" : 1956
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8501448631, 48.2409953308 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 168353.26,
+				"montant_attrib" : 50506,
+				"intitulé" : "REALISATION D'UN PLATEAU SPORTIF ET INTERGENERATIONNEL",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Langan",
+				"Code INSEE" : 35144,
+				"id site" : 5302
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8003952503, 48.1007467137 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 2719125,
+				"montant_attrib" : 450000,
+				"intitulé" : "Construction d'un batiment périscolaire, ALSH et restauration",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Le Rheu",
+				"Code INSEE" : 35240,
+				"id site" : 3051
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7706441879, 48.0807310798 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 1730000,
+				"montant_attrib" : 185134,
+				"intitulé" : "AMENAGEMENT DE LA CUISINE CENTRALE L'ORME ROBIN",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Le Rheu",
+				"Code INSEE" : 35240,
+				"id site" : 5158,
+				"photo" : "https://documents.carto.datarennes.fr/dircov/5158.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8010181432, 48.10051355 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 716219,
+				"montant_attrib" : 214866,
+				"intitulé" : "EXTENSION DE L'ECOLE MATERNELLE DU CLOS JOURY",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Le Rheu",
+				"Code INSEE" : 35240,
+				"id site" : 3109
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.9305360317, 48.0694908182 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 72043.05,
+				"montant_attrib" : 28817,
+				"intitulé" : "REHABILITATION ET  SECURISATION DE L'ECOLE PUBLIQUE DE LA VALLE DU ROHUEL",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Le Verger",
+				"Code INSEE" : 35351,
+				"id site" : 3638,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5818920049, 47.9826692018 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1390119,
+				"montant_attrib" : 120000,
+				"intitulé" : "EXTENSION ECOLE ELEMENTAIRE PUBLIQUE ET DE L'ALSH ",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "L'hermitage",
+				"Code INSEE" : 35131,
+				"id site" : 2278,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7153155804, 48.1564205323 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1340432,
+				"montant_attrib" : 400000,
+				"intitulé" : "RENOVATION ET EXTENSION BATIMENT PERISCOLAIRE",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Montgermont",
+				"Code INSEE" : 35189,
+				"id site" : 2549,
+				"ecobonus" : "true",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/2549.JPG"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5431968853, 48.040675739 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 748523.5,
+				"montant_attrib" : 224557,
+				"intitulé" : "EXTENSION ECOLE DU CHÊNE CENTENAIRE",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Nouvoitou",
+				"Code INSEE" : 35204,
+				"id site" : 2682,
+				"photo" : "https://documents.carto.datarennes.fr/dircov/2682.JPG"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6675809439, 47.9972348734 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 176379.25,
+				"montant_attrib" : 52914,
+				"intitulé" : "EXTENSION GROUPE SCOLAIRE LES GRAINS D'ORGES ET RESTRUCTURATION DE LA SALLE DES REPAS DU RESTAURANT SCOLAIRE",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Orgères",
+				"Code INSEE" : 35208,
+				"id site" : 2787
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6673227203, 47.9966825276 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 677639.25,
+				"montant_attrib" : 78563,
+				"intitulé" : "EXTENSION DU RESTAURANT SCOLAIRE ",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Orgères",
+				"Code INSEE" : 35208,
+				"id site" : 2801
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8307713206, 48.1928844167 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 78311,
+				"montant_attrib" : 36055,
+				"intitulé" : "Extension du bâtiment périscolaire",
+				"justificatif" : "PPC + Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Parthenay-de-Bretagne",
+				"Code INSEE" : 35216,
+				"id site" : 2958,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7067164183, 48.0182118458 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 415015,
+				"montant_attrib" : 120000,
+				"intitulé" : "TRAVAUX DE RENOVATION ENERGETIQUE DU GROUPE SCOLAIRE  LUCIE AUBRAC",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Pont-Péan",
+				"Code INSEE" : 35363,
+				"id site" : 3861
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8903619051, 48.2141108735 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 141987,
+				"montant_attrib" : 35497,
+				"intitulé" : "Rénovation du groupe scolaire - Programme 2020",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Romillé",
+				"Code INSEE" : 35245,
+				"id site" : 3128
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8898415565, 48.2147364201 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 99888,
+				"montant_attrib" : 24970,
+				"intitulé" : "Travaux de rénovation des batiments scolaires (programme 2021)",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Romillé",
+				"Code INSEE" : 35245,
+				"id site" : 3127
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5934145451, 48.0144943066 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 227511,
+				"montant_attrib" : 88095,
+				"intitulé" : "Extension d'une cours d'école",
+				"justificatif" : "PPC",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Saint-Armel",
+				"Code INSEE" : 35250,
+				"id site" : 3170
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5934145451, 48.0144943066 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 119783.34,
+				"montant_attrib" : 35935,
+				"intitulé" : "DESAMIANTAGE ET REFECTION DES SOLS DU GROUPE SCOLAIRE DES BOSCHAUX",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint-Armel",
+				"Code INSEE" : 35250,
+				"id site" : 3170
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8284887075, 48.1524588698 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 90436,
+				"montant_attrib" : 22609,
+				"intitulé" : "Réhabilitation de l'école élémentaire J. Prévert ",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint-Gilles",
+				"Code INSEE" : 35275,
+				"id site" : 3255
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8281292915, 48.1524588698 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 817399,
+				"montant_attrib" : 326960,
+				"intitulé" : "CONSTRUCTION D'UN BATIMENT MUTUALISE POUR LES SERVICES PERISCOLAIRES ET ACCUEIL LOISIRS",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Saint-Gilles",
+				"Code INSEE" : 35275,
+				"id site" : 3256,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5785256028, 48.2177711062 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 1375400,
+				"montant_attrib" : 400000,
+				"intitulé" : "CONSTRUCTION D'UN ALSH ET D'UNE CLASSE DE MATERNELLE",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Saint-Sulpice la Forêt",
+				"Code INSEE" : 35315,
+				"id site" : 3516,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5816844055, 48.1539197208 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 150124.17,
+				"montant_attrib" : 45037,
+				"intitulé" : "REFECTION TOITURE TERRASSE DE L'ECOLE DES PRES-VERTS ",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "THORIGNE-FOUILLARD",
+				"Code INSEE" : 35334,
+				"id site" : 3567
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5993923495, 48.0411473302 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 1312787,
+				"montant_attrib" : 300000,
+				"intitulé" : "CREATION MAISON PETITE ENFANCE",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Vern-sur-Seiche",
+				"Code INSEE" : 35352,
+				"id site" : 3697
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7562833269, 48.1177392865 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 177150,
+				"montant_attrib" : 53145,
+				"intitulé" : "RENOVATION SALLE PERISCOLAIRE ET SANITAIRE ECOLE ERIC TABARLY",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "VEZIN LE COQUET",
+				"Code INSEE" : 35353,
+				"id site" : 3795
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "MultiPoint",
+				"coordinates" : [
+					[ -1.8467447338, 48.0737120314 ]
+				]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 545834,
+				"montant_attrib" : 163750,
+				"intitulé" : "REALISATION D'UN ESPACE ENFANCE JEUNESSE / VIE ASSOCIATIVE \"38 LECLERC\"",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Mordelles",
+				"Code INSEE" : 35196,
+				"id_rva" : 19302
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.721348427, 47.9787631499 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 208369,
+				"montant_attrib" : 51290,
+				"intitulé" : "Rénovation thermique des écoles",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Laillé",
+				"Code INSEE" : 35139
+			}
+		}
+	]
+}

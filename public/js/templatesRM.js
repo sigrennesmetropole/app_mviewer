@@ -1,12 +1,12 @@
 var mviewer = mviewer || {};
 mviewer.templates = {};
-/*
+
 mviewer.templates.tooltip = [
     '<div class="tooltip mv-tooltip" role="tooltip">',
         '<div class="mv-tooltip tooltip-arrow"></div>',
-        '<div class="mv-tooltip tooltip-inner"></div>',
+        '<div class="mv-tooltip tooltip-inner popover-content"></div>',
     '</div>'].join("");
-*/
+
 mviewer.templates.theme = [
     '<li class="{{cls}}" id="theme-layers-{{id}}" >',
         '<a href="#">',
@@ -52,7 +52,7 @@ mviewer.templates.theme = [
 mviewer.templates.layerControl = [
     '<li class="{{cls}}" data-layerid="{{layerid}}" data-title=" {{title}}">',
         '<div class="row layerdisplay-title" >',
-            /*'<i class="mv-grip fas fa-grip-vertical" title="Déplacer" i18n="theme.layers.move"></i><a>{{title}}</a>',*/
+            '<i class="mv-grip fas fa-grip-vertical" title="Déplacer" i18n="theme.layers.move"></i><a>{{title}}</a>',
             '{{#secure_layer}}',
             '<button data-toggle="modal"',
                     'data-target="#loginpanel"',
@@ -64,13 +64,9 @@ mviewer.templates.layerControl = [
                 '<span class="lock-icon glyphicon glyphicon-lock" aria-hidden="true"></span>',
             '</button>',
             '{{/secure_layer}}',
-            '<i class="state-icon glyphicon glyphicon-chevron-down" onclick="mviewer.toggleLayerOptions(this);"></i><a onclick="mviewer.toggleLayerOptions(this);">{{title}}</a>',
-
-            '{{^permanentlayer}}',
-	            '<a href="#" class="mv-layer-remove" aria-label="close" onclick="mviewer.removeLayer(this)" title="Supprimer" i18n="theme.layers.remove">',
-	                '<span class="glyphicon glyphicon-remove"></span>',
-	            '</a>',
-            '{{/permanentlayer}}',
+            '<a href="#" class="mv-layer-remove" aria-label="close" onclick="mviewer.removeLayer(this)" title="Supprimer" i18n="theme.layers.remove">',
+                '<span class="glyphicon glyphicon-remove"></span>',
+            '</a>',
         '</div>',
         '<div class="layerdisplay-subtitle">',
         '{{#styleControl}}',
@@ -134,7 +130,12 @@ mviewer.templates.layerControl = [
             '<div class="row">',
                 '<div class="col-md-12">',
                     '<div class="form-group form-group-analyses">',
-                        '<label for="{{layerid}}-styles-selector" i18n="style.control.analyses">Analyses</label>',
+                        '{{#styleTitle }}',
+                            '<label for="{{layerid}}-styles-selector">{{styleTitle}}</label>',
+                        '{{/styleTitle}}',
+                        '{{^styleTitle}}',
+                            '<label for="{{layerid}}-styles-selector" i18n="style.control.analyses">Analyse</label>',
+                        '{{/styleTitle}}',
                         '<select class="form-control" name="{{layerid}}" id="{{layerid}}-styles-selector"',
                             ' onchange="mviewer.setLayerStyle(this.name ,this.value, this);">',
                         '{{#styles}}',
@@ -180,11 +181,9 @@ mviewer.templates.layerControl = [
         '{{/timeControl}}',
             '<div class="mv-custom-controls" data-layerid="{{layerid}}"></div>',
         '</div>',
-        	/*
             '<a href="#" aria-label="Options" onclick="mviewer.toggleLayerOptions(this);" title="Options" i18n="theme.layers.options" class="icon-options">',
                 '<span class="state-icon glyphicon glyphicon-chevron-down"></span>',
             '</a>',
-            */
     '</li>'].join("");
 
 mviewer.templates.backgroundLayerControlGallery = [
@@ -204,9 +203,8 @@ mviewer.templates.featureInfo.default = [
                     '<ul class="nav nav-tabs">',
                     '{{#layers}}',
                         '<li title="{{name}}" class="{{#firstlayer}}active{{/firstlayer}}" data-layerid="{{layerid}}">',
-                            '<a onclick="mviewer.setInfoPanelTitle(this,\'{{panel}}\');" title="{{name}}" href="#slide-{{panel}}-{{id}}" data-toggle="tab" {{#cat_color}}class="bg-colored "{{/cat_color}}>',
+                            '<a onclick="mviewer.setInfoPanelTitle(this,\'{{panel}}\');" title="{{name}}" href="#slide-{{panel}}-{{id}}" data-toggle="tab">',
                                 '<span class="fa {{theme_icon}}"></span>',
-                                '{{#multiple}}<span class="item-number">{{index}}</spanclass>{{/multiple}}',
                             '</a>',
                         '</li>',
                     '{{/layers}}',
@@ -303,3 +301,37 @@ mviewer.templates.featureInfo.accordion = [
         '</div>',
     '</div>'
 ].join("");
+// CBR : gestion du template allintabs (layers with a unique feature)
+// contribution geobretagne #issue 633
+mviewer.templates.featureInfo.allintabs = [
+    '<div id="{{panel}}-selector">',
+        '<div class="row">',
+            '<div class="col-md-12">',
+                '<div class="tabs-left">',
+                    '<ul class="nav nav-tabs">',
+                    '{{#layers}}',
+                        '<li title="{{name}}" class="{{#firstlayer}}active{{/firstlayer}}" data-layerid="{{layerid}}" {{#initiallayerid}}initiallayerid="{{initiallayerid}}" {{/initiallayerid}}>',
+                            '<a onclick="mviewer.setInfoPanelTitle(this,\'{{panel}}\');" title="{{name}}" href="#slide-{{panel}}-{{id}}" data-toggle="tab">',
+                                '<span class="fa {{theme_icon}}"></span>',
+                                '{{#multiple}}<span class="item-number">{{index}}</spanclass>{{/multiple}}',
+                            '</a>',
+                        '</li>',
+                    '{{/layers}}',
+                    '</ul>',
+                    '<div class="tab-content">',
+                    '{{#layers}}',
+                        '<div  role="tabpanel" class="{{#firstlayer}}active in {{/firstlayer}}tab-pane" id="slide-{{panel}}-{{id}}" >',
+                            '<div id="carousel-{{panel}}-{{id}}" div class="carousel slide" data-interval="false">',
+                                '<ul class="carousel-inner" role="listbox">',
+                                '{{{html}}}',
+                                '</ul>',
+                            '</div>',
+                        '</div>',
+                    '{{/layers}}',
+                    '</div>',
+                 '</div>',
+            '</div>',
+        '</div>',
+    '</div>'
+].join("");
+// FIN CBR : gestion du template allintabs (layers with a unique feature)

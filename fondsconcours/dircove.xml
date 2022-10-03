@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <application
+        title="Dispositif DIRCOVE"
+        logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
+        titlehelp="À propos des cartes thématiques"
+        help="apps/site_internet/html/site_internet_help.html"
+        showhelp="false"
+        exportpng="false"
+        style="apps/fondsconcours/css/dircove.css"
+        measuretools="false"
+        togglealllayersfromtheme="false"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
+        /> 
+
+    <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-185701.6581470431,6125244.605869446" zoom="11" />
+
+    <baselayers style="default"><!-- style="default"||gallery" -->
+        <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+        <baselayer visible="false" id="ortho2020" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2020" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+    </baselayers>
+
+    <extensions>
+         <extension type="component" id="GUICustom" path="apps/public/addons"/>
+    </extensions>
+
+    <themes mini="true" legendmini="false">
+        <!--
+        <theme id="theme-202103090939" name="Dispositif DIRCOVE" collapsed="true" icon="fas fa-city">
+            <layer
+                id="dircove2021"
+                name="Dispositif 2021/2022"
+                type="customlayer"
+                url="apps/fondsconcours/customlayers/fonds_dircove2021.js"
+                legendurl="apps/fondsconcours/img/legend_dircove_2021.svg"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="true"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{Maitrise d'ouvrage}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tabcolor='#b22496'
+                infopanel="right-panel">
+                <template url="apps/fondsconcours/templates/dircove.mst"></template>
+            </layer>
+            <layer
+                id="dircove2019"
+                name="Dispositif 2019/2020"
+                type="customlayer"
+                url="apps/fondsconcours/customlayers/fonds_dircove2019.js"
+                legendurl="apps/fondsconcours/img/legend_dircove_2019.svg"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="true"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{Maitrise d'ouvrage}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tabcolor='#f78b12'
+                infopanel="right-panel">
+                <template url="apps/fondsconcours/templates/dircove.mst"></template>
+            </layer>
+        </theme>
+        -->
+        <theme id="theme-202208180940" name="Biodiversité" collapsed="true" icon=".dircove_biodiv">
+            <layer
+                id="dircove_biodiv"
+                name="Biodiversité"
+                type="customlayer"
+                url="apps/fondsconcours/customlayers/fonds_dircove_biodiversite.js"
+                legendurl="apps/fondsconcours/img/legend_dircove_biodiversite.svg"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="true"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{Maitrise d'ouvrage}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tabcolor='#97BE28'
+                infopanel="right-panel"
+                index="1">
+                <template url="apps/fondsconcours/templates/dircove.mst"></template>
+            </layer>
+        </theme>
+
+        <theme id="theme-202208180927" name="Projets enfance" collapsed="true" icon=".dircove_enfance">
+            <layer
+                id="dircove_enfance"
+                name="Petite enfance/scolaire/périscolaire"
+                type="customlayer"
+                url="apps/fondsconcours/customlayers/fonds_dircove_enfance.js"
+                legendurl="apps/fondsconcours/img/legend_dircove_enfance.svg"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="true"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{Maitrise d'ouvrage}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tabcolor='#948CBE'
+                infopanel="right-panel"
+                index="2">
+                <template url="apps/fondsconcours/templates/dircove.mst"></template>
+            </layer>
+        </theme>
+        
+        <theme id="theme-202208180950" name="Autres" collapsed="true" icon=".dircove_autres">
+            <layer
+                id="dircove_autres"
+                name="Équipement et autres projets"
+                type="customlayer"
+                url="apps/fondsconcours/customlayers/fonds_dircove_autres.js"
+                legendurl="apps/fondsconcours/img/legend_dircove_autres.svg"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="true"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{Maitrise d'ouvrage}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tabcolor='#61C3D7'
+                infopanel="right-panel"
+                index="3">
+                <template url="apps/fondsconcours/templates/dircove.mst"></template>
+            </layer>
+        </theme>
+        
+    </themes>
+</config>

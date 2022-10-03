@@ -3,6 +3,7 @@
     <application
         title="Programmation des travaux sur Rennes Métropole [Document de travail]"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos..."
         help="apps/site_internet/html/prog_travaux_help.html"
         showhelp="true"
@@ -10,7 +11,10 @@
         geoloc="true"
         style="apps/site_internet/css/site_internet_gris.css"
         measuretools="false"
-        togglealllayersfromtheme="false" />
+        togglealllayersfromtheme="false"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
+        />
 
     <mapoptions maxzoom="20" minzoom="10" projection="EPSG:3857" center="-186098.36,6128582.53" zoom="11" />
 

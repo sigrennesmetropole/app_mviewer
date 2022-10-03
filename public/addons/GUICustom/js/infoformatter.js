@@ -16,7 +16,7 @@ var formatter = (function () {
 
     /****** Fonctions utiles *******/
 
-    // TODO : à vérifier / à déplacer dans RMUtils.js / à commenter
+    // TODO : à vérifier / à déplacer dans RMTools.js / à commenter
     var getDateFromFrench = function getDateFromFrench(date) {
         var val = date.split("/");
         return new Date(val[2], val[1]-1 , val[0]);
@@ -481,6 +481,19 @@ var formatter = (function () {
             }
         }
     };
+    
+    
+    function formatLargeNumbers() {
+        var span_elements = document.getElementsByClassName("rm-large-number");
+        for (var i = 0; i < span_elements.length; i++) {
+            var contenu="";
+            if(span_elements[i].innerHTML) {
+                contenu = span_elements[i].innerHTML;
+                span_elements[i].innerHTML = Number(contenu).toLocaleString(undefined,{minimumFractionDigits: 0, maximumFractionDigits: 0});
+            }
+        }
+    };
+    
 
     // TODO : à commenter
     //var formatHourInFrench = function formatHourInFrench() {
@@ -652,6 +665,7 @@ var formatter = (function () {
         rmTraficStatus();
         rmArtVilleType();
         formatDateInFrenchWithLetters();
+        formatLargeNumbers();
 
         var divs = document.getElementsByClassName("iframe-popup");
         for(var i = 0; i < divs.length; i++) {
@@ -664,3 +678,7 @@ var formatter = (function () {
         rmFormatTabs: _rmFormatTabs
     };
 })();
+
+
+document.addEventListener('infopanel-ready', (e) => formatter.rmFormatTabs());
+

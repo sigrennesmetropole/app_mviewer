@@ -11,10 +11,10 @@ mviewer.customLayers.parcs_relais= (function() {
             xhr.onload = function() {
                 if (xhr.status === 200 && xhr.responseText) {
                     var response = xhr.responseText.length ? JSON.parse(xhr.responseText).records : null;
-                    console.log(response);
+                    //console.log(response);
                     for (index in response){
                         var values=response[index].record.fields;
-                        console.log(values.coordonnees);
+                        //console.log(values.coordonnees);
                         
                         //let longlat_ = response[index].geolocation.reverse();
                         longlat_= [values.coordonnees.lon, values.coordonnees.lat];
@@ -39,6 +39,8 @@ mviewer.customLayers.parcs_relais= (function() {
                 } else {
                     console.log('fail request');
                 }
+                
+                console.log(_layer.getSource().getFeatures());
             };
             xhr.send();
         

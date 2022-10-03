@@ -1,0 +1,1186 @@
+{
+	"type" : "FeatureCollection",
+	"name" : "geojson_autres",
+	"features" : [
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.539427042, 48.1360005604 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 2456952,
+				"montant_attrib" : 400000,
+				"intitulé" : "Construction d'un espace gym et activités corporelles - salle du Chevré",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Acigné",
+				"Code INSEE" : 35001,
+				"id site" : 1178,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5197181702, 48.1383919604 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1239854,
+				"montant_attrib" : 180000,
+				"intitulé" : "Construction ateliers artistiques et loisirs créatifs - Ferme de Joval ",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Acigné",
+				"Code INSEE" : 35001,
+				"id site" : 4551,
+				"photo" : "https://documents.carto.datarennes.fr/dircov/4551.JPG"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.9457307458, 48.2965687761 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 98241.76,
+				"montant_attrib" : 29473,
+				"intitulé" : "TRAVAUX DE REAMENAGEMENT DES ESPACES D'ACCUEIL DE LA MAIRIE",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Bécherel",
+				"Code INSEE" : 35022,
+				"id site" : 947
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.9473713939, 48.2955525704 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 5000,
+				"montant_attrib" : 2500,
+				"intitulé" : "Réféction des joints des murs du théatre municipal",
+				"justificatif" : "PPC + PBIL",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Bécherel",
+				"Code INSEE" : 35022,
+				"id site" : 1270
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.9427347183, 48.2963314494 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 23329,
+				"montant_attrib" : 11664,
+				"intitulé" : "Reconstruction de la tour et du rempart ",
+				"justificatif" : "PPC + PBIL",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Bécherel",
+				"Code INSEE" : 35022,
+				"id site" : 5450
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.9427347183, 48.2963314494 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 43898,
+				"montant_attrib" : 21949,
+				"intitulé" : "Bilan sanitaire des remparts",
+				"justificatif" : "PPC + PBIL",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Bécherel",
+				"Code INSEE" : 35022,
+				"id site" : 5450
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.9433784485, 48.2952536513 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 6633,
+				"montant_attrib" : 3317,
+				"intitulé" : "Eclairage intérieur de l'église",
+				"justificatif" : "PPC + PBIL",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Bécherel",
+				"Code INSEE" : 35022,
+				"id site" : 1285
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6402620077, 48.1823588188 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 20733,
+				"montant_attrib" : 6220,
+				"intitulé" : "Restructuration du logement de fonction",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Betton",
+				"Code INSEE" : 35024,
+				"id site" : 544
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6166433396, 47.9901495588 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 176780,
+				"montant_attrib" : 53034,
+				"intitulé" : "RENOVATION ET ISOLATION DE LA TOITURE DE LA SALLE DES SPORTS",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Bourgbarré",
+				"Code INSEE" : 35032,
+				"id site" : 1429
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.4841239798, 48.1065718772 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 837000,
+				"montant_attrib" : 210000,
+				"intitulé" : "RENOVATION SALLE DES SPORTS",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Brécé",
+				"Code INSEE" : 35039,
+				"id site" : 1485,
+				"photo" : "https://documents.carto.datarennes.fr/dircov/1485.JPG"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7541172397, 47.9929104498 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 607159,
+				"montant_attrib" : 159028,
+				"intitulé" : "Réhabilitation du moulin du Boël",
+				"justificatif" : "PBIL",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Bruz",
+				"Code INSEE" : 35047,
+				"id site" : 1615,
+				"photo" : "https://documents.carto.datarennes.fr/dircov/1615.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.708891954, 48.0425496614 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 2089358,
+				"montant_attrib" : 225000,
+				"intitulé" : "Extension de l'EHPAD la poterie",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chartres de Bretagne",
+				"Code INSEE" : 35066,
+				"id site" : 688
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6955422902, 48.0416114593 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 480168,
+				"montant_attrib" : 140084,
+				"intitulé" : "Rénovation du centre culturel Bat B",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chartres de Bretagne",
+				"Code INSEE" : 35066,
+				"id site" : 668
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.695482762, 48.0388636062 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 359815,
+				"montant_attrib" : 107944.5,
+				"intitulé" : "Extension du centre de loisirs",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chartres de Bretagne",
+				"Code INSEE" : 35066,
+				"id site" : 2025
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6305071153, 48.2120956029 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 51000,
+				"montant_attrib" : 10500,
+				"intitulé" : "RENOVATION DE L'ACCUEIL DE LA MAIRIE",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chevaigné",
+				"Code INSEE" : 35079,
+				"id site" : 552
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6286158562, 48.2097389831 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1975000,
+				"montant_attrib" : 280000,
+				"intitulé" : "CONSTRUCTION D'UN POLE ASSOCIATIF ET CULTUREL",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Chevaigné",
+				"Code INSEE" : 35079,
+				"id site" : 4378,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6309821442, 48.2115150509 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 11648,
+				"montant_attrib" : 3440,
+				"intitulé" : "Mise aux normes d'un espace de coworking",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chevaigné",
+				"Code INSEE" : 35079,
+				"id site" : 5451
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8724795027, 48.1058547732 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 172260,
+				"montant_attrib" : 44400,
+				"intitulé" : "REHABILITATION DE LA MAIRIE APRES SINISTRE ",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Cintré",
+				"Code INSEE" : 35080,
+				"id site" : 553
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8534044615, 48.176433736 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 580736,
+				"montant_attrib" : 174221,
+				"intitulé" : "RESTRUCTURATION ET EXTENSION DE LA MAIRIE",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Clayes",
+				"Code INSEE" : 35081,
+				"id site" : 554
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5852338076, 47.979850181 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 455244,
+				"montant_attrib" : 136573,
+				"intitulé" : "NOUVELLE BIBLIOTHEQUE MUNICIPALE",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Corps-Nuds",
+				"Code INSEE" : 35088,
+				"id site" : 4566
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5830839422, 47.982268936 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 641810,
+				"montant_attrib" : 192543,
+				"intitulé" : "RENOVATION DE LA SALLE DE SPORT POLE VOLLEY BALL",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Corps-Nuds",
+				"Code INSEE" : 35088,
+				"id site" : 2253
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7930459976, 48.2188255193 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 2601064,
+				"montant_attrib" : 280000,
+				"intitulé" : "CREATION D'UN NOUVEL EQUIPEMENT SPORTIF",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Gevezé",
+				"Code INSEE" : 35120,
+				"id site" : 5448,
+				"ecobonus" : "true",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/5448.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7889261246, 48.2207198339 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1074382,
+				"montant_attrib" : 400000,
+				"intitulé" : "Extension et réhabilitation de la mairie",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Gevezé",
+				"Code INSEE" : 35120,
+				"id site" : 556,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8542903053, 48.2708546257 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 543960,
+				"montant_attrib" : 107433,
+				"intitulé" : "REHABILITATION D'UN BATIMENT COMMUNAL POUR LA CREATION D'UNE MEDIATHEQUE",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "La Chapelle Chaussée",
+				"Code INSEE" : 35058,
+				"id site" : 4579,
+				"ecobonus" : "true",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/4579.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7269456387, 48.1747575767 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 436400,
+				"montant_attrib" : 130920,
+				"intitulé" : "Toiture de la salle des sports",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz",
+				"Code INSEE" : 35059,
+				"id site" : 1955
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7333802581, 48.1784116791 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 1375000,
+				"montant_attrib" : 412649,
+				"intitulé" : "Création d'un multi-accueil",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz",
+				"Code INSEE" : 35059,
+				"id site" : 1931
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7269456387, 48.1747575767 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 657683.62,
+				"montant_attrib" : 185007,
+				"intitulé" : "SALLE OMNISPORTS- RENOVATION INTERIEURE DE LA SALLE",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "La Chapelle des Fougeretz",
+				"Code INSEE" : 35059,
+				"id site" : 1955
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8652572542, 48.1245663117 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 902560,
+				"montant_attrib" : 280000,
+				"intitulé" : "MEDIATHEQUE",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "La Chapelle Thouarault",
+				"Code INSEE" : 35065,
+				"id site" : 4464,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.721348427, 47.9787631499 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 34105.96,
+				"montant_attrib" : 10231.79,
+				"intitulé" : "RENOVATION THERMIQUE DE LA MAIRIE",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Laillé",
+				"Code INSEE" : 35139,
+				"id site" : 875
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7169570923, 47.9834158196 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 88721,
+				"montant_attrib" : 26616,
+				"intitulé" : "Construction d'un city stade",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Laillé",
+				"Code INSEE" : 35139,
+				"id site" : 2427
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.9300868638, 48.0676892665 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 68601.5,
+				"montant_attrib" : 20580,
+				"intitulé" : "EXTENSION DE L'ATELIER MUNICIPAL",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Le Verger",
+				"Code INSEE" : 35351,
+				"id site" : 3647
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.9349884987, 48.0679063747 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 45056,
+				"montant_attrib" : 13517,
+				"intitulé" : "CONSTRUCTION D'UN CITY STADE",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Le Verger",
+				"Code INSEE" : 35351,
+				"id site" : 5352
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8178671598, 48.1275366873 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1231573,
+				"montant_attrib" : 280000,
+				"intitulé" : "REHABILITATION ET EXTENSION DE LA MAIRIE",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "L'hermitage",
+				"Code INSEE" : 35131,
+				"id site" : 557,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.928936354, 48.2846432416 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 700000,
+				"montant_attrib" : 350000,
+				"intitulé" : "Rénovation ancien patronage et annexes",
+				"justificatif" : "PPC + Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Miniac-Sous-Becherel",
+				"Code INSEE" : 35180,
+				"id site" : 5456,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8411819121, 48.0717105974 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 136275,
+				"montant_attrib" : 40882.5,
+				"intitulé" : "Rénovation de la salle de gymnastique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Mordelles",
+				"Code INSEE" : 35196,
+				"id site" : 2583
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5560460091, 48.0408055591 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 934000,
+				"montant_attrib" : 373486,
+				"intitulé" : "Création d'un nouveau centre technique municipal",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Nouvoitou",
+				"Code INSEE" : 35204,
+				"id site" : 2710,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5568238497, 48.0416448298 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 879829.71,
+				"montant_attrib" : 175443,
+				"intitulé" : "RENOVATION DE LA SALLE DE SPORT ET DES ESPACES SPORTIFS ",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Nouvoitou",
+				"Code INSEE" : 35204,
+				"id site" : 2679
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.662746205, 48.0398141054 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 443968.81,
+				"montant_attrib" : 133191,
+				"intitulé" : "RESTRUCTURATION ET ISOLATION DE LA TOITURE DE LA SALLE DE SPORT RAYMOND PERRIN",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Noyal Chatillon sur Seiche",
+				"Code INSEE" : 35206,
+				"id site" : 2776
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6723452643, 47.9998013467 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 479519.6,
+				"montant_attrib" : 143856,
+				"intitulé" : "AMENAGEMENT D'UN TERRAIN FOOTBALL STABILISE EN TERRAIN FOOTBAL SYNTHETIQUE",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Orgères",
+				"Code INSEE" : 35208,
+				"id site" : 2825
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6703242064, 47.9945276852 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 3058847,
+				"montant_attrib" : 100000,
+				"intitulé" : "Réalisation d'un pôle santé plurdisciplinaire",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Orgères",
+				"Code INSEE" : 35208,
+				"id site" : 5446,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7679619789, 48.1523872922 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 1642650,
+				"montant_attrib" : 200000,
+				"intitulé" : "CONSTRUCTION D'UNE SALLE DE SPORTS",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Pacé",
+				"Code INSEE" : 35210,
+				"id site" : 5265,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7689007521, 48.1531603247 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 84250,
+				"montant_attrib" : 25275,
+				"intitulé" : "REHABILITATION ENERGETIQUE COMPLEXE SPORTIF CHASSEBOEUF",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Pacé",
+				"Code INSEE" : 35210,
+				"id site" : 2829
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8313908577, 48.1915324639 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 482660,
+				"montant_attrib" : 128746,
+				"intitulé" : "CREATION D'UNE NOUVELLE MEDIATHEQUE 3ème lieu",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Parthenay-de-Bretagne",
+				"Code INSEE" : 35216,
+				"id site" : 4474,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7112068371, 48.0126653969 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 3274211,
+				"montant_attrib" : 280000,
+				"intitulé" : "REHABILITATION DU BATIMENT ADMINISTRATIF DE LA MINE",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Pont-Péan",
+				"Code INSEE" : 35363,
+				"id site" : 3875,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8945300579, 48.2180499023 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 376184.2,
+				"montant_attrib" : 150474,
+				"intitulé" : "REHABILITATION ET MISE AUX NORMES DE SALLE CULTURELLE DU PRE VERT",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Romillé",
+				"Code INSEE" : 35245,
+				"id site" : 3121,
+				"ecobonus" : "true",
+				"photo" : "https://documents.carto.datarennes.fr/dircov/3121.JPG"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.653083659, 48.0203434258 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 182833,
+				"montant_attrib" : 54849.9,
+				"intitulé" : "Réaménagement des locaux de la salle associative Le Verger",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint-Erblon",
+				"Code INSEE" : 35266,
+				"id site" : 3197
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6534129451, 48.0208089534 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 38677,
+				"montant_attrib" : 11603.1,
+				"intitulé" : "Pôle social",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint-Erblon",
+				"Code INSEE" : 35266,
+				"id site" : 3238
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8246102333, 48.1558229028 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 248226,
+				"montant_attrib" : 99290.4,
+				"intitulé" : "Construction d'un local associatif",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Saint-Gilles",
+				"Code INSEE" : 35275,
+				"id site" : 4470,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5773639923, 48.1517502236 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 3009700,
+				"montant_attrib" : 275463,
+				"intitulé" : "CREATION D'UN POLE ASSOCIATIF, CULTUREL ET ARTISTIQUE A LA MORINAIS",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "THORIGNE-FOUILLARD",
+				"Code INSEE" : 35334,
+				"id site" : 3562,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5767419338, 48.1578447952 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 265000,
+				"montant_attrib" : 79500,
+				"intitulé" : "REMPLACEMENT DES BAIES VITREES DE L'EHPAD",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "THORIGNE-FOUILLARD",
+				"Code INSEE" : 35334,
+				"id site" : 693
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.721348427, 47.9787631499 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 2333500,
+				"montant_attrib" : 400000,
+				"intitulé" : "Construction d'un centre technique municipal",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Laillé",
+				"Code INSEE" : 35139,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8542880864, 48.2444386509 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 328162.4,
+				"montant_attrib" : 32830,
+				"intitulé" : "Maison de santé",
+				"justificatif" : "PPC",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Langan",
+				"Code INSEE" : 35144
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8542880864, 48.2444386509 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 348317,
+				"montant_attrib" : 112080,
+				"intitulé" : "Maison des jeunes et des associations",
+				"justificatif" : "PPC + PBIL",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Langan",
+				"Code INSEE" : 35144
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8178671598, 48.1275366873 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1945926,
+				"montant_attrib" : 300000,
+				"intitulé" : "Passerelle piéton et cycliste",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "L'hermitage",
+				"Code INSEE" : 35131
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7161798047, 48.1558502166 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 597819,
+				"montant_attrib" : 179345.7,
+				"intitulé" : "Extension de la salle des sport Court de tennis",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Montgermont",
+				"Code INSEE" : 35189
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6676339507, 47.9956800229 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 415555,
+				"montant_attrib" : 124667,
+				"intitulé" : "REHABILITATION ESPACE MULTIFONCTION ACCUEILLANT DES ARTISTES EN ESPACE CULTUREL ET DE COWORKING",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Orgères",
+				"Code INSEE" : 35208,
+				"id site" : 6563,
+				"photo" : "https://documents.carto.datarennes.fr/dircov/6563.jpg"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7060271999, 48.0107914229 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 85269,
+				"montant_attrib" : 25581,
+				"intitulé" : "City Parc",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Pont-Péan",
+				"Code INSEE" : 35363
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8924325705, 48.2155192362 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 676920,
+				"montant_attrib" : 203076,
+				"intitulé" : "REALISATION D'UN TERRAIN DE FOOTBALL SYNTHETIQUE",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Romillé",
+				"Code INSEE" : 35245,
+				"id site" : 6117
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5936988592, 48.0140403609 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 28832,
+				"montant_attrib" : 8650,
+				"intitulé" : "ETUDE  DE LOCALISATION ET DE PROGRAMMATION DES EQUIPEMENTS PUBLICS (DONT PRE-OPERATIONNEL EQUIPEMENT SCOLAIRE)",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint-Armel",
+				"Code INSEE" : 35250
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8292892549, 48.1545644835 ]
+			},
+			"properties" : {
+				"année" : "2019-2020",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1268309,
+				"montant_attrib" : 73040,
+				"intitulé" : "RENOVATION DE L'ANCIEN PRESBYTERE EN MAISON DES ASSOCIATIONS",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Saint-Gilles",
+				"Code INSEE" : 35275
+			}
+		}
+	]
+}

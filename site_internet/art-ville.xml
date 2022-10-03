@@ -3,14 +3,18 @@
     <application
         title="Art dans la ville"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
         exportpng="false"
         style="apps/site_internet/css/art_ville.css"
         measuretools="false"
-        togglealllayersfromtheme="false" />
-        <!-- style="apps/site_internet/css/art_ville.css" -->
+        togglealllayersfromtheme="false" 
+        showClickNbItems="true"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
+        />
 
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-185600.24433942206,6125077.984905125" zoom="13" />
 
@@ -39,6 +43,7 @@
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168"
                 queryable="true"
+                infohighlight ="true"
                 featurecount="3"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/art-ville.mst"></template>
