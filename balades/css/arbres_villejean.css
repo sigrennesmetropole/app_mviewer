@@ -1,0 +1,15 @@
+/******************************************************************************
+---------- CSS THEME MVIEWER / balades autour des arbres de Villejean ---------
+********************************************************************************/
+
+/*  Import du style du site internet  */
+@import url("../../site_internet/css/site_internet_gris.css");
+
+/* FICHE INFO */
+#right-panel.active {
+    width:30%!important;
+}
+
+#right-panel .carousel-inner {
+    width:100%!important;
+}
