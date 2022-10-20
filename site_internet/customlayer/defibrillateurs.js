@@ -2,7 +2,7 @@
 mviewer.customLayers.dae_rennes= (function() {
     //var dae_data_url = 'https://datacarto.atlasante.fr/wfs/87d621bd-fc7b-4b51-92b7-7515ac1c66c7?service=WFS&request=GetFeature&version=2.0.0&typename=ms:geodae_publique&outputFormat=geojson&srsName=EPSG:3857&FILTER%3D%3CFilter%3E%3CPropertyIsEqualTo%3E%3CValueReference%3Ec_com_insee%3C%2FValueReference%3E%3CLiteral%3E35238%3C%2FLiteral%3E%3C%2FPropertyIsEqualTo%3E%3C%2FFilter%3E';
     var dae_data_url = 'https://datacarto.atlasante.fr/wfs/87d621bd-fc7b-4b51-92b7-7515ac1c66c7?service=WFS&request=GetFeature&version=2.0.0&typename=ms:geodae_publique&outputFormat=geojson&srsName=EPSG:3857&FILTER%3D%3CFilter%3E%3CPropertyIsEqualTo%3E%3CValueReference%3Ec_expt_siren%3C%2FValueReference%3E%3CLiteral%3E213502388%3C%2FLiteral%3E%3C%2FPropertyIsEqualTo%3E%3C%2FFilter%3E';
-    
+      
    
     
     function daeStyle(feature) {
