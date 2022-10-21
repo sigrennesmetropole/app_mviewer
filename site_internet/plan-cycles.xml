@@ -15,7 +15,7 @@
         sortlayersinfopanel="toc"
          />
 
-    <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-190690.24433942206,6128725.984905125" zoom="11" />
+    <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-190690.24433942206,6128725.984905125" zoom="12" />
 
     <searchparameters bbox="false" localities="false" features="false" static="false"/>
 
