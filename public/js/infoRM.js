@@ -195,7 +195,7 @@ var info = (function () {
                             //CBR : gestion du template allintabs (layers with a unique feature)
                             // contribution geobretagne #issue 633
                             if (_overLayers[l] && _panelsTemplate[_overLayers[l].infospanel]=='allintabs') {
-                                l = l + '_' + f_idx;
+                                l = l + '_#' + f_idx;
                                 f_idx++;
                             }
                             //FIN CBR  : gestion du template allintabs
@@ -208,7 +208,7 @@ var info = (function () {
             for(var layerid in vectorLayers) {
                 //CBR : gestion du template allintabs (layers with a unique feature)
                 // contribution geobretagne #issue 633
-                var originLayer = (layerid.lastIndexOf("_") < 0 ? layerid : layerid.substring(0, layerid.lastIndexOf("_")) );
+                var originLayer = (layerid in _overLayers ? layerid : layerid.substring(0, layerid.lastIndexOf("_#")) );
                 
                 /*if (mviewer.customLayers[layerid] && mviewer.customLayers[layerid].handle) {
                     mviewer.customLayers[layerid].handle(vectorLayers[layerid].features, views);
