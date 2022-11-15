@@ -2,15 +2,19 @@ var _map = mviewer.getMap();
 var originalCenter = _map.getView().getCenter();
 
 _map.on('click', function (event) {
-    if(!document.getElementById("right-panel").classList.contains("active")){
-      const myTimeout = setTimeout(function(){
+  // console.log(event);
+  const myTimeout = setTimeout(function(){
+    console.log(document.getElementById("right-panel").classList.contains("active"));
+    if(document.getElementById("right-panel").classList.contains("active")){
         var newCenter = _map.getCoordinateFromPixel(event.pixel);
         newCenter[1] = originalCenter[1];
+        // _map.getView().setCenter([76,0]);
+        console.log(newCenter);
         _map.getView().setCenter(newCenter);
-      }, 1000);
-  }else{
-    _map.getView().setCenter(originalCenter);
-  }
+    }else{
+      _map.getView().setCenter(originalCenter);
+    }
+  }, 1000);
 
 });
 
