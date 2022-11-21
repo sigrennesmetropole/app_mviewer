@@ -4,7 +4,7 @@ var searchRM = (function () {
 
   var nbResults = 0;
   var currentRmAutocompleteItem = -1;
-  
+
   var getPersoConfData;
   var apiRVAKey = '';
   var apiSitesOrgkey = '';
@@ -97,6 +97,21 @@ var searchRM = (function () {
 
     var _configureSearch = function (searchRMConf) {
         $.getJSON(searchRMConf, function (confData) {
+
+//vérification de la restriction de recherche sur rennes
+        var restriction = false;
+        configuration.getConfiguration().extensions.extension.forEach((item, i) => {
+          if(item.restrictRennes === "true"){
+            restriction = true;
+          }
+        });
+        //s'il y a restriction, restreindre les champs de recherche à la seule commune de Rennes
+        if(restriction){
+          confData.searchContent.forEach((content) => {
+            content["citiesSearch"] = 'Rennes';
+          });
+        }
+
             _setSearchParameters(confData);
 
             $(document).on("keyup", "#searchfield", function (e) {
@@ -259,7 +274,6 @@ var searchRM = (function () {
         var cities = [];
         var lane = [];
         var address = [];
-        // console.log('displayautocompletedata');
         var queryMapOnClick;
         getQueryMapOnClick(function(response){
           queryMapOnClick = response;
