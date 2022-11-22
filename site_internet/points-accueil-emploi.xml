@@ -41,7 +41,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
                 queryable="true"
                 featurecount="3"
-                filter="etat_organisme = 'actif' AND code_nomenclature_principale = '3.3.1'"
+                filter="etat_organisme = 'actif' and (code_nomenclature_principale='3.3.1' or code_nomenclature_secondaire like '%3.3.1%')"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
