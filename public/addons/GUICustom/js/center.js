@@ -1,18 +1,18 @@
 var _map = mviewer.getMap();
 var originalCenter = _map.getView().getCenter();
+var wasPanelOpen = false;
 
 _map.on('click', function (event) {
-  // console.log(event);
   const myTimeout = setTimeout(function(){
-    console.log(document.getElementById("right-panel").classList.contains("active"));
-    if(document.getElementById("right-panel").classList.contains("active")){
+    if(document.getElementById("right-panel").classList.contains("active") && !wasPanelOpen){
         var newCenter = _map.getCoordinateFromPixel(event.pixel);
         newCenter[1] = originalCenter[1];
-        // _map.getView().setCenter([76,0]);
-        console.log(newCenter);
         _map.getView().setCenter(newCenter);
-    }else{
+        wasPanelOpen = true;
+    }
+    if(!document.getElementById("right-panel").classList.contains("active") && wasPanelOpen){
       _map.getView().setCenter(originalCenter);
+      wasPanelOpen = false;
     }
   }, 1000);
 
@@ -21,6 +21,7 @@ _map.on('click', function (event) {
 $("#right-panel")[0].childNodes[1].childNodes[2].addEventListener("click",function(){
   const myTimeout = setTimeout(function(){
     _map.getView().setCenter(originalCenter);
+    wasPanelOpen = false;
   }, 500);
 });
 
