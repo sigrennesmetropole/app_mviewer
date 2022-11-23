@@ -108,7 +108,7 @@ var searchRM = (function () {
         //s'il y a restriction, restreindre les champs de recherche à la seule commune de Rennes
         if(restriction){
           confData.searchContent.forEach((content) => {
-            content["citiesSearch"] = 'Rennes';
+            content["citiesSearch"] = "['Rennes','Bruz']";
           });
         }
 
@@ -207,6 +207,7 @@ var searchRM = (function () {
     var _searchRM = function (confData, value) {
         var promises = _getApisRequests(confData, value);
         previousRequest = Promise.all(promises).then(function(allResult) {
+        console.log(allResult);
             _displayAutocompleteData(allResult, value);
             nbResults = $('.autocompleteRmItem').length;
         });
