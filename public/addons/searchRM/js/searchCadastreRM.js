@@ -1,17 +1,8 @@
 var searchCadastreRM = (function () {
 
-  var restriction = false;
-  configuration.getConfiguration().extensions.extension.forEach((item, i) => {
-    if(item.restrictRennes === "true"){
-      restriction = true;
-    }
-  });
-
     var baseUrl_cadastre;
 
-    if(!restriction){
-      var selectCityInput = $('#communeSearchContainer');
-    }
+    var selectCityInput = $('#communeSearchContainer');
     var sectionTag = $('#sectionInputContainer');
     var parcelTag = $('#parcelleInputContainer');
 
@@ -44,25 +35,13 @@ var searchCadastreRM = (function () {
           // $('#parcelSelectors').append(selectCityInput);
           // $('#parcelSelectors').append(sectionTag);
           // $('#parcelSelectors').append(parcelTag);
-          if(!restriction){
-            selectCityInput.show();
-          }
+          selectCityInput.show();
           sectionTag.show();
           parcelTag.show();
-
-          var restrictionData = null;
 
         $.getJSON(baseUrl_cadastre + 'communes', function(dataApiJson) {
           //var htmlContent = '<option value="-1" disabled selected> rechercher la commune de la parcelle</option>';
           var htmlContent = '';
-          if(restriction){
-            dataApiJson.forEach((item, i) => {
-              if(item.name === "Rennes"){
-                restrictionData = item;
-                htmlContent = '<option value="'+ item.idComm +'">'+ item.name +'</option>'
-              }
-            });
-          }else{
             dataApiJson.forEach(function (data) {
               htmlContent += '<option value="'+ data.idComm +'">'+ data.name +'</option>'
             });
@@ -73,8 +52,6 @@ var searchCadastreRM = (function () {
               dropdownAutoWidth: true,
               width: '210px',
             });
-
-          }
 
             $('#section').select2({
               placeholder: "section",
@@ -89,15 +66,11 @@ var searchCadastreRM = (function () {
               width: '75px',
             });
 
-            if(!restriction){
               $(".sectionsList").prop("disabled", true);
               $('#communeSearch').val('0').trigger('change');
-            }
             $(".parcellesList").prop("disabled", true);
         });
 
-
-        if(!restriction){
           $(document).on('change','#communeSearch', function (e) {
             var codeCom = '';
             if (typeof e.currentTarget.selectedOptions[0] !== 'undefined') {
@@ -128,25 +101,6 @@ var searchCadastreRM = (function () {
               });
             }
           });
-        }else{
-          $.getJSON(baseUrl_cadastre + 'communes/350238/sections', function(dataApiJson) {
-            //var htmlContent = '<option value="-1" disabled selected> code section</option>';
-            var htmlContent = '';
-            dataApiJson.forEach(function (data) {
-              htmlContent += '<option value="'+ data.idSect +'">'+ data.codSect +'</option>'
-            });
-            $('#section').html(htmlContent);
-            $('#section').select2({
-              placeholder: "section",
-              allowClear: true,
-              dropdownAutoWidth: true,
-              width: '75px',
-            });
-            $(".sectionsList").prop("disabled", false);
-            $(".parcellesList").prop("disabled", true);
-            $(".sectionsList").val("-1").trigger('change');
-          });
-        }
 
         $(document).on('change','#section', function (e) {
           var codeSection = '';
@@ -255,9 +209,6 @@ var searchCadastreRM = (function () {
             $('#parcelle').val(-1);
           }
         });*/
-        if(restriction){
-          $('#communeSearchContainer').remove();
-        }
     }
 
     return {
