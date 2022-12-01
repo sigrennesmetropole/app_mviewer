@@ -99,7 +99,7 @@ var baladesAddon = (function () {
     function decaleMap([x, y]) {
         if (_map && _map.getSize()[0] < 1000) {
             if (y == 0) y = 120;
-            y += 20;
+            y += 45;
             var center = _map.getView().getCenter();
             var resolution = _map.getView().getResolution();
             _map.getView().animate({

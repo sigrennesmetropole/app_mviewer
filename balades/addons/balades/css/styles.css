@@ -60,7 +60,7 @@
         left: 55%;
     }
     #accordion .panel-collapse.collapse.in {
-        max-height: 28vh;
+        max-height: 42vh;
     }
 }
 
