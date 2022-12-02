@@ -56,4 +56,3 @@ const layer = new ol.layer.Vector({
 
 
 new CustomLayer('geotravaux_evenement_1j', layer);
-
