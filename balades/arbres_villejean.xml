@@ -63,8 +63,6 @@
                 infopanel="right-panel">
                 <template url="apps/balades/templates/point_arbres_villejean.mst"></template>
             </layer>
-            
-            POILayer
         </theme>
     </themes>
 </config>
