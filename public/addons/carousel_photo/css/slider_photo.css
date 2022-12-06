@@ -74,17 +74,19 @@
 /* FENETRES MODALES */
 
 .modal-title{
-		font-family:"vistaSansOT_regular";
-		/*color:#555;*/
-		font-size:16px;
+    /*font-family:"vistaSansOT_regular";*/
+    font-family: 'condate_medium', Arial, Sans-serif;
+    /*color:#555;*/
+    font-size:16px;
 }
 
 .modal-body{
-	color: #555;
-	font-family: "vistaSansOT_regular";
-	font-size: 12px;
-	text-align: justify;
-	padding-top: 0;
+    color: #555;
+    /*font-family: "vistaSansOT_regular";*/
+    font-family: 'DMSans_medium', Arial, Sans-serif;
+    font-size: 12px;
+    text-align: justify;
+    padding-top: 0;
     height: 95%;
 }
 

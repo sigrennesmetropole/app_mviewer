@@ -3,6 +3,7 @@
 **/
 var $div = $("#right-panel");
 var _map = mviewer.getMap();
+
 var opendivwidth = 0;
 
 var observer = new MutationObserver(function(mutations) {
