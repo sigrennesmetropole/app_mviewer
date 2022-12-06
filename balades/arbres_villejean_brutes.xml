@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <application
+        title="Promenade autour des arbres de Villejean"
+        logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
+        titlehelp="À propos des cartes thématiques"
+        help="apps/site_internet/html/site_internet_help.html"
+        showhelp="false"
+        exportpng="false"
+        style="apps/balades/css/arbres_villejean.css"
+        measuretools="false"
+        togglealllayersfromtheme="false" 
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
+        />
+
+    <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-189920.7,6126711.35" zoom="18" />
+
+    <baselayers style="default"><!-- style="default"||gallery" -->
+        <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+    </baselayers>
+
+    <extensions>
+        <extension type="component" id="GUICustom" path="apps/public/addons"/>
+        <extension type="component" id="balades" path="apps/balades/addons" configFile="/apps/balades/parametrage/param_arbres_villejean.json" />
+        <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
+    </extensions>
+
+    <themes mini="true" legendmini="false">
+        <theme id="theme-202201280955" name="Les arbres de Villejean" collapsed="true" icon="fas fa-leaf">
+            <layer
+                id="balades"
+                name="Tracé de la promenade"
+                type="customlayer"
+                url="apps/balades/customlayer/balades.js"
+                geojson="apps/balades/customlayer/data/arbres_villejean/balade_arbres_villejean.geojson"
+                legendurl="apps/balades/legend/default_line_legend.svg"
+                visible="true"
+                tooltip="true"
+                tooltipenabled="false"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{TITRE}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="3"
+                infopanel="right-panel">
+                <template url="apps/balades/templates/balade_arbres_villejean.mst"></template>
+            </layer>
+            <layer
+                id="balades_points"
+                name="Points d'arrêt"
+                type="customlayer"
+                url="apps/balades/customlayer/balades_points.js"
+                geojson="apps/balades/customlayer/data/arbres_villejean/POI_arbres_villejean_medias.json"
+                legendurl="apps/balades/legend/default_point_marker.svg"
+                visible="true"
+                tooltip="true"
+                tooltipenabled="true"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{TITRE}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="3"
+                infopanel="right-panel">
+                <template url="apps/balades/templates/point_arbres_villejean.mst"></template>
+            </layer>
+        </theme>
+    </themes>
+</config>

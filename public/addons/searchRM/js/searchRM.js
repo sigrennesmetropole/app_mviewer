@@ -4,12 +4,67 @@ var searchRM = (function () {
 
   var nbResults = 0;
   var currentRmAutocompleteItem = -1;
-  
+
   var getPersoConfData;
   var apiRVAKey = '';
   var apiSitesOrgkey = '';
 
   var previousRequest;
+  var communesToRestrict = [];
+
+  var restriction = false;
+  var restrictionInsee;
+  configuration.getConfiguration().extensions.extension.forEach((item, i) => {
+    if(item.restrictCommunes){
+      restrictionInsee = item.restrictCommunes;
+      restriction = true;
+    }
+  });
+  // var communesTable = [
+  //   {insee: '350001', name: 'Acigné'},
+  //   {insee: '350022', name: 'Bécherel'},
+  //   {insee: '350024', name: 'Betton'},
+  //   {insee: '350032', name: 'Bourgbarré'},
+  //   {insee: '350039', name: 'Brécé'},
+  //   {insee: '350047', name: 'Bruz'},
+  //   {insee: '350051', name: 'Cesson-Sévigné'},
+  //   {insee: '350055', name: 'Chantepie'},
+  //   {insee: '350058', name: 'la Chapelle-Chaussée'},
+  //   {insee: '350059', name: 'la Chapelle-des-Fougeretz'},
+  //   {insee: '350065', name: 'la Chapelle-Thouarault'},
+  //   {insee: '350066', name: 'Chartres-de-Bretagne'},
+  //   {insee: '350076', name: 'Chavagne'},
+  //   {insee: '350079', name: 'Chevaigné'},
+  //   {insee: '350080', name: 'Cintré'},
+  //   {insee: '350081', name: 'Clayes'},
+  //   {insee: '350088', name: 'Corps-Nuds'},
+  //   {insee: '350120', name: 'Gévezé'},
+  //   {insee: '350131', name: "l'Hermitage"},
+  //   {insee: '350139', name: 'Laillé'},
+  //   {insee: '350144', name: 'Langan'},
+  //   {insee: '350180', name: 'Miniac-sous-Bécherel'},
+  //   {insee: '350189', name: 'Montgermont'},
+  //   {insee: '350196', name: 'Mordelles'},
+  //   {insee: '350204', name: 'Nouvoitou'},
+  //   {insee: '350206', name: 'Noyal-Châtillon-sur-Seiche'},
+  //   {insee: '350208', name: 'Orgères'},
+  //   {insee: '350210', name: 'Pacé'},
+  //   {insee: '350216', name: 'Parthenay-de-Bretagne'},
+  //   {insee: '350238', name: 'Rennes'},
+  //   {insee: '350240', name: 'le Rheu'},
+  //   {insee: '350245', name: 'Romillé'},
+  //   {insee: '350250', name: 'Saint-Armel'},
+  //   {insee: '350266', name: 'Saint-Erblon'},
+  //   {insee: '350275', name: 'Saint-Gilles'},
+  //   {insee: '350278', name: 'Saint-Grégoire'},
+  //   {insee: '350281', name: 'Saint-Jacques-de-la-Lande'},
+  //   {insee: '350315', name: 'Saint-Sulpice-la-Forêt'},
+  //   {insee: '350334', name: 'Thorigné-Fouillard'},
+  //   {insee: '350351', name: 'le Verger'},
+  //   {insee: '350352', name: 'Vern-sur-Seiche'},
+  //   {insee: '350353', name: 'Vezin-le-Coquet'},
+  //   {insee: '350363', name: 'Pont-Péan'}
+  // ];
 
     var enable = function () {
         $("#searchtool").show();
@@ -97,6 +152,25 @@ var searchRM = (function () {
 
     var _configureSearch = function (searchRMConf) {
         $.getJSON(searchRMConf, function (confData) {
+
+        // //vérification de la restriction de recherche sur rennes
+        // configuration.getConfiguration().extensions.extension.forEach((item, i) => {
+        //   if(item.restrictCommunes){
+        //     communesTable.forEach((commune, i) => {
+        //       item.restrictCommunes.split(',').forEach((restrict, i) => {
+        //         if(commune.insee === restrict){
+        //           communesToRestrict.push(commune.name);
+        //         }
+        //       });
+        //     });
+        //     //s'il y a restriction, restreindre les champs de recherche à la seule commune de Rennes
+        //     confData.searchContent.forEach((content) => {
+        //       content["citiesSearch"] = communesToRestrict.toString();
+        //     });
+        //     restriction = true;
+        //   }
+        // });
+
             _setSearchParameters(confData);
 
             $(document).on("keyup", "#searchfield", function (e) {
@@ -229,6 +303,10 @@ var searchRM = (function () {
                     break;
             }
 
+            if(restriction){
+              ajaxSetting.data.insee = restrictionInsee;
+            }
+
             for (var i = 0; i < searchItemChecked.length; i++) {
                 if (searchItemChecked[i].id === 'param_search_' + content.categoryName) {
 
@@ -259,7 +337,6 @@ var searchRM = (function () {
         var cities = [];
         var lane = [];
         var address = [];
-        // console.log('displayautocompletedata');
         var queryMapOnClick;
         getQueryMapOnClick(function(response){
           queryMapOnClick = response;

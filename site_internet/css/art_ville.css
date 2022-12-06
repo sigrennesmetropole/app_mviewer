@@ -15,7 +15,8 @@
 }
 
 .text-credit{
-    font-family:"vistaSansOT_bold";
+    /*font-family:"vistaSansOT_bold";*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
     color:#555;
     font-size:9px;
     padding-right: 10px;

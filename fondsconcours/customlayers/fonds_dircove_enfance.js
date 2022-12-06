@@ -77,7 +77,7 @@ mviewer.customLayers.dircove_enfance= (function() {
                     _g.appendChild(svgEcusson.firstChild);
                 }
                 doc.getElementsByTagName("svg")[0].appendChild(_g);
-                console.log(doc.getElementsByTagName("svg")[0].outerHTML);
+                //console.log(doc.getElementsByTagName("svg")[0].outerHTML);
                 _markerEcoB = 'data:image/svg+xml;utf8, ' + encodeURIComponent(doc.getElementsByTagName("svg")[0].outerHTML);
             }
         };

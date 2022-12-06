@@ -3,7 +3,7 @@
       "lib/select2-4.0.13/select2.min.js",
       "lib/FileSaver.min.js",
       "js/ogcutilsRM.js",
-      "js/fixRightPanel.js",
+      "js/fixInfoPanels.js",
       "js/navTabs.js",
       "js/rmTools.js",
       "js/infoformatter.js",

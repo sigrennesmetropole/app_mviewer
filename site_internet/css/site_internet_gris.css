@@ -3,6 +3,7 @@
 ********************************************************************************/
 
 /* Import des fonts*/
+/* Ancienne charte graphique jusqu'à 2022 */
 		@font-face {
 		    font-family: 'roboto_black';
 		    src: url('font/Roboto/Roboto-Black.ttf');
@@ -36,10 +37,35 @@
 		    src: url('font/Vista_Sans-OT/VistaSansOT-Light.otf');
 		}
         @font-face {
-		    font-family: 'vistaSansOT_light_italic';
-		    src: url('font/Vista_Sans-OT/VistaSansOT-LightItalic.otf');
-		}
-
+            font-family: 'vistaSansOT_light_italic';
+            src: url('font/Vista_Sans-OT/VistaSansOT-LightItalic.otf');
+        }
+/* Nouvelle charte graphique depuis 2022 */
+        @font-face {
+            font-family: 'DMSans_regular';
+            src: url('font/DMsans/DMSans-Regular.ttf');
+        }
+        @font-face {
+            font-family: 'DMSans_bold';
+            src: url('font/DMsans/DMSans-Bold.ttf');
+        }
+        @font-face {
+            font-family: 'DMSans_italic';
+            src: url('font/DMsans/DMSans-Italic.ttf');
+        }
+        @font-face {
+            font-family: 'DMSans_medium';
+            src: url('font/DMsans/DMSans-Medium.ttf');
+        }
+        @font-face {
+            font-family: 'condate_light';
+            src: url('font/CONDATE/Condate-Light.woff2')format("woff2");
+        }
+        @font-face {
+            font-family: 'condate_medium';
+            src: url('font/CONDATE/Condate-Medium.woff2')format("woff2");
+        }
+        
 /* Colors */
 :root {
 --darkmain: #000000;
@@ -99,8 +125,10 @@
 }
 
 #mv-navbar a.navbar-brand, .mv-title{
-	color:#ffffff!important;
-	font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    color:#ffffff!important;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'condate_medium', Arial, Sans-serif;
+
 }
 
 @media screen and (max-width: 1000px){
@@ -127,9 +155,10 @@
 }
 
 p.navbar-text.mv-title{
-	font-size: 18px;
-	font-family: 'vistaSansOT_regular', Arial, Sans-serif;
-	letter-spacing: 0.5px;
+    font-size: 18px;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'condate_medium', Arial, Sans-serif;
+    letter-spacing: 0.5px;
 }
 
 .navbar-default .navbar-toggle{
@@ -154,8 +183,9 @@ p.navbar-text.mv-title{
 }
 
 .gml-item-title {
-    font-family: 'vistaSansOT_regular', Arial, Sans-serif;
-	color:var(--darkmain);
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'condate_bold', Arial, Sans-serif;
+    color:var(--darkmain);
     font-size: 24px;
 }
 
@@ -181,7 +211,8 @@ p.navbar-text.mv-title{
 }
 
 #right-panel .mv-header h5{
-  font-family: 'vistaSansOT_bold', sans-serif;
+  /*font-family: 'vistaSansOT_bold', sans-serif;*/
+  font-family: 'condate_light', Arial, Sans-serif;
   font-size: 13px;
 }
 
@@ -190,11 +221,13 @@ p.navbar-text.mv-title{
 ********************************/
 
 #sidebar-wrapper a{
-	font-family:'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family:'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
 }
 
 #menu>li>a{
-	font-family:'vistaSansOT_bold', Arial, Sans-serif;
+    /*font-family:'vistaSansOT_bold', Arial, Sans-serif;*/
+    font-family: 'condate_medium', Arial, Sans-serif;
 }
 
 #menu li a:hover{
@@ -221,7 +254,8 @@ span.state-icon.fas{
 
 /*  badge du menu qui permet de sélectionner/déselectionner des couches en masse  */
 .toggle-theme-layers .badge {
-    font-family:'vistaSansOT_light', Arial, Sans-serif;
+    /*font-family:'vistaSansOT_light', Arial, Sans-serif;*/
+    font-family: 'condate_light', Arial, Sans-serif;
     font-size: 10px!important;
 }
 
@@ -229,13 +263,14 @@ span.state-icon.fas{
 ------------- BOTTOM PANEL
 ********************************/
 #bottom-panel .mv-header h5{
-	font-family:'vistaSansOT_bold', Arial, Sans-serif;
-	color: var(--darkmain);
-	font-size:13px;
+    /*font-family:'vistaSansOT_bold', Arial, Sans-serif;*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
+    color: var(--darkmain);
+    font-size:13px;
 }
 
 .fa-chevron-down{
-	color:#fff;
+    color:#fff;
 }
 #bottom-panel-btn .fa-chevron-down {
     background: var(--darkmain);
@@ -273,39 +308,45 @@ span.state-icon.fas{
 }
 
 #layers-container a {
-	color: var(--darkmain);
-	font-family: 'vistaSansOT_bold', Arial, Sans-serif;
+    color: var(--darkmain);
+    /*font-family: 'vistaSansOT_bold', Arial, Sans-serif;*/
+    font-family: 'condate_medium', Arial, Sans-serif;
     text-align: left;
     /*display: inline-block;*/
 }
 
 .form-group label {
-	font-family: 'vistaSansOT_bold', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_bold', Arial, Sans-serif;*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
 }
 
 #layers-container .mv-layer-options p {
-	font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
 }
 
 .form-control{
-	font-family: 'vistaSansOT_regular', Arial, Sans-serif;
-	color:#555!important;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
+    color:#555!important;
 }
 
 .mv-layer-options{
-	color:#555!important;
+    color:#555!important;
 }
 
 /* Sub-title layers */
 .selected-sld.fa span{
-  font-style: italic;
-  font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    font-style: italic;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
 }
 
 /*Filtres*/
 .selected-attribute.fa span{
-  font-style: italic;
-  font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    font-style: italic;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
 }
 
 /* Opacité */
@@ -318,9 +359,10 @@ span.state-icon.fas{
 }
 
 .mv-layer-options .tooltip-inner{
-	background-color:var(--darkmain);
-	border-radius: 4px;
-	font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    background-color:var(--darkmain);
+    border-radius: 4px;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
 }
 
 .mv-layer-options .tooltip.top .tooltip-arrow{
@@ -335,7 +377,8 @@ span.state-icon.fas{
 }
 
 .slider.slider-horizontal .slider-tick-label-container{
-	font-family:'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family:'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
 }
 
 .slider-tick.round.in-selection{
@@ -383,7 +426,8 @@ span.text-big-legend {
 ********************************/
 
 ul#basemapslist p {
-	font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
 }
 
 ul#basemapslist  li.active{
@@ -391,7 +435,8 @@ ul#basemapslist  li.active{
 }
 
 .ol-scale-line-inner{
-    font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_medium', Arial, Sans-serif;
 }
 
 #map {
@@ -404,20 +449,23 @@ ul#basemapslist  li.active{
 ********************************/
 
 h3.title{
-	font-family: 'vistaSansOT_regular', Arial, Sans-serif;
-	font-size: 24px;
-	color:var(--darkmain);
-	}
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_medium', Arial, Sans-serif;
+    font-size: 24px;
+    color:var(--darkmain);
+    }
 
 h4.title{
-    font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_medium', Arial, Sans-serif;
     font-size: 16px;
     color:var(--darkmain);
 }
 
 .info{
-	font-family:'vistaSansOT_regular', Arial, Sans-serif;
-	}
+    /*font-family:'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_medium', Arial, Sans-serif;
+    }
 
 /*******************************
 ------------- POPOVER
@@ -425,7 +473,8 @@ h4.title{
 .popover {
     background:var(--darkmain)!important;
     padding: 0px;
-    font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_medium', Arial, Sans-serif;
     color: #FFFFFF;
 }
 
@@ -446,14 +495,16 @@ h4.title{
 
 
 .popover-content{
-    font-family: 'vistaSansOT_regular', sans-serif!important;
+    /*font-family: 'vistaSansOT_regular', sans-serif!important;*/
+    font-family: 'condate_light', Arial, Sans-serif;
     font-size: 12.5px!important;
     background:var(--darkmain)!important;
     padding: 4px 6px 3px 6px!important;
 }
 
 .popover-title{
-	font-family: 'vistaSansOT_bold', sans-serif!important;
+    /*font-family: 'vistaSansOT_bold', sans-serif!important;*/
+    font-family: 'condate_bold', Arial, Sans-serif;
 }
 
 
@@ -463,7 +514,8 @@ h4.title{
 ********************************/
 
 #modal-panel .modal-content{
-	font-family: 'vistaSansOT_regular', sans-serif!important;
+    /*font-family: 'vistaSansOT_regular', sans-serif!important;*/
+    font-family: 'DMSans_medium', Arial, Sans-serif;
     background-color: #fff;
     color: #333
     border-color: #bcbcbc;
@@ -483,7 +535,8 @@ h4.title{
 }
 
 #modal-panel .modal-title{
-	font-family: 'vistaSansOT_bold', sans-serif!important;
+    /*font-family: 'vistaSansOT_bold', sans-serif!important;*/
+    font-family: 'condate_bold', Arial, Sans-serif;
     text-align: center;
     font-size: x-large;
    /*color #333;*/
@@ -496,17 +549,20 @@ h4.title{
 #right-panel .close {
     left: 10px!important;
     position: absolute;
-    font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'condate_light', Arial, Sans-serif;
     font-size: 19px;
     width : 300px;
 }
 
 .popup-content {
-    font-family: 'vistaSansOT_regular', Arial, Sans-serif!important;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif!important;*/
+    font-family: 'condate_light', Arial, Sans-serif;
 }
 
 .rm-popup-title-feature  {
-    font-family: 'vistaSansOT_bold', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_bold', Arial, Sans-serif;*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
     /*color: #032E46;*/
     color : var(--titlecolor);
     font-size:23px;
@@ -516,14 +572,16 @@ h4.title{
 }
 
 .rm-popup-headerLevel2{
-    font-family: 'vistaSansOT_bold';
+    /*font-family: 'vistaSansOT_bold';*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
     font-size: 15px;
     color: #555;
     text-decoration: underline;
 }
 
 .rm-popup-title-level2{
-    font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_medium', Arial, Sans-serif;
     font-size: 18px;
     //color: #032E46;
     color : var(--titlecolor);
@@ -533,20 +591,22 @@ h4.title{
 }
 
 .rm-popup-subtitle-feature {
-    font-family: 'vistaSansOT_light', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_light', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
     color:#555;
     font-size:11px;
     font-style:italic;
 }
 
 .rm-popup-label {
-    font-family: 'vistaSansOT_bold', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_bold', Arial, Sans-serif;*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
     color:#555;
 }
 
 .rm-popup-text-feature{
-    /*font-family: 'vistaSansOT_light', Arial, Sans-serif;*/
-    font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
     color:#555;
     /*color: #863030;*/
     font-size:13px;
@@ -555,7 +615,8 @@ h4.title{
 
 
 .rm-popup-alerte-legende{
-    font-family:"VistaSansOT_italic";
+    /*font-family:"VistaSansOT_italic";*/
+    font-family: 'DMSans_italic', Arial, Sans-serif;
     font-size:10px;
 }
 
@@ -579,7 +640,7 @@ ul ul {
 
 #right-panel .carousel-inner {
     padding-left: 10px!important;
-    padding-right: 15px!important;
+    padding-right: 10px!important;
     /*padding-bottom:70px!important;*/
 }
 
@@ -625,15 +686,6 @@ ul ul {
     border-width: 0px 0px 0px 0px;
 }
 .popup-content .nav-tabs > li.active > a { background-color: #000000!important;}
-/*
-.popup-content .nav-tabs > li.active > a.background-not-def { background-color: #000000!important;}
-.popup-content .nav-tabs > li.active > a.background-goutte_vert { background-color: #8f9169!important;}
-.popup-content .nav-tabs > li.active > a.background-goutte_bleu { background-color: #33919d!important;}
-.popup-content .nav-tabs > li.active > a.background-goutte_vert-eau { background-color: #33c49d!important;}
-.popup-content .nav-tabs > li.active > a.background-goutte_violet { background-color: #bb3da2!important;}
-.popup-content .nav-tabs > li.active > a.background-goutte_rouge { background-color: #e45e52!important;}
-.popup-content .nav-tabs > li.active > a.background-goutte_orange { background-color: #f9a241!important;}
-*/
 
 /* li.a.fa */
 .popup-content .nav-tabs > li > a > .fa {
@@ -641,13 +693,7 @@ ul ul {
     opacity: 0.55!important;
 }
 
-/*.popup-content .nav-tabs > li > a.background-goutte_vert > .fa { color: #8f9169!important;}
-.popup-content .nav-tabs > li > a.background-goutte_bleu > .fa { color: #33919d!important;}
-.popup-content .nav-tabs > li > a.background-goutte_vert-eau > .fa { color: #33c49d!important;}
-.popup-content .nav-tabs > li > a.background-goutte_violet > .fa { color: #bb3da2!important;}
-.popup-content .nav-tabs > li > a.background-goutte_rouge > .fa { color: #e45e52!important;}
-.popup-content .nav-tabs > li > a.background-goutte_orange > .fa { color: #f9a241!important;}
-*/
+
 .popup-content .nav-tabs > li.active > a > .fa {
     color: white!important;
     opacity: 1!important;
@@ -668,7 +714,8 @@ ul ul {
 
 /***** images ****/
 .labelPictureEnlarge {
-    font-family:"VistaSansOT_light_italic","roboto_regular";
+    /*font-family:"VistaSansOT_light_italic","roboto_regular";*/
+    font-family: 'DMSans_italic', Arial, Sans-serif;
     text-align: center;
     font-size: 11px;
 }
@@ -685,7 +732,8 @@ ul ul {
     max-width: 100%;
 }
 .text-credit {
-    font-family:"vistaSansOT_bold";
+    /*font-family:"vistaSansOT_bold";*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
     color:#555;
     font-size:10px;
     padding-right: 10px;
@@ -745,13 +793,15 @@ ul ul {
 /* Tooltip measure */
 
 .tooltip2 {
-  background: var(--darkmain);
-  font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    background: var(--darkmain);
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
 }
 
 .tooltip-measure-static {
-  background-color: var(--darkmain);
-  font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    background-color: var(--darkmain);
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
 }
 
 .tooltip-measure:before,
@@ -768,7 +818,8 @@ ul ul {
     background-color: rgba(51, 51, 51, 0.95);
     padding: 8px 8px 8px;
     color: #fff;
-    font-family: "vistaSansOT_regular", Arial, Sans-serif;
+    /*font-family: "vistaSansOT_regular", Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
     font-size: 12px;
     letter-spacing: 1;
 }
@@ -795,7 +846,8 @@ ul ul {
 
 /* Custom-tooltip-infopanel */
 .mv-tooltip.tooltip-inner {
-    font-family: 'vistaSansOT_light', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_light', Arial, Sans-serif;*/
+    font-family: 'condate_light', Arial, Sans-serif;
     border: 1px solid #555;
     border-color: transparent;
     border-radius: 5px;
@@ -807,7 +859,8 @@ ul ul {
 
 
 .rm-tooltip-title {
-    font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'condate_light', Arial, Sans-serif;
     color: #FFFFFF;
 }
 
@@ -830,26 +883,30 @@ ul ul {
 /* Searchresult */
 
 #searchresults{
-	font-family:'vistaSansOT_regular',Arial, Sans-serif!important;
-	color: #555!important;
+    /*font-family:'vistaSansOT_regular',Arial, Sans-serif!important;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
+    color: #555!important;
 }
 
 ul#searchparameters{
-	font-family: 'vistaSansOT_regular',Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_regular',Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
 }
 
 /* Search toolbar */
 
 #searchresults li.list-group-item.disabled {
-	background-color: var(--darkmain);
-	border-color: var(--darkmain);
-	color: white!important;
-	font-family: 'vistaSansOT_bold', Arial, Sans-serif!important;
+    background-color: var(--darkmain);
+    border-color: var(--darkmain);
+    color: white!important;
+    /*font-family: 'vistaSansOT_bold', Arial, Sans-serif!important;*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
 }
 
 #searchresults li a:hover {
-	font-family: 'vistaSansOT_bold', Arial, Sans-serif!important;
-	color: #000000!important;
+    /*font-family: 'vistaSansOT_bold', Arial, Sans-serif!important;*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
+    color: #000000!important;
 }
 
 a:hover{
@@ -861,9 +918,10 @@ a:hover{
 }
 
 #parameterspanel .modal-header{
-	color: #333;
-	font-size: 13px;
-	font-family: 'vistaSansOT_regular', Arial, Sans-serif!important;
+    color: #333;
+    font-size: 13px;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif!important;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
 }
 
 .searchresults-title {
@@ -889,15 +947,18 @@ a:hover{
 
 /* Partager la carte*/
 #sharepanel{
-	font-family:'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family:'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
 }
 
 a#permalinklink{
-	font-family:'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family:'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
 }
 
 .modal-content{
-	font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
 }
 
 /*******************************
@@ -907,14 +968,15 @@ a#permalinklink{
 /* Help button */
 
 button.btn.btn-default.navbar-btn.mv-navbar-btn{
-	border-radius:50%;
-	width:34px;
-	height:34px;
-	min-width:34px;
-	border: 0px!important;
-	font-family: 'vistaSansOT_black', Arial, Sans-serif;
-	color:var(--darkmain);
-	font-size: 15px;
+    border-radius:50%;
+    width:34px;
+    height:34px;
+    min-width:34px;
+    border: 0px!important;
+    /*font-family: 'vistaSansOT_black', Arial, Sans-serif;*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
+    color:var(--darkmain);
+    font-size: 15px;
 }
 
 button.btn.btn-default.navbar-btn.mv-navbar-btn:hover{
@@ -928,8 +990,9 @@ button.btn.btn-default.navbar-btn.mv-navbar-btn:focus{
 /* Help panel */
 
 #help .modal-content{
-	font-family: 'vistaSansOT_regular', Arial, Sans-serif!important;
-	height: auto;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif!important;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
+    height: auto;
 }
 
 #help .nav-tabs{
@@ -957,26 +1020,30 @@ button.btn.btn-default.navbar-btn.mv-navbar-btn:focus{
 
 #help .modal-title{
     font-size: 25px;
-    font-family: 'vistaSansOT_bold', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_bold', Arial, Sans-serif;*/
+    font-family: 'condate_bold', Arial, Sans-serif;
     color: var(--darkmain);
 }
 
 #help .tab-pane h4{
-	font-family: 'vistaSansOT_bold', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_bold', Arial, Sans-serif;*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
     color: var(--darkmain);
     font-size: 22px;
     margin-top: 20px;
 }
 
 #help .tab-pane h5{
-	font-family: 'vistaSansOT_bold', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_bold', Arial, Sans-serif;*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
     color: var(--darkmain);
     font-size: 16px;
     margin-bottom: 2px;
 }
 
 #help .tab-pane h6{
-	font-family: 'vistaSansOT_bold', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_bold', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
     color: var(--darkmain);
     font-size: 14px;
     margin-bottom: 2px;
@@ -1001,11 +1068,13 @@ button.btn.btn-default.navbar-btn.mv-navbar-btn:focus{
 -------------CSS Fiche info GML
 ********************************/
 .gml-item-field-name {
-	font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
 }
 
 .gml-item-field-value{
-	font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'DMSans_regular', Arial, Sans-serif;
 }
 
 /*******************************
@@ -1030,7 +1099,8 @@ button.btn.btn-default.navbar-btn.mv-navbar-btn:focus{
 -------------EVOLUTION NB RESULTATS
 ********************************/
 #popup-number-results {
-    font-family: 'vistaSansOT_regular', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
+    font-family: 'condate_light', Arial, Sans-serif;
     width:100px;
     border: 1px solid #555;
     border-radius: 5px;

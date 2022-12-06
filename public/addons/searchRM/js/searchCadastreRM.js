@@ -40,10 +40,10 @@ var searchCadastreRM = (function () {
           parcelTag.show();
 
         $.getJSON(baseUrl_cadastre + 'communes', function(dataApiJson) {
-            //var htmlContent = '<option value="-1" disabled selected> rechercher la commune de la parcelle</option>';
-            var htmlContent = '';
+          //var htmlContent = '<option value="-1" disabled selected> rechercher la commune de la parcelle</option>';
+          var htmlContent = '';
             dataApiJson.forEach(function (data) {
-                htmlContent += '<option value="'+ data.idComm +'">'+ data.name +'</option>'
+              htmlContent += '<option value="'+ data.idComm +'">'+ data.name +'</option>'
             });
             $('#communeSearch').html(htmlContent);
             $('#communeSearch').select2({
@@ -52,6 +52,7 @@ var searchCadastreRM = (function () {
               dropdownAutoWidth: true,
               width: '210px',
             });
+
             $('#section').select2({
               placeholder: "section",
               allowClear: true,
@@ -64,13 +65,14 @@ var searchCadastreRM = (function () {
               dropdownAutoWidth: true,
               width: '75px',
             });
-            $(".sectionsList").prop("disabled", true);
+
+              $(".sectionsList").prop("disabled", true);
+              $('#communeSearch').val('0').trigger('change');
             $(".parcellesList").prop("disabled", true);
-            $('#communeSearch').val('0').trigger('change');
         });
 
-        $(document).on('change','#communeSearch', function (e) {
-          var codeCom = '';
+          $(document).on('change','#communeSearch', function (e) {
+            var codeCom = '';
             if (typeof e.currentTarget.selectedOptions[0] !== 'undefined') {
               codeCom = e.currentTarget.selectedOptions[0].value;
             }
@@ -80,25 +82,25 @@ var searchCadastreRM = (function () {
             $('.parcellesList').append('<option></option>');
             // Liste sections
             if (typeof codeCom !== 'undefined' && codeCom !== null && codeCom.trim() !== '') {
-                $.getJSON(baseUrl_cadastre + 'communes/'+ codeCom +'/sections', function(dataApiJson) {
-                  //var htmlContent = '<option value="-1" disabled selected> code section</option>';
-                  var htmlContent = '';
-                  dataApiJson.forEach(function (data) {
-                      htmlContent += '<option value="'+ data.idSect +'">'+ data.codSect +'</option>'
-                  });
-                  $('#section').html(htmlContent);
-                  $('#section').select2({
-                    placeholder: "section",
-                    allowClear: true,
-                    dropdownAutoWidth: true,
-                    width: '75px',
-                  });
-                  $(".sectionsList").prop("disabled", false);
-                  $(".parcellesList").prop("disabled", true);
-                  $(".sectionsList").val("-1").trigger('change');
+              $.getJSON(baseUrl_cadastre + 'communes/'+ codeCom +'/sections', function(dataApiJson) {
+                //var htmlContent = '<option value="-1" disabled selected> code section</option>';
+                var htmlContent = '';
+                dataApiJson.forEach(function (data) {
+                  htmlContent += '<option value="'+ data.idSect +'">'+ data.codSect +'</option>'
+                });
+                $('#section').html(htmlContent);
+                $('#section').select2({
+                  placeholder: "section",
+                  allowClear: true,
+                  dropdownAutoWidth: true,
+                  width: '75px',
+                });
+                $(".sectionsList").prop("disabled", false);
+                $(".parcellesList").prop("disabled", true);
+                $(".sectionsList").val("-1").trigger('change');
               });
             }
-        });
+          });
 
         $(document).on('change','#section', function (e) {
           var codeSection = '';
@@ -207,7 +209,6 @@ var searchCadastreRM = (function () {
             $('#parcelle').val(-1);
           }
         });*/
-
     }
 
     return {

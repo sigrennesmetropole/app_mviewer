@@ -121,14 +121,16 @@
 
 .title-feature {
     color: #032E46;
-    font-family:"vistaSansOT_bold";
+    /*font-family:"vistaSansOT_bold";*/
+    font-family: 'condate_medium', Arial, Sans-serif;
     font-size:23px;
     margin-bottom:0.25%;
     line-height:1;
     margin-top: 20px!important;
 }
 .text-feature{
-    font-family:"vistaSansOT_regular";
+    /*font-family:"vistaSansOT_regular";*/
+    font-family: 'DMSans_medium', Arial, Sans-serif;
     color:#555;
     font-size:14px;
 }
@@ -138,12 +140,14 @@
 }
 
 .rm-soustitre{
-    font-family:"vistaSansOT_bold";
+    /*font-family:"vistaSansOT_bold";*/
+    font-family: 'condate_medium', Arial, Sans-serif;
     color:rgb(230, 51, 76, 1);
     font-size:16px;
 }
 .text-actu{
-    font-family:"vistaSansOT_regular";
+    /*font-family:"vistaSansOT_regular";*/
+    font-family: 'condate_medium', Arial, Sans-serif;
     color:#555;
     font-size:14px;
     margin-top:10px;
@@ -168,7 +172,8 @@
 }
 
 .text-credit{
-    font-family:"vistaSansOT_bold";
+    /*font-family:"vistaSansOT_bold";*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
     color:#555;
     font-size:9px;
     padding-right: 10px;
@@ -196,7 +201,8 @@
 }
 
 .rm-msg-urbanisme{
-    font-family: 'vistaSansOT_bold', Arial, Sans-serif;
+    /*font-family: 'vistaSansOT_bold', Arial, Sans-serif;*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
     color:  var(--col_rennes2030)!important;
 }
 
@@ -210,18 +216,20 @@
     border-width: thin;
 }
 .rm-reperes{
-    font-family:"vistaSansOT_regular";
+    /*font-family:"vistaSansOT_regular";*/
+    font-family: 'DMSans_light', Arial, Sans-serif;
     color:#555;
     font-size:12px;
     padding-top: 5px;
 }
 .rm-clerepere{
-    font-family: "vistaSansOT_bold";
+    /*font-family: "vistaSansOT_bold";*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
 }
 
 a[href$=".pdf"],a[href^="http"] {
   color: var(--col_liens)!important;
-  font-weight: bold!important;
+  /*font-weight: bold!important;*/
   text-decoration: underline!important;
   text-decoration-style: dotted!important;
 }
@@ -234,17 +242,19 @@ a[href$=".pdf"]:hover,a[href^="http"]:hover{
 /* FENETRES MODALES */
 
 .modal-title{
-		font-family:"vistaSansOT_regular";
-		color:#555;
-		font-size:16px;
+    /*font-family:"vistaSansOT_regular";*/
+    font-family: 'DMSans_light', Arial, Sans-serif;
+    color:#555;
+    font-size:16px;
 }
 
 .modal-body{
-	color: #555;
-	font-family: "vistaSansOT_regular";
-	font-size: 12px;
-	text-align: justify;
-	padding-top: 0;
+    color: #555;
+    /*font-family: "vistaSansOT_regular";*/
+    font-family: 'DMSans_light', Arial, Sans-serif;
+    font-size: 12px;
+    text-align: justify;
+    padding-top: 0;
     height: 95%;
 }
 
