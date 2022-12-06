@@ -66,6 +66,9 @@ function addBaseLayer() {
     
     //creation de la baselayer dans le mviewer
     mviewer.createBaseLayer(ortho);
+    if (baselayerControlStyle === "gallery") {
+        $("#basemapslist").append(Mustache.render(mviewer.templates.backgroundLayerControlGallery, bl));
+    }
     if (ortho.visible){// activer la couche si besoin
         mviewer.setBaseLayer(ortho.id);
     } 
