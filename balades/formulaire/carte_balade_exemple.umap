@@ -1,6 +1,6 @@
 {
   "type": "umap",
-  "uri": "https://umap.openstreetmap.fr/fr/map/new/#16/48.1102/-1.6796",
+  "uri": "https://umap.openstreetmap.fr/fr/map/new/#15/48.1110/-1.6758",
   "properties": {
     "easing": true,
     "embedControl": true,
@@ -11,6 +11,7 @@
     "slideshow": {},
     "captionBar": false,
     "limitBounds": {},
+    "tilelayer": {},
     "licence": "",
     "description": "",
     "name": "Carte sans nom",
@@ -19,13 +20,13 @@
     "moreControl": true,
     "scaleControl": true,
     "scrollWheelZoom": true,
-    "zoom": 16
+    "zoom": 15
   },
   "geometry": {
     "type": "Point",
     "coordinates": [
-      -1.6795992851257326,
-      48.11020359339636
+      -1.673870086669922,
+      48.10893561280767
     ]
   },
   "layers": [
@@ -37,7 +38,8 @@
           "properties": {
             "id": "1",
             "couleur": "#3498db",
-            "label": "Balade d'exemple"
+            "name": "Balade d'exemple",
+            "description": "description de la balade"
           },
           "geometry": {
             "type": "LineString",
@@ -81,7 +83,7 @@
       "_umap_options": {
         "displayOnLoad": true,
         "browsable": true,
-        "id": 2362227,
+        "id": 2533657,
         "remoteData": {},
         "name": "Balades"
       }
@@ -92,26 +94,11 @@
         {
           "type": "Feature",
           "properties": {
-            "id": "1",
-            "idbalade": "1",
-            "label": "Premier point",
-            "rang": "1"
-          },
-          "geometry": {
-            "type": "Point",
-            "coordinates": [
-              -1.680286,
-              48.114652
-            ]
-          }
-        },
-        {
-          "type": "Feature",
-          "properties": {
             "id": "2",
             "idbalade": "1",
-            "label": "Deuxième point",
-            "rang": "2"
+            "rang": "2",
+            "name": "Deuxième point",
+            "description": "description du deuxième point"
           },
           "geometry": {
             "type": "Point",
@@ -124,10 +111,28 @@
         {
           "type": "Feature",
           "properties": {
+            "id": "1",
+            "idbalade": "1",
+            "rang": "1",
+            "name": "Premier point",
+            "description": "description du premier point"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -1.680286,
+              48.114652
+            ]
+          }
+        },
+        {
+          "type": "Feature",
+          "properties": {
             "id": "3",
             "idbalade": "1",
-            "label": "troisième point",
-            "rang": "3"
+            "rang": "3",
+            "name": "troisième point",
+            "description": "description du troisième point"
           },
           "geometry": {
             "type": "Point",
@@ -143,7 +148,7 @@
         "browsable": true,
         "remoteData": {},
         "name": "Points",
-        "id": 2362228
+        "id": 2533658
       }
     }
   ]

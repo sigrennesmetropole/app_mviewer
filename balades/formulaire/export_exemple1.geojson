@@ -6,7 +6,8 @@
       "properties": {
         "id": "1",
         "couleur": "#3498db",
-        "label": "Balade d'exemple"
+        "name": "Balade d'exemple",
+        "description": "description de la balade"
       },
       "geometry": {
         "type": "LineString",
@@ -49,26 +50,11 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "3",
-        "idbalade": "1",
-        "label": "troisième point",
-        "rang": "3"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.67666,
-          48.105884
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": "2",
         "idbalade": "1",
-        "label": "Deuxième point",
-        "rang": "2"
+        "rang": "2",
+        "name": "Deuxième point",
+        "description": "description du deuxième point"
       },
       "geometry": {
         "type": "Point",
@@ -83,14 +69,32 @@
       "properties": {
         "id": "1",
         "idbalade": "1",
-        "label": "Premier point",
-        "rang": "1"
+        "rang": "1",
+        "name": "Premier point",
+        "description": "description du premier point"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -1.680286,
           48.114652
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "3",
+        "idbalade": "1",
+        "rang": "3",
+        "name": "troisième point",
+        "description": "description du troisième point"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.67666,
+          48.105884
         ]
       }
     }

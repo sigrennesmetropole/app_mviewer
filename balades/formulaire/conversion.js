@@ -43,8 +43,19 @@ function conversionJSON(objetTexte){
         }
             
     });
-    console.log(objetConvertPoints);
-    console.log(objetConvertLignes);
+    // console.log(objetConvertPoints);
+    // console.log(objetConvertLignes);
+
+    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(objetConvertPoints));
+    var dlAnchorElem = document.getElementById('downloadAnchorElem');
+    dlAnchorElem.setAttribute("href", dataStr);
+    dlAnchorElem.setAttribute("download", "points_test.geojson");
+    dlAnchorElem.click();
+    var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(objetConvertLignes));
+    var dlAnchorElem = document.getElementById('downloadAnchorElem');
+    dlAnchorElem.setAttribute("href", dataStr);
+    dlAnchorElem.setAttribute("download", "balades_test.geojson");
+    dlAnchorElem.click();
 }
 
 function convertCoordinates4326to3857(lon, lat) {
