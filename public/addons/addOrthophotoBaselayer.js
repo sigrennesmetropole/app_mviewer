@@ -6,6 +6,7 @@
 var _layer = "raster:ortho2021";
 var _metadata = "https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/b5b958de-9407-4822-9ca5-abb1c57659b7";
 
+
 // construction du baselayer
 var ortho = {
     id:"orthophoto",
@@ -28,6 +29,20 @@ ortho.attribution = "&lt;a href=&quot;" + _metadata + "&quot; target=&quot;_blan
 
 function isBLVisible(conf){
     if (conf.visible && conf.visible=="true"){return true;} else {return false;}
+}
+
+function showorthothumb() {
+    $("#backgroundlayersbtn").css("background-image", 'url("'+ortho.thumbgallery+'")');
+    if (!configuration.getConfiguration().mobile) {
+        $("#backgroundlayersbtn").attr("data-original-title", ortho.label);
+        $("#backgroundlayersbtn").tooltip('hide').tooltip({
+            placement: 'top',
+            trigger: 'hover',
+            html: true,
+            container: 'body',
+            template: mviewer.templates.tooltip
+        });
+    }
 }
 
 function addBaseLayer() {
@@ -66,12 +81,22 @@ function addBaseLayer() {
     
     //creation de la baselayer dans le mviewer
     mviewer.createBaseLayer(ortho);
-    if (baselayerControlStyle === "gallery") {
-        $("#basemapslist").append(Mustache.render(mviewer.templates.backgroundLayerControlGallery, bl));
-    }
+    // ajout du basemap dans le composant de sélection de fond de plan
+    if (configuration.getConfiguration().baselayers.style === "gallery") {
+        $("#basemapslist").append(Mustache.render(mviewer.templates.backgroundLayerControlGallery, ortho));
+        if (!ortho.visible){
+            var elem = $("#"+ortho.id+"_btn").parent();
+            elem.addClass("no-active");
+            mviewer.bgtoogle();
+        }
+    } 
     if (ortho.visible){// activer la couche si besoin
         mviewer.setBaseLayer(ortho.id);
-    } 
+    } else {
+        if (l_bl.length == 2 ){ // ie orthophoto est le fond de plan proposé en second
+            showorthothumb();
+        }
+    }
 }
 
 addBaseLayer();
