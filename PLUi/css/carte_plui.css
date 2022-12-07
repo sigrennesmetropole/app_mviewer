@@ -8,10 +8,11 @@
 
 
 #lienNru {
-		border: none;
-    	background-color: #fff;
-		font-family: 'vistaSansOT_bold', Arial, Sans-serif;
-	}
+    border: none;
+    background-color: #fff;
+    /*font-family: 'vistaSansOT_bold', Arial, Sans-serif;*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
+}
 
 .plui-popup-text-feature{
 	height: 70%;
@@ -25,20 +26,21 @@
 	list-style: none;
 	}
 
-	.plui-containerBottom {
-		position: fixed;
-		bottom: 19px!important;
-		background-color: #ffffff;
-		padding-top: 7%;
-	  }
+.plui-containerBottom {
+    position: fixed;
+    bottom: 19px!important;
+    background-color: #ffffff;
+    padding-top: 7%;
+}
 
-	  .plui-containerBottomOap {
-		position: fixed;
-		bottom: 44px!important;
-		background-color: #ffffff;
-		padding-top: 7%;
-	  }
+.plui-containerBottomOap {
+    position: fixed;
+    bottom: 44px!important;
+    background-color: #ffffff;
+    padding-top: 7%;
+}
 
-	  .plui-listeRefs {
-		font-family: 'VistaSansOT_regular','roboto_regular', Arial, Sans-serif;;
-	  }
+.plui-listeRefs {
+    /*font-family: 'VistaSansOT_regular','roboto_regular', Arial, Sans-serif;;*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
+    }

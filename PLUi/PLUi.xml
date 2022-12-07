@@ -21,7 +21,6 @@
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-176970.72,6128725.98" zoom="11" />
     <baselayers style="default">
         <baselayer visible="true" id="PLUi" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Fond de plan PLUi" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:plui_fond_plan" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;"  ></baselayer>
-        <baselayer visible="false" id="ortho2020" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2020" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;"  ></baselayer>
     </baselayers>
 
     <extensions>
@@ -29,6 +28,7 @@
            configFile="/apps/public/addons/searchRM/conf/searchConf_CadastreRVAQueryable.json"/>
         <extension type="component" id="GUICustom" path="apps/public/addons" />
         <extension type="component" id="tutorial" path="apps/public/addons" configFile="apps/PLUi/addons/didacticielPlui.json"/>
+        <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
     </extensions>
 
     <themes mini="true">

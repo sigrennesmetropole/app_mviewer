@@ -3,7 +3,9 @@
   top: 120px;
   right: 330px;
   position: fixed;
-  font-family: VistaSansOT_regular, Arial;
+  /*font-family: VistaSansOT_regular, Arial;*/
+  font-family: 'DMSans_medium', Arial, Sans-serif;
+  font-size: 11px;
 };
 #fieldWrapper{
   border: 1px solid #aaa;
@@ -58,7 +60,8 @@ searchresults-title .close:hover{
   top: 110px;
   right: 100px;
   display: flex;
-  font-family: VistaSansOT_regular, Arial;
+  /*font-family: VistaSansOT_regular, Arial;*/
+  font-family: 'DMSans_medium', Arial, Sans-serif;
 }
 
 .parcelSelectorsContainer {
@@ -236,7 +239,9 @@ searchresults-title .close:hover{
   /* margin-right: 15px; */
   top: 60px;
   position: fixed;
-  font-family: VistaSansOT_regular, Arial;
+  /*font-family: VistaSansOT_regular, Arial;*/
+  font-family: 'DMSans_medium', Arial, Sans-serif;
+  font-size: 11px;
 };
 
 #searchresults a.disabled {
