@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire</title>
+    <title>Création d'une balade</title>
     <link rel="stylesheet" href="tailwind.min.css">
     <script src="https://cdn.jsdelivr.net/npm/ol@v7.1.0/dist/ol.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.1.0/ol.css">
@@ -43,7 +43,7 @@
         <main>
             <div class="grid grid-cols-2">
                 <div class="col-span-1">
-                    <div class="mx-auto py-6 px-8">
+                    <div class="mx-auto py-3 px-8">
                         <div class="col-span-3">
                             <label class="block text-sm font-medium text-gray-800">Fichier GeoJSON</label>
                             <div
@@ -56,7 +56,7 @@
                                             <input id="geojson" name="geojson" type="file" class="sr-only">
                                         </label>
                                     </div>
-                                    <p class="text-xs text-gray-500">GeoJSON uniquement</p>
+                                    <p class="text-xs text-gray-500 filename">GeoJSON uniquement</p>
                                 </div>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                     <div id="message"></div>
                     <a id="downloadAnchorElem" style="display:none"></a>
 
-                    <div class="bg-white shadow py-3 mx-8 rounded-md">
+                    <div class="bg-white shadow py-3 mx-8 rounded-md Panneauconfiguration hidden">
                         <h3 class="ml-4 text-lg font-medium leading-6 text-gray-900">Configuration de la carte</h3>
                         <div class="mx-5 mt-1">
                             <form class="space-y-6" action="#" method="POST">
@@ -73,7 +73,7 @@
                                         <label for="titre"
                                             class="block mb-2 text-sm font-medium text-gray-800 dark:text-white">Titre
                                             de la carte</label>
-                                        <input type="titre" id="titre"
+                                        <input type="text" id="titre" name="titre"
                                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:outline-none"
                                             placeholder="Titre de la carte" required>
                                     </div>
@@ -81,133 +81,132 @@
                                         <label for="zoomDefaut"
                                             class="block text-sm font-medium text-gray-800 mb-2">Zoom par
                                             défaut</label>
-                                        <select id="zoomDefaut" name="zoomDefaut"
-                                            class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md">
-                                            <option>19</option>
-                                            <option selected>20</option>
-                                            <option>21</option>
-                                        </select>
+                                        <input type="number" id="zoomDefaut" name="zoomDefaut" value="12"
+                                            class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md" required>
                                     </div>
                                 </div>
-                            </form>
                         </div>
                     </div>
 
-                    <div class="bg-white shadow py-3 mx-8 rounded-md mt-4">
+                    <div class="bg-white shadow py-3 mx-8 rounded-md mt-4 Panneauconfiguration hidden">
                         <h3 class="ml-4 text-lg font-medium leading-6 text-gray-900">Configuration du tracé
                             des balades</h3>
                         <div class="mx-5 mt-1">
-                            <form class="space-y-6" action="#" method="POST">
-                                <div class="grid grid-cols-3">
-                                    <div class="mx-2 my-2">
-                                        <label for="attributIdBalade"
-                                            class="block text-sm font-medium text-gray-800 mb-2">Attribut ID de chaque
-                                            balade</label>
-                                        <select id="attributIdBalade" name="attributIdBalade"
-                                            class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md">
-                                            <option selected>Sélectionner dans la liste..</option>
-                                            <option>Idbalade</option>
-                                            <option>baladeId</option>
-                                        </select>
-                                    </div>
-                                    <div class="mx-2 my-2">
-                                        <label for="couleurBaladeDefaut"
-                                            class="block text-sm font-medium text-gray-800 mb-2">Couleur de la balade
-                                            par défaut</label>
-                                        <input type="color" id="couleurBaladeDefaut" name="couleurBaladeDefaut"
-                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full h-11 focus:outline-none"
-                                            required>
-                                    </div>
-                                    <div class="mx-2 my-2">
-                                        <label for="baladeDefautSelectionnes"
-                                            class="block text-sm font-medium text-gray-800 mb-2">Balade par défaut
-                                            sélectionnée</label>
-                                        <select id="baladeDefautSelectionnes" name="baladeDefautSelectionnes"
-                                            class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md">
-                                            <option selected>Paramètre optionnel..</option>
-                                            <option>1</option>
-                                            <option>2</option>
-                                        </select>
-                                    </div>
+                            <div class="grid grid-cols-3">
+                                <div class="mx-2 my-2">
+                                    <label for="attributIdBalade"
+                                        class="block text-sm font-medium text-gray-800 mb-2">Attribut ID de chaque
+                                        balade</label>
+                                    <select id="attributIdBalade" name="attributIdBalade"
+                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md" required>
+                                        <option value="" selected>Sélectionner dans la liste..</option>
+                                    </select>
                                 </div>
-                            </form>
+                                <div class="mx-2 my-2">
+                                    <label for="couleurBaladeDefaut"
+                                        class="block text-sm font-medium text-gray-800 mb-2">Couleur de la balade
+                                        par défaut</label>
+                                    <input type="color" id="couleurBaladeDefaut" name="couleurBaladeDefaut"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full h-11 focus:outline-none"
+                                        required>
+                                </div>
+                                <div class="mx-2 my-2">
+                                    <label for="baladeDefautSelectionnes"
+                                        class="block text-sm font-medium text-gray-800 mb-2">Balade par défaut
+                                        sélectionnée</label>
+                                    <select id="baladeDefautSelectionnes" name="baladeDefautSelectionnes"
+                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md">
+                                        <option value="" selected>Paramètre optionnel..</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="bg-white shadow py-3 mx-8 rounded-md mt-4">
+                    <div class="bg-white shadow py-3 mx-8 rounded-md mt-4 Panneauconfiguration hidden">
                         <h3 class="ml-4 text-lg font-medium leading-6 text-gray-900">Configuration des points d'arrêts
                         </h3>
                         <div class="mx-5 mt-1">
-                            <form class="space-y-6" action="#" method="POST">
-                                <div class="grid grid-cols-3">
-                                    <div class="mx-2 my-2">
-                                        <label for="attributIdPoint"
-                                            class="block text-sm font-medium text-gray-800 mb-2">Attribut ID de chaque
-                                            point</label>
-                                        <select id="attributIdPoint" name="attributIdPoint"
-                                            class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md">
-                                            <option selected>Sélectionner dans la liste..</option>
-                                            <option>Idpoint</option>
-                                            <option>pointId</option>
-                                        </select>
-                                    </div>
-                                    <div class="mx-2 my-2">
-                                        <label for="attributRang"
-                                            class="block text-sm font-medium text-gray-800 mb-2">Attribut rang de chaque
-                                            point</label>
-                                        <select id="attributRang" name="attributRang"
-                                            class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md">
-                                            <option selected>Sélectionner dans la liste..</option>
-                                            <option>Randpoint</option>
-                                            <option>pointRand</option>
-                                        </select>
-                                    </div>
-                                    <div class="mx-2 my-2">
-                                        <label for="affichagePointNonSelect"
-                                            class="block text-sm font-medium text-gray-800 mb-2">Affichage des points
-                                            non séléctionnés</label>
-                                        <select id="affichagePointNonSelect" name="affichagePointNonSelect"
-                                            class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md">
-                                            <option selected>Oui</option>
-                                            <option>Non</option>
-                                        </select>
-                                    </div>
+                            <div class="grid grid-cols-3">
+                                <div class="mx-2 my-2">
+                                    <label for="attributIdPoint"
+                                        class="block text-sm font-medium text-gray-800 mb-2">Attribut ID correspondant à la balade</label>
+                                    <select id="attributIdPoint" name="attributIdPoint"
+                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md" required>
+                                        <option value="" selected>Sélectionner dans la liste..</option>
+                                        <option>Idpoint</option>
+                                        <option>pointId</option>
+                                    </select>
                                 </div>
-                            </form>
+                                <div class="mx-2 my-2">
+                                    <label for="attributRang"
+                                        class="block text-sm font-medium text-gray-800 mb-2">Attribut rang de chaque
+                                        point</label>
+                                    <select id="attributRang" name="attributRang"
+                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md" required>
+                                        <option value="" selected>Sélectionner dans la liste..</option>
+                                        <option>Randpoint</option>
+                                        <option>pointRand</option>
+                                    </select>
+                                </div>
+                                <div class="mx-2 my-2">
+                                    <label for="affichagePointNonSelect"
+                                        class="block text-sm font-medium text-gray-800 mb-2">Affichage des points
+                                        non séléctionnés</label>
+                                    <select id="affichagePointNonSelect" name="affichagePointNonSelect"
+                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md" required>
+                                        <option selected>Oui</option>
+                                        <option>Non</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="bg-white shadow py-3 mx-8 rounded-md mt-4">
+                    <div class="bg-white shadow py-3 mx-8 rounded-md mt-4 Panneauconfiguration hidden">
                         <h3 class="ml-4 text-lg font-medium leading-6 text-gray-900">Configuration d'une balade active
                         </h3>
                         <div class="mx-5 mt-1">
-                            <form class="space-y-6" action="#" method="POST">
-                                <div class="grid grid-cols-3">
-                                    <div class="mx-2 my-2">
-                                        <label for="zoomBalade"
-                                            class="block text-sm font-medium text-gray-800 mb-2">Zoom par
-                                            défaut</label>
-                                        <select id="zoomBalade" name="zoomBalade"
-                                            class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md">
-                                            <option>14</option>
-                                            <option selected>15</option>
-                                            <option>16</option>
-                                        </select>
-                                    </div>
-                                    <div class="mx-2 my-2">
-                                        <label for="couleurPointActif"
-                                            class="block text-sm font-medium text-gray-800 mb-2">Couleur du point actif</label>
-                                        <input type="color" id="couleurPointActif" name="couleurPointActif"
-                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full h-11 focus:outline-none"
-                                            required>
-                                    </div>
+                            <div class="grid grid-cols-3">
+                                <div class="mx-2 my-2">
+                                    <label for="zoomBalade" class="block text-sm font-medium text-gray-800 mb-2">Zoom
+                                        par
+                                        défaut</label>
+                                    <select id="zoomBalade" name="zoomBalade"
+                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md" required>
+                                        <option>14</option>
+                                        <option selected>15</option>
+                                        <option>16</option>
+                                    </select>
                                 </div>
-                            </form>
+                                <div class="mx-2 my-2">
+                                    <label for="couleurPointActif"
+                                        class="block text-sm font-medium text-gray-800 mb-2">Couleur du point
+                                        actif</label>
+                                    <input type="color" id="couleurPointActif" name="couleurPointActif"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full h-11 focus:outline-none"
+                                        required>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="mx-8 mt-4 flex justify-center boutonEnvoyer hidden">
+                        <button type="submit"
+                            class="inline-flex items-center px-3 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none">
+                            <svg class="w-10 mr-4" xmlns="http://www.w3.org/2000/svg" style="fill: white" height="48"
+                                width="48">
+                                <path d="M6 40V8l38 16Zm3-4.65L36.2 24 9 12.5v8.4L21.1 24 9 27Zm0 0V12.5 27Z" />
+                            </svg>
+                            Envoyer le formulaire
+                        </button>
+                        </form>
                     </div>
                 </div>
                 <div class="col-span-1">
-                    <div id="map" class="h-5/6 py-6 mx-8 rounded-md"></div>
+                    <div id="map" class="h-5/6 py-6 mx-8 rounded-m hidden"></div>
                 </div>
             </div>
         </main>
