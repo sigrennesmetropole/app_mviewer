@@ -11,6 +11,43 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.1.0/ol.css">
 </head>
 
+<div class="fixed z-10 inset-0 overflow-y-auto hidden" id="confirmation-modal" aria-labelledby="modal-title"
+    role="dialog" aria-modal="true">
+    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+        <div
+            class="relative inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+            <div class="flex items-start">
+                <div
+                    class="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100">
+                    <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                </div>
+                <div class="mt-3 text-center text-left">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900 -ml-4" id="modal-title">Confirmation d'envoi du
+                        formulaire</h3>
+                    <div class="mt-2">
+                        <p class="text-sm text-gray-500 ml-4">Étes-vous sûr d'envoyer le formulaire à nos agents ?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 flex gap-4">
+                <button type="button" id="annulerConfirm"
+                    class="w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-2 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50">Annuler</button>
+                <button type="button" id="envoyerFormulaireConfirm"
+                    class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-2 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700">Envoyer
+                    le formulaire</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <body class="h-full">
     <div class="min-h-full">
         <nav class="bg-gray-800">
@@ -61,13 +98,15 @@
                             </div>
                         </div>
                     </div>
-                    <div id="message"></div>
+                    <div id="message"
+                        class="mx-auto w-3/4 py-3 rounded-md bg-red-100 text-sm font-medium text-red-800 hidden text-center">
+                    </div>
                     <a id="downloadAnchorElem" style="display:none"></a>
 
                     <div class="bg-white shadow py-3 mx-8 rounded-md Panneauconfiguration hidden">
                         <h3 class="ml-4 text-lg font-medium leading-6 text-gray-900">Configuration de la carte</h3>
                         <div class="mx-5 mt-1">
-                            <form class="space-y-6" action="#" method="POST">
+                            <form class="space-y-6" id="form" action="#" method="POST">
                                 <div class="grid grid-cols-4">
                                     <div class="mx-2 my-2 col-span-2">
                                         <label for="titre"
@@ -81,8 +120,9 @@
                                         <label for="zoomDefaut"
                                             class="block text-sm font-medium text-gray-800 mb-2">Zoom par
                                             défaut</label>
-                                        <input type="number" id="zoomDefaut" name="zoomDefaut" value="12"
-                                            class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md" required>
+                                        <input type="number" id="zoomDefaut" name="zoomDefaut" value="12" step="0.01"
+                                            class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md"
+                                            required>
                                     </div>
                                 </div>
                         </div>
@@ -98,14 +138,15 @@
                                         class="block text-sm font-medium text-gray-800 mb-2">Attribut ID de chaque
                                         balade</label>
                                     <select id="attributIdBalade" name="attributIdBalade"
-                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md" required>
+                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md"
+                                        required>
                                         <option value="" selected>Sélectionner dans la liste..</option>
                                     </select>
                                 </div>
                                 <div class="mx-2 my-2">
                                     <label for="couleurBaladeDefaut"
-                                        class="block text-sm font-medium text-gray-800 mb-2">Couleur de la balade
-                                        par défaut</label>
+                                        class="block text-sm font-medium text-gray-800 mb-2">Couleur par défaut de la
+                                        balade</label>
                                     <input type="color" id="couleurBaladeDefaut" name="couleurBaladeDefaut"
                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full h-11 focus:outline-none"
                                         required>
@@ -132,9 +173,11 @@
                             <div class="grid grid-cols-3">
                                 <div class="mx-2 my-2">
                                     <label for="attributIdPoint"
-                                        class="block text-sm font-medium text-gray-800 mb-2">Attribut ID correspondant à la balade</label>
+                                        class="block text-sm font-medium text-gray-800 mb-2">Attribut ID correspondant à
+                                        la balade</label>
                                     <select id="attributIdPoint" name="attributIdPoint"
-                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md" required>
+                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md"
+                                        required>
                                         <option value="" selected>Sélectionner dans la liste..</option>
                                         <option>Idpoint</option>
                                         <option>pointId</option>
@@ -145,7 +188,8 @@
                                         class="block text-sm font-medium text-gray-800 mb-2">Attribut rang de chaque
                                         point</label>
                                     <select id="attributRang" name="attributRang"
-                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md" required>
+                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md"
+                                        required>
                                         <option value="" selected>Sélectionner dans la liste..</option>
                                         <option>Randpoint</option>
                                         <option>pointRand</option>
@@ -156,7 +200,8 @@
                                         class="block text-sm font-medium text-gray-800 mb-2">Affichage des points
                                         non séléctionnés</label>
                                     <select id="affichagePointNonSelect" name="affichagePointNonSelect"
-                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md" required>
+                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md"
+                                        required>
                                         <option selected>Oui</option>
                                         <option>Non</option>
                                     </select>
@@ -175,10 +220,17 @@
                                         par
                                         défaut</label>
                                     <select id="zoomBalade" name="zoomBalade"
-                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md" required>
+                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md"
+                                        required>
                                         <option>14</option>
-                                        <option selected>15</option>
-                                        <option>16</option>
+                                        <option>14.5</option>
+                                        <option>15</option>
+                                        <option>15.5</option>
+                                        <option selected>16</option>
+                                        <option>16.5</option>
+                                        <option>17</option>
+                                        <option>17.5</option>
+                                        <option>18</option>
                                     </select>
                                 </div>
                                 <div class="mx-2 my-2">
@@ -194,7 +246,8 @@
                     </div>
 
                     <div class="mx-8 mt-4 flex justify-center boutonEnvoyer hidden">
-                        <button type="submit"
+                        <!-- type submit button -->
+                        <button type="button" id="boutonEnvoyer"
                             class="inline-flex items-center px-3 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none">
                             <svg class="w-10 mr-4" xmlns="http://www.w3.org/2000/svg" style="fill: white" height="48"
                                 width="48">
