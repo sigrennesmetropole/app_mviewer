@@ -264,6 +264,18 @@ var matrixset = "EPSG:3857";
 var map = new ol.Map({
     target: 'map',
     layers: [
+        /* new ol.layer.Tile({
+            source: new ol.source.WMTS({
+                attributions: "&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;",
+                url: 'https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?',
+                format: 'image/png',
+                layer: "ref_fonds:pvci_simple_gris",
+                projection: projection,
+                tileGrid: tileGrid,                
+                wrapX: false,
+                matrixSet: 'EPSG:3857'
+            })
+        }), */
         new ol.layer.Tile({
             source: new ol.source.WMTS({
                 url:  "https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?",
