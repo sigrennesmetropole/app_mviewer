@@ -1,6 +1,9 @@
 // Gestion du fichier GeoJSON fourni par l'utilisateur 
 var objetConvertPoints;
 var objetConvertLignes;
+var lastCenter;
+var lastZoom;
+var animationEnCours = false;
 document.getElementById('geojson').addEventListener('change', () => {
     const [file] = document.querySelector('#geojson').files;
     const reader = new FileReader();
@@ -13,10 +16,12 @@ document.getElementById('geojson').addEventListener('change', () => {
         if (file.name.split('.').at(-1) == 'geojson') {
             try {
                 [objetConvertPoints, objetConvertLignes] = conversionJSON(reader.result);
-                console.log(objetConvertPoints, objetConvertLignes);
+                //console.log(objetConvertPoints, objetConvertLignes);
+                lastZoom = map.getView().getZoom();
+                lastCenter = map.getView().getCenter();
 
                 // Affichage du formulaire et de la carte
-                const elements = document.querySelectorAll(".boutonEnvoyer, .Panneauconfiguration, #map");
+                const elements = document.querySelectorAll(".boutonEnvoyer, .Panneauconfiguration, .messageCarte, #map");
                 for (let element of elements) {
                     if (element.classList.contains("hidden"))
                         element.classList.remove("hidden");
@@ -129,8 +134,8 @@ document.getElementById('geojson').addEventListener('change', () => {
                 document.getElementById('message').style.display = 'none';
             } catch (e) {
                 document.getElementById('message').style.display = 'block';
-                document.getElementById('message').innerHTML = "Le fichier n'est pas valide.";
-                const elements = document.querySelectorAll(".boutonEnvoyer, .Panneauconfiguration, #map");
+                document.getElementById('message').innerHTML = "Les données du fichier ne sont pas valides.";
+                const elements = document.querySelectorAll(".boutonEnvoyer, .Panneauconfiguration, .messageCarte, #map");
                 for (let element of elements) {
                     element.classList.add("hidden");
                 }
@@ -138,7 +143,7 @@ document.getElementById('geojson').addEventListener('change', () => {
         } else {
             document.getElementById('message').style.display = 'block';
             document.getElementById('message').innerHTML = "Le fichier n'est pas sous le bon format GeoJSON.";
-            const elements = document.querySelectorAll(".boutonEnvoyer, .Panneauconfiguration, #map");
+            const elements = document.querySelectorAll(".boutonEnvoyer, .Panneauconfiguration, .messageCarte, #map");
             for (let element of elements) {
                 element.classList.add("hidden");
             }
@@ -181,19 +186,6 @@ function conversionJSON(objetTexte) {
         }
 
     });
-    // console.log(objetConvertPoints);
-    // console.log(objetConvertLignes);
-
-    // var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(objetConvertPoints));
-    // var dlAnchorElem = document.getElementById('downloadAnchorElem');
-    // dlAnchorElem.setAttribute("href", dataStr);
-    // dlAnchorElem.setAttribute("download", "points_test.json");
-    // dlAnchorElem.click();
-    // var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(objetConvertLignes));
-    // var dlAnchorElem = document.getElementById('downloadAnchorElem');
-    // dlAnchorElem.setAttribute("href", dataStr);
-    // dlAnchorElem.setAttribute("download", "balades_test.geojson");
-    // dlAnchorElem.click();
     return [objetConvertPoints, objetConvertLignes];
 }
 
@@ -205,16 +197,44 @@ function convertCoordinates4326to3857(lon, lat) {
 }
 
 // Initialisation de la carte
+const projection = new ol.proj.get('EPSG:3857');
+const tileSizePixels = 256;
+const tileSizeMtrs = ol.extent.getWidth(projection.getExtent()) / tileSizePixels;
+const matrixIds = [];
+const resolutions = [];
+for (let i = 0; i <= 14; i++) {
+    matrixIds[i] = i;
+    resolutions[i] = tileSizeMtrs / Math.pow(2, i);
+}
+const tileGrid = new ol.tilegrid.WMTS({
+    origin: ol.extent.getTopLeft(projection.getExtent()),
+    resolutions: resolutions,
+    matrixIds: matrixIds,
+});
+
 var map = new ol.Map({
     target: 'map',
     layers: [
+        /* new ol.layer.Tile({
+            source: new ol.source.WMTS({
+                attributions: "&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;",
+                url: 'https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?',
+                format: 'image/png',
+                layer: "ref_fonds:pvci_simple_gris",
+                projection: projection,
+                tileGrid: tileGrid,                
+                wrapX: false,
+                matrixSet: 'EPSG:3857'
+            })
+        }), */
         new ol.layer.Tile({
             source: new ol.source.OSM()
         })
     ],
     view: new ol.View({
         center: ol.proj.fromLonLat([-1.67, 48.11]),
-        zoom: 12
+        zoom: 12,
+        constrainResolution: true
     })
 });
 
@@ -226,6 +246,10 @@ document.getElementById('zoomDefaut').addEventListener('change', (e) => {
 map.on('moveend', function (e) {
     var newZoom = map.getView().getZoom();
     document.getElementById('zoomDefaut').value = Math.round(newZoom * 100) / 100;
+    if (animationEnCours == false) {
+        lastZoom = map.getView().getZoom();
+        lastCenter = map.getView().getCenter();
+    }
 });
 
 // Gestion de l'attribut ID de chaque point (ajustement de la couleur des pins)
@@ -331,13 +355,24 @@ document.querySelector("#zoomBalade").addEventListener('change', (e) => {
     const vectorLayerPoints = map.getLayers().getArray()[1];
     var featurePoint = vectorLayerPoints.getSource().getFeatures()[0];
     var coord = featurePoint.getGeometry().getCoordinates();
-    var lastCenter = map.getView().getCenter();
-    var lastZoom = map.getView().getZoom();
-    map.getView().animate({ zoom: e.target.value, center: coord, duration: 1000 });
-    setTimeout(function () {
-        map.getView().animate({ zoom: lastZoom, center: lastCenter, duration: 1000 });
-    }, 3000);
+    animationEnCours = true;
+    map.getView().animate({ zoom: e.target.value, center: coord, duration: 800 });
+
+    document.querySelector("#boutonRetourZoom").addEventListener('click', () => {
+        map.getView().animate({ zoom: lastZoom, center: lastCenter, duration: 800 }, () => { animationEnCours = false; });
+        document.querySelector("#boutonRetourZoom").classList.add("hidden");
+    });
+    document.querySelector("#boutonRetourZoom").classList.remove("hidden");
 });
+
+// Gestion du radiobouton couleurBaladeDefaut-non pour afficher l'éditeur de couleur
+document.querySelector("#couleurBaladeDefaut-non").addEventListener('click', () => {
+    document.querySelector("#couleurBaladeDefaut").classList.remove("hidden");
+});
+
+document.querySelector("#couleurBaladeDefaut-oui").addEventListener('click', () => {
+    document.querySelector("#couleurBaladeDefaut").classList.add("hidden");
+})
 
 // Gestion des fichiers de données 
 document.querySelector("#boutonEnvoyer").addEventListener('click', (e) => {
@@ -366,7 +401,6 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', (e
 
     fichiers["balades_" + uid + ".xml"] = "A faire"; // En JSON ? json to xml converter
     console.log(fichiers);
-
 });
 
 document.querySelector("#annulerConfirm").addEventListener('click', (e) => {
