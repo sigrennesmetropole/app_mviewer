@@ -182,6 +182,13 @@ document.getElementById('geojson').addEventListener('change', () => {
                 optionParametreOptionnel.innerText = "Sélectionnez une balade..";
                 SelectAttributBaladeDefaut.appendChild(optionParametreOptionnel);
                 document.getElementById('message').style.display = 'none';
+
+                var xml_titre = "test du titre avec l'apostrophe";
+                var xmlString = '<?xml version="1.0" encoding="UTF-8"?><config><application title="Application de test de l\'extension balades" logo="apps/public/img/logo/logo_mviewer_transp.png"/></config>';
+                var parser = new DOMParser();
+                var xmlDoc = parser.parseFromString(xmlString, "text/xml");
+                console.log(xmlDoc)
+                
             } catch (e) {
                 document.getElementById('message').style.display = 'block';
                 document.getElementById('message').innerHTML = "Les données du fichier ne sont pas valides.";
