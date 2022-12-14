@@ -146,6 +146,13 @@ document.getElementById('geojson').addEventListener('change', () => {
                 optionParametreOptionnel.innerText = "Sélectionnez une balade..";
                 SelectAttributBaladeDefaut.appendChild(optionParametreOptionnel);
                 document.getElementById('message').style.display = 'none';
+
+                var xml_titre = "test du titre avec l'apostrophe";
+                var xmlString = '<?xml version="1.0" encoding="UTF-8"?><config><application title="Application de test de l\'extension balades" logo="apps/public/img/logo/logo_mviewer_transp.png"/></config>';
+                var parser = new DOMParser();
+                var xmlDoc = parser.parseFromString(xmlString, "text/xml");
+                console.log(xmlDoc)
+                
             } catch (e) {
                 document.getElementById('message').style.display = 'block';
                 document.getElementById('message').innerHTML = "Les données du fichier ne sont pas valides.";
@@ -441,10 +448,19 @@ document.querySelector("#ouvertureBalade-oui").addEventListener('click', () => {
 document.querySelector("#couleurBaladeDefaut-non").addEventListener('click', () => {
     document.querySelector("#couleurBaladeDefaut").classList.remove("hidden");
 });
-
 document.querySelector("#couleurBaladeDefaut-oui").addEventListener('click', () => {
     document.querySelector("#couleurBaladeDefaut").classList.add("hidden");
-})
+});
+
+// Gestion du radiobouton ouvertureBalade-non pour afficher la liste des balades par défaut
+document.querySelector("#ouvertureBalade-non").addEventListener('click', () => {
+    document.querySelector("#baladeDefautSelectionnes").classList.add("hidden");
+    document.querySelector("#baladeDefautSelectionnes").removeAttribute("required");
+});
+document.querySelector("#ouvertureBalade-oui").addEventListener('click', () => {
+    document.querySelector("#baladeDefautSelectionnes").classList.remove("hidden");
+    document.querySelector("#baladeDefautSelectionnes").setAttribute("required", "");
+});
 
 // Gestion des fichiers de données 
 document.querySelector("#boutonEnvoyer").addEventListener('click', () => {
