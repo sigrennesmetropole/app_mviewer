@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.1.0/ol.css">
 </head>
 
-<div class="fixed z-10 inset-0 overflow-y-auto hidden" id="confirmation-modal" aria-labelledby="modal-title"
+<div class="fixed z-20 inset-0 overflow-y-auto hidden" id="confirmation-modal" aria-labelledby="modal-title"
     role="dialog" aria-modal="true">
     <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
@@ -50,7 +50,7 @@
 
 <body class="h-full">
     <div class="min-h-full">
-        <nav class="bg-gray-800">
+        <nav class="bg-gray-800 z-10 fixed w-full">
             <div class="mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
                     <div class="flex items-center">
@@ -70,7 +70,7 @@
                 </div>
             </div>
         </nav>
-        <header class="bg-white shadow-sm">
+        <header class="bg-white shadow-sm pt-16">
             <div class="mx-auto py-3 px-8 flex flex-col gap-2">
                 <h1 class="text-lg leading-6 font-semibold text-gray-900">Création d'une balade</h1>
                 <h2 class="text-lg leading-4 font-semibold text-red-600 mb-1">Avant d’utiliser ce formulaire, créer
@@ -145,9 +145,9 @@
                                 </div>
                                 <div class="mx-2 my-2 col-span-2">
                                     <label for="affichagePointNonSelect"
-                                        class="block text-sm font-medium text-gray-800 mb-2">Affichage des points
-                                        non séléctionnés*</label>
+                                        class="block text-sm font-medium text-gray-800 mb-2">Voulez-vous afficher les points des balades non séléctionnés ?*</label>
                                     <select id="affichagePointNonSelect" name="affichagePointNonSelect"
+                                        style="max-width: 200px;"
                                         class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md"
                                         required>
                                         <option selected>Oui</option>
@@ -179,18 +179,32 @@
                                                 style="max-width: 200px;">
                                         </div>
                                     </fieldset>
-
                                 </div>
-                                <div class="mx-2 my-2">
-                                    <label for="baladeDefautSelectionnes"
-                                        class="block text-sm font-medium text-gray-800 mb-2">Balade par défaut
-                                        sélectionnée</label>
-                                    <select id="baladeDefautSelectionnes" name="baladeDefautSelectionnes"
-                                        class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md">
-                                        <option value="" selected>Paramètre optionnel..</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                    </select>
+                                <div class="mx-2 my-2 col-span-3">
+                                    <p class="block text-sm font-medium text-gray-800 mb-2">Voulez-vous séléctionner une
+                                        balade lors de l'ouverture de la carte ?
+                                    </p>
+                                    <fieldset class="mt-4">
+                                        <div class="flex items-center space-x-10">
+                                            <div class="flex items-center my-3">
+                                                <input id="ouvertureBalade-oui" name="ouvertureBalade" type="radio"
+                                                    class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                                <label for="ouvertureBalade-oui"
+                                                    class="ml-3 block text-sm font-medium text-gray-700">Oui</label>
+                                            </div>
+                                            <div class="flex items-center my-3">
+                                                <input id="ouvertureBalade-non" name="ouvertureBalade" type="radio"
+                                                    class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300"
+                                                    checked>
+                                                <label for="ouvertureBalade-non"
+                                                    class="ml-3 block text-sm font-medium text-gray-700">Non</label>
+                                            </div>
+                                            <select id="baladeDefautSelectionnes" name="baladeDefautSelectionnes"
+                                                class="block hidden w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md">
+                                                <option value="" selected>Balade par défaut séléctionnée..</option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
                                 </div>
                             </div>
                         </div>
@@ -262,7 +276,7 @@
                     <div class="mx-8 mt-4 flex justify-center boutonEnvoyer hidden">
                         <!-- type submit button -->
                         <button type="button" id="boutonEnvoyer"
-                            class="inline-flex items-center px-3 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none">
+                            class="inline-flex items-center px-3 mb-4 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none">
                             <svg class="w-10 mr-4" xmlns="http://www.w3.org/2000/svg" style="fill: white" height="48"
                                 width="48">
                                 <path d="M6 40V8l38 16Zm3-4.65L36.2 24 9 12.5v8.4L21.1 24 9 27Zm0 0V12.5 27Z" />
@@ -273,7 +287,7 @@
                     </div>
                 </div>
                 <div class="col-span-1">
-                    <div class="flex flex-col bg-white shadow py-3 mx-8 mt-8 rounded-md messageCarte hidden">
+                    <div class="flex flex-col fixed bg-white shadow py-3 mx-8 mt-8 pr-4 rounded-md messageCarte hidden" style="width: 46%">
                         <h3 class="ml-4 font-medium text-gray-800">Le centre de la carte et le zoom sera pris en compte
                             pour l'affichage des balades
                         </h3>
@@ -282,7 +296,7 @@
                             Retour à la vue générale
                         </button>
                     </div>
-                    <div id="map" class="h-5/6 mx-8 rounded-m hidden">
+                    <div id="map" class="fixed h-4/6 mx-8 rounded-m hidden mt-28" style="width: 46%">
                         <svg class="inset-1/2 z-10 relative mr-48 -ml-6 -mb-6" style="fill: red;"
                             xmlns="http://www.w3.org/2000/svg" height="48" width="48">
                             <path d="M23.25 37V24.75H11v-1.5h12.25V11h1.5v12.25H37v1.5H24.75V37Z" />
