@@ -87,6 +87,8 @@ document.getElementById('geojson').addEventListener('change', () => {
                     const option = document.createElement("option");
                     option.value = attribut;
                     option.innerText = attribut;
+                    if (/id/i.test(attribut))
+                        option.selected = true;
                     SelectAttributIdBalade.appendChild(option);
                 });
 
@@ -103,8 +105,18 @@ document.getElementById('geojson').addEventListener('change', () => {
                     const option = document.createElement("option");
                     option.value = attribut;
                     option.innerText = attribut;
+                    if (/balade/i.test(attribut))
+                        option.selected = true;
                     SelectAttributIdPoint.appendChild(option);
                 });
+                // Essayer de mettre les couleurs des balades (donc les deux champs des id ont été auto détécté)
+                setColorOnMap();
+
+                // Sélectionner les radiobutton par défaut
+                document.querySelector("#couleurBaladeDefaut-oui").checked = true;
+                document.querySelector("#ouvertureBalade-non").checked = true;
+                document.querySelector("#couleurBaladeDefaut").classList.add("hidden");
+                document.querySelector("#baladeDefautSelectionnes").classList.add("hidden");
 
                 // Attribut Rang de chaque point
                 const SelectAttributRangPoint = document.querySelector('#attributRang');
@@ -119,6 +131,8 @@ document.getElementById('geojson').addEventListener('change', () => {
                     const option = document.createElement("option");
                     option.value = attribut;
                     option.innerText = attribut;
+                    if (/rang/i.test(attribut))
+                        option.selected = true;
                     SelectAttributRangPoint.appendChild(option);
                 });
 
@@ -129,9 +143,16 @@ document.getElementById('geojson').addEventListener('change', () => {
                 }
                 var optionParametreOptionnel = document.createElement("option");
                 optionParametreOptionnel.value = "";
-                optionParametreOptionnel.innerText = "Paramètre optionnel..";
+                optionParametreOptionnel.innerText = "Balade par défaut séléctionnée..";
                 SelectAttributBaladeDefaut.appendChild(optionParametreOptionnel);
                 document.getElementById('message').style.display = 'none';
+
+                var xml_titre = "test du titre avec l'apostrophe";
+                var xmlString = '<?xml version="1.0" encoding="UTF-8"?><config><application title="Application de test de l\'extension balades" logo="apps/public/img/logo/logo_mviewer_transp.png"/></config>';
+                var parser = new DOMParser();
+                var xmlDoc = parser.parseFromString(xmlString, "text/xml");
+                console.log(xmlDoc)
+                
             } catch (e) {
                 document.getElementById('message').style.display = 'block';
                 document.getElementById('message').innerHTML = "Les données du fichier ne sont pas valides.";
@@ -253,52 +274,54 @@ map.on('moveend', function (e) {
 });
 
 // Gestion de l'attribut ID de chaque point (ajustement de la couleur des pins)
+function setColorOnMap() {
+    // changer la couleur des pins en fonction de la balade 
+    const vectorLayerPoints = map.getLayers().getArray()[1];
+    try {
+        vectorLayerPoints.getSource().forEachFeature(feature => {
+            // récuperer l'entité lineaire correspondante à la balade
+            var idBalade = feature.get("values")[document.querySelector("#attributIdPoint").value];
+            var idNameBalade = document.querySelector("#attributIdBalade").value;
+            var couleurBalade = map.getLayers().getArray()[2].getSource().getFeatures().find(feature => feature.get("values")[idNameBalade] == idBalade).get("values").couleur;
+            const pointStyle = new ol.style.Style({
+                image: new ol.style.Icon({
+                    anchor: [0.5, 1],
+                    src: "librairies/pin.svg",
+                    color: couleurBalade
+                })
+            });
+            feature.setStyle(pointStyle);
+        });
+        couleurPointActif();
+        couleurBaladeDefaut();
+    } catch (error) {
+        vectorLayerPoints.getSource().forEachFeature(feature => {
+            // récuperer l'entité lineaire correspondante à la balade
+            const pointStyle = new ol.style.Style({
+                image: new ol.style.Icon({
+                    anchor: [0.5, 1],
+                    src: "librairies/pin.svg",
+                    color: "black"
+                })
+            });
+            feature.setStyle(pointStyle);
+        });
+    }
+}
+
 document.querySelectorAll("#attributIdPoint, #attributIdBalade").forEach(element => {
-    element.addEventListener('change', (e) => {
-        // changer la couleur des pins en fonction de la balade 
-        const vectorLayerPoints = map.getLayers().getArray()[1];
-        try {
-            vectorLayerPoints.getSource().forEachFeature(feature => {
-                // récuperer l'entité lineaire correspondante à la balade
-                var idBalade = feature.get("values")[document.querySelector("#attributIdPoint").value];
-                var idNameBalade = document.querySelector("#attributIdBalade").value;
-                var couleurBalade = map.getLayers().getArray()[2].getSource().getFeatures().find(feature => feature.get("values")[idNameBalade] == idBalade).get("values").couleur;
-                const pointStyle = new ol.style.Style({
-                    image: new ol.style.Icon({
-                        anchor: [0.5, 1],
-                        src: "librairies/pin.svg",
-                        color: couleurBalade
-                    })
-                });
-                feature.setStyle(pointStyle);
-            });
-            couleurPointActif();
-            couleurBaladeDefaut();
-        } catch (error) {
-            vectorLayerPoints.getSource().forEachFeature(feature => {
-                // récuperer l'entité lineaire correspondante à la balade
-                const pointStyle = new ol.style.Style({
-                    image: new ol.style.Icon({
-                        anchor: [0.5, 1],
-                        src: "librairies/pin.svg",
-                        color: "black"
-                    })
-                });
-                feature.setStyle(pointStyle);
-            });
-        }
-    })
+    element.addEventListener('change', setColorOnMap);
 });
 
 // Gestion de la balade par défaut sélectionnée
-document.querySelector("#attributIdBalade").addEventListener('change', (e) => {
+function setBaladeParDefaut() {
     const SelectAttributBaladeDefaut = document.querySelector('#baladeDefautSelectionnes');
     while (SelectAttributBaladeDefaut.firstChild) {
         SelectAttributBaladeDefaut.removeChild(SelectAttributBaladeDefaut.firstChild);
     }
     var optionParametreOptionnel = document.createElement("option");
     optionParametreOptionnel.value = "";
-    optionParametreOptionnel.innerText = "Paramètre optionnel..";
+    optionParametreOptionnel.innerText = "Balade par défaut séléctionnée..";
     SelectAttributBaladeDefaut.appendChild(optionParametreOptionnel);
     map.getLayers().getArray()[2].getSource().forEachFeature(feature => {
         var idBalade = feature.get("values")[document.querySelector("#attributIdBalade").value];
@@ -307,7 +330,9 @@ document.querySelector("#attributIdBalade").addEventListener('change', (e) => {
         option.innerText = idBalade;
         SelectAttributBaladeDefaut.appendChild(option);
     });
-});
+}
+document.querySelector("#attributIdBalade").addEventListener('change', setBaladeParDefaut);
+document.querySelector("#ouvertureBalade-oui").addEventListener('change', setBaladeParDefaut);
 
 // Gestion de l'affichage des points non séléctionnés
 document.querySelector("#affichagePointNonSelect").addEventListener('change', (e) => {
@@ -331,7 +356,7 @@ function couleurPointActif() {
     })
     );
 }
-document.querySelector("#couleurPointActif").addEventListener('change', (e) => {
+document.querySelector("#couleurPointActif").addEventListener('change', () => {
     couleurPointActif();
 });
 
@@ -345,9 +370,9 @@ function couleurBaladeDefaut() {
         })
     }));
 }
-document.querySelector("#couleurBaladeDefaut").addEventListener('change', (e) => {
+document.querySelector("#couleurBaladeDefaut").addEventListener('change', () => {
     couleurBaladeDefaut();
-})
+});
 
 // Gestion du zoom par défaut d'une balade active
 document.querySelector("#zoomBalade").addEventListener('change', (e) => {
@@ -369,13 +394,22 @@ document.querySelector("#zoomBalade").addEventListener('change', (e) => {
 document.querySelector("#couleurBaladeDefaut-non").addEventListener('click', () => {
     document.querySelector("#couleurBaladeDefaut").classList.remove("hidden");
 });
-
 document.querySelector("#couleurBaladeDefaut-oui").addEventListener('click', () => {
     document.querySelector("#couleurBaladeDefaut").classList.add("hidden");
-})
+});
+
+// Gestion du radiobouton ouvertureBalade-non pour afficher la liste des balades par défaut
+document.querySelector("#ouvertureBalade-non").addEventListener('click', () => {
+    document.querySelector("#baladeDefautSelectionnes").classList.add("hidden");
+    document.querySelector("#baladeDefautSelectionnes").removeAttribute("required");
+});
+document.querySelector("#ouvertureBalade-oui").addEventListener('click', () => {
+    document.querySelector("#baladeDefautSelectionnes").classList.remove("hidden");
+    document.querySelector("#baladeDefautSelectionnes").setAttribute("required", "");
+});
 
 // Gestion des fichiers de données 
-document.querySelector("#boutonEnvoyer").addEventListener('click', (e) => {
+document.querySelector("#boutonEnvoyer").addEventListener('click', () => {
     var form = document.querySelector("#form");
     if (form.checkValidity()) {
         document.querySelector("#confirmation-modal").classList.remove("hidden");
@@ -385,17 +419,23 @@ document.querySelector("#boutonEnvoyer").addEventListener('click', (e) => {
 });
 
 // Gestion du modal de confirmation
-document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', (e) => {
+document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', () => {
     var form = document.querySelector("#form");
     var date = new Date();
     var uid = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "_" + date.getHours() + "-" + date.getMinutes() + "-" + date.getSeconds() + "_" + date.getMilliseconds();
     let fichiers = {};
     fichiers["points_" + uid + ".geojson"] = objetConvertPoints;
     fichiers["balades_" + uid + ".geojson"] = objetConvertLignes;
+    var defaultColor = "#000000";
+    var baladeParDefaut = "";
+    if (document.querySelector("#couleurBaladeDefaut-non").checked)
+        defaultColor = document.querySelector("#couleurBaladeDefaut").value;
+    if (document.querySelector("#ouvertureBalade-oui").checked)
+        baladeParDefaut = document.querySelector("#baladeDefautSelectionnes").value;
 
     fichiers["param_" + uid + ".json"] = {
         "carte": { "zoomPendantBalade": parseInt(form.elements["zoomBalade"].value) },
-        "balades": { "layer_balades": "balades", "id": form.elements["attributIdBalade"].value, "couleurBalades": "couleur", "defaultColor": form.elements["couleurBaladeDefaut"].value, "baladeParDefaut": form.elements["baladeDefautSelectionnes"].value },
+        "balades": { "layer_balades": "balades", "id": form.elements["attributIdBalade"].value, "couleurBalades": "couleur", "defaultColor": defaultColor, "baladeParDefaut": baladeParDefaut },
         "points": { "layer_points": "balades_points", "idBalade": form.elements["attributIdPoint"].value, "champRang": form.elements["attributRang"].value, "couleurPointActif": form.elements["couleurPointActif"].value, "pointsVisible": form.elements["affichagePointNonSelect"].value == "Oui" ? "true" : "false" }
     };
 
@@ -403,6 +443,6 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', (e
     console.log(fichiers);
 });
 
-document.querySelector("#annulerConfirm").addEventListener('click', (e) => {
+document.querySelector("#annulerConfirm").addEventListener('click', () => {
     document.querySelector("#confirmation-modal").classList.add("hidden");
-})
+});
