@@ -131,7 +131,7 @@ document.getElementById('geojson').addEventListener('change', () => {
                     const option = document.createElement("option");
                     option.value = attribut;
                     option.innerText = attribut;
-                    if (/rang/i.test(attribut))
+                    if (/rang|ordre/i.test(attribut))
                         option.selected = true;
                     SelectAttributRangPoint.appendChild(option);
                 });
@@ -143,16 +143,9 @@ document.getElementById('geojson').addEventListener('change', () => {
                 }
                 var optionParametreOptionnel = document.createElement("option");
                 optionParametreOptionnel.value = "";
-                optionParametreOptionnel.innerText = "Balade par défaut séléctionnée..";
+                optionParametreOptionnel.innerText = "Sélectionnez une balade..";
                 SelectAttributBaladeDefaut.appendChild(optionParametreOptionnel);
                 document.getElementById('message').style.display = 'none';
-
-                var xml_titre = "test du titre avec l'apostrophe";
-                var xmlString = '<?xml version="1.0" encoding="UTF-8"?><config><application title="Application de test de l\'extension balades" logo="apps/public/img/logo/logo_mviewer_transp.png"/></config>';
-                var parser = new DOMParser();
-                var xmlDoc = parser.parseFromString(xmlString, "text/xml");
-                console.log(xmlDoc)
-                
             } catch (e) {
                 document.getElementById('message').style.display = 'block';
                 document.getElementById('message').innerHTML = "Les données du fichier ne sont pas valides.";
@@ -219,38 +212,42 @@ function convertCoordinates4326to3857(lon, lat) {
 
 // Initialisation de la carte
 const projection = new ol.proj.get('EPSG:3857');
-const tileSizePixels = 256;
-const tileSizeMtrs = ol.extent.getWidth(projection.getExtent()) / tileSizePixels;
+const tileSizeMtrs = ol.extent.getWidth(projection.getExtent()) / 256;
 const matrixIds = [];
 const resolutions = [];
-for (let i = 0; i <= 14; i++) {
-    matrixIds[i] = i;
+for (let i = 0; i <= 21; i++) {
+    matrixIds[i] = 'EPSG:3857:' + i;
     resolutions[i] = tileSizeMtrs / Math.pow(2, i);
-}
+} 
 const tileGrid = new ol.tilegrid.WMTS({
     origin: ol.extent.getTopLeft(projection.getExtent()),
     resolutions: resolutions,
     matrixIds: matrixIds,
 });
-
+var matrixset = "EPSG:3857";
 var map = new ol.Map({
     target: 'map',
     layers: [
-        /* new ol.layer.Tile({
+        new ol.layer.Tile({
             source: new ol.source.WMTS({
-                attributions: "&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;",
-                url: 'https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?',
-                format: 'image/png',
+                url:  "https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?",
+                crossOrigin: null,
                 layer: "ref_fonds:pvci_simple_gris",
+                matrixSet: matrixset,
+                style: "_null",
+                format: "image/png",
+                attributions: "&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;",
                 projection: projection,
-                tileGrid: tileGrid,                
-                wrapX: false,
-                matrixSet: 'EPSG:3857'
+                tileGrid: new ol.tilegrid.WMTS({
+                    origin: ol.extent.getTopLeft(projection.getExtent()),
+                    resolutions: resolutions,
+                    matrixIds: matrixIds
+                })
             })
-        }), */
+        }) /*
         new ol.layer.Tile({
             source: new ol.source.OSM()
-        })
+        }) */
     ],
     view: new ol.View({
         center: ol.proj.fromLonLat([-1.67, 48.11]),
@@ -265,9 +262,9 @@ document.getElementById('zoomDefaut').addEventListener('change', (e) => {
 });
 
 map.on('moveend', function (e) {
-    var newZoom = map.getView().getZoom();
-    document.getElementById('zoomDefaut').value = Math.round(newZoom * 100) / 100;
     if (animationEnCours == false) {
+        var newZoom = map.getView().getZoom();
+        document.getElementById('zoomDefaut').value = newZoom;
         lastZoom = map.getView().getZoom();
         lastCenter = map.getView().getCenter();
     }
@@ -321,13 +318,14 @@ function setBaladeParDefaut() {
     }
     var optionParametreOptionnel = document.createElement("option");
     optionParametreOptionnel.value = "";
-    optionParametreOptionnel.innerText = "Balade par défaut séléctionnée..";
+    optionParametreOptionnel.innerText = "Sélectionnez une balade..";
     SelectAttributBaladeDefaut.appendChild(optionParametreOptionnel);
     map.getLayers().getArray()[2].getSource().forEachFeature(feature => {
         var idBalade = feature.get("values")[document.querySelector("#attributIdBalade").value];
+        var titre = feature.get("values")["name"];
         const option = document.createElement("option");
         option.value = idBalade;
-        option.innerText = idBalade;
+        option.innerText = (titre != null) ? ("id : " + idBalade + " titre : " + titre) : "id : " + idBalade;
         SelectAttributBaladeDefaut.appendChild(option);
     });
 }
@@ -382,10 +380,22 @@ document.querySelector("#zoomBalade").addEventListener('change', (e) => {
     var coord = featurePoint.getGeometry().getCoordinates();
     animationEnCours = true;
     map.getView().animate({ zoom: e.target.value, center: coord, duration: 800 });
+    map.getInteractions().forEach(x => x.setActive(false));
+    document.querySelector(".ol-zoom-in").disabled = true;
+    document.querySelector(".ol-zoom-out").disabled = true;
+    document.querySelector("#zoomDefaut").disabled = true;
+    document.querySelector(".messageCarte h3").style.display = 'none';
 
     document.querySelector("#boutonRetourZoom").addEventListener('click', () => {
-        map.getView().animate({ zoom: lastZoom, center: lastCenter, duration: 800 }, () => { animationEnCours = false; });
         document.querySelector("#boutonRetourZoom").classList.add("hidden");
+        document.querySelector(".messageCarte h3").style.display = 'block';
+        map.getView().animate({ zoom: lastZoom, center: lastCenter, duration: 800 }, () => { 
+            animationEnCours = false;
+            map.getInteractions().forEach(x => x.setActive(true));
+            document.querySelector(".ol-zoom-in").disabled = false;
+            document.querySelector(".ol-zoom-out").disabled = false;
+            document.querySelector("#zoomDefaut").disabled = false;  
+        });
     });
     document.querySelector("#boutonRetourZoom").classList.remove("hidden");
 });
@@ -393,9 +403,11 @@ document.querySelector("#zoomBalade").addEventListener('change', (e) => {
 // Gestion du radiobouton couleurBaladeDefaut-non pour afficher l'éditeur de couleur
 document.querySelector("#couleurBaladeDefaut-non").addEventListener('click', () => {
     document.querySelector("#couleurBaladeDefaut").classList.remove("hidden");
+    document.querySelector("#labelCouleurBaladeDefaut").classList.remove("hidden");
 });
 document.querySelector("#couleurBaladeDefaut-oui").addEventListener('click', () => {
     document.querySelector("#couleurBaladeDefaut").classList.add("hidden");
+    document.querySelector("#labelCouleurBaladeDefaut").classList.add("hidden");
 });
 
 // Gestion du radiobouton ouvertureBalade-non pour afficher la liste des balades par défaut
@@ -422,12 +434,13 @@ document.querySelector("#boutonEnvoyer").addEventListener('click', () => {
 document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', () => {
     var form = document.querySelector("#form");
     var date = new Date();
-    var uid = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + "_" + date.getHours() + "-" + date.getMinutes() + "-" + date.getSeconds() + "_" + date.getMilliseconds();
+    var uid = date.getFullYear().toString() + (date.getMonth() + 1).toString() + date.getDate().toString() + "_" + date.getHours().toString() + date.getMinutes().toString() + date.getSeconds().toString() + "_" + date.getMilliseconds().toString();
     let fichiers = {};
     fichiers["points_" + uid + ".geojson"] = objetConvertPoints;
     fichiers["balades_" + uid + ".geojson"] = objetConvertLignes;
     var defaultColor = "#000000";
     var baladeParDefaut = "";
+    var center = map.getView().getCenter().join(',');
     if (document.querySelector("#couleurBaladeDefaut-non").checked)
         defaultColor = document.querySelector("#couleurBaladeDefaut").value;
     if (document.querySelector("#ouvertureBalade-oui").checked)
@@ -439,7 +452,66 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', ()
         "points": { "layer_points": "balades_points", "idBalade": form.elements["attributIdPoint"].value, "champRang": form.elements["attributRang"].value, "couleurPointActif": form.elements["couleurPointActif"].value, "pointsVisible": form.elements["affichagePointNonSelect"].value == "Oui" ? "true" : "false" }
     };
 
-    fichiers["balades_" + uid + ".xml"] = "A faire"; // En JSON ? json to xml converter
+    var xmlString = `<?xml version="1.0" encoding="UTF-8"?>
+                <config><application title="${document.querySelector("#titre").value}" logo="apps/public/img/logo/logo_mviewer_transp.png" 
+                    favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png" titlehelp="À propos des cartes thématiques"
+                    help="apps/site_internet/html/site_internet_help.html" showhelp="false" exportpng="false" style="apps/site_internet/css/art_ville.css"
+                    measuretools="false" togglealllayersfromtheme="false" showClickNbItems="false" templaterightinfopanel="allintabs" sortlayersinfopanel="toc"/>
+
+                    <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="${center}" zoom="${document.querySelector("#zoomDefaut").value}" />
+
+                    <baselayers style="default"><!-- style="default"||gallery" -->
+                        <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+                        <baselayer visible="false" id="ortho2020" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2020" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+                    </baselayers>
+
+                    <extensions>
+                        <extension type="component" id="GUICustom" path="apps/public/addons"/>
+                        <extension type="component" id="balades" path="apps/balades/addons" configFile="/apps/balades/parametrage/param_${uid}.json" />
+                    </extensions>
+                    
+                    <themes mini="true" legendmini="false">
+                        <theme id="theme-202201280956" name="Points" collapsed="true" icon="fas fa-map-marker-alt">
+                            <layer
+                                id="balades_points"
+                                name="Points d'intérêt"
+                                type="customlayer"
+                                url="apps/balades/customlayer/balades_points.js"
+                                geojson="apps/balades/customlayer/data/points_${uid}.geojson"
+                                visible="true"
+                                tooltip="false"
+                                tooltipenabled="false"
+                                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{label}}&lt;/span&gt;"
+                                metadata="undefined"
+                                queryable="true"
+                                featurecount="3"
+                                infopanel="right-panel">
+                                <template url="apps/balades/templates/point.mst"></template>
+                            </layer>
+                        </theme>
+                        <theme id="theme-202201280955" name="Balades" collapsed="true" icon="fas fa-route">
+                            <layer
+                                id="balades"
+                                name="Données de balades"
+                                type="customlayer"
+                                url="apps/balades/customlayer/balades.js"
+                                geojson="apps/balades/customlayer/data/balades_${uid}.geojson"
+                                visible="true"
+                                tooltip="false"
+                                tooltipenabled="false"
+                                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{label}}&lt;/span&gt;"
+                                metadata="undefined"
+                                queryable="true"
+                                featurecount="3"
+                                infopanel="right-panel">
+                                <template url="apps/balades/templates/balade.mst"></template>
+                            </layer>
+                        </theme>
+                    </themes>
+                </config>`;
+    var parser = new DOMParser();
+    var xmlDoc = parser.parseFromString(xmlString, "text/xml");
+    fichiers["balades_" + uid + ".xml"] = xmlDoc;
     console.log(fichiers);
 });
 
