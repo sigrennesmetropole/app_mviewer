@@ -155,8 +155,7 @@
                                     </select>
                                 </div>
                                 <div class="mx-2 my-2 col-span-3">
-                                    <p class="block text-sm font-medium text-gray-800 mb-2">Avez-vous ajouté un champ
-                                        couleur au sein des tracés ?
+                                    <p class="block text-sm font-medium text-gray-800 mb-2">La couleur des tracés est-elle personnalisée (champ couleur renseigné) ?
                                     </p>
                                     <fieldset class="mt-4">
                                         <div class="flex items-center space-x-10">
@@ -174,15 +173,16 @@
                                                 <label for="couleurBaladeDefaut-non"
                                                     class="ml-3 block text-sm font-medium text-gray-700">Non</label>
                                             </div>
+                                            <label for="couleurBaladeDefaut" id="labelCouleurBaladeDefaut" class="hidden block text-sm font-medium text-gray-800 mb-2">Couleur par défaut</label>
                                             <input type="color" id="couleurBaladeDefaut" name="couleurBaladeDefaut"
                                                 class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full h-[28px] focus:outline-none"
-                                                style="max-width: 200px;">
+                                                style="max-width: 200px; margin-left: 10px">
                                         </div>
                                     </fieldset>
                                 </div>
                                 <div class="mx-2 my-2 col-span-3">
-                                    <p class="block text-sm font-medium text-gray-800 mb-2">Voulez-vous séléctionner une
-                                        balade lors de l'ouverture de la carte ?
+                                    <p class="block text-sm font-medium text-gray-800 mb-2">Voulez-vous sélectionner une
+                                        balade par défaut à l'ouverture de la carte ?
                                     </p>
                                     <fieldset class="mt-4">
                                         <div class="flex items-center space-x-10">
@@ -201,7 +201,7 @@
                                             </div>
                                             <select id="baladeDefautSelectionnes" name="baladeDefautSelectionnes"
                                                 class="block hidden w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md">
-                                                <option value="" selected>Balade par défaut séléctionnée..</option>
+                                                <option value="" selected>Sélectionnez une balade..</option>
                                             </select>
                                         </div>
                                     </fieldset>
@@ -228,7 +228,7 @@
                                 </div>
                                 <div class="mx-2 my-2">
                                     <label for="attributRang"
-                                        class="block text-sm font-medium text-gray-800 mb-2">Attribut du rang*</label>
+                                        class="block text-sm font-medium text-gray-800 mb-2">Champ du rang*</label>
                                     <select id="attributRang" name="attributRang"
                                         class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md"
                                         required>
@@ -287,16 +287,14 @@
                     </div>
                 </div>
                 <div class="col-span-1">
-                    <div class="flex flex-col fixed bg-white shadow py-3 mx-8 mt-8 pr-4 rounded-md messageCarte hidden" style="width: 46%">
-                        <h3 class="ml-4 font-medium text-gray-800">Le centre de la carte et le zoom sera pris en compte
-                            pour l'affichage des balades
-                        </h3>
+                    <div class="flex flex-col fixed bg-zinc-50 shadow py-3 mx-8 mt-8 pr-4 rounded-md messageCarte hidden" style="width: 46%">
+                        <h3 class="ml-4 self-center font-normal text-sm text-gray-800">La carte ci-dessous détermine la position de la carte par défaut</h3>
                         <button type="button" id="boutonRetourZoom"
-                            class="hidden self-center mt-2 py-2 px-3 flex justify-center border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none">
+                            class="hidden self-center py-2 px-3 flex justify-center border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none">
                             Retour à la vue générale
                         </button>
                     </div>
-                    <div id="map" class="fixed h-4/6 mx-8 rounded-m hidden mt-28" style="width: 46%">
+                    <div id="map" class="fixed h-4/6 mx-8 rounded-m hidden mt-20" style="width: 46%">
                         <svg class="inset-1/2 z-10 relative mr-48 -ml-6 -mb-6" style="fill: red;"
                             xmlns="http://www.w3.org/2000/svg" height="48" width="48">
                             <path d="M23.25 37V24.75H11v-1.5h12.25V11h1.5v12.25H37v1.5H24.75V37Z" />
