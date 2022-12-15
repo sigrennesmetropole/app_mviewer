@@ -146,13 +146,6 @@ document.getElementById('geojson').addEventListener('change', () => {
                 optionParametreOptionnel.innerText = "Sélectionnez une balade..";
                 SelectAttributBaladeDefaut.appendChild(optionParametreOptionnel);
                 document.getElementById('message').style.display = 'none';
-
-                var xml_titre = "test du titre avec l'apostrophe";
-                var xmlString = '<?xml version="1.0" encoding="UTF-8"?><config><application title="Application de test de l\'extension balades" logo="apps/public/img/logo/logo_mviewer_transp.png"/></config>';
-                var parser = new DOMParser();
-                var xmlDoc = parser.parseFromString(xmlString, "text/xml");
-                console.log(xmlDoc)
-                
             } catch (e) {
                 document.getElementById('message').style.display = 'block';
                 document.getElementById('message').innerHTML = "Les données du fichier ne sont pas valides.";
@@ -235,18 +228,23 @@ var matrixset = "EPSG:3857";
 var map = new ol.Map({
     target: 'map',
     layers: [
-        /* new ol.layer.Tile({
+        new ol.layer.Tile({
             source: new ol.source.WMTS({
-                attributions: "&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;",
-                url: 'https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?',
-                format: 'image/png',
+                url:  "https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?",
+                crossOrigin: null,
                 layer: "ref_fonds:pvci_simple_gris",
+                matrixSet: matrixset,
+                style: "_null",
+                format: "image/png",
+                attributions: "&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;",
                 projection: projection,
-                tileGrid: tileGrid,                
-                wrapX: false,
-                matrixSet: 'EPSG:3857'
+                tileGrid: new ol.tilegrid.WMTS({
+                    origin: ol.extent.getTopLeft(projection.getExtent()),
+                    resolutions: resolutions,
+                    matrixIds: matrixIds
+                })
             })
-        }), */
+        }) /*
         new ol.layer.Tile({
             source: new ol.source.WMTS({
                 url:  "https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?",
@@ -450,6 +448,7 @@ document.querySelector("#couleurBaladeDefaut-non").addEventListener('click', () 
 });
 document.querySelector("#couleurBaladeDefaut-oui").addEventListener('click', () => {
     document.querySelector("#couleurBaladeDefaut").classList.add("hidden");
+    document.querySelector("#labelCouleurBaladeDefaut").classList.add("hidden");
 });
 
 // Gestion du radiobouton ouvertureBalade-non pour afficher la liste des balades par défaut
