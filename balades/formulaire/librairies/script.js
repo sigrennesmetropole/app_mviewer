@@ -451,6 +451,8 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', ()
         let fichiers = {};
         fichiers["points_" + uid + ".geojson"] = objetConvertPoints;
         fichiers["balades_" + uid + ".geojson"] = objetConvertLignes;
+        var mail = document.querySelector("#mail").value;
+        var nom = document.querySelector("#nom").value;
         var defaultColor = "#000000";
         var baladeParDefaut = "";
         var center = map.getView().getCenter().join(',');
@@ -526,11 +528,34 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', ()
         var xmlDoc = parser.parseFromString(xmlString, "text/xml");
         fichiers["balades_" + uid + ".xml"] = xmlDoc;
         console.log(fichiers);
+        fetch('envoiMail.php', {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            },
+            body: "name=salut"
+        }).then(() => {
+            window.location.href = window.location.href.split('?')[0] + "?mail=" + mail;
+        });
     } else {
         formProjet.reportValidity();
     }
 });
 
+// Gestion du bouton annuler sur le modal de confirmation
 document.querySelector("#annulerConfirm").addEventListener('click', () => {
     document.querySelector("#confirmation-modal").classList.add("hidden");
 });
+
+// Gestion du message de confirmation d'envoi du formulaire
+window.onload=function() {
+    var url = new URL(window.location.href);
+    var mail = url.searchParams.get("mail");
+    if (mail) {
+        document.querySelector("#messageConfirmationText").innerHTML += ("<span class='font-medium text-gray-900'>" + mail + "</span>");
+        document.querySelector("#messageConfirmation").classList.remove("hidden");
+        document.querySelector("#buttonCloseMessageConfirmation").addEventListener('click', () => {
+            document.querySelector("#messageConfirmation").classList.add("hidden");
+        });
+    }
+};
