@@ -422,97 +422,113 @@ document.querySelector("#ouvertureBalade-oui").addEventListener('click', () => {
 
 // Gestion des fichiers de données 
 document.querySelector("#boutonEnvoyer").addEventListener('click', () => {
-    var form = document.querySelector("#form");
-    if (form.checkValidity()) {
+    var formDonnees = document.querySelector("#form");
+    if (formDonnees.checkValidity()) {
         document.querySelector("#confirmation-modal").classList.remove("hidden");
     } else {
-        form.reportValidity()
+        formDonnees.reportValidity();
     }
+});
+
+// Gestion validité formulaire de gestion de projet
+document.querySelectorAll("#nom, #mail").forEach(element => {
+    element.addEventListener('input', () => {
+        if (formProjet.checkValidity()) {
+            document.querySelector("#envoyerFormulaireConfirm").style.backgroundColor = "#CC3333";
+        } else {
+            document.querySelector("#envoyerFormulaireConfirm").style.backgroundColor = "#374151";
+        }
+    });
 });
 
 // Gestion du modal de confirmation
 document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', () => {
-    var form = document.querySelector("#form");
-    var date = new Date();
-    var uid = date.getFullYear().toString() + (date.getMonth() + 1).toString() + date.getDate().toString() + "_" + date.getHours().toString() + date.getMinutes().toString() + date.getSeconds().toString() + "_" + date.getMilliseconds().toString();
-    let fichiers = {};
-    fichiers["points_" + uid + ".geojson"] = objetConvertPoints;
-    fichiers["balades_" + uid + ".geojson"] = objetConvertLignes;
-    var defaultColor = "#000000";
-    var baladeParDefaut = "";
-    var center = map.getView().getCenter().join(',');
-    if (document.querySelector("#couleurBaladeDefaut-non").checked)
-        defaultColor = document.querySelector("#couleurBaladeDefaut").value;
-    if (document.querySelector("#ouvertureBalade-oui").checked)
-        baladeParDefaut = document.querySelector("#baladeDefautSelectionnes").value;
+    var formProjet = document.querySelector("#formProjet");
+    if (formProjet.checkValidity()) {
+        var form = document.querySelector("#form");
+        var date = new Date();
+        var uid = date.getFullYear().toString() + (date.getMonth() + 1).toString() + date.getDate().toString() + "_" + date.getHours().toString() + date.getMinutes().toString() + date.getSeconds().toString() + "_" + date.getMilliseconds().toString();
+        let fichiers = {};
+        fichiers["points_" + uid + ".geojson"] = objetConvertPoints;
+        fichiers["balades_" + uid + ".geojson"] = objetConvertLignes;
+        var defaultColor = "#000000";
+        var baladeParDefaut = "";
+        var center = map.getView().getCenter().join(',');
+        if (document.querySelector("#couleurBaladeDefaut-non").checked)
+            defaultColor = document.querySelector("#couleurBaladeDefaut").value;
+        if (document.querySelector("#ouvertureBalade-oui").checked)
+            baladeParDefaut = document.querySelector("#baladeDefautSelectionnes").value;
 
-    fichiers["param_" + uid + ".json"] = {
-        "carte": { "zoomPendantBalade": parseInt(form.elements["zoomBalade"].value) },
-        "balades": { "layer_balades": "balades", "id": form.elements["attributIdBalade"].value, "couleurBalades": "couleur", "defaultColor": defaultColor, "baladeParDefaut": baladeParDefaut },
-        "points": { "layer_points": "balades_points", "idBalade": form.elements["attributIdPoint"].value, "champRang": form.elements["attributRang"].value, "couleurPointActif": form.elements["couleurPointActif"].value, "pointsVisible": form.elements["affichagePointNonSelect"].value == "Oui" ? "true" : "false" }
-    };
+        fichiers["param_" + uid + ".json"] = {
+            "carte": { "zoomPendantBalade": parseInt(form.elements["zoomBalade"].value) },
+            "balades": { "layer_balades": "balades", "id": form.elements["attributIdBalade"].value, "couleurBalades": "couleur", "defaultColor": defaultColor, "baladeParDefaut": baladeParDefaut },
+            "points": { "layer_points": "balades_points", "idBalade": form.elements["attributIdPoint"].value, "champRang": form.elements["attributRang"].value, "couleurPointActif": form.elements["couleurPointActif"].value, "pointsVisible": form.elements["affichagePointNonSelect"].value == "Oui" ? "true" : "false" }
+        };
 
-    var xmlString = `<?xml version="1.0" encoding="UTF-8"?>
-                <config><application title="${document.querySelector("#titre").value}" logo="apps/public/img/logo/logo_mviewer_transp.png" 
-                    favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png" titlehelp="À propos des cartes thématiques"
-                    help="apps/site_internet/html/site_internet_help.html" showhelp="false" exportpng="false" style="apps/site_internet/css/art_ville.css"
-                    measuretools="false" togglealllayersfromtheme="false" showClickNbItems="false" templaterightinfopanel="allintabs" sortlayersinfopanel="toc"/>
+        var xmlString = `<?xml version="1.0" encoding="UTF-8"?>
+                    <config><application title="${document.querySelector("#titre").value}" logo="apps/public/img/logo/logo_mviewer_transp.png" 
+                        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png" titlehelp="À propos des cartes thématiques"
+                        help="apps/site_internet/html/site_internet_help.html" showhelp="false" exportpng="false" style="apps/site_internet/css/art_ville.css"
+                        measuretools="false" togglealllayersfromtheme="false" showClickNbItems="false" templaterightinfopanel="allintabs" sortlayersinfopanel="toc"/>
 
-                    <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="${center}" zoom="${document.querySelector("#zoomDefaut").value}" />
+                        <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="${center}" zoom="${document.querySelector("#zoomDefaut").value}" />
 
-                    <baselayers style="default"><!-- style="default"||gallery" -->
-                        <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
-                        <baselayer visible="false" id="ortho2020" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2020" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
-                    </baselayers>
+                        <baselayers style="default"><!-- style="default"||gallery" -->
+                            <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+                            <baselayer visible="false" id="ortho2020" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2020" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+                        </baselayers>
 
-                    <extensions>
-                        <extension type="component" id="GUICustom" path="apps/public/addons"/>
-                        <extension type="component" id="balades" path="apps/balades/addons" configFile="/apps/balades/parametrage/param_${uid}.json" />
-                    </extensions>
-                    
-                    <themes mini="true" legendmini="false">
-                        <theme id="theme-202201280956" name="Points" collapsed="true" icon="fas fa-map-marker-alt">
-                            <layer
-                                id="balades_points"
-                                name="Points d'intérêt"
-                                type="customlayer"
-                                url="apps/balades/customlayer/balades_points.js"
-                                geojson="apps/balades/customlayer/data/points_${uid}.geojson"
-                                visible="true"
-                                tooltip="false"
-                                tooltipenabled="false"
-                                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{label}}&lt;/span&gt;"
-                                metadata="undefined"
-                                queryable="true"
-                                featurecount="3"
-                                infopanel="right-panel">
-                                <template url="apps/balades/templates/point.mst"></template>
-                            </layer>
-                        </theme>
-                        <theme id="theme-202201280955" name="Balades" collapsed="true" icon="fas fa-route">
-                            <layer
-                                id="balades"
-                                name="Données de balades"
-                                type="customlayer"
-                                url="apps/balades/customlayer/balades.js"
-                                geojson="apps/balades/customlayer/data/balades_${uid}.geojson"
-                                visible="true"
-                                tooltip="false"
-                                tooltipenabled="false"
-                                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{label}}&lt;/span&gt;"
-                                metadata="undefined"
-                                queryable="true"
-                                featurecount="3"
-                                infopanel="right-panel">
-                                <template url="apps/balades/templates/balade.mst"></template>
-                            </layer>
-                        </theme>
-                    </themes>
-                </config>`;
-    var parser = new DOMParser();
-    var xmlDoc = parser.parseFromString(xmlString, "text/xml");
-    fichiers["balades_" + uid + ".xml"] = xmlDoc;
-    console.log(fichiers);
+                        <extensions>
+                            <extension type="component" id="GUICustom" path="apps/public/addons"/>
+                            <extension type="component" id="balades" path="apps/balades/addons" configFile="/apps/balades/parametrage/param_${uid}.json" />
+                        </extensions>
+                        
+                        <themes mini="true" legendmini="false">
+                            <theme id="theme-202201280956" name="Points" collapsed="true" icon="fas fa-map-marker-alt">
+                                <layer
+                                    id="balades_points"
+                                    name="Points d'intérêt"
+                                    type="customlayer"
+                                    url="apps/balades/customlayer/balades_points.js"
+                                    geojson="apps/balades/customlayer/data/points_${uid}.geojson"
+                                    visible="true"
+                                    tooltip="false"
+                                    tooltipenabled="false"
+                                    tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{label}}&lt;/span&gt;"
+                                    metadata="undefined"
+                                    queryable="true"
+                                    featurecount="3"
+                                    infopanel="right-panel">
+                                    <template url="apps/balades/templates/point.mst"></template>
+                                </layer>
+                            </theme>
+                            <theme id="theme-202201280955" name="Balades" collapsed="true" icon="fas fa-route">
+                                <layer
+                                    id="balades"
+                                    name="Données de balades"
+                                    type="customlayer"
+                                    url="apps/balades/customlayer/balades.js"
+                                    geojson="apps/balades/customlayer/data/balades_${uid}.geojson"
+                                    visible="true"
+                                    tooltip="false"
+                                    tooltipenabled="false"
+                                    tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{label}}&lt;/span&gt;"
+                                    metadata="undefined"
+                                    queryable="true"
+                                    featurecount="3"
+                                    infopanel="right-panel">
+                                    <template url="apps/balades/templates/balade.mst"></template>
+                                </layer>
+                            </theme>
+                        </themes>
+                    </config>`;
+        var parser = new DOMParser();
+        var xmlDoc = parser.parseFromString(xmlString, "text/xml");
+        fichiers["balades_" + uid + ".xml"] = xmlDoc;
+        console.log(fichiers);
+    } else {
+        formProjet.reportValidity();
+    }
 });
 
 document.querySelector("#annulerConfirm").addEventListener('click', () => {
