@@ -385,6 +385,9 @@ document.querySelector("#zoomBalade").addEventListener('change', (e) => {
     document.querySelector(".ol-zoom-out").disabled = true;
     document.querySelector("#zoomDefaut").disabled = true;
     document.querySelector(".messageCarte h3").style.display = 'none';
+    document.querySelector("#boutonEnvoyer").disabled = true;
+    document.querySelector("#boutonEnvoyer").style.backgroundColor = "#374151";
+
 
     document.querySelector("#boutonRetourZoom").addEventListener('click', () => {
         document.querySelector("#boutonRetourZoom").classList.add("hidden");
@@ -395,6 +398,8 @@ document.querySelector("#zoomBalade").addEventListener('change', (e) => {
             document.querySelector(".ol-zoom-in").disabled = false;
             document.querySelector(".ol-zoom-out").disabled = false;
             document.querySelector("#zoomDefaut").disabled = false;  
+            document.querySelector("#boutonEnvoyer").disabled = false;
+            document.querySelector("#boutonEnvoyer").style.backgroundColor = "#DC2626";
         });
     });
     document.querySelector("#boutonRetourZoom").classList.remove("hidden");
@@ -451,8 +456,11 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', ()
         let fichiers = {};
         fichiers["points_" + uid + ".geojson"] = objetConvertPoints;
         fichiers["balades_" + uid + ".geojson"] = objetConvertLignes;
+        fichiers['uid'] = uid;
         var mail = document.querySelector("#mail").value;
         var nom = document.querySelector("#nom").value;
+        var commentaire = document.querySelector("#commentaire").value;
+        var titre = document.querySelector("#titre").value;
         var defaultColor = "#000000";
         var baladeParDefaut = "";
         var center = map.getView().getCenter().join(',');
@@ -526,14 +534,20 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', ()
                     </config>`;
         var parser = new DOMParser();
         var xmlDoc = parser.parseFromString(xmlString, "text/xml");
-        fichiers["balades_" + uid + ".xml"] = xmlDoc;
+        fichiers["balades_" + uid + ".xml"] = xmlString;
         console.log(fichiers);
         fetch('envoiMail.php', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
             },
-            body: "name=salut"
+            body: JSON.stringify({
+                'nom': nom,
+                'mail': mail,
+                'commentaire': commentaire,
+                'titre': titre,
+                'fichiers': fichiers
+              })
         }).then(() => {
             window.location.href = window.location.href.split('?')[0] + "?mail=" + mail;
         });
@@ -552,7 +566,7 @@ window.onload=function() {
     var url = new URL(window.location.href);
     var mail = url.searchParams.get("mail");
     if (mail) {
-        document.querySelector("#messageConfirmationText").innerHTML += ("<span class='font-medium text-gray-900'>" + mail + "</span>");
+        document.querySelector("#messageConfirmationText").innerHTML = ("Votre demande (<span class='font-medium text-gray-900'>" + mail + "</span>) a été envoyé au support SIG.");
         document.querySelector("#messageConfirmation").classList.remove("hidden");
         document.querySelector("#buttonCloseMessageConfirmation").addEventListener('click', () => {
             document.querySelector("#messageConfirmation").classList.add("hidden");
