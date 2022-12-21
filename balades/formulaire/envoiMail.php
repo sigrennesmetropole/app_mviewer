@@ -4,9 +4,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require_once __DIR__ . '/phpmailer/src/Exception.php';
-require_once __DIR__ . '/phpmailer/src/PHPMailer.php';
-require_once __DIR__ . '/phpmailer/src/SMTP.php';
+require_once __DIR__ . '/phpmailer/Exception.php';
+require_once __DIR__ . '/phpmailer/PHPMailer.php';
+require_once __DIR__ . '/phpmailer/SMTP.php';
 
 setlocale(LC_TIME, 'fr_FR.utf8','fra'); 
 $data_post = file_get_contents("php://input");
