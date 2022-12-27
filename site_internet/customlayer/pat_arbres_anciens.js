@@ -1,7 +1,7 @@
 mviewer.customLayers.arbresanciens= (function() {
     let age_ancien = 50;
     let dateref = new Date().getFullYear() - age_ancien;
-    let data_url = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=espub_esv:gev_aali&CQL_FILTER=date_plant<'+ dateref +'&outputFormat=application/json&srsName=EPSG:4326';
+    let data_url = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=espub_esv:gev_aali&CQL_FILTER=date_plant<='+ dateref +'&outputFormat=application/json&srsName=EPSG:4326';
     let datacolor = '#628A31'
     
     
