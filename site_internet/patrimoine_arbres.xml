@@ -30,10 +30,9 @@
     
     <themes mini="true">
         <theme id="theme-20180625145740" name="Arbres d'alignement de voirie" collapsed="true" icon="fas fa-tree">
-
             <layer
                 id="arbresrecents"
-                name="Arbres plantés cette année"
+                name="Arbre d'alignement de moins de 10 ans"
                 type="customlayer"
                 url="apps/site_internet/customlayer/pat_arbres_recents.js"
                 legendurl="apps/site_internet/img/legend/pat_arbres_recents.svg"
@@ -51,26 +50,8 @@
                 <template url="apps/site_internet/templates/arbres_alignement.mst"></template>
             </layer>
             <layer
-                id="arbresanciens"
-                name="Arbres anciens"
-                type="customlayer"
-                url="apps/site_internet/customlayer/pat_arbres_anciens.js"
-                legendurl="apps/site_internet/img/legend/pat_arbres_anciens.svg"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                tooltip="false"
-                tooltipenabled="false"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6db35b05-e8bc-4339-a49b-828da0d3fd9f"
-                queryable="true"
-                tabcolor="#628A31"
-                featurecount="10"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/arbres_alignement.mst"></template>
-            </layer>
-            <layer
                 id="arbresautres"
-                name="Autres arbres"
+                name="Arbre d'alignement de 10 à 49 ans"
                 type="customlayer"
                 url="apps/site_internet/customlayer/pat_arbres_autres.js"
                 legendurl="apps/site_internet/img/legend/pat_arbres_autres.svg"
@@ -86,11 +67,29 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/arbres_alignement.mst"></template>
             </layer>
+            <layer
+                id="arbresanciens"
+                name="Arbre d'alignement de plus de 50 ans"
+                type="customlayer"
+                url="apps/site_internet/customlayer/pat_arbres_anciens.js"
+                legendurl="apps/site_internet/img/legend/pat_arbres_anciens.svg"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                tooltip="false"
+                tooltipenabled="false"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6db35b05-e8bc-4339-a49b-828da0d3fd9f"
+                queryable="true"
+                tabcolor="#628A31"
+                featurecount="10"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/arbres_alignement.mst"></template>
+            </layer>
         </theme>
         <theme id="theme-202210201401" name="Arbres d'ornement" collapsed="true" icon="fas fa-tree">
             <layer
                 id="arbresornement"
-                name="Arbres d'ornement"
+                name="Arbres de parcs, jardins et squares"
                 type="customlayer"
                 url="apps/site_internet/customlayer/pat_arbres_ornement.js"
                 legendurl="apps/site_internet/img/legend/pat_arbres_ornement.svg"

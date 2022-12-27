@@ -1,6 +1,6 @@
 mviewer.customLayers.arbresrecents= (function() {
-    let dateref = new Date().getFullYear();
-    let data_url = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=espub_esv:gev_aali&CQL_FILTER=date_plant='+ dateref +'&outputFormat=application/json&srsName=EPSG:4326';
+    let dateref = new Date().getFullYear()-10;
+    let data_url = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=espub_esv:gev_aali&CQL_FILTER=date_plant>='+ dateref +'&outputFormat=application/json&srsName=EPSG:4326';
     let datacolor = '#2BE612';
     
     function markerStyle() {
