@@ -29,7 +29,7 @@ $mail->AddStringAttachment($data['fichiers']['balades_'.$uid.'.xml'], 'balades_'
 
 $mail->addAddress("sigsupport@mutu.local");
 $mail->isHTML(true);
-$mail->Subject = "Nouvelle création d'une balade";
+$mail->Subject = "Nouvelle demande de création d'une carte balade";
 $mail->Body = "<style>
                 table, th, td {
                     border: 1px solid black;
@@ -42,23 +42,23 @@ $mail->Body = "<style>
                     min-width: 150px;
                 }
               </style>
-              <b>Demande de création d'une nouvelle balade</b><br><br>
-              Informations de la demande de création de la balade :<br><br>
+              <b>Demande de création d'une nouvelle carte de balade</b><br><br>
+              Informations :<br><br>
               <table>
                 <tr>
-                    <th>Titre de la balade</th>
+                    <th>Titre de la carte</th>
                     <td>".$data['titre']."</td>
                 </tr>
                 <tr>
-                    <th>Date</th>
+                    <th>Date de la demande</th>
                     <td>".utf8_encode(strftime('%A %d %B %Y'))." à ".utf8_encode(strftime('%H:%M:%S'))."</td>
                 </tr>
                 <tr>
-                    <th>Nom</th>
+                    <th>Demandeur</th>
                     <td>".$data['nom']."</td>
                 </tr>
                 <tr>
-                    <th>Mail</th>
+                    <th>Mail du demandeur</th>
                     <td>".$data['mail']."</td>
                 </tr>
                 <tr>
@@ -67,17 +67,21 @@ $mail->Body = "<style>
                 </tr>
               </table><br>
 
-              Les fichiers ci-joints à mettre sur le serveur <b>MViewer</b> sont : 
+              Les fichiers ci-joints à déposer sur le serveur <b>MViewer</b> sont (cf. <a href='http://redmine2:8082/issues/11595'>ticket Redmine</a>): 
               <ul>
-                    <li><b>balades_".$uid.".xml</b> à déposer au sein du dossier <i>balades</i></li>
-                    <li><b>points_".$uid.".geojson</b> à déposer au sein du dossier <i>balades/customlayer/data</i></li>
-                    <li><b>balades_".$uid.".geojson</b> à déposer au sein du dossier <i>balades/customlayer/data</i></li>
-                    <li><b>param_".$uid.".json</b> à déposer au sein du dossier <i>balades/parametrage</i></li>
+                    <li><b>balades_".$uid.".xml</b> à déposer dans le dossier <i>apps/balades</i></li>
+                    <li><b>points_".$uid.".geojson</b> à déposer dans le dossier <i>apps/balades/customlayer/data</i></li>
+                    <li><b>balades_".$uid.".geojson</b> à déposer dans le dossier <i>apps/balades/customlayer/data</i></li>
+                    <li><b>param_".$uid.".json</b> à déposer dans le dossier <i>apps/balades/parametrage</i></li>
               </ul><br>
+              Une fois en production, la carte sera consultable à l'url suivante : 
+              <a href='https://mviewer.sig.rennesmetropole.fr/?config=apps/balades/balades_".$uid.".xml'>
+              https://mviewer.sig.rennesmetropole.fr/?config=apps/balades/balades_".$uid.".xml</a>
 
+              <br><br>
               Cordialement,<br>
-              Le formulaire de balades.<br><br>
-              <i>Ce courriel a été envoyé automatiquement, merci de ne pas y répondre</i>
+              <br>
+              <i>Ce courriel a été envoyé automatiquement par le formulaire web \"demande de création d'une balade\", merci de ne pas y répondre</i>
               ";
 
 try {
