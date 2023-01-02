@@ -325,7 +325,7 @@ function setBaladeParDefaut() {
         var titre = feature.get("values")["name"];
         const option = document.createElement("option");
         option.value = idBalade;
-        option.innerText = (titre != null) ? ("id : " + idBalade + " titre : " + titre) : "id : " + idBalade;
+        option.innerText = (titre != null) ? ("id : " + idBalade + " / " + titre) : "id : " + idBalade;
         SelectAttributBaladeDefaut.appendChild(option);
     });
 }
