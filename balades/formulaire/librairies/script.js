@@ -532,10 +532,9 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', ()
                             </theme>
                         </themes>
                     </config>`;
-        var parser = new DOMParser();
-        var xmlDoc = parser.parseFromString(xmlString, "text/xml");
         fichiers["balades_" + uid + ".xml"] = xmlString;
-        console.log(fichiers);
+        var date = new Date().toLocaleString('fr-FR');
+        // console.log(fichiers);
         fetch('envoiMail.php', {
             method: 'post',
             headers: {
@@ -544,6 +543,7 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', ()
             body: JSON.stringify({
                 'nom': nom,
                 'mail': mail,
+                'date': date,
                 'commentaire': commentaire,
                 'titre': titre,
                 'fichiers': fichiers
