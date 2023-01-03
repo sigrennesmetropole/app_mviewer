@@ -12,11 +12,13 @@
       "js/printMap.js",
       "js/rmCustomization.js",
       "js/legendeRM.js",
-      "js/svg_marker.js"
+      "js/svg_marker.js",
+      "js/rm_eventsmanager.js"
     ],
     "css": [
       "css/styles.css",
-      "lib/select2-4.0.13/select2.min.css"
+      "lib/select2-4.0.13/select2.min.css",
+      "css/svg_marker.css"
     ],
     "html": "html/index.html",
     "target": "page-content-wrapper"

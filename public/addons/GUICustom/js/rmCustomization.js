@@ -64,7 +64,6 @@ var init = function () {
          tooltipWMS.activatetooltipWMS(layers[layer].layername, layers[layer].tooltipWMSContent);
         }
      }
-    _waitForRefreshInfoPanel();
 
 };
 
@@ -155,43 +154,6 @@ function _addIconToLayerName(layername, iconContent) {
     }
 };
 
-
-const _modifiedMenu = (mutationList, observer) => {
-    for (const mutation of mutationList) {
-        if (mutation.type === 'attributes') {
-            _refreshInfoPanel();
-            break;
-        }
-    }
-};
-
-var _event = null;
-function _waitForRefreshInfoPanel() {
-    mviewer.getMap().on('singleclick', function (evt) {
-        _event = evt;
-    });
-    
-    const observer = new MutationObserver(_modifiedMenu);
-    $("#menu span.state-icon").each(function () {
-        observer.observe(this, { attributeFilter : ["class"] });
-    });
-};
-
-
-function _refreshInfoPanel() {
-    if (_event == null) {
-        let _coordinates=_map.getView().getCenter();
-        _event = {
-            coordinate: _coordinates,
-            pixel: _map.getPixelFromCoordinate(_coordinates)
-        };
-    }
-    setTimeout( function() {
-        info.queryMap(_event);
-        const refreshPanelsEvent = new CustomEvent('refresh-panels', {});
-        document.dispatchEvent(refreshPanelsEvent);
-    },250);
-}
 
 
 /********************************/
