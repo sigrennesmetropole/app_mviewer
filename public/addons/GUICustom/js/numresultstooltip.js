@@ -17,7 +17,6 @@ if (showNbFeatures){
     });
 
     document.addEventListener('markerdisplayEvent', (e) => {
-        console.log("marqueur event détecté");
         if (e.detail.display === 'none'){
             $("#popup-number-results").parent().hide();
         } else {
