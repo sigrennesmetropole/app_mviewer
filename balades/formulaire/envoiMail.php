@@ -8,7 +8,6 @@ require_once __DIR__ . '/phpmailer/Exception.php';
 require_once __DIR__ . '/phpmailer/PHPMailer.php';
 require_once __DIR__ . '/phpmailer/SMTP.php';
 
-setlocale(LC_TIME, 'fr_FR.utf8','fra'); 
 $data_post = file_get_contents("php://input");
 $data = json_decode($data_post, true);
 $uid = $data['fichiers']['uid'];
@@ -17,8 +16,8 @@ $mail = new PHPMailer(true);
 $mail->SMTPDebug = 0;
 $mail->CharSet = 'UTF-8';
 $mail->isSMTP();
-$mail->Host = 'localhost';
-$mail->Port = 1025;
+$mail->Host = '10.253.100.1'; # 10.253.100.1
+$mail->Port = 25; # 25
 $mail->From = "balades-noreply@rennesmetropole.fr";
 $mail->FromName = "Balades Mviewer";
 
@@ -27,7 +26,7 @@ $mail->AddStringAttachment(json_encode($data['fichiers']['points_'.$uid.'.geojso
 $mail->AddStringAttachment(json_encode($data['fichiers']['balades_'.$uid.'.geojson'], JSON_UNESCAPED_UNICODE), 'balades_'.$uid.'.geojson');
 $mail->AddStringAttachment($data['fichiers']['balades_'.$uid.'.xml'], 'balades_'.$uid.'.xml');
 
-$mail->addAddress("sigsupport@mutu.local");
+$mail->addAddress("sigsupport@rennesmetropole.fr");
 $mail->isHTML(true);
 $mail->Subject = "Nouvelle demande de création d'une carte balade";
 $mail->Body = "<style>
@@ -51,7 +50,7 @@ $mail->Body = "<style>
                 </tr>
                 <tr>
                     <th>Date de la demande</th>
-                    <td>".utf8_encode(strftime('%A %d %B %Y'))." à ".utf8_encode(strftime('%H:%M:%S'))."</td>
+                    <td>".$data['date']."</td>
                 </tr>
                 <tr>
                     <th>Demandeur</th>
