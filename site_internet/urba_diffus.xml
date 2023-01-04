@@ -59,10 +59,9 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/urba_diffus.mst"/>
             </layer>
-            
             <layer
                 id="urbadiffus_en_etude"
-                name="En cours d'instruction"
+                name="Demande de permis déposée"
                 type="customlayer"
                 url="apps/site_internet/customlayer/urba_diffus_etude.js"
                 legendurl="apps/site_internet/img/legend/urba_diffus_etude.svg"
@@ -77,7 +76,7 @@
             </layer>
             <layer
                 id="urbadiffus_en_chantier"
-                name="Permis de construire accepté"
+                name="En chantier"
                 type="customlayer"
                 url="apps/site_internet/customlayer/urba_diffus_chantier.js"
                 legendurl="apps/site_internet/img/legend/urba_diffus_chantier.svg"

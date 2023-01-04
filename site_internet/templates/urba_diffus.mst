@@ -2,16 +2,11 @@
     <li class="item">
         <h5 class="rm-popup-title-feature">{{{nom}}}</h5>
         <p class="rm-popup-text-feature">
-             {{#etape}}<span class='rm-popup-label'> ÉTAPE :</span> {{{etape}}}<br/>{{/etape}}
-             
-             {{#nomopa}}<span class='rm-popup-label'> OPÉRATION :</span> {{nomopa}} <br/>{{/nomopa}}
-             {{#num_ads}}<span class='rm-popup-label'> PERMIS DE CONSTRUIRE :</span> {{num_ads}} <br/>{{/num_ads}}
-             {{#nb_logements}}<span class='rm-popup-label'> NOMBRE DE LOGEMENTS :</span><span class="zeroNonDef"> {{nb_logements}} </span><br/>{{/nb_logements}}
              {{#description}}<span class='rm-popup-label'> PROGRAMME :</span> {{description}} <br/>{{/description}}
-             
-             {{#niveau}}<span class='rm-popup-label'> NIVEAUX :</span> {{niveau}} <br/>{{/niveau}}
-             {{#aire_geo}}<span class='rm-popup-label'> AIRE TOTALE :</span> {{aire_geo}} m² <br/>{{/aire_geo}}
-             
+        </p>
+        <p class="rm-popup-text-feature">
+             {{#nb_logements}}<span class='rm-popup-label'> NOMBRE DE LOGEMENTS :</span><span class="zeroNonDef"> {{nb_logements}} </span><br/>{{/nb_logements}}
+             {{#promoteur}}<span class='rm-popup-label'> PROMOTEUR :</span><span> {{promoteur}} </span><br/>{{/promoteur}}
         </p>
     </li>
 {{/features}}
