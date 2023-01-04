@@ -13,8 +13,12 @@
       "js/rmCustomization.js",
       "js/legendeRM.js",
       "js/svg_marker.js",
+<<<<<<< HEAD
       "js/rm_eventsmanager.js",
       "js/matomo.js"
+=======
+      "js/rm_eventsmanager.js"
+>>>>>>> 219a634 (mviewer v3.9.1 + changement besoin patri arboré + gestionnaire events)
     ],
     "css": [
       "css/styles.css",
