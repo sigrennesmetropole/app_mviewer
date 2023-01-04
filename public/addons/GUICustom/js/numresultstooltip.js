@@ -12,14 +12,12 @@ function _init() {
         $("#popup-number-results").parent().hide();
 
         _map.on('singleclick', function (evt) {
-            console.log("CLIC DETECTÉ");
             coordinate = evt.coordinate;
             _popup.setPosition(coordinate);
             refreshResultsNumber();
         });
 
         document.addEventListener('markerdisplayEvent', (e) => {
-            console.log("MARQUEUR DETECTÉ");
             if (e.detail.display === 'none'){
                 $("#popup-number-results").parent().hide();
             } else {
@@ -27,8 +25,7 @@ function _init() {
             }
         });
 
-        document.addEventListener('infopanel-ready', () => {
-            console.log("PANNEAU DETECTÉ");refreshResultsNumber();});
+        document.addEventListener('infopanel-ready', () => {refreshResultsNumber();});
     }
 }
 

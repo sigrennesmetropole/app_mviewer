@@ -1,6 +1,5 @@
- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 110 40" width="110" height="40">
-    <title>Légende réutilisable</title>
-    <g>
-      <rect id="button_rect" x="5" y="5" width="100" height="30" fill="#3FB3CD" stroke="#000000" stroke-width="0.5"  />
-    </g>
-  </svg>
+<svg width="215.72" height="38.217" version="1.1" viewBox="0 0 215.72 38.217" xmlns="http://www.w3.org/2000/svg">
+ <title>Légende réutilisable</title>
+ <rect x="3.3733" y="2.6986" width="46.214" height="32.552" ry="3.4636e-6" fill="#FF9027" stroke="#000" stroke-width="2"/>
+ <text x="58.90414" y="15.418095" font-family="sans-serif" font-size="11px" stroke-width=".99481" style="line-height:1.25" xml:space="preserve"><tspan x="58.90414" y="15.418095">Périmètre des emprises </tspan><tspan x="58.90414" y="32.084721">parcellaires</tspan></text>
+</svg>

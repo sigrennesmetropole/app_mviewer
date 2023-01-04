@@ -8,7 +8,6 @@ var observedElem = {
 for (const elem in observedElem) {
     let observer = new MutationObserver(function(mutations) {
         let targetId = mutations[0].target.id;
-        //console.log("TARGET = " + targetId);
         const markerDisplayEvent = new CustomEvent(observedElem[targetId], {
             detail: {
               display: window.getComputedStyle(document.querySelector('#'+targetId)).display,
@@ -41,11 +40,8 @@ function simulateClick(layer){
                 pixel: _map.getPixelFromCoordinate(_coordinates)
             };
         if (!layer || layer=='undefined'){
-            //console.log("disparition de couche");
             setTimeout( function() { info.queryMap(_event);}, 300);
-            //info.queryMap(_event);
         } else{
-            //console.log("apparition de couche");
             layer.once('postrender', function() { info.queryMap(_event);});
         }
         return Promise.resolve("Success");
