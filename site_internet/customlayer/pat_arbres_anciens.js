@@ -46,7 +46,8 @@ mviewer.customLayers.arbresanciens= (function() {
         style: markerStyle,
     });
     
-    
+    // 02/01/2023 : demande de retrait de la phrase de complément
+    /*
     dataLayer.once('prerender', function() {
         console.log("COMPLEMENT ARBRES ANCIENS");
         let features = dataLayer.getSource().getFeatures();
@@ -54,7 +55,7 @@ mviewer.customLayers.arbresanciens= (function() {
             feature.set("complement", "Un arbre ancien a été planté il y a plus de " + age_ancien + " ans");
         });
     });
-    
+    */
     return {
         layer: dataLayer,
     }

@@ -1,43 +1,38 @@
+var showNbFeatures = configuration.getConfiguration().application.showClickNbItems !== "false";
 var coordinate = _map.getView().getCenter();
 
-
-$("#page-content-wrapper").prepend("<div id='popup-number-results'></div>");
-var _popup = new ol.Overlay({ positioning: 'center', element: $("#popup-number-results")[0], stopEvent: false})
-mviewer.getMap().addOverlay(_popup);
+var openedInfoPanel = false;
 
 
-_map.on('singleclick', function (evt) {
+if (showNbFeatures){
+    $("#page-content-wrapper").prepend("<div id='popup-number-results'></div>");
+    var _popup = new ol.Overlay({ positioning: 'center', element: $("#popup-number-results")[0], stopEvent: false})
+    mviewer.getMap().addOverlay(_popup);
     $("#popup-number-results").parent().hide();
-    coordinate = evt.coordinate;
-});
 
-_map.on('movestart', function (evt) {
-  $("#popup-number-results").parent().hide();
-});
+    _map.on('singleclick', function (evt) {
+        coordinate = evt.coordinate;
+        _popup.setPosition(coordinate);
+        $("#popup-number-results").parent().hide();
+    });
 
-document.addEventListener('infopanel-ready', () => {showLocation();});
-
-document.addEventListener('refresh-panels', () => {refreshResultsNumber();});
-
-
-function showLocation() {
-    setTimeout(function(){ // laisser le temps de mise à jour des coordonnées au clic
-        if(info.getQueriedFeatures().length > 1 && configuration.getConfiguration().application.showClickNbItems !== "false") {
-            _popup.setPosition(coordinate);
-            $("#popup-number-results").html(info.getQueriedFeatures().length + ' résultats');
-            $("#popup-number-results").parent().show();
-        }else {
+    document.addEventListener('markerdisplayEvent', (e) => {
+        console.log("marqueur event détecté");
+        if (e.detail.display === 'none'){
             $("#popup-number-results").parent().hide();
+        } else {
+            setTimeout(refreshResultsNumber ,250);
         }
-        document.dispatchEvent(new CustomEvent('clickedNbFeaturesEvt', { detail: {'nbfeatures': info.getQueriedFeatures().length, 'position': coordinate}}));
-    },250);
+    });
+
+    document.addEventListener('infopanel-ready', () => {refreshResultsNumber();});
 }
 
 function refreshResultsNumber(){
-    if ($("#popup-number-results")) {
-        if (info.getQueriedFeatures().length > 0) {
-            $("#popup-number-results").html(info.getQueriedFeatures().length + ' résultats');
-            setTimeout(function(){ $("#mv_marker").show(); },250);
-        } else {$("#popup-number-results").parent().hide();}
+    if (showNbFeatures && info.getQueriedFeatures().length > 1) {
+        $("#popup-number-results").html(info.getQueriedFeatures().length + ' résultats');
+        $("#popup-number-results").parent().show();
+    } else {
+        $("#popup-number-results").parent().hide();
     }
 }
