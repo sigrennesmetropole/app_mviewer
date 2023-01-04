@@ -19,8 +19,20 @@ mviewer.customLayers.ete_monuments= (function() {
     
     let dataLayer = new ol.layer.Vector({
         source: new ol.source.Vector({
-            url: data_url + '&CQL_FILTER=id_organisme%20IN%20%28' + l_id_org.join('%2C') + '%29',
-            format: new ol.format.GeoJSON()
+            format: new ol.format.GeoJSON(),
+            loader: () => {// permet d'éviter les features chargées en double
+                const urlData = data_url + '&CQL_FILTER=id_organisme%20IN%20%28' + l_id_org.join('%2C') + '%29';
+                fetch(urlData)
+                    .then(r => r.json())
+                    .then(r => {
+                        //console.log("Load features ete_monuments"); // ==> Exécuté 2x rarement !
+                        // nettoie la layer
+                        mviewer.getLayer("ete_monuments").layer.getSource().clear();
+                        // charge les features
+                        let features = dataLayer.getSource().getFormat().readFeatures(r)
+                        dataLayer.getSource().addFeatures(features);   
+                    })
+                }
         }),
         style: pctStyle,
     });
