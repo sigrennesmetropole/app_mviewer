@@ -81,6 +81,8 @@ function addBaseLayer() {
     
     //creation de la baselayer dans le mviewer
     mviewer.createBaseLayer(ortho);
+    // on déplace la couche en tête du tableau des couches pour qu'elle reste en fond
+    _map.getLayers().insertAt(0,_map.getLayers().pop());
     // ajout du basemap dans le composant de sélection de fond de plan
     if (configuration.getConfiguration().baselayers.style === "gallery") {
         $("#basemapslist").append(Mustache.render(mviewer.templates.backgroundLayerControlGallery, ortho));
