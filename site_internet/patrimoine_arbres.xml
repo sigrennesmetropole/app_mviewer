@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <application
-        title="Patrimoine arboré en accompagnement de voirie de la ville de Rennes"
+        title="Le patrimoine arboré de la ville de Rennes"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
         favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
