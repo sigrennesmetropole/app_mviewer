@@ -13,7 +13,8 @@
       "js/rmCustomization.js",
       "js/legendeRM.js",
       "js/svg_marker.js",
-      "js/rm_eventsmanager.js"
+      "js/rm_eventsmanager.js",
+      "js/matomo.js"
     ],
     "css": [
       "css/styles.css",
