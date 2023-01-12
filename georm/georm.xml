@@ -64,7 +64,7 @@
                 <template url="apps/georm/templates/georm_station-velo-ls.mst"></template>
             </layer>
             <layer
-                id="v_star_arret_physique"
+                id="v_star_arrets_physiques_actifs"
                 name="Arrêts de bus"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/trp_coll/ows"
@@ -391,7 +391,7 @@
                 infopanel="right-panel">
                 <template url="apps/georm/templates/organismes.mst"></template>
             </layer>
-            <layer
+            <!--<layer
                 id="v_art_ville"
                 name="Street art"
                 type="wms"
@@ -407,6 +407,7 @@
                 infopanel="right-panel">
                 <template url="apps/georm/templates/georm_street-art.mst"></template>
             </layer>
+            -->
             <layer
                 id="v_art_ville"
                 name="Art sur l'espace public"
@@ -439,7 +440,7 @@
                 infopanel="right-panel">
                 <template url="apps/georm/templates/georm_art-ville.mst"></template>
             </layer>
-            <layer
+            <!--<layer
                 id="v_art_ville"
                 name="Art pour la mémoire"
                 type="wms"
@@ -455,6 +456,7 @@
                 infopanel="right-panel">
                 <template url="apps/georm/templates/georm_art-ville.mst"></template>
             </layer>
+            -->
         </theme>
         <theme id="theme-sport" name="Sports, Loisirs" collapsed="true" icon="fas fa-futbol">
             <layer
