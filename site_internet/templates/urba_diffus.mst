@@ -5,7 +5,6 @@
              {{#description}}<span class='rm-popup-label'> PROGRAMME :</span> {{description}} <br/>{{/description}}
         </p>
         <p class="rm-popup-text-feature">
-             {{#nb_logements}}<span class='rm-popup-label'> NOMBRE DE LOGEMENTS :</span><span class="zeroNonDef"> {{nb_logements}} </span><br/>{{/nb_logements}}
              {{#promoteur}}<span class='rm-popup-label'> PROMOTEUR :</span><span> {{promoteur}} </span><br/>{{/promoteur}}
         </p>
     </li>

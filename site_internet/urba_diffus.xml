@@ -90,5 +90,40 @@
                 <template url="apps/site_internet/templates/urba_diffus.mst"/>
             </layer>
         </theme>
+        <theme id="theme-20230113100030" name="Administration" collapsed="true" icon="fas fa-map-marked-alt">
+            <layer
+                id="v_sitorg_organisme"
+                name="Administrations"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/organisme_bleu.sld"
+                legendurl="apps/site_internet/img/legend/leg_marker_bleu.svg"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9bd66532-036e-44c8-957d-9156362e5576"
+                queryable="true"
+                featurecount="3"
+                filter="etat_organisme='actif' and (code_nomenclature_principale = '1.1.1' OR code_nomenclature_secondaire LIKE '% 1.1.1 %') AND (nom_usage like '%Direction de quartier%' OR nom_usage like '% Droits des sols%')"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organisme.mst"></template>
+            </layer>
+            <layer
+                id="quartier"
+                name="Quartiers"
+                type="customlayer"
+                url="apps/site_internet/customlayer/quartier.js"
+                legendurl="apps/site_internet/img/legend/leg_perim_quartier.svg"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6db35b05-e8bc-4339-a49b-828da0d3fd9f"
+                tooltip="false"
+                tooltipcontent=""
+                queryable="false"
+                opacity='0.6'
+                infopanel="right-panel">
+            </layer>
+        </theme>
     </themes>
 </config>
