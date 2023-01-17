@@ -53,6 +53,7 @@
                 name="Stations de vélo libre service"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/trp_doux/ows"
+                style="stations_vls_levelostar"
                 visible="false"
                 tabcolor="#004b95"
                 infoformat="application/vnd.ogc.gml"
