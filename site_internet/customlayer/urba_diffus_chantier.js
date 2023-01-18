@@ -3,7 +3,7 @@ mviewer.customLayers.urbadiffus_en_chantier= (function() {
     const nb_logements_min=10;
     let data_url="https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=app:tabou_v_oa_programme&outputFormat=application/json&srsName=EPSG:3857";
     //let filter = "commune='Rennes' AND nature = 'En diffus' AND diffusion_restreinte=false AND etape='En chantier' AND (nb_logements >= " + nb_logements_min + " OR num_ads IS NOT NULL)";
-    let filter = "commune='Rennes' AND nature = 'En diffus' AND diffusion_restreinte=false AND etape='En chantier' AND (nb_logements >= " + nb_logements_min + " OR nb_logements IS NULL OR nb_logements = 0)";
+    let filter = "commune LIKE '%Rennes%' AND nature = 'En diffus' AND diffusion_restreinte=false AND etape='En chantier' AND (nb_logements >= " + nb_logements_min + " OR nb_logements IS NULL OR nb_logements = 0)";
     
     let complete_url = data_url + '&CQL_FILTER='+ encodeURIComponent(filter);
     
