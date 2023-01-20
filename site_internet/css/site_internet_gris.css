@@ -888,6 +888,12 @@ ul ul {
     color: #555!important;
 }
 
+#searchresults .disabled{
+    /*font-family:'vistaSansOT_bold', Arial, Sans-serif;*/
+    font-family: 'DMSans_bold', Arial, Sans-serif;
+    color: var(--darkmain);
+}
+
 ul#searchparameters{
     /*font-family: 'vistaSansOT_regular',Arial, Sans-serif;*/
     font-family: 'DMSans_regular', Arial, Sans-serif;

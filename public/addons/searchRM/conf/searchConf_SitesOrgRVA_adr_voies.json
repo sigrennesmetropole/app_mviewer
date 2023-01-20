@@ -1,0 +1,29 @@
+{
+    "RVA" : true,
+    "SitesOrg" : true,
+    "cadastre" : false,
+    "queryMapOnClick" : false,
+    "searchContent": [
+        {
+            "categoryName": "Voies",
+            "searchParameterName": "Rechercher des voies",
+            "defaultCheck": true,
+            "nbItemDisplay": 5,
+            "zoom": 17
+        },
+        {
+            "categoryName": "Adresses",
+            "searchParameterName": "Rechercher des adresses",
+            "defaultCheck": true,
+            "nbItemDisplay": 5,
+            "zoom": 17
+        },
+        {
+            "categoryName": "Organismes",
+            "searchParameterName": "Rechercher des organismes",
+            "defaultCheck": true,
+            "nbItemDisplay": 5,
+            "zoom": 17
+        }
+    ]
+}
