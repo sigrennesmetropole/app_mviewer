@@ -1,0 +1,22 @@
+{
+    "RVA" : true,
+    "SitesOrg" : false,
+    "cadastre" : false,
+    "queryMapOnClick" : false,
+    "searchContent": [
+        {
+            "categoryName": "Voies",
+            "searchParameterName": "Rechercher des voies",
+            "defaultCheck": true,
+            "nbItemDisplay": 5,
+            "zoom": 17
+        },
+        {
+            "categoryName": "Adresses",
+            "searchParameterName": "Rechercher des adresses",
+            "defaultCheck": true,
+            "nbItemDisplay": 5,
+            "zoom": 17
+        }
+    ]
+}
