@@ -32,7 +32,89 @@ var baladesAddon = (function () {
         $('#prevButton').click(clickPrevButtonFunction);
         $('#nextButton').click(clickNextButtonFunction);
         $('#startButton').click(clickStartButtonFunction);
+
+        // Gestion du point de géolocalisation
+        if (getParametreVisible())
+            geolocalisation();
     };
+
+    function getParametreVisible(){
+        var l_ext = configuration.getConfiguration().extensions.extension;
+        var geoloc;
+        if (l_ext.length){ // si plusieurs extensions
+            for(var i= 0; i < l_ext.length; i++) {
+                if (l_ext[i].id && l_ext[i].id == "balades"){
+                    geoloc = l_ext[i].geoloc;
+                    break;
+                }
+            }
+        } else { 
+            geoloc = l_ext.geoloc;
+        }
+        return (geoloc == "true")
+    }
+
+    function geolocalisation() {
+        const geolocation = new ol.Geolocation({
+            trackingOptions: {
+              enableHighAccuracy: true,
+            },
+            projection: _map.getView().getProjection(),
+        });
+        geolocation.setTracking(true);
+
+        const positionFeature = new ol.Feature();
+        positionFeature.setStyle(
+        new ol.style.Style({
+            image: new ol.style.Circle({
+            radius: 8,
+            fill: new ol.style.Fill({
+                color: '#3399CC',
+            }),
+            stroke: new ol.style.Stroke({
+                color: '#fff',
+                width: 2,
+            }),
+            }),
+        })
+        );
+
+        geolocation.on('change:position', function () {
+            const coordinates = geolocation.getPosition();
+            positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
+        });
+
+        // ajout du point de géolocalisation
+        const accuracyFeature = new ol.Feature();
+        geolocation.on('change:accuracyGeometry', function () {
+            accuracyFeature.setGeometry(geolocation.getAccuracyGeometry());
+        });
+
+        const positionLayer = new ol.layer.Vector({
+            map: _map,
+            source: new ol.source.Vector({
+                features: [accuracyFeature, positionFeature],
+            }),
+        });
+
+        // modification du bouton géolocaliser
+        if (getParametreVisible()){
+            document.getElementById('geolocbtnBalade').style.display = 'block';
+            if (_map.getSize()[0] > 1000){
+                document.getElementById('geolocbtnBalade').style.right = "10px";
+                document.getElementById('geolocbtnBalade').style.top = "200px";
+            } else {
+                document.getElementById('geolocbtnBalade').style.bottom = "10.5%";
+                document.getElementById('geolocbtnBalade').style.left = "88%";
+            }
+            document.getElementById('geolocbtnBalade').addEventListener('click', function () {
+                mviewer.getMap().getView().setCenter(geolocation.getPosition());
+                mviewer.getMap().getView().setZoom(18);
+                if (document.getElementById("modal-panel").style.display == "block")
+                    decaleMap([0, 0]);
+            });
+        }
+    }
 
     function createLayerHighlight() {
         var stylePointHighlight = new ol.style.Style({
