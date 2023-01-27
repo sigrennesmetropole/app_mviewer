@@ -287,7 +287,7 @@ var baladesAddon = (function () {
         mviewer.customLayers[layer_points].layer.changed();
         // if (!feature)
         //    currentIdBalade = -1;
-        if (feature && feature.getGeometry().getType() == 'Point') {
+        if (feature && feature.getGeometry().getType() == 'Point' && feature.get('id')) {
             document.getElementById('prevButton').style.display = 'block';
             document.getElementById('prevButton').disabled = false;
             document.getElementById('nextButton').disabled = true;
