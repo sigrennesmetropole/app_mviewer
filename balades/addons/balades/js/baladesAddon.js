@@ -97,22 +97,24 @@ var baladesAddon = (function () {
             }),
         });
 
+        function onclickGeolocalisation() {
+            mviewer.getMap().getView().setCenter(geolocation.getPosition());
+            mviewer.getMap().getView().setZoom(18);
+            if (document.getElementById("modal-panel").style.display == "block")
+                decaleMap([0, 0]);
+        }
+
         // modification du bouton géolocaliser
-        if (getParametreVisible()){
-            document.getElementById('geolocbtnBalade').style.display = 'block';
+        if (getParametreVisible()){ 
             if (_map.getSize()[0] > 1000){
-                document.getElementById('geolocbtnBalade').style.right = "10px";
-                document.getElementById('geolocbtnBalade').style.top = "200px";
+                document.getElementById('geolocbtn').style.display = "block";
+                document.getElementById('geolocbtn').onclick = onclickGeolocalisation;
             } else {
+                document.getElementById('geolocbtnBalade').style.display = 'block';
                 document.getElementById('geolocbtnBalade').style.bottom = "10.5%";
                 document.getElementById('geolocbtnBalade').style.left = "88%";
+                document.getElementById('geolocbtnBalade').addEventListener('click', onclickGeolocalisation);
             }
-            document.getElementById('geolocbtnBalade').addEventListener('click', function () {
-                mviewer.getMap().getView().setCenter(geolocation.getPosition());
-                mviewer.getMap().getView().setZoom(18);
-                if (document.getElementById("modal-panel").style.display == "block")
-                    decaleMap([0, 0]);
-            });
         }
     }
 
