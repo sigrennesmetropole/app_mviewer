@@ -30,7 +30,7 @@ function _init() {
 }
 
 function refreshResultsNumber(){
-    if (showNbFeatures && info.getQueriedFeatures().length > 1) {
+    if (showNbFeatures && info.getQueriedFeatures() != undefined && info.getQueriedFeatures().length > 1) {
         $("#popup-number-results").html(info.getQueriedFeatures().length + ' résultats');
         $("#popup-number-results").parent().show();
     } else {

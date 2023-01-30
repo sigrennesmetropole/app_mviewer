@@ -149,7 +149,10 @@ var searchRM = (function () {
       }
     }
 
-
+    //Timer pour attendre la fin de saisie
+    var typingTimer;                //timer identifier
+    var doneTypingInterval = 100;  //time in ms, 5 seconds for example
+    
     var _configureSearch = function (searchRMConf) {
         $.getJSON(searchRMConf, function (confData) {
 
@@ -206,13 +209,17 @@ var searchRM = (function () {
                     $('#autocompleteRmItem_' + currentRmAutocompleteItem).trigger('click');
                     return;
                 }
-                var chars = $(this).val().length;
+                // TODO : mettre une légère attente avant de lancer la recherche
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout(()=>{lancerRecherche(confData);}, doneTypingInterval);
+                /*var chars = $(this).val().length;
                 if (chars === 0) {
                 } else if ((chars >0) && (chars < 3)) {
                     $("#searchresults .list-group-item").remove();
                 } else {
                     _searchRM(confData, $(this).val());
                 }
+                */
             });
 
             $(document).on('click', '#searchparameters', function () {
@@ -221,6 +228,28 @@ var searchRM = (function () {
 
         });
     };
+    
+    //on keyup, start the countdown
+    $('#searchfield').on('keyup', function () {
+      clearTimeout(typingTimer);
+      typingTimer = setTimeout(()=>{lancerRecherche(confData);}, doneTypingInterval);
+    });
+
+    //on keydown, clear the countdown 
+    $('#searchfield').on('keydown', function () {
+      clearTimeout(typingTimer);
+    });
+
+    //user is "finished typing," do something
+    function lancerRecherche (confData) {
+      var chars = $('#searchfield').val().length;
+        if (chars === 0) {
+        } else if ((chars >0) && (chars < 3)) {
+            $("#searchresults .list-group-item").remove();
+        } else {
+            _searchRM(confData, $('#searchfield').val());
+        }
+    }
 
     var _setSearchParameters = function (confData) {
         $('#searchparameters li').hide();
@@ -367,12 +396,14 @@ var searchRM = (function () {
                 dataFiltered = _filterLanes(data);
                 dataFiltered.forEach(function (elem) {
                     str += "<a class=\"geoportail list-group-item autocompleteRmItem\" id=\"autocompleteRmItem_" + nbItem + "\" href=\"#\" title=\"" + elem.name4;
-                    var x = _getBoundigBoxCenterX(elem.lowerCorner, elem.upperCorner);
-                    var y = _getBoundigBoxCenterY(elem.lowerCorner, elem.upperCorner);
-                    var coordNewProj = proj4('EPSG:3948', 'EPSG:4326', [x, y]);
-                    str += '" onclick="searchRM.displayLocation('+
-                    coordNewProj[0] + ',' +
-                    coordNewProj[1] + ',' + data.zoom + ',' + queryMapOnClick +', \'EPSG:4326\');">' + elem.name4 + '</a>';
+                    // calcul x et y de voie à revoir => il faut un point sur la voie et non pas le centre de la bounding box)
+                    //var x = _getBoundigBoxCenterX(elem.lowerCorner, elem.upperCorner);
+                    //var y = _getBoundigBoxCenterY(elem.lowerCorner, elem.upperCorner);
+                    //var coordNewProj = proj4('EPSG:3948', 'EPSG:4326', [x, y]);
+                    str += '" onclick="searchRM.displayLocationLane('+
+                    //coordNewProj[0] + ',' +
+                    //coordNewProj[1] + 
+                    elem.idlane + ',' + data.zoom + ',' + queryMapOnClick +', \'EPSG:4326\');">' + elem.name4 + '</a>';
                     nbItem++;
                 });
                 lane.push(dataFiltered);
@@ -426,6 +457,32 @@ var searchRM = (function () {
             address: address
         }
     };
+    
+    function getPointOnLane(idlane){
+        return getLaneData(idlane).then(function(result_site){
+            // sélectionner 1 tronçon
+            var l_troncons = result_site.response.features.sort((a, b) => (a.bbox > b.bbox) ? 1 : -1);
+            var index = l_troncons.length/2 | 0;
+            var tronc = l_troncons[index];
+            // sélectionner 1 point de ce tronçon
+            var geom = tronc.geometry.coordinates[0];
+            var coord_idx = geom.length/2 |0;
+            return geom[coord_idx];
+        });
+        
+    }
+    
+    function getLaneData(idlane){
+        return new Promise(resolve => {
+            $.ajax({
+                url: 'https://public.sig.rennesmetropole.fr/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=v_troncon_denom&outputFormat=application%2Fjson&srsname=EPSG:3948&CQL_FILTER=id_voie=' + idlane,
+                context: document.body
+            }).done(function (res) {
+                resolve({'response': res});
+            });
+        });
+    }
+    
 
     var getQueryMapOnClick = function(callback){
       var extensions = configuration.getConfiguration().extensions;
@@ -456,6 +513,13 @@ var searchRM = (function () {
          }
        });
       }
+    }
+
+    var displayLocationLane = function(idlane, zoom, querymaponclick){
+        getPointOnLane(idlane).then((coord) => {
+            var coordNewProj = proj4('EPSG:3948', 'EPSG:4326', coord);
+            displayLocation(coordNewProj[0], coordNewProj[1], zoom , querymaponclick);
+        });
     }
 
     var displayLocation = function (coordX, coordY, zoom, querymaponclick) {
@@ -637,6 +701,7 @@ var searchRM = (function () {
 
     return {
       enable: enable,
+      displayLocationLane: displayLocationLane,
       displayLocation: displayLocation,
       displayLocationMarker: displayLocationMarker,
       toggleParameter: toggleParameter,

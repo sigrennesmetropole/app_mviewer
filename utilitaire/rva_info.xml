@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+<application
+    title="Informations du RVA"
+    logo="apps/public/img/logo/logo_mviewer_transp.png"
+    favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
+    titlehelp="À propos des cartes thématiques"
+    help="apps/site_internet/html/site_internet_help.html"
+    showhelp="false"
+    style="apps/site_internet/css/site_internet_gris.css"
+    exportpng="false"
+    coordinates="false"
+    measuretools="false"
+    togglealllayersfromtheme="true"
+    templaterightinfopanel="allintabs"
+    sortlayersinfopanel="toc"
+/>
+
+<mapoptions  projection="EPSG:3857" center="-185600.24433942206,6125077.984905125" zoom="14" />
+
+
+<baselayers style="default"> 
+    <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/56ace7a5-e6d0-4e1e-8685-e18d98ee151d&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+</baselayers>
+
+<extensions>
+    <extension type="component" id="GUICustom" path="apps/public/addons"/>
+    <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
+    <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_RVA_adresses_voies.json"/>
+</extensions>
+    
+<themes mini="true">
+        <theme id="theme-20180827150815" name="Informations du RVA" collapsed="true" icon="fas fa-map-marked-alt"  >
+            <layer
+                id="v_troncon_denom"
+                name="Voies du RVA"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/ref_rva/ows"
+                style="v_troncon_denom_lgn_grise"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                opacity="0.1"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                queryable="true"
+                featurecount="3"
+                infopanel="right-panel">
+                <template url="apps/utilitaire/templates/voies_adresses.mst"></template>
+            </layer>
+            <layer
+                id="v_adresse_pnt"
+                name="Adresses du RVA"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/ref_rva/ows"
+                style="v_adresse_pnt_etq"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                opacity="0.1"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                queryable="true"
+                featurecount="3"
+                infopanel="right-panel">
+                <template url="apps/utilitaire/templates/voies_adresses.mst"></template>
+            </layer>
+        </theme>
+    </themes>
+</config>
