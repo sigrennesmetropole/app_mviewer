@@ -1,0 +1,10 @@
+{{#features}}
+    <li class="item">
+        {{#adresse_complete}}<h5 class="rm-popup-title-feature">{{adresse_complete}}</h5>{{/adresse_complete}}
+        {{^adresse_complete}}<h5 class="rm-popup-title-feature">{{denomination}}</h5>{{/adresse_complete}}
+        <p class="rm-popup-text-feature">
+             {{#id_adr}}<span class='rm-popup-label'> ID ADRESSE :</span> {{id_adr}} <br/>{{/id_adr}}
+             {{#id_voie}}<span class='rm-popup-label'> ID VOIE :</span><span> {{id_voie}} </span><br/>{{/id_voie}}
+        </p>
+    </li>
+{{/features}}
