@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <application
+        title="EXPORAMA - Balade #26"
+        logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
+        titlehelp="À propos des cartes thématiques"
+        help="apps/site_internet/html/site_internet_help.html"
+        showhelp="false"
+        exportpng="false"
+        style="apps/site_internet/css/site_internet_gris.css"
+        measuretools="false"
+        togglealllayersfromtheme="false"
+        showClickNbItems="false" 
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
+        geoloc="true"
+        />
+
+    <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-187000.24433942206,6125077.984905125" zoom="16" />
+
+    <baselayers style="default"><!-- style="default"||gallery" -->
+        <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+    </baselayers>
+
+    <extensions>
+        <extension type="component" id="GUICustom" path="apps/public/addons"/>
+        <extension type="component" id="balades" path="apps/balades/addons" configFile="/apps/balades/parametrage/param_exporama_26.json" />
+        <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
+    </extensions>
+
+    <themes mini="true" legendmini="false">
+        <theme id="theme-202201280956" name="Points" collapsed="true" icon="fas fa-map-marker-alt">
+            <layer
+                id="balades_points"
+                name="Points d'intérêt"
+                type="customlayer"
+                url="apps/balades/customlayer/balades_points.js"
+                geojson="apps/balades/customlayer/data/exporama/exporama_26_points.geojson"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="false"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{name}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="3"
+                infopanel="right-panel">
+                <template url="apps/balades/templates/point_exporama.mst"></template>
+            </layer>
+        </theme>
+        <theme id="theme-202201280955" name="Balades de test" collapsed="true" icon="fas fa-route">
+            <layer
+                id="balades"
+                name="Parcours balades"
+                type="customlayer"
+                url="apps/balades/customlayer/balades.js"
+                geojson="apps/balades/customlayer/data/exporama/exporama_26_parcours.geojson"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="false"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{name}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="3"
+                infopanel="right-panel">
+                <template url="apps/balades/templates/balade_exporama.mst"></template>
+            </layer>
+        </theme>
+    </themes>
+</config>
