@@ -757,6 +757,363 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
+				"coordinates" : [ -1.7191932087, 48.0680927126 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Cœur de métropole",
+				"cout_global" : 6831920,
+				"montant_attrib" : 600000,
+				"intitulé" : "Reconstruction du groupe scolaire Eugène Pottier",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Saint-Jacques-de-la -Lande ",
+				"id site" : 3426,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.679252055, 48.1527080986 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Cœur de métropole",
+				"cout_global" : 301900,
+				"montant_attrib" : 90570,
+				"intitulé" : "Multi-Accueil \"les jardins de l'ille\" et \"Jardins d'enfants\"",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint-Grégoire",
+				"id site" : 3352
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7738306391, 48.1463163447 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 2887016,
+				"montant_attrib" : 300000,
+				"intitulé" : "Réhabilitation et extension de la médiathèque",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Pacé",
+				"id site" : 726,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7910289764, 48.0544509783 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1879300,
+				"montant_attrib" : 600000,
+				"intitulé" : "Déconstruction et reconstruction aile nord école élémentaire publique",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Chavagne",
+				"id site" : 2101,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7730157207, 48.0803673635 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 125000,
+				"montant_attrib" : 37500,
+				"intitulé" : "Rénovation de la salle Brocéliande",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Le Rheu",
+				"id site" : 3013
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7146450281, 48.1562773882 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 500000,
+				"montant_attrib" : 209838.8,
+				"intitulé" : "Rénovation de l'ancienne école et mairie",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Montgermont",
+				"id site" : 2530,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5431968853, 48.040675739 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 145385,
+				"montant_attrib" : 43615,
+				"intitulé" : "Extension de l'école du Chêne centenaire et création d'un self",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Nouvoitou",
+				"id site" : 2682
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6619822384, 48.0427160829 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 41174,
+				"montant_attrib" : 12352,
+				"intitulé" : "Isolation ossature bois préfabriqué adjacent à la mairie",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Noyal-Chatillon-Sur-Seiche",
+				"id site" : 566
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6675809439, 47.9972348734 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 2238000,
+				"montant_attrib" : 600000,
+				"intitulé" : "Extension et réaménagement du groupe scolaire \"Les grains d'Orge\"",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Orgères",
+				"id site" : 2787,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7060271999, 48.0107914229 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 18207,
+				"montant_attrib" : 5462,
+				"intitulé" : "Travaux de rénovation énergétique des bureaux de la mairie",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Pont-Péan",
+				"id site" : 570
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.712534271, 48.0134478271 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 26741,
+				"montant_attrib" : 8022,
+				"intitulé" : "Réfection et sécurisation de la toiture de la salle culturelle \"espace beausoleil\"",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Pont-Péan",
+				"id site" : 671
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.885494351, 48.2146944121 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 209370,
+				"montant_attrib" : 62811,
+				"intitulé" : "Travaux de grosses réparations dans la salle des sports Anita Conti",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Romillé",
+				"id site" : 3126
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8964076042, 48.2188970041 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 168710,
+				"montant_attrib" : 50613,
+				"intitulé" : "Rénovation du sol sportifs de la salle des sports René Cutté ",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Romillé",
+				"id site" : 3120
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6556739807, 48.019970048 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 17655,
+				"montant_attrib" : 5296.35,
+				"intitulé" : "Changement des menuiseries salle Du Guesclin",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint - Erblon",
+				"id site" : 3194
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8281292915, 48.1524588698 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 194019,
+				"montant_attrib" : 5825,
+				"intitulé" : "Remplacement de menuiseries de l'école J.Prévert",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint-Gilles",
+				"id site" : 3256
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5766882896, 48.1518146681 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1391000,
+				"montant_attrib" : 300000,
+				"intitulé" : "Extension de la salle omnisports des blanchets",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Thorigné Fouillard",
+				"id site" : 3630
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8703579903, 48.1050490932 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 2000000,
+				"montant_attrib" : 750000,
+				"intitulé" : "Construction et réhabilitation d'un pôle enfance jeunesse",
+				"justificatif" : "PPC + Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Cintré",
+				"id site" : 4568,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8701016372, 48.1237698412 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 93837,
+				"montant_attrib" : 34218,
+				"intitulé" : "Rénovation sol sportif et déshumidification",
+				"justificatif" : "PPC",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "La Chapelle Thouarault",
+				"id site" : 1959
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8303259496, 48.1922644526 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 790045,
+				"montant_attrib" : 285000,
+				"intitulé" : "Extension et réfection du restaurant scolaire",
+				"justificatif" : "PPC + Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Parthenay-De-Bretagne",
+				"id site" : 2948,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
 				"coordinates" : [ -1.7460353293, 48.0244546199 ]
 			},
 			"properties" : {
@@ -938,6 +1295,285 @@
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Romillé",
 				"Code INSEE" : 35245
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6030872213, 48.1197851961 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Cœur de métropole",
+				"cout_global" : 218292.58,
+				"montant_attrib" : 65487.77,
+				"intitulé" : "2024m² - City Stade",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Cesson-Sévigné",
+				"Code INSEE" : 35051
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6205478151, 48.0884649797 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Cœur de métropole",
+				"cout_global" : 9611863,
+				"montant_attrib" : 600000,
+				"intitulé" : "Equipement scolaire ALSH, halles sportives",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Chantepie",
+				"Code INSEE" : 35055,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6141766969, 47.9949706172 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 294325,
+				"montant_attrib" : 88297.25,
+				"intitulé" : "Terrain multi-activités",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Bourgbarré",
+				"Code INSEE" : 35032
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.4829783731, 48.1106665983 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 45197,
+				"montant_attrib" : 13559,
+				"intitulé" : "Toilettes publiques",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Brécé",
+				"Code INSEE" : 35039
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6305071153, 48.2120956029 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 50885,
+				"montant_attrib" : 15265,
+				"intitulé" : "Création d'un espace de jeux et de convivialité et sa végétalisation",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Chevaigné",
+				"Code INSEE" : 35079
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.721348427, 47.9787631499 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1045323,
+				"montant_attrib" : 100000,
+				"intitulé" : "Pôle médical",
+				"justificatif" : "Performance énergétique",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Laillé",
+				"Code INSEE" : 35139,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7161798047, 48.1558502166 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 181037,
+				"montant_attrib" : 72415,
+				"intitulé" : "Rénovation bâtiment communal en maison de santé (PBIL)",
+				"justificatif" : "PBIL",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Montgermont",
+				"Code INSEE" : 35189
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6619822384, 48.0427160829 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 80275,
+				"montant_attrib" : 24082,
+				"intitulé" : "Foot-five",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Noyal-Châtillon-Sur-Seiche",
+				"Code INSEE" : 35206
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6619822384, 48.0427160829 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 44000,
+				"montant_attrib" : 13200,
+				"intitulé" : "City-stade",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Noyal-Châtillon-Sur-Seiche",
+				"Code INSEE" : 35206
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7060271999, 48.0107914229 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 687403,
+				"montant_attrib" : 274961.2,
+				"intitulé" : "Création d'un espace petite enfance",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Pont-Péan",
+				"Code INSEE" : 35363,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6514223265, 48.0180735204 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 132600,
+				"montant_attrib" : 39780,
+				"intitulé" : "Aménagement de la Halle",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint - Erblon",
+				"Code INSEE" : 35266
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6514223265, 48.0180735204 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 94500,
+				"montant_attrib" : 28350,
+				"intitulé" : "City parc",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint - Erblon",
+				"Code INSEE" : 35266
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5816159284, 48.1534073964 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 44500,
+				"montant_attrib" : 13350,
+				"intitulé" : "Création de 1 terrain multisport (city stade)",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Thorigné Fouillard",
+				"Code INSEE" : 35334
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8663465468, 48.1237423529 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 31510,
+				"montant_attrib" : 12255,
+				"intitulé" : "Rénovation thermique du bâtiment communal accueillant la supérette",
+				"justificatif" : "PPC",
+				"nature" : "2 - Autres projets - Equipements Batimentaire et non batimentaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "La Chapelle Thouarault",
+				"Code INSEE" : 35065
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6016689616, 48.0446618576 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 27925,
+				"montant_attrib" : 8377.5,
+				"intitulé" : "Plan de gestion différenciée des espaces verts",
+				"justificatif" : "Biodiversité",
+				"nature" : "3- Biodiversité",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Vern-sur-Seiche",
+				"Code INSEE" : 35352
 			}
 		}
 	]

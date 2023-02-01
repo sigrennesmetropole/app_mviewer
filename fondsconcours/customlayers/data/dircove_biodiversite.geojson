@@ -139,6 +139,25 @@
 				"Maitrise d'ouvrage" : "Romillé",
 				"Code INSEE" : 35245
 			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6016689616, 48.0446618576 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle d'appui cœur de métropole et pôle structurant ",
+				"cout_global" : 27925,
+				"montant_attrib" : 8377.5,
+				"intitulé" : "Plan de gestion différenciée des espaces verts",
+				"justificatif" : "Biodiversité",
+				"nature" : "3- Biodiversité",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Vern-sur-Seiche",
+				"Code INSEE" : 35352
+			}
 		}
 	]
 }

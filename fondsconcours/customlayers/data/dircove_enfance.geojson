@@ -749,6 +749,180 @@
 		{
 			"type" : "Feature",
 			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7191932087, 48.0680927126 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Cœur de métropole",
+				"cout_global" : 6831920,
+				"montant_attrib" : 600000,
+				"intitulé" : "Reconstruction du groupe scolaire Eugène Pottier",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Saint-Jacques-de-la -Lande ",
+				"id site" : 3426,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.679252055, 48.1527080986 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Cœur de métropole",
+				"cout_global" : 301900,
+				"montant_attrib" : 90570,
+				"intitulé" : "Multi-Accueil \"les jardins de l'ille\" et \"Jardins d'enfants\"",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint-Grégoire",
+				"id site" : 3352
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7910289764, 48.0544509783 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 1879300,
+				"montant_attrib" : 600000,
+				"intitulé" : "Déconstruction et reconstruction aile nord école élémentaire publique",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Chavagne",
+				"id site" : 2101,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7146450281, 48.1562773882 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 500000,
+				"montant_attrib" : 209838.8,
+				"intitulé" : "Rénovation de l'ancienne école et mairie",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Montgermont",
+				"id site" : 2530,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.5431968853, 48.040675739 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 145385,
+				"montant_attrib" : 43615,
+				"intitulé" : "Extension de l'école du Chêne centenaire et création d'un self",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Nouvoitou",
+				"id site" : 2682
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6675809439, 47.9972348734 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 2238000,
+				"montant_attrib" : 600000,
+				"intitulé" : "Extension et réaménagement du groupe scolaire \"Les grains d'Orge\"",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Orgères",
+				"id site" : 2787,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8281292915, 48.1524588698 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 194019,
+				"montant_attrib" : 5825,
+				"intitulé" : "Remplacement de menuiseries de l'école J.Prévert",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 30,
+				"Maitrise d'ouvrage" : "Saint-Gilles",
+				"id site" : 3256
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8703579903, 48.1050490932 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 2000000,
+				"montant_attrib" : 750000,
+				"intitulé" : "Construction et réhabilitation d'un pôle enfance jeunesse",
+				"justificatif" : "PPC + Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Cintré",
+				"id site" : 4568,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.8303259496, 48.1922644526 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité à conforter",
+				"cout_global" : 790045,
+				"montant_attrib" : 285000,
+				"intitulé" : "Extension et réfection du restaurant scolaire",
+				"justificatif" : "PPC + Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 50,
+				"Maitrise d'ouvrage" : "Parthenay-De-Bretagne",
+				"id site" : 2948,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
 				"type" : "MultiPoint",
 				"coordinates" : [
 					[ -1.8467447338, 48.0737120314 ]
@@ -783,6 +957,46 @@
 				"taux" : 30,
 				"Maitrise d'ouvrage" : "Laillé",
 				"Code INSEE" : 35139
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.6205478151, 48.0884649797 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Cœur de métropole",
+				"cout_global" : 9611863,
+				"montant_attrib" : 600000,
+				"intitulé" : "Equipement scolaire ALSH, halles sportives",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Chantepie",
+				"Code INSEE" : 35055,
+				"ecobonus" : "true"
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -1.7060271999, 48.0107914229 ]
+			},
+			"properties" : {
+				"année" : "2021-2022",
+				"armature" : "Pôle de proximité ",
+				"cout_global" : 687403,
+				"montant_attrib" : 274961.2,
+				"intitulé" : "Création d'un espace petite enfance",
+				"justificatif" : "Performance énergétique",
+				"nature" : "1 - Projets petite enfance- scolaire - périscolaire ",
+				"taux" : 40,
+				"Maitrise d'ouvrage" : "Pont-Péan",
+				"Code INSEE" : 35363,
+				"ecobonus" : "true"
 			}
 		}
 	]

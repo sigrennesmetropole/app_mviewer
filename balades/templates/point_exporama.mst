@@ -1,0 +1,14 @@
+{{#features}}
+    <li class="item">
+        <div id="idbalade" style="display: none">{{{idbalade}}}</div>
+
+        <h4 class="rm-popup-title-feature"> Arrêt N° {{{rang}}}</h4>
+        <p class="rm-popup-text-feature">
+            {{#name}}<span class='rm-popup-label'> {{{name}}}</span><br/> {{/name}}
+        </p>
+        <p class="rm-popup-text-feature">
+            {{#description}}<span > {{{description}}}</span><br/>{{/description}}
+        </p>
+    </li>
+{{/features}}
+
