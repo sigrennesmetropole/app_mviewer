@@ -1,12 +1,18 @@
 {
 	"type" : "FeatureCollection",
-	"name" : "geojson_autres",
+	"name" : "geojson_eqpmt_autres",
+	"crs" : {
+		"type" : "name",
+		"properties" : {
+			"name" : "EPSG:3857"
+		}
+	},
 	"features" : [
 		{
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.539427042, 48.1360005604 ]
+				"coordinates" : [ -171368.234429652, 6129510.3790898938 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -27,7 +33,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.5197181702, 48.1383919604 ]
+				"coordinates" : [ -169174.2528521676, 6129909.2848314214 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -47,7 +53,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.9457307458, 48.2965687761 ]
+				"coordinates" : [ -216597.7558424967, 6156335.8944502333 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -66,7 +72,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.9473713939, 48.2955525704 ]
+				"coordinates" : [ -216780.3919490548, 6156165.8559559155 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -86,7 +92,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.9427347183, 48.2963314494 ]
+				"coordinates" : [ -216264.2395900741, 6156296.183025321 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -106,7 +112,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.9427347183, 48.2963314494 ]
+				"coordinates" : [ -216264.2395900741, 6156296.183025321 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -126,7 +132,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.9433784485, 48.2952536513 ]
+				"coordinates" : [ -216335.89930417, 6156115.8394117337 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -146,7 +152,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6402620077, 48.1823588188 ]
+				"coordinates" : [ -182593.1314662059, 6137246.6423822334 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -165,7 +171,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6166433396, 47.9901495588 ]
+				"coordinates" : [ -179963.9133611965, 6105216.2288742736 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -184,7 +190,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.4841239798, 48.1065718772 ]
+				"coordinates" : [ -165211.9257047187, 6124602.94628336 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -204,7 +210,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7541172397, 47.9929104498 ]
+				"coordinates" : [ -195267.4379184349, 6105675.4673789535 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -225,7 +231,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.708891954, 48.0425496614 ]
+				"coordinates" : [ -190232.9821455412, 6113936.5038826782 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -244,7 +250,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6955422902, 48.0416114593 ]
+				"coordinates" : [ -188746.9043614604, 6113780.2930172486 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -263,7 +269,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.695482762, 48.0388636062 ]
+				"coordinates" : [ -188740.2777092228, 6113322.7912364639 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -282,7 +288,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6305071153, 48.2120956029 ]
+				"coordinates" : [ -181507.2218047075, 6142212.7990077483 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -301,7 +307,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6286158562, 48.2097389831 ]
+				"coordinates" : [ -181296.6878067727, 6141819.1293009846 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -322,7 +328,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6309821442, 48.2115150509 ]
+				"coordinates" : [ -181560.1017859117, 6142115.8170023095 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -341,7 +347,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8724795027, 48.1058547732 ]
+				"coordinates" : [ -208443.4647561515, 6124483.3993909061 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -360,7 +366,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8534044615, 48.176433736 ]
+				"coordinates" : [ -206320.0408834477, 6136257.4751622006 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -379,7 +385,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.5852338076, 47.979850181 ]
+				"coordinates" : [ -176467.4202462407, 6103503.2773802504 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -398,7 +404,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.5830839422, 47.982268936 ]
+				"coordinates" : [ -176228.0983280314, 6103905.5243739011 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -417,7 +423,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7930459976, 48.2188255193 ]
+				"coordinates" : [ -199600.9674238672, 6143337.120909594 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -439,7 +445,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7889261246, 48.2207198339 ]
+				"coordinates" : [ -199142.3452542798, 6143653.61797971 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -460,7 +466,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8542903053, 48.2708546257 ]
+				"coordinates" : [ -206418.6525689807, 6152034.2668255856 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -482,7 +488,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7269456387, 48.1747575767 ]
+				"coordinates" : [ -192242.709122857, 6135977.6682799766 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -501,7 +507,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7333802581, 48.1784116791 ]
+				"coordinates" : [ -192959.0076809223, 6136587.671595607 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -520,7 +526,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7269456387, 48.1747575767 ]
+				"coordinates" : [ -192242.709122857, 6135977.6682799766 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -539,7 +545,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8652572542, 48.1245663117 ]
+				"coordinates" : [ -207639.4877334214, 6127603.3064856417 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -560,7 +566,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.721348427, 47.9787631499 ]
+				"coordinates" : [ -191619.6303726629, 6103322.5066459933 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -579,7 +585,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7169570923, 47.9834158196 ]
+				"coordinates" : [ -191130.7892271291, 6104096.2615136327 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -598,7 +604,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.9300868638, 48.0676892665 ]
+				"coordinates" : [ -214856.2868632688, 6118123.3137709834 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -617,7 +623,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.9349884987, 48.0679063747 ]
+				"coordinates" : [ -215401.9343647019, 6118159.4803895671 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -636,7 +642,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8178671598, 48.1275366873 ]
+				"coordinates" : [ -202364.0465635361, 6128098.6827237923 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -657,7 +663,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.928936354, 48.2846432416 ]
+				"coordinates" : [ -214728.2127037938, 6154340.645450471 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -678,7 +684,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8411819121, 48.0717105974 ]
+				"coordinates" : [ -204959.432911269, 6118793.2255158117 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -697,7 +703,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.5560460091, 48.0408055591 ]
+				"coordinates" : [ -173218.2493799098, 6113646.1127351476 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -718,7 +724,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.5568238497, 48.0416448298 ]
+				"coordinates" : [ -173304.8382010397, 6113785.8491774714 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -737,7 +743,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.662746205, 48.0398141054 ]
+				"coordinates" : [ -185096.0608540314, 6113481.0411381256 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -756,7 +762,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6723452643, 47.9998013467 ]
+				"coordinates" : [ -186164.6232547281, 6106821.786117089 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -775,7 +781,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6703242064, 47.9945276852 ]
+				"coordinates" : [ -185939.6401107679, 6105944.4849711126 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -796,7 +802,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7679619789, 48.1523872922 ]
+				"coordinates" : [ -196808.6272344154, 6132244.1971796658 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -817,7 +823,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7689007521, 48.1531603247 ]
+				"coordinates" : [ -196913.1309839728, 6132373.1846648594 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -836,7 +842,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8313908577, 48.1915324639 ]
+				"coordinates" : [ -203869.4977222903, 6138778.3687693905 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -857,7 +863,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7112068371, 48.0126653969 ]
+				"coordinates" : [ -190490.673751788, 6108962.1643434511 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -878,7 +884,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8945300579, 48.2180499023 ]
+				"coordinates" : [ -210898.1213388037, 6143207.5362600423 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -900,7 +906,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.653083659, 48.0203434258 ]
+				"coordinates" : [ -184020.4311573646, 6110239.9236173378 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -919,7 +925,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6534129451, 48.0208089534 ]
+				"coordinates" : [ -184057.0871183935, 6110317.4017263958 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -938,7 +944,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8246102333, 48.1558229028 ]
+				"coordinates" : [ -203114.6820678416, 6132817.4748918042 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -959,7 +965,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.5773639923, 48.1517502236 ]
+				"coordinates" : [ -175591.3564239444, 6132137.8979525119 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -980,7 +986,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.5767419338, 48.1578447952 ]
+				"coordinates" : [ -175522.1091855912, 6133154.8727119491 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -999,7 +1005,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7738306391, 48.1463163447 ]
+				"coordinates" : [ -197461.9234971942, 6131231.2719523115 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1019,7 +1025,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7730157207, 48.0803673635 ]
+				"coordinates" : [ -197371.2071959486, 6120235.5300709503 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1037,7 +1043,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6619822384, 48.0427160829 ]
+				"coordinates" : [ -185011.0164871613, 6113964.2134027304 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1055,7 +1061,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7060271999, 48.0107914229 ]
+				"coordinates" : [ -189914.079175776, 6108650.3309512343 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1073,7 +1079,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.712534271, 48.0134478271 ]
+				"coordinates" : [ -190638.4430139976, 6109092.3658065805 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1091,7 +1097,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.885494351, 48.2146944121 ]
+				"coordinates" : [ -209892.2710433733, 6142646.9470822886 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1109,7 +1115,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8964076042, 48.2188970041 ]
+				"coordinates" : [ -211107.1288379717, 6143349.0641951803 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1127,7 +1133,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6556739807, 48.019970048 ]
+				"coordinates" : [ -184308.7844526519, 6110177.782576682 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1145,7 +1151,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.5766882896, 48.1518146681 ]
+				"coordinates" : [ -175516.137542747, 6132148.6508942666 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1163,7 +1169,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8701016372, 48.1237698412 ]
+				"coordinates" : [ -208178.7619839112, 6127470.4821738759 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1182,7 +1188,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.721348427, 47.9787631499 ]
+				"coordinates" : [ -191619.6303726629, 6103322.5066459933 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1202,7 +1208,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8542880864, 48.2444386509 ]
+				"coordinates" : [ -206418.4055622802, 6147617.486929032 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1221,7 +1227,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8542880864, 48.2444386509 ]
+				"coordinates" : [ -206418.4055622802, 6147617.486929032 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1240,7 +1246,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8178671598, 48.1275366873 ]
+				"coordinates" : [ -202364.0465635361, 6128098.6827237923 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1258,7 +1264,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7161798047, 48.1558502166 ]
+				"coordinates" : [ -191044.2619647573, 6132822.0327194408 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1276,7 +1282,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6676339507, 47.9956800229 ]
+				"coordinates" : [ -185640.1622226944, 6106136.1747061145 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -1296,7 +1302,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7060271999, 48.0107914229 ]
+				"coordinates" : [ -189914.079175776, 6108650.3309512343 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1314,7 +1320,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8924325705, 48.2155192362 ]
+				"coordinates" : [ -210664.6301039114, 6142784.7439473979 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -1333,7 +1339,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.5936988592, 48.0140403609 ]
+				"coordinates" : [ -177409.7454856446, 6109190.9685981739 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -1351,7 +1357,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8292892549, 48.1545644835 ]
+				"coordinates" : [ -203635.5483701044, 6132607.4863033546 ]
 			},
 			"properties" : {
 				"année" : "2019-2020",
@@ -1369,7 +1375,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6030872213, 48.1197851961 ]
+				"coordinates" : [ -178454.8531708507, 6126806.0092076594 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1387,7 +1393,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6141766969, 47.9949706172 ]
+				"coordinates" : [ -179689.3279516063, 6106018.1655807681 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1405,7 +1411,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.4829783731, 48.1106665983 ]
+				"coordinates" : [ -165084.3973539816, 6125285.600490707 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1423,7 +1429,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6305071153, 48.2120956029 ]
+				"coordinates" : [ -181507.2218047075, 6142212.7990077483 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1441,7 +1447,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.721348427, 47.9787631499 ]
+				"coordinates" : [ -191619.6303726629, 6103322.5066459933 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1461,7 +1467,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7161798047, 48.1558502166 ]
+				"coordinates" : [ -191044.2619647573, 6132822.0327194408 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1480,7 +1486,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6619822384, 48.0427160829 ]
+				"coordinates" : [ -185011.0164871613, 6113964.2134027304 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1498,7 +1504,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6619822384, 48.0427160829 ]
+				"coordinates" : [ -185011.0164871613, 6113964.2134027304 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1516,7 +1522,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6514223265, 48.0180735204 ]
+				"coordinates" : [ -183835.4924757626, 6109862.1515563857 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1534,7 +1540,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6514223265, 48.0180735204 ]
+				"coordinates" : [ -183835.4924757626, 6109862.1515563857 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1552,7 +1558,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.5816159284, 48.1534073964 ]
+				"coordinates" : [ -176064.679778217, 6132414.4112320859 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -1570,7 +1576,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8663465468, 48.1237423529 ]
+				"coordinates" : [ -207760.7472309897, 6127465.8980893604 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",

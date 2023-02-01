@@ -34,7 +34,7 @@ mviewer.customLayers.dircove_biodiv= (function() {
     }
     
     
-    
+    // calcul du code du marqueur avec macaron
     function calculateStyleIcon(){
         var name,xhr;
         // on est enfin prêt à récupérer le svg sur le serveur
@@ -54,27 +54,6 @@ mviewer.customLayers.dircove_biodiv= (function() {
                 // on applique le svg au style
                 _marker = 'data:image/svg+xml;utf8, ' + encodeURIComponent(doc.getElementsByTagName("svg")[0].outerHTML);
                 
-                
-                /*
-                // proposition 1
-                let circle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
-                circle.setAttributeNS(null, "style", "fill:#628a31;fill-opacity:0;stroke:#2F7A15;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1");
-                circle.setAttributeNS(null, "cx", "59.467434");
-                circle.setAttributeNS(null, "cy", "59.393097");
-                circle.setAttributeNS(null, "r", "55");
-                */
-                /*
-                // proposition 2
-                let circle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
-                circle.setAttributeNS(null, "style", "fill:#4dbd40;fill-opacity:0.8;stroke:#ffffff;stroke-width:3.44903;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1");
-                circle.setAttributeNS(null, "cx", "92.917862");
-                circle.setAttributeNS(null, "cy", "25.273661");
-                circle.setAttributeNS(null, "r", "20");
-                doc.getElementsByTagName("svg")[0].appendChild(circle);
-                
-                _markerEcoB = 'data:image/svg+xml;utf8, ' + encodeURIComponent(doc.getElementsByTagName("svg")[0].outerHTML);
-                */
-                // proposition 3
                 let _g = document.createElementNS("http://www.w3.org/2000/svg", 'g');
                 _g.setAttributeNS(null, "transform", "matrix(0.1493328,-0.06033437,0.05884351,0.14564281,46.023617,11.313834)");
                 while (svgEcusson.firstChild){
@@ -114,8 +93,20 @@ mviewer.customLayers.dircove_biodiv= (function() {
     
     let _layer = new ol.layer.Vector({
         source: new ol.source.Vector({
-            url: data,
+            //url: data,
             format: new ol.format.GeoJSON(),
+            loader: () => { // permet d'éviter le bug de features chargées en double 
+                fetch(data)
+                    .then(r => r.json())
+                    .then(r => {
+                        //console.log("Load features équipements et autres projets"); // ==> Exécuté 2x parfois
+                        // nettoie la layer
+                        _layer.getSource().clear();
+                        // charge les features
+                        let features = _layer.getSource().getFormat().readFeatures(r);
+                        _layer.getSource().addFeatures(features);
+                    })
+                }
         }),
         style: _markerStyle,
     });

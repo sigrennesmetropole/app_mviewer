@@ -1,12 +1,18 @@
 {
 	"type" : "FeatureCollection",
 	"name" : "geojson_biodiv",
+	"crs" : {
+		"type" : "name",
+		"properties" : {
+			"name" : "EPSG:3857"
+		}
+	},
 	"features" : [
 		{
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.4839053154, 48.105864033 ]
+				"coordinates" : [ -165187.5840957381, 6124484.9430623092 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -26,7 +32,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8635129929, 48.0738782533 ]
+				"coordinates" : [ -207445.3174517227, 6119154.3560858807 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -47,7 +53,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.577680707, 48.2189148753 ]
+				"coordinates" : [ -175626.6129350826, 6143352.0500167087 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -67,7 +73,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6043571945, 48.0479006285 ]
+				"coordinates" : [ -178596.2259397353, 6114827.4955088943 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -87,7 +93,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.7460353293, 48.0244546199 ]
+				"coordinates" : [ -194367.7637610242, 6110924.1769641368 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -106,7 +112,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8314019475, 48.1917295205 ]
+				"coordinates" : [ -203870.7322360192, 6138811.2743816599 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -125,7 +131,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.8924325705, 48.2155192362 ]
+				"coordinates" : [ -210664.6301039114, 6142784.7439473979 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
@@ -144,7 +150,7 @@
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "Point",
-				"coordinates" : [ -1.6016689616, 48.0446618576 ]
+				"coordinates" : [ -178296.9732238651, 6114288.1954434942 ]
 			},
 			"properties" : {
 				"année" : "2021-2022",
