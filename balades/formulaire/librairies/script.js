@@ -286,8 +286,8 @@ function setColorOnMap() {
             });
             feature.setStyle(pointStyle);
         });
-        couleurPointActif();
-        couleurBaladeDefaut();
+        couleurPointActif("#DD3627");
+        couleurBaladeDefaut("#000000");
     } catch (error) {
         vectorLayerPoints.getSource().forEachFeature(feature => {
             // récuperer l'entité lineaire correspondante à la balade
@@ -340,34 +340,44 @@ document.querySelector("#affichagePointNonSelect").addEventListener('change', (e
 });
 
 // Gestion de la couleur du point actif
-function couleurPointActif() {
+function couleurPointActif(couleur) {
     const vectorLayerPoints = map.getLayers().getArray()[1];
     vectorLayerPoints.getSource().getFeatures()[0].setStyle(new ol.style.Style({
         image: new ol.style.Icon({
             anchor: [0.5, 1],
             src: "librairies/pin.svg",
-            color: document.querySelector("#couleurPointActif").value
+            color: couleur
         })
     })
     );
 }
-document.querySelector("#couleurPointActif").addEventListener('change', () => {
-    couleurPointActif();
+document.querySelector("#couleurPointActif").addEventListener('input', () => {
+    couleurPointActif(document.querySelector("#couleurPointActif").value);
+});
+
+document.querySelector("#hexaCouleurPointActif").addEventListener('input', () => {
+    if (document.getElementById("hexaCouleurPointActif").value.match(/^#[a-f0-9]{6}$/i) !== null)
+        couleurPointActif(document.querySelector("#hexaCouleurPointActif").value);
 });
 
 // Gestion de la couleur par défaut de la balade 
-function couleurBaladeDefaut() {
+function couleurBaladeDefaut(couleur) {
     const vectorLayerBalades = map.getLayers().getArray()[2];
     vectorLayerBalades.getSource().getFeatures()[0].setStyle(new ol.style.Style({
         stroke: new ol.style.Stroke({
             width: 3,
-            color: document.querySelector("#couleurBaladeDefaut").value
+            color: couleur
         })
     }));
 }
-document.querySelector("#couleurBaladeDefaut").addEventListener('change', () => {
-    couleurBaladeDefaut();
+document.querySelector("#couleurBaladeDefaut").addEventListener('input', () => {
+    couleurBaladeDefaut(document.querySelector("#couleurBaladeDefaut").value);
 });
+
+document.querySelector("#hexaCouleurBaladeDefaut").addEventListener('input', () => {
+    if (document.getElementById("hexaCouleurBaladeDefaut").value.match(/^#[a-f0-9]{6}$/i) !== null)
+        couleurBaladeDefaut(document.querySelector("#hexaCouleurBaladeDefaut").value);
+})
 
 // Gestion du zoom par défaut d'une balade active
 document.querySelector("#zoomBalade").addEventListener('change', (e) => {
@@ -402,14 +412,34 @@ document.querySelector("#zoomBalade").addEventListener('change', (e) => {
     document.querySelector("#boutonRetourZoom").classList.remove("hidden");
 });
 
+// Gestion des champ input des couleurs hexa
+document.getElementById("couleurBaladeDefaut").addEventListener('input', () => {
+    document.getElementById("hexaCouleurBaladeDefaut").value = document.getElementById("couleurBaladeDefaut").value;
+});
+document.getElementById("hexaCouleurBaladeDefaut").addEventListener('input', () => {
+    if (document.getElementById("hexaCouleurBaladeDefaut").value.match(/^#[a-f0-9]{6}$/i) !== null)
+        document.getElementById("couleurBaladeDefaut").value = document.getElementById("hexaCouleurBaladeDefaut").value;
+});
+
+document.getElementById("couleurPointActif").addEventListener('input', () => {
+    document.getElementById("hexaCouleurPointActif").value = document.getElementById("couleurPointActif").value;
+});
+document.getElementById("hexaCouleurPointActif").addEventListener('input', () => {
+    if (document.getElementById("hexaCouleurPointActif").value.match(/^#[a-f0-9]{6}$/i) !== null)
+        document.getElementById("couleurPointActif").value = document.getElementById("hexaCouleurPointActif").value;
+});
+
+
 // Gestion du radiobouton couleurBaladeDefaut-non pour afficher l'éditeur de couleur
 document.querySelector("#couleurBaladeDefaut-non").addEventListener('click', () => {
     document.querySelector("#couleurBaladeDefaut").classList.remove("hidden");
     document.querySelector("#labelCouleurBaladeDefaut").classList.remove("hidden");
+    document.querySelector("#hexaCouleurBaladeDefaut").classList.remove("hidden");
 });
 document.querySelector("#couleurBaladeDefaut-oui").addEventListener('click', () => {
     document.querySelector("#couleurBaladeDefaut").classList.add("hidden");
     document.querySelector("#labelCouleurBaladeDefaut").classList.add("hidden");
+    document.querySelector("#hexaCouleurBaladeDefaut").classList.add("hidden");
 });
 
 // Gestion du radiobouton ouvertureBalade-non pour afficher la liste des balades par défaut
@@ -468,7 +498,7 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', ()
     if (formProjet.checkValidity()) {
         var form = document.querySelector("#form");
         var date = new Date();
-        var uid = date.getFullYear().toString() + (date.getMonth() + 1).toString() + date.getDate().toString() + "_" + date.getHours().toString() + date.getMinutes().toString() + date.getSeconds().toString() + "_" + date.getMilliseconds().toString();
+        var uid = date.getFullYear().toString() + (date.getMonth() + 1).toString().padStart(2, '0') + date.getDate().toString().padStart(2, '0') + "_" + date.getHours().toString().padStart(2, '0') + date.getMinutes().toString().padStart(2, '0') + date.getSeconds().toString().padStart(2, '0') + "_" + date.getMilliseconds().toString().padStart(2, '0');
         let fichiers = {};
         fichiers["points_" + uid + ".geojson"] = objetConvertPoints;
         fichiers["balades_" + uid + ".geojson"] = objetConvertLignes;
@@ -582,7 +612,7 @@ window.onload=function() {
     var url = new URL(window.location.href);
     var mail = url.searchParams.get("mail");
     if (mail) {
-        document.querySelector("#messageConfirmationText").innerHTML = ("Votre demande (<span class='font-medium text-gray-900'>" + mail + "</span>) a été envoyé au support SIG.");
+        document.querySelector("#messageConfirmationText").innerHTML = ("Votre demande (<span class='font-medium text-gray-900'>" + mail + "</span>) a été envoyé au service SIG.");
         document.querySelector("#messageConfirmation").classList.remove("hidden");
         document.querySelector("#buttonCloseMessageConfirmation").addEventListener('click', () => {
             document.querySelector("#messageConfirmation").classList.add("hidden");
