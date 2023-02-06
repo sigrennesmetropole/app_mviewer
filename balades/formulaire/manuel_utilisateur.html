@@ -18,7 +18,7 @@
                         <div class="flex-shrink-0"><img class="h-12 w-12" src="librairies/RennesLogo.png" alt="Workflow"></div>
                         <div class="block">
                             <div class="ml-10 flex items-baseline space-x-4">
-                                <a href="index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Création d'une balade</a>
+                                <a href="index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Paramétrage de la carte</a>
                                 <a href="manuel_utilisateur.html" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Manuel utilisateur</a>
                             </div>
                         </div>
@@ -31,10 +31,11 @@
             <nav class="w-full max-w-max">
                 <div class="container">
                     <ol class="list-inside text-md ml-8">
+                        <li class="mb-2"><a class="text-blue-700 hover:text-blue-800" href="#pre-requis">Pré-requis</a></li>
                         <li class="mb-2"><a class="text-blue-700 hover:text-blue-800" href="#etape-1">Étape 1 : Création des données des balades avec uMap</a></li>
                         <ol class="list-inside text-md ml-12 text-sm">
                             <li class="mb-2"><a class="text-blue-700 hover:text-blue-800" href="#etape-1-1">1.1 : Ouverture du site et import d'un fichier de configuration</a></li>
-                            <li class="mb-2"><a class="text-blue-700 hover:text-blue-800" href="#etape-1-2">1.2 : Création d'une balade (entité linéaire)</a></li>
+                            <li class="mb-2"><a class="text-blue-700 hover:text-blue-800" href="#etape-1-2">1.2 : Création du parcours d'une balade (entité linéaire)</a></li>
                             <li class="mb-2"><a class="text-blue-700 hover:text-blue-800" href="#etape-1-3">1.3 : Création d'un point d'intérêt (entité ponctuelle)</a></li>
                             <li class="mb-2"><a class="text-blue-700 hover:text-blue-800" href="#etape-1-4">1.4 : Exporter les données de uMap</a></li>
                         </ol>
@@ -51,6 +52,10 @@
                     </ol>
                 </div>
             </nav>
+            <h2 class="text-xl font-bold text-gray-800 mb-4 mt-10 ml-6" id="pre-requis" style="scroll-margin-top: 4.2rem;">Pré-requis :</h2>
+            <div class="container mx-auto">
+                <p class="mb-4">Vous avez besoin de télécharger un modèle de carte pour le site uMap : <a class="text-blue-700 hover:text-blue-800" target="_blank" href="carte_balade_exemple.umap" download>cliquer ici pour téléchager le modèle de carte uMap</a></p>
+            </div>
             <h2 class="text-xl font-bold text-gray-800 mb-4 mt-10 ml-6" id="etape-1" style="scroll-margin-top: 4.2rem;">Étape 1 : Création des données des balades avec uMap</h2>
             <div class="container mx-auto">
                 <ol class="list-inside">
@@ -59,19 +64,20 @@
                         <p class="mb-2">Commencez par aller sur le site <b>uMap</b> pour commencer la création des balades : <a class="text-blue-700 hover:text-blue-800" target="_blank" href="https://umap.openstreetmap.fr/fr/map/new/#13/48.1138/-1.6722">https://umap.openstreetmap.fr/</a></p>
                         <p>Ensuite, cliquer sur le <b>bouton</b> pour importer un exemple de données sur uMap comme sur l'image ci-dessous : </p>
                         <img class="w-1/12 mx-auto my-4 border border-black rounded-md" src="librairies/images/boutonImporterDonneesuMap.png">
-                        <p>Un panneau s'ouvre alors pour importer un fichier de configuration comme sur la capture ci-dessous. Sélectionnez le fichier <b>carte_balade_exemple.umap</b> téléchargeable ici : <a class="text-blue-700 hover:text-blue-800" target="_blank" href="carte_balade_exemple.umap">carte_balade_exemple.umap</a></p>
+                        <p>Un panneau s'ouvre alors pour importer un fichier de configuration comme sur la capture ci-dessous. Sélectionnez le fichier <b>carte_balade_exemple.umap</b> que vous avez téléchargé.</p>
                         <img class="w-1/4 mx-auto my-4 border border-black rounded-md" src="librairies/images/menuImporterDesDonnees.png">
-                        <p>Vous pouvez cliquer sur le bouton <b>Importer</b> et le fichier de configuration sera chargé dans uMap (cf. image ci-dessous). Vous pouvez alors commencer à créer vos balades.</p>
+                        <p>Vous pouvez cliquer sur le bouton <b>Importer</b> et le fichier de configuration sera chargé dans uMap (cf. image ci-dessous). Sur la base de ce modèle de données, 
+                            il est possible de créer les données représentant des balades avec des points d'intérêts. De plus, le style des données sur la carte uMap ne correspondra pas à la carte thématique qui sera déployée.</p>
                         <img class="w-1/4 mx-auto my-4 border border-black rounded-md" src="librairies/images/exempleDonnesImportes.png">          
                     </li>
                     <li class="mb-4" id="etape-1-2" style="scroll-margin-top: 4.2rem;">
-                        <h2 class="text-lg font-bold text-gray-800 mb-4">1.2 : Création d'une balade (entité linéaire)</h2>
+                        <h2 class="text-lg font-bold text-gray-800 mb-4">1.2 : Création du parcours d'une balade (entité linéaire)</h2>
                         <p>Pour créer une entité linéaire, vous devez cliquer sur le bouton <b>Dessiner une ligne</b> comme sur la capture ci-dessous :</p>
                         <img class="w-1/12 mx-auto my-4 border border-black rounded-md" src="librairies/images/boutonEntitieLineaire.png">
-                        <p>Ensuite, vous pouvez créer les points de balade sur la carte en <b>cliquant</b> pour chaque point. Pour <b>terminer</b> la création de la balade, 
-                        il faut cliquer sur le dernier point de la balade et un menu s'ouvre pour renseigner les <b>informations de la balade</b> comme sur la capture ci-dessous :</p>
+                        <p>Ensuite, vous pouvez créer les points du segment sur la carte en <b>cliquant</b> pour chaque point. Pour <b>terminer</b> la création de la balade, 
+                        il faut cliquer sur le dernier point de segment de la balade et un menu s'ouvre pour renseigner les <b>informations de la balade</b> comme sur la capture ci-dessous :</p>
                         <img class="w-1/2 mx-auto my-4 border border-black rounded-md" src="librairies/images/creerEntiteLineaire.png">
-                        <p class="mb-2 text-red-600">Si vous n'avez pas le formulaire pour renseigner les informations de la balade, vous pouvez changer le calque de l'élément en <b>Balades</b>.</p>
+                        <p class="mb-2 text-red-600">Si vous n'avez pas le formulaire pour renseigner les informations de la balade, vous pouvez changer le calque de l'élément en <b>Parcours de balade</b>.</p>
                         <p>Les informations à renseigner pour une balade sont les suivantes :</p>
                         <ul class="list-disc ml-12 my-2">
                             <li><b>Nom</b> : le titre de la balade</li>
@@ -88,7 +94,7 @@
                         <p>Ensuite, vous pouvez créer un point d'intérêt en <b>cliquant</b> sur la carte. Après avoir cliqué sur la carte,
                         un menu s'ouvre pour renseigner les <b>informations du point d'intérêt</b> comme sur la capture ci-dessous :</p>
                         <img class="w-1/2 mx-auto my-4 border border-black rounded-md" src="librairies/images/creerEntitePonctuelle.png">
-                        <p class="mb-2 text-red-600">Si vous n'avez pas le formulaire pour renseigner les informations du point d'intérêt, vous pouvez changer le calque de l'élément en <b>Points</b>.</p>
+                        <p class="mb-2 text-red-600">Si vous n'avez pas le formulaire pour renseigner les informations du point d'intérêt, vous pouvez changer le calque de l'élément en <b>Points d'arrêt</b>.</p>
                         <p>Les informations à renseigner pour un point d'intérêt sont les suivantes :</p>
                         <ul class="list-disc ml-12 my-2">
                             <li><b>Nom</b> : le titre du point d'intérêt</li>
@@ -101,6 +107,7 @@
                     </li>
                     <li class="mb-4" id="etape-1-4" style="scroll-margin-top: 4.2rem;">
                         <h2 class="text-lg font-bold text-gray-800 mb-4">1.4 : Exporter les données de uMap</h2>
+                        <p class="mb-2 text-red-600">Avant d'exporter les données, pensez à supprimer les données d'exemple (pour cela, cliquer sur chaque élément et sélectionner le bouton avec le logo poubelle).</p>
                         <p>Pour exporter les données de uMap, vous devez cliquer sur le bouton <b>Exporter et partager la carte</b> comme sur la capture ci-dessous :</p>
                         <img class="w-1/6 mx-auto my-4 border border-black rounded-md" src="librairies/images/boutonExporterDonneesuMap.png">
                         <p>Ensuite, vous devez sélectionner le format <b>GeoJSON</b> et cliquer sur le bouton <b>Télécharger les données</b> comme sur la capture ci-dessous :</p>
@@ -111,7 +118,7 @@
             </div>
             <h2 class="text-xl font-bold text-gray-800 mb-4 mt-4 ml-6" id="etape-2" style="scroll-margin-top: 4.2rem;">Étape 2 : Utilisation du formulaire de création d'une carte de balade</h2>
             <div class="container mx-auto">
-                <p class="mb-4">Le formulaire est disponible depuis le menu en haut en cliquant sur le bouton <b>Création d'une balade</b> ou <a class="text-blue-700 hover:text-blue-800" href="index.html">ici</a>.</p>
+                <p class="mb-4">Le formulaire est disponible depuis le menu en haut en cliquant sur le bouton <b>Paramétrage de la carte</b> ou <a class="text-blue-700 hover:text-blue-800" href="index.html">ici</a>.</p>
                 <ol class="list-inside">
                     <li class="mb-4" id="etape-2-1" style="scroll-margin-top: 4.2rem;">
                         <h2 class="text-lg font-bold text-gray-800 mb-4">2.1 : Importer les données GeoJSON sur le formulaire de création de carte de balade</h2>
