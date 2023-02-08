@@ -116,6 +116,8 @@ document.getElementById('geojson').addEventListener('change', () => {
                 document.querySelector("#couleurBaladeDefaut-oui").checked = true;
                 document.querySelector("#ouvertureBalade-non").checked = true;
                 document.querySelector("#couleurBaladeDefaut").classList.add("hidden");
+                document.querySelector("#labelCouleurBaladeDefaut").classList.add("hidden");
+                document.querySelector("#hexaCouleurBaladeDefaut").classList.add("hidden");
                 document.querySelector("#baladeDefautSelectionnes").classList.add("hidden");
 
                 // Attribut Rang de chaque point
@@ -286,8 +288,7 @@ function setColorOnMap() {
             });
             feature.setStyle(pointStyle);
         });
-        couleurPointActif("#DD3627");
-        couleurBaladeDefaut("#000000");
+        couleurPointActif(document.querySelector("#couleurPointActif").value);
     } catch (error) {
         vectorLayerPoints.getSource().forEachFeature(feature => {
             // récuperer l'entité lineaire correspondante à la balade
@@ -369,6 +370,19 @@ function couleurBaladeDefaut(couleur) {
             color: couleur
         })
     }));
+    // Mise à jour de la couleur des points de la balade par défaut
+    const VectorLayerPoints = map.getLayers().getArray()[1];
+    VectorLayerPoints.getSource().forEachFeature(feature => {
+        if (feature.get("values")[document.querySelector("#attributIdPoint").value] == vectorLayerBalades.getSource().getFeatures()[0].get("values")[document.querySelector("#attributIdBalade").value] && feature.get("values")[document.querySelector("#attributIdBalade").value] != VectorLayerPoints.getSource().getFeatures()[0].get("values")[document.querySelector("#attributIdBalade").value]) {
+            feature.setStyle(new ol.style.Style({
+                image: new ol.style.Icon({
+                    anchor: [0.5, 1],
+                    src: "librairies/pin.svg",
+                    color: couleur
+                })
+            }));
+        }
+    });
 }
 document.querySelector("#couleurBaladeDefaut").addEventListener('input', () => {
     couleurBaladeDefaut(document.querySelector("#couleurBaladeDefaut").value);
@@ -435,11 +449,13 @@ document.querySelector("#couleurBaladeDefaut-non").addEventListener('click', () 
     document.querySelector("#couleurBaladeDefaut").classList.remove("hidden");
     document.querySelector("#labelCouleurBaladeDefaut").classList.remove("hidden");
     document.querySelector("#hexaCouleurBaladeDefaut").classList.remove("hidden");
+    couleurBaladeDefaut(document.querySelector("#couleurBaladeDefaut").value);
 });
 document.querySelector("#couleurBaladeDefaut-oui").addEventListener('click', () => {
     document.querySelector("#couleurBaladeDefaut").classList.add("hidden");
     document.querySelector("#labelCouleurBaladeDefaut").classList.add("hidden");
     document.querySelector("#hexaCouleurBaladeDefaut").classList.add("hidden");
+    couleurBaladeDefaut(map.getLayers().getArray()[2].getSource().getFeatures()[0].get("values").couleur);
 });
 
 // Gestion du radiobouton ouvertureBalade-non pour afficher la liste des balades par défaut
