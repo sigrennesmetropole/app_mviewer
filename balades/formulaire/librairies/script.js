@@ -361,6 +361,45 @@ document.querySelector("#hexaCouleurPointActif").addEventListener('input', () =>
         couleurPointActif(document.querySelector("#hexaCouleurPointActif").value);
 });
 
+// Gestion de la couleur fixe des tracés des balades
+function couleurBaladeFixe(couleur) {
+    if (document.querySelector("#couleurBaladeFixe-oui").checked) {
+        const vectorLayerBalades = map.getLayers().getArray()[2];
+        vectorLayerBalades.getSource().forEachFeature(feature => {
+            if (feature != vectorLayerBalades.getSource().getFeatures()[0]){
+                feature.setStyle(new ol.style.Style({
+                    stroke: new ol.style.Stroke({
+                        width: 3,
+                        color: couleur
+                    })
+                }));
+            }
+        });
+    } else {
+        // mettre la couleur par défaut sur tous les tracés
+        const vectorLayerBalades = map.getLayers().getArray()[2];
+        vectorLayerBalades.getSource().forEachFeature(feature => {
+            if (feature != vectorLayerBalades.getSource().getFeatures()[0]){
+                feature.setStyle(new ol.style.Style({
+                    stroke: new ol.style.Stroke({
+                        width: 3,
+                        color: feature.get("values")["couleur"] || "black"
+                    })
+                }));
+            }
+        });
+    }
+}
+
+document.querySelector("#couleurBaladeFixe").addEventListener('input', () => {
+    couleurBaladeFixe(document.querySelector("#couleurBaladeFixe").value);
+});
+
+document.querySelector("#hexaCouleurBaladeFixe").addEventListener('input', () => {
+    if (document.getElementById("hexaCouleurBaladeFixe").value.match(/^#[a-f0-9]{6}$/i) !== null)
+        couleurBaladeFixe(document.querySelector("#hexaCouleurBaladeFixe").value);
+});
+
 // Gestion de la couleur par défaut de la balade 
 function couleurBaladeDefaut(couleur) {
     const vectorLayerBalades = map.getLayers().getArray()[2];
@@ -391,7 +430,7 @@ document.querySelector("#couleurBaladeDefaut").addEventListener('input', () => {
 document.querySelector("#hexaCouleurBaladeDefaut").addEventListener('input', () => {
     if (document.getElementById("hexaCouleurBaladeDefaut").value.match(/^#[a-f0-9]{6}$/i) !== null)
         couleurBaladeDefaut(document.querySelector("#hexaCouleurBaladeDefaut").value);
-})
+});
 
 // Gestion du zoom par défaut d'une balade active
 document.querySelector("#zoomBalade").addEventListener('change', (e) => {
@@ -443,8 +482,15 @@ document.getElementById("hexaCouleurPointActif").addEventListener('input', () =>
         document.getElementById("couleurPointActif").value = document.getElementById("hexaCouleurPointActif").value;
 });
 
+document.getElementById("couleurBaladeFixe").addEventListener('input', () => {
+    document.getElementById("hexaCouleurBaladeFixe").value = document.getElementById("couleurBaladeFixe").value;
+});
+document.getElementById("hexaCouleurBaladeFixe").addEventListener('input', () => {
+    if (document.getElementById("hexaCouleurBaladeFixe").value.match(/^#[a-f0-9]{6}$/i) !== null)
+        document.getElementById("couleurBaladeFixe").value = document.getElementById("hexaCouleurBaladeFixe").value;
+});
 
-// Gestion du radiobouton couleurBaladeDefaut-non pour afficher l'éditeur de couleur
+// Gestion du radiobouton couleurBaladeDefaut pour afficher l'éditeur de couleur
 document.querySelector("#couleurBaladeDefaut-non").addEventListener('click', () => {
     document.querySelector("#couleurBaladeDefaut").classList.remove("hidden");
     document.querySelector("#labelCouleurBaladeDefaut").classList.remove("hidden");
@@ -458,7 +504,21 @@ document.querySelector("#couleurBaladeDefaut-oui").addEventListener('click', () 
     couleurBaladeDefaut(map.getLayers().getArray()[2].getSource().getFeatures()[0].get("values").couleur);
 });
 
-// Gestion du radiobouton ouvertureBalade-non pour afficher la liste des balades par défaut
+// Gestion du radiobouton couleurBaladeFixe pour afficher l'éditeur de couleur
+document.querySelector("#couleurBaladeFixe-oui").addEventListener('click', () => {
+    document.querySelector("#couleurBaladeFixe").classList.remove("hidden");
+    document.querySelector("#labelCouleurBaladeFixe").classList.remove("hidden");
+    document.querySelector("#hexaCouleurBaladeFixe").classList.remove("hidden");
+    couleurBaladeFixe(document.querySelector("#couleurBaladeFixe").value);
+});
+document.querySelector("#couleurBaladeFixe-non").addEventListener('click', () => {
+    document.querySelector("#couleurBaladeFixe").classList.add("hidden");
+    document.querySelector("#labelCouleurBaladeFixe").classList.add("hidden");
+    document.querySelector("#hexaCouleurBaladeFixe").classList.add("hidden");
+    couleurBaladeFixe();
+});
+
+// Gestion du radiobouton ouvertureBalade pour afficher la liste des balades par défaut
 document.querySelector("#ouvertureBalade-non").addEventListener('click', () => {
     document.querySelector("#baladeDefautSelectionnes").classList.add("hidden");
     document.querySelector("#baladeDefautSelectionnes").removeAttribute("required");
@@ -468,7 +528,7 @@ document.querySelector("#ouvertureBalade-oui").addEventListener('click', () => {
     document.querySelector("#baladeDefautSelectionnes").setAttribute("required", "");
 });
 
-// Gestion du radiobouton couleurBaladeDefaut-non pour afficher l'éditeur de couleur
+// Gestion du radiobouton couleurBaladeDefaut pour afficher l'éditeur de couleur
 document.querySelector("#couleurBaladeDefaut-non").addEventListener('click', () => {
     document.querySelector("#couleurBaladeDefaut").classList.remove("hidden");
 });
@@ -477,7 +537,7 @@ document.querySelector("#couleurBaladeDefaut-oui").addEventListener('click', () 
     document.querySelector("#labelCouleurBaladeDefaut").classList.add("hidden");
 });
 
-// Gestion du radiobouton ouvertureBalade-non pour afficher la liste des balades par défaut
+// Gestion du radiobouton ouvertureBalade pour afficher la liste des balades par défaut
 document.querySelector("#ouvertureBalade-non").addEventListener('click', () => {
     document.querySelector("#baladeDefautSelectionnes").classList.add("hidden");
     document.querySelector("#baladeDefautSelectionnes").removeAttribute("required");
@@ -524,18 +584,23 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', ()
         var commentaire = document.querySelector("#commentaire").value;
         var titre = document.querySelector("#titre").value;
         var defaultColor = "#000000";
+        var couleurBaladeFixe = "";
         var baladeParDefaut = "";
         var center = map.getView().getCenter().join(',');
         if (document.querySelector("#couleurBaladeDefaut-non").checked)
             defaultColor = document.querySelector("#couleurBaladeDefaut").value;
         if (document.querySelector("#ouvertureBalade-oui").checked)
             baladeParDefaut = document.querySelector("#baladeDefautSelectionnes").value;
+        if (document.querySelector("#couleurBaladeFixe-oui").checked)
+            couleurBaladeFixe = document.querySelector("#couleurBaladeFixe").value;
 
         fichiers["param_" + uid + ".json"] = {
             "carte": { "zoomPendantBalade": parseInt(form.elements["zoomBalade"].value) },
-            "balades": { "id": form.elements["attributIdBalade"].value, "couleurBalades": "couleur", "defaultColor": defaultColor, "baladeParDefaut": baladeParDefaut },
+            "balades": { "id": form.elements["attributIdBalade"].value, "couleurBalades": "couleur", "defaultColor": defaultColor, "couleurBaladeFixe": couleurBaladeFixe, "baladeParDefaut": baladeParDefaut },
             "points": { "idBalade": form.elements["attributIdPoint"].value, "champRang": form.elements["attributRang"].value, "couleurPointActif": form.elements["couleurPointActif"].value, "pointsVisible": form.elements["affichagePointNonSelect"].value == "Oui" ? "true" : "false" }
         };
+
+        console.log(fichiers)
 
         var xmlString = `<?xml version="1.0" encoding="UTF-8"?>
                     <config><application title="${document.querySelector("#titre").value}" logo="apps/public/img/logo/logo_mviewer_transp.png" 
