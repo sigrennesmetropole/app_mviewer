@@ -1,8 +1,8 @@
 var baladesAddon = (function () {
 
     var configFile; // fichier de configuration
-    var layer_balades; // nom du customlayer des balades
-    var layer_points; // nom du customlayer des points
+    var layer_balades = 'balades'; // nom du customlayer des balades
+    var layer_points = 'balades_points'; // nom du customlayer des points
     var zoomPendantBalade = 16; // zoom appliqué à la carte pendant la balade
 
     var baladeId; // id de chaque balade
@@ -32,6 +32,16 @@ var baladesAddon = (function () {
         $('#prevButton').click(clickPrevButtonFunction);
         $('#nextButton').click(clickNextButtonFunction);
         $('#startButton').click(clickStartButtonFunction);
+
+        // décaler la carte vers le bas lorque le panneau d'info est visible
+        $('#modal-panel').on('show.bs.modal', function () {
+            $('#map').animate({ marginTop: screen.height/4 }, 200);
+        });
+
+        // remettre la carte à sa place lorque le panneau d'info est caché
+        $('#modal-panel').on('hide.bs.modal', function () {
+            $('#map').animate({ marginTop: '0px' }, 200);
+        });
 
         // Gestion du point de géolocalisation
         if (getParametreVisible())
@@ -100,8 +110,9 @@ var baladesAddon = (function () {
         function onclickGeolocalisation() {
             mviewer.getMap().getView().setCenter(geolocation.getPosition());
             mviewer.getMap().getView().setZoom(18);
-            if (document.getElementById("modal-panel").style.display == "block")
-                decaleMap([0, 0]);
+            if (document.getElementById("modal-panel").style.display == "block"){
+                // decaleMap([0, 0]);
+            }
         }
 
         // modification du bouton géolocaliser
@@ -153,7 +164,7 @@ var baladesAddon = (function () {
 
             opendivheight = document.getElementById('modal-panel').children[0].offsetHeight;
             setTimeout(() => {
-                decaleMap([0, opendivheight/3]);
+                // decaleMap([0, opendivheight/3]);
             }, 400);
         }
         if (!featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade - 1)) {
@@ -172,7 +183,7 @@ var baladesAddon = (function () {
 
             opendivheight = document.getElementById('modal-panel').children[0].offsetHeight;
             setTimeout(() => {
-                decaleMap([0, opendivheight/3]);
+                // decaleMap([0, opendivheight/3]);
             }, 400);
         }
         if (!featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade + 1)) {
@@ -208,7 +219,7 @@ var baladesAddon = (function () {
         $("#mv_marker").attr('fill-opacity', '0');
         opendivheight = document.getElementById('modal-panel').children[0].offsetHeight;
         setTimeout(() => {
-            decaleMap([0, opendivheight/3]);
+            // decaleMap([0, opendivheight/3]);
         }, 400);
     }
 
@@ -311,7 +322,7 @@ var baladesAddon = (function () {
             opendivheight = document.getElementById('modal-panel').children[0].offsetHeight;
             setTimeout(() => {
                 _map.getView().setCenter([geometryPointFeature[0], geometryPointFeature[1]]);
-                decaleMap([0, opendivheight/3]);
+                // decaleMap([0, opendivheight/3]);
             }, 400);
         } else {
             updateButton();
@@ -369,7 +380,7 @@ var baladesAddon = (function () {
                 $("#mv_marker").attr('fill-opacity', '0');
                 opendivheight = document.getElementById('modal-panel').children[0].offsetHeight;
                 setTimeout(() => {
-                    decaleMap([0, opendivheight/3]);
+                    // decaleMap([0, opendivheight/3]);
                 }, 400);
                 currentIdBalade = featureDefaut.get(idBalade);
                 currentPointBalade = 1;
@@ -437,8 +448,6 @@ var baladesAddon = (function () {
     function _setSearchParameters(data, callback) {
         zoomPendantBalade = data.carte.zoomPendantBalade;
         couleurBalades = data.balades.couleurBalades;
-        layer_balades = data.balades.layer_balades;
-        layer_points = data.points.layer_points;
         idBalade = data.points.idBalade;
         champRang = data.points.champRang;
         baladeId = data.balades.id;
