@@ -636,6 +636,7 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', ()
         var commentaire = document.querySelector("#commentaire").value;
         var titre = document.querySelector("#titre").value;
         var defaultColor = "#000000";
+        var couleurBaladeFixe = "";
         var baladeParDefaut = "";
 
         var attributCouleurBalades = "";
@@ -661,6 +662,8 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', ()
             "points": { "idBalade": form.elements["attributIdPoint"].value, "champRang": form.elements["attributRang"].value, "couleurPointActif": form.elements["couleurPointActif"].value, "pointsVisible": form.elements["affichagePointNonSelect"].value == "Oui" ? "true" : "false" }
         };
         console.log(fichiers["param_" + uid + ".json"]);
+
+        console.log(fichiers)
 
         var xmlString = `<?xml version="1.0" encoding="UTF-8"?>
                     <config><application title="${document.querySelector("#titre").value}" logo="apps/public/img/logo/logo_mviewer_transp.png" 
