@@ -663,8 +663,6 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', ()
         };
         console.log(fichiers["param_" + uid + ".json"]);
 
-        console.log(fichiers)
-
         var xmlString = `<?xml version="1.0" encoding="UTF-8"?>
                     <config><application title="${document.querySelector("#titre").value}" logo="apps/public/img/logo/logo_mviewer_transp.png" 
                         favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png" titlehelp="À propos des cartes thématiques"
