@@ -207,64 +207,6 @@
                                     </select>
                                 </div>
                                 <div class="mx-2 my-2 col-span-3">
-                                    <p class="block text-sm font-medium text-gray-800 mb-2">Le champ couleur est-il renseigné pour chaque balade ?
-                                    </p>
-                                    <fieldset class="mt-4">
-                                        <div class="flex items-center space-x-10">
-                                            <div class="flex items-center mt-2">
-                                                <input id="couleurBaladeDefaut-oui" name="couleurBaladeDefaut"
-                                                    type="radio" checked
-                                                    class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                                <label for="couleurBaladeDefaut-oui"
-                                                    class="ml-3 block text-sm font-medium text-gray-700">Oui</label>
-                                            </div>
-                                            <div class="flex items-center mt-2">
-                                                <input id="couleurBaladeDefaut-non" name="couleurBaladeDefaut"
-                                                    type="radio"
-                                                    class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                                <label for="couleurBaladeDefaut-non"
-                                                    class="ml-3 block text-sm font-medium text-gray-700">Non</label>
-                                            </div>
-                                            <label for="couleurBaladeDefaut" id="labelCouleurBaladeDefaut" class="hidden block text-sm font-medium text-gray-800 mt-2">Couleur par défaut</label>
-                                            <input type="color" id="couleurBaladeDefaut" name="couleurBaladeDefaut"
-                                                class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full h-[28px] focus:outline-none"
-                                                style="max-width: 200px; margin-left: 10px" value="#000000">
-                                            <input type="text" id="hexaCouleurBaladeDefaut" name="hexaCouleurBaladeDefaut"
-                                            class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-1/5 px-2.5 py-1 focus:outline-none"
-                                            placeholder="Code hexadécimal" value="#000000">
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <div class="mx-2 my-2 col-span-3">
-                                    <p class="block text-sm font-medium text-gray-800 mb-2">Voulez-vous que le tracé des balades est une couleur différente de celle des points ?</p>
-                                    </p>
-                                    <fieldset class="mt-4">
-                                        <div class="flex items-center space-x-10">
-                                            <div class="flex items-center mt-2">
-                                                <input id="couleurBaladeFixe-oui" name="couleurBaladeFixe"
-                                                    type="radio"
-                                                    class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                                <label for="couleurBaladeFixe-oui"
-                                                    class="ml-3 block text-sm font-medium text-gray-700">Oui</label>
-                                            </div>
-                                            <div class="flex items-center mt-2">
-                                                <input id="couleurBaladeFixe-non" name="couleurBaladeFixe"
-                                                    type="radio" checked
-                                                    class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
-                                                <label for="couleurBaladeFixe-non"
-                                                    class="ml-3 block text-sm font-medium text-gray-700">Non</label>
-                                            </div>
-                                            <label for="couleurBaladeFixe" id="labelCouleurBaladeFixe" class="hidden block text-sm font-medium text-gray-800 mt-2">Couleur des tracés</label>
-                                            <input type="color" id="couleurBaladeFixe" name="couleurBaladeFixe"
-                                                class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full h-[28px] focus:outline-none"
-                                                style="max-width: 200px; margin-left: 10px" value="#000000">
-                                            <input type="text" id="hexaCouleurBaladeFixe" name="hexaCouleurBaladeFixe"
-                                            class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-1/5 px-2.5 py-1 focus:outline-none"
-                                            placeholder="Code hexadécimal" value="#000000">
-                                        </div>
-                                    </fieldset>
-                                </div>
-                                <div class="mx-2 my-2 col-span-3">
                                     <p class="block text-sm font-medium text-gray-800 mb-2">Voulez-vous sélectionner une balade par défaut à l'ouverture de la carte ?
                                     </p>
                                     <fieldset class="mt-4">
@@ -289,6 +231,42 @@
                                         </div>
                                     </fieldset>
                                 </div>
+                                <div class="mx-2 my-2 col-span-3 border-t-2 pt-4">
+                                    <p class="block text-sm font-medium text-gray-800 mb-2">Couleur des tracés :</p>
+                                    </p>
+                                    <fieldset class="mt-4">
+                                        <div class="flex items-center space-x-10">
+                                            <div class="flex items-center mt-2">
+                                                <input id="couleurBaladeFixe-attribut" name="couleurBaladeFixe"
+                                                    type="radio" checked
+                                                    class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                                <label for="couleurBaladeFixe-attribut"
+                                                    class="ml-3 block text-sm font-medium text-gray-700">Utiliser un attribut</label>
+                                            </div>
+                                            <div class="flex items-center mt-2">
+                                                <input id="couleurBaladeFixe-couleur" name="couleurBaladeFixe"
+                                                    type="radio"
+                                                    class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                                <label for="couleurBaladeFixe-couleur"
+                                                    class="ml-3 block text-sm font-medium text-gray-700">Choisir la couleur</label>
+                                            </div>
+                                            <label for="couleurBaladeFixe" id="labelCouleurBaladeFixe" class="block text-sm font-medium text-gray-800 mt-2">Couleur des tracés :</label>
+                                            <input type="color" id="couleurBaladeFixe" name="couleurBaladeFixe"
+                                                class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full h-[28px] focus:outline-none"
+                                                style="max-width: 120px; margin-left: 10px" value="#000000">
+                                            <input type="text" id="hexaCouleurBaladeFixe" name="hexaCouleurBaladeFixe"
+                                            class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-1/6 px-2.5 py-1 focus:outline-none"
+                                            placeholder="Code hexadécimal" value="#000000">
+                                            <select id="attributCouleurBalade" name="attributCouleurBalade"
+                                                class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md"
+                                                style="max-width: 250px;"
+                                                required>
+                                                <option value="" selected>Sélectionner dans la liste..</option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <!-- Pareil mais avec point -->
                             </div>
                         </div>
                     </div>

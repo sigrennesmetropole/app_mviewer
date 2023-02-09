@@ -5,8 +5,10 @@
     "balades": {
         "id": "id",
         "couleurBalades": "couleur",
-        "defaultColor": "",
-        "couleurBaladeFixe": "#000000",
+        "couleurPoints": "couleurPoint",
+        "couleurBaladeFixe": "#ff00ff",
+        "couleurPointFixe": "#ff00ff",
+        "defaultColor": "#000000",
         "baladeParDefaut": ""
     },
     "points": {
