@@ -14,7 +14,6 @@
         showClickNbItems="false" 
         templaterightinfopanel="allintabs"
         sortlayersinfopanel="toc"
-        geoloc="true"
         />
 
     <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-185600.24433942206,6125077.984905125" zoom="15" />
@@ -25,7 +24,7 @@
 
     <extensions>
         <extension type="component" id="GUICustom" path="apps/public/addons"/>
-        <extension type="component" id="balades" path="apps/balades/addons" configFile="/apps/balades/parametrage/param_test.json" />
+        <extension type="component" id="balades" path="apps/balades/addons" configFile="/apps/balades/parametrage/param_test.json" geoloc="true"/>
         <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
     </extensions>
 

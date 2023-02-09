@@ -1,1 +1,1 @@
-{"carte":{"zoomPendantBalade":18},"balades":{"layer_balades":"balades","id":"id","couleurBalades":"couleur","defaultColor":"#000000","baladeParDefaut":""},"points":{"layer_points":"balades_points","idBalade":"idbalade","champRang":"rang","couleurPointActif":"#e100ff","pointsVisible":"true"}}
+{"carte":{"zoomPendantBalade":18},"balades":{"id":"id","couleurBalades":"couleur","defaultColor":"#000000","couleurBaladeFixe": "","baladeParDefaut":""},"points":{"idBalade":"idbalade","champRang":"rang","couleurPointActif":"#e100ff","pointsVisible":"true"}}

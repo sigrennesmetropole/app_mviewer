@@ -3,14 +3,13 @@
         "zoomPendantBalade" : 18
     },
     "balades": {
-        "layer_balades": "balades",
         "id": "ID_PROM",
         "couleurBalades": "couleur",
         "defaultColor": "#1CCA78",
+        "couleurBaladeFixe": "",
         "baladeParDefaut": 3
     },
     "points": {
-        "layer_points": "balades_points",
         "idBalade": "ID_PROM",
         "champRang" : "N_ARRET",
         "couleurPointActif": "#ba8e02",

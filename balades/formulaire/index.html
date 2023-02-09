@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Création d'une balade</title>
+    <title>Configurateur de carte balade</title>
     <link rel="stylesheet" href="tailwind.min.css">
     <script src="https://cdn.jsdelivr.net/npm/ol@v7.1.0/dist/ol.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.1.0/ol.css">
@@ -110,7 +110,7 @@
                         <div class="flex-shrink-0"><img class="h-12 w-12" src="librairies/RennesLogo.png" alt="Workflow"></div>
                         <div class="block">
                             <div class="ml-10 flex items-baseline space-x-4">
-                                <a href="index.html" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Création d'une balade</a>
+                                <a href="index.html" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Paramétrage de la carte</a>
                                 <a href="manuel_utilisateur.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Manuel utilisateur</a>
                             </div>
                         </div>
@@ -167,6 +167,17 @@
                                         <input type="number" id="zoomDefaut" name="zoomDefaut" value="12"
                                             class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md" required>
                                     </div>
+                                    <div class="mx-2 my-2">
+                                        <label for="affichageBoutonGeolocalisation"
+                                            class="block text-sm font-medium text-gray-800 mb-2">Bouton de géolocalisation*</label>
+                                        <select id="affichageBoutonGeolocalisation" name="affichageBoutonGeolocalisation"
+                                            style="max-width: 200px;"
+                                            class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md"
+                                            required>
+                                            <option value="false" selected>Non</option>
+                                            <option value="true">Oui</option>
+                                        </select>
+                                    </div>
                                 </div>
                         </div>
                     </div>
@@ -196,7 +207,7 @@
                                     </select>
                                 </div>
                                 <div class="mx-2 my-2 col-span-3">
-                                    <p class="block text-sm font-medium text-gray-800 mb-2">La couleur des tracés est-elle personnalisée (champ couleur renseigné) ?
+                                    <p class="block text-sm font-medium text-gray-800 mb-2">Le champ couleur est-il renseigné pour chaque balade ?
                                     </p>
                                     <fieldset class="mt-4">
                                         <div class="flex items-center space-x-10">
@@ -217,7 +228,39 @@
                                             <label for="couleurBaladeDefaut" id="labelCouleurBaladeDefaut" class="hidden block text-sm font-medium text-gray-800 mt-2">Couleur par défaut</label>
                                             <input type="color" id="couleurBaladeDefaut" name="couleurBaladeDefaut"
                                                 class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full h-[28px] focus:outline-none"
-                                                style="max-width: 200px; margin-left: 10px">
+                                                style="max-width: 200px; margin-left: 10px" value="#000000">
+                                            <input type="text" id="hexaCouleurBaladeDefaut" name="hexaCouleurBaladeDefaut"
+                                            class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-1/5 px-2.5 py-1 focus:outline-none"
+                                            placeholder="Code hexadécimal" value="#000000">
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="mx-2 my-2 col-span-3">
+                                    <p class="block text-sm font-medium text-gray-800 mb-2">Voulez-vous que le tracé des balades est une couleur différente de celle des points ?</p>
+                                    </p>
+                                    <fieldset class="mt-4">
+                                        <div class="flex items-center space-x-10">
+                                            <div class="flex items-center mt-2">
+                                                <input id="couleurBaladeFixe-oui" name="couleurBaladeFixe"
+                                                    type="radio"
+                                                    class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                                <label for="couleurBaladeFixe-oui"
+                                                    class="ml-3 block text-sm font-medium text-gray-700">Oui</label>
+                                            </div>
+                                            <div class="flex items-center mt-2">
+                                                <input id="couleurBaladeFixe-non" name="couleurBaladeFixe"
+                                                    type="radio" checked
+                                                    class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                                <label for="couleurBaladeFixe-non"
+                                                    class="ml-3 block text-sm font-medium text-gray-700">Non</label>
+                                            </div>
+                                            <label for="couleurBaladeFixe" id="labelCouleurBaladeFixe" class="hidden block text-sm font-medium text-gray-800 mt-2">Couleur des tracés</label>
+                                            <input type="color" id="couleurBaladeFixe" name="couleurBaladeFixe"
+                                                class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full h-[28px] focus:outline-none"
+                                                style="max-width: 200px; margin-left: 10px" value="#000000">
+                                            <input type="text" id="hexaCouleurBaladeFixe" name="hexaCouleurBaladeFixe"
+                                            class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-1/5 px-2.5 py-1 focus:outline-none"
+                                            placeholder="Code hexadécimal" value="#000000">
                                         </div>
                                     </fieldset>
                                 </div>
@@ -295,14 +338,25 @@
                                         <option>17</option>
                                         <option>17.5</option>
                                         <option>18</option>
+                                        <option>18.5</option>
+                                        <option>19</option>
+                                        <option>19.5</option>
+                                        <option>20</option>
                                     </select>
                                 </div>
                                 <div class="mx-2 my-2">
                                     <label for="couleurPointActif"
                                         class="block text-sm font-medium text-gray-800 mb-2">Couleur du point actif*</label>
                                     <input type="color" id="couleurPointActif" name="couleurPointActif"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full h-11 focus:outline-none"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full h-11 focus:outline-none" value="#DD3627"
                                         required>
+                                </div>
+                                <div class="mx-2 my-2">
+                                    <label for="hexaCouleurPointActif"
+                                        class="block text-sm font-medium text-gray-800 mb-2">Code hexadécimal</label>
+                                    <input type="text" id="hexaCouleurPointActif" name="hexaCouleurPointActif"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:outline-none"
+                                        placeholder="Code hexadécimal" value="#DD3627">
                                 </div>
                             </div>
                         </div>

@@ -85,7 +85,7 @@
         "browsable": true,
         "id": 2533657,
         "remoteData": {},
-        "name": "Balades"
+        "name": "Parcours de balade"
       }
     },
     {
@@ -147,7 +147,7 @@
         "displayOnLoad": true,
         "browsable": true,
         "remoteData": {},
-        "name": "Points",
+        "name": "Points d'arrêt",
         "id": 2533658
       }
     }

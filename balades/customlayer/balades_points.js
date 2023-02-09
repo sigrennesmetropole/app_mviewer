@@ -44,8 +44,29 @@ mviewer.customLayers.balades_points = (function() {
     
     let POILayer = new ol.layer.Vector({
         source: new ol.source.Vector({
-            url: data_poi,
             format: new ol.format.GeoJSON(),
+            // url: data_poi,
+            loader: () => { // permet d'éviter le bug de features chargées en double 
+                fetch(data_poi)
+                    .then(r => r.json())
+                    .then(r => {
+                        //console.log("Load features équipements et autres projets"); // ==> Exécuté 2x parfois
+                        // nettoie la layer
+                        POILayer.getSource().clear();
+                        // charge les features
+                        let features = POILayer.getSource().getFormat().readFeatures(r);
+
+                        // Si le système de projection n'est pas EPSG:3857, il faut le transformer
+                        if (r.crs.properties.name !== "urn:ogc:def:crs:EPSG::3857") {
+                            features.forEach(f => {
+                                f.getGeometry().transform(r.crs.properties.name, "EPSG:3857");
+                                console.log(r.crs.properties.name);
+                            });
+                        }
+                        
+                        POILayer.getSource().addFeatures(features);
+                    })
+                }
         }),
         style: baladeStyle_pct,
     });
