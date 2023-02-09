@@ -600,8 +600,6 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', ()
             "points": { "idBalade": form.elements["attributIdPoint"].value, "champRang": form.elements["attributRang"].value, "couleurPointActif": form.elements["couleurPointActif"].value, "pointsVisible": form.elements["affichagePointNonSelect"].value == "Oui" ? "true" : "false" }
         };
 
-        console.log(fichiers)
-
         var xmlString = `<?xml version="1.0" encoding="UTF-8"?>
                     <config><application title="${document.querySelector("#titre").value}" logo="apps/public/img/logo/logo_mviewer_transp.png" 
                         favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png" titlehelp="À propos des cartes thématiques"

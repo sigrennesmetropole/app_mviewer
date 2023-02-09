@@ -12,6 +12,7 @@ var baladesAddon = (function () {
     var defaultColor; // couleur de base des points si la couleur n'est pas valide
     var couleurPointActif; // couleur du point actif de la balade
     var highlightLayer; // Layer highlight du point actif
+    var couleurBaladeFixe; // couleur fixe de chaque tracé des balades si l'option est choisi
 
     var featuresBalades; // liste des balades
     var featuresPoints; // liste des points
@@ -344,6 +345,8 @@ var baladesAddon = (function () {
             var couleurFeature = balade.get(couleurBalades);
             if (!isColor(couleurFeature))
                 couleurFeature = defaultColor;
+            if (isColor(couleurBaladeFixe))
+                couleurFeature = couleurBaladeFixe
             var style = new ol.style.Style({
                 stroke: new ol.style.Stroke({ color: couleurFeature, width: 4 })
             });
@@ -450,6 +453,7 @@ var baladesAddon = (function () {
         couleurBalades = data.balades.couleurBalades;
         idBalade = data.points.idBalade;
         champRang = data.points.champRang;
+        couleurBaladeFixe = data.balades.couleurBaladeFixe;
         baladeId = data.balades.id;
         defaultColor = data.balades.defaultColor;
         couleurPointActif = data.points.couleurPointActif;
