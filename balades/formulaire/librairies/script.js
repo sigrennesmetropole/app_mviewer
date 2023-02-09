@@ -636,7 +636,6 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', ()
         var commentaire = document.querySelector("#commentaire").value;
         var titre = document.querySelector("#titre").value;
         var defaultColor = "#000000";
-        var couleurBaladeFixe = "";
         var baladeParDefaut = "";
 
         var attributCouleurBalades = "";
