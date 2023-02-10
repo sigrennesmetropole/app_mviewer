@@ -7,12 +7,14 @@ var baladesAddon = (function () {
 
     var baladeId; // id de chaque balade
     var couleurBalades; // nom de l'attribut couleur sur chaque balade
+    var couleurPoints; // nom de l'attribut couleur sur chaque point
     var idBalade; // id de la balade sur chaque point
     var champRang = 'rang'; // rang de chaque point
     var defaultColor; // couleur de base des points si la couleur n'est pas valide
     var couleurPointActif; // couleur du point actif de la balade
     var highlightLayer; // Layer highlight du point actif
     var couleurBaladeFixe; // couleur fixe de chaque tracé des balades si l'option est choisi
+    var couleurPointFixe; // couleur fixe de chaque points si l'option est choisi
 
     var featuresBalades; // liste des balades
     var featuresPoints; // liste des points
@@ -341,7 +343,7 @@ var baladesAddon = (function () {
         var featuresCouleur = [];
         // changement de couleur des entitées linéraires
         features.forEach(balade => {
-            featuresCouleur.push({ "id": balade.get(baladeId), "couleur": balade.get(couleurBalades) });
+            featuresCouleur.push({ "id": balade.get(baladeId), "balade": balade });
             var couleurFeature = balade.get(couleurBalades);
             if (!isColor(couleurFeature))
                 couleurFeature = defaultColor;
@@ -355,9 +357,11 @@ var baladesAddon = (function () {
         // changement de couleur des points 
         features = mviewer.customLayers[layer_points].layer.getSource().getFeatures();
         features.forEach(point => {
-            var couleurPoint = featuresCouleur.find(x => x['id'] == point.get(idBalade)).couleur;
+            var couleurPoint = featuresCouleur.find(x => x['id'] == point.get(idBalade)).balade.get(couleurPoints);
             if (!isColor(couleurPoint))
                 couleurPoint = defaultColor;
+            if (isColor(couleurPointFixe))
+                couleurPoint = couleurPointFixe;
             var style = new ol.style.Style({
                 image: new ol.style.Icon({
                     color: couleurPoint,
@@ -451,9 +455,11 @@ var baladesAddon = (function () {
     function _setSearchParameters(data, callback) {
         zoomPendantBalade = data.carte.zoomPendantBalade;
         couleurBalades = data.balades.couleurBalades;
+        couleurPoints = data.balades.couleurPoints;
         idBalade = data.points.idBalade;
         champRang = data.points.champRang;
         couleurBaladeFixe = data.balades.couleurBaladeFixe;
+        couleurPointFixe = data.balades.couleurPointFixe;
         baladeId = data.balades.id;
         defaultColor = data.balades.defaultColor;
         couleurPointActif = data.points.couleurPointActif;

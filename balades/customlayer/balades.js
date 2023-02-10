@@ -54,12 +54,13 @@ mviewer.customLayers.balades = (function() {
                         let features = baladeslayer.getSource().getFormat().readFeatures(r);
 
                         // Si le système de projection n'est pas EPSG:3857, il faut le transformer
-                        if (r.crs.properties.name !== "urn:ogc:def:crs:EPSG::3857") {
-                            features.forEach(f => {
-                                f.getGeometry().transform(r.crs.properties.name, "EPSG:3857");
-                                console.log(r.crs.properties.name);
-                            });
-                        }
+                        try {
+                            if (r.crs.properties.name !== "urn:ogc:def:crs:EPSG::3857") {
+                                features.forEach(f => {
+                                    f.getGeometry().transform(r.crs.properties.name, "EPSG:3857");
+                                });
+                            }
+                        } catch(e) {}
 
                         baladeslayer.getSource().addFeatures(features);
                     })

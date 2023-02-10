@@ -12,7 +12,8 @@
             "properties": {
                 "id": 1,
                 "label": "Première balade",
-                "couleur": "#9b59b6"
+                "couleur": "#9b59b6",
+                "couleurPoint": "#9b5906"
             },
             "geometry": {
                 "type": "LineString",
@@ -23,7 +24,8 @@
             "properties": {
                 "id": 2,
                 "label": "Deuxième balade",
-                "couleur": "#2ecc71"
+                "couleur": "#2ecc71",
+                "couleurPoint": "#9059b6"
             },
             "geometry": {
                 "type": "LineString",
@@ -34,7 +36,8 @@
             "properties": {
                 "id": 3,
                 "label": "Balade numéro 3",
-                "couleur": "#3498db"
+                "couleur": "#3498db",
+                "couleurPoint": "#9b09b6"
             },
             "geometry": {
                 "type": "LineString",

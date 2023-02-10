@@ -4,15 +4,17 @@
     },
     "balades": {
         "id": "ID_PROM",
-        "couleurBalades": "couleur",
-        "defaultColor": "#1CCA78",
+        "couleurBalades": "",
+        "couleurPoints": "",
         "couleurBaladeFixe": "",
-        "baladeParDefaut": 3
+        "couleurPointFixe": "",
+        "defaultColor": "#000000",
+        "baladeParDefaut": "3"
     },
     "points": {
         "idBalade": "ID_PROM",
         "champRang" : "N_ARRET",
-        "couleurPointActif": "#ba8e02",
+        "couleurPointActif": "#e74c3c",
         "pointsVisible": "true"
     }
 }
