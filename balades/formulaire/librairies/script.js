@@ -170,6 +170,7 @@ document.getElementById('geojson').addEventListener('change', () => {
 
                 // Essayer de mettre les couleurs des balades (donc les deux champs des id ont été auto détécté)
                 setColorOnMap();
+                couleurPointActif(document.querySelector("#couleurPointActif").value);
 
                 // Attribut de balade par défaut sélectionnée
                 const SelectAttributBaladeDefaut = document.querySelector('#baladeDefautSelectionnes');
