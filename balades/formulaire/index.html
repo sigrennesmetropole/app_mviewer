@@ -250,7 +250,7 @@
                                                 <label for="couleurBaladeFixe-couleur"
                                                     class="ml-3 block text-sm font-medium text-gray-700">Choisir la couleur</label>
                                             </div>
-                                            <label for="couleurBaladeFixe" id="labelCouleurBaladeFixe" class="block text-sm font-medium text-gray-800 mt-2">Couleur des tracés :</label>
+                                            <label id="labelCouleurBaladeFixe" class="block text-sm font-medium text-gray-800 mt-2">Nom de l'attribut :</label>
                                             <input type="color" id="couleurBaladeFixe" name="couleurBaladeFixe"
                                                 class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full h-[28px] focus:outline-none"
                                                 style="max-width: 120px; margin-left: 10px" value="#000000">
@@ -266,7 +266,41 @@
                                         </div>
                                     </fieldset>
                                 </div>
-                                <!-- Pareil mais avec point -->
+                                <div class="mx-2 my-2 col-span-3">
+                                    <p class="block text-sm font-medium text-gray-800 mb-2">Couleur des points :</p>
+                                    </p>
+                                    <fieldset class="mt-4">
+                                        <div class="flex items-center space-x-10">
+                                            <div class="flex items-center mt-2">
+                                                <input id="couleurPointFixe-attribut" name="couleurPointFixe"
+                                                    type="radio" checked
+                                                    class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                                <label for="couleurPointFixe-attribut"
+                                                    class="ml-3 block text-sm font-medium text-gray-700">Utiliser un attribut</label>
+                                            </div>
+                                            <div class="flex items-center mt-2">
+                                                <input id="couleurPointFixe-couleur" name="couleurPointFixe"
+                                                    type="radio"
+                                                    class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                                <label for="couleurPointFixe-couleur"
+                                                    class="ml-3 block text-sm font-medium text-gray-700">Choisir la couleur</label>
+                                            </div>
+                                            <label id="labelCouleurPointFixe" class="block text-sm font-medium text-gray-800 mt-2">Nom de l'attribut :</label>
+                                            <input type="color" id="couleurPointFixe" name="couleurPointFixe"
+                                                class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full h-[28px] focus:outline-none"
+                                                style="max-width: 120px; margin-left: 10px" value="#000000">
+                                            <input type="text" id="hexaCouleurPointFixe" name="hexaCouleurPointFixe"
+                                            class="hidden bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-1/6 px-2.5 py-1 focus:outline-none"
+                                            placeholder="Code hexadécimal" value="#000000">
+                                            <select id="attributCouleurPoint" name="attributCouleurPoint"
+                                                class="block w-full p-2.5 text-base border border-gray-300 focus:outline-none sm:text-sm rounded-md"
+                                                style="max-width: 250px;"
+                                                required>
+                                                <option value="" selected>Sélectionner dans la liste..</option>
+                                            </select>
+                                        </div>
+                                    </fieldset>
+                                </div>
                             </div>
                         </div>
                     </div>
