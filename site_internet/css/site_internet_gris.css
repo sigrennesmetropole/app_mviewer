@@ -101,7 +101,7 @@
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--titlecolor); lightgrey;
+  scrollbar-color: var(--titlecolor); 
 }
 
 /*******************************
