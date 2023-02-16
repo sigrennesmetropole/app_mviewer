@@ -1,6 +1,6 @@
 {
   "type": "umap",
-  "uri": "https://umap.openstreetmap.fr/fr/map/carte-sans-nom_869480#15/48.1088/-1.6732",
+  "uri": "https://umap.openstreetmap.fr/fr/map/new/#15/48.1089/-1.6739",
   "properties": {
     "easing": true,
     "embedControl": true,
@@ -86,7 +86,7 @@
         "browsable": true,
         "id": 2630708,
         "remoteData": {},
-        "name": "Parcours de balade"
+        "name": "Tracé de balade"
       }
     },
     {

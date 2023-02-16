@@ -13,7 +13,8 @@
     <div class="min-h-full">
         <nav class="bg-gray-800 z-10 fixed w-full">
             <div class="mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-16">
+                <div class="flex items-start justify-center h-20 flex-col">
+                    <h1 class="text-lg leading-6 font-semibold text-white ">Manuel utilisateur</h1>
                     <div class="flex items-center">
                         <div class="flex-shrink-0"><img class="h-12 w-12" src="librairies/RennesLogo.png" alt="Workflow"></div>
                         <div class="block">
@@ -35,7 +36,7 @@
                         <li class="mb-2"><a class="text-blue-700 hover:text-blue-800" href="#etape-1">Étape 1 : Création des données des balades avec uMap</a></li>
                         <ol class="list-inside text-md ml-12 text-sm">
                             <li class="mb-2"><a class="text-blue-700 hover:text-blue-800" href="#etape-1-1">1.1 : Ouverture du site et import d'un fichier de configuration</a></li>
-                            <li class="mb-2"><a class="text-blue-700 hover:text-blue-800" href="#etape-1-2">1.2 : Création du parcours d'une balade (entité linéaire)</a></li>
+                            <li class="mb-2"><a class="text-blue-700 hover:text-blue-800" href="#etape-1-2">1.2 : Création du tracé d'une balade (entité linéaire)</a></li>
                             <li class="mb-2"><a class="text-blue-700 hover:text-blue-800" href="#etape-1-3">1.3 : Création d'un point d'intérêt (entité ponctuelle)</a></li>
                             <li class="mb-2"><a class="text-blue-700 hover:text-blue-800" href="#etape-1-4">1.4 : Ajouter des attributs aux parcours</a></li>
                             <li class="mb-2"><a class="text-blue-700 hover:text-blue-800" href="#etape-1-5">1.5 : Exporter les données de uMap</a></li>
@@ -68,25 +69,26 @@
                         <p>Un panneau s'ouvre alors pour importer un fichier de configuration comme sur la capture ci-dessous. Sélectionnez le fichier <b>carte_balade_exemple.umap</b> que vous avez téléchargé.</p>
                         <img class="w-1/4 mx-auto my-4 border border-black rounded-md" src="librairies/images/menuImporterDesDonnees.png">
                         <p>Vous pouvez cliquer sur le bouton <b>Importer</b> et le fichier de configuration sera chargé dans uMap (cf. image ci-dessous). Sur la base de ce modèle de données, 
-                            il est possible de créer les données représentant des balades avec des points d'intérêts. De plus, le style des données sur la carte uMap ne correspondra pas à la carte thématique qui sera déployée.</p>
+                            il est possible de créer les données représentant des balades avec des points d'intérêts. Attention, le style des données sur la carte uMap ne correspondra pas à la carte thématique qui sera déployée. Ici, nous nous intéressons à la création des données.</p>
                         <img class="w-1/4 mx-auto my-4 border border-black rounded-md" src="librairies/images/exempleDonnesImportes.png">          
                     </li>
                     <li class="mb-4" id="etape-1-2" style="scroll-margin-top: 4.2rem;">
-                        <h2 class="text-lg font-bold text-gray-800 mb-4">1.2 : Création du parcours d'une balade (entité linéaire)</h2>
+                        <h2 class="text-lg font-bold text-gray-800 mb-4">1.2 : Création du tracé d'une balade (entité linéaire)</h2>
                         <p>Pour créer une entité linéaire, vous devez cliquer sur le bouton <b>Dessiner une ligne</b> comme sur la capture ci-dessous :</p>
                         <img class="w-1/12 mx-auto my-4 border border-black rounded-md" src="librairies/images/boutonEntitieLineaire.png">
-                        <p>Ensuite, vous pouvez créer les points du segment sur la carte en <b>cliquant</b> pour chaque point. Pour <b>terminer</b> la création de la balade, 
-                        il faut cliquer sur le dernier point de segment de la balade et un menu s'ouvre pour renseigner les <b>informations de la balade</b> comme sur la capture ci-dessous :</p>
+                        <p>Ensuite, vous pouvez créer le tracé de la balade sur la carte en <b>cliquant</b> pour chaque segment. Pour <b>terminer</b> la création de la balade, 
+                        il faut cliquer sur le dernier segment de la balade et un menu s'ouvre pour renseigner les <b>informations de la balade</b> comme sur la capture ci-dessous :</p>
+                        <p class="mb-2 text-red-600">Assurez-vous que vous modifiez le calque <b>Tracé de balade</b>. Pour changer de calque, choisissez dans la liste des calques en haut du formulaire.</p>
                         <img class="w-1/2 mx-auto my-4 border border-black rounded-md" src="librairies/images/creerEntiteLineaire.png">
-                        <p class="mb-2 text-red-600">Si vous n'avez pas le formulaire pour renseigner les informations de la balade, vous pouvez changer le calque de l'élément en <b>Parcours de balade</b>.</p>
-                        <p>Les informations à renseigner pour une balade sont les suivantes :</p>
+                        <p>Les informations minimales à renseigner pour un tracé de balade sont les suivantes :</p>
                         <ul class="list-disc ml-12 my-2">
                             <li><b>Nom</b> : le titre de la balade</li>
                             <li><b>Description</b> : la description de la balade</li>
                             <li><b>Id</b> : l'identifiant de la balade (doit être unique et un entier)</li>
                             <li><b>Couleur</b> : la couleur de la balade sous forme de code hexadécimal exemple : #0380fc (<a class="text-blue-700 hover:text-blue-800" target="_blank" href="https://g.co/kgs/3kuVyT">palette de couleurs</a>)</li>
                         </ul>
-                        <p>Une fois les informations renseignées, vous pouvez cliquer sur le bouton <b>Fermer</b> pour créer d'autres balades et des points d'intérêt. Vous pouvez passer à l'étape suivante pour créer les points d'intérêt.</p>
+                        <p>Il est possible d'ajouter d'autres informations comme indiqué dans la <a class="text-blue-700 hover:text-blue-800" href="#etape-1-4">partie 1.4</a>.
+                        Une fois les informations renseignées, vous pouvez cliquer sur le bouton <b>Fermer</b> pour créer d'autres balades et des points d'intérêt. Vous pouvez passer à l'étape suivante pour créer les points d'intérêt.</p>
                     </li>
                     <li class="mb-4" id="etape-1-3" style="scroll-margin-top: 4.2rem;">
                         <h2 class="text-lg font-bold text-gray-800 mb-4">1.3 : Création d'un point d'intérêt (entité ponctuelle)</h2>
@@ -94,8 +96,8 @@
                         <img class="w-1/12 mx-auto my-4 border border-black rounded-md" src="librairies/images/boutonEntitiePonctuelle.png">
                         <p>Ensuite, vous pouvez créer un point d'intérêt en <b>cliquant</b> sur la carte. Après avoir cliqué sur la carte,
                         un menu s'ouvre pour renseigner les <b>informations du point d'intérêt</b> comme sur la capture ci-dessous :</p>
+                        <p class="mb-2 text-red-600">Assurez-vous que vous modifiez le calque <b>Points d'arrêt</b>. Pour changer de calque, choisissez dans la liste des calques en haut du formulaire.</p>
                         <img class="w-1/2 mx-auto my-4 border border-black rounded-md" src="librairies/images/creerEntitePonctuelle.png">
-                        <p class="mb-2 text-red-600">Si vous n'avez pas le formulaire pour renseigner les informations du point d'intérêt, vous pouvez changer le calque de l'élément en <b>Points d'arrêt</b>.</p>
                         <p>Les informations à renseigner pour un point d'intérêt sont les suivantes :</p>
                         <ul class="list-disc ml-12 my-2">
                             <li><b>Nom</b> : le titre du point d'intérêt</li>
@@ -104,7 +106,8 @@
                             <li><b>Idbalade</b> : l'identifiant de la balade à laquelle le point d'intérêt est rattaché (doit être un entier)</li>
                             <li><b>Rang</b> : le rang du point d'intérêt dans la balade (doit être un entier)</li>
                         </ul>
-                        <p>Une fois les informations renseignées, vous pouvez cliquer sur le bouton <b>Fermer</b> pour créer d'autres balades et des points d'intérêt.</p>
+                        <p>Il est possible d'ajouter d'autres informations comme indiqué dans la <a class="text-blue-700 hover:text-blue-800" href="#etape-1-4">partie 1.4</a>.
+                         Une fois les informations renseignées, vous pouvez cliquer sur le bouton <b>Fermer</b> pour créer d'autres balades et des points d'intérêt.</p>
                     </li>
                     <li class="mb-4" id="etape-1-4" style="scroll-margin-top: 4.2rem;">
                         <h2 class="text-lg font-bold text-gray-800 mb-4">1.4 : Ajouter des attributs aux parcours</h2>

@@ -163,7 +163,7 @@ document.getElementById('geojson').addEventListener('change', () => {
                     const option = document.createElement("option");
                     option.value = attribut;
                     option.innerText = attribut;
-                    if (/couleurpoint|pointcouleur|/i.test(attribut))
+                    if (/couleurpoint|pointcouleur|couleur/i.test(attribut))
                         option.selected = true;
                         SelectAttributCouleurPoint.appendChild(option);
                 });
