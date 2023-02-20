@@ -3,6 +3,10 @@
 // chaque couche est présentée par un onglet
 // pas de relation dynamique entre tableau et carte
 // URL d'accès au tableau (mode=data)
+    document.addEventListener("accessibilite-componentLoaded", (e) => {
+        _init();
+    });
+    
     var layerAttributes = [];
     
     function getFeatures(layer){
@@ -195,8 +199,8 @@
 
         
         // Remplir le tableau avec les données
-        //updateLayerTable(layer);
-        setTimeout(function (){updateLayerTable(layer);},5000);
+        updateLayerTable(layer);
+        //setTimeout(function (){updateLayerTable(layer);},5000);
     }
     
     async function _sortAttributes(attributes){
@@ -317,18 +321,13 @@
                     }
                     await _createTDObjects(_tbody_tr, features[i], maxRowSpan, 0, layerAttributes[layer.layerid].simpleattr, layerAttributes[layer.layerid].objattr);
                 }
+            }).then(function() {
+                layer.layer.getSource().once('changefeature', () => {
+                    updateLayerTable(layer);
+                    });
             });
             
-            /*// cas des ajouts/suppr de features
-            layer.layer.getSource().once('change', () => {
-                updateLayerTable(layer);
-            });
-            // cas des modifications d'attributs de features
-            layer.layer.getSource().once('changefeature', () => {
-                console.log("rechargement de la couche " + layer.layerid);
-                updateLayerTable(layer);
-            });
-            */
+
         } catch (err) {
             console.log(err);
         }
@@ -448,15 +447,12 @@
         return (new Date(date) !== "Invalid Date") && !isNaN(new Date(date));
     }
 
-    
     function _init() {
         if (API.mode=='data'){
-            //récupération de la liste des couches de la TOC pour conserver l'ordre
-            var layers = document.querySelectorAll("#menu li.mv-nav-item");
-            for (var i =0; i< layers.length; i++){
-                var layer  = mviewer.getLayer(layers[i].getAttribute('data-layerid'));
+            var layers = mviewer.getLayers();
+            for (const layerid of Object.keys(layers)) { 
+                var layer  = layers[layerid];
                 buildTable(layer);
-
             }
             
             // Affichage du tableau et masquage de la carte
@@ -465,9 +461,6 @@
             document.getElementById('mv-navbar').style.display = 'none';
         }
     }
-console.log(mviewer.getLayers());
 
-_map.once('loadend', _init); // TODO événement sur les couches de l'objet mviewer
-//mviewer.getLayers() => toutes les couches affichables
-// SI couche WMS, on appelera WFS dans tous les cas => ne pas attendre son chargement
-// SI customLayer => listener sur la source
+
+// TODO : couper le chargement de la map pour gagner du temps ?
