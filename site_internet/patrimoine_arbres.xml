@@ -105,24 +105,5 @@
                 <template url="apps/site_internet/templates/arbres_alignement.mst"></template>
             </layer>
         </theme>
-        <theme id="theme-202210201401" name="Arbres d'ornement" collapsed="true" icon="fas fa-tree">
-            <layer
-                id="arbresornement"
-                name="Arbres d'ornement"
-                type="customlayer"
-                url="apps/site_internet/customlayer/pat_arbres_ornement.js"
-                legendurl="apps/site_internet/img/legend/pat_arbres_ornement.svg"
-                visible="true"
-                opacity="0.6"
-                infoformat="application/vnd.ogc.gml"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6db35b05-e8bc-4339-a49b-828da0d3fd9f"
-                queryable="true"
-                tabcolor="#bfbf30"
-                featurecount="10"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/arbres_alignement.mst"></template>
-            </layer>
-        </theme>
     </themes>
 </config>

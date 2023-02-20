@@ -1,0 +1,114 @@
+/******************************************************************************
+--------------------------- tableau des données      -------------------------
+********************************************************************************/
+#accessibilite-custom-component{
+    position: absolute;
+    z-index:2000;
+    background-color:#fff;
+    width:100%;
+    display: none;
+}
+#accessibility_datatable {
+    /*position: fixed;*/
+    bottom: 200px;
+}
+
+#accessibility_tabs
+{
+    font-size : 12px;
+    font-family: 'condate_light', Arial, Sans-serif;
+    list-style-type : none;
+    padding-bottom : 24px; /* à modifier suivant la taille de la police ET de la hauteur de l'onglet dans #onglets li */
+    border-bottom : 1px solid #9EA0A1;
+    margin-left : 0;
+    padding-inline-start: 10px;
+}
+
+#accessibility_tabs li
+{
+    float : left;
+    height : 21px; /* à modifier suivant la taille de la police pour centrer le texte dans l'onglet */
+    /*background-color: #000000; */
+    /*margin : 2px 2px 0 2px !important; */ /* Pour les navigateurs autre que IE */
+    /*margin : 1px 2px 0 2px; */ /* Pour IE  */
+    /*border : 1px solid #9EA0A1; */
+    
+}
+
+#accessibility_tabs>li>a{
+    background-color:#fff;
+    color:#000000;
+    border-bottom: 1px solid #ddd;
+}
+
+#accessibility_tabs li.active
+{
+    border-bottom: 1px solid #fff;
+    /*background-color: #DD3627; */
+    color : #000000;
+}
+
+#accessibility_tabs>li.active>a, #accessibility_tabs>li.active>a:focus, #accessibility_tabs>li.active>a:hover {
+    color : #000000!important;
+    cursor: default;
+    background-color: DD3627!important;
+    border-bottom: 2px solid #DD3627;
+    font-weight: bold;
+}
+
+#accessibility_tabs>li>a:hover {
+    /*border-color: #eee #eee #000000;*/
+    border-top-style:#fff;
+    border-left-style:#fff;
+    border-right-style:#ffffff;
+    border-bottom: 1px solid #000000;
+    background-color: #fff;
+    color : #000000!important;
+}
+
+#accessibility_tabs>li.active>a:hover {
+    border: 1px solid #ddd;
+    border-bottom: 2px solid #DD3627;
+}
+
+#accessibility_tabs a
+{
+    display : block;
+    color : #fff;
+    text-decoration : none;
+    padding : 4px;
+}
+
+#accessibility_tabs a:hover
+{
+    color : #000000;
+}
+
+#accessibility_tabs li:hover
+{
+    background-color: #fff;
+}
+
+#accessibility_main_ td{
+    border:0.5px solid #000000;
+    padding:3px;
+    vertical-align: text-top;
+}
+
+#accessibility_main_ th{
+    background-color:#000000;
+    border:0.5px solid #DD3627;
+    color:#fff;
+    text-align:center;
+    vertical-align: middle;
+    padding:5px;
+}
+
+#accessibility_main_ {
+    font-size : 11px;
+    font-family: 'condate_light', Arial, Sans-serif;
+}
+
+#accessibility_main_ table {
+    width: -webkit-fill-available;
+}
