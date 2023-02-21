@@ -5,31 +5,36 @@
 // URL d'accès au tableau (mode=data)
     document.addEventListener("accessibilite-componentLoaded", (e) => {
         _init();
-    });
+    }, { once: true });
     
     var layerAttributes = [];
     
     function getFeatures(layer){
+        
         return new Promise (resolve => {
             switch (layer.type) {
                 case 'wms':
                     // un appel WFS pour ne récupérer toutes les données visualisables sur la carte et pas seulement celles de l'emprise visible
                     // Attention à bien conserver le CQLFilter si défini dans la structure
+                    // LIMITE : si la couche appelle un style, le filtre porté par ce style ne peut pas être appliqué sur cette extension
                     var url = layer.url + "?service=WFS&version=1.0.0&request=GetFeature&typeName=" + layer.layername + "&outputFormat=application%2Fjson&srsname=EPSG:3948";
                     if (layer.filter && layer.filter != "") {
                         url += "&CQL_FILTER=" + encodeURIComponent(layer.filter);
                     }
                     fetch(url).then((response) => response.json())
                         .then((data) => {
-                            //console.log(data.features);
                             resolve({'response': data.features});
                         });
                     break;
                 case 'customlayer':
-                    resolve({'response': layer.layer.getSource().getFeatures()});
+                    setTimeout(function (){
+                        resolve({'response': layer.layer.getSource().getFeatures()});
+                      }, 250);
                     break;
                 default:
-                    resolve({'response': layer.layer.getSource().getFeatures()});
+                    setTimeout(function (){
+                        resolve({'response': layer.layer.getSource().getFeatures()});
+                      }, 250);
             }
         });
     }
@@ -48,7 +53,6 @@
         
         return attributes;
         
-
     }
     
     
@@ -103,23 +107,25 @@
                         //chercher si l'attribut est une valeur "feuille" ou si c'est une branche
                         // si branche, ajouter un attribut du nom 
                         let _name = _filteredContent[i][1];
-                        if (! _ct.includes(_name)) {
-                            let newattrib={};
-                            newattrib[_name] = _ct;
-                            _addElement(attributes, newattrib);
-                        }
-                        //si feuille chaque attribut est propre au noeud parent
-                        else {
-                            for (let j=0; j<_ct.length;j++){
-                                _addElement(attributes, _ct[j]);
+                        if (_ct.length > 0 ) {
+                            if( ! _ct.includes(_name)) {
+                                let newattrib={};
+                                newattrib[_name] = _ct;
+                                _addElement(attributes, newattrib);
+                            } else {//si feuille chaque attribut est propre au noeud parent
+                                for (let j=0; j<_ct.length;j++){
+                                    _addElement(attributes, _ct[j]);
+                                }
                             }
+                        } else {
+                            _addElement(attributes, _filteredContent[i][1]);
                         }
                     }
                     break;
                 case '^':
                     _ct = _resolveContent(_filteredContent[i]);
                     for (let j=0; j<_ct.length;j++){
-                        _addElement(attributes, _ct[j]);
+                        _addElement(attributes, _filteredContent[i][1]);
                     }
                     break;
                 default:
@@ -148,7 +154,9 @@
                 }
             }
         } else { // propriété simple (tableau) à ajouter
-            destination.push(element);
+            if (!destination.includes(element)) {
+                destination.push(element);
+            }
         }
     }
     
@@ -196,11 +204,9 @@
             a.setAttribute("aria-expanded","true");
             maindiv.classList.add("active");
         }
-
         
         // Remplir le tableau avec les données
         updateLayerTable(layer);
-        //setTimeout(function (){updateLayerTable(layer);},5000);
     }
     
     async function _sortAttributes(attributes){
@@ -302,10 +308,8 @@
     
     // mise à jour du contenu du tableau
     function updateLayerTable(layer){
-        
         try {
             getFeatures(layer).then(async function(res) { 
-                //console.log("FEATURES OK");
                 const features = res.response;
                 var _tblBody = document.querySelector('#data_' + layer.layerid + '> table > tbody');
                 _tblBody.innerHTML = '';
@@ -325,9 +329,10 @@
                 layer.layer.getSource().once('changefeature', () => {
                     updateLayerTable(layer);
                     });
+                layer.layer.getSource().once('change', () => {
+                    updateLayerTable(layer);
+                    });
             });
-            
-
         } catch (err) {
             console.log(err);
         }
@@ -357,23 +362,28 @@
                 }
                 texte = (texte?texte:"");
                 // rectifications basiques de données
-                if (typeof texte == "boolean"){
-                    texte = (texte ? "oui" : "non");
-                }
-                else if (texte.indexOf('1970-01-01')>=0){
-                    // soit mauvaise date si heure = 00:00
-                    // soit on ne veut garder que l'heure
-                    let _dtHR = new Date(texte).getHours();
-                    let _dtMN = new Date(texte).getMinutes();
-                    
-                    if (_dtHR == 0 && _dtMN == 0) {
-                        texte = "";
-                    } else {
-                        texte = String(_dtHR).padStart(2,'0') + "h" + String(_dtMN).padStart(2,'0');
+                try{
+                    if (typeof texte == "boolean"){
+                        texte = (texte ? "oui" : "non");
                     }
+                    else if (String(texte).indexOf('1970-01-01')>=0){
+                        // soit mauvaise date si heure = 00:00
+                        // soit on ne veut garder que l'heure
+                        let _dtHR = new Date(texte).getHours();
+                        let _dtMN = new Date(texte).getMinutes();
+                        
+                        if (_dtHR == 0 && _dtMN == 0) {
+                            texte = "";
+                        } else {
+                            texte = String(_dtHR).padStart(2,'0') + "h" + String(_dtMN).padStart(2,'0');
+                        } 
+                    } 
+                } catch (e){
+                    console.log(e);
                 }
             }
-            _tbody_td.appendChild(document.createTextNode(texte));
+            //_tbody_td.appendChild(document.createTextNode(texte));
+            _tbody_td.innerHTML = texte;
             _tbody_tr[level].appendChild(_tbody_td);
         }
         // attributs complexes
@@ -446,21 +456,34 @@
     function _isDate(date){
         return (new Date(date) !== "Invalid Date") && !isNaN(new Date(date));
     }
+    
+    function _decodedHTMLEntity(string){
+        var txtarea = document.createElement('textarea');
+        txtarea.innerHTML = string;
+        return txtarea.value;
+    }
 
     function _init() {
         if (API.mode=='data'){
             var layers = mviewer.getLayers();
             for (const layerid of Object.keys(layers)) { 
                 var layer  = layers[layerid];
-                buildTable(layer);
+                if (layer.queryable){ 
+                    if(layer.visible == "false"){
+                        mviewer.addLayer(layer);
+                    }
+                    buildTable(layer);
+                }
             }
             
             // Affichage du tableau et masquage de la carte
             document.getElementById('accessibilite-custom-component').style.display = 'block';
             document.getElementById('wrapper').style.display = 'none';
             document.getElementById('mv-navbar').style.display = 'none';
+            if (configuration.getConfiguration().application.showhelp == "true") {
+                $('#help').modal('hide');
+            }
         }
     }
 
 
-// TODO : couper le chargement de la map pour gagner du temps ?
