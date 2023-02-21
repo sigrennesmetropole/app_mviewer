@@ -25,6 +25,7 @@
     <extensions>
         <extension type="component" id="GUICustom" path="apps/public/addons"/>
         <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="true"/>
+        <extension type="component" id="accessibilite" path="apps/public/addons"/>
     </extensions>
 
     <themes mini="false" legendmini="true">
@@ -40,7 +41,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Basketball'"
                 style="eq_cultspo:eq_sport_proxi_basket"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
@@ -56,7 +57,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Basketball / Football / Handball'"
                 style="eq_cultspo:eq_sport_proxi_basketball_football_handball"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
@@ -73,7 +74,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Babyfoot'"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
             </layer>
@@ -88,7 +89,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Bicross'"
                 style="eq_cultspo:eq_sport_proxi_bicross"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
@@ -104,7 +105,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Cyclisme'"
                 style="eq_cultspo:eq_sport_proxi_cyclisme"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
@@ -120,7 +121,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Échecs'"
                 style="eq_cultspo:eq_sport_proxi_echecs"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
@@ -136,7 +137,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Espace de rafraîchissement'"
                 style="eq_cultspo:eq_sport_proxi_espace_rafraichissement"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
@@ -152,7 +153,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Fitness'"
                 style="eq_cultspo:eq_sport_proxi_fitness"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
@@ -168,7 +169,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Football'"
                 style="eq_cultspo:eq_sport_proxi_football"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
@@ -184,7 +185,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Glisse urbaine'"
                 style="eq_cultspo:eq_sport_proxi_glisse_urbaine"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
@@ -200,7 +201,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Molky'"
                 style="eq_cultspo:eq_sport_proxi_molky"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
@@ -216,7 +217,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Parcours de santé'"
                 style="eq_cultspo:eq_sport_proxi_parcours_sante"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
@@ -232,7 +233,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Pétanque'"
                 style="eq_cultspo:eq_sport_proxi_petanque"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
@@ -248,7 +249,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Course à pied'"
                 style="eq_cultspo:eq_sport_proxi_course_a_pied"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
@@ -264,7 +265,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Street Workout'"
                 style="eq_cultspo:eq_sport_proxi_street_workout"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
@@ -280,7 +281,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Tennis'"
                 style="eq_cultspo:eq_sport_proxi_tennis"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
@@ -296,7 +297,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Tennis de table'"
                 style="eq_cultspo:eq_sport_proxi_tennis_table"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
@@ -312,7 +313,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
                 queryable="true"
                 featurecount="6"
-                filter="crit_acces &lt;&gt; 'Accès interdit'"
+                filter="crit_acces &lt;&gt; 'Accès interdit' AND pratiques='Volley-ball'"
                 style="eq_cultspo:eq_sport_proxi_volley_ball"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif_pratique.mst"></template>
