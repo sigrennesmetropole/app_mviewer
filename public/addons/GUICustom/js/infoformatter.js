@@ -56,7 +56,7 @@ var formatter = (function () {
             val = _tab[cpt].innerHTML;
             if(+val !== 'NaN'){
                 var dividedvalue = (+val)/1000;
-                _tab[cpt].innerHTML = Math.round( dividedvalue*100 ) / 100; //Math.round(num * 100) / 100
+                _tab[cpt].innerHTML = Math.round( dividedvalue*100 ) / 100; 
             }
         }
     }
