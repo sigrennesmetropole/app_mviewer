@@ -29,7 +29,7 @@
     </extensions>
 
     <themes mini="true">
-        <theme id="theme-20180824152940" name="Stations de vélo libre service" collapsed="true" icon="fas fa-bicycle">
+        <theme id="theme-20180824152940" name="Plan cycles" collapsed="true" icon="fas fa-bicycle">
             <layer
                 id="stations_vls"
                 name="Stations de vélo libre service"
@@ -47,23 +47,24 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/station-velo-ls.mst"></template>
             </layer>
-            <!-- couche supprimée
                 <layer
-                id="v_reparation_velo"
+                id="reparation_velo"
                 name="Gonflage et réparation de vélo"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/trp_doux/ows"
                 dynamiclegend="false"
                 scalemin="99" scalemax="50000"
                 visible="true"
+                sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/stations_reparation_velo.sld"
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/422a6ed5-619a-4156-8785-174d786ec95c"
                 queryable="true"
+                filter="etat = 'En service'"
                 featurecount="3"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/stations-gonflages-velo.mst"></template>
-            </layer> -->
+            </layer>
             <layer
                 id="parc_velo_securise"
                 name="Parcs vélos sécurisés"
@@ -107,6 +108,17 @@
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/3dafbf1e-37e7-4921-89f3-60505a656b3a"
+                queryable="false">
+            </layer>
+            <layer
+                id="cdt_boucle_velo"
+                name="Boucles vélo sur le territoire de Rennes Métropole"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/ptou_lois/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2668e99c-fdea-44aa-a929-c609fc95ab9a"
                 queryable="false">
             </layer>
         </theme>
