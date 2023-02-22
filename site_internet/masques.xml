@@ -25,6 +25,7 @@
         <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_RVA.json"/>
         <extension type="component" id="GUICustom" path="apps/public/addons"/>
         <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
+        <extension type="component" id="accessibilite" path="apps/public/addons"/>
     </extensions>
 
     <themes mini="true">
