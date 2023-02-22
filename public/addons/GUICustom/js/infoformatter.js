@@ -251,10 +251,12 @@ var formatter = (function () {
                             // keep only values, without inverted commas
                             var beg = new Date(elem[0].split(":")[1].replace(/\"/g, ""));
                             var end = new Date(elem[1].split(":")[1].replace(/\"/g, ""));
+                            end.setHours(23);
+                            end.setMinutes(59);
                             var comment = elem[2].split(":")[1].replace(/\"/g, "").length > 0 ? " : " + elem[2].split(":")[1].replace(/\"/g, "") : "";
 
                             // keep only ongoing or future closing
-                            if (new Date(end) >= Date.now()) {
+                            if (end >= Date.now()) {
                                 var output = "";
                                 if (beg < end) {
                                     output = "<li> Du " + beg.toLocaleDateString() + " au " + end.toLocaleDateString() + comment + "</li>";
