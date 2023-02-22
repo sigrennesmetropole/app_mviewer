@@ -130,6 +130,8 @@ mviewer.customLayers.piscinesRM= (function() {
               });
             }
         }
+        
+        console.log("HORAIRES");
     }
 
     function getFeatureFromIdSite(idSite) {
@@ -148,12 +150,14 @@ mviewer.customLayers.piscinesRM= (function() {
       if(piscines){
         fermeturesLogic(feature.values_.joursFermes,feature,true);
       }else{
-        items = feature.values_.bassins;
-        if(items.length > 0){
-          items.forEach((item, i) => {
-            fermeturesLogic(item.joursFermes,feature,false,i);
-          });
-        }
+          if (feature.values_.bassins && feature.values_.bassins != 'undefined') {
+            items = feature.values_.bassins;
+            if(items.length > 0){
+              items.forEach((item, i) => {
+                fermeturesLogic(item.joursFermes,feature,false,i);
+              });
+            }
+          }
       }
     }
 

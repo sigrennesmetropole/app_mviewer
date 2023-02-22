@@ -34,6 +34,12 @@
     z-index: 2000;
 }
 
+#geolocbtnBalade {
+    position: fixed;
+    display: none;
+    z-index: 2000;
+}
+
 #prevButton:hover, #nextButton:hover, #startButton:hover {
     background-color: #23272B;
 }

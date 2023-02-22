@@ -23,8 +23,9 @@
     </baselayers>
     
     <extensions>
-      <extension type="component" id="GUICustom" path="apps/public/addons"/>
+        <extension type="component" id="GUICustom" path="apps/public/addons"/>
         <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
+        <extension type="component" id="accessibilite" path="apps/public/addons"/>
     </extensions>
 
     <themes mini="true">

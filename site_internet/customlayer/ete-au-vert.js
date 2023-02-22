@@ -25,7 +25,7 @@ mviewer.customLayers.ete_au_vert= (function() {
                 fetch(urlData)
                     .then(r => r.json())
                     .then(r => {
-                        console.log("Load features ete_au_vert"); // ==> Exécuté 2x parfois
+                        //console.log("Load features ete_au_vert"); // ==> Exécuté 2x parfois
                         // nettoie la layer
                         mviewer.getLayer("ete_au_vert").layer.getSource().clear();
                         // charge les features

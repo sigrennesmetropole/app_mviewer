@@ -1,17 +1,20 @@
 var baladesAddon = (function () {
 
     var configFile; // fichier de configuration
-    var layer_balades; // nom du customlayer des balades
-    var layer_points; // nom du customlayer des points
+    var layer_balades = 'balades'; // nom du customlayer des balades
+    var layer_points = 'balades_points'; // nom du customlayer des points
     var zoomPendantBalade = 16; // zoom appliqué à la carte pendant la balade
 
     var baladeId; // id de chaque balade
     var couleurBalades; // nom de l'attribut couleur sur chaque balade
+    var couleurPoints; // nom de l'attribut couleur sur chaque point
     var idBalade; // id de la balade sur chaque point
     var champRang = 'rang'; // rang de chaque point
     var defaultColor; // couleur de base des points si la couleur n'est pas valide
     var couleurPointActif; // couleur du point actif de la balade
     var highlightLayer; // Layer highlight du point actif
+    var couleurBaladeFixe; // couleur fixe de chaque tracé des balades si l'option est choisi
+    var couleurPointFixe; // couleur fixe de chaque points si l'option est choisi
 
     var featuresBalades; // liste des balades
     var featuresPoints; // liste des points
@@ -32,7 +35,102 @@ var baladesAddon = (function () {
         $('#prevButton').click(clickPrevButtonFunction);
         $('#nextButton').click(clickNextButtonFunction);
         $('#startButton').click(clickStartButtonFunction);
+
+        // décaler la carte vers le bas lorque le panneau d'info est visible
+        $('#modal-panel').on('show.bs.modal', function () {
+            $('#map').animate({ marginTop: screen.height/4 }, 200);
+        });
+
+        // remettre la carte à sa place lorque le panneau d'info est caché
+        $('#modal-panel').on('hide.bs.modal', function () {
+            $('#map').animate({ marginTop: '0px' }, 200);
+        });
+
+        // Gestion du point de géolocalisation
+        if (getParametreVisible())
+            geolocalisation();
     };
+
+    function getParametreVisible(){
+        var l_ext = configuration.getConfiguration().extensions.extension;
+        var geoloc;
+        if (l_ext.length){ // si plusieurs extensions
+            for(var i= 0; i < l_ext.length; i++) {
+                if (l_ext[i].id && l_ext[i].id == "balades"){
+                    geoloc = l_ext[i].geoloc;
+                    break;
+                }
+            }
+        } else { 
+            geoloc = l_ext.geoloc;
+        }
+        return (geoloc == "true")
+    }
+
+    function geolocalisation() {
+        const geolocation = new ol.Geolocation({
+            trackingOptions: {
+              enableHighAccuracy: true,
+            },
+            projection: _map.getView().getProjection(),
+        });
+        geolocation.setTracking(true);
+
+        const positionFeature = new ol.Feature();
+        positionFeature.setStyle(
+        new ol.style.Style({
+            image: new ol.style.Circle({
+            radius: 8,
+            fill: new ol.style.Fill({
+                color: '#3399CC',
+            }),
+            stroke: new ol.style.Stroke({
+                color: '#fff',
+                width: 2,
+            }),
+            }),
+        })
+        );
+
+        geolocation.on('change:position', function () {
+            const coordinates = geolocation.getPosition();
+            positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
+        });
+
+        // ajout du point de géolocalisation
+        const accuracyFeature = new ol.Feature();
+        geolocation.on('change:accuracyGeometry', function () {
+            accuracyFeature.setGeometry(geolocation.getAccuracyGeometry());
+        });
+
+        const positionLayer = new ol.layer.Vector({
+            map: _map,
+            source: new ol.source.Vector({
+                features: [accuracyFeature, positionFeature],
+            }),
+        });
+
+        function onclickGeolocalisation() {
+            mviewer.getMap().getView().setCenter(geolocation.getPosition());
+            mviewer.getMap().getView().setZoom(18);
+            if (document.getElementById("modal-panel").style.display == "block"){
+                // decaleMap([0, 0]);
+            }
+        }
+
+        // modification du bouton géolocaliser
+        if (getParametreVisible()){ 
+            if (_map.getSize()[0] > 1000){
+                document.getElementById('geolocbtn').style.display = "block";
+                document.getElementById('geolocbtn').onclick = onclickGeolocalisation;
+            } else {
+                document.getElementById('geolocbtnBalade').style.display = 'block';
+                document.getElementById('geolocbtnBalade').style.bottom = "10.5%";
+                document.getElementById('geolocbtnBalade').style.left = "88%";
+                document.getElementById('geolocbtnBalade').addEventListener('click', onclickGeolocalisation);
+            }
+        }
+    }
 
     function createLayerHighlight() {
         var stylePointHighlight = new ol.style.Style({
@@ -69,7 +167,7 @@ var baladesAddon = (function () {
 
             opendivheight = document.getElementById('modal-panel').children[0].offsetHeight;
             setTimeout(() => {
-                decaleMap([0, opendivheight/3]);
+                // decaleMap([0, opendivheight/3]);
             }, 400);
         }
         if (!featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade - 1)) {
@@ -88,7 +186,7 @@ var baladesAddon = (function () {
 
             opendivheight = document.getElementById('modal-panel').children[0].offsetHeight;
             setTimeout(() => {
-                decaleMap([0, opendivheight/3]);
+                // decaleMap([0, opendivheight/3]);
             }, 400);
         }
         if (!featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade + 1)) {
@@ -124,7 +222,7 @@ var baladesAddon = (function () {
         $("#mv_marker").attr('fill-opacity', '0');
         opendivheight = document.getElementById('modal-panel').children[0].offsetHeight;
         setTimeout(() => {
-            decaleMap([0, opendivheight/3]);
+            // decaleMap([0, opendivheight/3]);
         }, 400);
     }
 
@@ -205,7 +303,7 @@ var baladesAddon = (function () {
         mviewer.customLayers[layer_points].layer.changed();
         // if (!feature)
         //    currentIdBalade = -1;
-        if (feature && feature.getGeometry().getType() == 'Point') {
+        if (feature && feature.getGeometry().getType() == 'Point' && feature.get('id')) {
             document.getElementById('prevButton').style.display = 'block';
             document.getElementById('prevButton').disabled = false;
             document.getElementById('nextButton').disabled = true;
@@ -227,7 +325,7 @@ var baladesAddon = (function () {
             opendivheight = document.getElementById('modal-panel').children[0].offsetHeight;
             setTimeout(() => {
                 _map.getView().setCenter([geometryPointFeature[0], geometryPointFeature[1]]);
-                decaleMap([0, opendivheight/3]);
+                // decaleMap([0, opendivheight/3]);
             }, 400);
         } else {
             updateButton();
@@ -245,10 +343,12 @@ var baladesAddon = (function () {
         var featuresCouleur = [];
         // changement de couleur des entitées linéraires
         features.forEach(balade => {
-            featuresCouleur.push({ "id": balade.get(baladeId), "couleur": balade.get(couleurBalades) });
+            featuresCouleur.push({ "id": balade.get(baladeId), "balade": balade });
             var couleurFeature = balade.get(couleurBalades);
             if (!isColor(couleurFeature))
                 couleurFeature = defaultColor;
+            if (isColor(couleurBaladeFixe))
+                couleurFeature = couleurBaladeFixe
             var style = new ol.style.Style({
                 stroke: new ol.style.Stroke({ color: couleurFeature, width: 4 })
             });
@@ -257,9 +357,11 @@ var baladesAddon = (function () {
         // changement de couleur des points 
         features = mviewer.customLayers[layer_points].layer.getSource().getFeatures();
         features.forEach(point => {
-            var couleurPoint = featuresCouleur.find(x => x['id'] == point.get(idBalade)).couleur;
+            var couleurPoint = featuresCouleur.find(x => x['id'] == point.get(idBalade)).balade.get(couleurPoints);
             if (!isColor(couleurPoint))
                 couleurPoint = defaultColor;
+            if (isColor(couleurPointFixe))
+                couleurPoint = couleurPointFixe;
             var style = new ol.style.Style({
                 image: new ol.style.Icon({
                     color: couleurPoint,
@@ -285,7 +387,7 @@ var baladesAddon = (function () {
                 $("#mv_marker").attr('fill-opacity', '0');
                 opendivheight = document.getElementById('modal-panel').children[0].offsetHeight;
                 setTimeout(() => {
-                    decaleMap([0, opendivheight/3]);
+                    // decaleMap([0, opendivheight/3]);
                 }, 400);
                 currentIdBalade = featureDefaut.get(idBalade);
                 currentPointBalade = 1;
@@ -353,10 +455,11 @@ var baladesAddon = (function () {
     function _setSearchParameters(data, callback) {
         zoomPendantBalade = data.carte.zoomPendantBalade;
         couleurBalades = data.balades.couleurBalades;
-        layer_balades = data.balades.layer_balades;
-        layer_points = data.points.layer_points;
+        couleurPoints = data.balades.couleurPoints;
         idBalade = data.points.idBalade;
         champRang = data.points.champRang;
+        couleurBaladeFixe = data.balades.couleurBaladeFixe;
+        couleurPointFixe = data.balades.couleurPointFixe;
         baladeId = data.balades.id;
         defaultColor = data.balades.defaultColor;
         couleurPointActif = data.points.couleurPointActif;

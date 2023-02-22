@@ -24,7 +24,7 @@
 
     <extensions>
         <extension type="component" id="GUICustom" path="apps/public/addons"/>
-        <extension type="component" id="balades" path="apps/balades/addons" configFile="/apps/balades/parametrage/param_test.json" />
+        <extension type="component" id="balades" path="apps/balades/addons" configFile="/apps/balades/parametrage/param_test.json" geoloc="true"/>
         <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
     </extensions>
 
