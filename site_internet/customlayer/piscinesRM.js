@@ -130,8 +130,6 @@ mviewer.customLayers.piscinesRM= (function() {
               });
             }
         }
-        
-        console.log("HORAIRES");
     }
 
     function getFeatureFromIdSite(idSite) {
