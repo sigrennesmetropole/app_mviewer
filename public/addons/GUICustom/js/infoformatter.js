@@ -48,7 +48,18 @@ var formatter = (function () {
         }
         return elements;
     }
-
+    
+    // valeur divisée par 1000, pratique pour convertir les longueurs (m => km)
+    function div1000(){
+        var _tab = document.getElementsByClassName("div1000");
+        for (var cpt = 0; cpt < _tab.length; cpt++) {
+            val = _tab[cpt].innerHTML;
+            if(+val !== 'NaN'){
+                var dividedvalue = (+val)/1000;
+                _tab[cpt].innerHTML = Math.round( dividedvalue*100 ) / 100; //Math.round(num * 100) / 100
+            }
+        }
+    }
 
     // Fonctions de formattage
 
@@ -650,6 +661,7 @@ var formatter = (function () {
 
     // Mise en forme des composants des panneaux d'information (appelée à chaque chargement de panel)
     var _rmFormatTabs = function rmFormatTabs() {
+        div1000();
         formatHoraires();
         rmFermeturesOrga();
         exceptionalClosure();

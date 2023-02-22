@@ -120,7 +120,9 @@
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2668e99c-fdea-44aa-a929-c609fc95ab9a"
-                queryable="false">
+                queryable="true"
+                featurecount="5">
+                <template url="apps/site_internet/templates/boucle-velo.mst"></template>
             </layer>
         </theme>
     </themes>
