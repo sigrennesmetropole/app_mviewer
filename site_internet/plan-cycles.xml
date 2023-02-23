@@ -57,6 +57,7 @@
                 scalemin="99" scalemax="50000"
                 visible="true"
                 sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/stations_reparation_velo.sld"
+                legendurl="apps/site_internet/img/legend/leg_marker_rouge.svg"
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/422a6ed5-619a-4156-8785-174d786ec95c"
@@ -97,6 +98,25 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/support-velo.mst"></template>
             </layer>
+            
+            <layer
+                id="maison_velo"
+                name="La maison du vélo"
+                type="customlayer"
+                url="apps/site_internet/customlayer/maison-velo.js"
+                legendurl="apps/site_internet/customlayer/picture/logoMDV.svg"
+                scalemin="99" scalemax="50000"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="false"
+                tooltipcontent=""
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168"
+                queryable="true"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organisme.mst"></template>
+            </layer>
+            
             <layer
                 id="v_voirie_amenagement_velo"
                 name="Pistes cyclables"
