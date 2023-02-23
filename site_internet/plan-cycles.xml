@@ -104,7 +104,7 @@
                 name="La maison du vélo"
                 type="customlayer"
                 url="apps/site_internet/customlayer/maison-velo.js"
-                legendurl="apps/site_internet/customlayer/picture/logoMDV.svg"
+                legendurl="https://public.sig.rennesmetropole.fr/ressources/app/georchestra/svg/eq_poi/logoMDV.svg"
                 scalemin="99" scalemax="50000"
                 visible="true"
                 tooltip="false"
