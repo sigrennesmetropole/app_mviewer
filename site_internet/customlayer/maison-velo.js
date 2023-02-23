@@ -2,8 +2,8 @@
 mviewer.customLayers.maison_velo= (function() {
     let data_url='https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=eq_poi:v_sitorg_organisme&outputFormat=application/json&srsname=EPSG:3857';
     let l_id_org=[5607];
-    let svgmarker = 'https://public.sig.rennesmetropole.fr/ressources/app/georchestra/svg/eq_poi/logoMDV.svg';
-    //let svgmarker = 'apps/site_internet/customlayer/picture/logoMDV.svg';
+    //let svgmarker = 'https://public.sig.rennesmetropole.fr/ressources/app/georchestra/svg/eq_poi/logoMDV.svg';
+    let svgmarker = 'apps/site_internet/customlayer/picture/logoMDV.svg';
     //let svgmarker = 'http://localhost/mviewer-RM-master/apps/site_internet/customlayer/picture/logoMDV.svg';
     
     let html_img = document.createElement('img');
@@ -12,7 +12,7 @@ mviewer.customLayers.maison_velo= (function() {
     let pctStyle = new ol.style.Style({
         image: new ol.style.Icon({
           crossOrigin: 'anonymous',
-          scale:0.1,
+          scale:1,
           anchor:[0.5,0.5],
           src: svgmarker,
         }),
