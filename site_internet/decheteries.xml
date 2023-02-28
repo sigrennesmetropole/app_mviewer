@@ -34,7 +34,7 @@
                 id="v_decheterie_pf_dv"
                 name="Déchèteries"
                 type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/ows"
+                url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"
                 visible="true"
                 tiled="false"
                 infoformat="application/vnd.ogc.gml"
