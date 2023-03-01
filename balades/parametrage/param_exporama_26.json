@@ -6,8 +6,8 @@
         "id": "id",
         "couleurBalades": "couleur",
         "couleurPoints": "couleur",
-        "couleurBaladeFixe": "",
-        "couleurPointFixe": "",
+        "couleurBaladeFixe": "#666666",
+        "couleurPointFixe": "#000000",
         "defaultColor": "#000000",
         "baladeParDefaut": ""
     },
