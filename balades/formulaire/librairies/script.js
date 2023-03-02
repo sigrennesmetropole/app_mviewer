@@ -297,7 +297,7 @@ var map = new ol.Map({
                     matrixIds: matrixIds
                 })
             })
-        }),
+        }), */
     ],
     view: new ol.View({
         center: ol.proj.fromLonLat([-1.67, 48.11]),
