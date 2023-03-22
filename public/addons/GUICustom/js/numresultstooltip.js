@@ -5,7 +5,8 @@ var openedInfoPanel = false;
 
 function _init() {
     showNbFeatures = configuration.getConfiguration().application.showClickNbItems !== "false";
-    if (showNbFeatures){
+    var nbPan = document.getElementById('popup-number-results');
+    if (showNbFeatures && nbPan == null){
         $("#page-content-wrapper").prepend("<div id='popup-number-results'></div>");
         var _popup = new ol.Overlay({ positioning: 'center', element: $("#popup-number-results")[0], stopEvent: false})
         mviewer.getMap().addOverlay(_popup);
