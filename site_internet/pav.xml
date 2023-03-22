@@ -30,10 +30,11 @@
     <themes mini="true">
         <theme id="theme-20180827150815" name="Points d'apport volontaire" collapsed="true" icon="fas fa-recycle">
             <layer
-                id="v_gesbac_pav"
+                id="pav"
                 name="Points d'apport volontaire"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"
+                legendurl="apps/site_internet/img/legend/leg_pav.png"
                 visible="true"
                 tiled="true"
                 infoformat="application/vnd.ogc.gml"

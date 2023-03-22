@@ -4,7 +4,7 @@
         
 		<p class="rm-popup-text-feature">
 			{{#id_pav}}<span class='rm-popup-label'> Numéro :</span> {{{id_pav}}}<br/>{{/id_pav}}
-			{{#adresse_complete}}<span class='rm-popup-label'> Adresse :</span> {{{num_voie}}}{{{adresse_complete}}}<br/>
+			{{#adresse_complete}}<span class='rm-popup-label'> Adresse :</span> {{{adresse_complete}}}<br/>
 				{{#localisation}}{{{localisation}}}<br/>{{/localisation}}
 			{{/adresse_complete}}
 			{{#quartier}}<span class="rm-quartier"><span class='rm-popup-label'> Quartier :</span> {{{quartier}}}<br/></span>{{/quartier}}
