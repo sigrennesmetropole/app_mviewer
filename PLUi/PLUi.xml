@@ -83,6 +83,7 @@
                 name="Autres règles graphiques"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/urba_docs_plui/ows"
+                legendurl="apps/PLUi/legends/leg_plui_plan_zonage.png"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"

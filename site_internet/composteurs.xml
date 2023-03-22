@@ -29,7 +29,7 @@
     <themes mini="true">
         <theme id="theme-20180827150815" name="Composteurs collectifs" collapsed="true" icon="fas fa-recycle">
             <layer
-                id="composteur_coll"
+                id="cmp"
                 name="Composteurs collectifs sur Rennes Métropole"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"
