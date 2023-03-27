@@ -1,93 +1,38 @@
 var searchRM = (function () {
-
   var searchParameters = [];
-
   var nbResults = 0;
   var currentRmAutocompleteItem = -1;
-
   var getPersoConfData;
   var apiRVAKey = '';
   var apiSitesOrgkey = '';
-
   var previousRequest;
   var communesToRestrict = [];
-
-  var restriction = false;
   var restrictionInsee;
-  configuration.getConfiguration().extensions.extension.forEach((item, i) => {
-    if(item.restrictCommunes){
-      restrictionInsee = item.restrictCommunes;
-      restriction = true;
-    }
-  });
-  // var communesTable = [
-  //   {insee: '350001', name: 'Acigné'},
-  //   {insee: '350022', name: 'Bécherel'},
-  //   {insee: '350024', name: 'Betton'},
-  //   {insee: '350032', name: 'Bourgbarré'},
-  //   {insee: '350039', name: 'Brécé'},
-  //   {insee: '350047', name: 'Bruz'},
-  //   {insee: '350051', name: 'Cesson-Sévigné'},
-  //   {insee: '350055', name: 'Chantepie'},
-  //   {insee: '350058', name: 'la Chapelle-Chaussée'},
-  //   {insee: '350059', name: 'la Chapelle-des-Fougeretz'},
-  //   {insee: '350065', name: 'la Chapelle-Thouarault'},
-  //   {insee: '350066', name: 'Chartres-de-Bretagne'},
-  //   {insee: '350076', name: 'Chavagne'},
-  //   {insee: '350079', name: 'Chevaigné'},
-  //   {insee: '350080', name: 'Cintré'},
-  //   {insee: '350081', name: 'Clayes'},
-  //   {insee: '350088', name: 'Corps-Nuds'},
-  //   {insee: '350120', name: 'Gévezé'},
-  //   {insee: '350131', name: "l'Hermitage"},
-  //   {insee: '350139', name: 'Laillé'},
-  //   {insee: '350144', name: 'Langan'},
-  //   {insee: '350180', name: 'Miniac-sous-Bécherel'},
-  //   {insee: '350189', name: 'Montgermont'},
-  //   {insee: '350196', name: 'Mordelles'},
-  //   {insee: '350204', name: 'Nouvoitou'},
-  //   {insee: '350206', name: 'Noyal-Châtillon-sur-Seiche'},
-  //   {insee: '350208', name: 'Orgères'},
-  //   {insee: '350210', name: 'Pacé'},
-  //   {insee: '350216', name: 'Parthenay-de-Bretagne'},
-  //   {insee: '350238', name: 'Rennes'},
-  //   {insee: '350240', name: 'le Rheu'},
-  //   {insee: '350245', name: 'Romillé'},
-  //   {insee: '350250', name: 'Saint-Armel'},
-  //   {insee: '350266', name: 'Saint-Erblon'},
-  //   {insee: '350275', name: 'Saint-Gilles'},
-  //   {insee: '350278', name: 'Saint-Grégoire'},
-  //   {insee: '350281', name: 'Saint-Jacques-de-la-Lande'},
-  //   {insee: '350315', name: 'Saint-Sulpice-la-Forêt'},
-  //   {insee: '350334', name: 'Thorigné-Fouillard'},
-  //   {insee: '350351', name: 'le Verger'},
-  //   {insee: '350352', name: 'Vern-sur-Seiche'},
-  //   {insee: '350353', name: 'Vezin-le-Coquet'},
-  //   {insee: '350363', name: 'Pont-Péan'}
-  // ];
+  var apiRvaBaseUrl = 'https://api-rva.sig.rennesmetropole.fr/';
+  var apiSitesOrg = 'https://api-sitesorg.sig.rennesmetropole.fr/v1/';
+  var laneData = 'https://public.sig.rennesmetropole.fr/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=v_troncon_denom&outputFormat=application%2Fjson&srsname=EPSG:3948&CQL_FILTER=id_voie=';
+  var queryMapOnClick;
+  var townsList = [
+    'Acigné','Bécherel','Betton','Bourgbarré','Brécé','Bruz','Cesson-Sévigné','Chantepie','la Chapelle-Chaussée','la Chapelle-des-Fougeretz',
+    'la Chapelle-Thouarault','Chartres-de-Bretagne','Chavagne','Chevaigné','Cintré','Clayes','Corps-Nuds','Gévezé',"l'Hermitage",
+    'Laillé','Langan','Miniac-sous-Bécherel','Montgermont','Mordelles','Nouvoitou','Noyal-Châtillon-sur-Seiche','Orgères','Pacé',
+    'Parthenay-de-Bretagne','Rennes','le Rheu','Romillé','Saint-Armel','Saint-Erblon','Saint-Gilles','Saint-Grégoire','Saint-Jacques-de-la-Lande',
+    'Saint-Sulpice-la-Forêt','Thorigné-Fouillard','le Verger','Vern-sur-Seiche','Vezin-le-Coquet','Pont-Péan'
+  ];
 
     var enable = function () {
         $("#searchtool").show();
-        // $("#parcelSelectors").show();
-        // var configapp = mviewer.customComponents.searchRM;
-        // console.log(configapp);
 
+        //Récupère les clés d'api dans le fichier d'environnement
         $.getJSON("apps/public/addons/env.json", function(json) {
           apiRVAKey = json.searchRM[0].apiRVAKey;
           apiSitesOrgkey = json.searchRM[0].apiSitesOrgkey;
         });
 
+        //ajoute dans le placeholder de la recherche le mot "Rechercher"
         $("#searchtool input").attr("placeholder", mviewer.customComponents.searchRM.config.options.libelles.placeholderRVA);
 
-        if(API.mode !== 'u' && API.mode !== 's'){
-          if(screen.width <= 767){
-            $('#searchtool').css({'cssText': 'right: -98px;top: 58px'});
-            $('#btn-mode-su-menu').css({'cssText': 'top: 142px'});
-            $('#zoomtoolbar').css({'cssText': 'top: 142px'});
-            $('#toolstoolbar').css({'cssText': 'top: 190px'});
-          }
-        }
-
+        //ajoute le searchResult lorsque le mode est U, non présent dans la version u par défaut de mviewer
         if(API.mode === 'u'){
           $('#page-content-wrapper').append(
           '<div id="searchresults" class="list-group">' +
@@ -97,83 +42,52 @@ var searchRM = (function () {
             '</div>' +
           '</div>'
           );
-          $(".background-custom-searchtool").css({'right':'105px'});
-          $("#searchresults").css({"right": "50px", "top": "55px"});
-          if(screen.width <= 767){
-            $('#searchtool').css({'right': '-46px','top': '2px'});
-            $('#btn-mode-su-menu').css({'top': '47px'});
-            $('#zoomtoolbar').css({'top': '47px'});
-            $('#toolstoolbar').css({'top': '140px'});
-          }
         }
 
+        //mise en place des actions lorsque clic sur la croix du searchresult, non présent sur le mode u de mviewer
         $(".searchresults-title .close").click(function () {
             $('#searchresults a').remove();
             $('#searchresults').hide();
             $('#searchfield').val('');
         });
 
-        if(API.mode === 's'){
-          $(".background-custom-searchtool").css({'right':'135px'});
-          $("#searchresults").css({"right": "47px", "top": "105px"});
-          $("#searchtool").css({'right': '35px'});
-          if(screen.width <= 767){
-            $('#searchtool').css({'cssText': 'right: -149px;top: 58px'});
-            $('#btn-mode-su-menu').css({'cssText': 'top: 105px'});
-            $('#zoomtoolbar').css({'cssText': 'top: 105px'});
-            $('#toolstoolbar').css({'cssText': 'top: 190px'});
-          }
-        }
-        var confdata = _getConfigPerso();
+        var confdata = _setConfig();
         _configureSearch(confdata);
         getPersoConfData = confdata;
     };
 
-    function _getConfigPerso(){
-      var extensions = configuration.getConfiguration().extensions;
+    function _setConfig(){
+      var extensions = configuration.getConfiguration().extensions.extension;
       var configPerso;
-      for (index in extensions.extension){
-          // console.log(extensions.extension[index]);
-          configPerso = extensions.extension[index];
-          if(extensions.extension[index].id=="searchRM"){
-              if (extensions.extension[index].configFile != undefined) {
-                  configPerso=extensions.extension[index].configFile;
-              } else {
-                  console.log("Err : l'attribut configfile du fichier de personnalisation de la recherche est manquant sur l'extension");
-              }
-          break;
+      for (var index in extensions){
+        if(extensions[index].id=="searchRM"){
+          if (extensions[index].configFile != undefined) {
+            configPerso = '.' + extensions[index].configFile;
+          } else {
+            console.log("Err : l'attribut configfile du fichier de personnalisation de la recherche est manquant sur l'extension");
           }
+          if(extensions[index].restrictCommunes){
+            restrictionInsee = extensions[index].restrictCommunes;
+          }else{
+            console.log('No restrictions set');
+          }
+        }
       }
-     if (configPerso != 'undefined') {
-       return '.' + configPerso;
-      }
+      return configPerso;
     }
 
     //Timer pour attendre la fin de saisie
     var typingTimer;                //timer identifier
-    var doneTypingInterval = 100;  //time in ms, 5 seconds for example
-    
+    var doneTypingInterval = 100;  //time in ms, 0.1 seconds here
+
     var _configureSearch = function (searchRMConf) {
+      console.log(searchRMConf);
         $.getJSON(searchRMConf, function (confData) {
-
-        // //vérification de la restriction de recherche sur rennes
-        // configuration.getConfiguration().extensions.extension.forEach((item, i) => {
-        //   if(item.restrictCommunes){
-        //     communesTable.forEach((commune, i) => {
-        //       item.restrictCommunes.split(',').forEach((restrict, i) => {
-        //         if(commune.insee === restrict){
-        //           communesToRestrict.push(commune.name);
-        //         }
-        //       });
-        //     });
-        //     //s'il y a restriction, restreindre les champs de recherche à la seule commune de Rennes
-        //     confData.searchContent.forEach((content) => {
-        //       content["citiesSearch"] = communesToRestrict.toString();
-        //     });
-        //     restriction = true;
-        //   }
-        // });
-
+            if(confData.queryMapOnClick === true){
+              queryMapOnClick = true;
+            }else{
+              queryMapOnClick = false;
+            }
             _setSearchParameters(confData);
 
             $(document).on("keyup", "#searchfield", function (e) {
@@ -212,14 +126,6 @@ var searchRM = (function () {
                 // TODO : mettre une légère attente avant de lancer la recherche
                 clearTimeout(typingTimer);
                 typingTimer = setTimeout(()=>{lancerRecherche(confData);}, doneTypingInterval);
-                /*var chars = $(this).val().length;
-                if (chars === 0) {
-                } else if ((chars >0) && (chars < 3)) {
-                    $("#searchresults .list-group-item").remove();
-                } else {
-                    _searchRM(confData, $(this).val());
-                }
-                */
             });
 
             $(document).on('click', '#searchparameters', function () {
@@ -228,18 +134,19 @@ var searchRM = (function () {
 
         });
     };
-    
+
     //on keyup, start the countdown
     $('#searchfield').on('keyup', function () {
       clearTimeout(typingTimer);
       typingTimer = setTimeout(()=>{lancerRecherche(confData);}, doneTypingInterval);
     });
 
-    //on keydown, clear the countdown 
+    //on keydown, clear the countdown
     $('#searchfield').on('keydown', function () {
       clearTimeout(typingTimer);
     });
 
+    //actions à mener lorsque l'utilisateur ecrit une ligne
     //user is "finished typing," do something
     function lancerRecherche (confData) {
       var chars = $('#searchfield').val().length;
@@ -251,6 +158,7 @@ var searchRM = (function () {
         }
     }
 
+//Mets en place les paramêtres de recherche
     var _setSearchParameters = function (confData) {
         $('#searchparameters li').hide();
         confData.searchContent.forEach(function (searchElem) {
@@ -295,8 +203,8 @@ var searchRM = (function () {
     var _searchRM = function (confData, value) {
         var promises = _getApisRequests(confData, value);
         previousRequest = Promise.all(promises).then(function(allResult) {
-            _displayAutocompleteData(allResult, value);
-            nbResults = $('.autocompleteRmItem').length;
+          _displayAutocompleteData(allResult, value);
+          nbResults = $('.autocompleteRmItem').length;
         });
     };
 
@@ -304,35 +212,47 @@ var searchRM = (function () {
 
       configOptionsValues = mviewer.customComponents.searchRM.config.options;
 
+      var citiesSearch = _getCitiesSearch(value);
+
+      if ( citiesSearch != undefined ) {
+        var updatedString = "";;
+        value = value.split(" ");
+        if (value.length >= 2) {
+          value.forEach((item, i) => {
+            if (i < value.length -1) {
+              updatedString = updatedString + " " + item;
+            }
+          });
+          value = updatedString
+        }else{
+          value = value.join(" ");
+        }
+      }
+
         var searchItemChecked = $('#searchparameters li a .mv-checked');
         var promises = [];
-        var apiRvaBaseUrl = 'https://api-rva.sig.rennesmetropole.fr/';
-        var apiSitesOrg_url_recherche = 'https://api-sitesorg.sig.rennesmetropole.fr/v1/recherche';
-
         confData.searchContent.forEach( function (content) {
             var ajaxSetting = {type: 'GET', crossDomain: true,  dataType: "json"};
+            ajaxSetting.url = apiRvaBaseUrl;
             switch (content.categoryName) {
                 case 'Communes':
-                    ajaxSetting.url = apiRvaBaseUrl;
                     ajaxSetting.data = {key: apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getcities', 'insee':'all'};
                     break;
                 case 'Voies':
-                    ajaxSetting.url = apiRvaBaseUrl;
                     ajaxSetting.data = {key: apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getlanes', 'insee':'all', "query": value};
                     break;
                 case 'Adresses':
-                    ajaxSetting.url = apiRvaBaseUrl;
                     ajaxSetting.data =  {key: apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getfulladdresses',"query": value};
                     break;
                 case 'Organismes':
-                    ajaxSetting.url = apiSitesOrg_url_recherche;
+                    ajaxSetting.url = apiSitesOrg + 'recherche';
                     ajaxSetting.data = 'adresse=&etats[]=actif&etats[]=projet&etats[]=inactif&niveaux_org[]=3&niveaux_org[]=1&niveaux_org[]=2&niveaux_site[]=1'
                     + '&termes='+ value + '&termes_op=AND&types[]=organisme&limit=20&offset=0';
                     ajaxSetting.headers = {'X-API-KEY': apiSitesOrgkey};
                     break;
             }
 
-            if(restriction){
+            if(restrictionInsee){
               ajaxSetting.data.insee = restrictionInsee;
             }
 
@@ -348,7 +268,7 @@ var searchRM = (function () {
                             var resolveRes = {result : result, nbItemDisplay: nbItemDisplay};
                             resolveRes['zoom'] = content.zoom;
                             resolveRes['categoryName'] = content.categoryName;
-                            resolveRes['citiesSearch'] = content.citiesSearch;
+                            resolveRes['citiesSearch'] = citiesSearch;
                             resolve(resolveRes);
                         });
                     }) );
@@ -360,19 +280,34 @@ var searchRM = (function () {
         return promises;
     };
 
+    function _getCitiesSearch(inputContent){
+      var citiesSearch = [];
+      inputContent = inputContent.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replaceAll('-',' ').toLowerCase();
+      inputContent = inputContent.split(" ");
+      inputContent = inputContent[inputContent.length -1];
+      if (inputContent.length >= 3) {
+        townsList.forEach((item, i) => {
+          if (item.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replaceAll('-',' ').toLowerCase().includes(inputContent)) {
+            citiesSearch.push(item);
+          }
+        });
+      }
+      if (citiesSearch.length === 0) {
+        citiesSearch = undefined;
+      }
+      return citiesSearch;
+    }
+
     var _displayAutocompleteData = function (allResult, value, createHtml) {
         var str = '';
         var nbItem = 0;
         var cities = [];
         var lane = [];
         var address = [];
-        var queryMapOnClick;
-        getQueryMapOnClick(function(response){
-          queryMapOnClick = response;
-        });
+
         allResult.forEach( function (data) {
-            str += '<a class="geoportail list-group-item disabled" id="list-group-'+ data.categoryName +'">'+ data.categoryName +'</a>';
-            var dataFiltered = [];
+          str += '<a class="geoportail list-group-item disabled" id="list-group-'+ data.categoryName +'">'+ data.categoryName +'</a>';
+          var dataFiltered = [];
           switch (data.categoryName) {
             case 'Communes':
                 var communeData = data.result.rva.answer.cities;
@@ -388,28 +323,18 @@ var searchRM = (function () {
                     nbItem++;
                 });
                 cities.push(dataFiltered);
-                // console.log('queryMapOnClick:');
-                // console.log(queryMapOnClick);
                 break;
             case 'Voies':
-                //dataFiltered =  data.result.rva.answer.lanes.slice(0,data.nbItemDisplay);
                 dataFiltered = _filterLanes(data);
                 dataFiltered.forEach(function (elem) {
                     str += "<a class=\"geoportail list-group-item autocompleteRmItem\" id=\"autocompleteRmItem_" + nbItem + "\" href=\"#\" title=\"" + elem.name4;
-                    // calcul x et y de voie à revoir => il faut un point sur la voie et non pas le centre de la bounding box)
-                    //var x = _getBoundigBoxCenterX(elem.lowerCorner, elem.upperCorner);
-                    //var y = _getBoundigBoxCenterY(elem.lowerCorner, elem.upperCorner);
-                    //var coordNewProj = proj4('EPSG:3948', 'EPSG:4326', [x, y]);
                     str += '" onclick="searchRM.displayLocationLane('+
-                    //coordNewProj[0] + ',' +
-                    //coordNewProj[1] + 
                     elem.idlane + ',' + data.zoom + ',' + queryMapOnClick +', \'EPSG:4326\');">' + elem.name4 + '</a>';
                     nbItem++;
                 });
                 lane.push(dataFiltered);
                 break;
             case 'Adresses':
-                //dataFiltered = data.result.rva.answer.addresses.slice(0,data.nbItemDisplay);
                 dataFiltered = _filterAddresses(data);
                 dataFiltered.forEach(function (elem) {
                     str += "<a class=\"geoportail list-group-item autocompleteRmItem\" id=\"autocompleteRmItem_" + nbItem + "\" href=\"#\" title=\"" + elem.addr3;
@@ -442,7 +367,7 @@ var searchRM = (function () {
         });
 
         if(createHtml != false) {
-            $(".geoportail").remove();
+            $('#searchresults a').remove();
             $("#searchresults").append(str);
             if (search.options.closeafterclick) {
                 $("#searchresults .list-group-item").click(function(){
@@ -457,7 +382,8 @@ var searchRM = (function () {
             address: address
         }
     };
-    
+
+    //renvoie un point du tronçon
     function getPointOnLane(idlane){
         return getLaneData(idlane).then(function(result_site){
             // sélectionner 1 tronçon
@@ -469,52 +395,22 @@ var searchRM = (function () {
             var coord_idx = geom.length/2 |0;
             return geom[coord_idx];
         });
-        
+
     }
-    
+
+//obtiens les données de la voie idLane
     function getLaneData(idlane){
         return new Promise(resolve => {
             $.ajax({
-                url: 'https://public.sig.rennesmetropole.fr/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=v_troncon_denom&outputFormat=application%2Fjson&srsname=EPSG:3948&CQL_FILTER=id_voie=' + idlane,
+                url: laneData + idlane,
                 context: document.body
             }).done(function (res) {
                 resolve({'response': res});
             });
         });
     }
-    
 
-    var getQueryMapOnClick = function(callback){
-      var extensions = configuration.getConfiguration().extensions;
-      var configPerso;
-      var trueOrFalse = 'false';
-      for (index in extensions.extension){
-          // console.log(extensions.extension);
-          configPerso = extensions.extension[index];
-          if(extensions.extension[index].id=="searchRM"){
-              if (extensions.extension[index].configFile != undefined) {
-                  configPerso=extensions.extension[index].configFile;
-              } else {
-                  console.log("Err : l'attribut configfile du fichier de personnalisation de la recherche est manquant sur l'extension");
-              }
-          break;
-          }
-      }
-     if (configPerso != 'undefined') {
-       $.ajax({
-         url: '.' + configPerso,
-         method: 'GET',
-         async: false
-       }).done(function(response){
-         if(response.queryMapOnClick === true){
-           callback(true);
-         }else{
-           callback(false);
-         }
-       });
-      }
-    }
-
+    // obtiens un point sur la voie et l'affiche
     var displayLocationLane = function(idlane, zoom, querymaponclick){
         getPointOnLane(idlane).then((coord) => {
             var coordNewProj = proj4('EPSG:3948', 'EPSG:4326', coord);
@@ -522,16 +418,20 @@ var searchRM = (function () {
         });
     }
 
+    // affiche une coordonnée sur la carte
     var displayLocation = function (coordX, coordY, zoom, querymaponclick) {
         mviewer.zoomToLocation(coordX, coordY, zoom, querymaponclick);
         mviewer.hideLocation();
     };
 
+    //affiche les coordonnées de l'adresse
     var displayLocationMarker = function (coordX, coordY, zoom, querymaponclick, proj) {
         mviewer.zoomToLocation(coordX, coordY, zoom, querymaponclick);
-        setTimeout(function(){mviewer.showLocation(proj, coordX, coordY)},500);
+        // setTimeout(function(){mviewer.showLocation(proj, coordX, coordY)},500);
+        mviewer.showLocation(proj, coordX, coordY)
     };
 
+    //affiche un organisme
     var displayOrganism = async function (elem, zoom, querymaponclick) {
         var mainSite = elem.title;
         var site = await _getSiteFromOrg(mainSite);
@@ -544,10 +444,11 @@ var searchRM = (function () {
     /**
      * get [x,y] coordinates from site
      * @param {*} site
+     * Obtiens les coordonnées de notre site
      */
     var _getSiteCoordinates = function (idSite) {
 
-        var requestUrl = 'https://api-sitesorg.sig.rennesmetropole.fr/v1/sites/' + idSite;
+        var requestUrl = apiSitesOrg + 'sites/' + idSite;
 
         return new Promise(resolve => {
             $.ajax({
@@ -564,10 +465,11 @@ var searchRM = (function () {
     /**
      * get main site information from organism
      * @param {*} org organism
+     * retourne un site depuis l'api sitesOrg
      */
     var _getSiteFromOrg = function (mainSite) {
 
-        var requestUrl = 'https://api-sitesorg.sig.rennesmetropole.fr/v1/recherche?'
+        var requestUrl = apiSitesOrg + 'recherche' + '?'
                        + 'adresse=&etats[]=actif&etats[]=projet&etats[]=inactif&niveaux_org[]=3'
                        + '&niveaux_org[]=1&niveaux_org[]=2&niveaux_site[]=1&termes='+ mainSite
                        + '&termes_op=AND&types[]=site&limit=20&offset=0';
@@ -585,13 +487,13 @@ var searchRM = (function () {
     };
 
     //////////////////// Search input /////////////////////////////////////////////////
-
+    // Retourne les villes en fonction de si elles correspondent à la recherche
     var _filterCities = function (citiesList, elemSearch, citiesSearch) {
         var citiesFound = [];
         if (typeof citiesSearch !== 'undefined') {
-            var citiesSearchSplitArray = citiesSearch.split(',');
+            // var citiesSearchSplitArray = citiesSearch.split(',');
             citiesList.forEach(function (city) {
-                var citiesFilter = citiesSearchSplitArray.findIndex(item => city.name.toLowerCase() === item.toLowerCase());
+                var citiesFilter = citiesSearch.findIndex(item => city.name.toLowerCase() === item.toLowerCase());
 
                 if ( (city.name.toLowerCase().startsWith(elemSearch.toLowerCase()) || city.name2.toLowerCase().startsWith(elemSearch.toLowerCase()) )
                  && citiesFilter !== -1 ) {
@@ -631,13 +533,14 @@ var searchRM = (function () {
         return (ymin + ymax) / 2;
     }
 
+    //retourne les voies correspondantes à notre recherche
     var _filterLanes = function (lanesData) {
         var lanesFound = [];
         var lanes = lanesData.result.rva.answer.lanes;
         if (typeof lanesData.citiesSearch !== 'undefined') {
-            var citiesSearchSplitArray = lanesData.citiesSearch.split(',');
+            // var citiesSearchSplitArray = lanesData.citiesSearch.split(',');
             lanes.forEach(function (lane) {
-                if ( citiesSearchSplitArray.findIndex(item => lane.name4.split(',')[1].trim().toLowerCase() === item.toLowerCase()) !== -1) {
+                if ( lanesData.citiesSearch.findIndex(item => lane.name4.split(',')[1].trim().toLowerCase() === item.toLowerCase()) !== -1) {
                     lanesFound.push(lane);
                 }
             });
@@ -647,29 +550,32 @@ var searchRM = (function () {
         return lanesFound.slice(0,lanesData.nbItemDisplay);
     };
 
+    //permet de filtrer les adresses et les renvoie selon un tri numérique
     var _filterAddresses = function (addressesData) {
         var addressesFound = [];
         var addresses = addressesData.result.rva.answer.addresses;
         if (typeof addressesData.citiesSearch !== 'undefined') {
-            var citiesSearchSplitArray = addressesData.citiesSearch.split(',');
+            // var citiesSearchSplitArray = addressesData.citiesSearch.split(',');
             addresses.forEach(function (address) {
-                if ( citiesSearchSplitArray.findIndex(item => address.addr3.split(',')[1].trim().toLowerCase() === item.toLowerCase()) !== -1) {
+                if ( addressesData.citiesSearch.findIndex(item => address.addr3.split(',')[1].trim().toLowerCase() === item.toLowerCase()) !== -1) {
                     addressesFound.push(address);
                 }
             });
         } else {
             addressesFound = addresses;
         }
+        addressesFound = addressesFound.sort(function(a,b){return a['addr1'] - b['addr1']});
         return addressesFound.slice(0,addressesData.nbItemDisplay);
     };
 
+    //renvoie les organismes du résultat trié par la saisie
     var _filterOrganisms = function (organismsData) {
         var organismsFound = [];
         var organisms = organismsData.result;
         if (typeof organismsData.citiesSearch !== 'undefined') {
-            var citiesSearchSplitArray = organismsData.citiesSearch.split(',');
+            // var citiesSearchSplitArray = organismsData.citiesSearch.split(',');
             organisms.forEach(function (organism) {
-                if ( organism.autres !== null && citiesSearchSplitArray.findIndex(item => organism.autres[0].split(':')[1].trim().toLowerCase() === item.toLowerCase()) !== -1) {
+                if ( organism.autres !== null && organismsData.citiesSearch.findIndex(item => organism.autres[0].split(':')[1].trim().toLowerCase() === item.toLowerCase()) !== -1) {
                     organismsFound.push(organism);
                 }
             });
@@ -682,6 +588,7 @@ var searchRM = (function () {
     /**
      * get main site from organism
      * @param {*} org organism
+     * Renvoie le nom du site envoyé en argument
      */
     var _getMainSite = function (org) {
         var mainSite = '';
