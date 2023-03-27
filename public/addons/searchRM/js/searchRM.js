@@ -9,6 +9,7 @@ var searchRM = (function () {
   var communesToRestrict = [];
   var restrictionInsee;
   var apiRvaBaseUrl = 'https://api-rva.sig.rennesmetropole.fr/';
+  // var apiRvaBaseUrl = 'http://185.150.252.77/api-rva-2';
   var apiSitesOrg = 'https://api-sitesorg.sig.rennesmetropole.fr/v1/';
   var laneData = 'https://public.sig.rennesmetropole.fr/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=v_troncon_denom&outputFormat=application%2Fjson&srsname=EPSG:3948&CQL_FILTER=id_voie=';
   var queryMapOnClick;
