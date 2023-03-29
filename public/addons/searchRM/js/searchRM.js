@@ -247,7 +247,7 @@ var searchRM = (function () {
           resultArray[1].result.rva.answer.lanes = restrictedResult[1].result.rva.answer.lanes.concat(unrestrictedResult[1].result.rva.answer.lanes);
           for(var i=0; i<resultArray[1].result.rva.answer.lanes.length; ++i) {
             for(var j=i+1; j<resultArray[1].result.rva.answer.lanes.length; ++j) {
-              if(resultArray[1].result.rva.answer.lanes[i] === resultArray[1].result.rva.answer.lanes[j])
+              if(resultArray[1].result.rva.answer.lanes[i].lowerCorner === resultArray[1].result.rva.answer.lanes[j].lowerCorner)
                 resultArray[1].result.rva.answer.lanes.splice(j--, 1);
             }
           }
@@ -256,8 +256,8 @@ var searchRM = (function () {
           resultArray[2].result.rva.answer.addresses = restrictedResult[2].result.rva.answer.addresses.concat(unrestrictedResult[2].result.rva.answer.addresses);
           for(var i=0; i<resultArray[2].result.rva.answer.addresses.length; ++i) {
             for(var j=i+1; j<resultArray[2].result.rva.answer.addresses.length; ++j) {
-              if(resultArray[2].result.rva.answer.addresses[i] === resultArray[2].result.rva.answer.addresses[j])
-                resultArray[2].result.rva.answer.addresses.splice(j--, 1);
+              if(resultArray[2].result.rva.answer.addresses[i].lowerCorner === resultArray[2].result.rva.answer.addresses[j].lowerCorner)
+                resultArray[2].result.rva.answer.addresses.splice(j, 1);
             }
           }
 
