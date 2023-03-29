@@ -79,7 +79,7 @@ var searchRM = (function () {
 
     //Timer pour attendre la fin de saisie
     var typingTimer;                //timer identifier
-    var doneTypingInterval = 100;  //time in ms, 0.1 seconds here
+    var doneTypingInterval = 300;  //time in ms, 0.3 seconds here
 
     var _configureSearch = function (searchRMConf) {
       console.log(searchRMConf);
@@ -202,21 +202,28 @@ var searchRM = (function () {
     };
 
     var _searchRM = function (confData, value) {
-        var promises = _getApisRequests(confData, value);
-        previousRequest = Promise.all(promises).then(function(allResult) {
-          _displayAutocompleteData(allResult, value);
+        var promises = _getApisRequests(confData, value, function (allResults){
+          _displayAutocompleteData(allResults, value);
           nbResults = $('.autocompleteRmItem').length;
         });
+        // // previousRequest = Promise.all(promises).then(function(allResult) {
+        //   _displayAutocompleteData(promises, value);
+        //   // _displayAutocompleteData(allResult, value);
+        //   nbResults = $('.autocompleteRmItem').length;
+        // // });
     };
 
-    var _getApisRequests = function (confData, value) {
+    var _getApisRequests = function (confData, value, callback) {
 
       configOptionsValues = mviewer.customComponents.searchRM.config.options;
 
       var citiesSearch = _getCitiesSearch(value);
+      var promises;
+      var updatedString = "";
+      var originalValue = value;
+      var resultArray = [];
 
       if ( citiesSearch != undefined ) {
-        var updatedString = "";;
         value = value.split(" ");
         if (value.length >= 2) {
           value.forEach((item, i) => {
@@ -224,62 +231,92 @@ var searchRM = (function () {
               updatedString = updatedString + " " + item;
             }
           });
-          value = updatedString
         }else{
-          value = value.join(" ");
+          updatedString = value.join(" ");
         }
+      }else{
+        updatedString = value;
       }
 
-        var searchItemChecked = $('#searchparameters li a .mv-checked');
-        var promises = [];
-        confData.searchContent.forEach( function (content) {
-            var ajaxSetting = {type: 'GET', crossDomain: true,  dataType: "json"};
-            ajaxSetting.url = apiRvaBaseUrl;
-            switch (content.categoryName) {
-                case 'Communes':
-                    ajaxSetting.data = {key: apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getcities', 'insee':'all'};
-                    break;
-                case 'Voies':
-                    ajaxSetting.data = {key: apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getlanes', 'insee':'all', "query": value};
-                    break;
-                case 'Adresses':
-                    ajaxSetting.data =  {key: apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getfulladdresses',"query": value};
-                    break;
-                case 'Organismes':
-                    ajaxSetting.url = apiSitesOrg + 'recherche';
-                    ajaxSetting.data = 'adresse=&etats[]=actif&etats[]=projet&etats[]=inactif&niveaux_org[]=3&niveaux_org[]=1&niveaux_org[]=2&niveaux_site[]=1'
-                    + '&termes='+ value + '&termes_op=AND&types[]=organisme&limit=20&offset=0';
-                    ajaxSetting.headers = {'X-API-KEY': apiSitesOrgkey};
-                    break;
+      Promise.all(_getRequest(confData, updatedString, citiesSearch)).then(function(restrictedResult){
+        Promise.all(_getRequest(confData, originalValue, undefined)).then(function(unrestrictedResult){
+
+          resultArray[0] = restrictedResult[0];
+
+          resultArray[1] = restrictedResult[1];
+          resultArray[1].result.rva.answer.lanes = restrictedResult[1].result.rva.answer.lanes.concat(unrestrictedResult[1].result.rva.answer.lanes);
+          for(var i=0; i<resultArray[1].result.rva.answer.lanes.length; ++i) {
+            for(var j=i+1; j<resultArray[1].result.rva.answer.lanes.length; ++j) {
+              if(resultArray[1].result.rva.answer.lanes[i].lowerCorner === resultArray[1].result.rva.answer.lanes[j].lowerCorner)
+                resultArray[1].result.rva.answer.lanes.splice(j--, 1);
             }
+          }
 
-            if(restrictionInsee){
-              ajaxSetting.data.insee = restrictionInsee;
+          resultArray[2] = restrictedResult[2];
+          resultArray[2].result.rva.answer.addresses = restrictedResult[2].result.rva.answer.addresses.concat(unrestrictedResult[2].result.rva.answer.addresses);
+          for(var i=0; i<resultArray[2].result.rva.answer.addresses.length; ++i) {
+            for(var j=i+1; j<resultArray[2].result.rva.answer.addresses.length; ++j) {
+              if(resultArray[2].result.rva.answer.addresses[i].lowerCorner === resultArray[2].result.rva.answer.addresses[j].lowerCorner)
+                resultArray[2].result.rva.answer.addresses.splice(j, 1);
             }
+          }
+          callback(resultArray);
 
-            for (var i = 0; i < searchItemChecked.length; i++) {
-                if (searchItemChecked[i].id === 'param_search_' + content.categoryName) {
+        });
+      });
 
-                    promises.push( new Promise(resolve => {
-                        $.ajax(ajaxSetting).done(function (result) {
-                            var nbItemDisplay = 5;
-                            if (!Number.isNaN(parseInt(content.nbItemDisplay))) {
-                                nbItemDisplay = parseInt(content.nbItemDisplay);
-                            }
-                            var resolveRes = {result : result, nbItemDisplay: nbItemDisplay};
-                            resolveRes['zoom'] = content.zoom;
-                            resolveRes['categoryName'] = content.categoryName;
-                            resolveRes['citiesSearch'] = citiesSearch;
-                            resolve(resolveRes);
-                        });
-                    }) );
-
-                }
-            }
-
-        } );
-        return promises;
     };
+
+    function _getRequest(confData, value, citiesSearch){
+      var searchItemChecked = $('#searchparameters li a .mv-checked');
+      var promises = [];
+      confData.searchContent.forEach( function (content) {
+          var ajaxSetting = {type: 'GET', crossDomain: true,  dataType: "json"};
+          ajaxSetting.url = apiRvaBaseUrl;
+          switch (content.categoryName) {
+              case 'Communes':
+                  ajaxSetting.data = {key: apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getcities', 'insee':'all'};
+                  break;
+              case 'Voies':
+                  ajaxSetting.data = {key: apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getlanes', 'insee':'all', "query": value};
+                  break;
+              case 'Adresses':
+                  ajaxSetting.data =  {key: apiRVAKey, version: '1.0', format: 'json', 'epsg': '3948', 'cmd': 'getfulladdresses',"query": value};
+                  break;
+              case 'Organismes':
+                  ajaxSetting.url = apiSitesOrg + 'recherche';
+                  ajaxSetting.data = 'adresse=&etats[]=actif&etats[]=projet&etats[]=inactif&niveaux_org[]=3&niveaux_org[]=1&niveaux_org[]=2&niveaux_site[]=1'
+                  + '&termes='+ value + '&termes_op=AND&types[]=organisme&limit=20&offset=0';
+                  ajaxSetting.headers = {'X-API-KEY': apiSitesOrgkey};
+                  break;
+          }
+
+          if(restrictionInsee){
+            ajaxSetting.data.insee = restrictionInsee;
+          }
+
+          for (var i = 0; i < searchItemChecked.length; i++) {
+              if (searchItemChecked[i].id === 'param_search_' + content.categoryName) {
+
+                  promises.push( new Promise(resolve => {
+                      $.ajax(ajaxSetting).done(function (result) {
+                          var nbItemDisplay = 5;
+                          if (!Number.isNaN(parseInt(content.nbItemDisplay))) {
+                              nbItemDisplay = parseInt(content.nbItemDisplay);
+                          }
+                          var resolveRes = {result : result, nbItemDisplay: nbItemDisplay};
+                          resolveRes['zoom'] = content.zoom;
+                          resolveRes['categoryName'] = content.categoryName;
+                          resolveRes['citiesSearch'] = citiesSearch;
+                          resolve(resolveRes);
+                      });
+                  })
+                );
+              }
+          }
+      } );
+      return promises;
+    }
 
     function _getCitiesSearch(inputContent){
       var citiesSearch = [];
@@ -565,7 +602,7 @@ var searchRM = (function () {
         } else {
             addressesFound = addresses;
         }
-        addressesFound = addressesFound.sort(function(a,b){return a['addr1'] - b['addr1']});
+        addressesFound = addressesFound.sort(function(a,b){return a['number'] - b['number']});
         return addressesFound.slice(0,addressesData.nbItemDisplay);
     };
 
