@@ -260,10 +260,6 @@ var searchRM = (function () {
                 resultArray[2].result.rva.answer.addresses.splice(j, 1);
             }
           }
-
-          console.log(resultArray);
-          console.log(updatedString);
-          console.log(originalValue);
           callback(resultArray);
 
         });
