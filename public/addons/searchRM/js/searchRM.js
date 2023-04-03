@@ -241,28 +241,40 @@ var searchRM = (function () {
       Promise.all(_getRequest(confData, updatedString, citiesSearch)).then(function(restrictedResult){
         Promise.all(_getRequest(confData, originalValue, undefined)).then(function(unrestrictedResult){
 
-          resultArray[0] = restrictedResult[0];
+          $.getJSON(getPersoConfData, function (confData) {
+            confData.searchContent.forEach((item, h) => {
+              console.log(item.categoryName);
+              switch (item.categoryName) {
+                case 'Communes':
+                resultArray[i] = restrictedResult[h];
+                  break;
+                case 'Voies':
+                    resultArray[h] = restrictedResult[h];
+                    resultArray[h].result.rva.answer.lanes = restrictedResult[h].result.rva.answer.lanes.concat(unrestrictedResult[h].result.rva.answer.lanes);
+                    for(var i=0; i<resultArray[h].result.rva.answer.lanes.length; ++i) {
+                      for(var j=i+1; j<resultArray[h].result.rva.answer.lanes.length; ++j) {
+                        if(resultArray[h].result.rva.answer.lanes[i].addr3 === resultArray[h].result.rva.answer.lanes[j].addr3)
+                        resultArray[h].result.rva.answer.lanes.splice(j, 1);
+                      }
+                    }
+                  break;
+                case 'Adresses':
+                    resultArray[h] = restrictedResult[h];
+                    resultArray[h].result.rva.answer.addresses = restrictedResult[h].result.rva.answer.addresses.concat(unrestrictedResult[h].result.rva.answer.addresses);
+                    for(var i=0; i<resultArray[h].result.rva.answer.addresses.length; ++i) {
+                      for(var j=i+1; j<resultArray[h].result.rva.answer.addresses.length; ++j) {
+                        if(resultArray[h].result.rva.answer.addresses[i].addr3 === resultArray[h].result.rva.answer.addresses[j].addr3)
+                        resultArray[h].result.rva.answer.addresses.splice(j, 1);
+                      }
+                    }
+                  break;
+                default:
+              }
 
-          resultArray[1] = restrictedResult[1];
-          resultArray[1].result.rva.answer.lanes = restrictedResult[1].result.rva.answer.lanes.concat(unrestrictedResult[1].result.rva.answer.lanes);
-          for(var i=0; i<resultArray[1].result.rva.answer.lanes.length; ++i) {
-            for(var j=i+1; j<resultArray[1].result.rva.answer.lanes.length; ++j) {
-              if(resultArray[1].result.rva.answer.lanes[i].addr3 === resultArray[1].result.rva.answer.lanes[j].addr3)
-                resultArray[1].result.rva.answer.lanes.splice(j, 1);
-            }
-          }
-
-          resultArray[2] = restrictedResult[2];
-          resultArray[2].result.rva.answer.addresses = restrictedResult[2].result.rva.answer.addresses.concat(unrestrictedResult[2].result.rva.answer.addresses);
-          for(var i=0; i<resultArray[2].result.rva.answer.addresses.length; ++i) {
-            for(var j=i+1; j<resultArray[2].result.rva.answer.addresses.length; ++j) {
-              if(resultArray[2].result.rva.answer.addresses[i].addr3 === resultArray[2].result.rva.answer.addresses[j].addr3)
-                resultArray[2].result.rva.answer.addresses.splice(j, 1);
-            }
-          }
-          console.log(resultArray);
-          callback(resultArray);
-
+            });
+            console.log(resultArray);
+            callback(resultArray);
+          });
         });
       });
 
