@@ -6,13 +6,12 @@
     document.addEventListener("accessibilite-componentLoaded", (e) => {
         _init();
     }, { once: true });
-    
+
     var layerAttributes = [];
     var reloadTable = [];
     var runningReload = [];
-    
     function getFeatures(layer){
-        
+
         return new Promise (resolve => {
             switch (layer.type) {
                 case 'wms':
@@ -41,10 +40,10 @@
         });
     }
     var parsed_template;
-    
+
     // recherche des champs affichés selon le template de couche
     async function getAttributes(template){
-        
+
         // nettoyage des textes entre commentaires (HTML)
         template = template.replaceAll(/<!--([. \S\s])*?-->/gs, '');
         // nettoyage des expressions techniques pour l'extension carousel photo
@@ -52,13 +51,13 @@
         parsed_template = Mustache.parse(template);
         // calculer les attributs de données
         var attributes  = await _resolveContent(Mustache.parse(template)[0]);
-        
+
         return attributes;
-        
+
     }
-    
-    
-    
+
+
+
     // cherche dans le template parsé les attributs à conserver
     // prise en compte des attributs de type tableau
     function _resolveContent(_parsedcontent){
@@ -89,11 +88,11 @@
                         for (var j=0; j<_ct.length; j++) {
                             _addElement(attributes, _ct[j]);
                         }
-                        
+
                         // les autres fils sont traités comme des noeuds frères de attributes[_name]
                         // exemple : {{#joursFermes.variationCongesScolaires}} qui se trouve après {{#horairesOuvertures.length}}, mais pas dans {{#horairesOuvertures}}
                     } else if (_filteredContent[i][1].indexOf('.') > 0) {
-                        
+
                         let _name = _filteredContent[i][1].split('.')[0];
                         let _attr = _filteredContent[i][1].split('.')[1];
                         if (_ct.length > 0 ) {
@@ -105,9 +104,9 @@
                             newattrib[_name] = [_attr];
                             _addElement(attributes, newattrib);
                         }
-                    } else { 
+                    } else {
                         //chercher si l'attribut est une valeur "feuille" ou si c'est une branche
-                        // si branche, ajouter un attribut du nom 
+                        // si branche, ajouter un attribut du nom
                         let _name = _filteredContent[i][1];
                         if (_ct.length > 0 ) {
                             if( ! _ct.includes(_name)) {
@@ -133,10 +132,10 @@
                 default:
             }
         }
-        
+
         return attributes;
     }
-    
+
     // Mutualisation du push dans le tableau attributes + avant le push d'un objet, vérifier s'il n'existe pas déjà un objet sur le même noeud
     function _addElement(destination, element){
         if( typeof element === "object"){
@@ -150,7 +149,7 @@
                         }
                     }
                 }
-            
+
                 if (!foundNode){
                     destination.push(element);
                 }
@@ -161,32 +160,32 @@
             }
         }
     }
-    
-    
+
+
 
     // creation de l'onglet et du tableau
     async function buildTable(layer) {
         // ici : créer la structure de base pour toutes les couches (y compris la div qui contient le tableau, le tableau )
         // puis appeler la fonction de remplissage du tableau updateLayerTable pour remplir le tbody du tableau
-        
-        
+
+
         //CREATION ONGLET
         var menu = document.getElementById('accessibility_tabs');
         var firstChild=!menu.hasChildNodes();
         var li = document.createElement('li');
         var a = Object.assign(document.createElement('a'), {id:"a_"+layer.layerid, href:'#data_'+layer.layerid, role:"tab"});
         a.setAttribute("data-toggle", "tab");
-        
+
         a.appendChild(document.createTextNode(layer.name));
         li.appendChild(a);
         menu.appendChild(li);
-        
+
         //CREATION TABLEAU
         var contenu = document.getElementById('accessibility_main_');
         var maindiv = Object.assign(document.createElement('div'), {id:'data_'+layer.layerid, role:"tabpanel"});
         maindiv.classList.add("tab-pane", "fade", "in");
         maindiv.setAttribute('originallayer',  layer.layerid);
-        
+
         var attributes = await getAttributes(layer.template);
         attributes = await _analyseAttributes(attributes);
         layerAttributes[layer.layerid] = await _sortAttributes(attributes);
@@ -194,27 +193,27 @@
         var header = await _setTableHeader(layerAttributes[layer.layerid]);
         var _table = document.createElement('table');
         _table.appendChild(header);
-        
+
         var _tblBody = document.createElement("tbody");
         maindiv.appendChild(_table);
         _table.appendChild(_tblBody);
         contenu.appendChild(maindiv);
-        
+
         //Ouverture par défaut sur le premier onglet
         if (firstChild){
             li.classList.add("active");
             a.setAttribute("aria-expanded","true");
             maindiv.classList.add("active");
         }
-        
+
         // Remplir le tableau avec les données
         updateLayerTable(layer);
     }
-    
+
     async function _sortAttributes(attributes){
             var objattr = [];
             var simpleattr = [];
-            
+
             for (let i = 0; i < attributes.length; i++) {
                 if( typeof attributes[i] === "object") {
                     var label ;
@@ -235,23 +234,23 @@
             }
             return ({'simpleattr' : simpleattr, 'objattr': objattr});
     }
-    
+
     async function _analyseAttributes(attributes) {
         for (let i = 0; i < attributes.length; i++) {
             if( typeof attributes[i] === "object") {
-                _setRowColspan(attributes[i]); 
-            } 
+                _setRowColspan(attributes[i]);
+            }
         }
         return attributes;
     }
-    
+
     async function _setTableHeader(attributes){
         var max_rows = 1;
         var tbl_objattrib = attributes.objattr;
         for (let i = 0; i < tbl_objattrib.length; i++) {
             max_rows=Math.max(max_rows, tbl_objattrib[i].descendants +1);
         }
-        
+
         // Produire les éléments DOM
         var _tblHead = document.createElement('thead');
         var _thead_tr = [];
@@ -259,20 +258,20 @@
             _thead_tr[i] = document.createElement('tr');
             _tblHead.appendChild(_thead_tr[i]);
         }
-        
+
         await _createTHObjects(_thead_tr, 0, max_rows, attributes);
         return _tblHead;
     }
-    
-    
+
+
     async function _createTHObjects(_thead_tr, level, max_row, attributes){
         var simpleattr = (attributes.simpleattr != 'undefined' ? attributes.simpleattr : []);
         var objattr = (attributes.objattr != 'undefined' ? attributes.objattr : []);
-        
+
         // Produire les éléments DOM
         for (let i = 0; i < simpleattr.length; i++) {
             var _thead_th = document.createElement('th');
-            
+
             _thead_th.setAttribute('rowspan', max_row);
             attributes.simplerowspan = max_row;
             _thead_th.appendChild(document.createTextNode(simpleattr[i]));
@@ -287,10 +286,10 @@
             await _createTHObjects(_thead_tr, level + 1, max_row - 1 ,objattr[i]);
         }
     }
-    
+
     // calcule les valeurs de rowspan et colspan des attributs
     function _setRowColspan(element){
-        for (const cle_attrib of Object.keys(element)) { 
+        for (const cle_attrib of Object.keys(element)) {
             var descendants=1;
             var colspan=0;
 
@@ -307,17 +306,17 @@
             element.descendants = descendants;
         }
     }
-    
+
     // mise à jour du contenu du tableau
     function updateLayerTable(layer){
         runningReload[layer.layerid] = true;
         reloadTable[layer.layerid] = false;
         try {
-            getFeatures(layer).then(async function(res) { 
+            getFeatures(layer).then(async function(res) {
                 const features = res.response;
                 var _tblBody = document.querySelector('#data_' + layer.layerid + '> table > tbody');
                 _tblBody.innerHTML = '';
-                
+
                 for (let i = 0; i < features.length; i++) {
                     var maxRowSpan = await _calculateMaxRowSpan(features[i], layerAttributes[layer.layerid].objattr);
                     var _tbody_tr=[];
@@ -337,10 +336,10 @@
             console.log(err);
         }
     }
-    
+
     async function _createTDObjects(_tbody_tr, feature, maxRowSpan, level, simpleattr, objattr){
         // Produire les éléments DOM
-        
+
         // attributs simples
         for (let j = 0; j < simpleattr.length; j++) {
             var _tbody_td = document.createElement('td');
@@ -372,7 +371,7 @@
                         // soit on ne veut garder que l'heure
                         let _dtHR = new Date(texte).getHours();
                         let _dtMN = new Date(texte).getMinutes();
-                        
+
                         if (_dtHR == 0 && _dtMN == 0) {
                             texte = "";
                         } else {
@@ -407,7 +406,7 @@
                             obj = feature.get(objattr[j].label);
                         }catch (err) {}
                     }
-                } 
+                }
                 if (obj) {
                     if (Array.isArray(obj)) {
                         if (obj.length > 0) {
@@ -427,13 +426,11 @@
                     await _createTDObjects(_tbody_tr, null, maxRowSpan, level, objattr[j].simpleattr, objattr[j].objattr);
                 }
             }
-        } 
+        }
     }
-    
     
     async function _calculateMaxRowSpan(feature, modele){
         var maxRowSpan = 0;
-        
         for (let i = 0; i < modele.length; i++) {
             let value;
             if (Object.prototype.hasOwnProperty.call(feature, modele[i].label)){
@@ -446,7 +443,7 @@
                 } catch (e){
                 }
             }
-            
+
             if (Array.isArray(value)) { // si type = tableau, alors il peut y avoir plusieurs occurences
                 if (modele[i].objattr && modele[i].objattr.length > 0) { // si fils de type complexe
                     for (let j=0; j < value.length; j++) {
@@ -460,11 +457,11 @@
         }
         return Math.max(1, maxRowSpan);
     }
-    
+
     function _isDate(date){
         return (new Date(date) !== "Invalid Date") && !isNaN(new Date(date));
     }
-    
+
     function _decodedHTMLEntity(string){
         var txtarea = document.createElement('textarea');
         txtarea.innerHTML = string;
@@ -482,7 +479,7 @@
     function _init() {
         if (API.mode=='data'){
             var layers = mviewer.getLayers();
-            for (const layerid of Object.keys(layers)) { 
+            for (const layerid of Object.keys(layers)) {
                 var layer  = layers[layerid];
                 
                 layer.layer.getSource().on('changefeature', () => {
@@ -499,7 +496,7 @@
                     buildTable(layer);
                 }
             }
-            
+
             // Affichage du tableau et masquage de la carte
             document.getElementById('accessibilite-custom-component').style.display = 'block';
             document.getElementById('wrapper').style.display = 'none';
@@ -509,5 +506,3 @@
             }
         }
     }
-
-

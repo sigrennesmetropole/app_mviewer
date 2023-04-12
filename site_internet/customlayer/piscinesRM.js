@@ -7,11 +7,11 @@ mviewer.customLayers.piscinesRM= (function() {
     let data_site = 'https://public.sig.rennesmetropole.fr/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=v_sitorg_site&outputFormat=application%2Fjson&srsname=EPSG:3857&CQL_FILTER=id_specialite_principale=95';
 
     let svgIcon='apps/site_internet/customlayer/picture/piscine-01.svg'
-    //let svgIcon='apps/site_internet/customlayer/picture/piscine-02.svg'; 
+    //let svgIcon='apps/site_internet/customlayer/picture/piscine-02.svg';
     let stylesrc='apps/site_internet/customlayer/picture/marker.svg';
     let iconwidth = '35px';
     let iconheight = '35px';
-    //let iconcolor = '#eb5046'; 
+    //let iconcolor = '#eb5046';
     //let iconcolor = '#95c351';
     let iconcolor ='#ffffff';
 
@@ -130,7 +130,6 @@ mviewer.customLayers.piscinesRM= (function() {
               });
             }
         }
-        
         //console.log("HORAIRES");
     }
 
@@ -339,11 +338,11 @@ mviewer.customLayers.piscinesRM= (function() {
                   //src: 'apps/site_internet/customlayer/picture/marker.svg',
                 })
               });
-        
+
         return [style];
     }
 
-    
+
     function calculateStyleIcon(){
         var name,xhr;
         // on est enfin prêt à récupérer le svg sur le serveur
@@ -362,11 +361,11 @@ mviewer.customLayers.piscinesRM= (function() {
                 //console.log("SVG =" +doc.getElementsByTagName("svg")[0].outerHTML);
                 // on applique le svg au style
                 stylesrc = 'data:image/svg+xml;utf8, ' + encodeURIComponent(doc.getElementsByTagName("svg")[0].outerHTML);
-                
+
                 //console.log("SRC = "+ stylesrc);
             }
         };
-        xhr.open('get',svgIcon); 
+        xhr.open('get',svgIcon);
         xhr.send();
     }
 
