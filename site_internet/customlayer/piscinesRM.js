@@ -131,7 +131,7 @@ mviewer.customLayers.piscinesRM= (function() {
             }
         }
         
-        console.log("HORAIRES");
+        //console.log("HORAIRES");
     }
 
     function getFeatureFromIdSite(idSite) {
@@ -373,7 +373,20 @@ mviewer.customLayers.piscinesRM= (function() {
     let layer = new ol.layer.Vector({
         source: new ol.source.Vector({
             format: new ol.format.GeoJSON(),
-            url : data_site,
+            //url : data_site,
+            loader: () => {// permet d'éviter les features chargées en double
+                const urlData = data_site;
+                fetch(urlData)
+                    .then(r => r.json())
+                    .then(r => {
+                        //console.log("Load features ete_monuments"); // ==> Exécuté 2x rarement !
+                        // nettoie la layer
+                        mviewer.getLayer("piscinesRM").layer.getSource().clear();
+                        // charge les features
+                        let features = layer.getSource().getFormat().readFeatures(r)
+                        layer.getSource().addFeatures(features);   
+                    })
+                }
         }),
         style: markerstyle,
     });
