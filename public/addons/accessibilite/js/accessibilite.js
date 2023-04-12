@@ -8,7 +8,8 @@
     }, { once: true });
 
     var layerAttributes = [];
-
+    var reloadTable = [];
+    var runningReload = [];
     function getFeatures(layer){
 
         return new Promise (resolve => {
@@ -308,6 +309,8 @@
 
     // mise à jour du contenu du tableau
     function updateLayerTable(layer){
+        runningReload[layer.layerid] = true;
+        reloadTable[layer.layerid] = false;
         try {
             getFeatures(layer).then(async function(res) {
                 const features = res.response;
@@ -315,23 +318,19 @@
                 _tblBody.innerHTML = '';
 
                 for (let i = 0; i < features.length; i++) {
-                    var maxRowSpan = await _calculateMaXRowSpan(features[i], layerAttributes[layer.layerid].objattr);
-
+                    var maxRowSpan = await _calculateMaxRowSpan(features[i], layerAttributes[layer.layerid].objattr);
                     var _tbody_tr=[];
-                    for (let j = 0; j < maxRowSpan; j++) {
-                        let _tr = document.createElement('tr');
-                        _tbody_tr.push(_tr);
-                        _tblBody.appendChild(_tr);
-                    }
                     await _createTDObjects(_tbody_tr, features[i], maxRowSpan, 0, layerAttributes[layer.layerid].simpleattr, layerAttributes[layer.layerid].objattr);
+                    for(let j = 0; j < _tbody_tr.length; j++) {
+                        _tblBody.appendChild(_tbody_tr[j]);
+                    }
                 }
+
             }).then(function() {
-                layer.layer.getSource().once('changefeature', () => {
+                runningReload[layer.layerid] = false;
+                if(reloadTable[layer.layerid]){
                     updateLayerTable(layer);
-                    });
-                layer.layer.getSource().once('change', () => {
-                    updateLayerTable(layer);
-                    });
+                }
             });
         } catch (err) {
             console.log(err);
@@ -344,7 +343,9 @@
         // attributs simples
         for (let j = 0; j < simpleattr.length; j++) {
             var _tbody_td = document.createElement('td');
-            _tbody_td.setAttribute("rowspan",maxRowSpan);
+            if (maxRowSpan && maxRowSpan >0) {
+                _tbody_td.setAttribute("rowspan",maxRowSpan);
+            }
             var propriete = simpleattr[j];
 
             var texte = "";
@@ -365,8 +366,7 @@
                 try{
                     if (typeof texte == "boolean"){
                         texte = (texte ? "oui" : "non");
-                    }
-                    else if (String(texte).indexOf('1970-01-01')>=0){
+                    } else if (String(texte).indexOf('1970-01-01')>=0){
                         // soit mauvaise date si heure = 00:00
                         // soit on ne veut garder que l'heure
                         let _dtHR = new Date(texte).getHours();
@@ -376,7 +376,9 @@
                             texte = "";
                         } else {
                             texte = String(_dtHR).padStart(2,'0') + "h" + String(_dtMN).padStart(2,'0');
-                        }
+                        } 
+                    } else if (String(texte).indexOf('T00:00:00+')>=0) {
+                        texte = new Date(texte).toLocaleDateString("fr-FR", )
                     }
                 } catch (e){
                     console.log(e);
@@ -384,6 +386,10 @@
             }
             //_tbody_td.appendChild(document.createTextNode(texte));
             _tbody_td.innerHTML = texte;
+            if (!_tbody_tr[level]){
+                let _tr = document.createElement('tr');
+                _tbody_tr.push(_tr);
+            }
             _tbody_tr[level].appendChild(_tbody_td);
         }
         // attributs complexes
@@ -404,10 +410,11 @@
                 if (obj) {
                     if (Array.isArray(obj)) {
                         if (obj.length > 0) {
-                            var childMaxRowSpan = maxRowSpan / obj.length;
-                            for (let k =0; k < obj.length; k++){
-                                let childlevel = level + childMaxRowSpan*k;
-                                await _createTDObjects(_tbody_tr, obj[k],childMaxRowSpan, childlevel, objattr[j].simpleattr, objattr[j].objattr);
+                            var childlevel = level;
+                            for (let k=0; k < obj.length; k++){
+                                let childMaxRowSpan = await _calculateMaxRowSpan(obj[k], objattr[j].objattr);
+                                await _createTDObjects(_tbody_tr, obj[k], childMaxRowSpan, childlevel, objattr[j].simpleattr, objattr[j].objattr);
+                                childlevel += Math.max(childMaxRowSpan,1);
                             }
                         } else {
                              await _createTDObjects(_tbody_tr, null, maxRowSpan, level, objattr[j].simpleattr, objattr[j].objattr);
@@ -421,11 +428,9 @@
             }
         }
     }
-
-
-    async function _calculateMaXRowSpan(feature, modele){
-        var maxRowSpan = 1;
-
+    
+    async function _calculateMaxRowSpan(feature, modele){
+        var maxRowSpan = 0;
         for (let i = 0; i < modele.length; i++) {
             let value;
             if (Object.prototype.hasOwnProperty.call(feature, modele[i].label)){
@@ -442,15 +447,15 @@
             if (Array.isArray(value)) { // si type = tableau, alors il peut y avoir plusieurs occurences
                 if (modele[i].objattr && modele[i].objattr.length > 0) { // si fils de type complexe
                     for (let j=0; j < value.length; j++) {
-                        let childMaxRowSpan = await _calculateMaXRowSpan(value[j], modele[i].objattr);
-                        maxRowSpan=Math.max(maxRowSpan, value.length * childMaxRowSpan );
+                        let childMaxRowSpan = await _calculateMaxRowSpan(value[j], modele[i].objattr);
+                        maxRowSpan += childMaxRowSpan;
                     }
                 } else { // si fils de type feuille uniquement
-                    maxRowSpan=Math.max(maxRowSpan, value.length );
+                    maxRowSpan=Math.max(1, value.length );
                 }
             }
         }
-        return maxRowSpan;
+        return Math.max(1, maxRowSpan);
     }
 
     function _isDate(date){
@@ -462,13 +467,29 @@
         txtarea.innerHTML = string;
         return txtarea.value;
     }
+    
+    function relaunch(layer){
+        if (runningReload[layer.layerid] == true){
+            reloadTable[layer.layerid] = true;
+        } else {
+            updateLayerTable(layer);
+        }
+    }
 
     function _init() {
         if (API.mode=='data'){
             var layers = mviewer.getLayers();
             for (const layerid of Object.keys(layers)) {
                 var layer  = layers[layerid];
-                if (layer.queryable){
+                
+                layer.layer.getSource().on('changefeature', () => {
+                    relaunch(layer);
+                });
+                layer.layer.getSource().on('change', () => {
+                    relaunch(layer);
+                });
+                
+                if (layer.queryable){ 
                     if(layer.visible == "false"){
                         mviewer.addLayer(layer);
                     }
