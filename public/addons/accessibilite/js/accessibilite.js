@@ -4,7 +4,7 @@
 // pas de relation dynamique entre tableau et carte
 // URL d'accès au tableau (mode=data)
     document.addEventListener("accessibilite-componentLoaded", (e) => {
-        _init();
+        setTimeout(_init, 500);
     }, { once: true });
     
     var layerAttributes = [];
@@ -208,10 +208,8 @@
         }
         
         // Remplir le tableau avec les données
-        //updateLayerTable(layer);
-        setTimeout(function() {
-            updateLayerTable(layer);
-        }, 5000);
+        updateLayerTable(layer);
+        //setTimeout(function() { updateLayerTable(layer);}, 5000);
     }
     
     async function _sortAttributes(attributes){
@@ -411,38 +409,34 @@
                         }catch (err) {}
                     }
                 } 
-                if (obj) {
-                    if (Array.isArray(obj)) {
-                        if (obj.length > 0) {
-                            var childlevel = level;
-                            for (let k=0; k < obj.length; k++){
-                                let childMaxRowSpan = await _calculateMaxRowSpan(obj[k], objattr[j].objattr);
-                                await _createTDObjects(_tbody_tr, obj[k], childMaxRowSpan, childlevel, objattr[j].simpleattr, objattr[j].objattr);
-                                childlevel += Math.max(childMaxRowSpan,1);
-                            }
-                            // créer une case vide de la hauteur restante
-                            
-                            if (childlevel < maxRowSpan) {
-                                if (!_tbody_tr[childlevel]){
-                                    let _tr = document.createElement('tr');
-                                    _tbody_tr.push(_tr);
-                                }
-                                var _td_comble = document.createElement('td');
-                                _td_comble.setAttribute("rowspan",maxRowSpan - childlevel);
-                                _td_comble.setAttribute("colspan", objattr[j].colspan);
-                                _tbody_tr[childlevel].appendChild(_td_comble);
-                            }
-                        } else {
-                             await _createTDObjects(_tbody_tr, null, maxRowSpan, level, objattr[j].simpleattr, objattr[j].objattr);
-                        }
-                    } else {
-                        await _createTDObjects(_tbody_tr, obj, maxRowSpan, level, objattr[j].simpleattr, objattr[j].objattr);
+                if (obj && Array.isArray(obj) && obj.length > 0) {
+                    var childlevel = level;
+                    for (let k=0; k < obj.length; k++){
+                        let childMaxRowSpan = await _calculateMaxRowSpan(obj[k], objattr[j].objattr);
+                        await _createTDObjects(_tbody_tr, obj[k], childMaxRowSpan, childlevel, objattr[j].simpleattr, objattr[j].objattr);
+                        childlevel += Math.max(childMaxRowSpan,1);
+                    }
+                    // créer une case vide de la hauteur restante
+                    
+                    if (childlevel < maxRowSpan) {
+                        comblertable(childlevel, _tbody_tr, maxRowSpan - childlevel, objattr[j].colspan);
                     }
                 } else {
-                    await _createTDObjects(_tbody_tr, null, maxRowSpan, level, objattr[j].simpleattr, objattr[j].objattr);
+                    comblertable(level, _tbody_tr, maxRowSpan, objattr[j].colspan);
                 }
             }
         } 
+    }
+    
+    function comblertable(level, tbody_tr, rowspan, colspan){
+        if (!tbody_tr[level]){
+            let _tr = document.createElement('tr');
+            tbody_tr.push(_tr);
+        }
+        var _td_comble = document.createElement('td');
+        _td_comble.setAttribute("rowspan",rowspan);
+        _td_comble.setAttribute("colspan", colspan);
+        tbody_tr[level].appendChild(_td_comble);
     }
     
     
