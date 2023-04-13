@@ -127,7 +127,7 @@
                 case '^':
                     _ct = _resolveContent(_filteredContent[i]);
                     for (let j=0; j<_ct.length;j++){
-                        _addElement(attributes, _filteredContent[i][1]);
+                        _addElement(attributes, _ct[j]);
                     }
                     break;
                 default:
@@ -208,7 +208,10 @@
         }
         
         // Remplir le tableau avec les données
-        updateLayerTable(layer);
+        //updateLayerTable(layer);
+        setTimeout(function() {
+            updateLayerTable(layer);
+        }, 5000);
     }
     
     async function _sortAttributes(attributes){
@@ -417,6 +420,18 @@
                                 await _createTDObjects(_tbody_tr, obj[k], childMaxRowSpan, childlevel, objattr[j].simpleattr, objattr[j].objattr);
                                 childlevel += Math.max(childMaxRowSpan,1);
                             }
+                            // créer une case vide de la hauteur restante
+                            
+                            if (childlevel < maxRowSpan) {
+                                if (!_tbody_tr[childlevel]){
+                                    let _tr = document.createElement('tr');
+                                    _tbody_tr.push(_tr);
+                                }
+                                var _td_comble = document.createElement('td');
+                                _td_comble.setAttribute("rowspan",maxRowSpan - childlevel);
+                                _td_comble.setAttribute("colspan", objattr[j].colspan);
+                                _tbody_tr[childlevel].appendChild(_td_comble);
+                            }
                         } else {
                              await _createTDObjects(_tbody_tr, null, maxRowSpan, level, objattr[j].simpleattr, objattr[j].objattr);
                         }
@@ -447,15 +462,18 @@
                 }
             }
             
-            if (Array.isArray(value)) { // si type = tableau, alors il peut y avoir plusieurs occurences
+            if (Array.isArray(value)) { // si type = tableau, alors il peut y avoir plusieurs occurences (elles s'additionnent)
+                let totalchildMaxRowSpan = 0;
                 if (modele[i].objattr && modele[i].objattr.length > 0) { // si fils de type complexe
                     for (let j=0; j < value.length; j++) {
                         let childMaxRowSpan = await _calculateMaxRowSpan(value[j], modele[i].objattr);
-                        maxRowSpan += childMaxRowSpan;
+                        totalchildMaxRowSpan += childMaxRowSpan;
                     }
                 } else { // si fils de type feuille uniquement
-                    maxRowSpan=Math.max(1, value.length );
+                    totalchildMaxRowSpan=value.length;
                 }
+                // on ne conserve que le maxrowspan le plus élevé entre tous les fils
+                maxRowSpan=Math.max(maxRowSpan, totalchildMaxRowSpan );
             }
         }
         return Math.max(1, maxRowSpan);
