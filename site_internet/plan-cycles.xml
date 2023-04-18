@@ -68,7 +68,7 @@
                 <template url="apps/site_internet/templates/stations-gonflages-velo.mst"></template>
             </layer>
             <layer
-                id="parc_velo_securise"
+                id="v_parc_velo_securise"
                 name="Parcs vélos sécurisés"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/trp_doux/ows"
