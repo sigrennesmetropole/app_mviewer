@@ -2,12 +2,33 @@
     <li class="item">
         <div id="idbalade" style="display: none">{{{idbalade}}}</div>
 
-        <h4 class="rm-popup-title-feature"> Arrêt N° {{{rang}}}</h4>
-        <p class="rm-popup-text-feature">
-            {{#name}}<span class='rm-popup-label'> {{{name}}}</span><br/> {{/name}}
-        </p>
+        <h4 class="rm-popup-title-feature"> {{{name}}}</h4>
+        
+        {{#sous_titre}}</br><p class="rm-popup-title-level2"> {{{sous_titre}}} </p> {{/sous_titre}}
+        
         <p class="rm-popup-text-feature">
             {{#description}}<span > {{{description}}}</span><br/>{{/description}}
+            {{#photo}}
+                <section>
+                    <div id="photo" style="display: block;text-align: center;">
+                        <img class="photo" src="{{{photo}}}" loading="lazy" style="height: 150px;">
+                        <p class="labelPictureEnlarge rm-popup-label">Cliquez pour agrandir cette image</p>
+                        {{#photo_credit}} {{{photo_credit}}} </br>{{/photo_credit}}
+                    </div>
+                </section>
+            {{/photo}}
+        </p>
+        <p class="rm-popup-text-feature">
+            {{#description2}}<span > {{{description2}}}</span><br/>{{/description2}}
+            {{#photo2}}
+                <section>
+                    <div id="photo" style="display: block;text-align: center;">
+                        <img class="photo" src="{{{photo2}}}" loading="lazy" style="height: 150px;">
+                        <p class="labelPictureEnlarge rm-popup-label">Cliquez pour agrandir cette image</p>
+                        {{#photo_credit2}} {{{photo_credit2}}} </br>{{/photo_credit2}}
+                    </div>
+                </section>
+            {{/photo2}}
         </p>
     </li>
 {{/features}}
