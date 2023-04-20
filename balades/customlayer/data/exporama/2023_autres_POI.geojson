@@ -1,0 +1,147 @@
+{
+    "type": "FeatureCollection",
+    "name": "points",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:EPSG::3857"
+        }
+    },
+    "features": [{
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi... au Théâtre du Vieux Saint-Etienne - Electroni[K]",
+                "id": 101,
+                "description": "<b>Muables</b></br></br>Muables, un regard posé par Electroni[k] sur la création contemporaine belge, une vision sensible, novatrice et mouvante à l’image des arts hybrides. Muables, un lien évident entre les œuvres exposées : instables, inconstantes, fluides, jouant des éléments naturels, des arts visuels et sonores. Muables, une invitation poétique à observer nos cheminements et tenter de saisir notre époque fluctuante.  </br></br></br>Venez à la rencontre des univers de Clarice Calvo-Pinsolle, Vica Pacheco, le collectif Ohme et Frederik Vanhoutte. Explorateur·ice·s de nouveaux imaginaires, i·elles nous embarquent en plein cœur du bouillonnement artistique bruxellois. "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-187443.877392781, 6126044.453511609]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi... à la Galerie Oniris",
+                "description": "Au programme cet été, des expositions autour de l'œuvre de Claude Viallat puis de Christian Bonnefoi.",
+                "id": 102,
+                "photo": "apps/balades/customlayer/photos_exporama2023/Galerie Oniris.png",
+                "photo_credit" : "<i>La visite 8</i>, Christian Bonnefoi © Oniris.art"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186880.15549148235, 6126148.331348849]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi... Le Grand Angle Imoja",
+                "id": 103,
+                "description": "Venez découvrir successivement des œuvres de Fabienne Houzé-Ricard, de Olivia Étienne puis de Muriel Taragano.",
+                "photo": "apps/balades/customlayer/photos_exporama2023/Le Grand Angle Imoja.png",
+                "photo_credit" : "© Muriel Taragano"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-187432.856763194, 6125134.117362756]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi...à 40mcube ",
+                "id": 104,
+                "description": "<b>Exposition Nouaison - Aurélie Ferruel & Florentine Guédon </b></br>Depuis la création de leur duo, Aurélie Ferruel & Florentine Guédon ont toujours intégré leurs origines sociales et géographiques à leur pratique artistique. </br></br>Pour leur exposition à 40mcube, leur recherche se focalise sur le rapport à la terre de manière générale, et sur leur propre rapport à la terre, dont elles réalisent l’ampleur de l’influence sur leur vie et leur travail. Elles produisent une vaste installation composée de différents matériaux (paille, terre, céramique, verre, textiles) et réarticulent leur mode de collaboration. "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-185485.21095254598, 6125134.95095967]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi... Les 4x3 de Lendroit éditions",
+                "description": "Visibles toute l'année dans l'espace urbain à Rennes, les panneaux 4x3 de Lendroit éditions proposent de découvrir les œuvres d'artistes contemporains invités à proposer au public des images grand format : cet été, vous pourrez découvrir les œuvres de Jérémie Gindre et de Pascale Rémita. ",
+                "id": 105,
+                "photo": "apps/balades/customlayer/photos_exporama2023/Les 4x3 de Lendroit éditions.png",
+                "photo_credit" : "<i>Jolie vue, mauvais présage</i>, Jérémie Gindre, 2023 © Jérémie Gindre"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-185106.61336441076, 6125208.974689148]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi...Les Ateliers du Vent",
+                "id": 106,
+                "description": "<b>Les Ateliers du Vent, Le Bon Accueil, Capsule Galerie, Atelier Vivarium</b></br></br><i>Vaporwave : A liminal Space</i> est comme la bande son d’un centre commercial désert tournant à vide à la vitesse de rotation d’un escalator défectueux.</br>À découvrir aux Ateliers du Vent, l’exposition reprend les codes de la Vaporwave, un genre musical qui s’est épanoui en ligne dans les années 2010. Entre samples de tubes 80’s et 90’s ultra-ralentis, musique d’ascenseur, et une esthétique visuelle où se côtoient statues gréco-romaines, palmiers et dégradés aux couleurs acides, le genre oscille entre nostalgie et critique du consumérisme.</br></br>"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-188893.25716270768, 6124064.179220334]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi...Galerie du Lieu - L'Œil d'Oodaaq",
+                "id": 107,
+                "description": "<b>Claire Prism Power, Make up! </b></br></br>Sailor Claire Voyance, personnage incarné par Claire Guetta, est une guerrière intergalactique, joyeuse, forte et magique. En s'intéressant à la figure des magical girls japonaises, elle mène des réflexions sur le féminisme et la charge mentale. Sailor Claire Voyance combat les forces du mal et poursuit sa quête afin de rendre le monde plus beau et moins angoissant. </br>À travers une installation vidéo, plongez dans l'univers magique de l'artiste et partez à la recherche du Crystal perdu...</br></br><i>Du 1er au 29 juillet</i></br>"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-187345.693601915, 6124015.33668211]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi... à la Galerie Drama",
+                "description": "De juin à septembre, la galerie présente des créations de Primat et Stéphane Fromentin.",
+                "id": 108,
+                "photo": "apps/balades/customlayer/photos_exporama2023/Galerie Drama.png",
+                "photo_credit" : "© Primat & Stéphane Fromentin"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-185033.69909795132, 6123946.657543018]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi... à B612",
+                "id": 109
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186379.7743804362, 6128465.3178889975]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi... au Frac Bretagne",
+                "id": 110,
+                "description": "<b>Exposition Art is Magic. Une retrospective de Jeremy Deller</b></br></br>Du 10 juin au 17 septembre, venez découvrir au Frac Bretagne l'univers de l'artiste britannique Jeremy Deller. Avec humour, il réaffirme à chaque expérience son immense capacité d’émerveillement pour les contre-cultures populaires, l’inventivité anonyme et la force insurrectionnelle du peuple.</br>Exposition conçue en trois volets : vous pouvez continuer d'explorer l'œuvre de Jeremy Deller au Musée des beaux-arts et à La Criée centre d'art contemporain.",
+                "photo": "apps/balades/customlayer/photos_exporama2023/Frac Bretagne.png",
+                "photo_credit" : "Jeremy Deller, <i>Sacrilege</i>, 2012, installation view Greenwich, London - UK - Photo by Jeremy Deller Courtesy de l’artiste; The Mod",
+                "description2": "<b>Beauregard flottant</b></br></br>Cet été, le Frac Bretagne invite cinq artistes, Valentin Fontaine, Claire Guetta, Antonin Hako, Guillaume Le Clouërc et Diane Rivoire, à co-créer avec les publics des œuvres flottantes pour pavoiser le quartier de Beauregard, considéré comme un espace artistique sensible et poétique, un quartier où flotte l’art. </br>À travers une déambulation pensée par les habitantes et habitants du quartier, le public découvrira une quinzaine de drapeaux conçus avec des groupes de tous horizons lors d’ateliers avec des artistes. </br>Départ du parcours au Frac.</br></br><i>À partir du 13 juillet</i></br>",
+                "photo2": "apps/balades/customlayer/photos_exporama2023/Exposition Beauregard flottant.jpg",
+                "photo_credit2" : "Beauregard Flottant © Frac Bretagne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-188757.6700229403, 6128635.606268892]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "id": 111,
+                "name": "Et aussi... à l'Eglise - Les Phonotons",
+                "description": "<b>Exposition d’Alexandre Berthaud et Bruno Kervern</b></br></br><i>Noir Brillant</i> invite Alexandre Berthaud et Bruno Kervern du collectif artistique Mille au carré pour une exposition à l’Église. Cet espace singulier accueille leur installation immersive au milieu de sculptures technologiques et sonores : Les Phonotons. </br>Cette série d’objets cinétiques, poétiques et numériques ajoute au mystère de L’Église : une occasion pour Mille au Carré de célébrer leur dixième anniversaire et pour <i>Noir Brillant</i> de proposer son exposition d’été.</br>",
+                "photo": "apps/balades/customlayer/photos_exporama2023/L'Église Saint-Laurent.jpg",
+                "photo_credit" : "© Primat & Stéphane Fromentin"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-184380.47632606732, 6129986.858673798]
+            }
+        }
+    ]
+}

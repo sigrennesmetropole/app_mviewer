@@ -440,6 +440,17 @@
         tbody_tr[level].appendChild(_td_comble);
     }
     
+    function comblertable(level, tbody_tr, rowspan, colspan){
+        if (!tbody_tr[level]){
+            let _tr = document.createElement('tr');
+            tbody_tr.push(_tr);
+        }
+        var _td_comble = document.createElement('td');
+        _td_comble.setAttribute("rowspan",rowspan);
+        _td_comble.setAttribute("colspan", colspan);
+        tbody_tr[level].appendChild(_td_comble);
+    }
+    
     
     async function _calculateMaxRowSpan(feature, modele){
         var maxRowSpan = 0;

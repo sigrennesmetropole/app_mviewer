@@ -31,7 +31,7 @@ mviewer.customLayers.balades = (function() {
     // style d'une couche linéaire
         let style = new ol.style.Style({
                 stroke: new ol.style.Stroke({
-                        color: "#E740D5",
+                        color: "#c3c3c3",
                         lineCap: "butt",
                         width: 7,
                         }),

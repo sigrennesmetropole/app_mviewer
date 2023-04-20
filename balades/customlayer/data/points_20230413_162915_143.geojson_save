@@ -1,0 +1,337 @@
+{
+    "type": "FeatureCollection",
+    "name": "points",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:EPSG::3857"
+        }
+    },
+    "features": [{
+            "type": "Feature",
+            "properties": {
+                "name": "<i>Chrysalide<\/i> de Sylvain Buisson",
+                "description": "Sculpture-fontaine en bronze et granit, 1994\n\nCette sculpture-fontaine est constituée d'une chrysalide métallique, percée d'une fente. L'intérieur renferme la représentation presque invisible d'un couple enlacé. Des extraits du mythe médiéval Tristan et Iseut sont gravés sur le socle.\nPar la double référence à la rencontre et à l’amour, cette petite fontaine évoque poétiquement l’usage de la place Rallier-du-Baty et de ses terrasses animées, lieu de rendez-vous privilégié des Rennaises et des Rennais, surtout l’été.\n",
+                "id": 3,
+                "idbalade": 1,
+                "rang": 3
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-187175.59742000652, 6125676.806115305]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "description": "Sculpture en acier inoxydable poli, 2013\n\nCette œuvre se situe devant l'entrée de la Maison de la Consommation et de l’Environnement (MCE) qui abrite des associations proposant des solutions pour réduire l’empreinte écologique de nos modes de vie.\nCette sphère miroitante remplit une double fonction : évoquer le globe terrestre, appréhendé en tant qu’objet fini sur lequel nos actions provoquent un désordre continu ; et pointer notre responsabilité individuelle et collective, à laquelle la surface réfléchissante de l’objet nous renvoie.\n",
+                "id": 13,
+                "idbalade": 1,
+                "rang": 13,
+                "name": "<i>Œuvre sans titre <\/i> de Yann Lestrat"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186319.1052579623, 6124286.724684916]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "<i>Tête de muse endormie<\/i> par Claudio Parmiggiani",
+                "description": "Sculpture-fontaine en granit et en marbre, 1993\n\nCette fontaine, composée d’une tête sculptée reposant au milieu d’un bassin d’eau, est située à l’un des emplacements où, en 1720, l’incendie qui a ravagé une grande partie de la ville a été maîtrisé. \nClaudio Parmiggiani dit qu’elle est une source dont la forme « est tournée avant tout vers le ciel ». C’est une manière de rappeler qu’il y a plus de 300 ans, le salut de la ville vint des cieux : c'est en effet une pluie salvatrice qui contribua à éteindre les flammes.\n",
+                "id": 6,
+                "idbalade": 1,
+                "rang": 6
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186793.88288612958, 6125328.5143593615]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "id": 10,
+                "idbalade": 1,
+                "rang": 10,
+                "name": "<i>Unité<\/i> de Peter Downsbrough",
+                "description": "Sculpture murale en acier et peinture, 1990 \n\nDans cette installation monumentale, l'artiste a divisé le mot « Unité » en deux parties, en contradiction avec la signification du terme. L’énoncé sobrement typographié contraste avec les nombreuses enseignes du boulevard de la Liberté et des alentours du marché couvert. \nL’œuvre attire l'attention et oblige à marquer un temps d’arrêt pour parvenir à la saisir correctement. Si cette bribe de texte est parfaitement visible, elle exige en revanche un temps de réflexion afin d’être tout à fait lisible."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-187057.26480130976, 6124736.33416801]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi... à B612",
+                "id": 109,
+                "idbalade": 2,
+                "rang": 9
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186379.7743804362, 6128465.3178889975]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "idbalade": 2,
+                "id": 111,
+                "rang": 11,
+                "name": "Et aussi... à l'Eglise - Les Phonotons",
+                "description": "<b>Exposition d’Alexandre Berthaud et Bruno Kervern<\/b>\n\n<i>Noir Brillant<\/i> invite Alexandre Berthaud et Bruno Kervern du collectif artistique Mille au carré pour une exposition à l’Église. Cet espace singulier accueille leur installation immersive au milieu de sculptures technologiques et sonores : Les Phonotons. \nCette série d’objets cinétiques, poétiques et numériques ajoute au mystère de L’Église : une occasion pour Mille au Carré de célébrer leur dixième anniversaire et pour <i>Noir Brillant<\/i> de proposer son exposition d’été.\n"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-184380.47632606732, 6129986.858673798]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi... à la Galerie Drama",
+                "description": "De juin à septembre, la galerie présente des créations de Primat et Stéphane Fromentin.",
+                "id": 108,
+                "idbalade": 2,
+                "rang": 8
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-185033.69909795132, 6123946.657543018]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi... à la Galerie Oniris",
+                "description": "Au programme cet été, des expositions autour de l'œuvre de Claude Viallat puis de Christian Bonnefoi.",
+                "id": 102,
+                "idbalade": 2,
+                "rang": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186880.15549148235, 6126148.331348849]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi... au Frac Bretagne",
+                "id": 110,
+                "idbalade": 2,
+                "rang": 10,
+                "description": "<b>Exposition Art is Magic. Une retrospective de Jeremy Deller<\/b>\n\nDu 10 juin au 17 septembre, venez découvrir au Frac Bretagne l'univers de l'artiste britannique Jeremy Deller. Avec humour, il réaffirme à chaque expérience son immense capacité d’émerveillement pour les contre-cultures populaires, l’inventivité anonyme et la force insurrectionnelle du peuple.\nExposition conçue en trois volets : vous pouvez continuer d'explorer l'œuvre de Jeremy Deller au Musée des beaux-arts et à La Criée centre d'art contemporain.\n\n<b>Beauregard flottant<\/b>\n\nCet été, le Frac Bretagne invite cinq artistes, Valentin Fontaine, Claire Guetta, Antonin Hako, Guillaume Le Clouërc et Diane Rivoire, à co-créer avec les publics des œuvres flottantes pour pavoiser le quartier de Beauregard, considéré comme un espace artistique sensible et poétique, un quartier où flotte l’art. \nÀ travers une déambulation pensée par les habitantes et habitants du quartier, le public découvrira une quinzaine de drapeaux conçus avec des groupes de tous horizons lors d’ateliers avec des artistes. \nDépart du parcours au Frac.\n\n\n<i>À partir du 13 juillet<\/i>\n"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-188757.6700229403, 6128635.606268892]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi... au Théâtre du Vieux Saint-Etienne - Electroni[K]",
+                "id": 101,
+                "idbalade": 2,
+                "rang": 1,
+                "description": "<b>Muables<\/b>\n\nMuables, un regard posé par Electroni[k] sur la création contemporaine belge, une vision sensible, novatrice et mouvante à l’image des arts hybrides. Muables, un lien évident entre les œuvres exposées : instables, inconstantes, fluides, jouant des éléments naturels, des arts visuels et sonores. Muables, une invitation poétique à observer nos cheminements et tenter de saisir notre époque fluctuante.  \n\n\nVenez à la rencontre des univers de Clarice Calvo-Pinsolle, Vica Pacheco, le collectif Ohme et Frederik Vanhoutte. Explorateur·ice·s de nouveaux imaginaires, i·elles nous embarquent en plein cœur du bouillonnement artistique bruxellois. "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-187443.877392781, 6126044.453511609]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi... Le Grand Angle Imoja",
+                "id": 103,
+                "idbalade": 2,
+                "rang": 3,
+                "description": "Venez découvrir successivement des œuvres de Fabienne Houzé-Ricard, de Olivia Étienne puis de Muriel Taragano."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-187432.856763194, 6125134.117362756]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi... Les 4x3 de Lendroit éditions",
+                "description": "Visibles toute l'année dans l'espace urbain à Rennes, les panneaux 4x3 de Lendroit éditions proposent de découvrir les œuvres d'artistes contemporains invités à proposer au public des images grand format : cet été, vous pourrez découvrir les œuvres de Jérémie Gindre et de Pascale Rémita. ",
+                "id": 105,
+                "idbalade": 2,
+                "rang": 5
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-185106.61336441076, 6125208.974689148]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi...à 40mcube ",
+                "id": 104,
+                "idbalade": 2,
+                "rang": 4,
+                "description": "<b>Exposition Nouaison - Aurélie Ferruel & Florentine Guédon <\/b>\nDepuis la création de leur duo, Aurélie Ferruel & Florentine Guédon ont toujours intégré leurs origines sociales et géographiques à leur pratique artistique. \n\nPour leur exposition à 40mcube, leur recherche se focalise sur le rapport à la terre de manière générale, et sur leur propre rapport à la terre, dont elles réalisent l’ampleur de l’influence sur leur vie et leur travail. Elles produisent une vaste installation composée de différents matériaux (paille, terre, céramique, verre, textiles) et réarticulent leur mode de collaboration. "
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-185485.21095254598, 6125134.95095967]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi...Galerie du Lieu - L'Œil d'Oodaaq",
+                "id": 107,
+                "idbalade": 2,
+                "rang": 7,
+                "description": "<b>Claire Prism Power, Make up! <\/b>\n\nSailor Claire Voyance, personnage incarné par Claire Guetta, est une guerrière intergalactique, joyeuse, forte et magique. En s'intéressant à la figure des magical girls japonaises, elle mène des réflexions sur le féminisme et la charge mentale. Sailor Claire Voyance combat les forces du mal et poursuit sa quête afin de rendre le monde plus beau et moins angoissant. \nÀ travers une installation vidéo, plongez dans l'univers magique de l'artiste et partez à la recherche du Crystal perdu...\n\n<i>Du 1er au 29 juillet<\/i>\n"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-187345.693601915, 6124015.33668211]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Et aussi...Les Ateliers du Vent",
+                "id": 106,
+                "idbalade": 2,
+                "rang": 6,
+                "description": "<b>Les Ateliers du Vent, Le Bon Accueil, Capsule Galerie, Atelier Vivarium<\/b>\n\n<i>Vaporwave : A liminal Space<\/i> est comme la bande son d’un centre commercial désert tournant à vide à la vitesse de rotation d’un escalator défectueux.\nÀ découvrir aux Ateliers du Vent, l’exposition reprend les codes de la Vaporwave, un genre musical qui s’est épanoui en ligne dans les années 2010. Entre samples de tubes 80’s et 90’s ultra-ralentis, musique d’ascenseur, et une esthétique visuelle où se côtoient statues gréco-romaines, palmiers et dégradés aux couleurs acides, le genre oscille entre nostalgie et critique du consumérisme.\n\n"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-188893.25716270768, 6124064.179220334]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "id": 14,
+                "idbalade": 1,
+                "rang": 14,
+                "description": "<b>Rencontres Photographiques de ViaSilva #6  par Les ailes de Caïus<\/b>\nEmbarquez pour un voyage photographique entre la gare de Rennes et le quartier de Viasilvia à travers le regard du photographe franco-américain Guillaume Zuili et du Rennais Christophe Le Dévéhat.\n\n<b>Morvarc'h par Jean-Marie Appriou, 2021<\/b>\nCette sculpture en aluminium représente un cheval monumental et son reflet. Il est inspiré de Morvarc’h, le cheval ayant le don de marcher sur l’eau du légendaire roi de Bretagne Gradlon. Comme le voyageur, l’animal semble lui s'accorder un moment de repos, après un long périple.\n",
+                "name": "Gares de Rennes"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186156.69012091757, 6124178.035091715]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "id": 1,
+                "idbalade": 1,
+                "rang": 1,
+                "name": "La Collection Pinault au Couvent des Jacobins ",
+                "description": "Exposition Forever Sixties. L'esprit des années 1960 dans la Collection Pinault\nDu 10 juin au 10 septembre, venez découvrir le Pop Art au Couvent des Jacobins. À travers plus de 80 œuvres emblématiques de la Collection Pinault, dont certaines n’ont encore jamais été exposées, l'exposition « Forever Sixties » offre un éclairage sur un moment décisif de l’histoire de l’art contemporain, la révolution visuelle des années 1960, et son héritage durable dans la création des décennies suivantes."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-187138.7506685591, 6125994.265794328]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "id": 9,
+                "idbalade": 1,
+                "rang": 9,
+                "name": "La Criée centre d'art contemporain",
+                "description": "Exposition Art is Magic. Une retrospective de Jeremy Deller\n\nDu 10 juin au 17 septembre, venez découvrir à la Criée centre d'art contemporain l'univers de l'artiste britannique Jeremy Deller. Avec humour, il réaffirme à chaque expérience son immense capacité d’émerveillement pour les contre-cultures populaires, l’inventivité anonyme et la force insurrectionnelle du peuple.\nExposition conçue en trois volets : vous pouvez continuer d'explorer l'œuvre de Jeremy Deller au Musée des beaux-arts et au Frac Bretagne."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186975.66761456968, 6124869.871228244]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Le Fonds communal d'art contemporain à la chapelle Saint-Yves",
+                "description": "Exposition Collection 11\n\nDepuis 45 ans, la Ville de Rennes acquiert des œuvres auprès d'artistes contemporains vivant ou travaillant sur le territoire. Ainsi, le fonds communal s'est enrichi de près de 500 œuvres témoignant de la vitalité de la création artistique dans ses formes les plus diverses. \nDu 1er juillet au 31 août, les œuvres de 11 artistes – acquises en 2022 – sont présentées pour la première fois au cœur de la chapelle Saint-Yves.",
+                "id": 4,
+                "idbalade": 1,
+                "rang": 4,
+                "photo": "https://image.noelshack.com/fichiers/2023/14/1/1680510122-l-attente-c-lea-bouttier.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-187356.38027302967, 6125256.156814424]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "description": "<b>Exposition Anima(ex)musica – Bestiaire utopique<\/b>\nEntre musique et entomologie, venez découvrir des créatures animées et sonores à partir de pièces d'instruments de musique hors d'usage. Cigale géante de Borneo, doryphore, scolopendre… inventés par le collectif Tout reste à faire.\n\n<b>Exposition La vie en photographie par Mathieu Pernot<\/b>\nMathieu Pernot, photographe, mêle ses propres photographies à des objets et images choisis au sein des collections du Musée de Bretagne. Il fait naître des histoires croisées qui racontent une époque qui a disparu en même temps que la photographie numérique faisait son apparition.\n",
+                "name": "Les Champs Libres",
+                "id": 12,
+                "idbalade": 1,
+                "rang": 12
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186444.22836559656, 6124413.586521308]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "id": 8,
+                "idbalade": 1,
+                "rang": 8,
+                "name": "M.U.R de Rennes",
+                "description": "Spot d'art urbain\n\nLe M.U.R (acronyme pour Modulable Urbain et Réactif) emprunte à l'affichage publicitaire son format et son rituel pour la promotion de l'art contemporain urbain et offre des œuvres créées successivement par des artistes régionaux, nationaux et internationaux.\nUne performance en direct a lieu chaque mois sur le M.U.R. C'est l'occasion d'un rendez-vous convivial, de moments d'échanges entre l'artiste et le public, en plein cœur de Rennes.\nÀ partir du 17 juin et durant tout l'été, les passants pourront découvrir une œuvre de l'artiste newyorkaise BK Foox. Puis, début septembre, une carte blanche sera donnée à Nadège Dauvergne."
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186702.82354267332, 6124931.8891474735]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Musée des beaux-arts",
+                "description": "Exposition Art is Magic. Une rétrospective de Jeremy Deller\n\nDu 10 juin au 17 septembre, venez découvrir au Musée des beaux-arts l'univers de l'artiste britannique Jeremy Deller. Avec humour, il réaffirme à chaque expérience son immense capacité d’émerveillement pour les contre-cultures populaires, l’inventivité anonyme et la force insurrectionnelle du peuple.\nExposition conçue en trois volets : vous pouvez continuer d'explorer l'œuvre de Jeremy Deller à La Criée centre d'art contemporain et au Frac Bretagne.\n",
+                "id": 7,
+                "idbalade": 1,
+                "rang": 7
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186458.03198245302, 6125146.621325008]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Place de la Mairie",
+                "description": "<b>Projections du Parlement<\/b>\nDu … au …, tous les soirs, Rennes Métropole et Destination Rennes proposent un spectacle monumental projeté sur la façade du Parlement de Bretagne. En écho à l'exposition de la Collection Pinault au Couvent des Jacobins, ce spectacle vous immergera dans les années 1960.\n\n<b>Les fantômes de l'Opéra<\/b>\nDu 23 août au 3 septembre, une sélection d’œuvres d’art contemporain issue de la collection du Frac Bretagne se déploie dans la rotonde, le foyer, la salle et la scène de l’Opéra de Rennes. Une expérience sensible, étonnante et réjouissante pour toutes et tous.\n",
+                "id": 5,
+                "idbalade": 1,
+                "rang": 5
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186924.34932932112, 6125395.537330945]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Place Sainte-Anne",
+                "description": "La commande d'art public à Rennes\n\nLa commande d'art public est une histoire qui dure depuis 40 ans à Rennes. La ville et sa métropole possèdent aujourd'hui un patrimoine remarquable qui s'enrichit chaque année. L'ouverture de la ligne b du métro en 2022 a été l'occasion d'inaugurer 7 nouvelles œuvres.\nTrois de ces œuvres sont à retrouver sur la place Sainte-Anne, l'une sur la façade du Couvent des Jacobins, <i>Revolving history<\/i> de Laurent Grasso, et deux autres dans la station du métro b, <i>Rendez-vous<\/i> de Camila Oliveira Fairclough et <i>Bestiaire<\/i> de Charles de Meaux.\n",
+                "id": 2,
+                "idbalade": 1,
+                "rang": 2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-187088.54557821833, 6125960.251694622]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "name": "Quartier Colombier",
+                "description": "<b>Couleurs sauvages de Simon Poligné<\/b>\nSous la forme de collages urbains à dimensions variables, l’artiste explore le quartier Colombier pour en souligner les particularités architecturales. Départ au PHAKT – Centre Culturel Colombier du 29 juin au 27 août.\n<i>6 place des Colombes<\/i>\n\n<b>Sweety Twenty chez Lendroit éditions<\/b>\nÀ la fois maison d’édition, librairie et galerie d’art, Lendroit célèbre ses 20 ans cette année. Une occasion unique de fêter l'édition d'artiste et l'art imprimé pour les amateurs et les collectionneurs en herbe.\n<i>24 bis place du Colombier<\/i>\n\n<b>Claire Prism Power, Make up! à la galerie du Lieu<\/b>\nÀ travers une installation vidéo, plongez dans l'univers magique de l'artiste Claire Guetta à la galerie du Lieu. L'exposition est organisée par l'œil d'Oodaaq à la galerie du Lieu du 1er au 29 juillet.\n20 rue du Dr Francis Joly \n",
+                "id": 11,
+                "idbalade": 1,
+                "rang": 11
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186795.3300395097, 6124351.238945189]
+            }
+        }
+    ]
+}
