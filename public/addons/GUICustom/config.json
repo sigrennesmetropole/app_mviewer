@@ -18,7 +18,8 @@
     "css": [
       "css/styles.css",
       "lib/select2-4.0.13/select2.min.css",
-      "css/svg_marker.css"
+      "css/svg_marker.css",
+      "css/numresults.css"
     ],
     "html": "html/index.html",
     "target": "page-content-wrapper"

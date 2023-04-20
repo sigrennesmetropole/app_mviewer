@@ -665,7 +665,7 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', ()
         var xmlString = `<?xml version="1.0" encoding="UTF-8"?>
                     <config><application title="${document.querySelector("#titre").value}" logo="apps/public/img/logo/logo_mviewer_transp.png" 
                         favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png" titlehelp="À propos des cartes thématiques"
-                        help="apps/site_internet/html/site_internet_help.html" showhelp="false" exportpng="false" style="apps/site_internet/css/site_internet_gris.css"
+                        help="apps/site_internet/html/site_internet_help.html" showhelp="false" exportpng="false" style="apps/balades/css/balades.css"
                         measuretools="false" togglealllayersfromtheme="false" showClickNbItems="false" templaterightinfopanel="allintabs" sortlayersinfopanel="toc"/>
 
                         <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="${center}" zoom="${document.querySelector("#zoomDefaut").value}" />
