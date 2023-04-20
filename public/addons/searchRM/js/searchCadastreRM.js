@@ -1,13 +1,12 @@
 var searchCadastreRM = (function () {
 
-    var baseUrl_cadastre;
+    var baseUrl_cadastre= 'https://api-cadastre.sig.rennesmetropole.fr/v1/';
 
     var selectCityInput = $('#communeSearchContainer');
     var sectionTag = $('#sectionInputContainer');
     var parcelTag = $('#parcelleInputContainer');
 
     var selectedParcelLayer;
-
 
     var getCenterGeometry = function (geomCoords) {
         var nbCoords = geomCoords.length;
@@ -23,21 +22,9 @@ var searchCadastreRM = (function () {
     };
 
     var init = function () {
-
-        baseUrl_cadastre = 'https://api-cadastre.sig.rennesmetropole.fr/v1/';
-
-          /*var searchCadastreElement = '<ul class="nav navbar-nav navbar-right"><li class="parcelSelector"><div class="parcelSelectorsContainer">'
-            + '<div><p class="labelRechercheParcelle">Recherche de parcelle</p></div><div class="parcelSelectors">'
-            + selectCityInput + sectionTag + parcelTag +'</div></li></ul>';
-          $('#bs-example-navbar-collapse-1').append(searchCadastreElement);*/
-
-          //revoir cette partie
-          // $('#parcelSelectors').append(selectCityInput);
-          // $('#parcelSelectors').append(sectionTag);
-          // $('#parcelSelectors').append(parcelTag);
-          selectCityInput.show();
-          sectionTag.show();
-          parcelTag.show();
+        selectCityInput.show();
+        sectionTag.show();
+        parcelTag.show();
 
         $.getJSON(baseUrl_cadastre + 'communes', function(dataApiJson) {
           //var htmlContent = '<option value="-1" disabled selected> rechercher la commune de la parcelle</option>';
@@ -66,8 +53,8 @@ var searchCadastreRM = (function () {
               width: '75px',
             });
 
-              $(".sectionsList").prop("disabled", true);
-              $('#communeSearch').val('0').trigger('change');
+            $(".sectionsList").prop("disabled", true);
+            $('#communeSearch').val('0').trigger('change');
             $(".parcellesList").prop("disabled", true);
         });
 
@@ -83,7 +70,6 @@ var searchCadastreRM = (function () {
             // Liste sections
             if (typeof codeCom !== 'undefined' && codeCom !== null && codeCom.trim() !== '') {
               $.getJSON(baseUrl_cadastre + 'communes/'+ codeCom +'/sections', function(dataApiJson) {
-                //var htmlContent = '<option value="-1" disabled selected> code section</option>';
                 var htmlContent = '';
                 dataApiJson.forEach(function (data) {
                   htmlContent += '<option value="'+ data.idSect +'">'+ data.codSect +'</option>'
@@ -110,7 +96,6 @@ var searchCadastreRM = (function () {
             $('.parcellesList').val('').trigger('change');
             if (typeof codeSection !== 'undefined' && codeSection !== null && codeSection.trim() !== '') {
               $.getJSON(baseUrl_cadastre + 'sections/'+ codeSection +'/parcelles', function(dataApiJson) {
-                  //var htmlContent = '<option value="-1" disabled selected> code parcelle</option>';
                   var htmlContent = '';
                   dataApiJson.forEach(function (data) {
                       htmlContent += '<option value="'+ data.idParc +'">'+ data.numero +'</option>'
@@ -170,16 +155,16 @@ var searchCadastreRM = (function () {
                   var source = new ol.source.Vector({
                     features: (new ol.format.GeoJSON()).readFeatures(geojsonObject)
                   });
-                  var layerCadatsreFound = false;
+                  var layerCadastreFound = false;
                   mviewer.getMap().getLayers().array_.forEach(function (lay) {
                     if (lay.className_ === 'cadastreLayer' ) {
-                      layerCadatsreFound = true;
+                      layerCadastreFound = true;
                       lay.setSource(source);
                       layerExtent = lay.getExtent();
                       selectedParcelLayer = lay;
                     }
                   });
-                  if (!layerCadatsreFound) {
+                  if (!layerCadastreFound) {
                     var layer = new ol.layer.Vector({
                       source: source,
                       className: 'cadastreLayer',
@@ -202,33 +187,31 @@ var searchCadastreRM = (function () {
                 });
               }
         });
-
-        /*$(document).on('click','#cleanParcel', function (e) {
-          if (typeof selectedParcelLayer !== 'undefined') {
-            mviewer.getMap().removeLayer(selectedParcelLayer);
-            $('#parcelle').val(-1);
-          }
-        });*/
     }
-
     return {
         init: init
     };
-
 })();
 
 
 setTimeout(function () {
 
-  var extensions = configuration.getConfiguration().extensions;
+  var extensions = configuration.getConfiguration().extensions.extension;
   var configPerso;
   var trueOrFalse = 'false';
-  for (index in extensions.extension){
-      // console.log(extensions.extension[index]);
-      configPerso = extensions.extension[index];
-      if(extensions.extension[index].id=="searchRM"){
-          if (extensions.extension[index].configFile != undefined) {
-              configPerso=extensions.extension[index].configFile;
+  for (index in extensions){
+      if(extensions[index].id=="searchRM"){
+          if (extensions[index].configFile != undefined) {
+              configPerso=extensions[index].configFile;
+                $.ajax({
+                  url: '.' + configPerso,
+                  method: 'GET',
+                  async: false
+                }).done(function(response){
+                  if(response.cadastre === true){
+                    trueOrFalse = 'true';
+                  }
+                })
           } else {
               console.log("Err : l'attribut configfile du fichier de personnalisation de la recherche est manquant sur l'extension");
           }
@@ -236,24 +219,9 @@ setTimeout(function () {
       }
   }
 $('#parcelSelectors').hide();
- if (configPerso != 'undefined') {
-   $.ajax({
-     url: '.' + configPerso,
-     method: 'GET',
-     async: false
-   }).done(function(response){
-     if(response.cadastre === true){
-       trueOrFalse = 'true';
-     }
-   })
-  }
+if (trueOrFalse === 'true' && API.mode !== 'u' && API.mode !== 's') {
+  $('#parcelSelectors').show();
+  searchCadastreRM.init();
+}
 
-  if (trueOrFalse === 'true' && API.mode !== 'u' && API.mode !== 's') {
-    $('#parcelSelectors').show();
-    searchCadastreRM.init();
-  }
-
-  // if (configuration.getExtensions()['searchRM'].searchRMConf === 'true' && API.mode !== 'u' && API.mode !== 's') {
-  //   searchCadastreRM.init();
-  // }
 }, 2000);

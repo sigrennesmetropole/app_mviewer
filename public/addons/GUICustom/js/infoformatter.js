@@ -48,7 +48,7 @@ var formatter = (function () {
         }
         return elements;
     }
-    
+
     // valeur divisée par 1000, pratique pour convertir les longueurs (m => km)
     function div1000(){
         var _tab = document.getElementsByClassName("div1000");
@@ -56,7 +56,7 @@ var formatter = (function () {
             val = _tab[cpt].innerHTML;
             if(+val !== 'NaN'){
                 var dividedvalue = (+val)/1000;
-                _tab[cpt].innerHTML = Math.round( dividedvalue*100 ) / 100; 
+                _tab[cpt].innerHTML = Math.round( dividedvalue*100 ) / 100;
             }
         }
     }
@@ -359,11 +359,11 @@ var formatter = (function () {
             ul_element[0].innerHTML="<ul>"+list_retenue+"</ul>";
         }
     };
-    
+
     // Liste des déchets acceptés dans les décheteries
     function rmGestionnaireDecheterie() {
         var ul_elements=document.getElementsByClassName("dechetgestionnaire");
-        
+
         for (var i = 0; i < ul_elements.length; i++) {
             if ( ul_elements[i].getAttribute("gestionnaire") == 'Rennes Métropole') {
                 ul_elements[i].parentNode.removeChild(ul_elements[i]);
@@ -494,8 +494,8 @@ var formatter = (function () {
             }
         }
     };
-    
-    
+
+
     function formatLargeNumbers() {
         var span_elements = document.getElementsByClassName("rm-large-number");
         for (var i = 0; i < span_elements.length; i++) {
@@ -506,7 +506,7 @@ var formatter = (function () {
             }
         }
     };
-    
+
 
     // TODO : à commenter
     //var formatHourInFrench = function formatHourInFrench() {
@@ -518,9 +518,8 @@ var formatter = (function () {
                 contenu = span_elements[i].innerHTML;
                 var date_tab = [];
                 date_tab = contenu.split('T');
-                if(date_tab.length===2){
-                    span_elements[i].innerHTML = date_tab[1].substr(0,2);
-                }
+                date_tab = date_tab[1].split(':');
+                span_elements[i].innerHTML = date_tab[0] + 'h' + date_tab[1];
             }
         }
     };
@@ -695,4 +694,3 @@ var formatter = (function () {
 
 
 document.addEventListener('infopanel-ready', (e) => formatter.rmFormatTabs());
-

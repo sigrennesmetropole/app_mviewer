@@ -1,0 +1,25 @@
+{
+    "type": "FeatureCollection",
+    "name": "balades",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:EPSG::3857"
+        }
+    },
+    "features": [{
+            "type": "Feature",
+            "properties": {
+                "id": 1,
+                "couleur": "#3498db",
+                "name": "Balade d'exemple exporama",
+                "description": "description de la balade",
+                "couleurPoints": "#8F00FF"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [[-187029.43492861534, 6125950.080838096], [-186948.28301983833, 6125921.402422418], [-186936.2605148343, 6125474.731816433], [-186769.0586396861, 6125462.727552615], [-186771.50766848322, 6125152.289793908], [-186773.84537778955, 6124760.507389187], [-186759.59648297, 6124497.773139416], [-186637.70164056835, 6124466.76569474]]
+            }
+        }
+    ]
+}
