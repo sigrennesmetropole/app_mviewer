@@ -130,6 +130,7 @@ mviewer.customLayers.piscinesRM= (function() {
               });
             }
         }
+
         //console.log("HORAIRES");
     }
 

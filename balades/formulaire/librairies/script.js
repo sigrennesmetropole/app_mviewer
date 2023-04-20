@@ -280,7 +280,24 @@ var map = new ol.Map({
                     matrixIds: matrixIds
                 })
             })
-        }),
+        }) /*
+        new ol.layer.Tile({
+            source: new ol.source.WMTS({
+                url:  "https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?",
+                crossOrigin: null,
+                layer: "ref_fonds:pvci_simple_gris",
+                matrixSet: matrixset,
+                style: "_null",
+                format: "image/png",
+                attributions: "&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;",
+                projection: projection,
+                tileGrid: new ol.tilegrid.WMTS({
+                    origin: ol.extent.getTopLeft(projection.getExtent()),
+                    resolutions: resolutions,
+                    matrixIds: matrixIds
+                })
+            })
+        }), */
     ],
     view: new ol.View({
         center: ol.proj.fromLonLat([-1.67, 48.11]),

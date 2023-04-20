@@ -1,3 +1,4 @@
+
 var showNbFeatures = false;
 var coordinate = _map.getView().getCenter();
 
@@ -41,3 +42,4 @@ function refreshResultsNumber(){
 
 
 _map.once('postcompose', _init);
+
