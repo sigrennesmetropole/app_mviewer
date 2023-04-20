@@ -4,12 +4,13 @@
 // pas de relation dynamique entre tableau et carte
 // URL d'accès au tableau (mode=data)
     document.addEventListener("accessibilite-componentLoaded", (e) => {
-        _init();
+        setTimeout(_init, 500);
     }, { once: true });
 
     var layerAttributes = [];
     var reloadTable = [];
     var runningReload = [];
+    
     function getFeatures(layer){
 
         return new Promise (resolve => {
@@ -126,7 +127,7 @@
                 case '^':
                     _ct = _resolveContent(_filteredContent[i]);
                     for (let j=0; j<_ct.length;j++){
-                        _addElement(attributes, _filteredContent[i][1]);
+                        _addElement(attributes, _ct[j]);
                     }
                     break;
                 default:
@@ -208,6 +209,7 @@
 
         // Remplir le tableau avec les données
         updateLayerTable(layer);
+        //setTimeout(function() { updateLayerTable(layer);}, 5000);
     }
 
     async function _sortAttributes(attributes){
@@ -406,31 +408,42 @@
                             obj = feature.get(objattr[j].label);
                         }catch (err) {}
                     }
-                }
-                if (obj) {
-                    if (Array.isArray(obj)) {
-                        if (obj.length > 0) {
-                            var childlevel = level;
-                            for (let k=0; k < obj.length; k++){
-                                let childMaxRowSpan = await _calculateMaxRowSpan(obj[k], objattr[j].objattr);
-                                await _createTDObjects(_tbody_tr, obj[k], childMaxRowSpan, childlevel, objattr[j].simpleattr, objattr[j].objattr);
-                                childlevel += Math.max(childMaxRowSpan,1);
-                            }
-                        } else {
-                             await _createTDObjects(_tbody_tr, null, maxRowSpan, level, objattr[j].simpleattr, objattr[j].objattr);
-                        }
-                    } else {
-                        await _createTDObjects(_tbody_tr, obj, maxRowSpan, level, objattr[j].simpleattr, objattr[j].objattr);
+
+                } 
+                if (obj && Array.isArray(obj) && obj.length > 0) {
+                    var childlevel = level;
+                    for (let k=0; k < obj.length; k++){
+                        let childMaxRowSpan = await _calculateMaxRowSpan(obj[k], objattr[j].objattr);
+                        await _createTDObjects(_tbody_tr, obj[k], childMaxRowSpan, childlevel, objattr[j].simpleattr, objattr[j].objattr);
+                        childlevel += Math.max(childMaxRowSpan,1);
+                    }
+                    // créer une case vide de la hauteur restante
+                    
+                    if (childlevel < maxRowSpan) {
+                        comblertable(childlevel, _tbody_tr, maxRowSpan - childlevel, objattr[j].colspan);
                     }
                 } else {
-                    await _createTDObjects(_tbody_tr, null, maxRowSpan, level, objattr[j].simpleattr, objattr[j].objattr);
+                    comblertable(level, _tbody_tr, maxRowSpan, objattr[j].colspan);
                 }
             }
         }
     }
     
+    function comblertable(level, tbody_tr, rowspan, colspan){
+        if (!tbody_tr[level]){
+            let _tr = document.createElement('tr');
+            tbody_tr.push(_tr);
+        }
+        var _td_comble = document.createElement('td');
+        _td_comble.setAttribute("rowspan",rowspan);
+        _td_comble.setAttribute("colspan", colspan);
+        tbody_tr[level].appendChild(_td_comble);
+    }
+    
+    
     async function _calculateMaxRowSpan(feature, modele){
         var maxRowSpan = 0;
+        
         for (let i = 0; i < modele.length; i++) {
             let value;
             if (Object.prototype.hasOwnProperty.call(feature, modele[i].label)){
@@ -443,16 +456,19 @@
                 } catch (e){
                 }
             }
-
-            if (Array.isArray(value)) { // si type = tableau, alors il peut y avoir plusieurs occurences
+            
+            if (Array.isArray(value)) { // si type = tableau, alors il peut y avoir plusieurs occurences (elles s'additionnent)
+                let totalchildMaxRowSpan = 0;
                 if (modele[i].objattr && modele[i].objattr.length > 0) { // si fils de type complexe
                     for (let j=0; j < value.length; j++) {
                         let childMaxRowSpan = await _calculateMaxRowSpan(value[j], modele[i].objattr);
-                        maxRowSpan += childMaxRowSpan;
+                        totalchildMaxRowSpan += childMaxRowSpan;
                     }
                 } else { // si fils de type feuille uniquement
-                    maxRowSpan=Math.max(1, value.length );
+                    totalchildMaxRowSpan=value.length;
                 }
+                // on ne conserve que le maxrowspan le plus élevé entre tous les fils
+                maxRowSpan=Math.max(maxRowSpan, totalchildMaxRowSpan );
             }
         }
         return Math.max(1, maxRowSpan);
