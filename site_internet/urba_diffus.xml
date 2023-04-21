@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <application
-        title="Projets d'urbanisme diffus - PROTOTYPE"
+        title="Projets d'urbanisme diffus"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
         favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
@@ -122,7 +122,7 @@
                 tooltip="false"
                 tooltipcontent=""
                 queryable="false"
-                opacity='0.6'
+                opacity='0.5'
                 infopanel="right-panel">
             </layer>
         </theme>

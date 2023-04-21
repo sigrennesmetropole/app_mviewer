@@ -27,10 +27,11 @@
         <extension type="component" id="carousel_photo" path="apps/public/addons"/>
         <extension type="javascript" src="apps/story/addons/multihighlight.js"/>
         <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
+        <extension type="javascript" src="apps/public/addons/GUICustom/js/legendeRM.js" />
         <extension type="component" id="accessibilite" path="apps/public/addons"/>
     </extensions>
 
-    <themes mini="true">
+    <themes mini="true" legendmini="true">
         <theme id="theme-zac" name="ZAC et ZA" collapsed="true" icon="fas fa-border-style">
             <layer
                 id="v_zac"

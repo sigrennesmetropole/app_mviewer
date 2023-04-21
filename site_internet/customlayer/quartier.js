@@ -16,7 +16,7 @@ mviewer.customLayers.quartier= (function() {
                   width: 2,
                 }),
                 fill: new ol.style.Fill({
-                  color: '#FFFFFF60'
+                  color: '#FFFFFF40'
                 }),
                 text: new ol.style.Text({
                     text: label,
