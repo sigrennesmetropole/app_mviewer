@@ -24,10 +24,10 @@
     <searchparameters bbox="false" localities="false" features="false" static="false"/>
 
     <extensions>
+        <extension type="component" id="GUICustom" path="apps/public/addons"/>
         <extension type="component" id="carousel_photo" path="apps/public/addons"/>
         <extension type="javascript" src="apps/story/addons/multihighlight.js"/>
         <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
-        <extension type="javascript" src="apps/public/addons/GUICustom/js/legendeRM.js" />
         <extension type="component" id="accessibilite" path="apps/public/addons"/>
     </extensions>
 
@@ -39,7 +39,7 @@
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/urba_fonc/wms"
                 sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/zac_contour_encours.sld"
-                legendurl="apps/story/img/legende_zac.png"
+                legendurl="apps/story/img/legende_zac.svg"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
@@ -55,7 +55,7 @@
                 type="customlayer"
                 url="apps/story/customlayers/projets_urbains_communes.js"
                 style=""
-                legendurl="apps/story/img/legend_communes.png"
+                legendurl="apps/story/img/legend_pj_mairie.svg"
                 opacity="0.80"
                 visible="true"
                 queryable="true"
