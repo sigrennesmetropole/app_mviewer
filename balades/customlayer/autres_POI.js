@@ -2,16 +2,8 @@
 mviewer.customLayers.autresPOI = (function() {
     
     var data = 'apps/balades/customlayer/data/exporama/2023_autres_POI.geojson';
-    var couleur = '#A73939';
-    
-    function vergerStyle_surf() {
-        let style = new ol.style.Style({
-                fill: new ol.style.Fill({
-                  color: '#d485c5', 
-                }),
-              });
-        return [style];
-    }
+    var couleur = '#FC6217';
+
     
     function style_pct() {
         let style = new ol.style.Style({
