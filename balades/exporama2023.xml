@@ -20,11 +20,11 @@
         <theme id="theme-202201280956" name="Points" collapsed="true" icon="fas fa-map-marker-alt">
             <layer
                 id="balades_points"
-                name="Points d'intérêt"
+                name="Points d'intérêt de balade"
                 type="customlayer"
                 url="apps/balades/customlayer/balades_points.js"
                 geojson="apps/balades/customlayer/data/points_20230413_162915_143.geojson"
-                legendurl="apps/balades/legend/default_point_marker.svg"
+                legendurl="apps/balades/legend/exporama_point_legend.svg"
                 visible="true"
                 tooltip="false"
                 tooltipenabled="false"
