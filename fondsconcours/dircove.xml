@@ -28,44 +28,6 @@
     </extensions>
 
     <themes mini="true" legendmini="false">
-        <!--
-        <theme id="theme-202103090939" name="Dispositif DIRCOVE" collapsed="true" icon="fas fa-city">
-            <layer
-                id="dircove2021"
-                name="Dispositif 2021/2022"
-                type="customlayer"
-                url="apps/fondsconcours/customlayers/fonds_dircove2021.js"
-                legendurl="apps/fondsconcours/img/legend_dircove_2021.svg"
-                visible="true"
-                tooltip="false"
-                tooltipenabled="true"
-                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{Maitrise d'ouvrage}}&lt;/span&gt;"
-                metadata="undefined"
-                queryable="true"
-                featurecount="5"
-                tabcolor='#b22496'
-                infopanel="right-panel">
-                <template url="apps/fondsconcours/templates/dircove.mst"></template>
-            </layer>
-            <layer
-                id="dircove2019"
-                name="Dispositif 2019/2020"
-                type="customlayer"
-                url="apps/fondsconcours/customlayers/fonds_dircove2019.js"
-                legendurl="apps/fondsconcours/img/legend_dircove_2019.svg"
-                visible="true"
-                tooltip="false"
-                tooltipenabled="true"
-                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{Maitrise d'ouvrage}}&lt;/span&gt;"
-                metadata="undefined"
-                queryable="true"
-                featurecount="5"
-                tabcolor='#f78b12'
-                infopanel="right-panel">
-                <template url="apps/fondsconcours/templates/dircove.mst"></template>
-            </layer>
-        </theme>
-        -->
         <theme id="theme-202208180940" name="Biodiversité" collapsed="true" icon=".dircove_biodiv">
             <layer
                 id="dircove_biodiv"
