@@ -202,15 +202,11 @@ var searchRM = (function () {
     };
 
     var _searchRM = function (confData, value) {
-        var promises = _getApisRequests(confData, value, function (allResults){
+        value = value.replace(',','');
+        _getApisRequests(confData, value, function (allResults){
           _displayAutocompleteData(allResults, value);
           nbResults = $('.autocompleteRmItem').length;
         });
-        // // previousRequest = Promise.all(promises).then(function(allResult) {
-        //   _displayAutocompleteData(promises, value);
-        //   // _displayAutocompleteData(allResult, value);
-        //   nbResults = $('.autocompleteRmItem').length;
-        // // });
     };
 
     var _getApisRequests = function (confData, value, callback) {
@@ -218,7 +214,6 @@ var searchRM = (function () {
       configOptionsValues = mviewer.customComponents.searchRM.config.options;
 
       var citiesSearch = _getCitiesSearch(value);
-      var promises;
       var updatedString = "";
       var originalValue = value;
       var resultArray = [];
@@ -243,7 +238,7 @@ var searchRM = (function () {
 
           $.getJSON(getPersoConfData, function (confData) {
             confData.searchContent.forEach((item, h) => {
-              console.log(item.categoryName);
+            //   console.log(item.categoryName);
               switch (item.categoryName) {
                 case 'Communes':
                 resultArray[i] = restrictedResult[h];
@@ -272,7 +267,7 @@ var searchRM = (function () {
               }
 
             });
-            console.log(resultArray);
+            // console.log(resultArray);
             callback(resultArray);
           });
         });
