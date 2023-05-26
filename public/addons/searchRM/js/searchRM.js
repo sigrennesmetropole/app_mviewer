@@ -218,10 +218,10 @@ var searchRM = (function () {
       var originalValue = value;
       var resultArray = [];
 
-      hasComma = value.split(",")[1].trim();
+      hasComma = value.split(",")[1];
       if (hasComma) {
           value = value.split(",")[0];
-          citiesSearch = _getCitiesSearch(hasComma);
+          citiesSearch = _getCitiesSearch(hasComma.trim());
       }else{
         citiesSearch = _getCitiesSearch(value);
       }
@@ -281,7 +281,7 @@ var searchRM = (function () {
             });
         }else{
             resultArray = restrictedResult;
-            console.log(resultArray);
+            // console.log(resultArray);
             callback(resultArray);
         }
       });
