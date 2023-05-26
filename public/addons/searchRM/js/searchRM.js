@@ -202,7 +202,6 @@ var searchRM = (function () {
     };
 
     var _searchRM = function (confData, value) {
-        value = value.replace(',','');
         _getApisRequests(confData, value, function (allResults){
           _displayAutocompleteData(allResults, value);
           nbResults = $('.autocompleteRmItem').length;
@@ -212,12 +211,20 @@ var searchRM = (function () {
     var _getApisRequests = function (confData, value, callback) {
 
       configOptionsValues = mviewer.customComponents.searchRM.config.options;
-
-      var citiesSearch = _getCitiesSearch(value);
+        
+      var hasComma;
+      var citiesSearch;
       var updatedString = "";
       var originalValue = value;
       var resultArray = [];
 
+      hasComma = value.split(",")[1].trim();
+      if (hasComma) {
+          value = value.split(",")[0];
+          citiesSearch = _getCitiesSearch(hasComma);
+      }else{
+        citiesSearch = _getCitiesSearch(value);
+      }
       if ( citiesSearch != undefined ) {
         value = value.split(" ");
         if (value.length >= 2) {
@@ -227,50 +234,56 @@ var searchRM = (function () {
             }
           });
         }else{
-          updatedString = value.join(" ");
+            updatedString = value.join(" ");
         }
       }else{
+        value = value.replace(',', " ")
         updatedString = value;
       }
 
       Promise.all(_getRequest(confData, updatedString, citiesSearch)).then(function(restrictedResult){
-        Promise.all(_getRequest(confData, originalValue, undefined)).then(function(unrestrictedResult){
+        if (!hasComma) {
+            Promise.all(_getRequest(confData, originalValue, undefined)).then(function(unrestrictedResult){
 
-          $.getJSON(getPersoConfData, function (confData) {
-            confData.searchContent.forEach((item, h) => {
-            //   console.log(item.categoryName);
-              switch (item.categoryName) {
-                case 'Communes':
-                resultArray[i] = restrictedResult[h];
-                  break;
-                case 'Voies':
-                    resultArray[h] = restrictedResult[h];
-                    resultArray[h].result.rva.answer.lanes = restrictedResult[h].result.rva.answer.lanes.concat(unrestrictedResult[h].result.rva.answer.lanes);
-                    for(var i=0; i<resultArray[h].result.rva.answer.lanes.length; ++i) {
-                      for(var j=i+1; j<resultArray[h].result.rva.answer.lanes.length; ++j) {
-                        if(resultArray[h].result.rva.answer.lanes[i].addr3 === resultArray[h].result.rva.answer.lanes[j].addr3)
-                        resultArray[h].result.rva.answer.lanes.splice(j, 1);
-                      }
+                $.getJSON(getPersoConfData, function (confData) {
+                  confData.searchContent.forEach((item, h) => {
+                  //   console.log(item.categoryName);
+                    switch (item.categoryName) {
+                      case 'Communes':
+                      resultArray[i] = restrictedResult[h];
+                        break;
+                      case 'Voies':
+                          resultArray[h] = restrictedResult[h];
+                          resultArray[h].result.rva.answer.lanes = restrictedResult[h].result.rva.answer.lanes.concat(unrestrictedResult[h].result.rva.answer.lanes);
+                          for(var i=0; i<resultArray[h].result.rva.answer.lanes.length; ++i) {
+                            for(var j=i+1; j<resultArray[h].result.rva.answer.lanes.length; ++j) {
+                              if(resultArray[h].result.rva.answer.lanes[i].addr3 === resultArray[h].result.rva.answer.lanes[j].addr3)
+                              resultArray[h].result.rva.answer.lanes.splice(j, 1);
+                            }
+                          }
+                        break;
+                      case 'Adresses':
+                          resultArray[h] = restrictedResult[h];
+                          resultArray[h].result.rva.answer.addresses = restrictedResult[h].result.rva.answer.addresses.concat(unrestrictedResult[h].result.rva.answer.addresses);
+                          for(var i=0; i<resultArray[h].result.rva.answer.addresses.length; ++i) {
+                            for(var j=i+1; j<resultArray[h].result.rva.answer.addresses.length; ++j) {
+                              if(resultArray[h].result.rva.answer.addresses[i].addr3 === resultArray[h].result.rva.answer.addresses[j].addr3)
+                              resultArray[h].result.rva.answer.addresses.splice(j, 1);
+                            }
+                          }
+                        break;
+                      default:
                     }
-                  break;
-                case 'Adresses':
-                    resultArray[h] = restrictedResult[h];
-                    resultArray[h].result.rva.answer.addresses = restrictedResult[h].result.rva.answer.addresses.concat(unrestrictedResult[h].result.rva.answer.addresses);
-                    for(var i=0; i<resultArray[h].result.rva.answer.addresses.length; ++i) {
-                      for(var j=i+1; j<resultArray[h].result.rva.answer.addresses.length; ++j) {
-                        if(resultArray[h].result.rva.answer.addresses[i].addr3 === resultArray[h].result.rva.answer.addresses[j].addr3)
-                        resultArray[h].result.rva.answer.addresses.splice(j, 1);
-                      }
-                    }
-                  break;
-                default:
-              }
-
+                });
+                // console.log(resultArray);
+                callback(resultArray);
+                });
             });
-            // console.log(resultArray);
+        }else{
+            resultArray = restrictedResult;
+            console.log(resultArray);
             callback(resultArray);
-          });
-        });
+        }
       });
 
     };
