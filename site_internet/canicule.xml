@@ -49,7 +49,7 @@
         </theme>
 
         <theme id="theme-20180625145780" name="Environnement/Cadre de vie" collapsed="true" icon="fas fa-leaf">
-            <layer
+            <!--<layer
                 id="v_sitorg_organisme"
                 name="Parcs, jardins et espaces naturels"
                 type="wms"
@@ -63,7 +63,7 @@
                 featurecount="3"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
-            </layer>
+            </layer> -->
             <layer
                 id="gev_font"
                 name="Fontaines d'eau potable"
