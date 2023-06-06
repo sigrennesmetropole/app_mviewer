@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <application
-        title="Les activités d'été à Rennes"
+        title="Les lieux d'activités de l'été à Rennes"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
         favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
@@ -32,7 +32,7 @@
         <theme id="theme-20180625145740" name="Activités d'été" collapsed="true" icon="fas fa-map-marker-alt">
             <layer
                 id="ete_monuments"
-                name="Monuments phare"
+                name="Lieux phare"
                 type="customlayer"
                 url="apps/site_internet/customlayer/ete-monuments.js"
                 legendurl="apps/site_internet/img/legend/ete-monument.svg"
@@ -45,24 +45,6 @@
                 queryable="true"
                 featurecount="6"
                 tabcolor='#d9762b'
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/organisme.mst"></template>
-            </layer>
-            <layer
-                id="ete_parcs"
-                name="Parcs"
-                type="customlayer"
-                url="apps/site_internet/customlayer/ete-parcs.js"
-                legendurl="apps/site_internet/img/legend/ete-parc.svg"
-                visible="true"
-                tooltip="false"
-                tooltipenabled="false"
-                tooltipcontent=""
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168"
-                queryable="true"
-                featurecount="6"
-                tabcolor='#cc8db2'
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
@@ -85,24 +67,6 @@
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
             <layer
-                id="ete_sport"
-                name="Sport et fil de l'eau"
-                type="customlayer"
-                url="apps/site_internet/customlayer/ete-sport.js"
-                legendurl="apps/site_internet/img/legend/ete-sport.svg"
-                visible="true"
-                tooltip="false"
-                tooltipenabled="false"
-                tooltipcontent=""
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168"
-                queryable="true"
-                featurecount="6"
-                tabcolor='#62bcf5'
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/organisme.mst"></template>
-            </layer>
-            <layer
                 id="ete_au_vert"
                 name="Au vert"
                 type="customlayer"
@@ -121,6 +85,42 @@
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer> 
             <layer
+                id="ete_parcs"
+                name="Parcs et jardins"
+                type="customlayer"
+                url="apps/site_internet/customlayer/ete-parcs.js"
+                legendurl="apps/site_internet/img/legend/ete-parc.svg"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="false"
+                tooltipcontent=""
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168"
+                queryable="true"
+                featurecount="6"
+                tabcolor='#cc8db2'
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organisme.mst"></template>
+            </layer>
+            <layer
+                id="ete_sport"
+                name="Sports et eau"
+                type="customlayer"
+                url="apps/site_internet/customlayer/ete-sport.js"
+                legendurl="apps/site_internet/img/legend/ete-sport.svg"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="false"
+                tooltipcontent=""
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168"
+                queryable="true"
+                featurecount="6"
+                tabcolor='#62bcf5'
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organisme.mst"></template>
+            </layer>
+            <layer
                 id="ete_glisse"
                 name="Spots de glisse"
                 type="customlayer"
@@ -137,6 +137,24 @@
                 tabcolor='#E44C2D'
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/equipt_sportif.mst"></template>
+            </layer>
+            <layer
+                id="ete_villages"
+                name="Villages multi-activités"
+                type="customlayer"
+                url="apps/site_internet/customlayer/ete-villages.js"
+                legendurl="apps/site_internet/img/legend/ete-villages.svg"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="false"
+                tooltipcontent=""
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/2ff4b02a-7d1e-4e9c-a0c2-dddbb11a3168"
+                queryable="true"
+                featurecount="6"
+                tabcolor='#4C1A75'
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
         </theme>
 
