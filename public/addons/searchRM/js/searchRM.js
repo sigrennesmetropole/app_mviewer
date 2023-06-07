@@ -247,41 +247,41 @@ var searchRM = (function () {
 
                 $.getJSON(getPersoConfData, function (confData) {
                   confData.searchContent.forEach((item, h) => {
-                  //   console.log(item.categoryName);
                     switch (item.categoryName) {
-                      case 'Communes':
-                      resultArray[i] = restrictedResult[h];
+                        case 'Communes':
+                            resultArray[h] = unrestrictedResult[h];
                         break;
-                      case 'Voies':
-                          resultArray[h] = restrictedResult[h];
-                          resultArray[h].result.rva.answer.lanes = restrictedResult[h].result.rva.answer.lanes.concat(unrestrictedResult[h].result.rva.answer.lanes);
-                          for(var i=0; i<resultArray[h].result.rva.answer.lanes.length; ++i) {
-                            for(var j=i+1; j<resultArray[h].result.rva.answer.lanes.length; ++j) {
-                              if(resultArray[h].result.rva.answer.lanes[i].addr3 === resultArray[h].result.rva.answer.lanes[j].addr3)
-                              resultArray[h].result.rva.answer.lanes.splice(j, 1);
+                        case 'Voies':
+                            resultArray[h] = restrictedResult[h];
+                            resultArray[h].result.rva.answer.lanes = restrictedResult[h].result.rva.answer.lanes.concat(unrestrictedResult[h].result.rva.answer.lanes);
+                            for(var i=0; i<resultArray[h].result.rva.answer.lanes.length; ++i) {
+                                for(var j=i+1; j<resultArray[h].result.rva.answer.lanes.length; ++j) {
+                                    if(resultArray[h].result.rva.answer.lanes[i].addr3 === resultArray[h].result.rva.answer.lanes[j].addr3)
+                                    resultArray[h].result.rva.answer.lanes.splice(j, 1);
+                                }
                             }
-                          }
                         break;
-                      case 'Adresses':
-                          resultArray[h] = restrictedResult[h];
-                          resultArray[h].result.rva.answer.addresses = restrictedResult[h].result.rva.answer.addresses.concat(unrestrictedResult[h].result.rva.answer.addresses);
-                          for(var i=0; i<resultArray[h].result.rva.answer.addresses.length; ++i) {
-                            for(var j=i+1; j<resultArray[h].result.rva.answer.addresses.length; ++j) {
-                              if(resultArray[h].result.rva.answer.addresses[i].addr3 === resultArray[h].result.rva.answer.addresses[j].addr3)
-                              resultArray[h].result.rva.answer.addresses.splice(j, 1);
+                        case 'Adresses':
+                            resultArray[h] = restrictedResult[h];
+                            resultArray[h].result.rva.answer.addresses = restrictedResult[h].result.rva.answer.addresses.concat(unrestrictedResult[h].result.rva.answer.addresses);
+                            for(var i=0; i<resultArray[h].result.rva.answer.addresses.length; ++i) {
+                                for(var j=i+1; j<resultArray[h].result.rva.answer.addresses.length; ++j) {
+                                    if(resultArray[h].result.rva.answer.addresses[i].addr3 === resultArray[h].result.rva.answer.addresses[j].addr3)
+                                    resultArray[h].result.rva.answer.addresses.splice(j, 1);
+                                }
                             }
-                          }
                         break;
-                      default:
+                        case 'Organismes':
+                            resultArray[h] = restrictedResult[h];
+                        break;
+                    default:
                     }
                 });
-                // console.log(resultArray);
                 callback(resultArray);
                 });
             });
         }else{
             resultArray = restrictedResult;
-            // console.log(resultArray);
             callback(resultArray);
         }
       });
