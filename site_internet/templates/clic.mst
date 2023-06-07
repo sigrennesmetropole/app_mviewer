@@ -1,10 +1,6 @@
 {{#features}}
     <li class="item">
-        <h5 class="rm-popup-title-feature">Centre Local d'Information et de Coordination</h5>
-        <p class="rm-popup-text-feature">
-             {{#nom_clic_min}}<span class='rm-popup-label'> CLIC :</span> {{{nom_clic_min}}}{{/nom_clic_min}}
-        <br/>
-        </p>
+        <h5 class="rm-popup-title-feature">{{{nom_clic_min}}}</h5>
     </li>
 {{/features}}
 
