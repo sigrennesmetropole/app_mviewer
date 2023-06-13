@@ -208,6 +208,7 @@ var searchRM = (function () {
         });
     };
 
+    var completeString;
     var _getApisRequests = function (confData, value, callback) {
 
       configOptionsValues = mviewer.customComponents.searchRM.config.options;
@@ -229,8 +230,12 @@ var searchRM = (function () {
         value = value.split(" ");
         if (value.length >= 2) {
           value.forEach((item, i) => {
-            if (i < value.length -1) {
-              updatedString = updatedString + " " + item;
+            if (i <= value.length -1) {
+                if (updatedString) {
+                    updatedString = updatedString + " " + item;
+                }else{
+                    updatedString = item;
+                }
             }
           });
         }else{
@@ -241,11 +246,13 @@ var searchRM = (function () {
         updatedString = value;
       }
 
+      completeString = originalValue;
+
       Promise.all(_getRequest(confData, updatedString, citiesSearch)).then(function(restrictedResult){
-        if (restrictedResult[4] == updatedString) {
+        if (restrictedResult[0].id == completeString) {
             if (!hasComma) {
                 Promise.all(_getRequest(confData, originalValue, undefined)).then(function(unrestrictedResult){
-                    if (unrestrictedResult[4] == originalValue) {
+                    if (unrestrictedResult[0].id == completeString) {
                         
                         $.getJSON(getPersoConfData, function (confData) {
                             confData.searchContent.forEach((item, h) => {
@@ -274,6 +281,7 @@ var searchRM = (function () {
                                         }
                                     break;
                                     case 'Organismes':
+                                        restrictedResult[h].request = originalValue;
                                         resultArray[h] = restrictedResult[h];
                                     break;
                                     default:
@@ -333,6 +341,7 @@ var searchRM = (function () {
                           resolveRes['zoom'] = content.zoom;
                           resolveRes['categoryName'] = content.categoryName;
                           resolveRes['citiesSearch'] = citiesSearch;
+                          resolveRes['id'] = completeString;
                           resolve(resolveRes);
                       });
                   })
@@ -340,7 +349,6 @@ var searchRM = (function () {
               }
           }
       } );
-      promises[4] = value;
       return promises;
     }
 
@@ -427,6 +435,7 @@ var searchRM = (function () {
                     nbItem++;
                 });
                 break;
+            default:
           }
         });
 
@@ -602,13 +611,15 @@ var searchRM = (function () {
         var lanesFound = [];
         var lanes = lanesData.result.rva.answer.lanes;
         if (typeof lanesData.citiesSearch !== 'undefined') {
-            // var citiesSearchSplitArray = lanesData.citiesSearch.split(',');
             lanes.forEach(function (lane) {
                 if ( lanesData.citiesSearch.findIndex(item => lane.name4.split(',')[1].trim().toLowerCase() === item.toLowerCase()) !== -1) {
                     lanesFound.push(lane);
                 }
             });
         } else {
+            lanesFound = lanes;
+        }
+        if (lanesFound.length == 0) {
             lanesFound = lanes;
         }
         return lanesFound.slice(0,lanesData.nbItemDisplay);
@@ -644,7 +655,20 @@ var searchRM = (function () {
                 }
             });
         } else {
-            organismsFound = organisms;
+            organisms.forEach(function (organism) {
+                var requestDone = false;
+                organismsData.request.split(' ').forEach(function (splitRequest) {
+                    if (!requestDone) {
+                        if (splitRequest.length > 3) {
+                            if ( organism.autres !== null && organism.nom.toLowerCase().includes(splitRequest.toLowerCase())) {
+                                organismsFound.push(organism);
+                                requestDone = true;
+                            }
+                        }
+                    }
+                })
+            });
+            // organismsFound = organisms;
         }
         return organismsFound.slice(0,organismsData.nbItemDisplay);
     };
