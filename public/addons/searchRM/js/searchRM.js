@@ -203,6 +203,7 @@ var searchRM = (function () {
 
     var _searchRM = function (confData, value) {
         _getApisRequests(confData, value, function (allResults){
+            console.log(allResults);
           _displayAutocompleteData(allResults, value);
           nbResults = $('.autocompleteRmItem').length;
         });
@@ -265,8 +266,11 @@ var searchRM = (function () {
                                         resultArray[h].result.rva.answer.lanes = restrictedResult[h].result.rva.answer.lanes.concat(unrestrictedResult[h].result.rva.answer.lanes);
                                         for(var i=0; i<resultArray[h].result.rva.answer.lanes.length; ++i) {
                                             for(var j=i+1; j<resultArray[h].result.rva.answer.lanes.length; ++j) {
-                                                if(resultArray[h].result.rva.answer.lanes[i].addr3 === resultArray[h].result.rva.answer.lanes[j].addr3)
-                                                    resultArray[h].result.rva.answer.lanes.splice(j, 1);
+                                                if(resultArray[h].result.rva.answer.lanes[i].name3 === resultArray[h].result.rva.answer.lanes[j].name3){
+                                                    if (i != j) {
+                                                        resultArray[h].result.rva.answer.lanes.splice(j, 1);
+                                                    }
+                                                }
                                             }
                                         }
                                     break;
@@ -276,7 +280,9 @@ var searchRM = (function () {
                                         for(var i=0; i<resultArray[h].result.rva.answer.addresses.length; ++i) {
                                             for(var j=i+1; j<resultArray[h].result.rva.answer.addresses.length; ++j) {
                                                 if(resultArray[h].result.rva.answer.addresses[i].addr3 === resultArray[h].result.rva.answer.addresses[j].addr3)
-                                                    resultArray[h].result.rva.answer.addresses.splice(j, 1);
+                                                    if (i != j) {
+                                                        resultArray[h].result.rva.answer.addresses.splice(j, 1);
+                                                    }    
                                             }
                                         }
                                     break;
@@ -637,6 +643,9 @@ var searchRM = (function () {
                 }
             });
         } else {
+            addressesFound = addresses;
+        }
+        if (addressesFound.length == 0) {
             addressesFound = addresses;
         }
         addressesFound = addressesFound.sort(function(a,b){return a['number'] - b['number']});
