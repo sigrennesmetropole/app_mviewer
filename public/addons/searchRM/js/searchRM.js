@@ -82,7 +82,6 @@ var searchRM = (function () {
     var doneTypingInterval = 100;  //time in ms, 0.3 seconds here
 
     var _configureSearch = function (searchRMConf) {
-      console.log(searchRMConf);
         $.getJSON(searchRMConf, function (confData) {
             if(confData.queryMapOnClick === true){
               queryMapOnClick = true;
@@ -203,7 +202,6 @@ var searchRM = (function () {
 
     var _searchRM = function (confData, value) {
         _getApisRequests(confData, value, function (allResults){
-            console.log(allResults);
           _displayAutocompleteData(allResults, value);
           nbResults = $('.autocompleteRmItem').length;
         });
@@ -242,16 +240,12 @@ var searchRM = (function () {
         }
 
         completeString = originalValue;
-        // console.log(updatedString);
-        // console.log(originalValue);
 
       Promise.all(_getRequest(confData, updatedString, citiesSearch)).then(function(restrictedResult){
         if (restrictedResult[0].id == completeString) {
-            console.log(restrictedResult);
             if (!hasComma) {
                 Promise.all(_getRequest(confData, originalValue, undefined)).then(function(unrestrictedResult){
                     if (unrestrictedResult[0].id == completeString) {
-                        console.log(unrestrictedResult);
                         
                         $.getJSON(getPersoConfData, function (confData) {
                             confData.searchContent.forEach((item, h) => {
