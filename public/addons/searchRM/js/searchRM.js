@@ -212,48 +212,46 @@ var searchRM = (function () {
     var completeString;
     var _getApisRequests = function (confData, value, callback) {
 
-      configOptionsValues = mviewer.customComponents.searchRM.config.options;
-        
-      var hasComma;
-      var citiesSearch;
-      var updatedString = "";
-      var originalValue = value;
-      var resultArray = [];
+        configOptionsValues = mviewer.customComponents.searchRM.config.options;
+            
+        var hasComma;
+        var citiesSearch;
+        var updatedString = "";
+        var originalValue = value;
+        var resultArray = [];
 
-      hasComma = value.split(",")[1];
-      if (hasComma) {
-          value = value.split(",")[0];
-          citiesSearch = _getCitiesSearch(hasComma.trim());
-      }else{
-        citiesSearch = _getCitiesSearch(value);
-      }
-      if ( citiesSearch != undefined ) {
-        value = value.split(" ");
-        if (value.length >= 2) {
-          value.forEach((item, i) => {
-            if (i <= value.length -1) {
-                if (updatedString) {
-                    updatedString = updatedString + " " + item;
-                }else{
-                    updatedString = item;
-                }
-            }
-          });
+        hasComma = value.split(",")[1];
+        if (hasComma) {
+            value = value.split(",")[0];
+            citiesSearch = _getCitiesSearch(hasComma.trim());
         }else{
+            citiesSearch = _getCitiesSearch(value);
+        }
+        if ( citiesSearch != undefined ) {
+            value = value.replace(',', " ").trim().split(" ");
+            if (value.length >= 2) {
+                value.pop();
+            }
+            updatedString = value.join(" ");
+        }else{
+            value = value.replace(',', " ").trim().split(" ");
+            if (value.length >= 2) {
+                value.pop();
+            }
             updatedString = value.join(" ");
         }
-      }else{
-        value = value.replace(',', " ")
-        updatedString = value;
-      }
 
-      completeString = originalValue;
+        completeString = originalValue;
+        // console.log(updatedString);
+        // console.log(originalValue);
 
       Promise.all(_getRequest(confData, updatedString, citiesSearch)).then(function(restrictedResult){
         if (restrictedResult[0].id == completeString) {
+            console.log(restrictedResult);
             if (!hasComma) {
                 Promise.all(_getRequest(confData, originalValue, undefined)).then(function(unrestrictedResult){
                     if (unrestrictedResult[0].id == completeString) {
+                        console.log(unrestrictedResult);
                         
                         $.getJSON(getPersoConfData, function (confData) {
                             confData.searchContent.forEach((item, h) => {
