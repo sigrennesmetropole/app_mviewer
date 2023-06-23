@@ -211,13 +211,14 @@ var searchRM = (function () {
     var _getApisRequests = function (confData, value, callback) {
 
         configOptionsValues = mviewer.customComponents.searchRM.config.options;
+        value = value.trim();
             
         var hasComma;
         var citiesSearch;
         var updatedString = "";
         var originalValue = value;
         var resultArray = [];
-
+        
         hasComma = value.split(",")[1];
         if (hasComma) {
             value = value.split(",")[0];
@@ -255,7 +256,7 @@ var searchRM = (function () {
                                     break;
                                     case 'Voies':
                                         resultArray[h] = restrictedResult[h];
-                                        resultArray[h].result.rva.answer.lanes = restrictedResult[h].result.rva.answer.lanes.concat(unrestrictedResult[h].result.rva.answer.lanes);
+                                        resultArray[h].result.rva.answer.lanes = unrestrictedResult[h].result.rva.answer.lanes.concat(restrictedResult[h].result.rva.answer.lanes);
                                         for(var i=0; i<resultArray[h].result.rva.answer.lanes.length; ++i) {
                                             for(var j=i+1; j<resultArray[h].result.rva.answer.lanes.length; ++j) {
                                                 if(resultArray[h].result.rva.answer.lanes[i].name3 === resultArray[h].result.rva.answer.lanes[j].name3){
@@ -268,7 +269,7 @@ var searchRM = (function () {
                                     break;
                                     case 'Adresses':
                                         resultArray[h] = restrictedResult[h];
-                                        resultArray[h].result.rva.answer.addresses = restrictedResult[h].result.rva.answer.addresses.concat(unrestrictedResult[h].result.rva.answer.addresses);
+                                        resultArray[h].result.rva.answer.addresses = unrestrictedResult[h].result.rva.answer.addresses.concat(restrictedResult[h].result.rva.answer.addresses);
                                         for(var i=0; i<resultArray[h].result.rva.answer.addresses.length; ++i) {
                                             for(var j=i+1; j<resultArray[h].result.rva.answer.addresses.length; ++j) {
                                                 if(resultArray[h].result.rva.answer.addresses[i].addr3 === resultArray[h].result.rva.answer.addresses[j].addr3)
