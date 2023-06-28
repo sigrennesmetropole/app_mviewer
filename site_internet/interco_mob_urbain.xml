@@ -43,7 +43,7 @@
                 queryable="true"
                 featurecount="3"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/organisme.mst"></template>
+                <!-- <template url="apps/site_internet/templates/organisme.mst"></template> -->
             </layer>
         </theme>
     </themes>
