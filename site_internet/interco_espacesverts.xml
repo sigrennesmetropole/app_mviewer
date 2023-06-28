@@ -40,7 +40,7 @@
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9c7e7bbc-b0d8-4888-a777-abed5f5972e2"
-                style="espace_vert_surf_default"
+                style="espace_vert_surf_type"
                 queryable="true"
                 featurecount="3"
                 infopanel="right-panel">
