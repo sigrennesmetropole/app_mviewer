@@ -6,7 +6,7 @@
             Sous type: {{sous_type_evert}}<br/>
         </p>
         <p class="rm-popup-text-feature">
-            Surface: {{surface}} (en m²)<br/>
+            Surface: {{surface}} m²<br/>
         </p>
     </li>
 {{/features}}
