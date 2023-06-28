@@ -36,6 +36,7 @@
                 name="Mobilier urbain"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_mob/ows"
+                style="mobilier_urbain_type"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
