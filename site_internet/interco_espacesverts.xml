@@ -40,6 +40,7 @@
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9c7e7bbc-b0d8-4888-a777-abed5f5972e2"
+                style="espace_vert_surf_default"
                 queryable="true"
                 featurecount="3"
                 infopanel="right-panel">
@@ -50,6 +51,7 @@
                 name="Espace verts (linéaire)"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_esv/ows"
+                style="espace_vert_lgn_type"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
