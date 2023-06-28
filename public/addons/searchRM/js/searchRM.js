@@ -255,7 +255,7 @@ var searchRM = (function () {
                                         resultArray[h] = unrestrictedResult[h];
                                     break;
                                     case 'Voies':
-                                        resultArray[h] = restrictedResult[h];
+                                        resultArray[h] = unrestrictedResult[h];
                                         resultArray[h].result.rva.answer.lanes = unrestrictedResult[h].result.rva.answer.lanes.concat(restrictedResult[h].result.rva.answer.lanes);
                                         for(var i=0; i<resultArray[h].result.rva.answer.lanes.length; ++i) {
                                             for(var j=i+1; j<resultArray[h].result.rva.answer.lanes.length; ++j) {
@@ -268,7 +268,7 @@ var searchRM = (function () {
                                         }
                                     break;
                                     case 'Adresses':
-                                        resultArray[h] = restrictedResult[h];
+                                        resultArray[h] = unrestrictedResult[h];
                                         resultArray[h].result.rva.answer.addresses = unrestrictedResult[h].result.rva.answer.addresses.concat(restrictedResult[h].result.rva.answer.addresses);
                                         for(var i=0; i<resultArray[h].result.rva.answer.addresses.length; ++i) {
                                             for(var j=i+1; j<resultArray[h].result.rva.answer.addresses.length; ++j) {
