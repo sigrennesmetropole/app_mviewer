@@ -44,7 +44,7 @@
                 queryable="true"
                 featurecount="3"
                 infopanel="right-panel">
-                <!-- <template url="apps/site_internet/templates/organisme.mst"></template> -->
+                <template url="apps/site_internet/templates/interco_espaceverts.mst"></template>
             </layer>
             <layer
                 id="espace_vert_lgn"
@@ -59,7 +59,7 @@
                 queryable="true"
                 featurecount="3"
                 infopanel="right-panel">
-                <!-- <template url="apps/site_internet/templates/organisme.mst"></template> -->
+                <template url="apps/site_internet/templates/interco_espaceverts.mst"></template>
             </layer>
             <layer
                 id="arbre"
@@ -73,7 +73,7 @@
                 queryable="true"
                 featurecount="3"
                 infopanel="right-panel">
-                <!-- <template url="apps/site_internet/templates/organisme.mst"></template> -->
+                <template url="apps/site_internet/templates/interco_arbres.mst"></template>
             </layer>
         </theme>
     </themes>
