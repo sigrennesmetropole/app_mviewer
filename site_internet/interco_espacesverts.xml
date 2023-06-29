@@ -32,19 +32,18 @@
     <themes mini="true" legendmini="false">
         <theme id="theme-202103090939" name="Espaces Verts" collapsed="true" icon="fas fa-camera">
             <layer
-                id="espace_vert_surf"
-                name="Espace verts (surfacique)"
+                id="arbre"
+                name="Arbres"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_esv/ows"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9c7e7bbc-b0d8-4888-a777-abed5f5972e2"
-                style="espace_vert_surf_type"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/093590bd-9842-4138-af9a-7e7918b86292"
                 queryable="true"
                 featurecount="3"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/interco_espaceverts_surface.mst"></template>
+                <template url="apps/site_internet/templates/interco_arbres.mst"></template>
             </layer>
             <layer
                 id="espace_vert_lgn"
@@ -62,18 +61,19 @@
                 <template url="apps/site_internet/templates/interco_espaceverts_lineaire.mst"></template>
             </layer>
             <layer
-                id="arbre"
-                name="Arbres"
+                id="espace_vert_surf"
+                name="Espace verts (surfacique)"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_esv/ows"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/093590bd-9842-4138-af9a-7e7918b86292"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9c7e7bbc-b0d8-4888-a777-abed5f5972e2"
+                style="espace_vert_surf_type"
                 queryable="true"
                 featurecount="3"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/interco_arbres.mst"></template>
+                <template url="apps/site_internet/templates/interco_espaceverts_surface.mst"></template>
             </layer>
         </theme>
     </themes>
