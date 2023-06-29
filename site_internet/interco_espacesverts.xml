@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <application
-        title="Espaces verts Intercommunaux"
+        title="Espaces verts"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
         favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
@@ -44,7 +44,7 @@
                 queryable="true"
                 featurecount="3"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/interco_espaceverts.mst"></template>
+                <template url="apps/site_internet/templates/interco_espaceverts_surface.mst"></template>
             </layer>
             <layer
                 id="espace_vert_lgn"
@@ -59,7 +59,7 @@
                 queryable="true"
                 featurecount="3"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/interco_espaceverts.mst"></template>
+                <template url="apps/site_internet/templates/interco_espaceverts_lineaire.mst"></template>
             </layer>
             <layer
                 id="arbre"
