@@ -1,9 +1,11 @@
 mviewer.customLayers.aires_jeux_rennes= (function() {
     // color : #e45e52 = 'rgba (228, 94, 82, 1)'
     const fillcolor='rgba(228, 94, 82, 0.1)';
-    const strokecolor='rgba(228, 94, 82, 1)';
+    const strokecolor='#e45e52';
 
-    let pointOnSurfaceMarker='apps/site_internet/customlayer/picture/marker.svg';
+    //let pointOnSurfaceMarker='apps/site_internet/customlayer/picture/marker.svg';
+    let pointOnSurfaceMarker='apps/site_internet/customlayer/picture/aire_de_jeux.svg';
+    
     
     let data_url="https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=espub_mob:gev_ajeu&outputFormat=application/json&srsName=EPSG:3857";
     let filter = "strToLowerCase(espace_publique) = 'oui'";
@@ -29,8 +31,8 @@ mviewer.customLayers.aires_jeux_rennes= (function() {
         }),
         new ol.style.Style({
             image: new ol.style.Icon({
-              color: strokecolor, 
-              anchor:[0.5,0.5],
+              //color: strokecolor, 
+              opacity: 0.7,
               src: pointOnSurfaceMarker,
             }),
             geometry: function (feature) {
@@ -45,8 +47,7 @@ mviewer.customLayers.aires_jeux_rennes= (function() {
     const zoomOutStyles = [
         new ol.style.Style({
             image: new ol.style.Icon({
-              color: strokecolor, 
-              anchor:[0.5,0.5],
+              //color: strokecolor, 
               src: pointOnSurfaceMarker,
             }),
             geometry: function (feature) {
