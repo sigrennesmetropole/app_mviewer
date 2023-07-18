@@ -1,11 +1,79 @@
 mviewer.customLayers.urbadiffus_en_chantier= (function() {
     const fillcolor='#D45054';
+    let pointOnSurfaceMarker='apps/site_internet/customlayer/picture/marker.svg';
+    
     const nb_logements_min=10;
     let data_url="https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=app:tabou_v_oa_programme&outputFormat=application/json&srsName=EPSG:3857";
     //let filter = "commune='Rennes' AND nature = 'En diffus' AND diffusion_restreinte=false AND etape='En chantier' AND (nb_logements >= " + nb_logements_min + " OR num_ads IS NOT NULL)";
     let filter = "commune LIKE '%Rennes%' AND nature = 'En diffus' AND diffusion_restreinte=false AND etape='En chantier' AND (nb_logements >= " + nb_logements_min + " OR nb_logements IS NULL OR nb_logements = 0)";
     
     let complete_url = data_url + '&CQL_FILTER='+ encodeURIComponent(filter);
+    
+    /* - STYLE ------------------------------------- */
+    
+    /* We are using two different styles for the polygons:
+    *  - The first style is for the polygons themselves.
+    *  - The second style is to draw a point inside the surface
+    */
+    const zoomInStyles = [
+        new ol.style.Style({
+            fill:new ol.style.Fill({
+               color: fillcolor,
+             }),
+            stroke: new ol.style.Stroke({
+                color: '#000000',
+                width: 2
+              })
+        }),
+        new ol.style.Style({
+            image: new ol.style.Icon({
+              color: '#000000', 
+              anchor:[0.5,0.5],
+              src: pointOnSurfaceMarker,
+            }),
+            geometry: function (feature) {
+              return feature.getGeometry().getInteriorPoints();
+            },
+        }),
+    ];
+    
+    /* 
+    * Styling only a point inside the surface
+    */
+    const zoomOutStyles = [
+        new ol.style.Style({
+            image: new ol.style.Icon({
+              color: fillcolor, 
+              anchor:[0.5,0.5],
+              src: pointOnSurfaceMarker,
+            }),
+            geometry: function (feature) {
+              return feature.getGeometry().getInteriorPoints();
+            },
+        }),
+    ];
+    
+    /*
+     * Mise en cohérence du style ponctuelles ou surfaciques en fonction du niveau de zoom
+     * Le surfacique n'est affiché qu'à partir d'un certain niveau de zoom
+     */
+    function _updateStyle(){
+        if (_map.getView().getZoom() < 17) {
+            dataLayer.setStyle(zoomOutStyles);
+        } else {
+            dataLayer.setStyle(zoomInStyles);
+        }
+    }
+    
+    /*
+     * Listener sur niveau de zoom
+     */
+    _map.getView().on('change', function() {
+        _updateStyle();
+    });
+    
+    
+    /* - DATA -------------------------------------- */
     
     function cleanData(){
         // suppression des programmes qui n'ont pas de descriptif
@@ -14,18 +82,6 @@ mviewer.customLayers.urbadiffus_en_chantier= (function() {
                 dataLayer.getSource().removeFeature(feature);
             }
         });
-        // mise à jour du style
-        dataLayer.setStyle(
-            new ol.style.Style({
-                fill:new ol.style.Fill({
-                   color: fillcolor,
-                 }),
-                stroke: new ol.style.Stroke({
-                    color: '#000000',
-                    width: 2
-                  })
-            })
-        );
     }
     
     let dataLayer = new ol.layer.Vector({
@@ -44,11 +100,7 @@ mviewer.customLayers.urbadiffus_en_chantier= (function() {
                     }).then(r => {cleanData();})
             }
         }),
-        style: new ol.style.Style({
-                fill:new ol.style.Fill({
-                   color: '#ffffff00',
-                 })
-            }),
+        style: _updateStyle,
     });
     
     
