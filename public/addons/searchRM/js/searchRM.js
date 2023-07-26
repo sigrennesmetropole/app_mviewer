@@ -252,10 +252,11 @@ var searchRM = (function () {
                             confData.searchContent.forEach((item, h) => {
                                 switch (item.categoryName) {
                                     case 'Communes':
-                                        resultArray[h] = unrestrictedResult[h];
+                                        resultArray[h] = restrictedResult[h];
                                     break;
                                     case 'Voies':
                                         resultArray[h] = unrestrictedResult[h];
+                                        resultArray[h].citiesSearch = restrictedResult[h].citiesSearch;
                                         resultArray[h].result.rva.answer.lanes = unrestrictedResult[h].result.rva.answer.lanes.concat(restrictedResult[h].result.rva.answer.lanes);
                                         for(var i=0; i<resultArray[h].result.rva.answer.lanes.length; ++i) {
                                             for(var j=i+1; j<resultArray[h].result.rva.answer.lanes.length; ++j) {
@@ -269,6 +270,7 @@ var searchRM = (function () {
                                     break;
                                     case 'Adresses':
                                         resultArray[h] = unrestrictedResult[h];
+                                        resultArray[h].citiesSearch = restrictedResult[h].citiesSearch;
                                         resultArray[h].result.rva.answer.addresses = unrestrictedResult[h].result.rva.answer.addresses.concat(restrictedResult[h].result.rva.answer.addresses);
                                         for(var i=0; i<resultArray[h].result.rva.answer.addresses.length; ++i) {
                                             for(var j=i+1; j<resultArray[h].result.rva.answer.addresses.length; ++j) {
@@ -628,18 +630,43 @@ var searchRM = (function () {
     var _filterAddresses = function (addressesData) {
         var addressesFound = [];
         var addresses = addressesData.result.rva.answer.addresses;
-        if (typeof addressesData.citiesSearch !== 'undefined') {
-            // var citiesSearchSplitArray = addressesData.citiesSearch.split(',');
-            addresses.forEach(function (address) {
-                if ( addressesData.citiesSearch.findIndex(item => address.addr3.split(',')[1].trim().toLowerCase() === item.toLowerCase()) !== -1) {
-                    addressesFound.push(address);
+        if (addressesData.id.includes(",")) {
+            if (typeof addressesData.citiesSearch !== 'undefined') {
+                // var citiesSearchSplitArray = addressesData.citiesSearch.split(',');
+                addresses.forEach(function (address) {
+                    if ( addressesData.citiesSearch.findIndex(item => address.addr3.split(',')[1].trim().toLowerCase() === item.toLowerCase()) !== -1) {
+                        addressesFound.push(address);
+                    }
+                });
+            } else {
+                addressesFound = addresses;
+            }
+            if (addressesFound.length == 0) {
+                addressesFound = addresses;
+            }
+        }else{
+            if (typeof addressesData.citiesSearch !== 'undefined') {
+                addresses.forEach(function (address) {
+                    if ( addressesData.citiesSearch.findIndex(item => address.addr3.split(',')[1].trim().toLowerCase() === item.toLowerCase()) !== -1) {
+                        if ( address.addr3.split(',')[0].replace(/[^a-zA-Z ]/g, " ").trim().toLowerCase().includes(addressesData.id.toLowerCase()) ) {
+                            addressesFound.push(address);
+                        }
+                    }
+                });
+                if (addressesFound.length == 0) {
+                    addresses.forEach(function (address) {
+                        if ( addressesData.citiesSearch.findIndex(item => address.addr3.split(',')[1].trim().toLowerCase() === item.toLowerCase()) !== -1) {
+                            addressesFound.push(address);
+                        }
+                    });
                 }
-            });
-        } else {
-            addressesFound = addresses;
-        }
-        if (addressesFound.length == 0) {
-            addressesFound = addresses;
+            } else {
+                addresses.forEach(function (address) {
+                    if (address.addr3.split(',')[0].replace(/[^a-zA-Z ]/g, " ").trim().toLowerCase().includes(addressesData.id.trim().toLowerCase())) {
+                        addressesFound.push(address);
+                    }
+                });
+            }
         }
         addressesFound = addressesFound.sort(function(a,b){return a['number'] - b['number']});
         return addressesFound.slice(0,addressesData.nbItemDisplay);
