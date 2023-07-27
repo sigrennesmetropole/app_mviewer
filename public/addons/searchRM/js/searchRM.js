@@ -628,6 +628,7 @@ var searchRM = (function () {
 
     //permet de filtrer les adresses et les renvoie selon un tri numérique
     var _filterAddresses = function (addressesData) {
+        console.log(addressesData);
         var addressesFound = [];
         var addresses = addressesData.result.rva.answer.addresses;
         if (addressesData.id.includes(",")) {
@@ -645,10 +646,12 @@ var searchRM = (function () {
                 addressesFound = addresses;
             }
         }else{
+            console.log('not in ,');
             if (typeof addressesData.citiesSearch !== 'undefined') {
+                console.log('citiesSearch not undefined');
                 addresses.forEach(function (address) {
                     if ( addressesData.citiesSearch.findIndex(item => address.addr3.split(',')[1].trim().toLowerCase() === item.toLowerCase()) !== -1) {
-                        if ( address.addr3.split(',')[0].replace(/[^a-zA-Z ]/g, " ").trim().toLowerCase().includes(addressesData.id.toLowerCase()) ) {
+                        if ( address.addr3.split(',')[0].replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase().includes(addressesData.id.toLowerCase()) ) {
                             addressesFound.push(address);
                         }
                     }
@@ -662,7 +665,7 @@ var searchRM = (function () {
                 }
             } else {
                 addresses.forEach(function (address) {
-                    if (address.addr3.split(',')[0].replace(/[^a-zA-Z ]/g, " ").trim().toLowerCase().includes(addressesData.id.trim().toLowerCase())) {
+                    if (address.addr3.split(',')[0].replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase().includes(addressesData.id.trim().toLowerCase())) {
                         addressesFound.push(address);
                     }
                 });
