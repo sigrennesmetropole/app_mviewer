@@ -9,18 +9,18 @@
         {{^bassins.length}}
             {{#horairesOuvertures.length}}
             <span class='rm-popup-label'> HORAIRES:</span>
-            {{#joursFermes.variationCongesScolaires}}<br/><span><i> Les horaires sont susceptibles de varier durant les congés scolaires.</i></span>{{/joursFermes.variationCongesScolaires}}
+            {{#joursFermes.variationCongesScolaires}}<br/><span><i> LES HORAIRES SONT SUSCEPTIBLES DE VARIER LORS DES CONGÉS SCOLAIRES.</i></span>{{/joursFermes.variationCongesScolaires}}
                 <section>
                 <div id="slideauto{{{idOrganisme}}}" class="slide-feature slideA{{{idOrganisme}}} p sliderTopMargin">
                     {{#horairesOuvertures}}
                     <div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}} thumbtextcarousel" id="pisc">
                         <p class="inSliderPClass">
                             {{#dateDebut}}
-                            <span class='rm-popup-label textcarousel'>A partir du
+                            <span class='rm-popup-label textcarousel'>A PARTIR DU
                                 <span class='date_in_french_format'>
                                     {{dateDebut}}
                                 </span>
-                                {{#dateFin}}au
+                                {{#dateFin}}AU
                                 <span class='date_in_french_format'>
                                     {{dateFin}}
                                 </span>
@@ -52,7 +52,7 @@
                                 {{/ouvert3}}
                             </span>
                             {{/libJour}}<br>
-                            {{/horaires}}{{^horaires}} Pas de jours d'ouverture sur cette période.<br> {{/horaires}}
+                            {{/horaires}}{{^horaires}} PAS DE JOURS D'OUVERTURE SUR CETTE PÉRIODE.<br> {{/horaires}}
 
                         </p>
                     </div>
@@ -92,8 +92,8 @@
 						<div class="thumbnail iframe-popup slide-feature{{{idOrganisme}}} thumbtextcarousel">
 							<p class="inSliderPClassTitle">
                                 {{#dateDebut}}
-								<span class='rm-popup-label textcarousel'>A partir du <span class='date_in_french_format'>{{dateDebut}}</span>
-                                    {{#dateFin}} au <span class='date_in_french_format'>{{dateFin}}</span>{{/dateFin}}
+								<span class='rm-popup-label textcarousel'>A PARTIR DU <span class='date_in_french_format'>{{dateDebut}}</span>
+                                    {{#dateFin}} AU <span class='date_in_french_format'>{{dateFin}}</span>{{/dateFin}}
                                 </span><br>
 								{{/dateDebut}}
                             </p>
@@ -122,37 +122,17 @@
 									{{/ouvert3}}
 								</span>
 								{{/libJour}}<br>
-								{{/horaires}}{{^horaires}} Pas de jours d'ouverture sur cette période. {{/horaires}}
+								{{/horaires}}{{^horaires}} PAS DE JOURS D'OUVERTURE SUR CETTE PÉRIODE. {{/horaires}}
 							</p>
 						</div>
 						{{/horairesOuvertureBassins}}
 						{{/horairesOuvertureBassins.length}}
-						<!-- {{^horairesOuvertureBassins.length}} Pas d'ouverture déclarée.<br> {{/horairesOuvertureBassins.length}} -->
 					</div>
 				</section>
-<!--
-				{{#jours_fermes}}
-				<span class='rm-popup-text-feature rm_orga_fermetures'>
-					<span class='rm-popup-label'> FERMETURES :</span> <span class='rm-fermetures'></span>
-					<span class='daysOff'> {{jours_fermes}} </span>
-					{{#joursFermes.commentaireVariationCongesScolaires}}<span class='comfermeture'> {{{joursFermes.commentaireVariationCongesScolaires}}}</span>{{/joursFermes.commentaireVariationCongesScolaires}}
-				</span>
-				{{/jours_fermes}}
-
-				{{#fermetures_excepts}}
-				<span class='rm-popup-text-feature'>
-					<br>
-					<span class="rm-popup-label">FERMETURES EXCEPTIONNELLES : </span>
-					<span class="exceptionalClosures">{{{fermetures_excepts}}}</span>
-					<br>
-				</span>
-				{{/fermetures_excepts}}
--->
 				{{/bassins}}
 			</p>
 			<br/>
 			{{/bassins.length}}
-			<!-- {{^bassins.length}} <span>Pas d'ouverture déclarée.</span> {{/bassins.length}} -->
 
 		</p>
 	</li>

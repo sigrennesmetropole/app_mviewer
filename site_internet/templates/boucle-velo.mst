@@ -3,8 +3,8 @@
         <h5 class="rm-popup-title-feature">{{nom}}</h5>
         
         <p class="rm-popup-text-feature">
-            {{#commune_rm}}<span class='rm-popup-label'> Commune(s) :</span> {{commune_rm}}<br/>{{/commune_rm}}
-            {{#longueur_geo}}<span class='rm-popup-label'> Longueur :</span> <span class='div1000'>{{longueur_geo}}</span> km<br/>{{/longueur_geo}}
+            {{#commune_rm}}<span class='rm-popup-label'> COMMUNE(S) :</span> {{commune_rm}}<br/>{{/commune_rm}}
+            {{#longueur_geo}}<span class='rm-popup-label'> LONGUEUR :</span> <span class='div1000'>{{longueur_geo}}</span> km<br/>{{/longueur_geo}}
         </p>
     </li>
 {{/features}}
