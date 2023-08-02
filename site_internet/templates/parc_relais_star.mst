@@ -1,17 +1,17 @@
 {{#features}}
 	<li class="item">
 		<h5 class="rm-popup-title-feature">{{{nom}}} </h5>
-        <span class="rm-popup-subtitle-feature" > Source : <a href='https://data.explore.star.fr/explore/dataset/tco-parcsrelais-star-etat-tr/information/' target='_blank'>réseau STAR</a> </span>
+        <span class="rm-popup-subtitle-feature" > SOURCE : <a href='https://data.explore.star.fr/explore/dataset/tco-parcsrelais-star-etat-tr/information/' target='_blank'>réseau STAR</a> </span>
 		<p class="rm-popup-text-feature">
-			{{#etat}}<span class='rm-popup-label'> Etat :</span> {{etat}}<br/>{{/etat}}
-            {{#remplissage}} <span class='rm-popup-label'>Mode de remplissage : </span> {{{remplissage}}} <br/> {{/remplissage}}
+			{{#etat}}<span class='rm-popup-label'> ETAT :</span> {{etat}}<br/>{{/etat}}
+            {{#remplissage}} <span class='rm-popup-label'>MODE DE REMPLISSAGE : </span> {{{remplissage}}} <br/> {{/remplissage}}
             
-            <span class='rm-popup-label'> Disponibilités :</span><br/>
+            <span class='rm-popup-label'> DISPONIBILITES :</span><br/>
             <span class='liste_dechets'>
-                {{#dispsoliste}}<span class='rm_visible_true'> Places classiques : {{{dispsoliste}}} / {{{capacitesoliste}}}<br/> </span>{{/dispsoliste}}
-                {{#dispcovoit}}<span class='rm_visible_true'> Places covoiturage : {{{dispcovoit}}} / {{{capacitecovoit}}}<br/> </span>{{/dispcovoit}}
-                {{#disppmr}}<span class='rm_visible_true'> Places PMR : {{{disppmr}}} / {{{capacitepmr}}}<br/> </span>{{/disppmr}}
-                {{#dispelec}}<span class='rm_visible_true'> Station électrique : {{{dispelec}}} / {{{capaciteelec}}}<br/> </span>{{/dispelec}}
+                {{#dispsoliste}}<span class='rm_visible_true'> PLACES CLASSIQUES : {{{dispsoliste}}} / {{{capacitesoliste}}}<br/> </span>{{/dispsoliste}}
+                {{#dispcovoit}}<span class='rm_visible_true'> PLACES COVOITURAGE : {{{dispcovoit}}} / {{{capacitecovoit}}}<br/> </span>{{/dispcovoit}}
+                {{#disppmr}}<span class='rm_visible_true'> PLACES PMR : {{{disppmr}}} / {{{capacitepmr}}}<br/> </span>{{/disppmr}}
+                {{#dispelec}}<span class='rm_visible_true'> STATION ÉLECTRIQUE : {{{dispelec}}} / {{{capaciteelec}}}<br/> </span>{{/dispelec}}
             </span>
 		</p>
 	</li>

@@ -3,10 +3,10 @@
         <h5 class="rm-popup-title-feature">{{type_evert}}</h5>
         
         <p class="rm-popup-text-feature">
-            Sous type: {{sous_type_evert}}<br/>
+            SOUS TYPE : {{sous_type_evert}}<br/>
         </p>
         <p class="rm-popup-text-feature">
-            Surface: {{surface}} m²<br/>
+            SURFACE : {{surface}} m²<br/>
         </p>
     </li>
 {{/features}}

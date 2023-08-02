@@ -3,10 +3,10 @@
 		<h5 class="rm-popup-title-feature"> {{#noms}} {{{noms}}}  {{/noms}} </h5>
         
 		<p class="rm-popup-text-feature">
-            {{#lieux}} <span class='rm-popup-label'> Adresse : </span> {{{lieux}}} <br/> {{/lieux}}
-            {{#proxi}} <span class='rm-popup-label'> A proximité : </span> {{{proxi}}} <br/> {{/proxi}}
-            {{#pmr}} <span class='rm-popup-label'> Accès aux personnes à mobilité réduite : </span> {{{pmr}}} <br/> {{/pmr}}
-            {{#horaires}} <span class='rm-popup-label'> Horaires : </span> {{{horaires}}} <br/> {{/horaires}} 
+            {{#lieux}} <span class='rm-popup-label'> ADRESSE : </span> {{{lieux}}} <br/> {{/lieux}}
+            {{#proxi}} <span class='rm-popup-label'> A PROXIMITÉ : </span> {{{proxi}}} <br/> {{/proxi}}
+            {{#pmr}} <span class='rm-popup-label'> ACCÈS AUX PERSONNES A MOBILITÉ RÉDUITE : </span> {{{pmr}}} <br/> {{/pmr}}
+            {{#horaires}} <span class='rm-popup-label'> HORAIRES : </span> {{{horaires}}} <br/> {{/horaires}} 
 		</p>
 	</li>
 {{/features}}
