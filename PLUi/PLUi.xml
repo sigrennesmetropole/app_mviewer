@@ -49,7 +49,7 @@
         </theme>
         <theme id="theme-20180827150815" name="Plans de zonage" collapsed="false" 	alwaysOpen="true" icon="far fa-map">
             <layer
-                id="app_urbanisme_parcelle"
+                id="urbanisme_parcelle"
                 name="Parcelle"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/app/ows"
