@@ -48,7 +48,7 @@
             </layer>
         </theme>
         <theme id="theme-20180827150815" name="Plans de zonage" collapsed="false" 	alwaysOpen="true" icon="far fa-map">
-            <layer
+<!--             <layer
                 id="app_urbanisme_parcelle"
                 name="Parcelle"
                 type="wms"
@@ -61,10 +61,10 @@
                 featurecount="1"
                 showintoc="false"
                 infopanel="right-panel">
-                <template url="apps/PLUi/templates/PLUi_Parcelle.mst"></template>
+                <template url="apps/PLUi/templates/PLUi_Parcelle.mst"></template> -->
                 <!--permanentlayer="true"-->
                 <!--hideLayerName="true"-->
-            </layer>
+           <!-- </layer> -->
             <layer
                 id="plui_zone_urba"
                 name="Limites de zones"
