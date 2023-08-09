@@ -202,8 +202,8 @@ var searchRM = (function () {
 
     var _searchRM = function (confData, value) {
         _getApisRequests(confData, value, function (allResults){
-          _displayAutocompleteData(allResults, value);
-          nbResults = $('.autocompleteRmItem').length;
+            _displayAutocompleteData(allResults, value);
+            nbResults = $('.autocompleteRmItem').length;
         });
     };
 
@@ -243,58 +243,82 @@ var searchRM = (function () {
         completeString = originalValue;
 
       Promise.all(_getRequest(confData, updatedString, citiesSearch)).then(function(restrictedResult){
-        if (restrictedResult[0].id == completeString) {
-            if (!hasComma) {
-                Promise.all(_getRequest(confData, originalValue, undefined)).then(function(unrestrictedResult){
-                    if (unrestrictedResult[0].id == completeString) {
-                        
-                        $.getJSON(getPersoConfData, function (confData) {
-                            confData.searchContent.forEach((item, h) => {
-                                switch (item.categoryName) {
-                                    case 'Communes':
-                                        resultArray[h] = restrictedResult[h];
-                                    break;
-                                    case 'Voies':
-                                        resultArray[h] = unrestrictedResult[h];
-                                        resultArray[h].citiesSearch = restrictedResult[h].citiesSearch;
-                                        resultArray[h].result.rva.answer.lanes = unrestrictedResult[h].result.rva.answer.lanes.concat(restrictedResult[h].result.rva.answer.lanes);
-                                        for(var i=0; i<resultArray[h].result.rva.answer.lanes.length; ++i) {
-                                            for(var j=i+1; j<resultArray[h].result.rva.answer.lanes.length; ++j) {
-                                                if(resultArray[h].result.rva.answer.lanes[i].name3 === resultArray[h].result.rva.answer.lanes[j].name3){
-                                                    if (i != j) {
-                                                        resultArray[h].result.rva.answer.lanes.splice(j, 1);
+        var completeStringNoComma = completeString.split(",")[0].replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase();
+        restrictedResult[1].result.rva.answer.lanes.sort(function(x,y){ return x.name.replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase().includes(completeStringNoComma) ? -1 : y.name.replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase().includes(completeStringNoComma) ? 1 : 0; });
+        restrictedResult[2].result.rva.answer.addresses.sort(function(x,y){ return x.addr2.replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase().includes(completeStringNoComma) ? -1 : y.addr2.replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase().includes(completeStringNoComma) ? 1 : 0; });
+        var amountLanes = 0;
+        var amountAddresses = 0;
+        restrictedResult[1].result.rva.answer.lanes.forEach(function (lane){
+            if (lane.name.replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase().includes(completeStringNoComma)) {
+                amountLanes++;
+            }
+        });
+        restrictedResult[2].result.rva.answer.addresses.forEach(function (addresse){
+            if (addresse.addr2.replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase().includes(completeStringNoComma)) {
+                amountAddresses++;
+            }
+        });
+        if (amountLanes >= 5 || amountAddresses >= 5) {
+            var arrayAddresses = restrictedResult[2].result.rva.answer.addresses;
+            arrayAddresses = arrayAddresses.slice(0, amountAddresses).sort(function(a,b){
+                return a.number - b.number; 
+            }).concat(arrayAddresses.slice(amountAddresses, arrayAddresses.length));
+            restrictedResult[2].result.rva.answer.addresses = arrayAddresses;
+            callback(restrictedResult);
+        }else{
+            if (restrictedResult[0].id == completeString) {
+                if (!hasComma) {
+                    Promise.all(_getRequest(confData, originalValue, undefined)).then(function(unrestrictedResult){
+                        if (unrestrictedResult[0].id == completeString) {
+                            
+                            $.getJSON(getPersoConfData, function (confData) {
+                                confData.searchContent.forEach((item, h) => {
+                                    switch (item.categoryName) {
+                                        case 'Communes':
+                                            resultArray[h] = restrictedResult[h];
+                                        break;
+                                        case 'Voies':
+                                            resultArray[h] = unrestrictedResult[h];
+                                            resultArray[h].citiesSearch = restrictedResult[h].citiesSearch;
+                                            resultArray[h].result.rva.answer.lanes = unrestrictedResult[h].result.rva.answer.lanes.concat(restrictedResult[h].result.rva.answer.lanes);
+                                            for(var i=0; i<resultArray[h].result.rva.answer.lanes.length; ++i) {
+                                                for(var j=i+1; j<resultArray[h].result.rva.answer.lanes.length; ++j) {
+                                                    if(resultArray[h].result.rva.answer.lanes[i].name3 === resultArray[h].result.rva.answer.lanes[j].name3){
+                                                        if (i != j) {
+                                                            resultArray[h].result.rva.answer.lanes.splice(j, 1);
+                                                        }
                                                     }
                                                 }
                                             }
-                                        }
-                                    break;
-                                    case 'Adresses':
-                                        resultArray[h] = unrestrictedResult[h];
-                                        resultArray[h].citiesSearch = restrictedResult[h].citiesSearch;
-                                        resultArray[h].result.rva.answer.addresses = unrestrictedResult[h].result.rva.answer.addresses.concat(restrictedResult[h].result.rva.answer.addresses);
-                                        for(var i=0; i<resultArray[h].result.rva.answer.addresses.length; ++i) {
-                                            for(var j=i+1; j<resultArray[h].result.rva.answer.addresses.length; ++j) {
-                                                if(resultArray[h].result.rva.answer.addresses[i].addr3 === resultArray[h].result.rva.answer.addresses[j].addr3)
-                                                    if (i != j) {
-                                                        resultArray[h].result.rva.answer.addresses.splice(j, 1);
-                                                    }    
+                                        break;
+                                        case 'Adresses':
+                                            resultArray[h] = unrestrictedResult[h];
+                                            resultArray[h].citiesSearch = restrictedResult[h].citiesSearch;
+                                            resultArray[h].result.rva.answer.addresses = unrestrictedResult[h].result.rva.answer.addresses.concat(restrictedResult[h].result.rva.answer.addresses);
+                                            for(var i=0; i<resultArray[h].result.rva.answer.addresses.length; ++i) {
+                                                for(var j=i+1; j<resultArray[h].result.rva.answer.addresses.length; ++j) {
+                                                    if(resultArray[h].result.rva.answer.addresses[i].addr3 === resultArray[h].result.rva.answer.addresses[j].addr3)
+                                                        if (i != j) {
+                                                            resultArray[h].result.rva.answer.addresses.splice(j, 1);
+                                                        }    
+                                                }
                                             }
-                                        }
-                                    break;
-                                    case 'Organismes':
-                                        restrictedResult[h].request = originalValue;
-                                        resultArray[h] = restrictedResult[h];
-                                    break;
-                                    default:
-                                }
+                                        break;
+                                        case 'Organismes':
+                                            restrictedResult[h].request = originalValue;
+                                            resultArray[h] = restrictedResult[h];
+                                        break;
+                                        default:
+                                    }
+                                });
+                                callback(resultArray);
                             });
-                            callback(resultArray);
-                        });
-                    }
-                });
-            }else{
-                resultArray = restrictedResult;
-                callback(resultArray);
+                        }
+                    });
+                }else{
+                    resultArray = restrictedResult;
+                    callback(resultArray);
+                }
             }
         }
       });
@@ -613,8 +637,13 @@ var searchRM = (function () {
         var lanes = lanesData.result.rva.answer.lanes;
         if (typeof lanesData.citiesSearch !== 'undefined') {
             lanes.forEach(function (lane) {
-                if ( lanesData.citiesSearch.findIndex(item => lane.name4.split(',')[1].trim().toLowerCase() === item.toLowerCase()) !== -1) {
+                if ( lanesData.citiesSearch.findIndex(item => lane.name4.split(',')[1].trim().toLowerCase() === item.trim().toLowerCase()) !== -1) {
                     lanesFound.push(lane);
+                }
+            });
+            lanes.forEach(function (lane) {
+                if ( lane.name.replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase().includes(lanesData.id.replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase()) ) {
+                    lanesFound.unshift(lane);
                 }
             });
         } else {
@@ -628,12 +657,10 @@ var searchRM = (function () {
 
     //permet de filtrer les adresses et les renvoie selon un tri numérique
     var _filterAddresses = function (addressesData) {
-        console.log(addressesData);
         var addressesFound = [];
         var addresses = addressesData.result.rva.answer.addresses;
         if (addressesData.id.includes(",")) {
             if (typeof addressesData.citiesSearch !== 'undefined') {
-                // var citiesSearchSplitArray = addressesData.citiesSearch.split(',');
                 addresses.forEach(function (address) {
                     if ( addressesData.citiesSearch.findIndex(item => address.addr3.split(',')[1].trim().toLowerCase() === item.toLowerCase()) !== -1) {
                         addressesFound.push(address);
@@ -646,14 +673,15 @@ var searchRM = (function () {
                 addressesFound = addresses;
             }
         }else{
-            console.log('not in ,');
             if (typeof addressesData.citiesSearch !== 'undefined') {
-                console.log('citiesSearch not undefined');
                 addresses.forEach(function (address) {
                     if ( addressesData.citiesSearch.findIndex(item => address.addr3.split(',')[1].trim().toLowerCase() === item.toLowerCase()) !== -1) {
                         if ( address.addr3.split(',')[0].replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase().includes(addressesData.id.toLowerCase()) ) {
                             addressesFound.push(address);
                         }
+                    }
+                    if ( address.addr3.split(',')[0].replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase().includes(addressesData.id.toLowerCase()) ) {
+                        addressesFound.unshift(address);
                     }
                 });
                 if (addressesFound.length == 0) {
@@ -688,15 +716,10 @@ var searchRM = (function () {
             });
         } else {
             organisms.forEach(function (organism) {
-                var requestDone = false;
-                organismsData.request.split(' ').forEach(function (splitRequest) {
-                    if (!requestDone) {
-                        if (splitRequest.length > 3) {
-                            if ( organism.autres !== null && organism.nom.toLowerCase().includes(splitRequest.toLowerCase())) {
-                                organismsFound.push(organism);
-                                requestDone = true;
-                            }
-                        }
+                organismsData.id.split(' ').forEach(function (splitRequest) {
+                    if ( organism.autres !== null && organism.nom.toLowerCase().includes(splitRequest.toLowerCase())) {
+                        organismsFound.push(organism);
+                        requestDone = true;
                     }
                 })
             });
