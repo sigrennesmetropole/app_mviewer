@@ -61,8 +61,8 @@ mviewer.customLayers.aires_jeux_rennes= (function() {
      * Le surfacique n'est affiché qu'à partir d'un certain niveau de zoom
      */
     function _updateStyle(){
-        console.log(_map.getView().getZoom());
-        if (_map.getView().getZoom() < 16.5) {
+        //console.log(_map.getView().getZoom());
+        if (_map.getView().getZoom() < 15.8) {
             dataLayer.setStyle(zoomOutStyles);
         } else {
             dataLayer.setStyle(zoomInStyles);

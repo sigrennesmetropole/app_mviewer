@@ -58,7 +58,7 @@ mviewer.customLayers.urbadiffus_en_chantier= (function() {
      * Le surfacique n'est affiché qu'à partir d'un certain niveau de zoom
      */
     function _updateStyle(){
-        if (_map.getView().getZoom() < 17) {
+        if (_map.getView().getZoom() < 16) {
             dataLayer.setStyle(zoomOutStyles);
         } else {
             dataLayer.setStyle(zoomInStyles);
