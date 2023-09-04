@@ -56,9 +56,10 @@
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
-                queryable="false"
+                queryable="true"
                 featurecount="6"
                 infopanel="right-panel">
+                <template url="apps/site_internet/templates/aire_espace_vdr.mst"></template>
             </layer>
             <layer
                 id="v_aire_jeu_rm"

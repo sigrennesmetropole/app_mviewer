@@ -1,0 +1,6 @@
+{{#features}}
+    <li class="item">
+        <h5 class="rm-popup-title-feature">{{nom}}</h5>
+    </li>
+{{/features}}
+

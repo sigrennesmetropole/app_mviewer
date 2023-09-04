@@ -67,6 +67,12 @@ mviewer.customLayers.aires_jeux_rennes= (function() {
         } else {
             dataLayer.setStyle(zoomInStyles);
         }
+        
+        if(_map.getView().getZoom() < 16.7){ // niveau de zoom où apparaissent les jeux (consultables). Attention, il faut changer cette valeur si le sld eux_enfants_vdr.sld change
+            mviewer.customLayers.aires_jeux_rennes.config.queryable = true;
+        } else {
+            mviewer.customLayers.aires_jeux_rennes.config.queryable = false;
+        }
     }
     
     /*
