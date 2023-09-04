@@ -1,6 +1,6 @@
 mviewer.customLayers.urbadiffus_en_chantier= (function() {
     const fillcolor='#D45054';
-    let pointOnSurfaceMarker='apps/site_internet/customlayer/picture/marker.svg';
+    let pointOnSurfaceMarker='apps/site_internet/customlayer/picture/travaux.svg';
     
     const nb_logements_min=10;
     let data_url="https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=app:tabou_v_oa_programme&outputFormat=application/json&srsName=EPSG:3857";
@@ -27,7 +27,8 @@ mviewer.customLayers.urbadiffus_en_chantier= (function() {
         }),
         new ol.style.Style({
             image: new ol.style.Icon({
-              color: '#000000', 
+              //color: '#000000', 
+              opacity: 0.7,
               anchor:[0.5,0.5],
               src: pointOnSurfaceMarker,
             }),
