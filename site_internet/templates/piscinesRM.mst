@@ -34,20 +34,20 @@
                             <span class='rm-popup-text-feature'>
                                 {{#ouvert1}}
                                 {{#ferme1}}
-                                <span class='hour_in_french_format'>{{ouvert1}}</span>h -
-                                <span class='hour_in_french_format'>{{ferme1}}</span>h
+                                <span class='hour_in_french_format'>{{ouvert1}}</span> -
+                                <span class='hour_in_french_format'>{{ferme1}}</span>
                                 {{/ferme1}}
                                 {{/ouvert1}}{{^ouvert1}} - {{/ouvert1}}
                                 {{#ouvert2}} /
                                 {{#ferme2}}
-                                <span class='hour_in_french_format'>{{ouvert2}}</span>h -
-                                <span class='hour_in_french_format'>{{ferme2}}</span>h
+                                <span class='hour_in_french_format'>{{ouvert2}}</span> -
+                                <span class='hour_in_french_format'>{{ferme2}}</span>
                                 {{/ferme2}}
                                 {{/ouvert2}}
                                 {{#ouvert3}} /
                                 {{#ferme3}}
-                                <span class='hour_in_french_format'>{{ouvert3}}</span>h -
-                                <span class='hour_in_french_format'>{{ferme3}}</span>h
+                                <span class='hour_in_french_format'>{{ouvert3}}</span> -
+                                <span class='hour_in_french_format'>{{ferme3}}</span>
                                 {{/ferme3}}
                                 {{/ouvert3}}
                             </span>
@@ -104,20 +104,20 @@
 								<span class='rm-popup-text-feature'>
 									{{#ouvert1}}
 									{{#ferme1}}
-									<span class='hour_in_french_format'>{{ouvert1}}</span>h -
-									<span class='hour_in_french_format'>{{ferme1}}</span>h
+									<span class='hour_in_french_format'>{{ouvert1}}</span> -
+									<span class='hour_in_french_format'>{{ferme1}}</span>
 									{{/ferme1}}
 									{{/ouvert1}}{{^ouvert1}} - {{/ouvert1}}
 									{{#ouvert2}} /
 									{{#ferme2}}
-									<span class='hour_in_french_format'>{{ouvert2}}</span>h -
-									<span class='hour_in_french_format'>{{ferme2}}</span>h
+									<span class='hour_in_french_format'>{{ouvert2}}</span> -
+									<span class='hour_in_french_format'>{{ferme2}}</span>
 									{{/ferme2}}
 									{{/ouvert2}}
 									{{#ouvert3}} /
 									{{#ferme3}}
-									<span class='hour_in_french_format'>{{ouvert3}}</span>h -
-									<span class='hour_in_french_format'>{{ferme3}}</span>h
+									<span class='hour_in_french_format'>{{ouvert3}}</span> -
+									<span class='hour_in_french_format'>{{ferme3}}</span>
 									{{/ferme3}}
 									{{/ouvert3}}
 								</span>

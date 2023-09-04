@@ -1,19 +1,19 @@
 {{#features}}
     <li class="item" >
-        <h5 class="rm-popup-title-feature ">{{intitulé}}</h5>
+        <h5 class="rm-popup-title-feature ">{{intitule}}</h5>
         
         {{#ecobonus}}
-            <p class="rm-popup-text-feature"> 
-                <img class="ecobns" src="apps/fondsconcours/img/écusson1.svg"  style="height: 30px;"/> ECOBONUS 
+            <p class="rm-popup-text-feature macaron_ecobonus" show="{{{ecobonus}}}"> 
+                <img class="ecobns_{{{ecobonus}}}" src="apps/fondsconcours/img/écusson1.svg"  style="height: 30px;"/> ECOBONUS 
             </p>
         {{/ecobonus}}
         <p class="rm-popup-text-feature">
-            {{#Maitrise d'ouvrage}}<span class='rm-popup-label'> Maîtrise d'ouvrage :</span> {{{Maitrise d'ouvrage}}}<br/>{{/Maitrise d'ouvrage}}
-            {{#année}}<span class='rm-popup-label'> Fonds de concours :</span> {{{année}}}<br/>{{/année}}
-            {{#nature}}<span class='rm-popup-label'> Catégorie :</span> {{{nature}}}<br/>{{/nature}}
-            {{#montant_attrib}}<span class='rm-popup-label'> Montant attribué :</span> <span class='rm-large-number'>{{{montant_attrib}}}</span> €<br/>{{/montant_attrib}}
+            {{#maitrise_ouvrage}}<span class='rm-popup-label'> Maîtrise d'ouvrage :</span> {{{maitrise_ouvrage}}}<br/>{{/maitrise_ouvrage}}
+            {{#annee}}<span class='rm-popup-label'> Fonds de concours :</span> {{{annee}}}<br/>{{/annee}}
+            {{#nature_equipement}}<span class='rm-popup-label'> Catégorie :</span> {{{nature_equipement}}}<br/>{{/nature_equipement}}
+            {{#montant_fc}}<span class='rm-popup-label'> Montant attribué :</span> <span class='rm-large-number'>{{{montant_fc}}}</span> €<br/>{{/montant_fc}}
             {{#cout_global}}<span class='rm-popup-label'> Coût global :</span> <span class='rm-large-number'>{{{cout_global}}}</span> €<br/>{{/cout_global}}
-            {{#taux}}<span class='rm-popup-label'> Aide métropolitaine :</span> {{{taux}}} %<br/>{{/taux}}
+            {{#taux_cofinancement}}<span class='rm-popup-label'> Aide métropolitaine :</span> {{{taux_cofinancement}}} %<br/>{{/taux_cofinancement}}
             {{#justificatif}}<span class='rm-popup-label'> Justificatif :</span> {{{justificatif}}} <br/>{{/justificatif}}
             {{#photo}}
             <section>
@@ -27,3 +27,14 @@
         </p>
     </li>
 {{/features}}
+
+<script>
+    // gestion de l'affichage du macaron écobonus
+    let _tab = document.querySelectorAll("p.macaron_ecobonus");
+
+    for (var i = 0; i < _tab.length; i++) {
+        if ( _tab[i].getAttribute("show") && _tab[i].getAttribute("show") == "Non") {
+            _tab[i].style.display = "none";
+        }
+    }
+</script>

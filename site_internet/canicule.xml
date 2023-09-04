@@ -23,6 +23,7 @@
     </baselayers>
 
     <extensions>
+        <extension type="component" id="carousel_photo" path="apps/public/addons"/>
         <extension type="component" id="GUICustom" path="apps/public/addons"/>
         <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
         <extension type="component" id="accessibilite" path="apps/public/addons"/>
@@ -30,7 +31,7 @@
     
     <themes mini="true">
         <theme id="theme-20180625145760" name="Equipements sportifs" collapsed="true" icon="fas fa-swimmer">
-            <layer
+            <!--<layer
                 id="v_sitorg_organisme"
                 name="Piscines"
                 type="wms"
@@ -46,10 +47,28 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
+            -->
+            <layer
+                id="piscinesRM"
+                name="Piscines"
+                type="customlayer"
+                url="apps/site_internet/customlayer/piscinesRM.js"
+                legendurl="apps/site_internet/img/legend/piscine-01.svg"
+                vectorlegend="true"
+                visible="true"
+                tooltip="true"
+                tooltipenabled="true"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{nomUsage}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="3"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/piscinesRM.mst"></template>
+            </layer>
         </theme>
 
         <theme id="theme-20180625145780" name="Environnement/Cadre de vie" collapsed="true" icon="fas fa-leaf">
-            <layer
+            <!--<layer
                 id="v_sitorg_organisme"
                 name="Parcs, jardins et espaces naturels"
                 type="wms"
@@ -63,8 +82,8 @@
                 featurecount="3"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
-            </layer>
-        <!--    <layer
+            </layer> -->
+            <layer
                 id="gev_font"
                 name="Fontaines d'eau potable"
                 type="wms"
@@ -79,7 +98,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/global.fontaines_djb.mst"></template>
             </layer>
-        -->
+        
         </theme>
         <theme id="theme-20180625145800" name="Espaces de rafraichissement" collapsed="true" icon="fas fa-tint">
           <layer

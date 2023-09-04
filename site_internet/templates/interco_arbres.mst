@@ -1,0 +1,19 @@
+{{#features}}
+    <li class="item">
+        <h5 class="rm-popup-title-feature">{{nom_commun}}</h5>
+        
+        <p class="rm-popup-text-feature">
+            Nom taxon: {{nom_taxon}}<br/>
+        </p>
+        <p class="rm-popup-text-feature">
+            Fonction: {{fonction}}<br/>
+        </p>
+        <p class="rm-popup-text-feature">
+            Type taille: {{type_taille}}<br/>
+        </p>
+        <p class="rm-popup-text-feature">
+            Complement: {{complement}}<br/>
+        </p>
+    </li>
+{{/features}}
+

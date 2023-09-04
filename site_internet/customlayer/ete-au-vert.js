@@ -1,7 +1,7 @@
 
 mviewer.customLayers.ete_au_vert= (function() {
     let data_url='https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=eq_poi:v_sitorg_organisme&outputFormat=application/json&srsname=EPSG:3857';
-    let l_id_org=[6798,6623,386,299,6799,6800,6801,6802,6803];
+    let l_id_org=[6798,6623,386,299,6800,6801,6802,6803];
     let markercolor='#439147';
     
     function pctStyle() {

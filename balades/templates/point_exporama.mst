@@ -2,12 +2,48 @@
     <li class="item">
         <div id="idbalade" style="display: none">{{{idbalade}}}</div>
 
-        <h4 class="rm-popup-title-feature"> Arrêt N° {{{rang}}}</h4>
-        <p class="rm-popup-text-feature">
-            {{#name}}<span class='rm-popup-label'> {{{name}}}</span><br/> {{/name}}
-        </p>
+        <h4 class="rm-popup-title-feature"> {{{name}}}</h4>
+        
+        {{#sous_titre}}</br><p class="rm-popup-title-level2"> {{{sous_titre}}} </p> {{/sous_titre}}
+        
         <p class="rm-popup-text-feature">
             {{#description}}<span > {{{description}}}</span><br/>{{/description}}
+            {{#photo}}
+                <section class="rm-popup-text-feature">
+                    <div id="photo" style="display: block;text-align: center;">
+                        <img class="photo" src="{{{photo}}}" loading="lazy" style="height: 150px;">
+                        <p class="labelPictureEnlarge rm-popup-label">Cliquez pour agrandir cette image</p>
+                        {{#photo_credit}} {{{photo_credit}}} </br></br>{{/photo_credit}}
+                    </div>
+                </section>
+            {{/photo}}
+            {{#lien}}<a class='lienweb' href="{{{lien}}}" target="_blank" title="{{{lien}}}"> En savoir plus ... </a>{{/lien}}
+        </p>
+        <p class="rm-popup-text-feature">
+            {{#description2}}<span > {{{description2}}}</span><br/>{{/description2}}
+            {{#photo2}}
+                <section class="rm-popup-text-feature">
+                    <div id="photo" style="display: block;text-align: center;">
+                        <img class="photo" src="{{{photo2}}}" loading="lazy" style="height: 150px;">
+                        <p class="labelPictureEnlarge rm-popup-label">Cliquez pour agrandir cette image</p>
+                        {{#photo_credit2}} {{{photo_credit2}}} </br></br>{{/photo_credit2}}
+                    </div>
+                </section>
+            {{/photo2}}
+            {{#lien2}}<a class='lienweb' href="{{{lien2}}}" target="_blank" title="{{{lien2}}}"> En savoir plus ... </a>{{/lien2}}
+        </p>
+        <p class="rm-popup-text-feature">
+            {{#description3}}<span > {{{description3}}}</span><br/>{{/description3}}
+            {{#photo3}}
+                <section class="rm-popup-text-feature">
+                    <div id="photo" style="display: block;text-align: center;">
+                        <img class="photo" src="{{{photo3}}}" loading="lazy" style="height: 150px;">
+                        <p class="labelPictureEnlarge rm-popup-label">Cliquez pour agrandir cette image</p>
+                        {{#photo_credit3}} {{{photo_credit3}}} </br></br>{{/photo_credit3}}
+                    </div>
+                </section>
+            {{/photo3}}
+            {{#lien3}}<a class='lienweb' href="{{{lien3}}}" target="_blank" title="{{{lien3}}}"> En savoir plus ... </a> {{/lien3}}
         </p>
     </li>
 {{/features}}
