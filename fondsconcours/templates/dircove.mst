@@ -8,18 +8,18 @@
             </p>
         {{/ecobonus}}
         <p class="rm-popup-text-feature">
-            {{#maitrise_ouvrage}}<span class='rm-popup-label'> Maîtrise d'ouvrage :</span> {{{maitrise_ouvrage}}}<br/>{{/maitrise_ouvrage}}
-            {{#annee}}<span class='rm-popup-label'> Fonds de concours :</span> {{{annee}}}<br/>{{/annee}}
-            {{#nature_equipement}}<span class='rm-popup-label'> Catégorie :</span> {{{nature_equipement}}}<br/>{{/nature_equipement}}
-            {{#montant_fc}}<span class='rm-popup-label'> Montant attribué :</span> <span class='rm-large-number'>{{{montant_fc}}}</span> €<br/>{{/montant_fc}}
-            {{#cout_global}}<span class='rm-popup-label'> Coût global :</span> <span class='rm-large-number'>{{{cout_global}}}</span> €<br/>{{/cout_global}}
-            {{#taux_cofinancement}}<span class='rm-popup-label'> Aide métropolitaine :</span> {{{taux_cofinancement}}} %<br/>{{/taux_cofinancement}}
-            {{#justificatif}}<span class='rm-popup-label'> Justificatif :</span> {{{justificatif}}} <br/>{{/justificatif}}
+            {{#maitrise_ouvrage}}<span class='rm-popup-label'> MAÎTRISE D'OUVRAGE :</span> {{{maitrise_ouvrage}}}<br/>{{/maitrise_ouvrage}}
+            {{#annee}}<span class='rm-popup-label'> FONDS DE CONCOURS :</span> {{{annee}}}<br/>{{/annee}}
+            {{#nature_equipement}}<span class='rm-popup-label'> CATÉGORIE :</span> {{{nature_equipement}}}<br/>{{/nature_equipement}}
+            {{#montant_fc}}<span class='rm-popup-label'> MONTANT ATTRIBUÉ :</span> <span class='rm-large-number'>{{{montant_fc}}}</span> €<br/>{{/montant_fc}}
+            {{#cout_global}}<span class='rm-popup-label'> COÛT GLOBAL :</span> <span class='rm-large-number'>{{{cout_global}}}</span> €<br/>{{/cout_global}}
+            {{#taux_cofinancement}}<span class='rm-popup-label'> AIDE MÉTROPOLITAINE :</span> {{{taux_cofinancement}}} %<br/>{{/taux_cofinancement}}
+            {{#justificatif}}<span class='rm-popup-label'> JUSTIFICATIF :</span> {{{justificatif}}} <br/>{{/justificatif}}
             {{#photo}}
             <section>
                 <div id="slideauto" style="display: block;text-align: center;">
                     <img class="photo" src="{{{photo}}}" loading="lazy" style="height: 150px;">
-                    <p class="labelPictureEnlarge rm-popup-label">Cliquez pour agrandir cette image</p>
+                    <p class="labelPictureEnlarge rm-popup-label">CLIQUEZ POUR AGRANDIR CETTE IMAGE</p>
                 </div>
             </section>
             {{/photo}}
