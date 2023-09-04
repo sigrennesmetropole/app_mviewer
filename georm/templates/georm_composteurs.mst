@@ -1,11 +1,11 @@
 {{#features}}
     <li class="item">
-        <h5 class="rm-popup-title-feature composteur-title">Composteur collectif</h5>
+        <h5 class="rm-popup-title-feature composteur-title">COMPOSTEUR COLLECTIF</h5>
         <p class="rm-popup-text-feature">
-            {{#id_cmp_gesbac}}<span class='rm-popup-label'> Numéro :</span> {{{id_cmp_gesbac}}}<br/>{{/id_cmp_gesbac}}
-            {{#adresse_complete}}<span class='rm-popup-label'> Adresse :</span> {{{adresse_complete}}}<br/>{{/adresse_complete}}
-            {{#domaine}}<span class='rm-popup-label'> Domaine :</span> {{{domaine}}}<br/>{{/domaine}}
-            {{#actif}}<span class='rm-popup-label'> Actif :</span> {{{actif}}}<br/>{{/actif}}
+            {{#id_cmp_gesbac}}<span class='rm-popup-label'> NUMÉRO :</span> {{{id_cmp_gesbac}}}<br/>{{/id_cmp_gesbac}}
+            {{#adresse_complete}}<span class='rm-popup-label'> ADRESSE :</span> {{{adresse_complete}}}<br/>{{/adresse_complete}}
+            {{#domaine}}<span class='rm-popup-label'> DOMAINE :</span> {{{domaine}}}<br/>{{/domaine}}
+            {{#actif}}<span class='rm-popup-label'> ACTIF :</span> {{{actif}}}<br/>{{/actif}}
         </p>
     </li>
 {{/features}}
