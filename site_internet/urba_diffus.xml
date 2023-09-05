@@ -93,7 +93,7 @@
             </layer>
         </theme>
         <theme id="theme-20230113100030" name="Administration" collapsed="true" icon="fas fa-map-marked-alt">
-            <layer
+            <!--<layer
                 id="v_sitorg_organisme"
                 name="Administrations"
                 type="wms"
@@ -107,6 +107,21 @@
                 queryable="true"
                 featurecount="3"
                 filter="etat_organisme='actif' and (code_nomenclature_principale = '1.1.1' OR code_nomenclature_secondaire LIKE '% 1.1.1 %') AND (nom_usage like '%Direction de quartier%' OR nom_usage like '% Droits des sols%')"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organisme.mst"></template>
+            </layer> -->
+            <layer
+                id="custom_mairie"
+                name="Administrations"
+                type="customlayer"
+                url="apps/site_internet/customlayer/custom_mairie.js"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                legendurl="apps/site_internet/img/legend/custom_mairie.svg"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9bd66532-036e-44c8-957d-9156362e5576"
+                queryable="true"
+                featurecount="3"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
