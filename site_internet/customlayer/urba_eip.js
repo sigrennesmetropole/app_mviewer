@@ -1,6 +1,6 @@
-mviewer.customLayers.custom_mairie= (function() {
+mviewer.customLayers.urba_eip= (function() {
     const fillcolor='#dd9ed1';
-    let stylesrc='apps/site_internet/customlayer/picture/mairie.svg';
+    let stylesrc='apps/site_internet/customlayer/picture/EIP.svg';
     
     const nb_logements_min=10;
     let data_url="https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=eq_poi:v_sitorg_organisme&outputFormat=application/json&srsName=EPSG:3857";
@@ -42,7 +42,7 @@ mviewer.customLayers.custom_mairie= (function() {
                     .then(r => r.json())
                     .then(r => {
                         // nettoie la layer
-                        mviewer.getLayer("custom_mairie").layer.getSource().clear();
+                        mviewer.getLayer("urba_eip").layer.getSource().clear();
                         // charge les features
                         let features = dataLayer.getSource().getFormat().readFeatures(r)
                         dataLayer.getSource().addFeatures(features);

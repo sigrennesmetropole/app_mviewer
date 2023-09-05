@@ -111,13 +111,13 @@
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer> -->
             <layer
-                id="custom_mairie"
+                id="urba_eip"
                 name="Administrations"
                 type="customlayer"
-                url="apps/site_internet/customlayer/custom_mairie.js"
+                url="apps/site_internet/customlayer/urba_eip.js"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
-                legendurl="apps/site_internet/img/legend/custom_mairie.svg"
+                legendurl="apps/site_internet/img/legend/urba_eip.svg"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9bd66532-036e-44c8-957d-9156362e5576"
                 queryable="true"
