@@ -374,7 +374,6 @@ var searchRM = (function () {
               }
           }
       } );
-      promises[4] = value;
       return promises;
     }
 
