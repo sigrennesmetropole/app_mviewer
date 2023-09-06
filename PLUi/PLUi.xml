@@ -64,7 +64,7 @@
                 <template url="apps/PLUi/templates/PLUi_Parcelle.mst"></template>
                 <!--permanentlayer="true"-->
                 <!--hideLayerName="true"-->
-            </layer>
+           </layer>
             <layer
                 id="plui_zone_urba"
                 name="Limites de zones"

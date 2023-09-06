@@ -3,16 +3,16 @@
         <h5 class="rm-popup-title-feature">{{nom_commun}}</h5>
         
         <p class="rm-popup-text-feature">
-            Nom taxon: {{nom_taxon}}<br/>
+            NOM TAXON: {{nom_taxon}}<br/>
         </p>
         <p class="rm-popup-text-feature">
-            Fonction: {{fonction}}<br/>
+            FONCTION: {{fonction}}<br/>
         </p>
         <p class="rm-popup-text-feature">
-            Type taille: {{type_taille}}<br/>
+            TYPE TAILLE: {{type_taille}}<br/>
         </p>
         <p class="rm-popup-text-feature">
-            Complement: {{complement}}<br/>
+            COMPLÉMENT: {{complement}}<br/>
         </p>
     </li>
 {{/features}}
