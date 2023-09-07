@@ -1,5 +1,5 @@
 mviewer.customLayers.urba_eip= (function() {
-    const fillcolor='#dd9ed1';
+    const fillcolor='#A84C94';
     let stylesrc='apps/site_internet/customlayer/picture/EIP.svg';
     
     const nb_logements_min=10;
