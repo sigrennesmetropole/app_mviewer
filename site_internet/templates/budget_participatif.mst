@@ -11,7 +11,7 @@
                 <section>
                     <div id="slideauto" style="display: block;text-align: center;">
                         <img class="photo" src="{{{photo}}}" loading="lazy" style="height: 150px;">
-                        <p class="labelPictureEnlarge rm-popup-label">CLIQUEZ POUR AGRANDIR CETTE IMAGE</p>
+                        <p class="labelPictureEnlarge rm-popup-label">Cliquez pour agrandir cette image</p>
                     </div>
                 </section>
             {{/photo}}

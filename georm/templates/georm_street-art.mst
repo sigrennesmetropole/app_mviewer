@@ -9,7 +9,7 @@
 			{{#remarque}}<span class='rm-popup-label'> INFORMATIONS SUPPLÉMENTAIRES :</span> {{{remarque}}}<br/>{{/remarque}}
 		</p>
 		{{#photo}}<img src="https://public.sig.rennesmetropole.fr/ressources/img/photos/graff/{{{photo}}}" alt="{{{nom_mur}}}">
-			<p class="labelPictureEnlarge">CLIQUEZ POUR AGRANDIR CETTE IMAGE</p>
+			<p class="labelPictureEnlarge">Cliquez pour agrandir cette image CETTE IMAGE</p>
 		{{/photo}}
 	</li> 
 {{/features}} 
