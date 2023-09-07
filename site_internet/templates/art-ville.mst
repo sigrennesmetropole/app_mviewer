@@ -1,7 +1,7 @@
 {{#features}}
     <li class="item">
         <h5 class="rm-popup-title-feature rm_artville" etat="{{etat}}" type="{{type}}">{{oeuvre_nom}}</h5>
-        <span class="rm-popup-subtitle-feature" > POUR LA MÉMOIRE </span>
+        <span class="rm-popup-subtitle-feature" > Pour la mémoire </span>
         
         <p class="rm-popup-text-feature">
             {{#localisation}}<span class='rm-popup-label'> LOCALISATION :</span> {{localisation}}<br/>{{/localisation}}
