@@ -1,5 +1,5 @@
 mviewer.customLayers.urbadiffus_en_chantier= (function() {
-    const fillcolor='#D45054';
+    const fillcolor='#CB3639';
     let pointOnSurfaceMarker='apps/site_internet/customlayer/picture/travaux.svg';
     
     const nb_logements_min=10;

@@ -1,5 +1,5 @@
 mviewer.customLayers.urbadiffus_en_etude= (function() {
-    const fillcolor='#FF9027';
+    const fillcolor='#B35205';
     let pointOnSurfaceMarker='apps/site_internet/customlayer/picture/travaux.svg';
     
     const nb_logements_min=10;
