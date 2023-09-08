@@ -1,0 +1,52 @@
+{
+    "type": "FeatureCollection",
+    "name": "points",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:EPSG::3857"
+        }
+    },
+    "features": [{
+            "type": "Feature",
+            "properties": {
+                "id": 2,
+                "idbalade": 1,
+                "rang": 2,
+                "name": "PLace de la Mairie",
+                "description": "Ici on parle du stand exporama, de frac à l'opéra, des illuminations du Parlement"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186761.93419227633, 6125465.22843952]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "id": 1,
+                "idbalade": 1,
+                "rang": 1,
+                "description": "On va parler ici de l'art public blablablabla",
+                "name": "Place Sainte-Anne"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-187048.58188102912, 6125950.080838096]
+            }
+        }, {
+            "type": "Feature",
+            "properties": {
+                "id": 3,
+                "idbalade": 1,
+                "rang": 3,
+                "name": "Place Charles de Gaulle",
+                "description": "description du troisième point"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-186644.93740746888, 6124488.270846056]
+            }
+        }
+    ]
+}
+

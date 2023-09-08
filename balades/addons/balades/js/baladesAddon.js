@@ -146,7 +146,7 @@ var baladesAddon = (function () {
             source: new ol.source.Vector(),
             style: stylePointHighlight,
         });
-        HighlightLayer.mviewerid = 'communeOverlay';
+        HighlightLayer.mviewerid = 'featOverlay';
         var geometry = new ol.geom.Point([-187047.06116075147, 6125936.809755854]);
         var feature = new ol.Feature({
             name: "id",
@@ -161,10 +161,10 @@ var baladesAddon = (function () {
         var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade).getGeometry().getCoordinates();
         if (geometryPointFeature) {
             document.getElementById('nextButton').disabled = false;
-            geometryPoint = ol.proj.transform([geometryPointFeature[0], geometryPointFeature[1]], 'EPSG:3857', 'EPSG:4326');
-            mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, zoomPendantBalade, true);
+            mviewer.zoomToLocation(geometryPointFeature[0], geometryPointFeature[1] + 0.0002, zoomPendantBalade, true, 'EPSG:3857');
+            
             highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([geometryPointFeature[0], geometryPointFeature[1]]);
-
+            
             opendivheight = document.getElementById('modal-panel').children[0].offsetHeight;
             setTimeout(() => {
                 // decaleMap([0, opendivheight/3]);
@@ -180,10 +180,8 @@ var baladesAddon = (function () {
         var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade).getGeometry().getCoordinates();
         if (geometryPointFeature) {
             document.getElementById('prevButton').disabled = false;
-            geometryPoint = ol.proj.transform([geometryPointFeature[0], geometryPointFeature[1]], 'EPSG:3857', 'EPSG:4326');
-            mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, zoomPendantBalade, true);
-            highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([geometryPointFeature[0], geometryPointFeature[1]]);
-
+            mviewer.zoomToLocation(geometryPointFeature[0], geometryPointFeature[1] + 0.0002, zoomPendantBalade, true, 'EPSG:3857');
+            
             opendivheight = document.getElementById('modal-panel').children[0].offsetHeight;
             setTimeout(() => {
                 // decaleMap([0, opendivheight/3]);
@@ -215,8 +213,8 @@ var baladesAddon = (function () {
         document.getElementById('startButton').style.display = 'none';
         currentPointBalade = 1;
         var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade).getGeometry().getCoordinates();
-        geometryPoint = ol.proj.transform([geometryPointFeature[0], geometryPointFeature[1]], 'EPSG:3857', 'EPSG:4326');
-        mviewer.zoomToLocation(geometryPoint[0], geometryPoint[1] + 0.00002, zoomPendantBalade, true);
+        mviewer.zoomToLocation(geometryPointFeature[0], geometryPointFeature[1] + 0.0002, zoomPendantBalade, true, 'EPSG:3857');
+        
         highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([geometryPointFeature[0], geometryPointFeature[1]]);
         mviewer.getMap().getLayers().push(highlightLayer);
         $("#mv_marker").attr('fill-opacity', '0');
@@ -271,11 +269,13 @@ var baladesAddon = (function () {
     function changeOpacityOnClick(e) {
         var map = mviewer.getMap();
         var feature = map.forEachFeatureAtPixel(e.pixel, function (feature, layer) {
-            return feature;
+            if (!layer.mviewerid || layer.mviewerid != highlightLayer.mviewerid) {
+                return feature;
+            }
         });
         // Mettre l'opacité basse pour les balades non sélectionnées
         featuresBalades.map(feat => {
-            if ((feature && feature.getGeometry().getType() == 'LineString' && feat.get('id') != feature.get('id')) || (feature && feature.getGeometry().getType() == 'Point' && feat.get('id') != feature.get(idBalade))) {
+            if ((feature && feature.getGeometry().getType() == 'LineString' && feat.get('id') != feature.get('id')) || (feature && feature.getGeometry().getType() == 'Point' && feat.get(idBalade) != feature.get(idBalade))) {
                 var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7) + "66";
             } else {
                 var colorFeature = feat.getStyle().getStroke().getColor().slice(0, 7);
@@ -289,7 +289,7 @@ var baladesAddon = (function () {
         });
         // Mettre l'opacité basse pour les points non sélectionnés
         featuresPoints.map(feat => {
-            if (feature && feature.getGeometry().getType() == 'LineString' && feat.get(idBalade) != feature.get('id')) {
+            if (feature && feature.getGeometry().getType() == 'LineString' && feat.get(idBalade) != feature.get(idBalade)) {
                 feat.getStyle().getImage().setOpacity(opacity);
             } else if (feature && feature.getGeometry().getType() == 'Point' && feat.get(idBalade) != feature.get(idBalade)) {
                 feat.getStyle().getImage().setOpacity(opacity);
@@ -303,30 +303,36 @@ var baladesAddon = (function () {
         mviewer.customLayers[layer_points].layer.changed();
         // if (!feature)
         //    currentIdBalade = -1;
-        if (feature && feature.getGeometry().getType() == 'Point' && feature.get('id')) {
-            document.getElementById('prevButton').style.display = 'block';
-            document.getElementById('prevButton').disabled = false;
-            document.getElementById('nextButton').disabled = true;
-            currentPointBalade = feature.get(champRang);
-            if (featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade + 1))
-                document.getElementById('nextButton').disabled = false;
-            if (!featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade - 1)) {
-                document.getElementById('prevButton').disabled = true;
-            }
-            document.getElementById('nextButton').style.display = 'block';
-            document.getElementById('startButton').style.display = 'none';
-            var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade).getGeometry().getCoordinates();
-            geometryPoint = ol.proj.transform([geometryPointFeature[0], geometryPointFeature[1]], 'EPSG:3857', 'EPSG:4326');
-            mviewer.getMap().removeLayer(highlightLayer);
-            highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([geometryPointFeature[0], geometryPointFeature[1]]);
-            mviewer.getMap().getLayers().push(highlightLayer);
-            $("#mv_marker").attr('fill-opacity', '0');
+        if (feature && feature.getGeometry().getType() == 'Point') {
+            if (feature.get(idBalade)) {
+                document.getElementById('prevButton').style.display = 'block';
+                document.getElementById('prevButton').disabled = false;
+                document.getElementById('nextButton').disabled = true;
+                currentPointBalade = feature.get(champRang);
+                if (featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade + 1))
+                    document.getElementById('nextButton').disabled = false;
+                if (!featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade - 1)) {
+                    document.getElementById('prevButton').disabled = true;
+                }
+                document.getElementById('nextButton').style.display = 'block';
+                document.getElementById('startButton').style.display = 'none';
+                var geometryPointFeature = featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade).getGeometry().getCoordinates();
+                geometryPoint = ol.proj.transform([geometryPointFeature[0], geometryPointFeature[1]], 'EPSG:3857', 'EPSG:4326');
+                mviewer.getMap().removeLayer(highlightLayer);
+                highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([geometryPointFeature[0], geometryPointFeature[1]]);
+                mviewer.getMap().getLayers().push(highlightLayer);
+                $("#mv_marker").attr('fill-opacity', '0');
+                
 
-            opendivheight = document.getElementById('modal-panel').children[0].offsetHeight;
-            setTimeout(() => {
-                _map.getView().setCenter([geometryPointFeature[0], geometryPointFeature[1]]);
-                // decaleMap([0, opendivheight/3]);
-            }, 400);
+                opendivheight = document.getElementById('modal-panel').children[0].offsetHeight;
+                setTimeout(() => {
+                    _map.getView().setCenter([geometryPointFeature[0], geometryPointFeature[1]]);
+                    // decaleMap([0, opendivheight/3]);
+                }, 400);
+            } else {
+                currentIdBalade = -1;
+                updateButton();
+            }
         } else {
             updateButton();
         }

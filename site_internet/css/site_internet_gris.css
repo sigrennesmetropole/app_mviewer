@@ -1101,31 +1101,12 @@ button.btn.btn-default.navbar-btn.mv-navbar-btn:focus{
 }
 
 
-/*******************************
--------------EVOLUTION NB RESULTATS
-********************************/
-#popup-number-results {
-    /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
-    font-family: 'condate_light', Arial, Sans-serif;
-    width:100px;
-    border: 1px solid #555;
-    border-radius: 5px;
-    background-color: #333;
-    color: #FFFFFF;
-    padding: 10px;
-    text-align: center;
-    margin-left: -50px;
-    margin-top: -80px;
-}
-
-.sliderTopMargin{
-	margin-top: 10px !important;
-}
-
-
 /********************************
 ------ CUSTOM ICONS -------------
 ********************************/
+.sliderTopMargin{
+	margin-top: 10px !important;
+}
 
 .piscineicon::before {
      content: '';

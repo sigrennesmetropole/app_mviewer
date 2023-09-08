@@ -1,10 +1,14 @@
 
 mviewer.customLayers.dircove_autres= (function() {
     
-    var data = 'apps/fondsconcours/customlayers/data/dircove_autres.geojson';
-    var markercolor = '#dd3627';
+    let _flux = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=eq_autres:fonds_concours_dircove&outputFormat=application/json&srsName=EPSG:3857';
+    let _filtre_data = encodeURI("nature_equipement='2 - Autres projets - Equipements Batimentaire et non batimentaire'");
+    let data = _flux + '&CQL_FILTER=' + _filtre_data;
+
+    let markercolor = '#f78b12';
     let svgIcon='apps/fondsconcours/img/marqueurs/DIRCOVE-02.svg';
     let svgEcusson='';
+    
     
     /* représentation avec icone svg */
     let _marker = 'apps/fondsconcours/img/marqueurs/marker.svg';
@@ -14,7 +18,7 @@ mviewer.customLayers.dircove_autres= (function() {
     let iconheight = '30px';
     
     function _markerStyle(feature) {
-        if (feature.get('ecobonus')) {
+        if (feature.get('ecobonus') && feature.get('ecobonus')=='Oui') {
             return _featureMarker(_markerEcoB);
         } else {
             return _featureMarker(_marker);
@@ -31,6 +35,8 @@ mviewer.customLayers.dircove_autres= (function() {
             })
         ];
     }
+    
+    
     
     // calcul du code du marqueur avec macaron
     function calculateStyleIcon(){
@@ -58,7 +64,10 @@ mviewer.customLayers.dircove_autres= (function() {
                     _g.appendChild(svgEcusson.firstChild);
                 }
                 doc.getElementsByTagName("svg")[0].appendChild(_g);
+                //console.log(doc.getElementsByTagName("svg")[0].outerHTML);
                 _markerEcoB = 'data:image/svg+xml;utf8, ' + encodeURIComponent(doc.getElementsByTagName("svg")[0].outerHTML);
+                
+                
             }
         };
         xhr.open('get',svgIcon); 
@@ -85,14 +94,16 @@ mviewer.customLayers.dircove_autres= (function() {
     _getEcussonCode();
     calculateStyleIcon();
     
+    
     let _layer = new ol.layer.Vector({
         source: new ol.source.Vector({
+            //url: data,
             format: new ol.format.GeoJSON(),
             loader: () => { // permet d'éviter le bug de features chargées en double 
                 fetch(data)
                     .then(r => r.json())
                     .then(r => {
-                        //console.log("Load features équipements et autres projets"); // ==> Exécuté 2x parfois
+                        //console.log("Load features "); // ==> Exécuté 2x parfois
                         // nettoie la layer
                         _layer.getSource().clear();
                         // charge les features
@@ -101,7 +112,7 @@ mviewer.customLayers.dircove_autres= (function() {
                     })
                 }
         }),
-        style: _markerStyle,
+        style:_markerStyle,
     });
     
     

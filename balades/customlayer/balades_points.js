@@ -31,7 +31,7 @@ mviewer.customLayers.balades_points = (function() {
     // style d'une couche ponctuelle
         let style = new ol.style.Style({
                 image: new ol.style.Icon({
-                  color: '#ba8e02',  
+                  color: '#000000',  
                   crossOrigin: 'anonymous',
                   scale:1,
                   anchor:[0.5,1],
