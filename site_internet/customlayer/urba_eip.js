@@ -1,6 +1,8 @@
 mviewer.customLayers.urba_eip= (function() {
     const fillcolor='#A84C94';
-    let stylesrc='apps/site_internet/customlayer/picture/EIP.svg';
+    
+    const basestrokecolor='#f1f1ef';
+    let _basemarker='apps/site_internet/customlayer/picture/EIP.svg';
     
     const nb_logements_min=10;
     let data_url="https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=eq_poi:v_sitorg_organisme&outputFormat=application/json&srsName=EPSG:3857";
@@ -9,13 +11,40 @@ mviewer.customLayers.urba_eip= (function() {
     let complete_url = data_url + '&CQL_FILTER='+ encodeURIComponent(filter);
     
     /* - STYLE ------------------------------------- */
+    /*
+    * Prepare icons with different colors
+    */
+     function calculateStyleIcon(){
+        var name,xhr;
+        // on est prêt à récupérer le svg sur le serveur
+        xhr=new XMLHttpRequest;
+        xhr.onreadystatechange=function() {
+            if (this.readyState==4 && this.status==200) {
+                let s=this.responseText;
+                
+                s = s.replace('stroke:#000', 'stroke:'+basestrokecolor);
+                s = s.replace('fill:#fff', 'fill:'+fillcolor);
+                
+                // le svg est arrivé
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(s, "image/svg+xml");
+                
+                _basemarker = 'data:image/svg+xml;utf8, ' + encodeURIComponent(doc.getElementsByTagName("svg")[0].outerHTML);
+            }
+        };
+        xhr.open('get',_basemarker); 
+        xhr.send();
+    }
+    
+    calculateStyleIcon();
+    
     function _markerstyle() {
         let style = new ol.style.Style({
                 image: new ol.style.Icon({
-                  color: fillcolor,
+                  //color: fillcolor,
                   crossOrigin: 'anonymous',
                   anchor:[0.5,0.5],
-                  src: stylesrc,
+                  src: _basemarker,
                 })
               });
 

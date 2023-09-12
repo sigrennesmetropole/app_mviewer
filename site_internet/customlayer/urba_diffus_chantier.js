@@ -1,6 +1,9 @@
 mviewer.customLayers.urbadiffus_en_chantier= (function() {
     const fillcolor='#CB3639';
-    let pointOnSurfaceMarker='apps/site_internet/customlayer/picture/travaux.svg';
+    const basestrokecolor='#f1f1ef';
+    let _basemarker='apps/site_internet/customlayer/picture/travaux.svg';
+    var _outsidemarker='';
+    let _insidemaker='';
     
     const nb_logements_min=10;
     let data_url="https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=app:tabou_v_oa_programme&outputFormat=application/json&srsName=EPSG:3857";
@@ -15,44 +18,80 @@ mviewer.customLayers.urbadiffus_en_chantier= (function() {
     *  - The first style is for the polygons themselves.
     *  - The second style is to draw a point inside the surface
     */
-    const zoomInStyles = [
-        new ol.style.Style({
-            fill:new ol.style.Fill({
-               color: fillcolor,
-             }),
-            stroke: new ol.style.Stroke({
-                color: '#000000',
-                width: 2
-              })
-        }),
-        new ol.style.Style({
-            image: new ol.style.Icon({
-              //color: '#000000', 
-              opacity: 0.7,
-              anchor:[0.5,0.5],
-              src: pointOnSurfaceMarker,
+    
+    /*
+    * Prepare icons with different colors
+    */
+     function calculateStyleIcon(){
+        var name,xhr;
+        // on est prêt à récupérer le svg sur le serveur
+        xhr=new XMLHttpRequest;
+        xhr.onreadystatechange=function() {
+            if (this.readyState==4 && this.status==200) {
+                let s=this.responseText;
+                
+                var s1 = s.replace('stroke:#020203', 'stroke:'+basestrokecolor);
+                s1 = s1.replace('fill:#fff', 'fill:'+fillcolor);
+                
+                // le svg est arrivé
+                var parser = new DOMParser();
+                var doc1 = parser.parseFromString(s1, "image/svg+xml");
+                var doc2 = parser.parseFromString(s, "image/svg+xml");
+                
+                _outsidemarker = 'data:image/svg+xml;utf8, ' + encodeURIComponent(doc1.getElementsByTagName("svg")[0].outerHTML);
+                _insidemaker = 'data:image/svg+xml;utf8, ' + encodeURIComponent(doc2.getElementsByTagName("svg")[0].outerHTML);
+            }
+        };
+        xhr.open('get',_basemarker); 
+        xhr.send();
+    }
+    
+    
+    /*
+    * Style when polygon is visible
+    */
+    function zoomInStyles() {
+        return [
+            new ol.style.Style({
+                fill:new ol.style.Fill({
+                   color: fillcolor,
+                 }),
+                stroke: new ol.style.Stroke({
+                    color: '#000000',
+                    width: 2
+                  })
             }),
-            geometry: function (feature) {
-              return feature.getGeometry().getInteriorPoints();
-            },
-        }),
-    ];
+            new ol.style.Style({
+                image: new ol.style.Icon({
+                  //color: '#000000', 
+                  opacity: 0.7,
+                  anchor:[0.5,0.5],
+                  src: _insidemaker,
+                }),
+                geometry: function (feature) {
+                  return feature.getGeometry().getInteriorPoints();
+                },
+            }),
+        ];
+    }
     
     /* 
-    * Styling only a point inside the surface
+    * Styling only a point inside the surface (polygon is hidden)
     */
-    const zoomOutStyles = [
-        new ol.style.Style({
-            image: new ol.style.Icon({
-              color: fillcolor, 
-              anchor:[0.5,0.5],
-              src: pointOnSurfaceMarker,
+    function zoomOutStyles () {
+        return [
+            new ol.style.Style({
+                image: new ol.style.Icon({
+                  //color: fillcolor, 
+                  anchor:[0.5,0.5],
+                  src: _outsidemarker,
+                }),
+                geometry: function (feature) {
+                  return feature.getGeometry().getInteriorPoints();
+                },
             }),
-            geometry: function (feature) {
-              return feature.getGeometry().getInteriorPoints();
-            },
-        }),
-    ];
+        ];
+    }
     
     /*
      * Mise en cohérence du style ponctuelles ou surfaciques en fonction du niveau de zoom
@@ -73,6 +112,7 @@ mviewer.customLayers.urbadiffus_en_chantier= (function() {
         _updateStyle();
     });
     
+    calculateStyleIcon();
     
     /* - DATA -------------------------------------- */
     
