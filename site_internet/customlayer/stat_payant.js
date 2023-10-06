@@ -1,6 +1,9 @@
 
 mviewer.customLayers.stat_payant= (function() {
     let data_url='https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=trp_statio:stationnement_payant&outputFormat=application/json&srsName=EPSG:4326';
+    let filter = "etat='Actif'";
+    
+    data_url += "&CQL_FILTER=" + encodeURIComponent(filter);
     
     
     function markerStyle(feature) {
