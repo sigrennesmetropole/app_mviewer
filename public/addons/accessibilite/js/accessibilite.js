@@ -11,8 +11,8 @@
     var reloadTable = [];
     var runningReload = [];
     
+    /*
     function getFeatures(layer){
-
         return new Promise (resolve => {
             switch (layer.type) {
                 case 'wms':
@@ -31,15 +31,54 @@
                 case 'customlayer':
                     setTimeout(function (){
                         resolve({'response': layer.layer.getSource().getFeatures()});
-                      }, 250);
+                      }, 1500);
                     break;
                 default:
                     setTimeout(function (){
                         resolve({'response': layer.layer.getSource().getFeatures()});
-                      }, 250);
+                      }, 1500);
             }
         });
     }
+    */
+    
+    function getFeatures(layer){
+        
+        switch (layer.type) {
+                case 'wms':
+                    // un appel WFS pour ne récupérer toutes les données visualisables sur la carte et pas seulement celles de l'emprise visible
+                    // Attention à bien conserver le CQLFilter si défini dans la structure
+                    // LIMITE : si la couche appelle un style, le filtre porté par ce style ne peut pas être appliqué sur cette extension
+                    return new Promise(waitForDataWMS);
+                    break;
+                case 'customlayer':
+                    return new Promise(waitForData);
+                    break;
+                default:
+                    return new Promise(waitForData);
+            }
+        
+        function waitForDataWMS(resolve, reject){
+            var url = layer.url + "?service=WFS&version=1.0.0&request=GetFeature&typeName=" + layer.layername + "&outputFormat=application%2Fjson&srsname=EPSG:3948";
+            if (layer.filter && layer.filter != "") {
+                url += "&CQL_FILTER=" + encodeURIComponent(layer.filter);
+            }
+            fetch(url).then((response) => response.json())
+                .then((data) => {
+                    resolve({'response': data.features});
+                });
+        }
+        
+        function waitForData(resolve, reject){
+            if (layer.layer.getSource().getFeatures().length > 0){
+                resolve({'response': layer.layer.getSource().getFeatures()});
+            } else {
+                setTimeout(waitForData.bind(this, resolve, reject), 30);
+            }
+        }
+        
+    }
+    
     var parsed_template;
 
     // recherche des champs affichés selon le template de couche
