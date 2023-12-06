@@ -1,18 +1,19 @@
 {{#features}}
-	<li class="item">
-		<!--<h5 class="rm-popup-title-feature">Identifiant : {{id_si_voirie }}</h5>-->
-		<p class="rm-popup-text-feature">
-			<span class='rm-popup-label'>IDENTIFIANT :</span> {{id_si_voirie }}<br/>
+    <li class="item">
+        <!--<h5 class="rm-popup-title-feature">Identifiant : {{id_si_voirie }}</h5>-->
+        <p class="rm-popup-text-feature">
+            <span class='rm-popup-label'>IDENTIFIANT :</span> {{id_si_voirie }}<br/>
             {{#nom_commune}}<span class='rm-popup-label'> COMMUNE :</span> {{nom_commune}}<br/>{{/nom_commune}}
-			{{#nom_voie}}<span class='rm-popup-label'> VOIE :</span> {{{nom_voie}}}<br/>{{/nom_voie}}
-			{{#suivi}}<span class='rm-popup-label'> SUIVI :</span> {{{suivi}}}<br/>{{/suivi}}
+            {{#nom_voie}}<span class='rm-popup-label'> VOIE :</span> {{{nom_voie}}}<br/>{{/nom_voie}}
+            {{#suivi}}<span class='rm-popup-label'> SUIVI :</span> {{{suivi}}}<br/>{{/suivi}}
             {{#programme}}<span class='rm-popup-label'> PROGRAMME :</span> {{programme}}<br/>{{/programme}}
-			{{#cop_service}}<span class='rm-popup-label'> SERVICE  :</span> {{{cop_service}}}<br/>{{/cop_service}}
-			{{#objet}}<span class='rm-popup-label'> OBJET :</span> {{{objet}}}<br/>{{/objet}}
+            {{#cop_service}}<span class='rm-popup-label'> SERVICE  :</span> {{{cop_service}}}<br/>{{/cop_service}}
+            {{#objet}}<span class='rm-popup-label'> OBJET :</span> {{{objet}}}<br/>{{/objet}}
             {{#date_debut}}<span class='rm-popup-label'> DATE DE DÉBUT :</span> <span class="date_in_french_format"> {{{date_debut}}} </span><br/>{{/date_debut}}
-			{{#duree_previs}}<span class='rm-popup-label'> DURÉE PRÉVISIONNELLE :</span> {{{duree_previs}}}<br/>{{/duree_previs}}
+            {{#date_fin}}<span class='rm-popup-label'> DATE DE FIN :</span> <span class="date_in_french_format"> {{{date_fin}}} </span><br/>{{/date_fin}}
+            {{#duree_previs}}<span class='rm-popup-label'> DURÉE PRÉVISIONNELLE :</span> {{{duree_previs}}}<br/>{{/duree_previs}}
             {{#technique}}<span class='rm-popup-label'> TECHNIQUE :</span> {{technique}}<br/>{{/technique}}
-  		</p>
-	</li>
+        </p>
+    </li>
 {{/features}}
 
