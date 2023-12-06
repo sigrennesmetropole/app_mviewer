@@ -3,6 +3,7 @@
         <h5 class="rm-popup-title-feature">{{{nom}}}</h5>
         
         <p class="rm-popup-text-feature">
+            {{#etat}}<span class='rm-popup-label'> STATUT :</span> {{{etat}}} <br/>{{/etat}}
             {{#filiere}}<span class='rm-popup-label'> FILIÈRE :</span> {{{filiere}}} <br/>{{/filiere}}
         </p>
     </li>
