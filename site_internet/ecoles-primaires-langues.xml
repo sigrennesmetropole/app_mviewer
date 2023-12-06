@@ -29,7 +29,7 @@
     <themes mini="true">
         <theme id="theme-20180827150815" name="Ecoles primaires" collapsed="true" icon="fas fa-child">
             <layer
-                id="v_ecoles_primaires"
+                id="v_ecole_primaire"
                 name="Anglais"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/eq_educ/ows"
@@ -41,11 +41,11 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
                 queryable="true"
                 featurecount="3"
-                filter="apprentis_anglais=true"
+                filter="apprentis_anglais='true'"
                 infopanel="right-panel"><template url="apps/site_internet/templates/ecoles-primaires.mst"></template>
             </layer>
             <layer
-                id="v_ecoles_primaires"
+                id="v_ecole_primaire"
                 name="Breton"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/eq_educ/ows"
@@ -57,11 +57,11 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
                 queryable="true"
                 featurecount="3"
-                filter="apprentis_breton=true"
+                filter="apprentis_breton='true'"
                 infopanel="right-panel"><template url="apps/site_internet/templates/ecoles-primaires.mst"></template>
             </layer>
             <layer
-                id="v_ecoles_primaires"
+                id="v_ecole_primaire"
                 name="Chinois"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/eq_educ/ows"
@@ -73,7 +73,7 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
                 queryable="true"
                 featurecount="3"
-                filter="apprentis_chinois=true"
+                filter="apprentis_chinois='true'"
                 infopanel="right-panel"><template url="apps/site_internet/templates/ecoles-primaires.mst"></template>
             </layer>
         </theme>
