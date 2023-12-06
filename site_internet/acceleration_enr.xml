@@ -39,7 +39,7 @@
         <theme id="theme-20231205172015" name="Zones d’accélération de la production d’énergies renouvelables" collapsed="true" icon="fas fa-solar-panel">
             <layer
                 id="zone_acceleration_enr"
-                name="Zones d’accélération de la production d’énergies renouvelables"
+                name="Zones en projet"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/nrj_prod/ows"
                 visible="true"
@@ -49,6 +49,8 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/92c64e80-f6f7-4f56-b162-8a07a8b70784"
                 queryable="true"
                 featurecount="5"
+                exclusive="true"
+                filter="etat = 'EN PROJET'"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/nrj_enr.mst"></template>
             </layer>
