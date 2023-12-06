@@ -1,0 +1,10 @@
+{{#features}}
+    <li class="item">
+        <h5 class="rm-popup-title-feature">{{{nom}}}</h5>
+        
+        <p class="rm-popup-text-feature">
+            {{#filiere}}<span class='rm-popup-label'> FILIÈRE :</span> {{{filiere}}} <br/>{{/filiere}}
+        </p>
+    </li>
+{{/features}}
+
