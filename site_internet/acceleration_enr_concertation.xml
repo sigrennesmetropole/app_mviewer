@@ -51,6 +51,7 @@
                 queryable="true"
                 featurecount="5"
                 exclusive="true"
+                filter="etat = 'EN PROJET'"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/nrj_enr.mst"></template>
             </layer>
