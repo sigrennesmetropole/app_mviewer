@@ -1,0 +1,16 @@
+{{#features}}
+    <li class="item" >
+        <h5 class="rm-popup-title-feature ">{{intitule_projet}}</h5>
+        
+        <p class="rm-popup-text-feature">
+            {{#edition}}<span class='rm-popup-label'> EDITION :</span> {{{edition}}}<br/>{{/edition}}
+            {{#porte_par}}<span class='rm-popup-label'> PROJET PORTÉ PAR :</span> {{{porte_par}}}<br/>{{/porte_par}}
+            {{#domaine}}<span class='rm-popup-label'> DOMAINE :</span> {{{domaine}}}<br/>{{/domaine}}
+            {{#subvention}}<span class='rm-popup-label'> MONTANT ATTRIBUÉ :</span> <span class='rm-large-number'>{{{subvention}}}</span> €<br/>{{/subvention}}
+            
+            {{#comm_beneficiaire}}<span class='rm-popup-label'> COMMUNES BÉNÉFICIAIRES :</span> {{{comm_beneficiaire}}} <br/>{{/comm_beneficiaire}}
+            
+        </p>
+    </li>
+{{/features}}
+
