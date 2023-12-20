@@ -36,7 +36,6 @@
                 url="https://public.sig.rennesmetropole.fr/geoserver/eq_autres/ows"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
-                sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/sites_organisme_bleu.sld"
                 attributefilter="true" attributefield="edition" attributevalues="2022,2023" attributelabel="Année du dispositif" attributeoperator="=" attributefilterenabled="true"
                 customcontrol="true"
                 customcontrolpath="apps/fondsconcours/controls"
