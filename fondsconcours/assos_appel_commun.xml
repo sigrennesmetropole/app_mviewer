@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <application
-        title="Appel commun aux associations"
+        title="Appel à commun - soutien aux associations"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
         favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
@@ -28,23 +28,23 @@
     </extensions>
 
     <themes mini="true" legendmini="false">
-        <theme id="theme-202312191516" name="Projets d'associations" collapsed="true" icon="fas fa-users">
+        <theme id="theme-202312191516" name="Projets du dispositif" collapsed="true" icon="fas fa-users">
             <layer
                 id="asso_appel_commun"
-                name="Projets bénéficiant d'appel commun"
+                name="Projets bénéficiant d'appel à commun"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/eq_autres/ows"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/sites_organisme_bleu.sld"
-                legendurl="apps/site_internet/img/legend/leg_marker_bleu.svg"
                 attributefilter="true" attributefield="edition" attributevalues="2022,2023" attributelabel="Année du dispositif" attributeoperator="=" attributefilterenabled="true"
                 customcontrol="true"
                 customcontrolpath="apps/fondsconcours/controls"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
                 queryable="true"
-                featurecount="5"
+                featurecount="10"
+                expanded="true"
                 infopanel="right-panel">
                 <template url="apps/fondsconcours/templates/asso_appel_commun.mst"></template>
             </layer>
