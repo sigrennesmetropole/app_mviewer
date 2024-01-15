@@ -418,7 +418,7 @@ var formatter = (function () {
 
 
     /****** EQUIPEMENTS / LISTES AVEC GESTION BOOLEEN ******/
-    // Liste des équipements (exemeple : broyeurs)
+    // Liste des équipements (exemple : broyeurs)
     function rmListeEquipt() {
         var ul_element=document.getElementsByClassName("liste_equipement");
         for (var k = 0; k < ul_element.length; k++) {
@@ -428,6 +428,14 @@ var formatter = (function () {
                     list_retenue +=  "<li>" +li_elements[i].innerHTML+"</li>";
                 }
             ul_element[k].innerHTML="<ul>"+list_retenue+"</ul>";
+        }
+    };
+    
+    // gestion des attributs booleens (display none si valeur=false)
+    function checkdisplay() {
+        var l_elements=document.getElementsByClassName("rm_display_false");
+        for (var k = 0; k < l_elements.length; k++) {
+            l_elements[k].style.display = "none";
         }
     };
 
@@ -469,7 +477,7 @@ var formatter = (function () {
                 if (credit !== undefined && credit !== "") {
                     mypic[i].setAttribute("src", photo.trim());
                     mypic[i].parentNode.getElementsByClassName("text-credit")[0].innerHTML=credit.trimStart();
-                    mypic[i].parentNode.getElementsByClassName("text-credit")[0].style.display = "block";;
+                    mypic[i].parentNode.getElementsByClassName("text-credit")[0].style.display = "block";
                 }
 
             }
@@ -669,6 +677,7 @@ var formatter = (function () {
         rmListeDechets();
         exceptionalClosureDechet();
         rmListeEquipt();
+        checkdisplay();
         corrWebAddr();
         splitphotocredit();
         formatDateInFrench();
