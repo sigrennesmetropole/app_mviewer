@@ -29,7 +29,7 @@
     <themes mini="true">
         <theme id="theme-20210120_001" name="Toilettes publiques" collapsed="true" icon="fas fa-restroom">
             <layer
-                id="prop_event_toilette_publique"
+                id="v_toilette_publique"
                 name="Toilettes publiques"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"

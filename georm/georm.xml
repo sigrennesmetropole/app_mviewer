@@ -250,7 +250,7 @@
                 <template url="apps/georm/templates/georm_composteurs.mst"></template>
             </layer>
             <layer
-                id="prop_event_toilette_publique"
+                id="v_toilette_publique"
                 name="Toilettes publiques"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"
