@@ -34,7 +34,7 @@
         </baselayer>
         <baselayer visible="false" id="pvcicouleur" thumbgallery="apps/public/img/basemap/pvci.jpg" title="Rennes Metropole" label="Plan de ville couleur" type="WMTS"
             url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
-            attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6ecb85b1-ec5e-4427-ae81-9c83b21a7f32&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
+            attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
         </baselayer>
     </baselayers>
 
