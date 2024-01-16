@@ -21,15 +21,15 @@
     <baselayers style="default"><!-- style="default"||gallery" -->
         <baselayer visible="false" id="pvcisimplegris" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville simple gris" type="WMTS"
             url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
-            attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/ec837b51-eee5-4f95-b3fe-458ad4f3d2b9&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
+            attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
         </baselayer>
         <baselayer visible="true" id="pvci_nb" thumbgallery="apps/public/img/basemap/pvcinb.jpg" title="Rennes Metropole" label="Plan de ville gris" type="WMTS"
             url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci_nb" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
-            attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/ec837b51-eee5-4f95-b3fe-458ad4f3d2b9&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
+            attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
         </baselayer>
         <baselayer visible="false" id="pvcicouleur" thumbgallery="apps/public/img/basemap/pvci.jpg" title="Rennes Metropole" label="Plan de ville couleur" type="WMTS"
             url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
-            attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/ec837b51-eee5-4f95-b3fe-458ad4f3d2b9&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
+            attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
         </baselayer>
     </baselayers>
 
