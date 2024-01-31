@@ -241,6 +241,7 @@
                 metadata="undefined"
                 queryable="true"
                 featurecount="5"
+                filter="actif='oui'"
                 tooltip="false"
                 tooltipcontent="cmp_id"
                 tooltipenabled="app:sv_metier_composteur_coll"
