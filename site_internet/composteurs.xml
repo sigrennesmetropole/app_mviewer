@@ -21,6 +21,7 @@
     </baselayers>
 
     <extensions>
+        <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_RVA.json"/>
         <extension type="component" id="GUICustom" path="apps/public/addons"/>
         <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
         <extension type="component" id="accessibilite" path="apps/public/addons"/>
@@ -35,10 +36,12 @@
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
+                sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/composteurs.sld"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/cb5198b1-1644-4a67-b670-bfb1dcbd7894"
                 queryable="true"
                 featurecount="5"
+                filter="actif='oui'"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/composteurs.mst"></template>
             </layer>
