@@ -181,6 +181,8 @@ var baladesAddon = (function () {
         if (geometryPointFeature) {
             document.getElementById('prevButton').disabled = false;
             mviewer.zoomToLocation(geometryPointFeature[0], geometryPointFeature[1] + 0.0002, zoomPendantBalade, true, 'EPSG:3857');
+
+            highlightLayer.getSource().getFeatures()[0].getGeometry().setCoordinates([geometryPointFeature[0], geometryPointFeature[1]]);
             
             opendivheight = document.getElementById('modal-panel').children[0].offsetHeight;
             setTimeout(() => {
@@ -309,6 +311,7 @@ var baladesAddon = (function () {
                 document.getElementById('prevButton').disabled = false;
                 document.getElementById('nextButton').disabled = true;
                 currentPointBalade = feature.get(champRang);
+                currentIdBalade = feature.get(idBalade)
                 if (featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade + 1))
                     document.getElementById('nextButton').disabled = false;
                 if (!featuresPoints.find(x => x.get(idBalade) == currentIdBalade && x.get(champRang) == currentPointBalade - 1)) {
