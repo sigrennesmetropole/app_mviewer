@@ -1,11 +1,13 @@
 {{#features}}
     <li class="item">
         <h5 class="rm-popup-title-feature">{{{nom}}}</h5>
+        {{#modif_date}}<br/><span class="rm-popup-subtitle-feature" > MISE À JOUR : <span class="date_in_french_format" >{{modif_date}}</span> </span>{{/modif_date}}
         <p class="rm-popup-text-feature">
              {{#description}}<span class='rm-popup-label'> PROGRAMME :</span> {{description}} <br/>{{/description}}
         </p>
         <p class="rm-popup-text-feature">
              {{#promoteur}}<span class='rm-popup-label'> PROMOTEUR :</span><span> {{promoteur}} </span><br/>{{/promoteur}}
+             {{#moe}}<span class='rm-popup-label'> ARCHITECTE(S) :</span><span> {{moe}} </span><br/>{{/moe}}
         </p>
     </li>
 {{/features}}

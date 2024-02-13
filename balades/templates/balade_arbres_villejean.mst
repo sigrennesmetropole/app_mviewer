@@ -3,7 +3,7 @@
 		<h5 class="rm-popup-title-feature">{{TITRE}}</h5>
 		<p class="rm-popup-text-feature">
 			{{#DESCRIPTIF}}{{{DESCRIPTIF}}}<br/>{{/DESCRIPTIF}}
-			{{#DISTANCE}}<span class='rm-popup-label'> Longueur  :</span> {{{DISTANCE}}} km{{/DISTANCE}}
+			{{#DISTANCE}}<span class='rm-popup-label'> LONGUEUR  :</span> {{{DISTANCE}}} km{{/DISTANCE}}
 		</p>
 	</li>
 {{/features}}

@@ -3,9 +3,9 @@
 		<h5 class="rm-popup-title-feature">{{nom_eqt}}</h5>
 
 		<p class="rm-popup-text-feature">
-			<span class='rm-popup-label'> Adresse :</span> {{adresse}} Rennes<br/>
-			{{#crit_acces}}<span class='rm-popup-label'> Critères d'accès: </span>{{{crit_acces}}}{{/crit_acces}}<br/>
-      {{#horaires}}<span class='rm-popup-label'> Horaires :</span><br><span class='horaires'>{{{horaires}}}</span>{{/horaires}} <br/>
+			<span class='rm-popup-label'> ADRESSE :</span> {{adresse}} RENNES<br/>
+			{{#crit_acces}}<span class='rm-popup-label'> CRITÈRES D'ACCÈS: </span>{{{crit_acces}}}{{/crit_acces}}<br/>
+      {{#horaires}}<span class='rm-popup-label'> HORAIRES :</span><br><span class='horaires'>{{{horaires}}}</span>{{/horaires}} <br/>
 			</p>
 	</li>
 {{/features}}

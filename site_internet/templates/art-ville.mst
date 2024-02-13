@@ -4,11 +4,11 @@
         <span class="rm-popup-subtitle-feature" > Pour la mémoire </span>
         
         <p class="rm-popup-text-feature">
-            {{#localisation}}<span class='rm-popup-label'> Localisation :</span> {{localisation}}<br/>{{/localisation}}
-            {{#oeuvre_desc}}<span class='rm-popup-label'> Description :</span> {{oeuvre_desc}}<br/>{{/oeuvre_desc}}
-            {{#oeuvre_date}}<span class='rm-popup-label'> Date :</span> {{{oeuvre_date}}}<br/>{{/oeuvre_date}}
-            {{#artiste}}<span class='rm-popup-label'> Artiste :</span> {{{artiste}}}<br/>{{{biblio}}}<br/>{{/artiste}}
-            {{#autre_info}}<span class='rm-popup-label'> Information supplémentaire :</span> {{{autre_info}}}<br/>{{/autre_info}}
+            {{#localisation}}<span class='rm-popup-label'> LOCALISATION :</span> {{localisation}}<br/>{{/localisation}}
+            {{#oeuvre_desc}}<span class='rm-popup-label'> DESCRIPTION :</span> {{oeuvre_desc}}<br/>{{/oeuvre_desc}}
+            {{#oeuvre_date}}<span class='rm-popup-label'> DATE :</span> {{{oeuvre_date}}}<br/>{{/oeuvre_date}}
+            {{#artiste}}<span class='rm-popup-label'> ARTISTE :</span> {{{artiste}}}<br/>{{{biblio}}}<br/>{{/artiste}}
+            {{#autre_info}}<span class='rm-popup-label'> INFORMATIONS SUPPLÉMENTAIRES :</span> {{{autre_info}}}<br/>{{/autre_info}}
         </p>
         {{#photo_1}}
             <section>

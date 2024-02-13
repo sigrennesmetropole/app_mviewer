@@ -1,0 +1,10 @@
+{{#features}}
+    <li class="item">
+        <h5 class="rm-popup-title-feature">{{type}}</h5>
+        
+        <p class="rm-popup-text-feature">
+            MATIÈRE: {{matiere}}<br/>
+        </p>
+    </li>
+{{/features}}
+

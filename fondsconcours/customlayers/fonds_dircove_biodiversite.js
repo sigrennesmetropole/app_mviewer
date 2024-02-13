@@ -1,7 +1,10 @@
 
 mviewer.customLayers.dircove_biodiv= (function() {
     
-    let data = 'apps/fondsconcours/customlayers/data/dircove_biodiversite.geojson';
+    let _flux = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=eq_autres:fonds_concours_dircove&outputFormat=application/json&srsName=EPSG:3857';
+    let _filtre_data = encodeURI("nature_equipement='3 - Biodiversité'");
+    let data = _flux + '&CQL_FILTER=' + _filtre_data;
+
     let markercolor = '#f78b12';
     let svgIcon='apps/fondsconcours/img/marqueurs/DIRCOVE-05.svg';
     let svgEcusson='';
@@ -15,7 +18,7 @@ mviewer.customLayers.dircove_biodiv= (function() {
     let iconheight = '30px';
     
     function _markerStyle(feature) {
-        if (feature.get('ecobonus')) {
+        if (feature.get('ecobonus') && feature.get('ecobonus')=='Oui') {
             return _featureMarker(_markerEcoB);
         } else {
             return _featureMarker(_marker);
@@ -32,6 +35,7 @@ mviewer.customLayers.dircove_biodiv= (function() {
             })
         ];
     }
+    
     
     
     // calcul du code du marqueur avec macaron
@@ -99,7 +103,7 @@ mviewer.customLayers.dircove_biodiv= (function() {
                 fetch(data)
                     .then(r => r.json())
                     .then(r => {
-                        //console.log("Load features équipements et autres projets"); // ==> Exécuté 2x parfois
+                        //console.log("Load features "); // ==> Exécuté 2x parfois
                         // nettoie la layer
                         _layer.getSource().clear();
                         // charge les features
@@ -108,7 +112,7 @@ mviewer.customLayers.dircove_biodiv= (function() {
                     })
                 }
         }),
-        style: _markerStyle,
+        style:_markerStyle,
     });
     
     

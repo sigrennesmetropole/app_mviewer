@@ -4,7 +4,7 @@ try {
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     (function() {
-    var u="https://testapp.sig.rennesmetropole.fr/matomo/";
+    var u="https://app.sig.rennesmetropole.fr/matomo/";
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', '1']);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];

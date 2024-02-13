@@ -2,11 +2,11 @@
     <li class="item">
         <h5 class="rm-popup-title-feature">{{libelle}}</h5>
         <p class="rm-popup-text-feature">
-             {{#annee_budget}}<br/><span class='rm-popup-label'> Année du budget participatif :</span> {{{annee_budget}}}  {{/annee_budget}} 
-             {{#realise}}<br/><span class='rm-popup-label'> Étape :</span> {{{realise}}}{{/realise}}
-             {{#quartier}}<br/><span class='rm-popup-label'> Quartier :</span> {{{quartier}}}  {{/quartier}} 
-             {{#description}}<br/><span class='rm-popup-label'> Description :</span> {{{description}}}{{/description}}
-             {{#lien_page_projet}}<br/><span class='rm-popup-label'> Site internet :</span><a id='lienweb' class='lienweb' href="{{{lien_page_projet}}}" target="_blank" title="{{{lien_page_projet}}}"> Cliquez ici </a> <br/>{{/lien_page_projet}}
+             {{#annee_budget}}<br/><span class='rm-popup-label'> ANNÉE DU BUDGET PARTICIPATIF :</span> {{{annee_budget}}}  {{/annee_budget}} 
+             {{#realise}}<br/><span class='rm-popup-label'> ÉTAPE :</span> {{{realise}}}{{/realise}}
+             {{#quartier}}<br/><span class='rm-popup-label'> QUARTIER :</span> {{{quartier}}}  {{/quartier}} 
+             {{#description}}<br/><span class='rm-popup-label'> DESCRIPTION :</span> {{{description}}}{{/description}}
+             {{#lien_page_projet}}<br/><span class='rm-popup-label'> SITE INTERNET :</span><a id='lienweb' class='lienweb' href="{{{lien_page_projet}}}" target="_blank" title="{{{lien_page_projet}}}"> Cliquez ici </a> <br/>{{/lien_page_projet}}
             {{#photo}}
                 <section>
                     <div id="slideauto" style="display: block;text-align: center;">

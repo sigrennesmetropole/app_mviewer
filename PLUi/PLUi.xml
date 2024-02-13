@@ -49,10 +49,10 @@
         </theme>
         <theme id="theme-20180827150815" name="Plans de zonage" collapsed="false" 	alwaysOpen="true" icon="far fa-map">
             <layer
-                id="app_urbanisme_parcelle"
+                id="urbanisme_parcelle"
                 name="Parcelle"
                 type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/ref_cad/ows"
+                url="https://public.sig.rennesmetropole.fr/geoserver/app/ows"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
@@ -64,7 +64,7 @@
                 <template url="apps/PLUi/templates/PLUi_Parcelle.mst"></template>
                 <!--permanentlayer="true"-->
                 <!--hideLayerName="true"-->
-            </layer>
+           </layer>
             <layer
                 id="plui_zone_urba"
                 name="Limites de zones"
@@ -83,6 +83,7 @@
                 name="Autres règles graphiques"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/urba_docs_plui/ows"
+                legendurl="apps/PLUi/legends/leg_plui_plan_zonage.png"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"

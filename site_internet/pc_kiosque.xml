@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <application
+        title="Postes informatiques en libre-service pour les agents de la Ville et de la Métropole de Rennes"
+        logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
+        titlehelp="À propos des cartes thématiques"
+        help="apps/site_internet/html/site_internet_help.html"
+        showhelp="false"
+        exportpng="false"
+        style="apps/site_internet/css/site_internet_gris.css"
+        measuretools="false"
+        togglealllayersfromtheme="false" 
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"/>
+
+    <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-185701.6581470431,6125244.605869446" zoom="11" />
+
+    <baselayers style="default"><!-- style="default"||gallery" -->
+        <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+    </baselayers>
+
+    <extensions>
+        <extension type="component" id="GUICustom" path="apps/public/addons"/>
+        <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
+        <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_RVA_adresses_voies.json" />
+        <extension type="component" id="accessibilite" path="apps/public/addons"/>
+    </extensions>
+    
+    <themes mini="true">
+        <theme id="theme-20180625145740" name="PC en libre-service" collapsed="true" icon="fas fa-desktop">
+            <layer
+                id="v_pc_kiosque_dsn"
+                name="PC Kisoque"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_admin/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/ce6984af-07ff-46db-8e0a-672d3232ad60"
+                queryable="true"
+                featurecount="10"
+                filter="etat  = 'En service'"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/pc_kiosque.mst"></template>
+            </layer>
+        </theme>
+    </themes>
+</config>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config><application title="Exporama 2023" logo="apps/public/img/logo/logo_mviewer_transp.png" 
+    favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png" titlehelp="À propos des cartes thématiques"
+    help="apps/site_internet/html/site_internet_help.html" showhelp="false" exportpng="false" style="apps/balades/css/balades.css"
+    measuretools="false" togglealllayersfromtheme="false" showClickNbItems="false" templaterightinfopanel="allintabs" sortlayersinfopanel="toc"/>
+
+    <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-186690.9199078,6126500.00" zoom="14.5" />
+
+    <baselayers style="default"><!-- style="default"||gallery" -->
+        <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+        <baselayer visible="false" id="ortho2020" thumbgallery="apps/public/img/basemap/ortho2014.jpg" title="Rennes Metropole" label="Vue aérienne" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="raster:ortho2020" format="image/jpeg" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+    </baselayers>
+
+    <extensions>
+        <extension type="component" id="GUICustom" path="apps/public/addons"/>
+        <extension type="component" id="balades" path="apps/balades/addons" configFile="/apps/balades/parametrage/param_20230413_162915_143.json" geoloc="true"/>
+    </extensions>
+    
+    <themes mini="true" legendmini="false">
+        <theme id="theme-202201280956" name="Points" collapsed="true" icon="fas fa-map-marker-alt">
+            <layer
+                id="balades_points"
+                name="Points d'intérêt de balade"
+                type="customlayer"
+                url="apps/balades/customlayer/balades_points.js"
+                geojson="apps/balades/customlayer/data/points_20230413_162915_143.geojson"
+                legendurl="apps/balades/legend/exporama_point_legend.svg"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="false"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{rang}} - {{name}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="3"
+                infopanel="right-panel">
+                <template url="apps/balades/templates/point_exporama.mst"></template>
+            </layer>
+        </theme>
+        <theme id="theme-202201280955" name="Balades" collapsed="true" icon="fas fa-route">
+            <layer
+                id="balades"
+                name="Données de balades"
+                type="customlayer"
+                url="apps/balades/customlayer/balades.js"
+                geojson="apps/balades/customlayer/data/balades_20230413_162915_143.geojson"
+                legendurl="apps/balades/legend/default_line_legend.svg"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="false"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{label}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="3"
+                infopanel="right-panel">
+                <template url="apps/balades/templates/balade.mst"></template>
+            </layer>
+        </theme>
+        <theme id="theme-202304180937" name="Autres POI" collapsed="true" icon="fas fa-map-marker-alt">
+            <layer
+                id="autresPOI"
+                name="Autres points d'intérêt"
+                type="customlayer"
+                url="apps/balades/customlayer/autres_POI.js"
+                legendurl="apps/balades/legend/autre_POI_legend.svg"
+                opacity="1"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="false"
+                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{nom_verger}}&lt;/span&gt;"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                infopanel="right-panel">
+                <template url="apps/balades/templates/point_exporama.mst"></template>
+            </layer>
+        </theme>
+    </themes>
+</config>

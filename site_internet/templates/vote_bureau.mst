@@ -2,8 +2,8 @@
     <li class="item">
         <h5 class="rm-popup-title-feature">Bureau N° {{num_bureau}}</h5>
         <p class="rm-popup-text-feature">
-             {{#loc_bat}}<span class='rm-popup-label'> Centre de vote :</span> {{{loc_bat}}} <br/>{{/loc_bat}}
-             {{#nb_elec}}<span class='rm-popup-label'> Nombre d'électeurs :</span> {{{nb_elec}}}{{/nb_elec}}
+             {{#loc_bat}}<span class='rm-popup-label'> CENTRE DE VOTE :</span> {{{loc_bat}}} <br/>{{/loc_bat}}
+             {{#nb_elec}}<span class='rm-popup-label'> NOMBRE D'ÉLECTEURS :</span> {{{nb_elec}}}{{/nb_elec}}
         </p>
     </li>
 {{/features}}

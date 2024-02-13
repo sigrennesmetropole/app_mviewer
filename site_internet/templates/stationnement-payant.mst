@@ -2,9 +2,9 @@
 	<li class="item">
 		<h5 class="rm-popup-title-feature">{{{nom_voie}}} </h5>
 		<p class="rm-popup-text-feature">
-			{{#nb_pl}}<span class='rm-popup-label'> Nombre de places :</span> {{nb_pl}}<br/>{{/nb_pl}}
-            {{#handicape}} <span class='rm-popup-label'>Conformité PMR : </span> {{{handicape}}} <br/> {{/handicape}}
-            {{#payant}} <span class='rm-popup-label'>Payant : </span> {{{payant}}} <br/> {{/payant}} 
+			{{#nb_pl}}<span class='rm-popup-label'> NOMBRE DE PLACES :</span> {{nb_pl}}<br/>{{/nb_pl}}
+            {{#handicape}} <span class='rm-popup-label'>CONFORMITÉ PMR : </span> {{{handicape}}} <br/> {{/handicape}}
+            {{#payant}} <span class='rm-popup-label'>PAYANT : </span> {{{payant}}} <br/> {{/payant}} 
 		</p>
 	</li>
 {{/features}}

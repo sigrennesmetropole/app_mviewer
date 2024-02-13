@@ -1,9 +1,11 @@
 {{#features}}
-	<li class="item">
-		<h5 class="rm-popup-title-feature">Composteur collectif</h5>
-		<p class="rm-popup-text-feature">
-			{{#cmp_id}}<span class='rm-popup-label'> Numéro :</span> {{{cmp_id}}}<br/>{{/cmp_id}}
-			{{#domaine}}<span class='rm-popup-label'> Domaine :</span> {{{domaine}}}<br/>{{/domaine}}
-		</p>
-	</li>
+    <li class="item">
+        <h5 class="rm-popup-title-feature">COMPOSTEUR COLLECTIF</h5>
+        <p class="rm-popup-text-feature">
+            {{#id_cmp}}<span class='rm-popup-label'> NUMÉRO :</span> {{{id_cmp}}}<br/>{{/id_cmp}}
+            {{#adresse_complete}}<span class='rm-popup-label'> ADRESSE :</span> {{{adresse_complete}}}<br/>{{/adresse_complete}}
+            {{#localisation}} {{{localisation}}}<br/>{{/localisation}}
+            {{#domaine}}<span class='rm-popup-label'> DOMAINE :</span> {{{domaine}}}<br/>{{/domaine}}
+        </p>
+    </li>
 {{/features}}

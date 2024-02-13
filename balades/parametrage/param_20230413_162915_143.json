@@ -1,0 +1,20 @@
+{
+    "carte": {
+        "zoomPendantBalade": 18
+    },
+    "balades": {
+        "id": "id",
+        "couleurBalades": "couleur",
+        "couleurPoints": "couleurPoint",
+        "couleurBaladeFixe": "",
+        "couleurPointFixe": "",
+        "defaultColor": "#000000",
+        "baladeParDefaut": ""
+    },
+    "points": {
+        "idBalade": "idbalade",
+        "champRang": "rang",
+        "couleurPointActif": "#dd3627",
+        "pointsVisible": "true"
+    }
+}

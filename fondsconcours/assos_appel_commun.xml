@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <application
+        title="Appel à commun - soutien aux associations"
+        logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
+        titlehelp="À propos des cartes thématiques"
+        help="apps/site_internet/html/site_internet_help.html"
+        showhelp="false"
+        exportpng="false"
+        style="apps/fondsconcours/css/dircove.css"
+        measuretools="false"
+        togglealllayersfromtheme="false"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"
+        /> 
+
+    <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-185701.6581470431,6125244.605869446" zoom="11" />
+
+    <baselayers style="default"><!-- style="default"||gallery" -->
+        <baselayer visible="true" id="pvcisimple" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
+    </baselayers>
+
+    <extensions>
+        <extension type="component" id="GUICustom" path="apps/public/addons"/>
+        <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
+        <extension type="component" id="accessibilite" path="apps/public/addons"/>
+    </extensions>
+
+    <themes mini="true" legendmini="false">
+        <theme id="theme-202312191516" name="Projets du dispositif" collapsed="true" icon="fas fa-users">
+            <layer
+                id="asso_appel_commun"
+                name="Projets bénéficiant d'appel à commun"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_autres/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                attributefilter="true" attributefield="edition" attributevalues="2022,2023" attributelabel="Année du dispositif" attributeoperator="=" attributefilterenabled="true"
+                customcontrol="true"
+                customcontrolpath="apps/fondsconcours/controls"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                queryable="true"
+                featurecount="10"
+                expanded="true"
+                infopanel="right-panel">
+                <template url="apps/fondsconcours/templates/asso_appel_commun.mst"></template>
+            </layer>
+            
+            <!--<layer
+                id="asso_appel_commun"
+                name="Projets bénéficiant d'appel commun"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_autres/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/sites_organisme_bleu.sld"
+                legendurl="apps/site_internet/img/legend/leg_marker_bleu.svg"
+                customcontrol="true"
+                customcontrolpath="apps/fondsconcours/controls"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                queryable="true"
+                featurecount="5"
+                infopanel="right-panel">
+                <template url="apps/fondsconcours/templates/asso_appel_commun.mst"></template>
+            </layer>
+            -->
+            <!-- COUCHE WFS
+            <layer
+                id="asso_appel_commun"
+                name="Projets bénéficiant d'appel commun"
+                type="customlayer"
+                url="apps/fondsconcours/customlayers/asso_appel_commun.js"
+                visible="true"
+                tooltip="false"
+                tooltipenabled="false"
+                tooltipcontent=""
+                infoformat="application/vnd.ogc.gml"
+                legendurl="apps/site_internet/img/legend/leg_marker_bleu.svg"
+                customcontrol="false"
+                customcontrolpath="apps/fondsconcours/controls"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                queryable="true"
+                featurecount="5"
+                infopanel="right-panel">
+            </layer>
+            -->
+        </theme>
+        
+    </themes>
+</config>
