@@ -4,6 +4,7 @@ var objetConvertLignes;
 var lastCenter;
 var lastZoom;
 var animationEnCours = false;
+var umapFile;
 document.getElementById('geojson').addEventListener('change', () => {
     const [file] = document.querySelector('#geojson').files;
     const reader = new FileReader();
@@ -16,6 +17,7 @@ document.getElementById('geojson').addEventListener('change', () => {
         if (file.name.split('.').at(-1) == 'geojson') {
             try {
                 [objetConvertPoints, objetConvertLignes] = conversionJSON(reader.result);
+                umapFile = reader.result;
                 //console.log(objetConvertPoints, objetConvertLignes);
                 lastZoom = map.getView().getZoom();
                 lastCenter = map.getView().getCenter();
@@ -631,6 +633,7 @@ document.querySelector("#envoyerFormulaireConfirm").addEventListener('click', ()
         fichiers["points_" + uid + ".geojson"] = objetConvertPoints;
         fichiers["balades_" + uid + ".geojson"] = objetConvertLignes;
         fichiers['uid'] = uid;
+        fichiers["umap_" + uid + ".geojson"] = umapFile;
         var mail = document.querySelector("#mail").value;
         var nom = document.querySelector("#nom").value;
         var commentaire = document.querySelector("#commentaire").value;
