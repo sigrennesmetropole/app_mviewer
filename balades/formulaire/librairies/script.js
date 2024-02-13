@@ -17,7 +17,7 @@ document.getElementById('geojson').addEventListener('change', () => {
         if (file.name.split('.').at(-1) == 'geojson') {
             try {
                 [objetConvertPoints, objetConvertLignes] = conversionJSON(reader.result);
-                umapFile = reader.result;
+                umapFile = JSON.parse(reader.result);
                 //console.log(objetConvertPoints, objetConvertLignes);
                 lastZoom = map.getView().getZoom();
                 lastCenter = map.getView().getCenter();
