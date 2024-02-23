@@ -249,7 +249,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$id_pav[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/georm_pav.mst"></template>
+                <template url="apps/georm/templates/georm_pav.mst"></template> 
             </layer>
             <layer
                 id="sv_metier_composteur_coll"
