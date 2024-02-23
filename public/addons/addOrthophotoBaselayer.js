@@ -4,7 +4,7 @@
 **/
 
 var _layer = "raster:ortho2021";
-var _metadata = "https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/b5b958de-9407-4822-9ca5-abb1c57659b7";
+var _metadata = "https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home";
 
 
 // construction du baselayer
@@ -25,7 +25,7 @@ var ortho = {
 };
 
 ortho.layers=_layer;
-ortho.attribution = "&lt;a href=&quot;" + _metadata + "&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;";
+ortho.attribution = "<a href='" + _metadata + "' target='_blank' >Rennes Métropole</a>";
 
 function isBLVisible(conf){
     if (conf.visible && conf.visible=="true"){return true;} else {return false;}

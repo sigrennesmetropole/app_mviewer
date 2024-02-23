@@ -5,7 +5,6 @@
             {{#id_cmp_gesbac}}<span class='rm-popup-label'> NUMÉRO :</span> {{{id_cmp_gesbac}}}<br/>{{/id_cmp_gesbac}}
             {{#adresse_complete}}<span class='rm-popup-label'> ADRESSE :</span> {{{adresse_complete}}}<br/>{{/adresse_complete}}
             {{#domaine}}<span class='rm-popup-label'> DOMAINE :</span> {{{domaine}}}<br/>{{/domaine}}
-            {{#actif}}<span class='rm-popup-label'> ACTIF :</span> {{{actif}}}<br/>{{/actif}}
         </p>
     </li>
 {{/features}}

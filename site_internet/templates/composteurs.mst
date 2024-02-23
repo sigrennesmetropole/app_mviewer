@@ -6,7 +6,6 @@
             {{#adresse_complete}}<span class='rm-popup-label'> ADRESSE :</span> {{{adresse_complete}}}<br/>{{/adresse_complete}}
             {{#localisation}} {{{localisation}}}<br/>{{/localisation}}
             {{#domaine}}<span class='rm-popup-label'> DOMAINE :</span> {{{domaine}}}<br/>{{/domaine}}
-            {{#actif}}<span class='rm-popup-label'> ACTIF :</span> {{{actif}}}<br/>{{/actif}}
         </p>
     </li>
 {{/features}}
