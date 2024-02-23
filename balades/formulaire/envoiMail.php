@@ -24,6 +24,7 @@ $mail->FromName = "Balades Mviewer";
 $mail->AddStringAttachment(json_encode($data['fichiers']['param_'.$uid.'.json'], JSON_UNESCAPED_UNICODE), 'param_'.$uid.'.json');
 $mail->AddStringAttachment(json_encode($data['fichiers']['points_'.$uid.'.geojson'], JSON_UNESCAPED_UNICODE), 'points_'.$uid.'.geojson');
 $mail->AddStringAttachment(json_encode($data['fichiers']['balades_'.$uid.'.geojson'], JSON_UNESCAPED_UNICODE), 'balades_'.$uid.'.geojson');
+$mail->AddStringAttachment(json_encode($data['fichiers']['umap_'.$uid.'.geojson'], JSON_UNESCAPED_UNICODE), 'umap_'.$uid.'.geojson');
 $mail->AddStringAttachment($data['fichiers']['balades_'.$uid.'.xml'], 'balades_'.$uid.'.xml');
 
 $mail->addAddress("sigsupport@rennesmetropole.fr");
