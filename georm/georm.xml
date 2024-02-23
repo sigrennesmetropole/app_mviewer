@@ -231,6 +231,27 @@
                 <template url="apps/georm/templates/georm_pav.mst"></template>
             </layer>
             <layer
+                id="pav"
+                name="Points d'apport biodéchets"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"
+                visible="false"
+                tabcolor="#8d4915"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                queryable="true"
+                filter="flux_bio='1'"
+                featurecount="5"
+                sld="https://public.sig.rennesmetropole.fr/ressources/app/mviewer/sld/georm_pav_biodechet.sld"
+                tooltip="false"
+                tooltipcontent="id_pav"
+                tooltipenabled="app:sv_metier_v_gesbac_pav"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$id_pav[/b]"
+                infopanel="right-panel">
+                <template url="apps/georm/templates/georm_pav.mst"></template>
+            </layer>
+            <layer
                 id="sv_metier_composteur_coll"
                 name="Composteurs collectifs"
                 type="wms"
