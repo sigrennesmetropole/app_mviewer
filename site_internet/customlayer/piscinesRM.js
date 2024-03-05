@@ -52,9 +52,13 @@ mviewer.customLayers.piscinesRM= (function() {
     /**
     * Données agglomérées des piscines et de leurs bassins
     **/
-    function getSiteData(){
+    /*function getSiteData(){
+        console.log("----------GET SITES DATA - DEBUT ---------");
         let piscines = layer.getSource().getFeatures();
+        
+        console.log("piscines : " + piscines);
         for (site in piscines) {
+            console.log("site : " + site);
             site_data = piscines[site];
             site_data.set("bassins",[]);
             // récupération des données du site pour obtenir la liste des organismes liés
@@ -73,11 +77,29 @@ mviewer.customLayers.piscinesRM= (function() {
 
             // console.log(piscines[site]);
         }
+    }*/
+    
+    function getPiscineData(feature){
+        var site_data = feature;
+        site_data.set("bassins",[]);
+        // récupération des données du site pour obtenir la liste des organismes liés
+        sitesorgs_data('https://api-sitesorg.sig.rennesmetropole.fr/v1/sites/' + feature.get('id_site')).then(function(result_site){
+          let piscines_org = result_site.response.organismes;
+            for (org in piscines_org) {
+                // récupération des données de chaque organisme (pour les grilles horaires)
+                sitesorgs_data('https://api-sitesorg.sig.rennesmetropole.fr/v1/organismes/' + piscines_org[org].idOrganisme.idOrganisme, piscines_org[org].flagOrganismePrincipal).then(function (result_org, siteid=site_data.getId()) {
+                    let org_detail = result_org.response;
+                    updateFeature(feature, result_org);
+                });
+            }
+            
+        });
     }
 
-    function updateFeature(org_data) {
+
+    function updateFeature(feature, org_data) {
         // Recherche de la feature concernée par l'organisme
-        var feature = getFeatureFromIdSite(org_data.response.sites[0].idSite.idSite);
+        //var feature = getFeatureFromIdSite(org_data.response.sites[0].idSite.idSite);
         org_data.response.horairesOuvertures = cleanedHoraires(org_data.response.horairesOuvertures);
 
         if (feature != undefined && org_data.org_principal){
@@ -134,7 +156,7 @@ mviewer.customLayers.piscinesRM= (function() {
         //console.log("HORAIRES");
     }
 
-    function getFeatureFromIdSite(idSite) {
+    /*function getFeatureFromIdSite(idSite) {
         var features = layer.getSource().getFeatures();
         var retour;
         for (feat in features){
@@ -144,7 +166,7 @@ mviewer.customLayers.piscinesRM= (function() {
             }
         };
         return retour;
-    }
+    }*/
 
     function fermetures(piscines,feature){
       if(piscines){
@@ -247,6 +269,7 @@ mviewer.customLayers.piscinesRM= (function() {
       }
     }
 
+/*
     function getElemANotInListB(listA, listB){
         // elements = copie de la liste A
         var elements=Array.from(listA);
@@ -265,6 +288,7 @@ mviewer.customLayers.piscinesRM= (function() {
         }
         return elements;
     }
+*/
 
     function cleanedHoraires(horairesColl){
         var valide = [];
@@ -379,12 +403,12 @@ mviewer.customLayers.piscinesRM= (function() {
                 fetch(urlData)
                     .then(r => r.json())
                     .then(r => {
-                        //console.log("Load features ete_monuments"); // ==> Exécuté 2x rarement !
+                        //console.log("Load features piscine"); // ==> Exécuté 2x rarement !
                         // nettoie la layer
                         mviewer.getLayer("piscinesRM").layer.getSource().clear();
                         // charge les features
                         let features = layer.getSource().getFormat().readFeatures(r)
-                        layer.getSource().addFeatures(features);   
+                        layer.getSource().addFeatures(features);
                     })
                 }
         }),
@@ -393,10 +417,14 @@ mviewer.customLayers.piscinesRM= (function() {
 
 
 
-    //layer.getSource().once('change',() =>{
+    //layer.getSource().on('featuresloadstart',() =>{
     layer.once('prerender',() =>{
+        //getSiteData();
         calculateStyleIcon();
-        getSiteData();
+    });
+    
+    layer.getSource().on('addfeature',(e) =>{
+        getPiscineData(e.feature);
     });
 
     return {

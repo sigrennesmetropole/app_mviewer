@@ -25,9 +25,9 @@ var observer = new MutationObserver(function(mutations) {
           });
           $('#searchtool').animate({'right':panelWidth + 45});
           $('#parcelSelectors').animate({'right':panelWidth + 92});
-          $('#zoomtoolbar').animate({'right':panelWidth +10});
-          $('#toolstoolbar').animate({'right':panelWidth +10});
-          $('#backgroundlayerstoolbar-default').animate({'right':panelWidth +10,'height':panelHeight +45});
+          //$('#zoomtoolbar').animate({'right':panelWidth +10});
+          //$('#toolstoolbar').animate({'right':panelWidth +10});
+          //$('#backgroundlayerstoolbar-default').animate({'right':panelWidth +10,'height':panelHeight +45});
           $('#searchresults').animate({'right': panelWidth + 25});
           $('#right-panel .mv-header .close').click(function(){
             $('#searchresults').css({'display':'none'});
@@ -47,9 +47,9 @@ var observer = new MutationObserver(function(mutations) {
             decaleMap([opendivwidth/3*-1,opendivheight/3*-1]);
             $('#searchtool').animate({'right':panelWidth + 45});
             $('#parcelSelectors').animate({'right':panelWidth + 92});
-            $('#zoomtoolbar').animate({'right':panelWidth +10});
-            $('#toolstoolbar').animate({'right':panelWidth +10});
-            $('#backgroundlayerstoolbar-default').animate({'right':panelWidth +10,'height':panelHeight +45});
+            //$('#zoomtoolbar').animate({'right':panelWidth +10});
+            //$('#toolstoolbar').animate({'right':panelWidth +10});
+            //$('#backgroundlayerstoolbar-default').animate({'right':panelWidth +10,'height':panelHeight +45});
             $('#searchresults').animate({'right': panelWidth + 25});
             $('#right-panel .mv-header .close').click(function(){
               $('#searchresults').css({'display':'none'});
@@ -65,15 +65,15 @@ var observer = new MutationObserver(function(mutations) {
             var panelWidth = document.getElementById(mutations[1].target.id).offsetWidth;
             opendivwidth=parseInt(panelWidth,10);
             decaleMap([opendivwidth/3,opendivheight/3]);
-            $('#backgroundlayerstoolbar-default').animate({'height':panelHeight +45,'right':panelWidth +10});
+            //$('#backgroundlayerstoolbar-default').animate({'height':panelHeight +45,'right':panelWidth +10});
             $('.ol-attribution').animate({'height':panelHeight +35});
             $('.ol-attribution').css({"background-color":"rgba(255,255,255,0)"});
             $('.ol-scale-line').animate({'height':panelHeight +20});
             $('.ol-scale-line').css({"background-color":"rgba(255,255,255,0)"});
             $('#searchtool').animate({'right':panelWidth + 45});
             $('#parcelSelectors').animate({'right':panelWidth + 92});
-            $('#zoomtoolbar').animate({'right':panelWidth +10});
-            $('#toolstoolbar').animate({'right':panelWidth +10});
+            //$('#zoomtoolbar').animate({'right':panelWidth +10});
+            //$('#toolstoolbar').animate({'right':panelWidth +10});
             $('#searchresults').animate({'right': panelWidth + 25});
             $('#right-panel .mv-header .close').click(function(){
               $('#searchresults').css({'display':'none'});
@@ -89,9 +89,9 @@ var observer = new MutationObserver(function(mutations) {
             decaleMap([opendivwidth/3*-1,opendivheight/3*-1]);
             $('#searchtool').animate({'right':panelWidth + 45});
             $('#parcelSelectors').animate({'right':panelWidth + 92});
-            $('#zoomtoolbar').animate({'right':panelWidth +10});
-            $('#toolstoolbar').animate({'right':panelWidth +10});
-            $('#backgroundlayerstoolbar-default').animate({'right':panelWidth +10,'height':panelHeight +45});
+            //$('#zoomtoolbar').animate({'right':panelWidth +10});
+            //$('#toolstoolbar').animate({'right':panelWidth +10});
+            //$('#backgroundlayerstoolbar-default').animate({'right':panelWidth +10,'height':panelHeight +45});
             $('#searchresults').animate({'right': panelWidth + 25});
             $('#right-panel .mv-header .close').click(function(){
               $('#searchresults').css({'display':'none'});
@@ -107,15 +107,15 @@ var observer = new MutationObserver(function(mutations) {
             var panelWidth = document.getElementById(mutations[0].target.id).offsetWidth;
             opendivwidth=parseInt(panelWidth,10);
             decaleMap([opendivwidth/3,opendivheight/3]);
-            $('#backgroundlayerstoolbar-default').animate({'height':panelHeight +45,'right':panelWidth +10});
+            //$('#backgroundlayerstoolbar-default').animate({'height':panelHeight +45,'right':panelWidth +10});
             $('.ol-attribution').animate({'height':panelHeight +35});
             $('.ol-attribution').css({"background-color":"rgba(255,255,255,0)"});
             $('.ol-scale-line').animate({'height':panelHeight +20});
             $('.ol-scale-line').css({"background-color":"rgba(255,255,255,0)"});
             $('#searchtool').animate({'right':panelWidth + 45});
             $('#parcelSelectors').animate({'right':panelWidth + 92});
-            $('#zoomtoolbar').animate({'right':panelWidth +10});
-            $('#toolstoolbar').animate({'right':panelWidth +10});
+            //$('#zoomtoolbar').animate({'right':panelWidth +10});
+            //$('#toolstoolbar').animate({'right':panelWidth +10});
             $('#searchresults').animate({'right': panelWidth + 25});
             $('#right-panel .mv-header .close').click(function(){
               $('#searchresults').css({'display':'none'});
@@ -125,9 +125,9 @@ var observer = new MutationObserver(function(mutations) {
         if (mutations[0].target.classList[0] != "active" && mutations[1].target.classList[0] != "active") {
           $('#searchtool').animate({'right':'60px'});
           $('#parcelSelectors').animate({'right':'105px'});
-          $('#zoomtoolbar').animate({'right':'10px'});
-          $('#toolstoolbar').animate({'right':'10px'});
-          $('#backgroundlayerstoolbar-default').animate({'right':'10px','height':'55px'});
+          //$('#zoomtoolbar').animate({'right':'10px'});
+          //$('#toolstoolbar').animate({'right':'10px'});
+          //$('#backgroundlayerstoolbar-default').animate({'right':'10px','height':'55px'});
           $('.ol-attribution').animate({'height':'30px'});
           $('.ol-scale-line').animate({'height':'15px'});
           $('.ol-attribution').css({"background-color":"rgba(255,255,255,0.7)"});
@@ -151,9 +151,9 @@ var observer = new MutationObserver(function(mutations) {
               decaleMap([opendivwidth/3,0]);
               $('#searchtool').animate({'right':panelWidth + 45});
               $('#parcelSelectors').animate({'right':panelWidth + 92});
-              $('#zoomtoolbar').animate({'right':panelWidth +10});
-              $('#toolstoolbar').animate({'right':panelWidth +10});
-              $('#backgroundlayerstoolbar-default').animate({'right':panelWidth +10});
+              //$('#zoomtoolbar').animate({'right':panelWidth +10});
+              //$('#toolstoolbar').animate({'right':panelWidth +10});
+              //$('#backgroundlayerstoolbar-default').animate({'right':panelWidth +10});
               $('#searchresults').animate({'right': panelWidth + 25});
               $('#right-panel .mv-header .close').click(function(){
                 $('#searchresults').css({'display':'none'});
@@ -163,7 +163,7 @@ var observer = new MutationObserver(function(mutations) {
               var panelHeight = document.getElementById(mutationId).offsetHeight;
               opendivheight=parseInt(panelHeight,10);
               decaleMap([0,opendivheight/3*-1]);
-              $('#backgroundlayerstoolbar-default').animate({'height':panelHeight +45});
+              //$('#backgroundlayerstoolbar-default').animate({'height':panelHeight +45});
               $('.ol-attribution').animate({'height':panelHeight +35});
               $('.ol-attribution').css({"background-color":"rgba(255,255,255,0)"});
               $('.ol-scale-line').animate({'height':panelHeight +20});
@@ -178,9 +178,9 @@ var observer = new MutationObserver(function(mutations) {
               decaleMap([opendivwidth/3 *-1,0]);
               $('#searchtool').animate({'right':panelWidth + 45});
               $('#parcelSelectors').animate({'right':panelWidth + 92});
-              $('#zoomtoolbar').animate({'right':panelWidth +10});
-              $('#toolstoolbar').animate({'right':panelWidth +10});
-              $('#backgroundlayerstoolbar-default').animate({'right':panelWidth +10});
+              //$('#zoomtoolbar').animate({'right':panelWidth +10});
+              //$('#toolstoolbar').animate({'right':panelWidth +10});
+              //$('#backgroundlayerstoolbar-default').animate({'right':panelWidth +10});
               $('#searchresults').animate({'right': panelWidth + 25});
               $('#right-panel .mv-header .close').click(function(){
                 $('#searchresults').css({'display':'none'});
@@ -190,7 +190,7 @@ var observer = new MutationObserver(function(mutations) {
             if(mutationId === "bottom-panel"){
               var panelHeight = document.getElementById(mutationId).offsetHeight;
               decaleMap([0,opendivheight/3]);
-              $('#backgroundlayerstoolbar-default').animate({'height':panelHeight +45});
+              //$('#backgroundlayerstoolbar-default').animate({'height':panelHeight +45});
               $('.ol-attribution').animate({'height':panelHeight +35});
               $('.ol-attribution').css({"background-color":"rgba(255,255,255,0)"});
               $('.ol-scale-line').animate({'height':panelHeight +20});
