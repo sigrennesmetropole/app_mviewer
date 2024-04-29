@@ -9,6 +9,7 @@
          </p>
          <p class="rm-popup-text-feature">
             {{#adresse}}<span class='rm-popup-label'> ADRESSE : </span>{{{adresse}}}<br/>{{/adresse}}
+         </p>
             {{#photo}}
                 <section class="rm-popup-text-feature">
                     <div id="photo" style="display: block;text-align: center;">
@@ -18,9 +19,9 @@
                     </div>
                 </section>
             {{/photo}}
-         </p>
+
          <p class="rm-popup-text-feature">
-            {{#lien}}<a class='lienweb' href="{{{lien}}}" target="_blank" title="{{{lien}}}"> En savoir plus ... </a>{{/lien}}
+            {{#lienweb}}<a class='lienweb' href="{{{lienweb}}}" target="_blank" title="{{{lienweb}}}"> En savoir plus ... </a>{{/lienweb}}
         </p>
     </li>
 {{/features}}
