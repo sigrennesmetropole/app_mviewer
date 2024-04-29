@@ -29,9 +29,8 @@
 				"legende" : "<i>Graffiti de Bando sur la palissade du chantier de Beaubourg</i> – 1984 © photo : Epsylon Point",
 				"site_internet" : "mba.rennes.fr",
 				"telephone" : "02 23 62 17 45",
-				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Lien" : "https://exporama-rennes.fr/sortir/aerosol-une-histoire-du-graffiti/",
-				"Image(s)" : "Oui",
+				"public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"lienweb" : "https://exporama-rennes.fr/sortir/aerosol-une-histoire-du-graffiti/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/AerosolMuseeBeauxArts.jpg",
 				"id_site" : 3916
 			}
@@ -60,7 +59,7 @@
 				"email" : "contact@leschampslibres.fr",
 				"facebook" : "www.facebook.com/LesChampsLibres/",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+				"lienweb" : "https://exporama-rennes.fr/sortir/raymond-depardon-et-kamel-daoud-son-oeil-dans-ma-main-algerie-1961-et-2019/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/DepardonLesChampsLibres.jpg",
 				"id_site" : 4027
 			}
@@ -88,7 +87,7 @@
 				"email" : "contact@leschampslibres.fr",
 				"facebook" : "www.facebook.com/LesChampsLibres/",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "?",
+                "lienweb" : "https://exporama-rennes.fr/sortir/raymond-depardon-rural/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/RuralLesChampsLibres.jpg",
 				"id_site" : 4027
 			}
@@ -116,7 +115,7 @@
 				"telephone" : "02 99 37 37 93",
 				"email" : "accueil@fracbretagne.fr",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/raymond-depardon-les-jeux-olympiques-1964-1980/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/DepardonFrac.jpg",
 				"id_site" : 926
 			}
@@ -139,7 +138,7 @@
 				"fin" : "25/09/2024",
 				"gratuit" : "oui",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille,Animaux autorisés",
-				"Image(s)" : "Pas encore",
+                "lienweb" : "",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/RennesCelebreLeSportParLaPhotographie.jpg",
 				"id_site" : 3967
 			}
@@ -167,7 +166,7 @@
 				"email" : "la-criee@ville-rennes.fr",
 				"facebook" : "https://www.facebook.com/la.criee.art.contemporain",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/salon-des-refuses-rasmus-myrup/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/SalonDesRefusees_Criée.jpg",
 				"id_site" : 4076
 			}
@@ -195,7 +194,7 @@
 				"email" : "contact@40mcube.org",
 				"facebook" : "https://www.facebook.com/40mcube",
 				"Public" : "Tout public",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/chronique-de-loubli-yoan-sorin/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/40mcube.jpg",
 				"id_site" : 4065
 			}
@@ -223,7 +222,7 @@
 				"email" : "contact@lesateliersduvent.org",
 				"facebook" : "https://www.facebook.com/lesateliersduvent",
 				"Public" : "Tout public",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/copyroom/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/AteliersDuVent.jpg",
 				"id_site" : 304
 			}
@@ -251,7 +250,7 @@
 				"email" : "contact@teenagekicks.org",
 				"facebook" : "https://www.facebook.com/teenagekicksfestival",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille,Animaux autorisés",
-				"Image(s)" : "Oui",
+                "lienweb" : "",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/OrangerieMutopia.jpg",
 				"id_site" : 21
 			}
@@ -278,7 +277,8 @@
 				"telephone" : "0299010879",
 				"email" : "lendroitorga@gmail.com",
 				"Public" : "Tout public",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/paysages-blasons-la-valise/",
+                "photo" : "apps/balades/customlayer/photos_exporama_2024/Paysagesblasons.png",
 				"id_site" : 894
 			}
 		},
@@ -304,7 +304,7 @@
 				"email" : "contact@ifa-rennes.org",
 				"facebook" : "https://www.facebook.com/InstitutFrancoAmericain/",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/la-route-de-la-voie-de-la-liberte-bruno-elisabeth/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/LaRoutedeLaVoieDeLaLiberte.jpg",
 				"id_site" : 820
 			}
@@ -330,7 +330,7 @@
 				"telephone" : "06 12 54 20 48",
 				"email" : "constance.villeroy@gmail.com",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/jeux-de-formes/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/LantreTemps.jpg",
 				"id_site" : 491
 			}
@@ -354,7 +354,7 @@
 				"gratuit" : "oui",
 				"legende" : "Oliver Beer, <i>Reanimation (I Wan’na Be Like You)</i>, 2017. Collection frac Bretagne © Oliver Beer. Photo : Frac Bretagne",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/les-fantomes-de-lopera-3/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/FantômesOpéra.jpg",
 				"id_site" : 271
 			}
@@ -382,7 +382,7 @@
 				"email" : "mediation@bon-accueil.org",
 				"facebook" : "facebook.com/le.bon.accueil.sound.art",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/le-champ-des-possibles-vincent-mauger/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/VincentMauger_LeBonAccueil.jpg",
 				"id_site" : 196
 			}
@@ -409,7 +409,7 @@
 				"email" : "contact@ailesdecaius.fr",
 				"facebook" : "Rencontres photographiques de ViaSilva",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/rencontres-photographiques-de-viasilva-7/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/LesAilesDeCaius.jpg",
 				"id_site" : 3973
 			}
@@ -435,7 +435,7 @@
 				"gratuit" : "oui",
 				"legende" : "© E_Foulon",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille,Animaux autorisés",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/collection-12/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/Collection12.jpg",
 				"id_rva" : 59778
 			}
@@ -461,40 +461,12 @@
 				"email" : "noirbrillant.asso@gmail.com",
 				"facebook" : "https://www.facebook.com/profile.php?id=100085384009542",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/les-chiens-qui-aboient-edie/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/EdieNoirBrillant.jpg",
 				"lat" : 48.139,
 				"long" : -1.656
 			}
-		},
-		{
-			"type" : "Feature",
-			"geometry" : {
-				"type" : "MultiPoint",
-				"coordinates" : [
-					[ -186622.0122550438, 6125128.1888465686 ]
-				]
-			},
-			"properties" : {
-				"nom" : "Mouvements Urbains",
-				"categorie" : "Exposition",
-				"descriptif" : "Au pied du mur, de la peinture, de l’adrénaline et un appareil photo. À travers ses clichés, Alain Amet pose son regard sur l’art urbain, ses artistes et leurs gestes. Dans leur intimité, il est le témoin privilégié du processus de création d’une œuvre. WAR!, La rouille, Poch, Brez et d’autres se dévoilent à travers une série de photographies et de croquis qui sont le témoignage d’œuvres éphémères.",
-				"adresse" : "JUVÉNILE Galerie, 2 rue du capitaine Alfred Dreyfus 35000 RENNES",
-				"access" : "Centre-ville,Proche métro,Proche bus,Parking,Vélo",
-				"zone_geo" : "Rennes centre",
-				"pmr" : "oui",
-				"debut" : "01/08/2024",
-				"fin" : "31/08/2024",
-				"gratuit" : "oui",
-				"legende" : "© Alain Amet / WAR!",
-				"site_internet" : "juvenile.fr",
-				"email" : "contact@juvenile.fr",
-				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
-				"id_rva" : 61147
-			}
-		},
-		{
+		},{
 			"type" : "Feature",
 			"geometry" : {
 				"type" : "MultiPoint",
@@ -516,7 +488,7 @@
 				"legende" : "<i>LES EMPÊCHÉS N°18.</i> 146_114cm.2022 © Fabienne Houzé-Ricard",
 				"site_internet" : "https://www.imoja.fr/le-grand-angle/",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/lepinglage-fabienne-houze-ricard/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/Lepinglage_Fabienne_Houzé_Imoja.jpg",
 				"id_rva" : 59631
 			}
@@ -543,7 +515,7 @@
 				"legende" : "Olivia Etienne, <i>Geste d'enfant II</i>, la cueillette, 2023, 40 x 33 cm, pastel et fusain sur papier © Olivia Étienne",
 				"site_internet" : "https://www.imoja.fr/le-grand-angle/",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/dans-vos-mains-olivia-etienne/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/OliviaEtienne_Imoja.jpg",
 				"id_rva" : 59631
 			}
@@ -570,7 +542,7 @@
 				"legende" : "<i>Vue d'exposition</i>, CAC Pontmain, 2023 © Gwenn Mérel",
 				"site_internet" : "https://www.imoja.fr/le-grand-angle/",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/il-ny-a-pas-deux-feuilles-identiques-sur-un-arbre-gwenn-merel/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/GwennMérel_Imoja.jpg",
 				"id_rva" : 59631
 			}
@@ -596,7 +568,7 @@
 				"legende" : "© Jean-Michel Caillebotte",
 				"site_internet" : "lestombeesdelanuit.com",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/nids-star-pilot-et-jean-michel-caillebotte/",
 				"lat" : 48.111,
 				"long" : -1.679
 			}
@@ -625,7 +597,7 @@
 				"email" : "lemurderennes@gmail.com",
 				"facebook" : "Le mur de Rennes",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/le-m-u-r-de-rennes-rue-vasselot/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/MurRennesAérosolVasselot.jpg",
 				"id_rva" : 61048
 			}
@@ -652,7 +624,7 @@
 				"legende" : "© Olivier Chaos",
 				"site_internet" : "tourisme-rennes",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/le-m-u-r-de-rennes-rue-dechange/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/MurRennesChaosEchange.jpg",
 				"id_rva" : 99493
 			}
@@ -680,7 +652,8 @@
 				"site_internet" : "lendroit.org",
 				"telephone" : "02 99 01 08 79",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+                "photo" : "apps/balades/customlayer/photos_exporama_2024/Panneaux4x3.png",
+                "lienweb" : "https://exporama-rennes.fr/sortir/panneaux-4x3/",
 				"id_rva" : 61647
 			}
 		},
@@ -703,7 +676,7 @@
 				"gratuit" : "oui",
 				"legende" : "<i>Fantaisies</i> © Isabelle Arthuis",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/fantaisies-isabelle-arthuis/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/MuseeBeauxArtsFantaisies.jpg",
 				"lat" : 48.125,
 				"long" : -1.664
@@ -729,7 +702,7 @@
 				"legende" : "© Antonin Hako © Claire Guetta © Diane Rivoire © Guillaume Le Clouërec © Valentin Fontaine",
 				"site_internet" : "https://www.fracbretagne.fr/fr/beauregard-flottant-frac-bretagne/",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/beauregard-flottant/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/BeauregardFlottant.jpg",
 				"lat" : 48.13,
 				"long" : -1.699
@@ -760,7 +733,7 @@
 				"email" : "mediation@teenagekicks.org",
 				"facebook" : "https://www.facebook.com/teenagekicksfestival",
 				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
-				"Image(s)" : "Oui",
+                "lienweb" : "https://exporama-rennes.fr/sortir/teenage-kicks-tour/",
 				"photo" : "apps/balades/customlayer/photos_exporama_2024/TeenageKicks.jpg",
 				"id_rva" : 89483
 			}
@@ -777,7 +750,9 @@
 				"adresse" : "Square des martyrs de la Résistance",
 				"debut" : "04/07/2024",
 				"fin" : "02/08/2025",
+                "lienweb" : "",
 				"legende" : "© Sophie Cardin",
+                "photo" : "apps/balades/customlayer/photos_exporama_2024/TerrainEntenteSophieCardin.png",
 				"lat" : 48.104,
 				"long" : -1.68
 			}

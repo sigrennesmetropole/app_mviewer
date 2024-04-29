@@ -15,7 +15,7 @@ body {
     color : #ff0000!important;
 }
 
-
+/*
 #modal-panel .modal-content {
     background-color : #ffccff!important;
 }
@@ -23,13 +23,13 @@ body {
 #modal-panel .panel-body {
     background-color : #ffccff!important;
 }
+*/
 
-/*
 #modal-panel .panel-heading {
     background-color: #ffccff!important;
     color: #ff0000!important;
 }
-*/
+
 #modal-panel .state-icon {
     color: #ff0000!important;
 }
