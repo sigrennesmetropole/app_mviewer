@@ -1,0 +1,2 @@
+# MVIEWER-ECO
+Module dédié aux cartes mviewer intégrées dans une page du site internet institutionnel metropole.rennes.fr. Il permet une étape de transition pour n'ouvrir la carte que sur action de l'utilisation et éviter un chargement de la carte par défaut à l'ouverture de la page du site institutionnel.

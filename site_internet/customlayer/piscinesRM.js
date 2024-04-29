@@ -52,32 +52,26 @@ mviewer.customLayers.piscinesRM= (function() {
     /**
     * Données agglomérées des piscines et de leurs bassins
     **/
-    function getSiteData(){
-        let piscines = layer.getSource().getFeatures();
-        for (site in piscines) {
-            site_data = piscines[site];
-            site_data.set("bassins",[]);
-            // récupération des données du site pour obtenir la liste des organismes liés
-            sitesorgs_data('https://api-sitesorg.sig.rennesmetropole.fr/v1/sites/' + piscines[site].get('id_site')).then(function(result_site){
-                let piscines_org = result_site.response.organismes;
-                for (org in piscines_org) {
-                    // récupération des données de chaque organisme (pour les grilles horaires)
-                    sitesorgs_data('https://api-sitesorg.sig.rennesmetropole.fr/v1/organismes/' + piscines_org[org].idOrganisme.idOrganisme, piscines_org[org].flagOrganismePrincipal).then(function (result_org, siteid=site_data.getId()) {
-                        let org_detail = result_org.response;
-                        updateFeature(result_org);
-
-                    });
-
-                }
-            });
-
-            // console.log(piscines[site]);
-        }
+    function getPiscineData(feature){
+        var site_data = feature;
+        site_data.set("bassins",[]);
+        // récupération des données du site pour obtenir la liste des organismes liés
+        sitesorgs_data('https://api-sitesorg.sig.rennesmetropole.fr/v1/sites/' + feature.get('id_site')).then(function(result_site){
+          let piscines_org = result_site.response.organismes;
+            for (org in piscines_org) {
+                // récupération des données de chaque organisme (pour les grilles horaires)
+                sitesorgs_data('https://api-sitesorg.sig.rennesmetropole.fr/v1/organismes/' + piscines_org[org].idOrganisme.idOrganisme, piscines_org[org].flagOrganismePrincipal).then(function (result_org, siteid=site_data.getId()) {
+                    let org_detail = result_org.response;
+                    updateFeature(feature, result_org);
+                });
+            }
+            
+        });
     }
 
-    function updateFeature(org_data) {
+
+    function updateFeature(feature, org_data) {
         // Recherche de la feature concernée par l'organisme
-        var feature = getFeatureFromIdSite(org_data.response.sites[0].idSite.idSite);
         org_data.response.horairesOuvertures = cleanedHoraires(org_data.response.horairesOuvertures);
 
         if (feature != undefined && org_data.org_principal){
@@ -95,11 +89,6 @@ mviewer.customLayers.piscinesRM= (function() {
             feature.set('joursFermes', org_data.response.joursFermes);
             // console.log(feature);
             // console.log(feature.values_.bassins);
-            // ma_string='';
-            // for (jf in org_data.response.joursFermes){
-            //   ma_string += org_data.response.joursFermes[jf].value;
-            // }
-            // feature.set('jours_excep_fermes', ma_string);
             var content = feature.values_.horairesOuvertures;
             content.forEach((periode, i) => {
               var testedHoraires = 0;
@@ -112,11 +101,8 @@ mviewer.customLayers.piscinesRM= (function() {
                 delete periode.horaires;
               };
             });
-
-
             fermetures(true,feature)
             fermetures(false,feature)
-
         } else if(org_data.response.nomenclatures[0].idSpecialite.code=='9.2.1'){
             // organisme secondaire = bassin
             feature.get('bassins').push(org_data.response);
@@ -132,18 +118,6 @@ mviewer.customLayers.piscinesRM= (function() {
         }
 
         //console.log("HORAIRES");
-    }
-
-    function getFeatureFromIdSite(idSite) {
-        var features = layer.getSource().getFeatures();
-        var retour;
-        for (feat in features){
-            if(idSite == features[feat].get('id_site')) {
-                retour = features[feat];
-                break;
-            }
-        };
-        return retour;
     }
 
     function fermetures(piscines,feature){
@@ -217,9 +191,7 @@ mviewer.customLayers.piscinesRM= (function() {
 
           var li_fermetures = [];
           // Traitement des Jours fériés
-          //li_fermetures = li_fermetures.concat('Jours ou périodes de fermeture : ');
           li_fermetures = li_fermetures.concat(li_feries_st);
-
 
           // Traitement des Vacances
           li_fermetures = li_fermetures.concat(li_vac_st);
@@ -245,25 +217,6 @@ mviewer.customLayers.piscinesRM= (function() {
           }
         }
       }
-    }
-
-    function getElemANotInListB(listA, listB){
-        // elements = copie de la liste A
-        var elements=Array.from(listA);
-
-        for (var i = 0, lenB = listB.length; i < lenB; i++) {
-            //var match = null;
-            for (var j = 0, lenA = elements.length; j < lenA; j++) {
-                if (listB[i].toUpperCase().trim() === elements[j].toUpperCase().trim()) {
-                    // correspondance, on supprime l'entrée de la copie de la liste A
-                    //match = j;
-                    elements.splice(j, 1);
-                    break;
-                }
-            }
-
-        }
-        return elements;
     }
 
     function cleanedHoraires(horairesColl){
@@ -379,12 +332,12 @@ mviewer.customLayers.piscinesRM= (function() {
                 fetch(urlData)
                     .then(r => r.json())
                     .then(r => {
-                        //console.log("Load features ete_monuments"); // ==> Exécuté 2x rarement !
+                        //console.log("Load features piscine"); // ==> Exécuté 2x rarement !
                         // nettoie la layer
                         mviewer.getLayer("piscinesRM").layer.getSource().clear();
                         // charge les features
                         let features = layer.getSource().getFormat().readFeatures(r)
-                        layer.getSource().addFeatures(features);   
+                        layer.getSource().addFeatures(features);
                     })
                 }
         }),
@@ -393,10 +346,13 @@ mviewer.customLayers.piscinesRM= (function() {
 
 
 
-    //layer.getSource().once('change',() =>{
+    //layer.getSource().on('featuresloadstart',() =>{
     layer.once('prerender',() =>{
         calculateStyleIcon();
-        getSiteData();
+    });
+    
+    layer.getSource().on('addfeature',(e) =>{
+        getPiscineData(e.feature);
     });
 
     return {
