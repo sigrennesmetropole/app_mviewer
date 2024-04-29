@@ -1,0 +1,786 @@
+{
+	"type" : "FeatureCollection",
+	"name" : "NewFeatureType",
+	"crs" : {
+		"type" : "name",
+		"properties" : {
+			"name" : "EPSG:3857"
+		}
+	},
+	"features" : [
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -186459.1730374458, 6125135.5535492161 ]
+			},
+			"properties" : {
+				"nom" : "Aérosol. Une histoire du graffiti",
+				"categorie" : "Exposition",
+				"descriptif" : "L’exposition Aérosol, une histoire du graffiti propose une plongée dans l’univers du graffiti, des années 1960 à nos jours, à travers le prisme de la bombe aérosol. Qu’il s’agisse de bombage à main levée, de pochoir ou de graffiti-writing, l’aérosol s’impose comme une forme d’expression artistique plurielle, riche de plus d’un demi-siècle de pratique.",
+				"adresse" : "Musée des beaux-arts de Rennes, 20 quai Émile Zola, 35000 Rennes",
+				"access" : "Centre-ville,Proche métro,Proche bus,Parking,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "15/06/2024",
+				"fin" : "22/09/2024",
+				"gratuit" : "non",
+				"tarif" : "A partir de 0€\nJusque 4€",
+				"legende" : "<i>Graffiti de Bando sur la palissade du chantier de Beaubourg</i> – 1984 © photo : Epsylon Point",
+				"site_internet" : "mba.rennes.fr",
+				"telephone" : "02 23 62 17 45",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Lien" : "https://exporama-rennes.fr/sortir/aerosol-une-histoire-du-graffiti/",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/AerosolMuseeBeauxArts.jpg",
+				"id_site" : 3916
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -186426.2461922417, 6124374.0481338277 ]
+			},
+			"properties" : {
+				"nom" : "« Son œil dans ma main - Algérie 1961 & 2019 » Raymond Depardon et Kamel Daoud",
+				"categorie" : "Exposition",
+				"descriptif" : "Raymond Depardon, alors tout jeune photographe, réalise ses premiers reportages en 1961 dans l’Algérie d’avant l’indépendance. En 2019, celui qui est devenu entre-temps un des plus grands photographes de son temps, retourne en Algérie, où il se lie d’amitié avec l’écrivain algérien Kamel Daoud. Ensemble, ils créent un livre et une exposition mêlant les photographies de l’un aux textes de l’autre. Ils dressent un pont entre deux époques d’un même pays, témoignent de ses turbulences et de sa beauté.",
+				"adresse" : "Les Champs Libres, 10, cours des Alliés 35000 Rennes",
+				"access" : "Centre-ville,Proche métro,Proche bus,Parking,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "15/06/2024",
+				"fin" : "05/01/2025",
+				"gratuit" : "non",
+				"tarif" : "A partir de 0€\nJusque 5€",
+				"legende" : "Alger. 2019. ",
+				"site_internet" : "leschampslibres.fr",
+				"telephone" : "02 23 40 66 00",
+				"email" : "contact@leschampslibres.fr",
+				"facebook" : "www.facebook.com/LesChampsLibres/",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/DepardonLesChampsLibres.jpg",
+				"id_site" : 4027
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -186426.2461922417, 6124374.0481338277 ]
+			},
+			"properties" : {
+				"nom" : "Raymond Depardon, Rural",
+				"categorie" : "Exposition",
+				"descriptif" : "Au cours des années 1990 et 2000, Raymond Depardon sillonne la France paysanne avec sa chambre photographique 6 x 9. De cette exploration du monde rural, il réalise des photographies en noir et blanc qui racontent la terre, les hommes, le travail manuel, l’isolement et la fragilité des petites exploitations agricoles mais aussi la beauté des paysages français.",
+				"adresse" : "Les Champs Libres, 10, cours des Alliés 35000 Rennes",
+				"access" : "Centre ville, Proche métro, proche bus, parking, vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "15/06/2024",
+				"fin" : "05/01/2025",
+				"gratuit" : "oui",
+				"legende" : "",
+				"site_internet" : "leschampslibres.fr",
+				"telephone" : "02 23 40 66 00",
+				"email" : "contact@leschampslibres.fr",
+				"facebook" : "www.facebook.com/LesChampsLibres/",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "?",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/RuralLesChampsLibres.jpg",
+				"id_site" : 4027
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -188794.961523613, 6128647.3885544147 ]
+			},
+			"properties" : {
+				"nom" : "Raymond Depardon « Les Jeux Olympiques, 1964-1980 »",
+				"categorie" : "Exposition",
+				"descriptif" : "Dans le cadre de l’Olympiade culturelle, programmation officielle des JO de Paris 2024, le Frac Bretagne propose un focus sur les photographies de Raymond Depardon couvrant 6 éditions des Jeux Olympiques entre 1964 et 1980.\nEn 1964, Raymond Depardon est depuis quatre ans salarié en tant que photographe reporter pour l’agence Dalmas. Il est alors envoyé à Tokyo pour couvrir les Jeux Olympiques d’été et fait ainsi ses premiers pas de photographe de sport. Essai gagnant puisqu’il officiera finalement durant 6 olympiades, jusqu’aux Jeux de Moscou en 1980.\nLors de ces événements, le célèbre photographe apprend que, pour saisir la beauté du moment, il faut le devancer. Ainsi parvient-il à immobiliser l’exploit, la force et l’émotion extrême : le désespoir de Michel Jazy après sa défaite à l’épreuve du 5 000 m à Tokyo (1964), la joie éclatante de Colette Besson remportant le 400 m à Mexico (1968), le légendaire triplé olympique de Jean-Claude Killy à Grenoble (1968), la grâce et la perfection de la gymnaste roumaine Nadia Comaneci à Montréal (1976)… des images désormais gravées dans l’histoire du sport.\nMais, porté par son expertise de grand reporter, Raymond Depardon fige d’autres instants, des faits historiques et dépassant largement le champ sportif : en 1968, il immortalise le poing levé des athlètes afro-américains à Mexico, puis en 1972, lors des Jeux Olympiques de Munich, il est le témoin de la prise d’otage de la délégation israélienne. Le stade et l’histoire, la culture et le sport.",
+				"adresse" : "Frac Bretagne, 19 avenue André Mussat, 35000 Rennes",
+				"access" : "Proche bus,Vélo",
+				"zone_geo" : "Rennes nord",
+				"pmr" : "oui",
+				"debut" : "15/06/2024",
+				"fin" : "05/01/2025",
+				"gratuit" : "non",
+				"tarif" : "A partir de 0€\nJusque 5€",
+				"legende" : "Mexico City. Jeux olympiques. Les athlètes américains manifestent contre la discrimination raciale en levant leur poing fermé. L’athlète américain Lee Evans vainqueur du 400mètres en 43,86 sec. 1968. © Raymond Depardon/ Magnum Photos",
+				"site_internet" : "fracbretagne.fr",
+				"telephone" : "02 99 37 37 93",
+				"email" : "accueil@fracbretagne.fr",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/DepardonFrac.jpg",
+				"id_site" : 926
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -186355.076324626, 6125368.387363377 ]
+			},
+			"properties" : {
+				"nom" : "Rennes célèbre le sport par la photographie",
+				"categorie" : "Exposition",
+				"descriptif" : "En cet été 2024 marqué par la tenue des Jeux Olympiques et Paralympiques de Paris, Rennes célèbre aussi le sport à travers deux grandes expositions photographiques aux Champs Libres et au Frac Bretagne.\nCette sélection de 27 images, proposée sur les grilles du jardin du Palais Saint-Georges, figure à la fois l’exploit, la performance, l’effort, la célébration collective et individuelle, la victoire, l’échec ou encore les implications politiques du sport.",
+				"adresse" : "Grilles du jardin du Palais Saint-Georges, place Pasteur, 35000 Rennes",
+				"access" : "Centre-ville,Proche métro,Proche bus,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "15/05/2024",
+				"fin" : "25/09/2024",
+				"gratuit" : "oui",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille,Animaux autorisés",
+				"Image(s)" : "Pas encore",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/RennesCelebreLeSportParLaPhotographie.jpg",
+				"id_site" : 3967
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -186976.0190160685, 6124855.1695458479 ]
+			},
+			"properties" : {
+				"nom" : "Salon des refusé.e.s, Rasmus Myrup",
+				"categorie" : "Exposition",
+				"descriptif" : "La Criée centre d'art contemporain invite, en collaboration avec 1646 - Experimental Art Space, l'artiste danois Rasmus Myrup pour sa première exposition personnelle en France. Montrée à La Haye (Pays-Bas) début 2024, cette exposition présente un ensemble composé d’une vingtaine de sculptures récentes, produites en 2023 pour la 12ème édition de la biennale de Göteborg, ou spécialement pour La Haye et Rennes.",
+				"adresse" : "La Criée centre d'art contemporain, place Honoré Commeurec 35000 Rennes",
+				"access" : "Centre-ville,Proche métro,Proche bus,Parking,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "01/06/2024",
+				"fin" : "08/09/2024",
+				"gratuit" : "oui",
+				"legende" : "<i>Vue de l'exposition \"Salon des refusés\"</i>, Rasmus Myrup, du 26 janvier au 07 avril 2024, 1646 - Experimental Art Space, Den Haag, Pays-Bas © Jhoeko",
+				"site_internet" : "la-criee.org",
+				"telephone" : "02 23 62 2510",
+				"email" : "la-criee@ville-rennes.fr",
+				"facebook" : "https://www.facebook.com/la.criee.art.contemporain",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/SalonDesRefusees_Criée.jpg",
+				"id_site" : 4076
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -185468.5657507218, 6125134.2074819114 ]
+			},
+			"properties" : {
+				"nom" : "Chronique de l'oubli Yoan Sorin",
+				"categorie" : "Exposition",
+				"descriptif" : "La pratique de Yoan Sorin prend la forme de peintures, de sculptures, d’objets assemblés puis peints, et de performances impliquant son propre corps. Pour son exposition à 40mcube, il réalise de nouvelles œuvres jouant avec le temps. Chaque semaine, une peinture en remplace une autre, tandis que des sculptures-métronomes ou sabliers et des performances rythment l’exposition, témoignant de l’urgence latente de notre temps.",
+				"adresse" : "40mcube centre d'art contemporain, 48, avenue Sergent Maginot 35000 Rennes",
+				"access" : "Centre-ville,Proche métro,Proche bus,Parking,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "25/05/2024",
+				"fin" : "22/09/2024",
+				"gratuit" : "oui",
+				"legende" : "© Yoan Sorin",
+				"site_internet" : "40mcube.org",
+				"telephone" : "0290096411",
+				"email" : "contact@40mcube.org",
+				"facebook" : "https://www.facebook.com/40mcube",
+				"Public" : "Tout public",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/40mcube.jpg",
+				"id_site" : 4065
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -188902.7692854201, 6124052.2975389604 ]
+			},
+			"properties" : {
+				"nom" : "COPYROOM",
+				"categorie" : "Exposition",
+				"descriptif" : "Les progrès technologiques offrent de nouveaux outils pour manipuler la réalité et les émotions débordent sur la notion de vérité. Les artistes de l’exposition Copyroom pratiquent à leur manière une confusion intentionnelle entre le vrai et le faux, entre le réel et le virtuel. Copies, doubles, avatars ou encore mondes parallèles, l'exposition propose de s'attarder sur la mise en fiction, d'être à la fois l'un et/ou l’autre, d’être à la fois vrai et/ou faux, à la manière de l’illustration de l'état quantique tel que le suggère l’expérience de pensée du célèbre chat de Schrödinger.\n",
+				"adresse" : "Les Ateliers du Vent, 59 rue Alexandre Duval - 35000 RENNES",
+				"access" : "Centre-ville,Proche bus, Proche métro,Vélo",
+				"zone_geo" : "Rennes ouest",
+				"pmr" : "oui",
+				"debut" : "21/06/2024",
+				"fin" : "21/07/2024",
+				"gratuit" : "oui",
+				"legende" : "© Grégory Delauré",
+				"site_internet" : "lesateliersduvent.org/",
+				"telephone" : "0299277556",
+				"email" : "contact@lesateliersduvent.org",
+				"facebook" : "https://www.facebook.com/lesateliersduvent",
+				"Public" : "Tout public",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/AteliersDuVent.jpg",
+				"id_site" : 304
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -185825.5072229283, 6126067.1947256215 ]
+			},
+			"properties" : {
+				"nom" : "Mutopia Marie Pressmar",
+				"categorie" : "Exposition",
+				"descriptif" : "Marie Pressmar détourne l’écriture de sa fonction de lisibilité et nous convie à bousculer l’ordre établi, en désobéissant aux règles typographiques elle nous incite à cultiver notre libre-arbitre. Les lettres se muent en symboles et nous encouragent à voir le monde différemment. Mutopia est une invitation à faire un pas de côté, à considérer le mouvement comme la voie d’accès à nos utopies.\n",
+				"adresse" : "Orangerie su Thabor est, parc du Thabor, Place Saint-Melaine, 35000 Rennes",
+				"access" : "Centre-ville,Proche métro,Proche bus,Parking,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "13/07/2024",
+				"fin" : "01/09/2024",
+				"gratuit" : "oui",
+				"legende" : "© Marie Pressmar 2024",
+				"site_internet" : "teenagekicks.org",
+				"telephone" : "0762322109",
+				"email" : "contact@teenagekicks.org",
+				"facebook" : "https://www.facebook.com/teenagekicksfestival",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille,Animaux autorisés",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/OrangerieMutopia.jpg",
+				"id_site" : 21
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -186858.4364092198, 6124266.5609609578 ]
+			},
+			"properties" : {
+				"nom" : "Paysages Blasons La Valise",
+				"categorie" : "Exposition",
+				"descriptif" : "Lendroit éditions invite le collectif La Valise, structure éditrice à l’initiative du projet Blazers/Blasons. \"Paysages Blasons\" est une exposition rétrospective de plus de 160 artistes français et internationaux. Elle présente l'ensemble des patch d'artistes publiés depuis 2016 ainsi que quatre nouvelles productions éditées à l'occasion de cette événement unique.",
+				"adresse" : "Lendroit éditions, 24 bis place du Colombier, 35000 Rennes",
+				"access" : "Proche métro",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "28/06/2024",
+				"fin" : "14/09/2024",
+				"gratuit" : "oui",
+				"legende" : "© Blazers Blasons",
+				"site_internet" : "lendroit.org",
+				"telephone" : "0299010879",
+				"email" : "lendroitorga@gmail.com",
+				"Public" : "Tout public",
+				"Image(s)" : "Oui",
+				"id_site" : 894
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -186682.1255500942, 6125223.0131166894 ]
+			},
+			"properties" : {
+				"nom" : "La route de la Voie de la Liberté Bruno Elisabeth",
+				"categorie" : "Exposition",
+				"descriptif" : "Cette exposition photographique documentaire porte un regard contemporain sur la voie symbolique, à vocation commémorative, qui retrace l’avancée des troupes de libération américaines à la suite du débarquement du 6 juin 1944. Le photographe Bruno Elisabeth en explore les portions normandes et bretonnes en se penchant sur ses aspects paysagers, commémoratifs et spectaculaires.",
+				"adresse" : "Institut Franco-Américain, 7 quai Chateaubriand, 35000 Rennes",
+				"access" : "Centre-ville,Proche métro,Proche bus,Parking,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "04/06/2024",
+				"fin" : "28/06/2024",
+				"gratuit" : "oui",
+				"legende" : "© Bruno Elisabeth",
+				"site_internet" : "www.ifa-rennes.org",
+				"email" : "contact@ifa-rennes.org",
+				"facebook" : "https://www.facebook.com/InstitutFrancoAmericain/",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/LaRoutedeLaVoieDeLaLiberte.jpg",
+				"id_site" : 820
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -187221.5274993105, 6124995.7872927785 ]
+			},
+			"properties" : {
+				"nom" : "Jeux de formes",
+				"categorie" : "Exposition",
+				"descriptif" : "Les peintures de la série « Kolinus » d'Han Psi sont réalisées sur fonds noirs, peints par l'artiste autour de formes en papier découpé ; ainsi isolées, les parties restées blanches sont peintes en technique mixte. Kolinus signifie oiseau, des oiseaux stylisés et colorés.\nQuentin Marais joue aussi dans ses sculptures céramiques à créer des formes à la fois familières et incongrues, comme dans un  jeu de construction d'enfant ;  ces assemblages et ces \" barbouillages\" sont inspirés par les couleurs et les formes primaires de sa jeunesse.\nLa terre est laissée brute, décorée, teintée dans la masse dans des savants dégradés. Des oeuvres résolument contemporaines.",
+				"adresse" : "Atelier-galerie L'antre temps, 45 rue de la Parcheminerie, 35000 Rennes",
+				"access" : "Centre-ville,Proche métro,Proche bus,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "non",
+				"debut" : "14/05/2024",
+				"fin" : "27/06/2024",
+				"gratuit" : "oui",
+				"legende" : "© Constance Villeroy",
+				"telephone" : "06 12 54 20 48",
+				"email" : "constance.villeroy@gmail.com",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/LantreTemps.jpg",
+				"id_site" : 491
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -186863.2011324301, 6125398.4600439221 ]
+			},
+			"properties" : {
+				"nom" : "Les Fantômes de l'Opéra #3",
+				"categorie" : "Exposition",
+				"descriptif" : "Le Frac Bretagne et l’Opéra de Rennes s’unissent à nouveau et sélectionnent des œuvres issues des collections du Frac Bretagne et du Fonds départemental d’art contemporain d’Ille-et-Vilaine pour les installer dans 4 lieux de l’Opéra : la rotonde, le foyer, la salle et la scène.\nCes surprenants fantômes hantent ce bâtiment historique emblématique de la ville et en pimentent la visite. Une expérience sensible, étonnante et décalée pour tous les âges.",
+				"adresse" : "Opéra, galerie du théâtre, place de l’Hôtel de ville, 35000 Rennes.",
+				"access" : "Centre-ville,Proche métro,Proche bus,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "21/08/2024",
+				"fin" : "01/09/2024",
+				"gratuit" : "oui",
+				"legende" : "Oliver Beer, <i>Reanimation (I Wan’na Be Like You)</i>, 2017. Collection frac Bretagne © Oliver Beer. Photo : Frac Bretagne",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/FantômesOpéra.jpg",
+				"id_site" : 271
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -185802.8821489009, 6125889.6796677019 ]
+			},
+			"properties" : {
+				"nom" : "Le champ des possibles Vincent Mauger",
+				"categorie" : "Exposition",
+				"descriptif" : "Avec cette nouvelle sculpture monumentale composée de plusieurs tonnes de briques en terre cuite, Vincent Mauger continue d’explorer le potentiel sculptural et graphique des matériaux de construction. L’œuvre semble une incursion dans le parc d’un objet tout droit échappé des espaces numériques d’ingénierie 3D venue se poser momentanément dans un écrin de verdure. Cette sculpture a été réalisée avec l’aide des élèves et enseignants de la section gros œuvre du Lycée P. Mendès France, dans le cadre d’un « Karta » et a bénéficié du soutien en don de briques du Groupe Bouyer Leroux.",
+				"adresse" : "Carré Duguesclin, Parc du Thabor, 35000 Rennes",
+				"access" : "Centre-ville,Proche métro,Proche bus,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "10/06/2024",
+				"fin" : "01/09/2024",
+				"gratuit" : "oui",
+				"legende" : "© Vincent Mauger",
+				"site_internet" : "www.bon-accueil.org",
+				"telephone" : "0223255433",
+				"email" : "mediation@bon-accueil.org",
+				"facebook" : "facebook.com/le.bon.accueil.sound.art",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/VincentMauger_LeBonAccueil.jpg",
+				"id_site" : 196
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -186189.6760712709, 6124052.9103216911 ]
+			},
+			"properties" : {
+				"nom" : "Rencontres photographiques de ViaSilva #7",
+				"categorie" : "Exposition",
+				"descriptif" : "Les Rencontres photographiques de ViaSilva captent les mutations du territoire à travers la résidence artistique d’Isabelle Vaillant et Élodie Guignard. Leur regard breton sur l’extension des métropoles se concrétise dans des expositions et une édition, préservant ainsi une mémoire visuelle pour l’avenir. Les photographies exposées en plein air forment un parcours pédestre dans Rennes et Cesson-Sévigné, avec des étapes à la Gare de Rennes, au Parc du Thabor, aux abords de la station de métro Viasilva, à la galerie Net Plus, ainsi que sur plusieurs palissades de chantiers en ville. Ce projet est porté par l'association Les ailes de Caïus.",
+				"adresse" : "Gare de Rennes",
+				"access" : "Centre-ville,Proche métro,Proche bus,Parking,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "24/05/2024",
+				"fin" : "23/08/2024",
+				"gratuit" : "oui",
+				"legende" : "<i>48° Nord</i> © Isabelle Vaillant | Un midi à ViaSilva © Elodie Guignard",
+				"site_internet" : "www.ailesdecaius.fr",
+				"email" : "contact@ailesdecaius.fr",
+				"facebook" : "Rencontres photographiques de ViaSilva",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/LesAilesDeCaius.jpg",
+				"id_site" : 3973
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "MultiPoint",
+				"coordinates" : [
+					[ -187301.9066639927, 6125268.6850704383 ]
+				]
+			},
+			"properties" : {
+				"nom" : "Collection 12",
+				"categorie" : "Exposition",
+				"descriptif" : "Chaque été, les visiteurs sont invités à découvrir les dernières acquisitions du Fonds communal d’art contemporain. La Ville de Rennes, par sa politique de soutien à la création artistique, acquiert chaque année les œuvres d’artistes contemporains. Ainsi en 2023, quinze d'œuvres d'artistes travaillant à Rennes ont rejoint le fonds communal. L’exposition est un instantané qui témoigne de la vitalité de la création artistique. Peintures, sculptures, photographies, dessins et vidéos se côtoient et donnent à voir la diversité des expressions contemporaines.    \n",
+				"adresse" : "Chapelle Saint -Yves, 11 rue Saint-Yves (entrée Rue le bouteiller), 35000 Rennes",
+				"access" : "Centre-ville",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "29/06/2024",
+				"fin" : "01/09/2024",
+				"gratuit" : "oui",
+				"legende" : "© E_Foulon",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille,Animaux autorisés",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/Collection12.jpg",
+				"id_rva" : 59778
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [-184380.47632606732, 6129986.858673798] 
+			},
+			"properties" : {
+				"nom" : "Les chiens qui aboient EDIE",
+				"categorie" : "Exposition",
+				"descriptif" : "EDIE est une artiste travaillant les arts graphiques, la peinture, la musique et l’écriture. Elle explore le thème de l’intimité par une expression viscérale et directe de la colère adolescente. Son esthétique, sur le vif et sans retouches, a le mordant du punk. Sa pratique s’inscrit dans la thématique de Noir Brillant sur la ville de Berlin dont le bouillonnement culturel attire les artistes.\n",
+				"adresse" : "L'Église rue de Saint-Laurent, 35700 Rennes",
+				"access" : "Proche bus,Vélo",
+				"zone_geo" : "Rennes nord",
+				"pmr" : "non",
+				"debut" : "20/06/2024",
+				"fin" : "21/07/2024",
+				"gratuit" : "oui",
+				"legende" : "© EDIE.",
+				"email" : "noirbrillant.asso@gmail.com",
+				"facebook" : "https://www.facebook.com/profile.php?id=100085384009542",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/EdieNoirBrillant.jpg",
+				"lat" : 48.139,
+				"long" : -1.656
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "MultiPoint",
+				"coordinates" : [
+					[ -186622.0122550438, 6125128.1888465686 ]
+				]
+			},
+			"properties" : {
+				"nom" : "Mouvements Urbains",
+				"categorie" : "Exposition",
+				"descriptif" : "Au pied du mur, de la peinture, de l’adrénaline et un appareil photo. À travers ses clichés, Alain Amet pose son regard sur l’art urbain, ses artistes et leurs gestes. Dans leur intimité, il est le témoin privilégié du processus de création d’une œuvre. WAR!, La rouille, Poch, Brez et d’autres se dévoilent à travers une série de photographies et de croquis qui sont le témoignage d’œuvres éphémères.",
+				"adresse" : "JUVÉNILE Galerie, 2 rue du capitaine Alfred Dreyfus 35000 RENNES",
+				"access" : "Centre-ville,Proche métro,Proche bus,Parking,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "01/08/2024",
+				"fin" : "31/08/2024",
+				"gratuit" : "oui",
+				"legende" : "© Alain Amet / WAR!",
+				"site_internet" : "juvenile.fr",
+				"email" : "contact@juvenile.fr",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"id_rva" : 61147
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "MultiPoint",
+				"coordinates" : [
+					[ -187426.1001066002, 6125123.8905826425 ]
+				]
+			},
+			"properties" : {
+				"nom" : "Le grand épinglage Fabienne Houzé-Ricard",
+				"categorie" : "Exposition",
+				"descriptif" : "Dans sa pratique artistique, Fabienne Houzé-Ricard met en scène les thématiques du nid et de l'oiseau. Ses peintures d’oiseaux dont on ne voit ni les yeux, ni le visage ont quelque chose du travail de l’entomologiste ou des portraitistes du 19ème siècle qui fixaient sur la toile les grands hommes et leur offraient l’immortalité. Métaphore du processus mémoriel, ces toiles expriment la lente élaboration de la personnalité et de l’identité.",
+				"adresse" : "Galerie Le Grand Angle | imoja, 1 place de Bretagne - 35000 Rennes",
+				"access" : "Centre-ville,Proche métro,Proche bus,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "31/05/2024",
+				"fin" : "04/07/2024",
+				"gratuit" : "oui",
+				"legende" : "<i>LES EMPÊCHÉS N°18.</i> 146_114cm.2022 © Fabienne Houzé-Ricard",
+				"site_internet" : "https://www.imoja.fr/le-grand-angle/",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/Lepinglage_Fabienne_Houzé_Imoja.jpg",
+				"id_rva" : 59631
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "MultiPoint",
+				"coordinates" : [
+					[ -187426.1001066002, 6125123.8905826425 ]
+				]
+			},
+			"properties" : {
+				"nom" : "Dans vos mains Olivia Etienne",
+				"categorie" : "Exposition",
+				"descriptif" : "La pratique d’Olivia Etienne se nourrit de références à l’histoire de l’art et de l’humanité. La fluidité et le caractère immédiat du trait de fusain ou de pastel lui permettent de faire apparaître des formes qui se superposent, se mélangent et parfois s’effacent. Dans ses derniers travaux elle s’inspire de son expérience de la maternité, du questionnement sur le corps enceint à l'observation des premières années de ses enfants. ",
+				"adresse" : "Galerie Le Grand Angle | imoja, 1 place de Bretagne - 35000 Rennes",
+				"access" : "Centre-ville,Proche métro,Proche bus,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "15/07/2024",
+				"fin" : "29/08/2024",
+				"gratuit" : "oui",
+				"legende" : "Olivia Etienne, <i>Geste d'enfant II</i>, la cueillette, 2023, 40 x 33 cm, pastel et fusain sur papier © Olivia Étienne",
+				"site_internet" : "https://www.imoja.fr/le-grand-angle/",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/OliviaEtienne_Imoja.jpg",
+				"id_rva" : 59631
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "MultiPoint",
+				"coordinates" : [
+					[ -187426.1001066002, 6125123.8905826425 ]
+				]
+			},
+			"properties" : {
+				"nom" : "Il n'y a pas deux feuilles identiques sur un arbre Gwenn Mérel",
+				"categorie" : "Exposition",
+				"descriptif" : "Dans le travail de Gwenn Mérel, la marche fait partie intégrante du processus de création. Ce sont ses escapades dans le paysage, par la contemplation et les moments d’élucubration qu’elles permettent, qui sont le point de départ de son travail plastique. De retour à l'atelier, elle sculpte et dessine principalement avec les matériaux textiles. Pour cette exposition, elle pose la question de la construction du paysage bocager sous forme de bas-reliefs en polystyrène recouvert de tissu parfois molletonné.",
+				"adresse" : "Galerie Le Grand Angle | imoja, 1 place de Bretagne - 35000 Rennes",
+				"access" : "Centre-ville,Proche métro,Proche bus,Parking,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "09/09/2024",
+				"fin" : "06/10/2024",
+				"gratuit" : "oui",
+				"legende" : "<i>Vue d'exposition</i>, CAC Pontmain, 2023 © Gwenn Mérel",
+				"site_internet" : "https://www.imoja.fr/le-grand-angle/",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/GwennMérel_Imoja.jpg",
+				"id_rva" : 59631
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -186955, 6125402]
+			},
+			"properties" : {
+				"nom" : "Nids Star Pilot et Jean-Michel Caillebotte",
+				"categorie" : "Exposition",
+				"descriptif" : "L’artiste plasticien Jean-Michel Caillebotte nous invite à une déambulation poétique dans la ville, où d’étranges villages de nids feront leur apparition. Ces villages hors-sol, évocations des nids d’oiseaux autant que des habitations légères de peuple nomades, composent cette installation immersive et vivante dessinant un pont métaphorique entre les migrations animales et le nomadisme humain, volontaire ou contraint. ",
+				"adresse" : "Place de la Mairie",
+				"access" : "Centre ville, Proche métro, proche bus, vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "?",
+				"debut" : "02/07/2024",
+				"fin" : "12/07/2024",
+				"gratuit" : "oui",
+                "photo" : "apps/balades/customlayer/photos_exporama_2024/LesTombéesdelaNuit.jpg",
+				"legende" : "© Jean-Michel Caillebotte",
+				"site_internet" : "lestombeesdelanuit.com",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"lat" : 48.111,
+				"long" : -1.679
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "MultiPoint",
+				"coordinates" : [
+					[ -186695.0361552227, 6124934.3793197302 ]
+				]
+			},
+			"properties" : {
+				"nom" : "Le M.U.R de Rennes",
+				"categorie" : "Exposition",
+				"descriptif" : "Le M.U.R (acronyme pour Modulable, Urbain et Réactif) emprunte à l'affichage publicitaire son format et son rituel pour la promotion de l'art contemporain urbain et offre des œuvres créées successivement par des artistes régionaux, nationaux et internationaux. Une performance en direct a lieu chaque mois sur le M.U.R. C'est l'occasion d'un rendez-vous convivial, de moments d'échanges entre l'artiste et le public, en plein cœur de Rennes. Cet été, deux artistes majeurs de l’art urbain, Jef Aérosol et JonOne, ont répondu à l'invitation : ce sera la première fois qu'ils travaillent ensemble.\nÀ partir du 30 juin et durant tout l'été, les passants pourront découvrir une œuvre de Jef Aérosol (avec un arrière-plan de JonOne). Puis, le 8 septembre, JonOne réalisera une œuvre (avec un arrière-plan de Jef Aérosol). \n",
+				"adresse" : "M.U.R de Rennes, 34 Rue Vasselot, 35000 Rennes",
+				"access" : "Centre-ville,Proche métro,Proche bus,Parking,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "30/06/2024",
+				"fin" : "30/09/2024",
+				"gratuit" : "oui",
+				"legende" : "© Jef Aérosol| © Mikostic",
+				"site_internet" : "murderennes.fr",
+				"email" : "lemurderennes@gmail.com",
+				"facebook" : "Le mur de Rennes",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/MurRennesAérosolVasselot.jpg",
+				"id_rva" : 61048
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "MultiPoint",
+				"coordinates" : [
+					[ -187198.8858181325, 6125989.4967487128 ]
+				]
+			},
+			"properties" : {
+				"nom" : "Le M.U.R de Rennes",
+				"categorie" : "Exposition",
+				"descriptif" : "Pour la seconde année, Destination Rennes souhaite voir investir le mur d'enceinte du couvent des Jacobins, situé rue d'Echange, d'une oeuvre d'art urbain. En partenariat avec l'association du MUR de Rennes, qui assure la direction artistique de ce projet, l'invitation à créer une oeuvre est faite à l'artiste rennais Olivier Chaos. Il a choisi un thème en rapport avec l'exposition Aérosol qui se tiendra au Musée des beaux-arts. Vous pourrez voir l'artiste en création dans la semaine du 17 au 21 juin 2024 ; des temps de médiation et de rencontre seront programmés.",
+				"adresse" : "M.U.R de Rennes, 2 rue d'Echange, 35000 Rennes",
+				"access" : "Centre-ville,Proche métro,proche bus,Vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "oui",
+				"debut" : "17/06/2024",
+				"fin" : "21/06/2024",
+				"gratuit" : "oui",
+				"legende" : "© Olivier Chaos",
+				"site_internet" : "tourisme-rennes",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/MurRennesChaosEchange.jpg",
+				"id_rva" : 99493
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "MultiPoint",
+				"coordinates" : [
+					[ -185111.2199941993, 6125240.1807107767 ]
+				]
+			},
+			"properties" : {
+				"nom" : "Panneaux 4x3",
+				"categorie" : "Exposition",
+				"descriptif" : "Visibles toute l'année dans l'espace urbain à Rennes, les panneaux 4x3 de Lendroit éditions font découvrir les œuvres d'artistes contemporains invités à proposer au public des images grand format. Des échos de ces affichages sont à retrouver à la galerie de Lendroit, place du Colombier. Cet été, c'est l'artiste OX qui invente de nouveaux visuels pour investir ces panneaux. Sa démarche, proche de l’abstraction par la soustraction ou le détournement des signes, instaure un dialogue ludique avec l’espace public.",
+				"adresse" : "75 avenue Aristide Briand, 35000 Rennes",
+				"access" : "Centre ville, Proche bus, Vélo",
+				"zone_geo" : "Rennes ouest",
+				"pmr" : "oui",
+				"debut" : "02/07/2024",
+				"fin" : "02/10/2024",
+				"gratuit" : "oui",
+				"legende" : "<i>Noisy-le-Sec</i> © OX",
+				"site_internet" : "lendroit.org",
+				"telephone" : "02 99 01 08 79",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"id_rva" : 61647
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -185265, 6127675 ]
+			},
+			"properties" : {
+				"nom" : "Fantaisies Isabelle Arthuis",
+				"categorie" : "Exposition",
+				"descriptif" : "Fantaisies est le premier projet artistique imaginé pour le nouveau site du Musée des beaux-arts à Maurepas, qui ouvrira dans plusieurs mois. Isabelle Arthuis a produit plusieurs séries de photographies destinées à être exposées le long du boulevard Emmanuel Mounier, dans les sculptures-vitrines dessinées par l'artiste Isabelle Cornaro dans le cadre de la commande publique de la ligne b du métro. Ici, il s'agit de portraits noir et blanc issus de peintures du 17e au 20e siècle des collections du Musée des beaux-arts de Rennes. L'artiste présente une manière inédite de voir les collections où chacun peut projeter des histoires et inventer de nouveaux récits.",
+				"adresse" : "À proximité de la station de métro Gros Chêne, Rue de la Marbaudais, 35700 Rennes\n",
+				"access" : "Proche métro, Proche bus, Vélo",
+				"zone_geo" : "Rennes nord",
+				"pmr" : "oui",
+				"debut" : "15/06/2024",
+				"fin" : "22/09/2024",
+				"gratuit" : "oui",
+				"legende" : "<i>Fantaisies</i> © Isabelle Arthuis",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/MuseeBeauxArtsFantaisies.jpg",
+				"lat" : 48.125,
+				"long" : -1.664
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -189231, 6128890 ]
+			},
+			"properties" : {
+				"nom" : "Beauregard Flottant",
+				"categorie" : "Exposition",
+				"descriptif" : "Le Frac Bretagne a invité cinq artistes, Valentin Fontaine, Claire Guetta, Antonin Hako, Guillaume Le Clouërec Diane Rivoire, à co-créer avec les publics des œuvres flottantes pour pavoiser le quartier de Beauregard, considéré comme un espace artistique sensible et poétique, un quartier où flotte l’art. A travers une déambulation pensée par les habitantes et habitants du quartier, le public découvre une quinzaine de drapeaux conçus avec des groupes de tous horizons lors d'ateliers avec les artistes.",
+				"adresse" : "Quartier Beauregard, Rennes, 35000",
+				"access" : "Proche bus,Vélo",
+				"zone_geo" : "Rennes nord",
+				"pmr" : "oui",
+				"debut" : "15/03/2023",
+				"fin" : "01/01/2024",
+				"gratuit" : "oui",
+				"legende" : "© Antonin Hako © Claire Guetta © Diane Rivoire © Guillaume Le Clouërec © Valentin Fontaine",
+				"site_internet" : "https://www.fracbretagne.fr/fr/beauregard-flottant-frac-bretagne/",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/BeauregardFlottant.jpg",
+				"lat" : 48.13,
+				"long" : -1.699
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "MultiPoint",
+				"coordinates" : [
+					[ -189347.1743169499, 6123217.5975724813 ]
+				]
+			},
+			"properties" : {
+				"nom" : "Teenage Kicks Tour",
+				"categorie" : "Exposition",
+				"descriptif" : "Découvrez les œuvres murales réalisées au cours des précédentes biennales d’art urbain de l’association Teenage Kicks, au rythme d’une balade à vélo à Rennes. Une autre façon de découvrir la ville à travers les œuvres dans l’espace public. \nIl sera demandé à chaque participant de venir avec son propre vélo et casque (obligatoire pour les moins de 12 ans). ",
+				"adresse" : "24 avenue Jules Maniez, Rennes",
+				"access" : "Centre-ville, Proche métro, proche bus, vélo",
+				"zone_geo" : "Rennes centre",
+				"pmr" : "non",
+				"debut" : "16/06/2024",
+				"fin" : "15/06/2024",
+				"gratuit" : "non",
+				"tarif" : "8€",
+				"legende" : "© Titouan Massé 2021",
+				"site_internet" : "teenagekicks.org",
+				"email" : "mediation@teenagekicks.org",
+				"facebook" : "https://www.facebook.com/teenagekicksfestival",
+				"Public" : "Tout public,Adulte,En duo,Jeune public,En famille",
+				"Image(s)" : "Oui",
+				"photo" : "apps/balades/customlayer/photos_exporama_2024/TeenageKicks.jpg",
+				"id_rva" : 89483
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -187000, 6124094 ]
+			},
+			"properties" : {
+				"nom" : "Terrain d'entente\nSophie Cardin",
+				"descriptif" : "Au coeur du quartier Colombier, Sophie Cardin imagine, en cette année olympique, une oeuvre à jouer qui emprunte l’esthétique des terrains de sport en réinventant les règles. Autour de l’imaginaire du jeu, du loisir et des pratiques sportives, l’artiste propose, par des tracés au sol, une trame préfigurant d’autres manières de pratiquer une activité physique encourageant la participation active des passants et des habitants.",
+				"adresse" : "Square des martyrs de la Résistance",
+				"debut" : "04/07/2024",
+				"fin" : "02/08/2025",
+				"legende" : "© Sophie Cardin",
+				"lat" : 48.104,
+				"long" : -1.68
+			}
+		}
+	]
+}
