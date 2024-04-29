@@ -1,0 +1,27 @@
+{{#features}}
+    <li class="item">
+        <h4 class="rm-popup-title-feature"> {{{nom}}}</h4>
+        
+        {{#debut}}</br><p class="rm-popup-title-level2"> du {{{debut}}}  au  {{{fin}}}</p> {{/debut}}
+        
+        <p class="rm-popup-text-feature">
+            {{#descriptif}}<span > {{{descriptif}}}</span><br/>{{/descriptif}}
+         </p>
+         <p class="rm-popup-text-feature">
+            {{#adresse}}<span class='rm-popup-label'> ADRESSE : </span>{{{adresse}}}<br/>{{/adresse}}
+            {{#photo}}
+                <section class="rm-popup-text-feature">
+                    <div id="photo" style="display: block;text-align: center;">
+                        <img class="photo" src="{{{photo}}}" loading="lazy" style="height: 150px;">
+                        <p class="labelPictureEnlarge rm-popup-label">Cliquez pour agrandir cette image</p>
+                        {{#legende}} {{{legende}}} </br></br>{{/legende}}
+                    </div>
+                </section>
+            {{/photo}}
+         </p>
+         <p class="rm-popup-text-feature">
+            {{#lien}}<a class='lienweb' href="{{{lien}}}" target="_blank" title="{{{lien}}}"> En savoir plus ... </a>{{/lien}}
+        </p>
+    </li>
+{{/features}}
+

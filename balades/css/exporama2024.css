@@ -1,0 +1,46 @@
+/******************************************************************************
+---------- CSS THEME MVIEWER / balades                             ---------
+********************************************************************************/
+
+/*  Import du style du site internet  */
+@import url("../../site_internet/css/site_internet_gris.css");
+
+
+/* FICHE INFO */
+body {
+    background: #ededea!important;
+}
+.rm-popup-title-level2 {
+    font-size:16px!important;
+    color : #ff0000!important;
+}
+
+
+#modal-panel .modal-content {
+    background-color : #ffccff!important;
+}
+
+#modal-panel .panel-body {
+    background-color : #ffccff!important;
+}
+
+/*
+#modal-panel .panel-heading {
+    background-color: #ffccff!important;
+    color: #ff0000!important;
+}
+*/
+#modal-panel .state-icon {
+    color: #ff0000!important;
+}
+
+.rm-popup-title-feature {
+    color : #ff0000!important;
+}
+
+/****** liens ******/
+.lienweb {
+    text-decoration: underline;
+}
+
+

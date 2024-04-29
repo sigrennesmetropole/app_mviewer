@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <application title="Exporama 2024"
+        logo="apps/public/img/logo/logo_mviewer_transp.png"
+        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
+        titlehelp="À propos des cartes thématiques"
+        help="apps/site_internet/html/site_internet_help.html"
+        showhelp="false"
+        exportpng="false"
+        style="apps/balades/css/exporama2024.css"
+        measuretools="false"
+        togglealllayersfromtheme="false"
+        showClickNbItems="false"
+        templaterightinfopanel="allintabs"
+        sortlayersinfopanel="toc"/>
+        
+    <mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-186690.9199078,6126500.00" zoom="14.5"/>
+    
+    <baselayers style="default">
+        <!-- style="default"||gallery" -->
+        <baselayer visible="true" id="pvcisimple"
+                   thumbgallery="apps/public/img/basemap/pvcisimple.jpg"
+                   title="Rennes Metropole"
+                   label="Plan de ville"
+                   type="WMTS"
+                   url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?"
+                   layers="ref_fonds:pvci_simple_gris"
+                   format="image/png" style="_null"
+                   matrixset="EPSG:3857"
+                   fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;"
+                   maxzoom="22" maxscale="1000"/>
+    </baselayers>
+    
+    <extensions>
+        <extension type="component" id="GUICustom" path="apps/public/addons"/>
+        <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
+        <extension type="component" id="accessibilite" path="apps/public/addons"/>
+    </extensions>
+    
+    <themes mini="true" legendmini="false">
+        <theme id="theme-202404251627" name="Les lieux" collapsed="true" icon="fas fa-map-marker-alt">
+            <layer id="lieux"
+                   name="Les lieux"
+                   type="customlayer"
+                   url="apps/balades/customlayer/exporama2024.js"
+                   legendurl="apps/balades/legend/exporama2024.svg"
+                   opacity="1"
+                   visible="true"
+                   tooltip="false"
+                   tooltipenabled="false"
+                   tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{nom}}&lt;/span&gt;"
+                   metadata="undefined"
+                   queryable="true"
+                   featurecount="5"
+                   infopanel="right-panel">
+                <template url="apps/balades/templates/exporama2024.mst"/>
+            </layer>
+        </theme>
+    </themes>
+</config>
