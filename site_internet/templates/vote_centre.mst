@@ -3,7 +3,7 @@
         <h5 class="rm-popup-title-feature">Centre de vote</h5>
         <p class="rm-popup-text-feature">
              {{#loc_bat}}<span class='rm-popup-label'> SITE :</span> {{{loc_bat}}}<br/>{{/loc_bat}}
-             {{#loc_voie}}<span class='rm-popup-label'> ADRESSE :</span> {{loc_adr}} {{loc_voie}} {{c_nom}}<br/>{{/loc_voie}}
+             {{#loc_voie}}<span class='rm-popup-label'> ADRESSE :</span> {{loc_adr}} {{loc_adr}} {{loc_voie}} {{c_nom}}<br/>{{/loc_voie}}
              {{#loc_salle}}<span class='rm-popup-label'> SALLE :</span> {{loc_salle}}<br/>{{/loc_salle}}
              {{#burx_liste}}<span class='rm-popup-label'> LISTE DES BUREAUX :</span> {{{burx_liste}}}<br/>{{/burx_liste}}
              {{#nb_elec}}<span class='rm-popup-label'> NOMBRE TOTAL D'ÉLECTEURS :</span> {{{nb_elec}}}{{/nb_elec}}

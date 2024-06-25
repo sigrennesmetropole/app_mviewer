@@ -1,10 +1,10 @@
 
 mviewer.customLayers.bureauvote= (function() {
-    let bureau_perim_url='https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=eq_educ:v_election_perim_bureau&outputFormat=application/json&srsName=EPSG:4326';
+    let bureau_perim_url="https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=eq_educ:v_election_perim_bureau&outputFormat=application/json&srsName=EPSG:3857";
     
     var centres_data = new Map();
     
-    getHttpData('https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=eq_educ:v_election_centre&CQL_FILTER=code_insee=35238&outputFormat=application/json');
+    getHttpData("https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=eq_educ:v_election_centre&CQL_FILTER=code_insee=35238&outputFormat=application/json");
     
     function getHttpData(request){
         return new Promise(resolve => {
@@ -29,7 +29,11 @@ mviewer.customLayers.bureauvote= (function() {
         for (idx in bureaux) {
             let centre_id=bureaux[idx].get('num_centre');
             bureaux[idx].set('loc_bat', centres_data[centre_id].loc_bat);
+            bureaux[idx].set('loc_voie', centres_data[centre_id].loc_voie);
+            bureaux[idx].set('loc_adr', centres_data[centre_id].loc_adr);
+            bureaux[idx].set('loc_salle', centres_data[centre_id].loc_salle);
             bureaux[idx].set('burx_liste', centres_data[centre_id].burx_liste);
+            
         }
     }
     
@@ -62,15 +66,37 @@ mviewer.customLayers.bureauvote= (function() {
     
     let dataLayer = new ol.layer.Vector({
         source: new ol.source.Vector({
-            url: bureau_perim_url,
-            format: new ol.format.GeoJSON()
+            //url: bureau_perim_url,
+            format: new ol.format.GeoJSON(),
+            
+            loader: () => { // permet d'éviter les features chargées en double
+                const urlData = bureau_perim_url;
+                fetch(urlData)
+                    .then(r => r.json())
+                    .then(r => {
+                        // nettoie la layer
+                        dataLayer.getSource().clear();
+                        // charge les features
+                        let features = dataLayer.getSource().getFormat().readFeatures(r)
+                        //setCentreDataInBureau();
+                        dataLayer.getSource().addFeatures(features)
+                    }).then(r => {
+                        setCentreDataInBureau();
+                    })
+                    
+                }
+            
         }),
         style: markerStyle,
     });
     
-    dataLayer.getSource().once('change',() =>{
+    /*dataLayer.getSource().once('change',() =>{
+        console.log("JE PASSE ICI");
         setCentreDataInBureau();
+        console.log("JE PASSE PAR LA");
     });
+    */
+    
     
     return {
         layer: dataLayer,

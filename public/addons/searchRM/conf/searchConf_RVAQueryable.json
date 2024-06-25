@@ -8,21 +8,21 @@
             "categoryName": "Communes",
             "searchParameterName": "Rechercher des communes",
             "defaultCheck": true,
-            "nbItemDisplay": 5,
+            "nbItemDisplay": 3,
             "zoom": 14
         },
         {
             "categoryName": "Voies",
             "searchParameterName": "Rechercher des voies",
             "defaultCheck": true,
-            "nbItemDisplay": 5,
+            "nbItemDisplay": 3,
             "zoom": 17
         },
         {
             "categoryName": "Adresses",
             "searchParameterName": "Rechercher des adresses",
             "defaultCheck": true,
-            "nbItemDisplay": 5,
+            "nbItemDisplay": 6,
             "zoom": 17
         }
     ]
