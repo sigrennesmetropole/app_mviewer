@@ -68,23 +68,8 @@
                 <template url="apps/site_internet/templates/stations-gonflages-velo.mst"></template>
             </layer>
             <layer
-                id="v_parc_velo_securise"
-                name="Parcs vélos sécurisés"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/trp_doux/ows"
-                scalemin="99" scalemax="50000"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/8dfdbb9a-29ca-4780-b767-7b2aa3ab5d2a"
-                queryable="true"
-                featurecount="3"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/stationnement-velo-securise.mst"></template>
-            </layer>
-            <layer
-                id="v_support_velo"
-                name="Supports vélos"
+                id="v_parc_velo"
+                name="Parkings vélos"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/trp_doux/ows"
                 dynamiclegend="false"
@@ -96,9 +81,8 @@
                 queryable="true"
                 featurecount="3"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/support-velo.mst"></template>
+                <template url="apps/site_internet/templates/parking-velo.mst"></template>
             </layer>
-            
             <layer
                 id="maison_velo"
                 name="La maison du vélo"

@@ -1,0 +1,10 @@
+{{#features}}
+    <li class="item">
+        <p class="rm-popup-text-feature">
+            {{#nom_voie}}<span class='rm-popup-label'> ADRESSE :</span> {{nom_voie}} - {{nom_commune}}<br/>{{/nom_voie}}
+            {{#type}}<span class='rm-popup-label'> TYPE :</span> {{{type}}}<br/>{{/type}}
+            {{#condition_acces}}<span class='rm-popup-label'> ACCÈS :</span> {{{condition_acces}}}<br/>{{/condition_acces}}
+            {{#nb_total_place}}<span class='rm-popup-label'> NOMBRE DE PLACES :</span> {{{nb_total_place}}}<br/>{{/nb_total_place}}
+        </p>
+    </li>
+{{/features}}
