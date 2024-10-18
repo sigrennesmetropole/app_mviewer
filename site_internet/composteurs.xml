@@ -30,7 +30,7 @@
     <themes mini="true">
         <theme id="theme-20180827150815" name="Composteurs collectifs" collapsed="true" icon="fas fa-recycle">
             <layer
-                id="cmp"
+                id="dechets_composteur"
                 name="Composteurs collectifs"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"
@@ -41,7 +41,6 @@
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/cb5198b1-1644-4a67-b670-bfb1dcbd7894"
                 queryable="true"
                 featurecount="5"
-                filter="actif='oui'"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/composteurs.mst"></template>
             </layer>

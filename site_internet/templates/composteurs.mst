@@ -1,9 +1,10 @@
-{{#features}}
+9{{#features}}
     <li class="item">
         <h5 class="rm-popup-title-feature">COMPOSTEUR COLLECTIF</h5>
         <p class="rm-popup-text-feature">
             {{#id_cmp}}<span class='rm-popup-label'> NUMÉRO :</span> {{{id_cmp}}}<br/>{{/id_cmp}}
             {{#adresse_complete}}<span class='rm-popup-label'> ADRESSE :</span> {{{adresse_complete}}}<br/>{{/adresse_complete}}
+            {{#quartier}}<span class='rm-popup-label'> QUARTIER :</span> {{{quartier}}}<br/>{{/quartier}}
             {{#localisation}} {{{localisation}}}<br/>{{/localisation}}
             {{#domaine}}<span class='rm-popup-label'> DOMAINE :</span> {{{domaine}}}<br/>{{/domaine}}
         </p>

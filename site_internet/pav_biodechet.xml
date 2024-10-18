@@ -30,12 +30,12 @@
 
     <themes mini="true">
         <theme id="theme-20180827150815" name="Points d'apport déchets alimentaires" collapsed="true" icon="fas fa-leaf">
+            
             <layer
-                id="pav"
+                id="dechets_point_apport_volontaire"
                 name="Points d'apport déchets alimentaires (déploiement en cours)"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"
-                legendurl="apps/site_internet/img/legend/leg_pav.png"
                 sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/pav_biodechet.sld"
                 visible="true"
                 tiled="true"
@@ -43,7 +43,7 @@
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/92c64e80-f6f7-4f56-b162-8a07a8b70784"
                 queryable="true"
-                filter="flux_bio='1'"
+                filter="flux_da='1'"
                 featurecount="5"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/pav.mst"></template>
