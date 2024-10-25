@@ -8,6 +8,7 @@
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
         exportpng="false"
+        geoloc="true"
         style="apps/site_internet/css/site_internet_gris.css"
         measuretools="false"
         togglealllayersfromtheme="false" 
