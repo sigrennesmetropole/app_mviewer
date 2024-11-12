@@ -1,7 +1,7 @@
 
 mviewer.customLayers.RNE_ateliers= (function() {
     let data_url='https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=eq_poi:v_sitorg_organisme&outputFormat=application/json&srsname=EPSG:3857';
-    let l_id_org=[5055,4860,484,7061,4705,6309,4839];
+    let l_id_org=[5055,4860,484,7061,4705,6309,4839,7216];
     let markercolor='#B62D2D';
     
     function pctStyle() {
