@@ -1,7 +1,36 @@
 mviewer.customLayers.arbresautres= (function() {
-    let daterefmin = new Date().getFullYear()-50;
-    let daterefmax = new Date().getFullYear()-10;
-    let data_url = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=espub_esv:v_gev_aali&CQL_FILTER=date_plant>'+ daterefmin +' AND date_plant<='+ daterefmax +'&outputFormat=application/json&srsName=EPSG:4326';
+    let age_min = 10;
+    let age_max = 50;
+    let daterefmin = new Date().getFullYear() - age_min + "-01-01";
+    let daterefmax = new Date().getFullYear() - (age_max-1) + "-01-01";
+
+    
+    let data_url = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=espub_esv:arbre&outputFormat=application/json&srsName=EPSG:4326';
+
+    
+    let filter = " \
+        <And> \
+            <PropertyIsEqualTo> \
+                <PropertyName>code_insee</PropertyName> \
+                <Literal>35238</Literal> \
+            </PropertyIsEqualTo> \
+            <PropertyIsEqualTo> \
+                <PropertyName>fonction</PropertyName> \
+                <Literal>Alignement</Literal> \
+            </PropertyIsEqualTo> \
+            <PropertyIsBetween> \
+            <PropertyName>date_plantation</PropertyName> \
+                <LowerBoundary> \
+                    <Literal>"+daterefmax+"</Literal> \
+                </LowerBoundary> \
+                <UpperBoundary> \
+                    <Literal>"+daterefmin+"</Literal> \
+                </UpperBoundary> \
+            </PropertyIsBetween> \
+        </And> \
+        ";
+    let complete_url = data_url + '&filter='+ encodeURIComponent(filter);
+    
     let datacolor = '#DCEAAE'
     
     function markerStyle() {
@@ -19,28 +48,10 @@ mviewer.customLayers.arbresautres= (function() {
         ];
     }
     
-    /*
-    function rondStyle() {
-        let style = new ol.style.Style({
-            image: new ol.style.Circle({
-                radius: 5,
-                fill: new ol.style.Fill({
-                    color: datacolor,
-                }),
-                stroke: new ol.style.Stroke({
-                    color: '#ffffff',
-                    width: 0.5,
-                    opacity: '80%',
-                })
-            })
-        });
-        return [style];
-    }
-    */
     
     let dataLayer = new ol.layer.Vector({
         source: new ol.source.Vector({
-            url: data_url,
+            url: complete_url,
             format: new ol.format.GeoJSON()
         }),
         style: markerStyle,
