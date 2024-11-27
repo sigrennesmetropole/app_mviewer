@@ -8,32 +8,33 @@ mviewer.customLayers.arbresanciens= (function() {
     let data_url = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=espub_esv:arbre&outputFormat=application/json&srsName=EPSG:4326';
 
     
-    let filter = " \
-        <And> \
-            <PropertyIsEqualTo> \
-                <PropertyName>code_insee</PropertyName> \
-                <Literal>35238</Literal> \
-            </PropertyIsEqualTo> \
-            <PropertyIsEqualTo> \
-                <PropertyName>fonction</PropertyName> \
-                <Literal>Alignement</Literal> \
-            </PropertyIsEqualTo> \
-            <Or> \
-                <PropertyIsBetween> \
-                    <PropertyName>date_plantation</PropertyName> \
-                    <LowerBoundary> \
-                        <Literal>"+daterefmax+"</Literal> \
-                    </LowerBoundary> \
-                    <UpperBoundary> \
-                        <Literal>"+daterefmin+"</Literal> \
-                    </UpperBoundary> \
-                </PropertyIsBetween> \
-                <PropertyIsNull> \
-                    <PropertyName>date_plantation</PropertyName> \
-                </PropertyIsNull> \
-            </Or> \
-        </And> \
-        ";
+    
+    let filter = "";
+    filter+="<And>";
+    filter+=("  <PropertyIsEqualTo>").trim();
+    filter+=("    <PropertyName>code_insee</PropertyName>").trim();
+    filter+=("    <Literal>35238</Literal>").trim();
+    filter+=("  </PropertyIsEqualTo>").trim();
+    filter+=("  <PropertyIsEqualTo>").trim();
+    filter+=("    <PropertyName>fonction</PropertyName>").trim();
+    filter+=("    <Literal>Alignement</Literal>").trim();
+    filter+=("  </PropertyIsEqualTo>").trim();
+    
+    filter+=("  <Or>").trim();
+    filter+=("    <PropertyIsBetween>").trim();
+    filter+=("      <PropertyName>date_plantation</PropertyName>").trim();
+    filter+=("      <LowerBoundary>").trim();
+    filter+=("        <Literal>"+daterefmax+"</Literal>").trim();
+    filter+=("      </LowerBoundary>").trim();
+    filter+=("      <UpperBoundary>").trim();
+    filter+=("        <Literal>"+daterefmin+"</Literal>").trim();
+    filter+=("      </UpperBoundary>").trim();
+    filter+=("    </PropertyIsBetween>").trim();
+    filter+=("    <PropertyIsNull>").trim();
+    filter+=("      <PropertyName>date_plantation</PropertyName>").trim();
+    filter+=("    </PropertyIsNull>").trim();
+    filter+=("  </Or>").trim();
+    filter+="</And>";
     let complete_url = data_url + '&filter='+ encodeURIComponent(filter);
     
     let datacolor = '#628A31'

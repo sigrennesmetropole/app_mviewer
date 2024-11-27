@@ -505,7 +505,6 @@ var formatter = (function () {
     
     // TODO : à commenter
     function formatDateWithYear() {
-        console.log("Formatage de la date");
         var span_elements = document.getElementsByClassName("date_year");
         for (var i = 0; i < span_elements.length; i++) {
             var contenu="";

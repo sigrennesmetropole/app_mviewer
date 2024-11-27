@@ -1,7 +1,5 @@
 mviewer.customLayers.arbresrecents= (function() {
-    //let dateref = new Date().getFullYear()-10;
-    //let data_url = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=espub_esv:v_gev_aali&CQL_FILTER=date_plant>'+ dateref +'&outputFormat=application/json&srsName=EPSG:4326';
-    
+     
     let age_min = 0;
     let age_max = 10;
     let daterefmin = new Date().getFullYear() - age_min + "-01-01";
@@ -11,27 +9,27 @@ mviewer.customLayers.arbresrecents= (function() {
     let data_url = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=espub_esv:arbre&outputFormat=application/json&srsName=EPSG:4326';
 
     
-    let filter = " \
-        <And> \
-            <PropertyIsEqualTo> \
-                <PropertyName>code_insee</PropertyName> \
-                <Literal>35238</Literal> \
-            </PropertyIsEqualTo> \
-            <PropertyIsEqualTo> \
-                <PropertyName>fonction</PropertyName> \
-                <Literal>Alignement</Literal> \
-            </PropertyIsEqualTo> \
-            <PropertyIsBetween> \
-            <PropertyName>date_plantation</PropertyName> \
-                <LowerBoundary> \
-                    <Literal>"+daterefmax+"</Literal> \
-                </LowerBoundary> \
-                <UpperBoundary> \
-                    <Literal>"+daterefmin+"</Literal> \
-                </UpperBoundary> \
-            </PropertyIsBetween> \
-        </And> \
-        ";
+    let filter = "";
+    filter+="<And>";
+    filter+=("  <PropertyIsEqualTo>").trim();
+    filter+=("    <PropertyName>code_insee</PropertyName>").trim();
+    filter+=("    <Literal>35238</Literal>").trim();
+    filter+=("  </PropertyIsEqualTo>").trim();
+    filter+=("  <PropertyIsEqualTo>").trim();
+    filter+=("    <PropertyName>fonction</PropertyName>").trim();
+    filter+=("    <Literal>Alignement</Literal>").trim();
+    filter+=("  </PropertyIsEqualTo>").trim();
+    filter+=("  <PropertyIsBetween>").trim();
+    filter+=("    <PropertyName>date_plantation</PropertyName>").trim();
+    filter+=("    <LowerBoundary>").trim();
+    filter+=("      <Literal>"+daterefmax+"</Literal>").trim();
+    filter+=("    </LowerBoundary>").trim();
+    filter+=("    <UpperBoundary>").trim();
+    filter+=("      <Literal>"+daterefmin+"</Literal>").trim();
+    filter+=("    </UpperBoundary>").trim();
+    filter+=("  </PropertyIsBetween>").trim();
+    filter+="</And>";
+    
     let complete_url = data_url + '&filter='+ encodeURIComponent(filter);
     
     
