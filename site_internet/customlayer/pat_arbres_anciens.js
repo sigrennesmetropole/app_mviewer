@@ -1,7 +1,41 @@
 mviewer.customLayers.arbresanciens= (function() {
-    let age_ancien = 50;
-    let dateref = new Date().getFullYear() - age_ancien;
-    let data_url = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=espub_esv:v_gev_aali&CQL_FILTER=date_plant<='+ dateref +'&outputFormat=application/json&srsName=EPSG:4326';
+    let age_min = 50;
+    let age_max = 1000;
+    let daterefmin = new Date().getFullYear() - age_min + "-01-01";
+    let daterefmax = new Date().getFullYear() - (age_max-1) + "-01-01";
+
+    
+    let data_url = 'https://public.sig.rennesmetropole.fr/geoserver/wfs?service=WFS&version=1.0.0&request=GetFeature&typeNames=espub_esv:arbre&outputFormat=application/json&srsName=EPSG:4326';
+
+    
+    let filter = " \
+        <And> \
+            <PropertyIsEqualTo> \
+                <PropertyName>code_insee</PropertyName> \
+                <Literal>35238</Literal> \
+            </PropertyIsEqualTo> \
+            <PropertyIsEqualTo> \
+                <PropertyName>fonction</PropertyName> \
+                <Literal>Alignement</Literal> \
+            </PropertyIsEqualTo> \
+            <Or> \
+                <PropertyIsBetween> \
+                    <PropertyName>date_plantation</PropertyName> \
+                    <LowerBoundary> \
+                        <Literal>"+daterefmax+"</Literal> \
+                    </LowerBoundary> \
+                    <UpperBoundary> \
+                        <Literal>"+daterefmin+"</Literal> \
+                    </UpperBoundary> \
+                </PropertyIsBetween> \
+                <PropertyIsNull> \
+                    <PropertyName>date_plantation</PropertyName> \
+                </PropertyIsNull> \
+            </Or> \
+        </And> \
+        ";
+    let complete_url = data_url + '&filter='+ encodeURIComponent(filter);
+    
     let datacolor = '#628A31'
     
     
@@ -40,7 +74,7 @@ mviewer.customLayers.arbresanciens= (function() {
     
     let dataLayer = new ol.layer.Vector({
         source: new ol.source.Vector({
-            url: data_url,
+            url: complete_url,
             format: new ol.format.GeoJSON()
         }),
         style: markerStyle,

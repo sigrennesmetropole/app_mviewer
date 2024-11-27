@@ -21,7 +21,7 @@ var formatter = (function () {
         var val = date.split("/");
         return new Date(val[2], val[1]-1 , val[0]);
     };
-
+    
     // TODO : à déplacer dans RMUtils.js
     // sorting on start date
     var sortByDate = function sortByDate(date1, date2) {
@@ -502,6 +502,23 @@ var formatter = (function () {
             }
         }
     };
+    
+    // TODO : à commenter
+    function formatDateWithYear() {
+        console.log("Formatage de la date");
+        var span_elements = document.getElementsByClassName("date_year");
+        for (var i = 0; i < span_elements.length; i++) {
+            var contenu="";
+            if(span_elements[i].innerHTML) {
+                contenu = span_elements[i].innerHTML;
+                var date_tab = [];
+                date_tab = contenu.split('-', 3);
+                if(date_tab.length===3){
+                    span_elements[i].innerHTML = date_tab[0];
+                }
+            }
+        }
+    };
 
 
     function formatLargeNumbers() {
@@ -680,6 +697,7 @@ var formatter = (function () {
         checkdisplay();
         corrWebAddr();
         splitphotocredit();
+        formatDateWithYear();
         formatDateInFrench();
         formatHourInFrench();
         formatDateTimeInFrench();
