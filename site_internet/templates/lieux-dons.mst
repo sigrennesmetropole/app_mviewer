@@ -1,0 +1,13 @@
+{{#features}}
+	<li class="item">
+		<h5 class="rm-popup-title-feature">LIEU DE DON</h5>
+        
+		<p class="rm-popup-text-feature">
+			{{#id_lieu_don}}<span class='rm-popup-label'> NUMÉRO :</span> {{{id_lieu_don}}}<br/>{{/id_lieu_don}}
+            {{#nom}}<span class='rm-popup-label'> NOM :</span> {{{nom}}}<br/>{{/nom}}
+			{{#type_espace}}<span class='rm-popup-label'> TYPE :</span> {{{type_espace}}}<br/>{{/type_espace}}
+			{{#description}}<span class='rm-popup-label'> DESCRIPTION :</span> {{{description}}}<br/></span>{{/description}}
+		</p>
+	</li>
+{{/features}}
+
