@@ -1,0 +1,11 @@
+{{#features}}
+    <li class="item">
+        <h5 class="rm-popup-title-feature">{{comm_nom}}</h5>
+        
+        <p class="rm-popup-text-feature">
+            {{#voie_nom}}<span class='rm-popup-label'> VOIE :</span> {{voie_nom}}<br/>{{/voie_nom}}
+            {{#etat}}<span class='rm-popup-label'> BLOCAGE :</span> {{etat}}<br/>{{/etat}}
+        </p>
+    </li>
+{{/features}}
+
