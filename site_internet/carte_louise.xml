@@ -28,21 +28,18 @@
     </extensions>
     
     <themes mini="true">
-        <theme id="theme-20180827150815" name="Médiathèques de Rennes Métropole" collapsed="true" icon="fas fa-book">
+        <theme id="theme-20180827150815" name="Professionnels de santé" collapsed="true" icon="fas fa-book">
             <layer
-                id="v_sitorg_organisme"
-                name="Médiathèques de Rennes Métropole"
+                id="professionnel_sante"
+                name="Profressionnels santé"
                 type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_sante/ows"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
-                sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/organisme_bleu.sld"
                 legendurl="apps/site_internet/img/legend/leg_marker_bleu.svg"
                 metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
                 queryable="true"
                 featurecount="3"
-                filter="etat_organisme = 'actif' and code_nomenclature_principale = '7.5.1'"
                 infopanel="right-panel"><template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
         </theme>
