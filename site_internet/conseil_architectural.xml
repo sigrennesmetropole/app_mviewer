@@ -23,9 +23,10 @@
     <olscompletion url="https://data.geopf.fr/geocodage/completion" type="ign" attribution="IGN"/>
     <searchparameters bbox="false" localities="true" features="false"/>
 
-    <extensions>    
-   <!-- <extension type="component" id="isochroneAddon" path="demo/addons"/> -->
-		<extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
+    <extensions> 
+        <extension type="component" id="GUICustom" path="apps/public/addons"/>
+        <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
+        <extension type="component" id="accessibilite" path="apps/public/addons"/>
 		<extension type="component" id="print" path="demo/addons"/>
     </extensions>
 	
@@ -319,7 +320,7 @@
             </layer>
 			<layer
                 id="sentier_metropolitain"
-                name="Sentiers métropolitains sur Rennes Métropole"
+                name="Sentiers métropolitains sur Rennes Métropole (en cours de réalisation)"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/ptou_lois/ows"
                 visible="false"
