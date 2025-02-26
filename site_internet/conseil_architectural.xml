@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-    <application panelstate="open" title="Conseil architectural métropolitain " logo="RM.svg" help="" exportpng="true" legend="true" measuretools="true" legendasimage="false" popup="false" mapprint="false" style="css/themes/default.css" id="print" />
+    <application panelstate="open" title="Conseil architectural métropolitain " logo="apps/public/img/logo/RM.svg" help="" exportpng="true" legend="true" measuretools="true" legendasimage="false" popup="false" mapprint="false" style="css/themes/default.css" id="print" />
 		
 	<mapoptions maxzoom="25" projection="EPSG:3857" center="-176970.72,6128725.98" zoom="11" />
 
@@ -436,49 +436,7 @@
             </layer>
         </theme> 
 		
-<!--		ETUDE         -->
 
-		<theme id="theme-etude" name="Etude" collapsed="true" icon="book">
-            <layer
-                id="grand_proprio_parcelle"
-                name="Potentiels gisements fonciers"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/urba_fonc/ows"
-                visible="false"
-                tabcolor="#662483"
-                infoformat="application/vnd.ogc.gml"
-                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9b470450-f62f-48ad-ad61-865a05ed006c"
-                queryable="true"
-                featurecount="5"
-                tooltip="false"
-                tooltipcontent="nom_usage"
-                tooltipenabled="urba_fonc:grand_proprio_parcelle"
-                tooltipWMS="false"
-                tooltipWMSContent= "[b]$nom_usage[/b]"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/organismes.mst"></template>
-            </layer>
-			<layer
-                id="plui_theme_hauteur"
-                name="Potentiels surélévation"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/urba_docs_plui/ows"
-                visible="false"
-                tabcolor="#662483"
-                infoformat="application/vnd.ogc.gml"
-                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/57a1db41-ab47-4b6a-90f9-f8c4760a195e"
-                queryable="true"
-                featurecount="5"
-                tooltip="false"
-                tooltipcontent="nom_usage"
-                tooltipenabled="urba_docs_plui:plui_theme_hauteur"
-                tooltipWMS="false"
-                tooltipWMSContent= "[b]$nom_usage[/b]"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/organismes.mst"></template>
-            </layer>
-			
-        </theme> 
 		
     </themes>
 </config>
