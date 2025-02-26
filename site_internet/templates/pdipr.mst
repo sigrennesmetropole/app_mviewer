@@ -1,0 +1,10 @@
+{{#features}}
+	<li class="item">
+		<h5 class="rm-popup-title-feature pup-title">Réseau de sentiers inscrits au PDIPR d'Ille-et-Vilaine</h5>
+		<p class="rm-popup-text-feature">
+		
+			{{#NOMCOM}}<span class='rm-popup-label'> NOM COMMUNE : </span> {{{NOMCOM}}}<br/>{{/NOMCOM}}
+			{{#ITIN_PED}}<span class='rm-popup-label'>TYPE ITINERAIRE : </span> {{{ITIN_PED}}}<br/>{{/ITIN_PED}}
+		</p>
+	</li>
+{{/features}}

@@ -1,0 +1,10 @@
+{{#features}}
+	<li class="item">
+		<h5 class="rm-popup-title-feature pup-title">Lotissements sur Rennes Métropole</h5>
+		<p class="rm-popup-text-feature">
+			{{#id_lot}}<span class='rm-popup-label'> NUMÉRO :</span> {{{id_pup}}}<br/>{{/id_lot}}		
+			{{#nom_lot}}<span class='rm-popup-label'> NOM LOTISSEMENT : </span> {{{nom_lot}}}<br/>{{/nom_lot}}
+			{{#type_lot}}<span class='rm-popup-label'> TYPE DE LOTISSEMENT : </span> {{{type_lot}}}<br/>{{/type_lot}}
+		</p>
+	</li>
+{{/features}}

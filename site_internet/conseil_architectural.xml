@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-    <application panelstate="open" title="Conseil architectural métropolitain " logo="img/logo/RM.svg" help="" exportpng="true" legend="true" measuretools="true" legendasimage="false" popup="false" mapprint="false" style="css/themes/default.css" id="print" />
+    <application panelstate="open" title="Conseil architectural métropolitain " logo="RM.svg" help="" exportpng="true" legend="true" measuretools="true" legendasimage="false" popup="false" mapprint="false" style="css/themes/default.css" id="print" />
 		
 	<mapoptions maxzoom="25" projection="EPSG:3857" center="-176970.72,6128725.98" zoom="11" />
 
@@ -50,7 +50,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/hydro.mst"></template>
+                <template url="apps/site_internet/templates/hydro.mst"></template>
             </layer>
 			
 			<layer
@@ -70,7 +70,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organismes.mst"></template>
              </layer>
 			 <layer
                 id="ortho2021"
@@ -89,7 +89,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organismes.mst"></template>
              </layer>
 			 
 			 <layer
@@ -109,7 +109,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organismes.mst"></template>
              </layer>
 			 
 			 <layer
@@ -148,7 +148,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organismes.mst"></template>
             </layer>
 			
         </theme> 
@@ -170,7 +170,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organismes.mst"></template>
             </layer>
 			<layer
                 id="drac_mh_servitude"
@@ -189,7 +189,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organismes.mst"></template>
             </layer>
 			<layer
                 id="drac_immeuble_mh"
@@ -208,7 +208,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organismes.mst"></template>
             </layer>
 			<layer
                 id="plui_zone_urba"
@@ -227,7 +227,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organismes.mst"></template>
             </layer>
 						
 		</theme>
@@ -244,7 +244,7 @@
 				metadata="https://geobretagne.fr/geonetwork/srv/fre/catalog.search#/metadata/b4080a88-798d-4533-9582-ec9a985d8102" 
 				attribution="Région Bretagne" 
 				queryable="false">
-                <template url="apps/georm/templates/organismes.mst"></template>				
+                <template url="apps/site_internet/templates/organismes.mst"></template>				
 				</layer>
 
 			<layer 
@@ -296,7 +296,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organismes.mst"></template>
             </layer>
 			<layer
                 id="pdipr_35"
@@ -315,7 +315,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/pdipr.mst"></template>
+                <template url="apps/site_internet/templates/pdipr.mst"></template>
             </layer>
 			<layer
                 id="sentier_metropolitain"
@@ -334,7 +334,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organismes.mst"></template>
             </layer>
 			<layer
                 id="trambus_lignes"
@@ -353,7 +353,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/tram_bus.mst"></template>
+                <template url="apps/site_internet/templates/tram_bus.mst"></template>
             </layer>		
 		</theme>
 		
@@ -375,7 +375,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/gd_proprio.mst"></template>
+                <template url="apps/site_internet/templates/gd_proprio.mst"></template>
             </layer>
 			<layer
                 id="lot"
@@ -394,7 +394,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/lot.mst"></template>
+                <template url="apps/site_internet/templates/lot.mst"></template>
             </layer>
 			<layer
                 id="v_zac"
@@ -413,7 +413,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nomzac[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/zac.mst"></template>
+                <template url="apps/site_internet/templates/zac.mst"></template>
             </layer>
 			<layer
                 id="pup"
@@ -432,7 +432,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/pup.mst"></template>
+                <template url="apps/site_internet/templates/pup.mst"></template>
             </layer>
         </theme> 
 		
@@ -456,7 +456,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organismes.mst"></template>
             </layer>
 			<layer
                 id="plui_theme_hauteur"
@@ -475,7 +475,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/georm/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organismes.mst"></template>
             </layer>
 			
         </theme> 

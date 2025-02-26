@@ -1,0 +1,10 @@
+{{#features}}
+	<li class="item">
+		<h5 class="rm-popup-title-feature pup-title">Projet trambus : Nom des lignes</h5>
+		<p class="rm-popup-text-feature">
+		
+			
+			{{#li_nom}}<span class='rm-popup-label'>NOM : </span> {{{li_nom}}}<br/>{{/li_nom}}
+		</p>
+	</li>
+{{/features}}
