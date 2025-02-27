@@ -245,7 +245,7 @@
 				metadata="https://geobretagne.fr/geonetwork/srv/fre/catalog.search#/metadata/b4080a88-798d-4533-9582-ec9a985d8102" 
 				attribution="Région Bretagne" 
 				queryable="false">
-                <template url="apps/site_internet/templates/organismes.mst"></template>				
+                <template url="#"></template>				
 				</layer>
 
 			<layer 
@@ -257,15 +257,13 @@
                 infoformat="text/html" featurecount="5"                
 				url="https://tile.geobretagne.fr/photo/service/ows" 
 				legendurl=""
+				metadata="https://geobretagne.fr/geonetwork/srv/fre/catalog.search#/metadata/620ee7ef3b4930fbaed5cf07a8347db3be7fee60"
 				attribution="IGN" 
-				metadata="https://geoservices.ign.fr/sites/default/files/2021-07/IGNF_DONNEES_GEODESIQUES.html"
-				metadata-csw="" />
-				
-				
+				metadata-csw="" />	
 				
 			<layer 
 			    id="GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40" 
-				name="Carte de l'état-major (1820-1866)" 
+				name="Carte de l'état-major (1825-1866)" 
 				type="wms"
 				visible="false" 
 				tiled="true"
@@ -273,8 +271,8 @@
                 infoformat="text/html" featurecount="5"                
 				url="https://data.geopf.fr/wms-r/wms"
 				legendurl=""
-				attribution="IGN" 
-				metadata="https://geoservices.ign.fr/sites/default/files/2021-07/IGNF_DONNEES_GEODESIQUES.html"
+				metadata="https://geoservices.ign.fr/sites/default/files/2021-07/DC_SCANEM_40K_1-0.pdf"
+				attribution="IGN"
 				metadata-csw="" />								
 		</theme>
 		
@@ -288,7 +286,8 @@
                 visible="false"
                 tabcolor="#662483"
                 infoformat="application/vnd.ogc.gml"
-                metadata="undefined"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/93dabdf8-4609-42ad-b2b9-93c332343886"
+				attribution="Rennes Métropole"
                 queryable="true"
                 featurecount="5"
                 tooltip="false"
@@ -308,6 +307,7 @@
                 tabcolor="#662483"
                 infoformat="application/vnd.ogc.gml"
                 metadata="https://geobretagne.fr/geonetwork/srv/api/records/075fbf9d-0511-4e99-8bca-fabc13a0cf40"
+				attribution="Département d'Ille-et-Vilaine"
                 queryable="true"
                 featurecount="10"
                 tooltip="false"
@@ -326,10 +326,11 @@
                 visible="false"
                 tabcolor="#662483"
                 infoformat="application/vnd.ogc.gml"
-                metadata="undefined"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/1a6c5abe-3541-4480-8b4a-4d0a94d973d0"
+				attribution="Rennes Métropole"
                 queryable="true"
                 featurecount="5"
-                tooltip="false"
+                tooltip="true"
                 tooltipcontent="nom_usage"
                 tooltipenabled="ptou_lois:sentier_metropolitain"
                 tooltipWMS="false"
@@ -345,10 +346,11 @@
                 visible="false"
                 tabcolor="#662483"
                 infoformat="application/vnd.ogc.gml"
-                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/57a1db41-ab47-4b6a-90f9-f8c4760a195e"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/89f161cc-33bf-430b-b458-5d9ef61061e0"
+				attribution="Rennes Métropole"
                 queryable="true"
                 featurecount="5"
-                tooltip="false"
+                tooltip="true"
                 tooltipcontent="nom_usage"
                 tooltipenabled="trp_coll:trambus_lignes"
                 tooltipWMS="false"
