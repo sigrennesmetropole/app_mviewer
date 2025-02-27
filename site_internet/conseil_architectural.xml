@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-    <application panelstate="open" title="Conseil architectural métropolitain " logo="apps/public/img/logo/RM.svg" help="" exportpng="true" legend="true" measuretools="true" legendasimage="false" popup="false" mapprint="false" style="css/themes/default.css" id="print" />
+    <application panelstate="open" title="Conseil architectural métropolitain " logo="apps/public/img/logo/RM.svg" help="apps/site_internet/html/conseil_architecture_help.html" exportpng="true" legend="true" measuretools="true" legendasimage="false" popup="false" mapprint="false" style="css/themes/default.css" id="print" />
 		
 	<mapoptions maxzoom="25" projection="EPSG:3857" center="-176970.72,6128725.98" zoom="11" />
 
@@ -368,9 +368,10 @@
                 tabcolor="#662483"
                 infoformat="application/vnd.ogc.gml"
                 metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9b470450-f62f-48ad-ad61-865a05ed006c"
+				attribution="Rennes Métropole"
                 queryable="true"
                 featurecount="5"
-                tooltip="false"
+                tooltip="true"
                 tooltipcontent="nom_usage"
                 tooltipenabled="urba_fonc:grand_proprio_parcelle"
                 tooltipWMS="false"
@@ -387,12 +388,13 @@
                 tabcolor="#662483"
                 infoformat="application/vnd.ogc.gml"
                 metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/57a1db41-ab47-4b6a-90f9-f8c4760a195e"
+				attribution="Rennes Métropole"
                 queryable="true"
                 featurecount="5"
-                tooltip="false"
+                tooltip="true"
                 tooltipcontent="nom_usage"
                 tooltipenabled="urba_fonc:lot"
-                tooltipWMS="false"
+                tooltipWMS="true"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/lot.mst"></template>
@@ -406,12 +408,13 @@
                 tabcolor="#662483"
                 infoformat="application/vnd.ogc.gml"
                 metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/c41ad277-bc32-4eed-b681-b4f8f75d3276"
+				attribution="Rennes Métropole"
                 queryable="true"
                 featurecount="5"
-                tooltip="false"
+                tooltip="true"
                 tooltipcontent="nomzac"
                 tooltipenabled="urba_fonc:v_zac"
-                tooltipWMS="false"
+                tooltipWMS="true"
                 tooltipWMSContent= "[b]$nomzac[/b]"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/zac.mst"></template>
@@ -425,12 +428,13 @@
                 tabcolor="#662483"
                 infoformat="application/vnd.ogc.gml"
                 metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/e7dc77aa-d86e-4246-b4a2-bc3e8ccb04d2"
-                queryable="true"
+                attribution="Rennes Métropole"
+				queryable="true"
                 featurecount="5"
-                tooltip="false"
+                tooltip="true"
                 tooltipcontent="nom_usage"
                 tooltipenabled="urba_zona:pup"
-                tooltipWMS="false"
+                tooltipWMS="true"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/pup.mst"></template>
