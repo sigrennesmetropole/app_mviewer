@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <application panelstate="open" title="Conseil architectural métropolitain " logo="RM.svg" help="" exportpng="true" legend="true" measuretools="true" legendasimage="false" popup="false" mapprint="false" style="css/themes/default.css" id="print" />
+		
+	<mapoptions maxzoom="25" projection="EPSG:3857" center="-176970.72,6128725.98" zoom="11" />
+
+	 <baselayers style="default">
+        <baselayer visible="false" id="pvcisimplegris" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville simple gris" type="WMTS"
+            url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
+            attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
+        </baselayer>
+        <baselayer visible="true" id="pvci_nb" thumbgallery="apps/public/img/basemap/pvcinb.jpg" title="Rennes Metropole" label="Plan de ville gris" type="WMTS"
+            url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci_nb" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
+            attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
+        </baselayer>
+        <baselayer visible="false" id="top25" thumbgallery="apps/public/img/basemap/top25.jpg" title="Rennes Metropole" label="Carte topographique - Top 25" type="WMTS"
+            url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:top25" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
+            attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6ecb85b1-ec5e-4427-ae81-9c83b21a7f32&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
+        </baselayer>
+        <baselayer visible="false" id="pvcicouleur" thumbgallery="apps/public/img/basemap/pvci.jpg" title="Rennes Metropole" label="Plan de ville couleur" type="WMTS"
+            url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
+            attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6ecb85b1-ec5e-4427-ae81-9c83b21a7f32&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
+        </baselayer>
+
+    </baselayers>
+	
+    <olscompletion url="https://data.geopf.fr/geocodage/completion" type="ign" attribution="IGN"/>
+    <searchparameters bbox="false" localities="true" features="false"/>
+
+    <extensions>    
+   <!-- <extension type="component" id="isochroneAddon" path="demo/addons"/> -->
+		<extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
+		<extension type="component" id="print" path="demo/addons"/>
+    </extensions>
+	
+	
+	
+    <themes>        
+         <theme id="theme-donnees_gen" name="Données générales" collapsed="true" icon="home">
+            <layer
+                id="v_hydro"
+                name="Réseau hydrographique"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/hyd_ouvrag/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="hyd_ouvrag:v_hydro"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/hydro.mst"></template>
+            </layer>
+			<layer
+                id="ice_vilaine"
+                name="Inventaire des cours d'eaux du bassin versant Vilaine"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/hyd_ouvrag/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="hyd_ouvrag:ice_vilaine"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organismes.mst"></template>
+             </layer>
+
+            <!--<layer
+                id="ms:L_ZONE_HUMIDE_S_035"
+                name="Zh 35"
+                type="wms"
+                url="https://ogc.geo-ide.developpement-durable.gouv.fr/wxs?map=/opt/data/carto/geoide-catalogue/1.4/org_38012/eaba0c88-bce1-4bd5-b4eb-02fd27d8aa36.internet.map"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://geobretagne.fr/geonetwork/srv/api/records/075fbf9d-0511-4e99-8bca-fabc13a0cf40"
+                queryable="true"
+                featurecount="10"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="ptou_lois:pdipr_35"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/pdipr.mst"></template>
+            </layer> -->
+              <!-- <layer
+                id="ortho2023"
+                name="Orthophotographie aérienne 2023 sur Rennes Métropole"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/raster/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="raster:ortho2021"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organismes.mst"></template>
+             </layer>-->
+			 <layer
+                id="cadastre"
+                name="Cadastre disponible sur Rennes Métropole (juin 2024)"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/ref_cad/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="ref_cad:cadastre"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organismes.mst"></template>
+             </layer>	 
+			 <layer
+                id="top25"
+                name="Carte topographique de Renens Métropole"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/ref_fonds/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="ref_fonds:top25"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organismes.mst"></template>
+             </layer>	
+			
+			 <layer
+                id="rlpi_ebc"
+                name="RLPi de Rennes Métropole - Espaces boisés classés"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/urba_docs_rlpi/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="urba_docs_rlpi:rlpi_ebc"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organismes.mst"></template>
+            </layer>
+			
+        </theme> 
+		<theme id="theme-reglementaire" name="Données règlementaires" collapsed="true" icon="far fa-file-alt">
+			<layer
+                id="plui_plan_zonage_simplifie"
+                name="PLUi de Rennes Métropole : plan de zonage simplifié"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/urba_docs_plui/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="urba_docs_plui:plui_plan_zonage_simplifie"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organismes.mst"></template>
+            </layer>
+			<layer
+                id="drac_mh_servitude"
+                name="Servitudes de protection des monuments historiques classés ou inscrits (AC1) sur Rennes Métropole"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/urba_docs/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="urba_docs:drac_mh_servitude"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organismes.mst"></template>
+            </layer>
+			<layer
+                id="drac_immeuble_mh"
+                name="Immeubles protégés au titre des Monuments Historiques sur Rennes Métropole"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/ptou_arch/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="ptou_arch:drac_immeuble_mh"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organismes.mst"></template>
+            </layer>
+			<layer
+                id="plui_zone_urba"
+                name="Patrimoine Bâti d'Intérêt Local pour le PLUi de Rennes Métropole"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/urba_docs_plui/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="urba_docs_plui:plui_zone_urba"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organismes.mst"></template>
+            </layer>
+						
+		</theme>
+		<theme id="theme-historique" name="Données historiques" collapsed="true" icon="history">
+				
+			<layer 
+				id="napoleo" 
+				legendurl="img/blank.gif" 
+				name="Cadastre napoléonien : tableau d'assemblage" 
+				type="customlayer" url="customlayers/napoleo.js" 
+				customcontrol="true" 
+				visible="false" 
+				expanded="true" 
+				metadata="https://geobretagne.fr/geonetwork/srv/fre/catalog.search#/metadata/b4080a88-798d-4533-9582-ec9a985d8102" 
+				attribution="Région Bretagne" 
+				queryable="false">
+                <template url="apps/site_internet/templates/organismes.mst"></template>				
+				</layer>
+
+			<layer 
+			    id="ORTHOIMAGERY.ORTHOPHOTOS.1950-1965" 
+				name="Photographie aérienne 1950-1965" 
+				visible="false" 
+				tiled="false"
+				queryable="true" 
+                infoformat="text/html" featurecount="5"                
+				url="https://tile.geobretagne.fr/photo/service/ows" 
+				legendurl=""
+				attribution="IGN" 
+				metadata="https://geoservices.ign.fr/sites/default/files/2021-07/IGNF_DONNEES_GEODESIQUES.html"
+				metadata-csw="" />
+				
+				
+				
+			<layer 
+			    id="GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40" 
+				name="Carte de l'état-major (1820-1866)" 
+				type="wms"
+				visible="false" 
+				tiled="true"
+				queryable="true" 
+                infoformat="text/html" featurecount="5"                
+				url="https://data.geopf.fr/wms-r/wms"
+				legendurl=""
+				attribution="IGN" 
+				metadata="https://geoservices.ign.fr/sites/default/files/2021-07/IGNF_DONNEES_GEODESIQUES.html"
+				metadata-csw="" />								
+		</theme>
+		
+		
+		<theme id="theme-mobilite" name="Mobilite" collapsed="true" icon="bus">
+			<layer
+                id="v_star_lignes_actives"
+                name="Lignes du réseau STAR de Rennes Métropole"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/trp_coll/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="trp_coll:v_star_lignes_actives"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organismes.mst"></template>
+            </layer>
+			<layer
+                id="pdipr_35"
+                name="Réseau de sentiers inscrits au Plan départemental des Itinéraires de Promenade et de Randonnée (PDIPR) 35"
+                type="wms"
+                url="https://geobretagne.fr/geoserver/cd35/pdipr_35/ows" 
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://geobretagne.fr/geonetwork/srv/api/records/075fbf9d-0511-4e99-8bca-fabc13a0cf40"
+                queryable="true"
+                featurecount="10"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="ptou_lois:pdipr_35"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/pdipr.mst"></template>
+            </layer>
+			<layer
+                id="sentier_metropolitain"
+                name="Sentiers métropolitains sur Rennes Métropole"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/ptou_lois/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="undefined"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="ptou_lois:sentier_metropolitain"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organismes.mst"></template>
+            </layer>
+			<layer
+                id="trambus_lignes"
+                name="Projet trambus de Rennes Métropole : tracé des lignes"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/trp_coll/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/57a1db41-ab47-4b6a-90f9-f8c4760a195e"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="trp_coll:trambus_lignes"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/tram_bus.mst"></template>
+            </layer>		
+		</theme>
+		
+		<theme id="theme-foncier" name="Foncier" collapsed="true" icon="fas fa-city">
+            <layer
+                id="grand_proprio_parcelle"
+                name="Parcelles des grands propriétaires"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/urba_fonc/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9b470450-f62f-48ad-ad61-865a05ed006c"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="urba_fonc:grand_proprio_parcelle"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/gd_proprio.mst"></template>
+            </layer>
+			<layer
+                id="lot"
+                name="Lotissements sur Rennes Métropole"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/urba_fonc/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/57a1db41-ab47-4b6a-90f9-f8c4760a195e"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="urba_fonc:lot"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/lot.mst"></template>
+            </layer>
+			<layer
+                id="v_zac"
+                name="Zones d'aménagement concertées (ZAC)"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/urba_fonc/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/c41ad277-bc32-4eed-b681-b4f8f75d3276"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nomzac"
+                tooltipenabled="urba_fonc:v_zac"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nomzac[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/zac.mst"></template>
+            </layer>
+			<layer
+                id="pup"
+                name="Projets Urbains Partenariaux (PUP) sur Rennes Métropole"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/urba_zona/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/e7dc77aa-d86e-4246-b4a2-bc3e8ccb04d2"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="urba_zona:pup"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/pup.mst"></template>
+            </layer>
+        </theme> 
+		
+<!--		ETUDE         -->
+
+		<theme id="theme-etude" name="Etude" collapsed="true" icon="book">
+            <layer
+                id="grand_proprio_parcelle"
+                name="Potentiels gisements fonciers"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/urba_fonc/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9b470450-f62f-48ad-ad61-865a05ed006c"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="urba_fonc:grand_proprio_parcelle"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organismes.mst"></template>
+            </layer>
+			<layer
+                id="plui_theme_hauteur"
+                name="Potentiels surélévation"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/urba_docs_plui/ows"
+                visible="false"
+                tabcolor="#662483"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/57a1db41-ab47-4b6a-90f9-f8c4760a195e"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="nom_usage"
+                tooltipenabled="urba_docs_plui:plui_theme_hauteur"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$nom_usage[/b]"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organismes.mst"></template>
+            </layer>
+			
+        </theme> 
+		
+    </themes>
+</config>
