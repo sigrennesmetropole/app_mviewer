@@ -71,7 +71,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organisme.mst"></template>
              </layer>
 			 <layer
                 id="ortho2021"
@@ -90,7 +90,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organisme.mst"></template>
              </layer>
 			 
 			 <layer
@@ -110,7 +110,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organisme.mst"></template>
              </layer>
 			 
 			 <layer
@@ -149,7 +149,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
 			
         </theme> 
@@ -190,7 +190,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
 			<layer
                 id="drac_immeuble_mh"
@@ -209,7 +209,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
 			<layer
                 id="plui_zone_urba"
@@ -228,7 +228,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
 						
 		</theme>
@@ -296,7 +296,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
 			<layer
                 id="pdipr_35"
@@ -336,7 +336,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/organismes.mst"></template>
+                <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
 			<layer
                 id="trambus_lignes"
