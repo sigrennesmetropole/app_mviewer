@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-    <application panelstate="open" title="Conseil architectural métropolitain " logo="apps/public/img/logo/RM.svg" help="apps/site_internet/html/conseil_architecture_help.html" exportpng="true" legend="true" measuretools="true" legendasimage="false" popup="false" mapprint="false" style="css/themes/default.css" id="print" />
+    <application 
+	title="Conseil architectural métropolitain" 
+	logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"  
+	titlehelp="À propos des cartes thématiques" 
+	help="apps/site_internet/html/conseil_architecture_help.html" 
+	showhelp="false"
+	exportpng="false"
+    style="apps/site_internet/css/site_internet_gris.css" 	
+	measuretools="false"
+    togglealllayersfromtheme="false"	
+	mapprint="false" 
+	id="print" />
 		
-	<mapoptions maxzoom="25" projection="EPSG:3857" center="-176970.72,6128725.98" zoom="11" />
+	<mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-185701.6581470431,6125244.605869446" zoom="13" />
 
 	 <baselayers style="default">
         <baselayer visible="false" id="pvcisimplegris" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville simple gris" type="WMTS"
@@ -20,19 +31,18 @@
 		
     </baselayers>
 	
-    <olscompletion url="https://data.geopf.fr/geocodage/completion" type="ign" attribution="IGN"/>
-    <searchparameters bbox="false" localities="true" features="false"/>
-
+   
     <extensions> 
         <extension type="component" id="GUICustom" path="apps/public/addons"/>
         <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
         <extension type="component" id="accessibilite" path="apps/public/addons"/>
 		<extension type="component" id="print" path="demo/addons"/>
+		<extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_RVA.json"/>
     </extensions>
 	
 	
 	
-    <themes>        
+    <themes mini="true">        
          <theme id="theme-donnees_gen" name="Données générales" collapsed="true" icon="home">
             <layer
                 id="v_hydro"
