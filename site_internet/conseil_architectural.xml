@@ -53,7 +53,9 @@
             name="Réseau hydrographique"
             type="wms" 
             url="https://public.sig.rennesmetropole.fr/geoserver/ows?" 
-            tiled="true" visible="false" infoformat="application/vnd.ogc.gml" 
+            tiled="true" 
+            visible="false"
+            infoformat="application/vnd.ogc.gml" 
             fields=""
             aliases="" 
             style="hyd_ouvrag:pvci_hydrographie" 
@@ -61,7 +63,7 @@
             metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a0c0432f-e709-4a01-906b-aefc0dadfb3d" 
             metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/api/records/a0c0432f-e709-4a01-906b-aefc0dadfb3d/formatters/xml"
             attribution="Rennes Métropole"
-            queryable="false" 
+            queryable="true" 
             searchable="false" 
             fusesearchkeys="" 
             fusesearchresult="" 
@@ -80,7 +82,7 @@
             expanded="false" 
             exclusive="false" 
             showintoc="true">
-            <template url="https://geobretagne.fr/mviewer/apps/store/rennes_metro/7d015182c361/conseil_architectura/templates/hyd_ouvrag:v_hydro.mst" />
+            <template url="apps/site_internet/templates/hydro.mst" />
         </layer>
 			<layer 
             id="hyd_ouvrag:ice_vilaine" 
@@ -116,7 +118,7 @@
             expanded="false" 
             exclusive="false" 
             showintoc="true">
-            <template url="https://geobretagne.fr/mviewer/apps/store/rennes_metro/7d015182c361/conseil_architectura/templates/hyd_ouvrag:ice_vilaine.mst" />
+            <template url="apps/site_internet/templates/hydro_inventaire_sage_vilaine.mst" />
         </layer> 
              <layer 
             id="izh_sage_vilaine" 
@@ -152,7 +154,7 @@
             expanded="false" 
             exclusive="false" 
             showintoc="true">
-            <template url="https://geobretagne.fr/mviewer/apps/store/rennes_metro/7d015182c361/conseil_architectura/templates/izh_sage_vilaine.mst" />
+            <template url="apps/site_internet/templates/zh_sage_vilaine.mst" />
         </layer>
             
               <!-- <layer
@@ -186,8 +188,8 @@
             aliases="" 
             style="default-style-ref_cad:cadastre" 
             stylesalias="" 
-            metadata="https://geobretagne.fr/datahub/dataset/903dea6a-fc33-4eb7-b652-a29476a9a0eb" 
-            metadata-csw="https://geobretagne.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=903dea6a-fc33-4eb7-b652-a29476a9a0eb" 
+            metadata="https://public.sig.rennesmetropole.fr/datahub/dataset/903dea6a-fc33-4eb7-b652-a29476a9a0eb" 
+            metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/api/records/903dea6a-fc33-4eb7-b652-a29476a9a0eb/formatters/xml"  
             attribution="Rennes Métropole" 
             queryable="false" 
             searchable="false" 
@@ -269,7 +271,7 @@
         </layer>-->
         <layer
             id="plui_plan_zonage_simplifie"
-            name="Zonage simplifié (couleur)"
+            name="Plui Zonage simplifié (couleur)"
             type="wms"
             url="https://public.sig.rennesmetropole.fr/geoserver/urba_docs_plui/ows"
             legendurl="https://public.sig.rennesmetropole.fr/ressources/app/georchestra/legendes/urba_docs_plui/plui_plan_zonage_simplifie.png"
@@ -278,10 +280,10 @@
             metadata="undefined"
             metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9bd66532-036e-44c8-957d-9156362e5576"
             attribution="Rennes Métropole"  
-            queryable="false"
+            queryable="true"
             displayOpacityByDefault="true"
             expanded="true"
-            opacity="0.5"
+            opacity="1"
             infopanel="right-panel">
             <template url="apps/site_internet/templates/PLUi_Parcelle.mst"></template>
         </layer>
@@ -319,7 +321,7 @@
             exclusive="false" 
             showintoc="true" 
             jsonfields="ADRESSE">
-            <template url="https://geobretagne.fr/mviewer/apps/store/rennes_metro/7d015182c361/conseil_architectura/templates/bretagne_ac1.mst" />
+            <template url="apps/site_internet/templates/mh_servitude.mst" />
         </layer> 
         <layer 
             id="bretagne_immeuble_mh" 
@@ -328,12 +330,13 @@
             url="https://geobretagne.fr/geoserver/drac/wms" 
             tiled="true" 
             visible="false" 
-            infoformat="text/html" 
+            infoformat="application/vnd.ogc.gml" 
             metadata="https://geobretagne.fr/datahub/dataset/ee3d8a9a-eeac-4fdd-8474-4720086f461b" 
             metadata-csw="https://geobretagne.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=ee3d8a9a-eeac-4fdd-8474-4720086f461b" 
             attribution="Géobretagne"
             queryable="true" 
             showintoc="true">
+            <template url="apps/site_internet/templates/immeuble_mh.mst" />
         </layer> 
         
 		</theme>
