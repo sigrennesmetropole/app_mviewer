@@ -46,7 +46,7 @@
 	
 	
 	
-    <themes>        
+    <themes mini="true">        
          <theme id="theme-donnees_gen" name="Données générales" collapsed="true" icon="home">
             <layer 
             id="hyd_ouvrag:v_hydro" 
