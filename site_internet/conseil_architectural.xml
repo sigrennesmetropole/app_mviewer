@@ -2,7 +2,7 @@
 <config>
     <application 
 	title="Conseil architectural métropolitain" 
-	logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_gris_inverse.png"  
+	logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_blanc_transparent.png"  
 	titlehelp="À propos des cartes thématiques" 
 	help="apps/site_internet/html/conseil_architecture_help.html" 
 	showhelp="false"
