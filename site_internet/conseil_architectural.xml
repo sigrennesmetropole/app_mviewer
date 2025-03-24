@@ -2,14 +2,16 @@
 <config>
     <application 
 	title="Conseil architectural métropolitain" 
-	logo="https://public.sig.rennesmetropole.fr/ressources/img/logos/rm/logo_mviewer_blanc_transparent.png"  
+	logo="apps/public/img/logo/logo_mviewer_transp.png"  
 	titlehelp="À propos des cartes thématiques" 
 	help="apps/site_internet/html/conseil_architecture_help.html" 
-	showhelp="false"
+	showhelp="true"
 	exportpng="false"
     style="apps/site_internet/css/site_internet_gris.css" 	
 	measuretools="false"
-    togglealllayersfromtheme="false"	
+    templaterightinfopanel="allintabs"
+    sortlayersinfopanel="toc"
+    togglealllayersfromtheme="true"
 	mapprint="false" 
 	id="print" />
 		
@@ -40,13 +42,14 @@
         <extension type="component" id="GUICustom" path="apps/public/addons"/>
         <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
         <extension type="component" id="accessibilite" path="apps/public/addons"/>
-		<extension type="component" id="print" path="demo/addons"/>
+		<extension type="component" id="print" path="apps/site_internet/addons"/>
 		<extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_RVA.json"/>
+        <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_CadastreRVAQueryable.json"/>
     </extensions>
 	
 	
 	
-    <themes mini="true">        
+	<themes mini="false" legendmini="false">    
          <theme id="theme-donnees_gen" name="Données générales" collapsed="true" icon="home">
             <layer 
             id="hyd_ouvrag:v_hydro" 
@@ -61,7 +64,6 @@
             style="hyd_ouvrag:pvci_hydrographie" 
             stylesalias="" 
             metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a0c0432f-e709-4a01-906b-aefc0dadfb3d" 
-            metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/api/records/a0c0432f-e709-4a01-906b-aefc0dadfb3d/formatters/xml"
             attribution="Rennes Métropole"
             queryable="true" 
             searchable="false" 
@@ -97,7 +99,6 @@
             style="hyd_ouvrag:ice_vilaine_tous" 
             stylesalias="" 
             metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/facaf0d7-07d4-4d5a-848b-1afbfc7b4680" 
-            metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/api/records/facaf0d7-07d4-4d5a-848b-1afbfc7b4680/formatters/xml" 
             attribution="Rennes Métropole"
             queryable="true" 
             searchable="false" 
@@ -133,7 +134,6 @@
             style="zones_humides" 
             stylesalias="" 
             metadata="https://geobretagne.fr/datahub/dataset/869cc711-22ae-41c3-8fb0-5c00ae25b970" 
-            metadata-csw="https://geobretagne.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=869cc711-22ae-41c3-8fb0-5c00ae25b970" 
             attribution="Géobretagne" 
             queryable="true" 
             searchable="false" 
@@ -189,7 +189,6 @@
             style="default-style-ref_cad:cadastre" 
             stylesalias="" 
             metadata="https://public.sig.rennesmetropole.fr/datahub/dataset/903dea6a-fc33-4eb7-b652-a29476a9a0eb" 
-            metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/api/records/903dea6a-fc33-4eb7-b652-a29476a9a0eb/formatters/xml"  
             attribution="Rennes Métropole" 
             queryable="false" 
             searchable="false" 
@@ -235,43 +234,9 @@
         </layer> -->
     </theme> 
 		<theme id="theme-reglementaire" name="Données règlementaires" collapsed="true" icon="far fa-file-alt">
-        <!-- <layer 
-            id="urba_docs:plui_synthese_2024" 
-            name="Synthèse des zonages PLUi de Rennes Métropole (décembre 2024)" 
-            type="wms" 
-            url="https://public.sig.rennesmetropole.fr/geoserver/ows?" 
-            tiled="true" 
-            visible="false" 
-            infoformat="text/html" 
-            fields="" 
-            aliases="" 
-            style="urba_docs:plui_typezone_urba_2024" 
-            stylesalias="" 
-            metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/d2aba838-26f1-4d1f-ad7a-0ff12369a3c1" 
-            metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/api/records/d2aba838-26f1-4d1f-ad7a-0ff12369a3c1/formatters/xml" 
-            attribution="Rennes Métropole"  
-            queryable="true" 
-            searchable="false" 
-            fusesearchkeys="" 
-            fusesearchresult="" 
-            useproxy="false" 
-            filter="" 
-            sld="" 
-            legendurl="" 
-            featurecount="5" 
-            infopanel="right-panel" 
-            opacity="1" 
-            index="" 
-            styletitle="" 
-            dynamiclegend="false" 
-            toplayer="false" 
-            expanded="false" 
-            exclusive="false" 
-            showintoc="true">
-        </layer>-->
         <layer
             id="plui_plan_zonage_simplifie"
-            name="Plui Zonage simplifié (couleur)"
+            name="PLUi - Zonage simplifié (couleur)"
             type="wms"
             url="https://public.sig.rennesmetropole.fr/geoserver/urba_docs_plui/ows"
             legendurl="https://public.sig.rennesmetropole.fr/ressources/app/georchestra/legendes/urba_docs_plui/plui_plan_zonage_simplifie.png"
@@ -279,13 +244,26 @@
             infoformat="application/vnd.ogc.gml"
             metadata="undefined"
             metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9bd66532-036e-44c8-957d-9156362e5576"
-            attribution="Rennes Métropole"  
-            queryable="true"
+            queryable="false"
             displayOpacityByDefault="true"
             expanded="true"
-            opacity="1"
+            opacity="0.5"
             infopanel="right-panel">
-            <template url="apps/site_internet/templates/PLUi_Parcelle.mst"></template>
+            <template url="apps/PLUi/templates/PLUi_Parcelle.mst"></template>
+        </layer>
+        <layer
+            id="plui_plan_zonage"
+            name="PLUi - Autres règles graphiques"
+            type="wms"
+            url="https://public.sig.rennesmetropole.fr/geoserver/urba_docs_plui/ows"
+            legendurl="apps/PLUi/legends/leg_plui_plan_zonage.png"
+            visible="false"
+            infoformat="application/vnd.ogc.gml"
+            metadata="undefined"
+            metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9bd66532-036e-44c8-957d-9156362e5576"
+            queryable="false"
+            infopanel="right-panel">
+            <template url="apps/PLUi/templates/PLUi_Parcelle.mst"></template>
         </layer>
         <layer 
             id="bretagne_ac1" 
@@ -300,7 +278,6 @@
             style="drac_bretagne_mh_ac1" 
             stylesalias="" 
             metadata="https://geobretagne.fr/datahub/dataset/ef4d5b43-a7cd-4237-a56c-0c1d2226dec1" 
-            metadata-csw="https://geobretagne.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=ef4d5b43-a7cd-4237-a56c-0c1d2226dec1" 
             attribution="Géobretagne" 
             queryable="true" 
             searchable="false" 
@@ -332,7 +309,6 @@
             visible="false" 
             infoformat="application/vnd.ogc.gml" 
             metadata="https://geobretagne.fr/datahub/dataset/ee3d8a9a-eeac-4fdd-8474-4720086f461b" 
-            metadata-csw="https://geobretagne.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=ee3d8a9a-eeac-4fdd-8474-4720086f461b" 
             attribution="Géobretagne"
             queryable="true" 
             showintoc="true">
@@ -346,7 +322,8 @@
 				id="napoleo" 
 				legendurl="img/blank.gif" 
 				name="Cadastre napoléonien : tableau d'assemblage" 
-				type="customlayer" url="customlayers/napoleo.js" 
+				type="customlayer" 
+                url="customlayers/napoleo.js" 
 				customcontrol="true" 
 				visible="false" 
 				expanded="true" 
@@ -392,7 +369,6 @@
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/trp_coll/ows"
                 visible="false"
-                tabcolor="#662483"
                 infoformat="application/vnd.ogc.gml"
                 metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/93dabdf8-4609-42ad-b2b9-93c332343886"
 				attribution="Rennes Métropole"
@@ -404,7 +380,7 @@
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/organisme.mst"></template>
+                <template url="apps/site_internet/templates/star_lignes.mst"></template>
             </layer>
 			<layer
                 id="pdipr_35"
@@ -412,7 +388,6 @@
                 type="wms"
                 url="https://geobretagne.fr/geoserver/cd35/pdipr_35/ows" 
                 visible="false"
-                tabcolor="#662483"
                 infoformat="application/vnd.ogc.gml"
                 metadata="https://geobretagne.fr/geonetwork/srv/api/records/075fbf9d-0511-4e99-8bca-fabc13a0cf40"
 				attribution="Département d'Ille-et-Vilaine"
@@ -432,7 +407,6 @@
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/ptou_lois/ows"
                 visible="false"
-                tabcolor="#662483"
                 infoformat="application/vnd.ogc.gml"
                 metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/1a6c5abe-3541-4480-8b4a-4d0a94d973d0"
 				attribution="Rennes Métropole"
@@ -452,7 +426,6 @@
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/trp_coll/ows"
                 visible="false"
-                tabcolor="#662483"
                 infoformat="application/vnd.ogc.gml"
                 metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/89f161cc-33bf-430b-b458-5d9ef61061e0"
 				attribution="Rennes Métropole"
@@ -463,7 +436,8 @@
                 tooltipenabled="trp_coll:trambus_lignes"
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
-                infopanel="right-panel">
+                infopanel="right-panel"
+                templaterightinfopanel="allintabs">
                 <template url="apps/site_internet/templates/tram_bus.mst"></template>
             </layer>		
 		</theme>
@@ -475,7 +449,6 @@
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/urba_fonc/ows"
                 visible="false"
-                tabcolor="#662483"
                 infoformat="application/vnd.ogc.gml"
                 metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9b470450-f62f-48ad-ad61-865a05ed006c"
 				attribution="Rennes Métropole"
@@ -495,7 +468,6 @@
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/urba_fonc/ows"
                 visible="false"
-                tabcolor="#662483"
                 infoformat="application/vnd.ogc.gml"
                 metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/57a1db41-ab47-4b6a-90f9-f8c4760a195e"
 				attribution="Rennes Métropole"
@@ -515,7 +487,6 @@
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/urba_fonc/ows"
                 visible="false"
-                tabcolor="#662483"
                 infoformat="application/vnd.ogc.gml"
                 metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/c41ad277-bc32-4eed-b681-b4f8f75d3276"
 				attribution="Rennes Métropole"
@@ -535,7 +506,6 @@
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/urba_zona/ows"
                 visible="false"
-                tabcolor="#662483"
                 infoformat="application/vnd.ogc.gml"
                 metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/e7dc77aa-d86e-4246-b4a2-bc3e8ccb04d2"
                 attribution="Rennes Métropole"
