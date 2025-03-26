@@ -6,18 +6,18 @@
 	titlehelp="À propos des cartes thématiques" 
 	help="apps/site_internet/html/conseil_architectural_help.html" 
 	showhelp="true"
-	exportpng="false"
+	exportpng="true"
     style="apps/site_internet/css/site_internet_gris.css" 	
-	measuretools="false"
+	measuretools="true"
+    geoloc="true"
     templaterightinfopanel="allintabs"
     sortlayersinfopanel="toc"
     togglealllayersfromtheme="true"
-	mapprint="false" 
-	id="print" />
+	printMap="true" />
 		
 	<mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-185701.6581470431,6125244.605869446" zoom="13" />
 
-	 <baselayers style="default">
+	 <baselayers style="gallery">
         <baselayer visible="false" id="pvcisimplegris" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville simple gris" type="WMTS"
             url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
             attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
@@ -43,7 +43,7 @@
         <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
         <extension type="component" id="accessibilite" path="apps/public/addons"/>
 		<extension type="component" id="print" path="apps/site_internet/addons"/>
-        <extension type="component" id="tutorial" path="apps/public/addons" configFile="apps/site_internet/addons/didacticiel.json"/>
+        <extension type="component" id="tutorial" path="apps/public/addons" configFile="apps/site_internet/addons/didacticiel_conseil_archi.json"/>
 		<extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_RVA.json"/>
         <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_CadastreRVAQueryable.json"/>
     </extensions>
@@ -319,7 +319,6 @@
         
 		</theme>
 		<theme id="theme-historique" name="Données historiques" collapsed="true" icon="history">
-			
 			<layer 
 				id="napoleo" 
 				legendurl="apps/site_internet/img/legend/cad_napoleon.png" 
@@ -328,7 +327,7 @@
                 url="customlayers/napoleo.js" 
 				customcontrol="true" 
 				visible="false" 
-                opacity="1" 
+                opacity="0.5" 
 				expanded="true" 
 				metadata="https://geobretagne.fr/geonetwork/srv/fre/catalog.search#/metadata/b4080a88-798d-4533-9582-ec9a985d8102" 
 				attribution="Région Bretagne" 
@@ -340,7 +339,7 @@
 			    id="ORTHOIMAGERY.ORTHOPHOTOS.1950-1965" 
 				name="Photographie aérienne 1950-1965" 
 				visible="false" 
-                opacity="1" 
+                opacity="0.5" 
 				tiled="false"
 				queryable="true" 
                 infoformat="text/html" featurecount="5"                
