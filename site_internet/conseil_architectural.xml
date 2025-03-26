@@ -404,7 +404,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/pdipr.mst"></template>
             </layer>
-			<layer
+			<!--<layer
                 id="sentier_metropolitain"
                 name="Sentiers métropolitains sur Rennes Métropole (en cours de réalisation)"
                 type="wms"
@@ -422,7 +422,7 @@
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
-            </layer>
+            </layer>-->
 			<layer
                 id="trambus_lignes"
                 name="Projet trambus de Rennes Métropole : tracé des lignes"
