@@ -44,8 +44,7 @@
         <extension type="component" id="accessibilite" path="apps/public/addons"/>
 		<extension type="component" id="print" path="apps/site_internet/addons"/>
         <extension type="component" id="tutorial" path="apps/public/addons" configFile="apps/site_internet/addons/didacticiel_conseil_archi.json"/>
-		<extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_RVA.json"/>
-        <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_CadastreRVAQueryable.json"/>
+		<extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_CadastreRVAQueryable.json"/>
     </extensions>
 	
 	
