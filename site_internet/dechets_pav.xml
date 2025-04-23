@@ -3,7 +3,7 @@
     <application
         title="Points d'apport volontaire des déchets ménagers sur Rennes Métropole (PAV)"
         logo="apps/public/img/logo/logo_mviewer_transp.png"  
-        help="apps/site_internet/html/site_internet_help.html"
+        help="apps/site_internet/html/dechets_pav_help.html"
 		showhelp="true"
 		exportpng="true"
 		style="apps/site_internet/css/site_internet_gris.css" 	
@@ -57,7 +57,7 @@
                 name="Points d'Apport Volontaire"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"
-                visible="false"
+                visible="true"
                 tabcolor="#8d4915"
                 infoformat="application/vnd.ogc.gml"
                 metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/92c64e80-f6f7-4f56-b162-8a07a8b70784"
