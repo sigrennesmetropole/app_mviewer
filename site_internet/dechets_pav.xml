@@ -14,12 +14,16 @@
 		togglealllayersfromtheme="true"
 		printMap="true" />
 		
-    <mapoptions maxzoom="20" minzoom="10" projection="EPSG:3857" center="-186098.36482879001,6125889.9088213602" zoom="12" />
+		<mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-185701.6581470431,6125244.605869446" zoom="13" />
 
-    <baselayers style="default">
+	 <baselayers style="gallery">
         <baselayer visible="false" id="pvcisimplegris" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville simple gris" type="WMTS"
             url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
             attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
+        </baselayer>
+         <baselayer visible="false" id="top25" thumbgallery="apps/public/img/basemap/top25.jpg" title="Rennes Metropole" label="Carte topographique - Top 25" type="WMTS"
+            url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:top25" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
+            attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6ecb85b1-ec5e-4427-ae81-9c83b21a7f32&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
         </baselayer>
         <baselayer visible="true" id="pvci_nb" thumbgallery="apps/public/img/basemap/pvcinb.jpg" title="Rennes Metropole" label="Plan de ville gris" type="WMTS"
             url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci_nb" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
@@ -29,19 +33,23 @@
             url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
             attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6ecb85b1-ec5e-4427-ae81-9c83b21a7f32&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
         </baselayer>
+		
     </baselayers>
-
-    <extensions>
-        <extension type="component" id="carousel_photo" path="apps/public/addons"/>
-        <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_RVA.json"/>
-        <!-- <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_CadastreRVAQueryable.json"/> -->
+	
+   
+    <extensions> 
         <extension type="component" id="GUICustom" path="apps/public/addons"/>
         <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
+        <extension type="component" id="accessibilite" path="apps/public/addons"/>
+		<extension type="component" id="print" path="apps/site_internet/addons"/>
+  <!--  <extension type="component" id="tutorial" path="apps/public/addons" configFile="apps/site_internet/addons/didacticiel_conseil_archi.json"/> -->
+		<extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_RVA.json"/>
+  <!--	<extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_CadastreRVAQueryable.json"/> -->
     </extensions>
-
-    <themes mini="true">        
-       
-        <theme id="theme-dechet" name="Déchets" collapsed="true" icon="fas fa-recycle">
+	
+		
+	<themes mini="false" legendmini="false">  
+	 <theme id="theme-dechet" name="Déchets" collapsed="true" icon="fas fa-recycle">
            
            
 		   <layer
