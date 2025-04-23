@@ -2,26 +2,18 @@
 <config>
     <application
         title="Points d'apport volontaire des déchets ménagers sur Rennes Métropole (PAV)"
-        logo="apps/public/img/logo/logo_mviewer_transp.png"
-        favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
+        logo="apps/public/img/logo/logo_mviewer_transp.png"  
         help="apps/site_internet/html/site_internet_help.html"
-        showhelp="false"
-        titlehelp="A propos des cartes interactives"
-        iconhelp=""
-        style="apps/georm/css/mv_georm.css"
-        exportpng="true"
-        geoloc="true"
-        measuretools="true"
-        stats="false"
-        statsurl=""
-        togglealllayersfromtheme="true"
-        printMap="true"
-        templaterightinfopanel="allintabs"
-        sortlayersinfopanel="toc"
-        coordinates="true"
-    >
-    </application>
-    
+		showhelp="true"
+		exportpng="true"
+		style="apps/site_internet/css/site_internet_gris.css" 	
+		measuretools="true"
+		geoloc="true"
+		templaterightinfopanel="allintabs"
+		sortlayersinfopanel="toc"
+		togglealllayersfromtheme="true"
+		printMap="true" />
+		
     <mapoptions maxzoom="20" minzoom="10" projection="EPSG:3857" center="-186098.36482879001,6125889.9088213602" zoom="12" />
 
     <baselayers style="default">
