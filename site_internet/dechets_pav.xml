@@ -48,16 +48,71 @@
     </extensions>
 	
 		
-	<themes mini="false" legendmini="false">  
-	 <theme id="theme-dechet" name="Déchets" collapsed="true" icon="fas fa-recycle">
-           
-           
-		   <layer
+	<themes mini="true" legendmini="false"> 
+
+		   <theme id="theme-dechet" name="Proposition 1" collapsed="false" icon="fas fa-recycle">
+           			
+			<layer
                 id="espub_dech:dechets_point_apport_volontaire"
-                name="Points d'Apport Volontaire"
+                name="Type de points d'apport volontaire"
                 type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"
-                visible="true"
+                url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"	
+                attributelabel="Typedeflux"	
+                attribution="La liste qui suit affiche les différents types de flux."				
+                style="dechets_point_apport_volontaire_all,dechets_point_apport_volontaire_om,dechets_point_apport_volontaire_mm,dechets_point_apport_volontaire_ve,dechets_point_apport_volontaire_ca,dechets_point_apport_volontaire_da,dechets_point_apport_volontaire_jm"
+				stylesalias="Tous types de flux,Ordures ménagères,Multi-matériaux,Verre,Carton,Déchets alimentaires,Journaux magazines"
+				visible="true"
+                tabcolor="#8d4915"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/92c64e80-f6f7-4f56-b162-8a07a8b70784"
+				
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="id_pav"
+                tooltipWMS="false"
+				expanded="true"
+                tooltipWMSContent= "[b]$id_pav[/b]"	
+                infopanel="right-panel">
+        
+                <template url="apps/georm/templates/georm_pav.mst"></template> 
+            </layer>		
+						
+           </theme>
+
+
+	
+	 <theme id="theme-dechet2" name="Proposition 2" collapsed="true" icon="fas fa-recycle">
+           
+            <layer
+                id="espub_dech:dechets_point_apport_volontaire"
+                name="PAV : Tous types de flux"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"				
+                style="dechets_point_apport_volontaire_all"
+				visible="false"
+                tabcolor="#8d4915"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/92c64e80-f6f7-4f56-b162-8a07a8b70784"
+				attribution="Rennes Métropole"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="id_pav"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$id_pav[/b]"	
+                infopanel="right-panel">
+        
+                <template url="apps/georm/templates/georm_pav.mst"></template> 
+            </layer>
+		 			
+			<layer
+                id="espub_dech:dechets_point_apport_volontaire"
+                name="PAV : Ordures Ménagères"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"			
+                style="dechets_point_apport_volontaire_om"
+				visible="false"
                 tabcolor="#8d4915"
                 infoformat="application/vnd.ogc.gml"
                 metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/92c64e80-f6f7-4f56-b162-8a07a8b70784"
@@ -73,7 +128,122 @@
                 <template url="apps/georm/templates/georm_pav.mst"></template> 
             </layer>
 			
+			<layer
+                id="espub_dech:dechets_point_apport_volontaire"
+                name="PAV : Multi-matériaux"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"				
+                style="dechets_point_apport_volontaire_mm"
+				visible="false"
+                tabcolor="#8d4915"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/92c64e80-f6f7-4f56-b162-8a07a8b70784"
+				attribution="Rennes Métropole"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="id_pav"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$id_pav[/b]"	
+                infopanel="right-panel">
+        
+                <template url="apps/georm/templates/georm_pav.mst"></template> 
+            </layer>
+			
+			<layer
+                id="espub_dech:dechets_point_apport_volontaire"
+                name="PAV : Verre"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"				
+                style="dechets_point_apport_volontaire_ve"
+				visible="false"
+                tabcolor="#8d4915"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/92c64e80-f6f7-4f56-b162-8a07a8b70784"
+				attribution="Rennes Métropole"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="id_pav"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$id_pav[/b]"	
+                infopanel="right-panel">
+        
+                <template url="apps/georm/templates/georm_pav.mst"></template> 
+            </layer>
+			
+	<layer
+                id="espub_dech:dechets_point_apport_volontaire"
+                name="PAV : Multi-matériaux"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"				
+                style="dechets_point_apport_volontaire_ca"
+				visible="false"
+                tabcolor="#8d4915"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/92c64e80-f6f7-4f56-b162-8a07a8b70784"
+				attribution="Rennes Métropole"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="id_pav"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$id_pav[/b]"	
+                infopanel="right-panel">
+        
+                <template url="apps/georm/templates/georm_pav.mst"></template> 
+            </layer>
+			<layer
+                id="espub_dech:dechets_point_apport_volontaire"
+                name="PAV : Déchets alimentaires"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"				
+                style="dechets_point_apport_volontaire_da"
+				visible="false"
+                tabcolor="#8d4915"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/92c64e80-f6f7-4f56-b162-8a07a8b70784"
+				attribution="Rennes Métropole"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="id_pav"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$id_pav[/b]"	
+                infopanel="right-panel">
+        
+                <template url="apps/georm/templates/georm_pav.mst"></template> 
+            </layer>
+			
+			<layer
+                id="espub_dech:dechets_point_apport_volontaire"
+                name="PAV : Journaux magazines"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"				
+                style="dechets_point_apport_volontaire_jm"
+				visible="false"
+                tabcolor="#8d4915"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/92c64e80-f6f7-4f56-b162-8a07a8b70784"
+				attribution="Rennes Métropole"
+                queryable="true"
+                featurecount="5"
+                tooltip="false"
+                tooltipcontent="id_pav"
+                tooltipWMS="false"
+                tooltipWMSContent= "[b]$id_pav[/b]"	
+                infopanel="right-panel">
+        
+                <template url="apps/georm/templates/georm_pav.mst"></template> 
+            </layer>
+			
+			
+			
            </theme>
+		   
+
+		   
+		   
        
     </themes>
 </config>
