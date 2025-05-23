@@ -50,7 +50,7 @@
 		
 	<themes mini="true" legendmini="false"> 
 
-		   <theme id="theme-dechet" name="Proposition 1" collapsed="false" icon="fas fa-recycle">
+		   <theme id="theme-dechet" name="Déchets : Proposition 1" collapsed="false" icon="fas fa-recycle">
            			
 			<layer
                 id="espub_dech:dechets_point_apport_volontaire"
@@ -82,7 +82,7 @@
 
 
 	
-	 <theme id="theme-dechet2" name="Proposition 2" collapsed="true" icon="fas fa-recycle">
+	 <theme id="theme-dechet2" name="Déchets : Proposition 2" collapsed="true" icon="fas fa-recycle">
            
             <layer
                 id="espub_dech:dechets_point_apport_volontaire"
@@ -174,7 +174,7 @@
 			
 	<layer
                 id="espub_dech:dechets_point_apport_volontaire"
-                name="PAV : Multi-matériaux"
+                name="PAV : Carton"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"				
                 style="dechets_point_apport_volontaire_ca"
