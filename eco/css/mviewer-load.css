@@ -47,7 +47,7 @@ body {
   font-family: 'Roboto',sans-serif;
 }
 
-#mveco_modal #a_link{
+#mveco_modal .a_link{
     background: var(--darkmain);
     color : var(--lightmain);
     line-height:1;

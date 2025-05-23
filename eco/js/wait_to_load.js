@@ -7,10 +7,3 @@ let next_url = mv_url;
     }
 document.getElementById("a_link").href=next_url;
 
-
-document.getElementById("button_label").onclick = function() {
-    var els = document.querySelectorAll('#mveco_modal>.modal-content');
-    for (var i=0; i < els.length; i++) {
-        els[i].setAttribute("clicked", "");
-    }
-};
