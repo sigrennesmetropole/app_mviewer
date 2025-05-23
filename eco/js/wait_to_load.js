@@ -13,9 +13,4 @@ document.getElementById("button_label").onclick = function() {
     for (var i=0; i < els.length; i++) {
         els[i].setAttribute("clicked", "");
     }
-    
-    els = document.querySelectorAll('#mveco_modal>.loader');
-    for (var i=0; i < els.length; i++) {
-        els[i].setAttribute("visible", "");
-    }
 };
