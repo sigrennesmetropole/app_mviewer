@@ -1,8 +1,37 @@
+@font-face {
+  font-family: 'DMSans_regular';
+  src: url('../../site_internet/css/font/DMsans/DMSans-Regular.ttf');
+}
+@font-face {
+  font-family: 'DMSans_bold';
+  src: url('f../../site_internet/css/font/DMsans/DMSans-Bold.ttf');
+}
+@font-face {
+  font-family: 'DMSans_italic';
+  src: url('../../site_internet/css/font/DMsans/DMSans-Italic.ttf');
+}
+@font-face {
+  font-family: 'DMSans_medium';
+  src: url('../../site_internet/css/font/DMsans/DMSans-Medium.ttf');
+}
+@font-face {
+  font-family: 'condate_light';
+  src: url('../../site_internet/css/font/CONDATE/Condate-Light.woff2')format("woff2");
+}
+@font-face {
+  font-family: 'condate_medium';
+  src: url('../../site_internet/css/font/CONDATE/Condate-Medium.woff2')format("woff2");
+}
+
 /****************************************/
 
+
+
 :root {
---darkmain: #D9FFCC;
---lightmain: #00000;
+--darkmain: #9CD38C;
+--lightmain: #D9FFCC;
+--darktext: #000000;
+--lighttext: #ffffff;
 }
 
 /****************************************/
@@ -44,12 +73,16 @@ body {
   width: 230px;
   height:44px;
   border-radius:4px;
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Condate,sans-serif';
 }
 
-#mveco_modal .a_link{
+#a_link {
+  text-decoration: none;
+}
+
+#eco-btn {
     background: var(--darkmain);
-    color : var(--lightmain);
+    color : var(--lighttext);
     line-height:1;
     position:relative;
     display: block;
@@ -62,7 +95,8 @@ body {
     overflow: hidden;
     padding: 20px 30px;
     line-height: 1;
-    font-size: 15px;
+    font-size: 18px;
+    font-weight: 700;
     cursor: pointer;
     outline: none;
     border:none;
@@ -71,4 +105,12 @@ body {
     outline: 0;
     overflow-wrap: break-word;
     word-wrap: break-word;
+    font-family: 'Condate,sans-serif';
+}
+
+
+
+#eco-btn:active, #eco-btn:hover, #eco-btn:visited {
+  background: var(--lightmain);
+  color : var(--darktext);  
 }
