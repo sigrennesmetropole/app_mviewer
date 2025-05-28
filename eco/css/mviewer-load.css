@@ -1,26 +1,26 @@
 @font-face {
   font-family: 'DMSans_regular';
-  src: url('../../site_internet/css/font/DMsans/DMSans-Regular.ttf');
+  src: url('font/DMsans/DMSans-Regular.ttf');
 }
 @font-face {
   font-family: 'DMSans_bold';
-  src: url('f../../site_internet/css/font/DMsans/DMSans-Bold.ttf');
+  src: url('font/DMsans/DMSans-Bold.ttf');
 }
 @font-face {
   font-family: 'DMSans_italic';
-  src: url('../../site_internet/css/font/DMsans/DMSans-Italic.ttf');
+  src: url('font/DMsans/DMSans-Italic.ttf');
 }
 @font-face {
   font-family: 'DMSans_medium';
-  src: url('../../site_internet/css/font/DMsans/DMSans-Medium.ttf');
+  src: url('font/DMsans/DMSans-Medium.ttf');
 }
 @font-face {
   font-family: 'condate_light';
-  src: url('../../site_internet/css/font/CONDATE/Condate-Light.woff2')format("woff2");
+  src: url('css/font/CONDATE/Condate-Light.woff2')format("woff2");
 }
 @font-face {
   font-family: 'condate_medium';
-  src: url('../../site_internet/css/font/CONDATE/Condate-Medium.woff2')format("woff2");
+  src: url('font/CONDATE/Condate-Medium.woff2')format("woff2");
 }
 
 /****************************************/
@@ -28,8 +28,8 @@
 
 
 :root {
---darkmain: #9CD38C;
---lightmain: #D9FFCC;
+--lightmain: #FFCCBF;
+--darkmain: #FFAC99;
 --darktext: #000000;
 --lighttext: #ffffff;
 }
@@ -72,17 +72,15 @@ body {
   margin: auto;
   width: 230px;
   height:44px;
-  border-radius:4px;
-  font-family: 'Condate,sans-serif';
-}
+  border-radius:4px;  
 
 #a_link {
   text-decoration: none;
 }
 
 #eco-btn {
-    background: var(--darkmain);
-    color : var(--lighttext);
+    background: var(--lightmain);
+    color : var(--darktext);
     line-height:1;
     position:relative;
     display: block;
@@ -95,8 +93,7 @@ body {
     overflow: hidden;
     padding: 20px 30px;
     line-height: 1;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 18px;    
     cursor: pointer;
     outline: none;
     border:none;
@@ -105,12 +102,12 @@ body {
     outline: 0;
     overflow-wrap: break-word;
     word-wrap: break-word;
-    font-family: 'Condate,sans-serif';
+    font-family: 'condate_medium';
 }
 
 
 
 #eco-btn:active, #eco-btn:hover, #eco-btn:visited {
-  background: var(--lightmain);
-  color : var(--darktext);  
+  background: var(--darkmain);
+  color : var(--lighttext);  
 }
