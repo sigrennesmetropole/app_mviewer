@@ -1,0 +1,14 @@
+{{#features}}
+	<li class="item">
+		<h5 class="rm-popup-title-feature pup-title">Réseau hydrographique</h5>
+		<p class="rm-popup-text-feature">
+		
+			{{#commune}}<span class='rm-popup-label'>Commune :</span> {{{commune}}}<br/>{{/commune}}
+			{{#surf_ha}}<span class='rm-popup-label'>Surface (Ha) :</span> {{{surf_ha}}}<br/>{{/surf_ha}}
+            {{#izh_mouv}}<span class='rm-popup-label'>Maîtrise d'ouvrage :</span> {{{izh_mouv}}}<br/>{{/izh_mouv}}
+            {{#izh_moeu}}<span class='rm-popup-label'>Maîtrise d'oeuvre :</span> {{{izh_moeu}}}<br/>{{/izh_moeu}}
+            {{#izh_coord}}<span class='rm-popup-label'>Coordination :</span> {{{izh_coord}}}<br/>{{/izh_coord}}
+            {{#izh_corin1}}<span class='rm-popup-label'>Code CORINE Land Cover :</span> {{{izh_corin1}}}<br/>{{/izh_corin1}}
+		</p>
+	</li>
+{{/features}}

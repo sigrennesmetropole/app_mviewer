@@ -1,0 +1,10 @@
+{{#features}}
+	<li class="item">
+		<h5 class="rm-popup-title-feature pup-title">Réseau hydrographique</h5>
+		<p class="rm-popup-text-feature">
+		
+			{{#type_hydro_nom}}<span class='rm-popup-label'>Type :</span> {{{type_hydro_nom}}}<br/>{{/type_hydro_nom}}
+			{{#deno_hydr_nom}}<span class='rm-popup-label'>Dénomination :</span> {{{deno_hydr_nom}}}<br/>{{/deno_hydr_nom}}
+		</p>
+	</li>
+{{/features}}

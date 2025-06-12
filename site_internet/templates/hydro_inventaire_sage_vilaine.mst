@@ -1,0 +1,14 @@
+{{#features}}
+	<li class="item">
+		<h5 class="rm-popup-title-feature pup-title">Réseau hydrographique</h5>
+		<p class="rm-popup-text-feature">
+		
+			{{#nom}}<span class='rm-popup-label'>Nom :</span> {{{nom}}}<br/>{{/nom}}
+			{{#id_ice_vilaine}}<span class='rm-popup-label'>id_ice_vilaine :</span> {{{id_ice_vilaine}}}<br/>{{/id_ice_vilaine}}
+            {{#regime}}<span class='rm-popup-label'>Régime :</span> {{{regime}}}<br/>{{/regime}}
+            {{#artif}}<span class='rm-popup-label'>Artificiel :</span> {{{artif}}}<br/>{{/artif}}
+            {{#bassin}}<span class='rm-popup-label'>Bassin :</span> {{{bassin}}}<br/>{{/bassin}}
+            
+		</p>
+	</li>
+{{/features}}

@@ -1,0 +1,10 @@
+{{#features}}
+	<li class="item">
+		<h5 class="rm-popup-title-feature pup-title">Projets Urbains Partenariaux (PUP)</h5>
+		<p class="rm-popup-text-feature">
+			{{#id_pup}}<span class='rm-popup-label'> NUMÉRO :</span> {{{id_pup}}}<br/>{{/id_pup}}		
+			{{#nom_pup}}<span class='rm-popup-label'> NOM PUP : </span> {{{nom_pup}}}<br/>{{/nom_pup}}
+			{{#observation}}<span class='rm-popup-label'> OBSERVATION : </span> {{{observation}}}<br/>{{/observation}}
+		</p>
+	</li>
+{{/features}}

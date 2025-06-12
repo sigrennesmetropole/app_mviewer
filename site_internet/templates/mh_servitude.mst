@@ -1,0 +1,17 @@
+{{#features}}
+	<li class="item">
+		<h5 class="rm-popup-title-feature pup-title">Servitude des immeubles monuments historiques en Bretagne</h5>
+		<p class="rm-popup-text-feature">
+		
+			{{#CODE}}<span class='rm-popup-label'>Code : </span> {{{CODE}}}<br/>{{/CODE}}
+            {{#ADRESSE}}<span class='rm-popup-label'>Adresse : </span> {{{ADRESSE}}}<br/>{{/ADRESSE}}
+            {{#COMMUNE}}<span class='rm-popup-label'>Nom commune : </span> {{{COMMUNE}}}<br/>{{/COMMUNE}}
+            {{#PROTECTION}}<span class='rm-popup-label'>Protection : </span> {{{PROTECTION}}}<br/>{{/PROTECTION}}
+            {{#TYPE_SERV}}<span class='rm-popup-label'>Type servitude : </span> {{{TYPE_SERV}}}<br/>{{/TYPE_SERV}}
+            {{#DESC_SUP}}<span class='rm-popup-label'>Description : </span> {{{DESC_SUP}}}<br/>{{/DESC_SUP}}
+            {{#NOM_GEST}}<span class='rm-popup-label'>Nom Gestionnaire : </span> {{{NOM_GEST}}}<br/>{{/NOM_GEST}}
+            {{#LIEN_DOC}}<span class='rm-popup-label'>Lien vers la documentation : </span> {{{LIEN_DOC}}}<br/>{{/LIEN_DOC}}   
+			
+		</p>
+	</li>
+{{/features}}

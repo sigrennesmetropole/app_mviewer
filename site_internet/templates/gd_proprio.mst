@@ -1,0 +1,10 @@
+{{#features}}
+	<li class="item">
+		<h5 class="rm-popup-title-feature pup-title">Parcelles des grands propriétaires fonciers sur Rennes Métropole</h5>
+		<p class="rm-popup-text-feature">
+		
+			{{#prop_nom_normalise}}<span class='rm-popup-label'> NOM NORMALISE : </span> {{{prop_nom_normalise}}}<br/>{{/prop_nom_normalise}}
+			{{#prop_ddenom}}<span class='rm-popup-label'>NOM DETAILLE : </span> {{{prop_ddenom}}}<br/>{{/prop_ddenom}}
+		</p>
+	</li>
+{{/features}}

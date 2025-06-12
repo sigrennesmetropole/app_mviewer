@@ -1,0 +1,12 @@
+{{#features}}
+	<li class="item">
+		<h5 class="rm-popup-title-feature pup-title">Lignes du réseau STAR</h5>
+		<p class="rm-popup-text-feature">
+		
+			{{#li_nom}}<span class='rm-popup-label'>Nom :</span> {{{li_nom}}}<br/>{{/li_nom}}
+			{{#li_num }}<span class='rm-popup-label'>Numéro de ligne :</span> {{{li_num }}}<br/>{{/li_num }}
+            {{#li_type}}<span class='rm-popup-label'>Type de ligne</span> {{{li_type}}}<br/>{{/li_type}}
+            
+		</p>
+	</li>
+{{/features}}

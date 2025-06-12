@@ -1,0 +1,9 @@
+{{#features}}
+	<li class="item">
+		<h5 class="rm-popup-title-feature zac-title">ZAC</h5>
+		<p class="rm-popup-text-feature">
+			{{#id_zac}}<span class='rm-popup-label'> NUMÉRO :</span> {{{id_zac}}}<br/>{{/id_zac}}		
+			{{#nomzac}}<span class='rm-popup-label'> NOM ZAC : </span> {{{nomzac}}}<br/>{{/nomzac}}
+		</p>
+	</li>
+{{/features}}
