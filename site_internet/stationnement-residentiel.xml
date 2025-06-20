@@ -47,6 +47,7 @@
                 <template url="apps/site_internet/templates/tram_bus.mst"></template>
             </layer>	
 		</theme>
+		
         <theme id="theme-20220408142815" name="Secteur de stationnement" collapsed="true" icon="fas fa-car-side"> 
             <layer
                 index="1"
