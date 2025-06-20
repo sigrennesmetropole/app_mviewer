@@ -50,7 +50,6 @@
 		
         <theme id="theme-20220408142815" name="Secteur de stationnement" collapsed="true" icon="fas fa-car-side"> 
             <layer
-                index="1"
                 id="zone_residentielle"
                 name="Zones résidentielles"
                 type="wms"
