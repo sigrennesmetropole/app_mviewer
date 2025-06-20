@@ -28,11 +28,29 @@
     </extensions>
 
     <themes mini="true">
-        <theme id="theme-20220408142815" name="Métro" collapsed="true" icon="fas fa-car-side"> 
-            <layer
-                index="1"
+	
+		<theme id="theme-20250619142816" name="Stationnement résidentiel" collapsed="true" icon="fas fa-car-side"> 
+		   <layer
+                id="stationnement_payant"
+                name="Stationnement payant sur Rennes : zone tarifaire"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/trp_statio/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/bdeec5e5-5f46-41a8-a540-4387f8a76f7a"
+				attribution="Rennes Métropole"
+				style="statio_payant_zone"
+                queryable="false"
+                featurecount="5"
+                infopanel="right-panel"
+                templaterightinfopanel="allintabs">
+                <template url="apps/site_internet/templates/tram_bus.mst"></template>
+            </layer>	
+		</theme>
+        <theme id="theme-20220408142815" name="Secteur de stationnement" collapsed="true" icon="fas fa-car-side"> 
+            <layer                
                 id="zone_residentielle"
-                name="Stations de métro"
+                name="Zones résidentielles"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/trp_statio/ows"
                 visible="true"
@@ -46,5 +64,8 @@
                 <template url="apps/site_internet/templates/station-metro.mst"></template> 
             </layer>
         </theme>
+		
+		
+		
     </themes>
 </config>
