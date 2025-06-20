@@ -12,7 +12,7 @@
 		templaterightinfopanel="allintabs"
 		sortlayersinfopanel="toc"
 		togglealllayersfromtheme="true"
-		printMap="true" />
+		printMap="false" />
 		
 		<mapoptions maxzoom="20" minzoom="11" projection="EPSG:3857" center="-185701.6581470431,6125244.605869446" zoom="13" />
 
