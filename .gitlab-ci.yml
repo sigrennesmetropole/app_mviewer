@@ -15,6 +15,7 @@ workflow:
 deploy-ansible:
   stage: deploy
   tags: 
+    - SIG
     - deploy
   image: nexus.si.rennes.fr:5002/sig/ansible-runner:latest  
   script:    
