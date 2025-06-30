@@ -1,0 +1,22 @@
+- name: Docker compose avec Ansible  
+  gather_facts: true
+  hosts: "{{ ENV }}"
+  vars:
+    ansible_python_interpreter: /usr/bin/python3     
+  tasks:
+    - name: Crétion dossier
+      become: true
+      become_method: sudo
+      ansible.builtin.file:
+        path: "{{ SERVER_INSTALL_PATH }}/{{ CI_PROJECT_NAME }}"
+        state: directory
+
+    - name: Copie des fichiers
+      become: true
+      become_method: sudo      
+      ansible.posix.synchronize:
+        src: "{{ CI_PROJECT_DIR }}/"
+        dest: "{{ SERVER_INSTALL_PATH }}/{{ CI_PROJECT_NAME }}/"
+        rsync_opts:
+          - "--exclude=.git"
+          - "--delete"
