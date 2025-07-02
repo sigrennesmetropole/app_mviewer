@@ -4,7 +4,7 @@ mviewer.customLayers.piscinesRM= (function() {
     // var apiKey = rmOptionsManager.getApplicationConfiguration().apiKey;
     var apiKey = 'c583383089f1c7e544e32cdf44c11045';
 
-    let data_site = 'https://public.sig.rennesmetropole.fr/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=v_sitorg_site&outputFormat=application%2Fjson&srsname=EPSG:3857&CQL_FILTER=id_specialite_principale=95';
+    let data_site = 'https://public.sig.rennesmetropole.fr/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=v_sitorg_site&outputFormat=application%2Fjson&srsname=EPSG:3857&CQL_FILTER=id_specialite_principale=95%20and%20etat_site=%27actif%27';
 
     let svgIcon='apps/site_internet/customlayer/picture/piscine-01.svg'
     //let svgIcon='apps/site_internet/customlayer/picture/piscine-02.svg';

@@ -31,24 +31,7 @@
     
     <themes mini="true">
         <theme id="theme-20180625145760" name="Equipements sportifs" collapsed="true" icon="fas fa-swimmer">
-            <!--<layer
-                id="v_sitorg_organisme"
-                name="Piscines"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                style="v_sitorg_organisme_piscine"
-                sld=""
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
-                queryable="true"
-                featurecount="3"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/organisme.mst"></template>
-            </layer>
-            -->
-            <layer
+             <layer
                 id="piscinesRM"
                 name="Piscines"
                 type="customlayer"
@@ -65,38 +48,53 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/piscinesRM.mst"></template>
             </layer>
-        </theme>
-
-        <theme id="theme-20180625145780" name="Environnement/Cadre de vie" collapsed="true" icon="fas fa-leaf">
-            <!--<layer
+              <layer
                 id="v_sitorg_organisme"
-                name="Parcs, jardins et espaces naturels"
+                name="Lieux de baignade"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
-                style="v_sitorg_organisme_parc"
+                style="v_sitorg_baignade"
                 metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                metadata-csw=""
                 queryable="true"
-                featurecount="3"
+                featurecount="6"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
-            </layer> -->
+            </layer>
+        </theme>
+
+        <theme id="theme-20180625145780" name="Environnement/Cadre de vie" collapsed="false" icon="fas fa-leaf">
             <layer
-                id="gev_font"
+                id="v_borne_eau_potable"
                 name="Fontaines d'eau potable"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_mob/ows"
-                visible="true"
+                visible="false"
                 infoformat="application/vnd.ogc.gml"
-                style="gev_font_potable"
+                style="v_borne_eau_potable"
                 metadata="undefined"
                 metadata-csw=""
                 queryable="true"
                 featurecount="6"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/global.fontaines_djb.mst"></template>
+            </layer>
+            <layer
+                id="v_sitorg_organisme"
+                name="Parcs et jardins publics"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows"
+                visible="false"
+                infoformat="application/vnd.ogc.gml"
+                style="v_sitorg_organisme_parc"
+                metadata="undefined"
+                metadata-csw=""
+                queryable="true"
+                featurecount="6"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
         
         </theme>
