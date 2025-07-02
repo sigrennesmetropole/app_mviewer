@@ -583,7 +583,7 @@
             </layer>
             <layer
                 id="quartier"
-                name="Quartiers de Rennes"
+                name="Quartiers sur Rennes Métropole"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/ladm_terri/ows"
                 visible="false"
