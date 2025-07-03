@@ -88,7 +88,7 @@
                 url="https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows"
                 visible="false"
                 infoformat="application/vnd.ogc.gml"
-                style="v_sitorg_organisme_parc"
+                style="v_sitorg_theme_picto_parc_jardin"
                 metadata="undefined"
                 metadata-csw=""
                 queryable="true"
