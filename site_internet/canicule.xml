@@ -65,13 +65,13 @@
             </layer>
         </theme>
 
-        <theme id="theme-20180625145780" name="Environnement/Cadre de vie" collapsed="false" icon="fas fa-leaf">
+        <theme id="theme-20180625145780" name="Environnement/Cadre de vie" collapsed="true" icon="fas fa-leaf">
             <layer
                 id="v_borne_eau_potable"
                 name="Fontaines d'eau potable"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_mob/ows"
-                visible="false"
+                visible="true"
                 infoformat="application/vnd.ogc.gml"
                 style="v_borne_eau_potable"
                 metadata="undefined"
@@ -79,7 +79,7 @@
                 queryable="true"
                 featurecount="6"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/global.fontaines_djb.mst"></template>
+                <template url="apps/site_internet/templates/point_eau_potable.mst"></template> 
             </layer>
             <layer
                 id="v_sitorg_organisme"
@@ -88,7 +88,7 @@
                 url="https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows"
                 visible="false"
                 infoformat="application/vnd.ogc.gml"
-                style="v_sitorg_organisme_parc"
+                style="v_sitorg_theme_picto_parc_jardin"
                 metadata="undefined"
                 metadata-csw=""
                 queryable="true"
