@@ -1,0 +1,8 @@
+{{#features}}
+        <li class="item" >
+            <h5 class="rm-popup-title-feature">POINT D'EAU POTABLE </h5>
+		    <p class="rm-popup-text-feature"> BORNES D'EAU POTABLE DE LA VILLE DE RENNES</p>
+        </li>
+{{/features}}
+
+
