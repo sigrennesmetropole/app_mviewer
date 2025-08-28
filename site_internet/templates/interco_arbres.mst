@@ -3,7 +3,13 @@
         <h5 class="rm-popup-title-feature">{{nom_commun}}</h5>
         
         <p class="rm-popup-text-feature">
-            NOM TAXON: {{nom_taxon}}<br/>
+            GENRE: {{genre}}<br/>
+        </p>
+        <p class="rm-popup-text-feature">
+            ESPECE: {{espece}}<br/>
+        </p>
+        <p class="rm-popup-text-feature">
+            VARIETE: {{variete}}<br/>
         </p>
         <p class="rm-popup-text-feature">
             FONCTION: {{fonction}}<br/>
