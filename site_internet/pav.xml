@@ -30,10 +30,11 @@
     <themes mini="true">
         <theme id="theme-20240103161500" name="Lieux de dons solidaires" collapsed="true" icon="fas fa-hand-holding-heart">
             <layer
-                id="lieu_don_solidaire"
-                name="Lieux de dons solidaires"
+                id="dechets_point_apport_volontaire"
+                name="Points d'apport volontaire"
                 type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/espub_mob/ows"
+                url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"
+                legendurl="apps/site_internet/img/legend/leg_pav.svg"
                 visible="true"
                 tiled="true"
                 infoformat="application/vnd.ogc.gml"
@@ -42,7 +43,7 @@
                 queryable="true"
                 featurecount="5"
                 infopanel="right-panel">
-                <template url="apps/site_internet/templates/lieux-dons.mst"></template>
+                <template url="apps/site_internet/templates/pav.mst"></template>
             </layer>
         </theme>
        
