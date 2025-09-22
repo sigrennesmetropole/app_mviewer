@@ -120,6 +120,7 @@
                 name="Boucles vélo sur le territoire de Rennes Métropole"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/ptou_lois/ows"
+				style="cdt_boucle_velo_mv"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
                 metadata="undefined"
