@@ -1,0 +1,6 @@
+
+{{#features}}
+	 <p class="rm-popup-text-feature">
+           {{complement}}
+     </p>
+{{/features}}
