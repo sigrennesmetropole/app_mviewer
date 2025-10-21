@@ -2,7 +2,7 @@
 {{#features}}
     
 	 <p class="rm-popup-text-feature">
-	        Adresse :   {{type}}
+	       Adresse : {{type}} <br>
            {{complement}}
      </p>
 {{/features}}
