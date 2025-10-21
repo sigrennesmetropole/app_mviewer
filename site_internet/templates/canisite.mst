@@ -1,6 +1,8 @@
 
 {{#features}}
+    
 	 <p class="rm-popup-text-feature">
+	        Adresse :   {{type}}
            {{complement}}
      </p>
 {{/features}}
