@@ -1,8 +1,21 @@
-
 {{#features}}
+  <div class="rm-popup-card" style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.4; color: #333;">
     
-	 <p class="rm-popup-text-feature">
-	       Adresse : {{localisation}} <br>
-           {{complement}}
-     </p>
+    <!-- Titre principal -->
+    <h3 style="margin-top: 0; margin-bottom: 6px; font-size: 15px; color: #005a9c; border-bottom: 1px solid #e0e0e0; padding-bottom: 3px;">
+      📍 Adresse
+    </h3>
+
+    <!-- Contenu -->
+    <p style="margin: 4px 0;">
+      <strong>Localisation :</strong> {{localisation}}
+    </p>
+
+    {{#complement}}
+      <p style="margin: 4px 0;">
+        <strong>{{complement}}</strong> 
+      </p>
+    {{/complement}}
+
+  </div>
 {{/features}}
