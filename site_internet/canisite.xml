@@ -70,7 +70,7 @@
 			  visible="true" 
 			  tiled="false" 
 			  infoformat="application/vnd.ogc.gml" 
-			  style="espub_mob:mobilier_urbain_type" 
+              style="espub_mob:mobilier_urbain_type_canisite" 
 			  legendurl="apps/site_internet/img/legend/leg_canisites.svg" 
 			  metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/7f27703c-1870-4147-ab38-eea6a6c08729" 
 			  metadata-csw="" 
