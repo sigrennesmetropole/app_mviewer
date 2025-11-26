@@ -64,7 +64,7 @@
         <theme id="theme-20180827150815" name="Canisite" collapsed="true" icon="fas fa-dog">
 		   <layer
 			  id="mobilier_urbain" 
-			  name="Descriptif du canisite" 
+			  name="Espace canin" 
 			  type="wms" 
 			  url="https://public.sig.rennesmetropole.fr/geoserver/espub_mob/ows" 
 			  visible="true" 
@@ -80,25 +80,6 @@
 			  infopanel="right-panel">
 			  <template url="apps/site_internet/templates/canisite.mst"></template>
 		   </layer>		
-		   
-        <!--    <layer
-                id="canisite"
-                name="Descriptif du canisite"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/espub_mob/ows"
-                visible="true"
-                tiled="false"
-                infoformat="application/vnd.ogc.gml"
-				style="espub_mob:mobilier_urbain_type_canisite" 
-                legendurl="apps/site_internet/img/legend/leg_canisites.svg"
-                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/7f27703c-1870-4147-ab38-eea6a6c08729"
-                metadata-csw=""
-                attribution="Service Données Territoriales et Information Géographique de Rennes Métropole"
-                queryable="true"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/canisite.mst"></template>
-            </layer>
-		-->	
         </theme>
     </themes>
 </config>
