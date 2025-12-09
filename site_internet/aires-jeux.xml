@@ -30,53 +30,35 @@
     <themes mini="true">
         <theme id="aires_vdr" name="Aires de jeux" collapsed="true" icon="fas fa-child">
             <layer
-                id="gev_jeu"
-                name="Jeux des espaces de Rennes"
+                id="aire_jeu_jeu"
+                name="Jeux sur les aires de jeux sur Rennes Métropole"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_mob/ows"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
-                sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/jeux_enfants_vdr.sld"
+                sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/aire_jeu_jeu_defaut.sld"
                 legendurl="apps/site_internet/img/legend/jeu_enfant_vdr.png"
                 metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4f95b3a0-7052-4417-8506-ac323b14fccc"
                 queryable="true"
                 featurecount="6"
-                filter="strToLowerCase(espace_publique) = 'oui'"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/aire-jeu_vdr.mst"></template>
             </layer>
-            <layer
-                id="aires_jeux_rennes"
-                name="Espaces de jeux de Rennes"
-                type="customlayer"
-                url="apps/site_internet/customlayer/aires_jeux.js"
-                legendurl="apps/site_internet/img/legend/aire_jeux_vdr.svg"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
-                queryable="true"
-                featurecount="6"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/aire_espace_vdr.mst"></template>
-            </layer>
-            <layer
-                id="v_aire_jeu_rm"
-                name="Espaces de jeux des communes"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/espub_mob/ows"
-                visible="true"
-                infoformat="application/vnd.ogc.gml"
-                sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/aires_jeux2.sld"
-                legendurl="apps/site_internet/customlayer/picture/aire_de_jeux.svg"
-                metadata="undefined"
-                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/46a39b8c-5ec4-449a-bfe1-8410d0b76c84"
-                queryable="true"
-                filter="code_insee &lt;&gt; '35238'"
-                featurecount="6"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/aire-jeu.mst"></template>
+           
+			<layer id="espub_mob:aire_jeu"
+			       name="Aires de jeux sur Rennes Métropole"
+			       type="wms"
+			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
+			       visible="true"
+			       infoformat="application/vnd.ogc.gml"
+			       stylesalias=""
+			       metadata="undefined"
+			       metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=153220b1-f896-4395-95d1-b1afa2ed69a4"
+			       queryable="true"
+			       featurecount="6"
+			       infopanel="right-panel">
+			       <template url="apps/site_internet/templates/aire-jeu.mst"></template>
             </layer>
         </theme>
     </themes>
