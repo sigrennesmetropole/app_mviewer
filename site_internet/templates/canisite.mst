@@ -1,0 +1,134 @@
+{{#features}}
+  <div class="rm-popup-card" style="font-family: Arial, sans-serif; font-size: 13px; line-height: 1.4; color: #333;">
+    
+	    <!-- Titre principal -->
+    <h3 style="margin-top: 5; margin-bottom: 6px; font-size: 15px; color: #005a9c; border-bottom: 1px solid #e0e0e0; padding-bottom: 3px;">
+      Type
+    </h3>
+
+    {{#modele}}
+      <p style="margin: 4px 0;">
+        <strong>{{modele}}</strong> 
+      </p>
+    {{/modele}}
+	
+    <!-- Titre principal -->
+    <h3 style="margin-top: 5; margin-bottom: 6px; font-size: 15px; color: #005a9c; border-bottom: 1px solid #e0e0e0; padding-bottom: 3px;">
+      Caractéristique
+    </h3>
+
+    {{#complement}}
+      <p style="margin: 4px 0;">
+        <strong>{{complement}}</strong> 
+      </p>
+    {{/complement}}
+
+    <!-- Titre principal -->
+    <h3 style="margin-top: 5; margin-bottom: 6px; font-size: 15px; color: #005a9c; border-bottom: 1px solid #e0e0e0; padding-bottom: 3px;">
+      📍 Emplacement
+    </h3>
+
+    <!-- Contenu -->
+    <p style="margin: 4px 0;">
+      <strong>Nom de la voie :</strong> <span id="nom_voie" />
+    </p>
+
+    <p style="margin: 4px 0;">
+      <strong>Nom de l'espace vert :</strong> <span id="nom_site_ev" />
+    </p>    
+
+  </div>
+{{/features}}
+
+
+<script>
+	
+  //Informations des couches a requeter pour les informations de localisation
+  var url_portail = "https://public.sig.rennesmetropole.fr/geoserver/wfs";
+  
+  //site_ev
+  var filter_site_ev = `
+    <wfs:GetFeature xmlns:wfs='http://www.opengis.net/wfs' xmlns:ogc='http://www.opengis.net/ogc' service='WFS' version='1.1.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://www.opengis.net/wfs http://schemas.opengis.net/wfs/1.0.0/WFS-transaction.xsd'
+     outputFormat='application/json'>
+      <wfs:Query typeName='espub_esv:v_ev_site' xmlns:feature='http://www.openplans.org/topp'>
+        <ogc:Filter xmlns:wfs='http://www.opengis.net/wfs' xmlns='http://www.opengis.net/ogc' xmlns:ogc='http://www.opengis.net/ogc' xmlns:gml='http://www.opengis.net/gml' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://www.opengis.net/wfs http://schemas.opengis.net/wfs/1.1.0/WFS-basic.xsd'>
+          <ogc:DWithin>
+            <PropertyName>geom</PropertyName>
+            <gml:Point srsName='EPSG:4326'>
+              <gml:coordinates>COORDS_CLICK_ON_MAP</gml:coordinates>
+            </gml:Point>
+            <ogc:Distance units='meter'>10</ogc:Distance>
+          </ogc:DWithin>
+        </ogc:Filter>
+      </wfs:Query>
+    </wfs:GetFeature>`;
+
+  //voie_rva
+  var filter_voie_rva = `
+    <wfs:GetFeature xmlns:wfs='http://www.opengis.net/wfs' xmlns:ogc='http://www.opengis.net/ogc' service='WFS' version='1.1.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://www.opengis.net/wfs http://schemas.opengis.net/wfs/1.0.0/WFS-transaction.xsd'
+    outputFormat='application/json'>
+      <wfs:Query typeName='ref_rva:v_voie_lgn' xmlns:feature='http://www.openplans.org/topp'>
+        <ogc:Filter xmlns:wfs='http://www.opengis.net/wfs' xmlns='http://www.opengis.net/ogc' xmlns:ogc='http://www.opengis.net/ogc' xmlns:gml='http://www.opengis.net/gml' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://www.opengis.net/wfs http://schemas.opengis.net/wfs/1.1.0/WFS-basic.xsd'>
+          <ogc:And>
+            <ogc:DWithin>
+              <PropertyName>geom</PropertyName>
+              <gml:Point srsName='EPSG:4326'>
+                <gml:coordinates>COORDS_CLICK_ON_MAP</gml:coordinates>
+              </gml:Point>
+              <ogc:Distance units='meter'>20</ogc:Distance>
+            </ogc:DWithin>
+            <ogc:Not>
+              <ogc:PropertyIsLike wildCard='*' singleChar='.' escape='!'>
+                <ogc:PropertyName>type</ogc:PropertyName>
+                <ogc:Literal>Inconnu</ogc:Literal>
+              </ogc:PropertyIsLike>
+            </ogc:Not>
+          </ogc:And>
+        </ogc:Filter>
+      </wfs:Query>
+    </wfs:GetFeature>`;
+
+  // creation des url de requetes correspondant a la localisation du clic sur la carte
+  if (mviewer.clickedCoordinates) {
+    var coords_clicked = mviewer.clickedCoordinates.x+","+mviewer.clickedCoordinates.y ;
+    _filter_site_ev = filter_site_ev.replace("COORDS_CLICK_ON_MAP",coords_clicked);
+    _filter_voie_rva = filter_voie_rva.replace("COORDS_CLICK_ON_MAP",coords_clicked);
+	}
+
+  //recuperation du nom du site EV
+  $.ajax({
+    type: "POST",
+    url: url_portail,
+    data: _filter_site_ev,
+    contentType: "text/xml",
+    dataType: "json",
+    crossDomain: true,
+    cache: false,
+    success (result) {
+      var _lbl_site_ev = "";
+      if(result.features[0]){
+        _lbl_site_ev = result.features[0].properties.nom_site; 
+      }
+        $("#nom_site_ev").text(_lbl_site_ev);
+    }
+  });
+
+  //recuperation du nom de la voie rva
+  $.ajax({
+    type: "POST",
+    url: url_portail,
+    data: _filter_voie_rva,
+    contentType: "text/xml",
+    dataType: "json",
+    crossDomain: true,
+    cache: false,
+    success (result) {
+      var _lbl_voie_rva = "";
+      if(result.features[0]){
+        _lbl_voie_rva = result.features[0].properties.denomination; 
+      }
+      $("#nom_voie").text(_lbl_voie_rva);
+    }
+  });
+
+</script>
