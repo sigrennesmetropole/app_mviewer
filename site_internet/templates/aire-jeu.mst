@@ -1,8 +1,8 @@
 {{#features}}
     <li class="item">
-        <h5 class="rm-popup-title-feature">{{nom}}</h5>
+        <p <span class='rm-popup-label'>NOM : </span>{{nom}}</p>
         
-        <p class="rm-popup-text-feature">
+        <p class='rm-popup-text-feature'>
             {{#commune}}{{code_insee}} {{commune}}<br/>{{/commune}}
         </p>
     </li>
