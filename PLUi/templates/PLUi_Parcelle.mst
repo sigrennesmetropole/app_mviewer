@@ -20,7 +20,7 @@
 			<div class="rm-popup-footer plui-popup-footer">
 				<div>
 					<span class="glyphicon glyphicon-hand-up"></span>
-					<a id='lienweb' class='lienweb' href="https://metropole.rennes.fr/consulter-les-documents-du-plan-local-durbanisme-intercommunal-plui?idParent=10&typeParent=node" target="_blank">&nbsp; consulter les pièces du PLUi </a>
+					<a id='lienweb' class='lienweb' href="https://logement.metropole.rennes.fr/documents-du-plui/" target="_blank">&nbsp; consulter les pièces du PLUi </a>
 				</div>
 				<div>
 					<span class="glyphicon glyphicon-hand-up"></span>
