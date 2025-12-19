@@ -17,11 +17,7 @@ server {
         ssl_prefer_server_ciphers off;
 
         access_log /var/log/nginx/access_{{ FQDN }}.log;
-        error_log /var/log/nginx/error_{{ FQDN }}.log;
-
-        location = / {
-            return 301 https://$host/?config=apps/georm/georm.xml;
-        }
+        error_log /var/log/nginx/error_{{ FQDN }}.log;        
 
         location ~ ^/georm$ {
             return 301 https://$host/?config=apps/georm/georm.xml;
@@ -32,10 +28,10 @@ server {
         }
 
         location /  {
+            rewrite ^/apps/default.xml$ /apps/georm/georm.xml break;
             proxy_set_header X-Forwarded-Host $host:$server_port;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_pass http://{{ SERVER }}:{{ PORT}}/;
-            rewrite ^/apps/default.xml$ /apps/georm/georm.xml break;
+            proxy_pass http://{{ SERVER }}:{{ PORT}}/;            
         }
 
 }
