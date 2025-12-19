@@ -243,12 +243,12 @@ var searchRM = (function () {
         completeString = originalValue;
 
       Promise.all(_getRequest(confData, updatedString, citiesSearch)).then(function(restrictedResult){
-        var completeStringNoComma = completeString.split(",")[0].replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase();
-        var amountLanes = 0;
-        var amountAddresses = 0;
-        var elementLanes;
-        var elementAdresses;
+        var completeStringNoComma = completeString.split(",")[0].replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase();        
         restrictedResult.forEach(element => {
+            var amountLanes = 0;
+            var amountAddresses = 0;
+            var elementLanes;
+            var elementAdresses;
             if (element.result.rva.answer.lanes) {
                 elementLanes = element.result.rva.answer.lanes;
                 element.result.rva.answer.lanes.sort(function(x,y){ return x.name.replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase().includes(completeStringNoComma) ? -1 : y.name.replace(/[^0-9A-zÀ-ú' ]/g, " ").trim().toLowerCase().includes(completeStringNoComma) ? 1 : 0; });
