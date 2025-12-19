@@ -19,6 +19,10 @@ server {
         access_log /var/log/nginx/access_{{ FQDN }}.log;
         error_log /var/log/nginx/error_{{ FQDN }}.log;
 
+        location ~ ^/$ {
+            return 301 https://$host/?config=apps/georm/georm.xml;
+        }
+
         location ~ ^/georm$ {
             return 301 https://$host/?config=apps/georm/georm.xml;
         }
