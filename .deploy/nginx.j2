@@ -35,6 +35,7 @@ server {
             proxy_set_header X-Forwarded-Host $host:$server_port;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_pass http://{{ SERVER }}:{{ PORT}}/;
+            rewrite ^/apps/default.xml$ /apps/georm/georm.xml break;
         }
 
 }
