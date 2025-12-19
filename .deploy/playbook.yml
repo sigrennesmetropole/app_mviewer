@@ -26,14 +26,14 @@
       become_method: sudo
       ansible.builtin.template:
         src: "{{ CI_PROJECT_DIR }}/.deploy/docker-compose.j2"
-        dest: "{{ SERVER_INSTALL_PATH }}/{{ CI_PROJECT_NAME }}/docker-compose.yml"
+        dest: "{{ SERVER_INSTALL_PATH }}/docker-compose.yml"
     
 
     - name: Démarrage de la composition docker
       become: true
       become_method: sudo
       community.docker.docker_compose_v2:
-        project_src: "{{ SERVER_INSTALL_PATH }}/{{ CI_PROJECT_NAME }}"
+        project_src: "{{ SERVER_INSTALL_PATH }}"
         recreate: always
       register: output
 
