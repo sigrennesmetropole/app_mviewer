@@ -1,0 +1,36 @@
+server {
+        listen 443 ssl http2;
+        listen [::]:443 ssl http2;        
+        ssl_certificate /etc/ssl/certs/rm_bundle.crt;
+        ssl_certificate_key /etc/ssl/private/wildcard-sig.key;
+        server_name {{ FQDN }};
+
+        server_tokens off;
+
+        # HSTS (ngx_http_headers_module is required) (63072000 seconds)
+        add_header Strict-Transport-Security "max-age=63072000" always;
+
+        # intermediate configuration
+        ssl_protocols TLSv1.2 TLSv1.3;
+        ssl_ecdh_curve X25519:prime256v1:secp384r1;
+        ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-CHACHA20-POLY1305;
+        ssl_prefer_server_ciphers off;
+
+        access_log /var/log/nginx/access_{{ FQDN }}.log;
+        error_log /var/log/nginx/error_{{ FQDN }}.log;
+
+        location ~ ^/georm$ {
+            return 301 https://$host/?config=apps/georm/georm.xml;
+        }
+
+        location ~ ^/plui$ {
+            return 301 https://$host/?config=apps/PLUi/PLUi.xml;
+        }
+
+        location /  {
+            proxy_set_header X-Forwarded-Host $host:$server_port;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass http://{{ SERVER }}:{{ PORT}}/;
+        }
+
+}

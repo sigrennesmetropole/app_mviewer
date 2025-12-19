@@ -20,3 +20,29 @@
         rsync_opts:
           - "--exclude=.git"
           - "--delete"
+
+    - name: Copy nginx file to server
+      become: true
+      ansible.builtin.template:
+        src: "{{ CI_PROJECT_DIR }}/.deploy/nginx.j2"
+        dest: /etc/nginx/sites-available/{{ FQDN }}
+      notify:
+        - reload_nginx
+   
+
+    - name: Activation du site
+      become: true
+      ansible.builtin.file:
+        src: "/etc/nginx/sites-available/{{ FQDN }}"
+        dest: "/etc/nginx/sites-enabled/{{ FQDN }}"
+        state: link
+      notify:
+        - reload_nginx   
+
+  handlers:
+
+    - name: reload_nginx
+      become: true
+      systemd:
+        name: nginx
+        state: reloaded
