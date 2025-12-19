@@ -24,7 +24,7 @@ deploy-ansible:
     - mkdir -p /root/.ssh
     - chmod 700 /root/.ssh
     - cp $GITLABRUNNERSIG_KEY /root/.ssh/GITLABRUNNERSIG_KEY
-    - cp $ENV_FILE public/addons/env.json
+    - cp $ENV_FILE $CI_PROJECT_DIR/public/addons/env.json
     - | 
       ansible-playbook \
         -i .deploy/inventory \
