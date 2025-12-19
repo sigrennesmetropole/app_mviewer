@@ -1,0 +1,9 @@
+services:
+  app:
+    image: mviewer/mviewer:v3.14
+    container_name: mviewer_v3.14
+    ports:
+      - "{{ PORT }}:8080"
+    volumes:
+    - ./app_mviewer:/usr/share/nginx/html/apps
+    restart: always
