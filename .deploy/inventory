@@ -8,8 +8,7 @@ SERVER_INSTALL_PATH=/var/applications/mviewer
 sigapp02t FQDN=https://test-mviewer-migration.sig.rennesmetropole.fr SERVER=192.168.0.2 PORT=3000
 
 [prod]
-sigapp02p
-sigapp02t FQDN=https://mviewer-migration.sig.rennesmetropole.fr SERVER=192.168.0.1 PORT=3000
+sigapp02p FQDN=https://mviewer-migration.sig.rennesmetropole.fr SERVER=192.168.0.1 PORT=3000
 
 
 
