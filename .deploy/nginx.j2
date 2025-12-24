@@ -32,6 +32,9 @@ server {
             return  https://$host/?config=apps/site_internet/$1.xml;
         }
 
+        location ~ ^/([a-z0-9_-]+)$ {
+            return  https://$host/?config=apps/site_internet/$1.xml;
+        }
 
         location /  {
             rewrite ^/apps/default.xml$ /apps/georm/georm.xml break;
