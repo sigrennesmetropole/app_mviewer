@@ -27,6 +27,12 @@ server {
             return 301 https://$host/?config=apps/PLUi/PLUi.xml;
         }
 
+        # Redirection des cartes sites internet - pattern = /s/ma-cartemviewer où ma-cartemviewer.xml est disponible dans apps/site_internet
+        location ~ ^/s/([a-z-]+)$ {
+            return  https://$host/?config=apps/site_internet/$1.xml;
+        }
+
+
         location /  {
             rewrite ^/apps/default.xml$ /apps/georm/georm.xml break;
             proxy_set_header X-Forwarded-Host $host:$server_port;
