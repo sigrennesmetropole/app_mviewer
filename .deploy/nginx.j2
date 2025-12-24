@@ -32,6 +32,11 @@ server {
             return  https://$host/?config=apps/site_internet/$1.xml;
         }
 
+        # Redirection historique des cartes sites internet - pattern = /ma-cartemviewer où ma-cartemviewer.xml est disponible dans apps/site_internet
+        location ~ ^/([a-z0-9_-]+)$ {
+            return  https://$host/?config=apps/site_internet/$1.xml;
+        }
+
         location /  {
             rewrite ^/apps/default.xml$ /apps/georm/georm.xml break;
             proxy_set_header X-Forwarded-Host $host:$server_port;
