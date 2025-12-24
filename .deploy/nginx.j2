@@ -28,7 +28,7 @@ server {
         }
 
         # Redirection des cartes sites internet - pattern = /s/ma-cartemviewer où ma-cartemviewer.xml est disponible dans apps/site_internet
-        location ~ ^/s/([a-z-]+)$ {
+        location ~ ^/s/([a-z-_]+)$ {
             return  https://$host/?config=apps/site_internet/$1.xml;
         }
 
