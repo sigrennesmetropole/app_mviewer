@@ -1,3 +1,7 @@
+upstream mviewer {
+    server {{ SERVER }}:{{ PORT}};
+}
+
 server {
         listen 443 ssl http2;
         listen [::]:443 ssl http2;        
@@ -17,7 +21,7 @@ server {
         ssl_prefer_server_ciphers off;
 
         access_log /var/log/nginx/access_{{ FQDN }}.log;
-        error_log /var/log/nginx/error_{{ FQDN }}.log;
+        error_log /var/log/nginx/error_{{ FQDN }}.log;        
 
         location ~ ^/georm$ {
             return 301 https://$host/?config=apps/georm/georm.xml;
@@ -26,7 +30,7 @@ server {
         location ~ ^/plui$ {
             return 301 https://$host/?config=apps/PLUi/PLUi.xml;
         }
-        
+
         # Redirection des cartes sites internet - pattern = /s/ma-cartemviewer où ma-cartemviewer.xml est disponible dans apps/site_internet
         location ~ ^/s/([a-z-_]+)$ {
             return  https://$host/?config=apps/site_internet/$1.xml;
@@ -37,11 +41,17 @@ server {
             return  https://$host/?config=apps/site_internet/$1.xml;
         }
 
+        location /travaux/ {
+            rewrite ^/travaux/apps/default.xml$ /apps/site_internet/prog-travaux.xml last;
+            proxy_pass http://mviewer/;
+        }
+
+
         location /  {
             rewrite ^/apps/default.xml$ /apps/georm/georm.xml break;
             proxy_set_header X-Forwarded-Host $host:$server_port;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_pass http://{{ SERVER }}:{{ PORT}}/;
+            proxy_pass http://mviewer/;            
         }
 
 }
