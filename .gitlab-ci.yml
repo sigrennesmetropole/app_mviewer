@@ -9,6 +9,9 @@ workflow:
     - if: '$CI_COMMIT_REF_NAME == "main"'
       variables:
         ENV: "prod"
+    - if: '$CI_COMMIT_REF_NAME =~ /^migration\//'
+      variables:
+        ENV: "migration"
     
 
 
@@ -36,6 +39,8 @@ deploy-ansible:
   rules:    
     - if: '$CI_COMMIT_REF_NAME == "develop"'
       when: on_success
+    - if: '$CI_COMMIT_REF_NAME =~ /^migration\//'
+      when: manual
     - if: '$CI_COMMIT_REF_NAME == "main"'
       when: manual
     
