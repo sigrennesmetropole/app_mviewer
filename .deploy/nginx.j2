@@ -1,4 +1,4 @@
-upstream mviewer {
+upstream mviewer_migration {
     server {{ SERVER }}:{{ PORT}};
 }
 
@@ -43,7 +43,7 @@ server {
 
         location /travaux/ {
             rewrite ^/travaux/apps/default.xml$ /apps/site_internet/prog-travaux.xml last;
-            proxy_pass http://mviewer/;
+            proxy_pass http://mviewer_migration/;
         }
 
 
