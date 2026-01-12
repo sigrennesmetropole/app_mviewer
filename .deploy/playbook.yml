@@ -16,7 +16,7 @@
       become_method: sudo      
       ansible.posix.synchronize:
         src: "{{ CI_PROJECT_DIR }}/"
-        dest: "{{ SERVER_INSTALL_PATH }}/{{ CI_PROJECT_NAME }}/"
+        dest: "rsync://{{ ansible_ssh_host }}/{{ SERVER_INSTALL_PATH }}/{{ CI_PROJECT_NAME }}/"
         rsync_opts:
           - "--exclude=.git"
           - "--delete"

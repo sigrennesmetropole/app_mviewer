@@ -1,17 +1,17 @@
 [all:vars]
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 ansible_python_interpreter=/usr/bin/python3
-SERVER_INSTALL_PATH=/var/applications/mviewer
+
 
 
 [test]
-sigapp02t_test ansible_ssh_host=sigapp02t FQDN=test-mviewer.sig.rennesmetropole.fr SERVER=192.168.0.2 PORT=3000
+sigapp02t_test ansible_ssh_host=sigapp02t FQDN=test-mviewer.sig.rennesmetropole.fr SERVER=192.168.0.2 PORT=3000 SERVER_INSTALL_PATH=/var/applications/mviewer_test
 
 [migration]
-sigapp02t_tmigrate ansible_ssh_host=sigapp02t FQDN=test-mviewer-migration.sig.rennesmetropole.fr SERVER=192.168.0.2 PORT=3001
+sigapp02t_tmigrate ansible_ssh_host=sigapp02t FQDN=test-mviewer-migration.sig.rennesmetropole.fr SERVER=192.168.0.2 PORT=3001 SERVER_INSTALL_PATH=/var/applications/mviewer_migration
 
 [prod]
-sigapp02p FQDN=mviewer.sig.rennesmetropole.fr SERVER=192.168.0.1 PORT=3000
+sigapp02p FQDN=mviewer.sig.rennesmetropole.fr SERVER=192.168.0.1 PORT=3000 SERVER_INSTALL_PATH=/var/applications/mviewer
 
 
 
