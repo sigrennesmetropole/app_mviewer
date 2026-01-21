@@ -13,6 +13,7 @@
             {{#date_fin}}<span class='rm-popup-label'> DATE DE FIN :</span> <span class="date_in_french_format"> {{{date_fin}}} </span><br/>{{/date_fin}}
             {{#duree_previs}}<span class='rm-popup-label'> DURÉE PRÉVISIONNELLE :</span> {{{duree_previs}}}<br/>{{/duree_previs}}
             {{#technique}}<span class='rm-popup-label'> TECHNIQUE :</span> {{technique}}<br/>{{/technique}}
+            {{#date_maj}}<span class='rm-popup-label'> DATE DE MISE A JOUR :</span> <span class="date_in_french_format"> {{{date_maj}}} </span><br/>{{/date_maj}}
         </p>
     </li>
 {{/features}}
