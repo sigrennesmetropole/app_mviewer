@@ -1,0 +1,42 @@
+<config xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" mviewerversion="3.13" mviewerstudioversion="4.2">
+<metadata>
+
+              <rdf:RDF>
+                  <rdf:Description rdf:about="http://www.ilrt.bristol.ac.uk/people/cmdjb/">
+                      <dc:title>Panorama des projets v2</dc:title>
+                      <dc:creator>anonymous</dc:creator>
+                      <dc:identifier>0b5bb0e60973</dc:identifier>
+                      <dc:keywords />
+                      <dc:publisher>my_org</dc:publisher>
+                      <dc:description>27-01-2026-10-34-15</dc:description>
+                      <dc:date>2026-01-27T09:34:15.217Z</dc:date>
+                      <dc:relation />
+                      <dc:subject>ZAC et ZA</dc:subject>
+                  </rdf:Description>
+              </rdf:RDF>
+</metadata>
+<application title="Panorama des projets" logo="https://mviewer.sig.rennesmetropole.fr/apps/public/img/logo/logo_mviewer_transp.png" favicon="" help="" titlehelp="" iconhelp="fas fa-home" home="" style="css/themes/pink.css" zoomtools="true" initialextenttool="true" exportpng="false" showhelp="false" coordinates="false" measuretools="true" mouseposition="false" geoloc="false" studio="" togglealllayersfromtheme="false" mapprint="false" addlayerstools="false">
+</application>
+<mapoptions projection="EPSG:3857" center="-184650.3436675764,6125937.991631551" maxzoom="" zoom="11.415000396214303" extent="-200559.20931653812,6115618.727426819,-168741.4780186147,6136257.255836283" />
+<proxy url="" />
+<olscompletion type="ban" url="https://data.geopf.fr/geocodage/search/" attribution="Base adresse nationale (BAN)" />
+<searchparameters bbox="false" localities="true" features="false" static="false" inputlabel="" querymaponclick="false" closeafterclick="false" />
+<baselayers style="default"> 
+    <baselayer visible="true" id="positron" thumbgallery="img/basemap/positron.png" title="CartoDb" label="Positron" type="OSM" url="https://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" attribution="Map tiles by  &lt;a href=&quot;https://cartodb.com/attributions&quot;&gt;CartoDb&lt;/a&gt;, under  &lt;a href=&quot;https://creativecommons.org/licenses/by/3.0/&quot;&gt;CC BY 3.0 &lt;/a&gt;" /> 
+    <baselayer visible="false" id="ortho_ign" thumbgallery="img/basemap/ortho.jpg" title="IGN" label="Photographies aériennes" type="WMTS" url="https://data.geopf.fr/wmts" layers="ORTHOIMAGERY.ORTHOPHOTOS" format="image/jpeg" fromcapacity="false" attribution="&lt;a href='https://geoservices.ign.fr/services-geoplateforme-diffusion' target='_blank'&gt;&lt;img src='https://geobretagne.fr/pub/logo/099_ign.jpg'&gt;&lt;/a&gt;" style="normal" matrixset="PM" maxzoom="22" /> 
+</baselayers>
+<themes mini="false"> 
+    <theme id="theme-20260127103600" name="ZAC et ZA" collapsed="true" icon="fab fa-apple "> 
+        <layer id="urba_proj:v_oa_operation"  name="Opérations d'aménagement sur Rennes Métropole"
+          filter="title is not null"
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="true" visible="true"
+          infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases="" 
+          metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/fe9d23f2-d0a9-4852-a94b-7335bfc19893" 
+          metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/api/records/fe9d23f2-d0a9-4852-a94b-7335bfc19893/formatters/xml" 
+          attribution="RM" queryable="true" sld="" legendurl="" featurecount="5" infopanel="right-panel" opacity="1"
+          dynamiclegend="false" toplayer="false" expanded="false" exclusive="false" showintoc="true">
+          <template url="apps/site_internet/templates/projets-urba.mst"/>
+        </layer> 
+    </theme> 
+</themes>
+</config>
