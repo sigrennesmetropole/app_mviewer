@@ -1,0 +1,19 @@
+{{#features}}
+    <li class="item">
+        <h3 class="rm-popup-title-feature">{{{title}}}</h3>
+        
+        <p class="rm-popup-text-feature">
+             {{#chapeau}}<span class='rm-popup-label'> CHAPEAU :</span> {{chapeau}} <br/>{{/chapeau}}
+        </p>
+        <p class="rm-popup-text-feature">
+             {{#projet}}<span class='rm-popup-label'> PROJET :</span><span> {{projet}} </span><br/>{{/projet}}             
+        </p>
+        <p class="rm-popup-text-feature">             
+             {{#actualites}}<span class='rm-popup-label'> ACTUALITES :</span><span> {{actualites}} </span><br/>{{/actualites}}
+        </p>
+        <p class="rm-popup-text-feature">
+             {{#savoir}}<span class='rm-popup-label'> SAVOIR :</span><span> {{savoir}} </span><br/>{{/savoir}}             
+        </p>
+    </li>
+{{/features}}
+
