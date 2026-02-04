@@ -6,10 +6,10 @@
              {{#chapeau}}<span class='rm-popup-label'> CHAPEAU :</span> {{chapeau}} <br/>{{/chapeau}}
         </p>
         <p class="rm-popup-text-feature">
-             {{#projet}}<span class='rm-popup-label'> PROJET :</span><span> {{projet}} </span><br/>{{/projet}}             
+             {{#projet}}<span class='rm-popup-label'> PROJET :</span><p> {{{projet}}} </p><br/>{{/projet}}             
         </p>
         <p class="rm-popup-text-feature">             
-             {{#actualites}}<span class='rm-popup-label'> ACTUALITES :</span><span> {{actualites}} </span><br/>{{/actualites}}
+             {{#actualites}}<span class='rm-popup-label'> ACTUALITES :</span><p> {{{actualites}}} </p><br/>{{/actualites}}
         </p>
         <p class="rm-popup-text-feature">
              {{#savoir}}<span class='rm-popup-label'> SAVOIR :</span><span> {{savoir}} </span><br/>{{/savoir}}             
