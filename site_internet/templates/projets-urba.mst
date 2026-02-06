@@ -3,17 +3,42 @@
         <h3 class="rm-popup-title-feature">{{{title}}}</h3>
         
         <p class="rm-popup-text-feature">
-             {{#chapeau}}<span class='rm-popup-label'> CHAPEAU :</span> {{chapeau}} <br/>{{/chapeau}}
+             {{#chapeau}}<span class='rm-popup-label'> CHAPEAU :</span><p class="rm-txt-img"> {{chapeau}} </p><br/>{{/chapeau}}
         </p>
         <p class="rm-popup-text-feature">
-             {{#projet}}<span class='rm-popup-label'> PROJET :</span><p> {{{projet}}} </p><br/>{{/projet}}             
+             {{#projet}}<span class='rm-popup-label'> PROJET :</span><p class="rm-txt-img"> {{{projet}}} </p><br/>{{/projet}}             
         </p>
         <p class="rm-popup-text-feature">             
-             {{#actualites}}<span class='rm-popup-label'> ACTUALITES :</span><p> {{{actualites}}} </p><br/>{{/actualites}}
+             {{#actualites}}<span class='rm-popup-label'> ACTUALITES :</span><p class="rm-txt-img"> {{{actualites}}} </p><br/>{{/actualites}}
         </p>
         <p class="rm-popup-text-feature">
-             {{#savoir}}<span class='rm-popup-label'> SAVOIR :</span><span> {{savoir}} </span><br/>{{/savoir}}             
+             {{#savoir}}<span class='rm-popup-label'> SAVOIR :</span><p class="rm-txt-img"> {{savoir}} </p><br/>{{/savoir}}             
         </p>
     </li>
 {{/features}}
+<style>
+.rm-txt-img img {
+  width: 100%;
+  padding-bottom: 10px;
+  padding-top: 10px; 
+  cursor: pointer;
+}
+
+.rm-txt-img {  
+  padding-right: 15px;
+  padding-leftt: 10px;
+}
+
+.rm-txt-img a {
+ color: rgb(208, 41, 41);
+}
+
+#right-panel .carousel-inner {  
+  width: 100%;
+  padding-bottom: 25px;
+}
+#right-panel.active {
+  width: 500px;
+}
+</style>
 
