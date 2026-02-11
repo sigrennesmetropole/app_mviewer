@@ -1,0 +1,39 @@
+<config xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" mviewerversion="3.13" mviewerstudioversion="4.2">
+<metadata>
+
+              <rdf:RDF>
+                  <rdf:Description rdf:about="http://www.ilrt.bristol.ac.uk/people/cmdjb/">
+                      <dc:title>Trambus</dc:title>
+                      <dc:creator>anonymous</dc:creator>
+                      <dc:identifier>6962b9ebcf63</dc:identifier>
+                      <dc:keywords />
+                      <dc:publisher>my_org</dc:publisher>
+                      <dc:description>11-02-2026-15-05-43</dc:description>
+                      <dc:date>2026-02-11T14:05:43.673Z</dc:date>
+                      <dc:relation />
+                      <dc:subject>Trambus</dc:subject>
+                  </rdf:Description>
+              </rdf:RDF>
+</metadata>
+<application title="Trambus" logo="https://mviewer.sig.rennesmetropole.fr/apps/public/img/logo/logo_mviewer_transp.png" 
+ favicon="" help="" titlehelp="" iconhelp="fas fa-home" home="" style="css/themes/black.css" zoomtools="true"
+ initialextenttool="true" exportpng="false" showhelp="false" coordinates="false" measuretools="true"
+  mouseposition="false" geoloc="false" studio="" togglealllayersfromtheme="false" mapprint="false" addlayerstools="false">
+</application>
+<mapoptions projection="EPSG:3857" center="-185509.1606144569,6125285.053463179" maxzoom="" zoom="13" extent="-194571.40794643128,6119406.838977573,-176446.9132824825,6131163.267948784" />
+<proxy url="" />
+<olscompletion type="ban" url="https://data.geopf.fr/geocodage/search/" attribution="Base adresse nationale (BAN)" />
+<searchparameters bbox="false" localities="true" features="false" static="false" inputlabel="" querymaponclick="false" closeafterclick="false" />
+<baselayers style="default"> 
+    <baselayer visible="true" id="positron" thumbgallery="img/basemap/positron.png" title="CartoDb" label="Positron" type="OSM" url="https://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" attribution="Map tiles by  &lt;a href=&quot;https://cartodb.com/attributions&quot;&gt;CartoDb&lt;/a&gt;, under  &lt;a href=&quot;https://creativecommons.org/licenses/by/3.0/&quot;&gt;CC BY 3.0 &lt;/a&gt;" /> 
+    <baselayer visible="false" id="ortho_ign" thumbgallery="img/basemap/ortho.jpg" title="IGN" label="Photographies aériennes" type="WMTS" url="https://data.geopf.fr/wmts" layers="ORTHOIMAGERY.ORTHOPHOTOS" format="image/jpeg" fromcapacity="false" attribution="&lt;a href='https://geoservices.ign.fr/services-geoplateforme-diffusion' target='_blank'&gt;&lt;img src='https://geobretagne.fr/pub/logo/099_ign.jpg'&gt;&lt;/a&gt;" style="normal" matrixset="PM" maxzoom="22" /> 
+</baselayers>
+<themes mini="true"> 
+    <theme id="theme-20260211150612" name="Trambus" collapsed="true" icon="fas fa-caret-right"> 
+        <layer id="urba_proj:plans_amenagement_trambus" name="Plan d'aménagemement Trambus" 
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="true" visible="true" 
+          infoformat="text/html" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/8c0166e3-2953-437f-aa59-ccc8e9e6c517" queryable="false" showintoc="true">
+        </layer> 
+    </theme> 
+</themes>
+</config>
