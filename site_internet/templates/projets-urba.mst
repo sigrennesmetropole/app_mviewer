@@ -1,18 +1,15 @@
 {{#features}}
     <li class="item">
         <h3 class="rm-popup-title-feature">{{{title}}}</h3>
-        
+        </br>
         <p class="rm-popup-text-feature">
-             {{#chapeau}}<span class='rm-popup-label'> CHAPEAU :</span><p class="rm-txt-img"> {{chapeau}} </p><br/>{{/chapeau}}
+             {{#projet}}<span class='rm-popup-label'> <h4>Projet d'aménagement :</h4></span><p class="rm-txt-img"> {{{projet}}} </p><br/>{{/projet}}             
         </p>
         <p class="rm-popup-text-feature">
-             {{#projet}}<span class='rm-popup-label'> PROJET :</span><p class="rm-txt-img"> {{{projet}}} </p><br/>{{/projet}}             
-        </p>
-        <p class="rm-popup-text-feature">             
-             {{#actualites}}<span class='rm-popup-label'> ACTUALITES :</span><p class="rm-txt-img"> {{{actualites}}} </p><br/>{{/actualites}}
+             {{#actualites}}<span class='rm-popup-label'> <h4>Le saviez-vous ? :</h4></span><p class="rm-txt-img"> {{{actualites}}} </p><br/>{{/actualites}}
         </p>
         <p class="rm-popup-text-feature">
-             {{#savoir}}<span class='rm-popup-label'> SAVOIR :</span><p class="rm-txt-img"> {{savoir}} </p><br/>{{/savoir}}             
+             {{#savoir}}<span class='rm-popup-label'> <h4>Plus d'informations :</h4></span><p class="rm-txt-img"> {{{savoir}}} </p><br/>{{/savoir}}             
         </p>
     </li>
 {{/features}}

@@ -20,7 +20,7 @@
     <theme id="theme-20260127103600" name="Opérations d'aménagement sur Rennes Métropole" collapsed="false" icon="fas fa-building"> 
         <layer id="urba_proj:v_oa_operation"  name="Vocation mixte"
           filter="title is not null and vocation = 'Mixte'"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="true" visible="true"
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
           infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases="" 
           legendurl="https://public.sig.rennesmetropole.fr/geoserver/ows?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetLegendGraphic&amp;SLD_VERSION=1.1.0&amp;FORMAT=image/png&amp;WIDTH=30&amp;HEIGHT=20&amp;LEGEND_OPTIONS=fontName%3AOpen%20Sans%3BfontAntiAliasing%3Atrue%3BfontColor%3A0x777777%3BfontSize%3A10%3Bdpi%3A96&amp;TRANSPARENT=true&amp;LAYER=urba_proj:v_oa_operation&amp;RULE=Mixte&amp;STYLE=urba_proj:oa_operation_vocation"
           metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/fe9d23f2-d0a9-4852-a94b-7335bfc19893" 
@@ -31,7 +31,7 @@
         </layer>
         <layer id="urba_proj:v_oa_operation"  name="Vocation habitat"
           filter="title is not null and vocation = 'Habitat'"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="true" visible="true"
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
           infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases="" 
           legendurl="https://public.sig.rennesmetropole.fr/geoserver/ows?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetLegendGraphic&amp;SLD_VERSION=1.1.0&amp;FORMAT=image/png&amp;WIDTH=30&amp;HEIGHT=20&amp;LEGEND_OPTIONS=fontName%3AOpen%20Sans%3BfontAntiAliasing%3Atrue%3BfontColor%3A0x777777%3BfontSize%3A10%3Bdpi%3A96&amp;TRANSPARENT=true&amp;LAYER=urba_proj:v_oa_operation&amp;RULE=Habitat&amp;STYLE=urba_proj:oa_operation_vocation"
           metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/fe9d23f2-d0a9-4852-a94b-7335bfc19893" 
@@ -42,7 +42,7 @@
         </layer>
          <layer id="urba_proj:v_oa_operation"  name="Vocation équipement public"
           filter="title is not null and vocation = 'Equipement public'"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="true" visible="true"
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
           infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases="" 
           legendurl="https://public.sig.rennesmetropole.fr/geoserver/ows?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetLegendGraphic&amp;SLD_VERSION=1.1.0&amp;FORMAT=image/png&amp;WIDTH=30&amp;HEIGHT=20&amp;LEGEND_OPTIONS=fontName%3AOpen%20Sans%3BfontAntiAliasing%3Atrue%3BfontColor%3A0x777777%3BfontSize%3A10%3Bdpi%3A96&amp;TRANSPARENT=true&amp;LAYER=urba_proj:v_oa_operation&amp;RULE=Equipement public&amp;STYLE=urba_proj:oa_operation_vocation"
           metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/fe9d23f2-d0a9-4852-a94b-7335bfc19893" 
@@ -53,7 +53,7 @@
         </layer>        
         <layer id="urba_proj:v_oa_operation"  name="Vocation Activités"
           filter="title is not null and vocation = 'Activités'"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="true" visible="true"
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
           infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases="" 
           legendurl="https://public.sig.rennesmetropole.fr/geoserver/ows?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetLegendGraphic&amp;SLD_VERSION=1.1.0&amp;FORMAT=image/png&amp;WIDTH=30&amp;HEIGHT=20&amp;LEGEND_OPTIONS=fontName%3AOpen%20Sans%3BfontAntiAliasing%3Atrue%3BfontColor%3A0x777777%3BfontSize%3A10%3Bdpi%3A96&amp;TRANSPARENT=true&amp;LAYER=urba_proj:v_oa_operation&amp;RULE=Activités&amp;STYLE=urba_proj:oa_operation_vocation"
           metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/fe9d23f2-d0a9-4852-a94b-7335bfc19893" 
@@ -64,7 +64,7 @@
         </layer>        
         <layer id="urba_proj:v_oa_operation"  name="Vocation Autre"
           filter="title is not null and vocation = 'Autre'"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="true" visible="true"
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
           infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases="" 
           legendurl="https://public.sig.rennesmetropole.fr/geoserver/ows?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetLegendGraphic&amp;SLD_VERSION=1.1.0&amp;FORMAT=image/png&amp;WIDTH=30&amp;HEIGHT=20&amp;LEGEND_OPTIONS=fontName%3AOpen%20Sans%3BfontAntiAliasing%3Atrue%3BfontColor%3A0x777777%3BfontSize%3A10%3Bdpi%3A96&amp;TRANSPARENT=true&amp;LAYER=urba_proj:v_oa_operation&amp;RULE=Autre&amp;STYLE=urba_proj:oa_operation_vocation"
           metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/fe9d23f2-d0a9-4852-a94b-7335bfc19893" 
@@ -75,7 +75,7 @@
         </layer>        
         <layer id="urba_proj:v_oa_operation"  name="Vocation Mobilités/Infrastructures/Espaces publics"
           filter="title is not null and vocation = 'Mobilités/Infrastructures/Espaces publics'"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="true" visible="true"
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
           infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases="" 
           legendurl="https://public.sig.rennesmetropole.fr/geoserver/ows?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetLegendGraphic&amp;SLD_VERSION=1.1.0&amp;FORMAT=image/png&amp;WIDTH=30&amp;HEIGHT=20&amp;LEGEND_OPTIONS=fontName%3AOpen%20Sans%3BfontAntiAliasing%3Atrue%3BfontColor%3A0x777777%3BfontSize%3A10%3Bdpi%3A96&amp;TRANSPARENT=true&amp;LAYER=urba_proj:v_oa_operation&amp;RULE=Mobilites_Infrastructures_Espaces_publics&amp;STYLE=urba_proj:oa_operation_vocation"
           metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/fe9d23f2-d0a9-4852-a94b-7335bfc19893" 
@@ -84,34 +84,6 @@
           dynamiclegend="false" toplayer="false" expanded="false" exclusive="false" showintoc="true">
           <template url="apps/site_internet/templates/projets-urba.mst"/>
         </layer>
-         <!--<layer id="urba_proj:v_oa_operation"  name="Vocation Mobilité"
-          filter="title is not null and vocation = 'Mobilité'"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="true" visible="true"
-          infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases="" 
-          legendurl="https://public.sig.rennesmetropole.fr/geoserver/ows?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetLegendGraphic&amp;SLD_VERSION=1.1.0&amp;FORMAT=image/png&amp;WIDTH=30&amp;HEIGHT=20&amp;LEGEND_OPTIONS=fontName%3AOpen%20Sans%3BfontAntiAliasing%3Atrue%3BfontColor%3A0x777777%3BfontSize%3A10%3Bdpi%3A96&amp;TRANSPARENT=true&amp;LAYER=urba_proj:v_oa_operation&amp;RULE=Mobilité&amp;STYLE=urba_proj:oa_operation_vocation"
-          metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/fe9d23f2-d0a9-4852-a94b-7335bfc19893" 
-          metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/api/records/fe9d23f2-d0a9-4852-a94b-7335bfc19893/formatters/xml" 
-          attribution="RM" queryable="true" sld="" featurecount="5" infopanel="right-panel" opacity="1"
-          dynamiclegend="false" toplayer="false" expanded="false" exclusive="false" showintoc="true">
-          <template url="apps/site_internet/templates/projets-urba.mst"/>
-        </layer>
-        <layer id="urba_proj:v_oa_operation"  name="Vocation Espace vert"
-          filter="title is not null and vocation = 'Espace vert'"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="true" visible="true"
-          infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases="" 
-          legendurl="https://public.sig.rennesmetropole.fr/geoserver/ows?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetLegendGraphic&amp;SLD_VERSION=1.1.0&amp;FORMAT=image/png&amp;WIDTH=30&amp;HEIGHT=20&amp;LEGEND_OPTIONS=fontName%3AOpen%20Sans%3BfontAntiAliasing%3Atrue%3BfontColor%3A0x777777%3BfontSize%3A10%3Bdpi%3A96&amp;TRANSPARENT=true&amp;LAYER=urba_proj:v_oa_operation&amp;RULE=Espace vert&amp;STYLE=urba_proj:oa_operation_vocation"
-          metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/fe9d23f2-d0a9-4852-a94b-7335bfc19893" 
-          metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/api/records/fe9d23f2-d0a9-4852-a94b-7335bfc19893/formatters/xml" 
-          attribution="RM" queryable="true" sld="" featurecount="5" infopanel="right-panel" opacity="1"
-          dynamiclegend="false" toplayer="false" expanded="false" exclusive="false" showintoc="true">
-          <template url="apps/site_internet/templates/projets-urba.mst"/>
-        </layer>       --> 
-        
-        
-        
-        
-        
-        
 
     </theme> 
 </themes>
