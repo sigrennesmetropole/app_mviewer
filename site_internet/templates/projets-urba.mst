@@ -1,5 +1,5 @@
 {{#features}}
-    <li class="item">
+    <li class="item" id="{{feature_ol_uid}}">
         <h3 class="rm-popup-title-feature">{{{title}}}</h3>
         </br>
         <p class="rm-popup-text-feature">
