@@ -17,7 +17,7 @@
     <baselayer visible="false" id="ortho_ign" thumbgallery="img/basemap/ortho.jpg" title="IGN" label="Photographies aériennes" type="WMTS" url="https://data.geopf.fr/wmts" layers="ORTHOIMAGERY.ORTHOPHOTOS" format="image/jpeg" fromcapacity="false" attribution="&lt;a href='https://geoservices.ign.fr/services-geoplateforme-diffusion' target='_blank'&gt;&lt;img src='https://geobretagne.fr/pub/logo/099_ign.jpg'&gt;&lt;/a&gt;" style="normal" matrixset="PM" maxzoom="22" /> 
 </baselayers>
 <themes mini="false" legendmini="false"> 
-    <theme id="theme-20260127103600" name="Programmations urbaines" collapsed="false" icon="fas fa-building"> 
+    <theme id="theme-20260127103600" name="Vocation principale des opérations d’aménagement" collapsed="false" icon="fas fa-building"> 
         <layer id="urba_proj:v_oa_operation"  name="Programmation mixte"
           filter="title is not null and title &lt;&gt; '' and vocation = 'Mixte'"
           type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
