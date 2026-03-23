@@ -1,6 +1,6 @@
 <config xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" mviewerversion="3.13" mviewerstudioversion="4.2">
 
-<application title="Panorama des projets" 
+<application title="Carte des projets urbains" 
     logo="https://mviewer.sig.rennesmetropole.fr/apps/public/img/logo/logo_mviewer_transp.png" 
     favicon="" help="" titlehelp="" iconhelp="fas fa-home"
     style="apps/site_internet/css/site_internet_gris.css"
