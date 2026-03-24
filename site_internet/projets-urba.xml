@@ -25,7 +25,7 @@
         <subselectionstyle>
             <point radius="7" fillcolor="175, 122, 197" opacity="0.5" strokecolor="175, 122, 197" strokewidth="2" />
             <line opacity="0.5" strokecolor="175, 122, 197"  strokewidth="2" />
-            <polygon fillcolor="189, 191, 199" opacity="0" strokecolor="255, 255, 255" strokewidth="4" />
+            <polygon fillcolor="189, 191, 199" opacity="0" strokecolor="0, 0, 0" strokewidth="4" />
         </subselectionstyle>
     </styles>
 <themes mini="false" legendmini="false"> 
