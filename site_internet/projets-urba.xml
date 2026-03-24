@@ -8,7 +8,7 @@
     exportpng="false" showhelp="false" coordinates="false" measuretools="true" mouseposition="false" 
     geoloc="false" studio="" togglealllayersfromtheme="false" mapprint="false" addlayerstools="false">
 </application>
-<mapoptions projection="EPSG:3857" center="-184650.3436675764,6125937.991631551" maxzoom="" zoom="11.415000396214303" extent="-200559.20931653812,6115618.727426819,-168741.4780186147,6136257.255836283" />
+<mapoptions projection="EPSG:3857" center="-181873.30657612678,6125540.364129572" maxzoom="" zoom="12" extent="-200559.20931653812,6115618.727426819,-168741.4780186147,6136257.255836283" />
 <proxy url="" />
 <olscompletion type="ban" url="https://data.geopf.fr/geocodage/search/" attribution="Base adresse nationale (BAN)" />
 <searchparameters bbox="false" localities="false" features="false" static="false" inputlabel="" querymaponclick="false" closeafterclick="false" />
