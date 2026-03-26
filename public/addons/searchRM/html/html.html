@@ -1,22 +1,51 @@
 <div role="search" id="searchtool">
-  <div class="background-custom-searchtool">
-    <span class="searchRVALibelle">Recherche par adresse: </span>
-    <div class="form-group input-group" id="fieldWrapper">
-      <input type="text" class="form-control" i18n="navbar.search.placeholder" id="searchfield">
-      <div class="input-group-btn">
-        <button id="buttonSearchField" type="button" class="btn btn-default" aria-label="Help" data-toggle="modal" data-target="#parameterspanel">
-          <span class="glyphicon glyphicon-option-vertical"></span>
-        </button>
-      </div>
+  <div
+    class="d-flex align-items-center gap-2 px-2 py-1 rounded position-absolute background-custom-searchtool"
+    style="background-color: var(--mvcustom-color-primary); width: 358px"
+  >
+    <span class="text-white text-nowrap">Recherche par adresse :</span>
+
+    <div class="input-group input-group-sm">
+      <input
+        type="text"
+        class="form-control"
+        id="searchfield"
+        i18n="navbar.search.placeholder"
+        placeholder="Rechercher"
+      />
+      <button
+        class="btn btn-outline-light"
+        type="button"
+        id="button-addon2"
+        aria-label="Open search options"
+        data-bs-toggle="modal"
+        data-bs-target="#parameterspanel"
+      >
+        <i class="ri-more-2-fill"></i>
+      </button>
     </div>
   </div>
 </div>
 
 <div id="parcelSelectors" class="parcelSelectors">
   <div class="background-custom-parcelSelectors">
-    <p id="parcelSelectorsLegend">Recherche par parcelle: </p>
-    <div id="communeSearchContainer"><select id="communeSearch" name="communeSearch" class="form-control"></select></div>
-    <div id="sectionInputContainer" class="sectionInputContainer"><select id="section" class="sectionsList form-control"></select></div>
-    <div id="parcelleInputContainer" class="parcelleInputContainer"><select id="parcelle" class="parcellesList form-control" disabled></select></div>
+    <p id="parcelSelectorsLegend">Recherche par parcelle:</p>
+    <div id="communeSearchContainer">
+      <select
+        id="communeSearch"
+        name="communeSearch"
+        class="form-control"
+      ></select>
+    </div>
+    <div id="sectionInputContainer" class="sectionInputContainer">
+      <select id="section" class="sectionsList form-control"></select>
+    </div>
+    <div id="parcelleInputContainer" class="parcelleInputContainer">
+      <select
+        id="parcelle"
+        class="parcellesList form-control"
+        disabled
+      ></select>
+    </div>
   </div>
 </div>

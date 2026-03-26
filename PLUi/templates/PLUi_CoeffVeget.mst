@@ -13,19 +13,19 @@
 			<span class="rm-popup-alerte-legende">La légende indique systématiquement l’ensemble des informations identifiées sur la métropole. Toutes les communes ne sont pas pour autant dotées de toutes ces thématiques sur leur territoire.</span>
 			<div class="rm-popup-footer plui-popup-footer">
 				<div>
-					<span class="glyphicon glyphicon-hand-up"></span>
+					<i class="ri-arrow-go-forward-line"></i>
 					<a id='lienweb' class='lienweb' href="https://logement.metropole.rennes.fr/documents-du-plui/" target="_blank">&nbsp;&nbsp; consulter les pièces du PLUi</a>
 				</div>
 				<div>
-					<span class="glyphicon glyphicon-hand-up"></span>
+					<i class="ri-arrow-go-forward-line"></i>
 					<a id='lienweb' class='lienweb' href="https://metropole.rennes.fr/un-plan-local-durbanisme-intercommunal-plui-pour-43-communes" target="_blank"> consulter la page web dédiée au PLUi </a>
 				</div>
 				<div>
-					<span class="glyphicon glyphicon-hand-up"></span>
+					<i class="ri-arrow-go-forward-line"></i>
 					<a id='lienweb' class='lienweb' href="https://app.sig.rennesmetropole.fr/calculsCVEP/index.html" target="_blank"> accéder au simulateur de calcul du coefficient de végétalisation </a>
 				</div>
 				<div>
-					<span class="glyphicon glyphicon-hand-up"></span>
+					<i class="ri-arrow-go-forward-line"></i>
 					<a id='lienweb' class='lienweb' href="https://vegeteaux.sig.rennesmetropole.fr/" target="_blank"> éditer le formulaire pour le coefficient de végétalisation de votre projet </a>
 				</div>
 			</div>
@@ -33,19 +33,19 @@
 	</li>
 	<!--<li class="rm-popup-footer">
 			<div>
-				<span class="glyphicon glyphicon-hand-up"></span>
+				<i class="ri-arrow-go-forward-line"></i>
 				<a id='lienweb' class='lienweb' href="https://logement.metropole.rennes.fr/documents-du-plui/" target="_blank">&nbsp;&nbsp; consulter les pièces du PLUi</a>
 			</div>
 			<div>
-				<span class="glyphicon glyphicon-hand-up"></span>
+				<i class="ri-arrow-go-forward-line"></i>
 				<a id='lienweb' class='lienweb' href="https://metropole.rennes.fr/un-plan-local-durbanisme-intercommunal-plui-pour-43-communes" target="_blank"> consulter la page web dédiée au PLUi </a>
 			</div>
 			<div>
-				<span class="glyphicon glyphicon-hand-up"></span>
+				<i class="ri-arrow-go-forward-line"></i>
 				<a id='lienweb' class='lienweb' href="https://app.sig.rennesmetropole.fr/calculsCVEP/index.html" target="_blank"> accéder au simulateur de calcul du coefficient de végétalisation </a>
 			</div>
 			<div>
-				<span class="glyphicon glyphicon-hand-up"></span>
+				<i class="ri-arrow-go-forward-line"></i>
 				<a id='lienweb' class='lienweb' href="https://vegeteaux.sig.rennesmetropole.fr/" target="_blank"> éditer le formulaire pour le coefficient de végétalisation de votre projet </a>
 			</div>
 	</li>-->

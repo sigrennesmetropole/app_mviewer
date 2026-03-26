@@ -28,8 +28,8 @@
 
 
 :root {
---lightmain: #FFCCBF;
---darkmain: #FFAC99;
+--lightMain: #FFCCBF;
+--darkMain: #FFAC99;
 --darktext: #000000;
 --lighttext: #ffffff;
 }
@@ -79,7 +79,7 @@ body {
 }
 
 #eco-btn {
-    background: var(--lightmain);
+    background: var(--lightMain);
     color : var(--darktext);
     line-height:1;
     position:relative;
@@ -108,6 +108,6 @@ body {
 
 
 #eco-btn:active, #eco-btn:hover, #eco-btn:visited {
-  background: var(--darkmain);
+  background: var(--darkMain);
   color : var(--lighttext);  
 }
