@@ -97,7 +97,7 @@
     </theme> 
     <theme id="theme-2" name="Déplacements" collapsed="true" icon="fas fa-biking"> 
          <layer id="trp_coll:metro_trace_axe" name="Métro du réseau STAR - tracés de l'axe des lignes"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="true" visible="true"
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="true" visible="false"
           infoformat="text/html" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/31cd10dc-1245-4554-8ca9-232f925d4402"
           metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=31cd10dc-1245-4554-8ca9-232f925d4402" 
           queryable="false" showintoc="true">
@@ -109,7 +109,7 @@
           queryable="false" showintoc="true">
         </layer> 
         <layer id="trp_org:sd_velo_iti_2018" name="Schéma Directeur Vélo Métropolitain de Rennes Métropole"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="false" visible="true" 
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="false" visible="false" 
           infoformat="text/html" fields="" aliases="" style="trp_org:sd_velo_iti_2018_domanialite" 
           stylesalias="" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4d6318d8-de30-4af5-8f37-971c486a0280" 
           metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=4d6318d8-de30-4af5-8f37-971c486a0280"
