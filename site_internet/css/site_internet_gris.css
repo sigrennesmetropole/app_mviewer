@@ -177,7 +177,7 @@ p.navbar-text.mv-title {
 }
 
 #right-panel .mv-header .btn-close {
-  color: #ffffff;
+  filter: var(--bs-btn-close-white-filter);
 }
 
 /*******************************
@@ -429,6 +429,10 @@ h4.title {
   font-family: "DMSans_medium", Arial, Sans-serif;
 }
 
+#right-panel .item.active {
+  overflow-y: auto;
+}
+
 /*******************************
 ------------- POPOVER
 ********************************/
@@ -520,9 +524,8 @@ h4.title {
 }
 
 .rm-popup-title-feature {
-  /*font-family: 'vistaSansOT_bold', Arial, Sans-serif;*/
+  margin-top: 10px;
   font-family: "DMSans_bold", Arial, Sans-serif;
-  /*color: #032E46;*/
   color: var(--titleColor);
   font-size: 23px;
   margin-bottom: 1%;
