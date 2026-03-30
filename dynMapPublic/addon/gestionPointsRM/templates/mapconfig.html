@@ -14,7 +14,7 @@
   <div id="config-modal" class="modal-dialog modal-lg">
     <div class="modal-content" role="document">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">
+        <button type="button" class="close" data-bs-dismiss="modal">
           <span class="label-close">Fermer</span> ×
         </button>
         <h4 class="modal-title" i18n="help.modal.title">
@@ -58,7 +58,7 @@
           </div>
         </div>
         <div id="confbuttons">
-          <button id="cancel" class="btn lightbtn" data-dismiss="modal">
+          <button id="cancel" class="btn lightbtn" data-bs-dismiss="modal">
             Fermer
           </button>
           <button
@@ -99,7 +99,7 @@
           supprimer les points associés à la catégorie ?
         </p>
         <p id="delbuttons" class="alig-center">
-          <button id="cancel" class="btn" data-dismiss="modal">
+          <button id="cancel" class="btn" data-bs-dismiss="modal">
             Annuler l'action
           </button>
           <button
@@ -111,7 +111,7 @@
                 true,
               )
             "
-            data-dismiss="modal"
+            data-bs-dismiss="modal"
           >
             Supprimer la catégorie et ses points
           </button>
@@ -124,7 +124,7 @@
                 false,
               )
             "
-            data-dismiss="modal"
+            data-bs-dismiss="modal"
           >
             Supprimer seulement la catégorie
           </button>
@@ -147,14 +147,14 @@
           Les catégories configurées seront conservées.
         </p>
         <p id="delbuttons" class="alig-center">
-          <button id="cancel" class="btn" data-dismiss="modal">
+          <button id="cancel" class="btn" data-bs-dismiss="modal">
             Annuler l'action
           </button>
           <button
             id="confirmEmptyMap"
             class="btn"
             onclick="categories.delAllPoints()"
-            data-dismiss="modal"
+            data-bs-dismiss="modal"
           >
             Confirmer
           </button>
@@ -178,14 +178,14 @@
           point de la carte ? <br />
         </p>
         <p id="delbuttons" class="alig-center">
-          <button id="cancel" class="btn" data-dismiss="modal">
+          <button id="cancel" class="btn" data-bs-dismiss="modal">
             Annuler l'action
           </button>
           <button
             id="confirmEmptyMap"
             class="btn"
             onclick="categories.delPoint($('#pointASuppr').attr('ptid'))"
-            data-dismiss="modal"
+            data-bs-dismiss="modal"
           >
             Confirmer
           </button>
