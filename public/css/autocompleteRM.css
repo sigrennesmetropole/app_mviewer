@@ -10,8 +10,9 @@
   list-style: none;
 }
 
-.autocomplete-item:hover, .autocomplete-item:focus {
-  background-color: #37B6FA;
+.autocomplete-item:hover,
+.autocomplete-item:focus {
+  background-color: #37b6fa;
 }
 
 #autocomplete-datas-list {
@@ -29,7 +30,7 @@
 }
 
 .autocomplete-item-substr {
-  color: #0205AF;
+  color: #0205af;
 }
 
 /*# sourceMappingURL=autocompleteRM.css.map */

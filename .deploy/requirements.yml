@@ -1,6 +1,5 @@
 ---
 collections:
   # Install a collection from Ansible Galaxy.
-  - name: community.docker    
+  - name: community.docker
     source: https://galaxy.ansible.com
-

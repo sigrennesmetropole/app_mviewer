@@ -1,13 +1,12 @@
-var multihighlight = (function() {
-    
-    var rennes2030color = '#e6334c';
-    var _overlayer=null;
-    var _communeoverlayer=null;
-    
-    /*
-    * HighlightStyle
-    */ 
-    /*
+var multihighlight = (function () {
+  var rennes2030color = "#e6334c";
+  var _overlayer = null;
+  var _communeoverlayer = null;
+
+  /*
+   * HighlightStyle
+   */
+  /*
     var highlightGoutteStyle = new ol.style.Style({
       image: new ol.style.Icon({
         anchor: [0.5, 46],
@@ -18,18 +17,18 @@ var multihighlight = (function() {
       }),
     });
     */
-    
-    var highlightGoutteStyle = new ol.style.Style({
-        image: new ol.style.Icon({
-          color : rennes2030color,
-          crossOrigin: 'anonymous',
-          scale:1,
-          anchor:[0.5,1],
-          src: 'apps/story/customlayers/img/sldmarker_rennes2030.svg',
-        }),
-      });
-    
-    /*
+
+  var highlightGoutteStyle = new ol.style.Style({
+    image: new ol.style.Icon({
+      color: rennes2030color,
+      crossOrigin: "anonymous",
+      scale: 1,
+      anchor: [0.5, 1],
+      src: "apps/story/customlayers/img/sldmarker_rennes2030.svg",
+    }),
+  });
+
+  /*
     var highlightRondStyle = new ol.style.Style({
       image: new ol.style.Icon({
         anchor: [0.5, 46],
@@ -40,83 +39,79 @@ var multihighlight = (function() {
       }),
     });
     */
-    var highlightRondStyle = new ol.style.Style({
-        image: new ol.style.Icon({
-            color: rennes2030color, 
-            crossOrigin: 'anonymous',
-            scale:1,
-            src: 'apps/story/customlayers/img/sldcommune_rennes2030.svg',
-        }),
-    });
-    
-    
-    /*
-    * Gestion des features de la couche overlay
-    */
-    var displayFeatureInfo = function (features) {
-        _overlayer.getSource().clear(); // remove all features
-        _communeoverlayer.getSource().clear(); // remove all features
-        if (features && features.length) {
-            let featHL_pj_t = [];
-            let featHL_com_t = [];
-            for (const f in features) {
-                if (features[f].get('id_organisme') != undefined && features[f].get('id_organisme') != null){
-                    featHL_com_t.push(features[f].clone());
-                } else {
-                    featHL_pj_t.push(features[f].clone());
-                }
-            }
-            _overlayer.getSource().addFeatures(featHL_pj_t); // add this
-            _communeoverlayer.getSource().addFeatures(featHL_com_t); // add this
-        } 
-    };
-    
-    /*
-    * Force le style de highlight sur la couche overlay
-    */
-    function initHighlightLayer() {
-        var _map = mviewer.getMap();
-        _map.getLayers().forEach(function (lyr) {
-            if ('featureoverlay' == lyr.get('mviewerid')) {
-                _overlayer = lyr;
-                _overlayer.setStyle(highlightGoutteStyle);
-            }
-        });
-        createLayerHighCommune();
-        
-        _map.on('pointermove', function (e) {
-            displayFeatureInfo(_map.getFeaturesAtPixel(e.pixel));
-        });
-    }
-    
-    
-    function createLayerHighCommune() {
-        
-        let communeHighlightLayer = new ol.layer.Vector({
-            source: new ol.source.Vector(),
-            style: highlightRondStyle,
-        });
-        communeHighlightLayer.mviewerid='communeOverlay';
-        _map.getLayers().push(communeHighlightLayer);
-        _communeoverlayer = communeHighlightLayer;
-    }
-    
-    /*
-    * Attend le chargement de la carte avant d'initialiser le highlight
-    */
-    var _init = function (){
-        if(mviewer.getMap()){
-            mviewer.getMap().once('postcompose', m => {
-                    initHighlightLayer();
-                });
+  var highlightRondStyle = new ol.style.Style({
+    image: new ol.style.Icon({
+      color: rennes2030color,
+      crossOrigin: "anonymous",
+      scale: 1,
+      src: "apps/story/customlayers/img/sldcommune_rennes2030.svg",
+    }),
+  });
+
+  /*
+   * Gestion des features de la couche overlay
+   */
+  var displayFeatureInfo = function (features) {
+    _overlayer.getSource().clear(); // remove all features
+    _communeoverlayer.getSource().clear(); // remove all features
+    if (features && features.length) {
+      let featHL_pj_t = [];
+      let featHL_com_t = [];
+      for (const f in features) {
+        if (
+          features[f].get("id_organisme") != undefined &&
+          features[f].get("id_organisme") != null
+        ) {
+          featHL_com_t.push(features[f].clone());
         } else {
-            setTimeout(_init, 500); // check again in half a second
+          featHL_pj_t.push(features[f].clone());
         }
+      }
+      _overlayer.getSource().addFeatures(featHL_pj_t); // add this
+      _communeoverlayer.getSource().addFeatures(featHL_com_t); // add this
     }
-    
-    _init();
-    
-    
+  };
 
+  /*
+   * Force le style de highlight sur la couche overlay
+   */
+  function initHighlightLayer() {
+    var _map = mviewer.getMap();
+    _map.getLayers().forEach(function (lyr) {
+      if ("featureoverlay" == lyr.get("mviewerid")) {
+        _overlayer = lyr;
+        _overlayer.setStyle(highlightGoutteStyle);
+      }
+    });
+    createLayerHighCommune();
 
+    _map.on("pointermove", function (e) {
+      displayFeatureInfo(_map.getFeaturesAtPixel(e.pixel));
+    });
+  }
+
+  function createLayerHighCommune() {
+    let communeHighlightLayer = new ol.layer.Vector({
+      source: new ol.source.Vector(),
+      style: highlightRondStyle,
+    });
+    communeHighlightLayer.mviewerid = "communeOverlay";
+    _map.getLayers().push(communeHighlightLayer);
+    _communeoverlayer = communeHighlightLayer;
+  }
+
+  /*
+   * Attend le chargement de la carte avant d'initialiser le highlight
+   */
+  var _init = function () {
+    if (mviewer.getMap()) {
+      mviewer.getMap().once("postcompose", (m) => {
+        initHighlightLayer();
+      });
+    } else {
+      setTimeout(_init, 500); // check again in half a second
+    }
+  };
+
+  _init();
 })();

@@ -1,20 +1,20 @@
 {
-    "carte": {
-        "zoomPendantBalade" : 18
-    },
-    "balades": {
-        "id": "ID_PROM",
-        "couleurBalades": "",
-        "couleurPoints": "",
-        "couleurBaladeFixe": "",
-        "couleurPointFixe": "",
-        "defaultColor": "#000000",
-        "baladeParDefaut": "3"
-    },
-    "points": {
-        "idBalade": "ID_PROM",
-        "champRang" : "N_ARRET",
-        "couleurPointActif": "#e74c3c",
-        "pointsVisible": "true"
-    }
+  "carte": {
+    "zoomPendantBalade": 18
+  },
+  "balades": {
+    "id": "ID_PROM",
+    "couleurBalades": "",
+    "couleurPoints": "",
+    "couleurBaladeFixe": "",
+    "couleurPointFixe": "",
+    "defaultColor": "#000000",
+    "baladeParDefaut": "3"
+  },
+  "points": {
+    "idBalade": "ID_PROM",
+    "champRang": "N_ARRET",
+    "couleurPointActif": "#e74c3c",
+    "pointsVisible": "true"
+  }
 }

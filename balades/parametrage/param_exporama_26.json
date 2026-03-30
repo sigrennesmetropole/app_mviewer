@@ -1,20 +1,20 @@
-{   
-    "carte": {
-        "zoomPendantBalade" : 18
-    },
-    "balades": {
-        "id": "id",
-        "couleurBalades": "couleur",
-        "couleurPoints": "couleur",
-        "couleurBaladeFixe": "#666666",
-        "couleurPointFixe": "#000000",
-        "defaultColor": "#000000",
-        "baladeParDefaut": ""
-    },
-    "points": {
-        "idBalade": "idbalade",
-        "champRang": "rang",
-        "couleurPointActif": "#e74c3c",
-        "pointsVisible": "true"
-    }
+{
+  "carte": {
+    "zoomPendantBalade": 18
+  },
+  "balades": {
+    "id": "id",
+    "couleurBalades": "couleur",
+    "couleurPoints": "couleur",
+    "couleurBaladeFixe": "#666666",
+    "couleurPointFixe": "#000000",
+    "defaultColor": "#000000",
+    "baladeParDefaut": ""
+  },
+  "points": {
+    "idBalade": "idbalade",
+    "champRang": "rang",
+    "couleurPointActif": "#e74c3c",
+    "pointsVisible": "true"
+  }
 }

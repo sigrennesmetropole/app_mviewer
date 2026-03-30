@@ -1,8 +1,8 @@
-stages:  
+stages:
   - deploy
 
 workflow:
-  rules:    
+  rules:
     - if: '$CI_COMMIT_REF_NAME == "develop"'
       variables:
         ENV: "test"
@@ -12,23 +12,21 @@ workflow:
     - if: '$CI_COMMIT_REF_NAME =~ /^migration\//'
       variables:
         ENV: "migration"
-    
-
 
 deploy-ansible:
   stage: deploy
-  tags: 
+  tags:
     - SIG
     - deploy
-  image: nexus.si.rennes.fr:5002/sig/ansible-runner:latest  
-  script:    
+  image: nexus.si.rennes.fr:5002/sig/ansible-runner:latest
+  script:
     - ansible-galaxy collection install -r .deploy/requirements.yml
     - chmod 600 $GITLABRUNNERSIG_KEY
     - mkdir -p /root/.ssh
     - chmod 700 /root/.ssh
     - cp $GITLABRUNNERSIG_KEY /root/.ssh/GITLABRUNNERSIG_KEY
     - cp $ENV_FILE $CI_PROJECT_DIR/public/addons/env.json
-    - | 
+    - |
       ansible-playbook \
         -i .deploy/inventory \
         .deploy/playbook.yml \
@@ -36,11 +34,10 @@ deploy-ansible:
           "CI_PROJECT_DIR=$CI_PROJECT_DIR \
             CI_PROJECT_NAME=$CI_PROJECT_NAME \
             ENV=$ENV"
-  rules:    
+  rules:
     - if: '$CI_COMMIT_REF_NAME == "develop"'
       when: on_success
     - if: '$CI_COMMIT_REF_NAME =~ /^migration\//'
       when: manual
     - if: '$CI_COMMIT_REF_NAME == "main"'
       when: manual
-    
