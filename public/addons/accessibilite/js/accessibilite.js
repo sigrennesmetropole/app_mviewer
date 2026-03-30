@@ -222,12 +222,14 @@ async function buildTable(layer) {
   var menu = document.getElementById("accessibility_tabs");
   var firstChild = !menu.hasChildNodes();
   var li = document.createElement("li");
+  li.classList.add("nav-item");
   var a = Object.assign(document.createElement("a"), {
     id: "a_" + layer.layerid,
     href: "#data_" + layer.layerid,
     role: "tab",
   });
-  a.setAttribute("data-toggle", "tab");
+  a.classList.add("nav-link");
+  a.setAttribute("data-bs-toggle", "tab");
 
   a.appendChild(document.createTextNode(layer.name));
   li.appendChild(a);
@@ -239,7 +241,7 @@ async function buildTable(layer) {
     id: "data_" + layer.layerid,
     role: "tabpanel",
   });
-  maindiv.classList.add("tab-pane", "fade", "in");
+  maindiv.classList.add("tab-pane", "fade");
   maindiv.setAttribute("originallayer", layer.layerid);
 
   var attributes = await getAttributes(layer.template);
@@ -258,8 +260,9 @@ async function buildTable(layer) {
   //Ouverture par défaut sur le premier onglet
   if (firstChild) {
     li.classList.add("active");
+    a.classList.add("active");
     a.setAttribute("aria-expanded", "true");
-    maindiv.classList.add("active");
+    maindiv.classList.add("active", "show");
   }
 
   // Remplir le tableau avec les données
@@ -633,6 +636,23 @@ function _init() {
         buildTable(layer);
       }
     }
+
+    document
+      .querySelectorAll('#accessibility_tabs a[data-bs-toggle="tab"]')
+      .forEach((tab) => {
+        tab.addEventListener("shown.bs.tab", function (e) {
+          // Retirer "active" de tous les onglets
+          document
+            .querySelectorAll("#accessibility_tabs li")
+            .forEach((li) => li.classList.remove("active"));
+          document
+            .querySelectorAll("#accessibility_tabs a")
+            .forEach((a) => a.classList.remove("active"));
+          // Ajouter "active" à l'onglet actif
+          e.target.classList.add("active");
+          e.target.parentElement.classList.add("active");
+        });
+      });
 
     // Affichage du tableau et masquage de la carte
     document.getElementById("accessibilite-custom-component").style.display =
