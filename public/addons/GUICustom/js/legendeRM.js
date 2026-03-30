@@ -65,18 +65,18 @@ function _switchchevron(clickedElem) {
     clickedElem
       .closest("li")
       .find(".state-icon")
-      .hasClass("glyphicon glyphicon-chevron-down")
+      .hasClass("ri-arrow-down-s-line")
   ) {
     clickedElem
       .closest("li")
       .find(".state-icon")
-      .removeClass("glyphicon glyphicon-chevron-down")
-      .addClass("glyphicon glyphicon-chevron-up");
+      .removeClass("ri-arrow-down-s-line")
+      .addClass("ri-arrow-up-s-line");
   } else {
     clickedElem
       .closest("li")
       .find(".state-icon")
-      .removeClass("glyphicon glyphicon-chevron-up")
-      .addClass("glyphicon glyphicon-chevron-down");
+      .removeClass("ri-arrow-up-s-line")
+      .addClass("ri-arrow-down-s-line");
   }
 }
