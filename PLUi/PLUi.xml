@@ -7,6 +7,7 @@
         titlehelp="Carte interactive du PLUi de Rennes Métropole"
         help="apps/PLUi/html/plui_help.html"
         showhelp="true"
+        iconhelp="fas fa-question"
         exportpng="false"
         style="apps/PLUi/css/carte_plui.css"
         coordinates="false"
