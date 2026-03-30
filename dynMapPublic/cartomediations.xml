@@ -7,7 +7,7 @@
         titlehelp="À propos..."
         help="apps/dynMapPublic/html/mesloc_help.html"
         showhelp="false"
-        iconhelp=""
+        iconhelp="fas fa-question"
         style="apps/site_internet/css/site_internet_gris.css"
         exportpng="true"
         geoloc="false"

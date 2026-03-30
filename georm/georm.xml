@@ -7,7 +7,7 @@
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
         titlehelp="A propos des cartes interactives"
-        iconhelp=""
+        iconhelp="fas fa-question"
         style="apps/georm/css/mv_georm.css"
         exportpng="true"
         geoloc="true"

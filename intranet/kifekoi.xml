@@ -8,7 +8,7 @@
         help="apps/site_internet/html/site_internet_help.html"
         showhelp="false"
         mouseposition="true"
-        iconhelp=""
+        iconhelp="fas fa-question"
         style="apps/intranet/css/kifekoi.css"
         measuretools="false"
         stats="false"

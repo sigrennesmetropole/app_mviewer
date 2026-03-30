@@ -7,6 +7,7 @@
         titlehelp="À propos..."
         help="apps/site_internet/html/prog_travaux_help.html"
         showhelp="true"
+        iconhelp="fas fa-question"
         exportpng="true"
         geoloc="true"
         style="apps/site_internet/css/site_internet_gris.css"

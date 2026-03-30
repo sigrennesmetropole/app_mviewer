@@ -9,8 +9,8 @@ var printMap = (function () {
   var _map;
 
   var printInput =
-    '<a href="#" id="printMapbtn" title="Imprimer cette carte" download="carte.png" class="btn btn-default btn-raised" accesskey="">' +
-    '<span class="glyphicon glyphicon-print" aria-hidden="true"></span>' +
+    '<a href="#" id="printMapbtn" title="Imprimer cette carte" data-bs-original-title="Imprimer cette carte" download="carte.png" class="btn btn-light" accesskey="">' +
+    '<i class="ri-printer-line" />' +
     "</a>";
 
   var init = function () {
@@ -77,7 +77,7 @@ var printMap = (function () {
       '<textarea rows="3" type="textfield"></textarea>' +
       "</div>" +
       '<div class="printBtnContainer"> <a href="#" id="printPage_printBtn" class="btn">' +
-      '<span class="glyphicon glyphicon-print" aria-hidden="true"> <span class="printLabel">Imprimer</span> </span>' +
+      '<span class="ri-printer-line" aria-hidden="true"> <span class="printLabel">Imprimer</span> </span>' +
       "</a> </div>" +
       "</div>";
 
@@ -102,10 +102,10 @@ var printMap = (function () {
       '<script type="text/javascript" src="lib/jquery/base/1.10.2/jquery-1.10.2.min.js"></script>',
     );
     printWindow.document.write(
-      '<script type="text/javascript" src="lib/bootstrap/3.3.6/js/bootstrap.min.js"></script>',
+      '<script type="text/javascript" src="lib/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>',
     );
     printWindow.document.write(
-      '<link href="lib/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />',
+      '<link href="lib/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />',
     );
     printWindow.document.write("</head><body >");
     printWindow.document.write(printPage);
