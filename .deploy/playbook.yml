@@ -1,8 +1,8 @@
-- name: Docker compose avec Ansible  
+- name: Docker compose avec Ansible
   gather_facts: true
   hosts: "{{ ENV }}"
   vars:
-    ansible_python_interpreter: /usr/bin/python3     
+    ansible_python_interpreter: /usr/bin/python3
   tasks:
     - name: Crétion dossier
       become: true
@@ -13,7 +13,7 @@
 
     - name: Copie des fichiers
       become: true
-      become_method: sudo      
+      become_method: sudo
       ansible.posix.synchronize:
         src: "{{ CI_PROJECT_DIR }}/"
         dest: "{{ SERVER_INSTALL_PATH }}/{{ CI_PROJECT_NAME }}/"
@@ -27,7 +27,6 @@
       ansible.builtin.template:
         src: "{{ CI_PROJECT_DIR }}/.deploy/docker-compose.j2"
         dest: "{{ SERVER_INSTALL_PATH }}/docker-compose.yml"
-    
 
     - name: Démarrage de la composition docker
       become: true
@@ -37,7 +36,6 @@
         recreate: always
       register: output
 
-
     - name: Copy nginx file to server
       become: true
       ansible.builtin.template:
@@ -45,7 +43,6 @@
         dest: /etc/nginx/sites-available/{{ FQDN }}
       notify:
         - reload_nginx
-   
 
     - name: Activation du site
       become: true
@@ -60,9 +57,7 @@
       ansible.builtin.debug:
         var: output
 
-
   handlers:
-
     - name: reload_nginx
       become: true
       systemd:

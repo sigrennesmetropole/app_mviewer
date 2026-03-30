@@ -1,12 +1,10 @@
 {
-    "js": [
-      "js/accessibilite.js"
-    ],
-    "css": "css/accessibilite.css",
-    "html": "html/index.html",
-    "target": "main",
-    "options": {
-        "title": "tableau des données",
-        "position": 0
-    }
+  "js": ["js/accessibilite.js"],
+  "css": "css/accessibilite.css",
+  "html": "html/index.html",
+  "target": "main",
+  "options": {
+    "title": "tableau des données",
+    "position": 0
+  }
 }

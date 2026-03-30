@@ -1,19 +1,19 @@
 {
-    "queryMapOnClick" : false,
-    "searchContent": [
-        {
-            "categoryName": "Voies",
-            "searchParameterName": "Rechercher des voies",
-            "defaultCheck": true,
-            "nbItemDisplay": 5,
-            "zoom": 15
-        },
-        {
-            "categoryName": "Adresses",
-            "searchParameterName": "Rechercher des adresses",
-            "defaultCheck": true,
-            "nbItemDisplay": 5,
-            "zoom": 15
-        }
-    ]
+  "queryMapOnClick": false,
+  "searchContent": [
+    {
+      "categoryName": "Voies",
+      "searchParameterName": "Rechercher des voies",
+      "defaultCheck": true,
+      "nbItemDisplay": 5,
+      "zoom": 15
+    },
+    {
+      "categoryName": "Adresses",
+      "searchParameterName": "Rechercher des adresses",
+      "defaultCheck": true,
+      "nbItemDisplay": 5,
+      "zoom": 15
+    }
+  ]
 }

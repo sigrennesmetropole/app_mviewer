@@ -15,7 +15,7 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
-  color: #2A2A2A;
+  color: #2a2a2a;
 }
 
 .foreword-modal {
@@ -33,7 +33,9 @@
 .foreword-modal-content {
   margin: 10% auto;
   width: 60%;
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  box-shadow:
+    0 5px 8px 0 rgba(0, 0, 0, 0.2),
+    0 7px 20px 0 rgba(0, 0, 0, 0.17);
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
 }
@@ -57,7 +59,7 @@
 }
 
 .foreword-modal-footer {
-  background: #8C8C8C;
+  background: #8c8c8c;
   padding: 10px;
   color: #fff;
   text-align: center;

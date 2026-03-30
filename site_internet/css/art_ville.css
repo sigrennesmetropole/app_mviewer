@@ -7,38 +7,38 @@
 
 /* FICHE INFO */
 #right-panel.active {
-    width:30%!important;
+  width: 30% !important;
 }
 
 .rm-popup-text-feature {
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
-.text-credit{
-    /*font-family:"vistaSansOT_bold";*/
-    font-family: 'DMSans_bold', Arial, Sans-serif;
-    color:#555;
-    font-size:9px;
-    padding-right: 10px;
-    padding-left: 10px;
+.text-credit {
+  /*font-family:"vistaSansOT_bold";*/
+  font-family: "DMSans_bold", Arial, Sans-serif;
+  color: #555;
+  font-size: 9px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .photo {
-    max-height: 200px;
+  max-height: 200px;
 }
 
 .art-espub {
-    color:#e45e52;
+  color: #e45e52;
 }
 
 .art-bati {
-    color:#33919d;
+  color: #33919d;
 }
 
 .art-street {
-    color:#f9a241;
+  color: #f9a241;
 }
 
 .art-memoire {
-    color:#8f9169;
+  color: #8f9169;
 }
