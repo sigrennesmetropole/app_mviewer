@@ -83,6 +83,10 @@
   --mvcustom-color-primary: #000;
 }
 
+.modal-body {
+  font-size: 12.5px;
+}
+
 /*******************************
          SCROLLBARS
 ********************************/
