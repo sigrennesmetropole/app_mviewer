@@ -83,6 +83,14 @@
   --mvcustom-color-primary: #000;
 }
 
+.popover-body {
+  color: white !important;
+}
+
+.popover-body a {
+  color: inherit !important;
+}
+
 .modal-body {
   font-size: 12.5px;
 }
