@@ -31,7 +31,7 @@
         <theme id="theme-20180625145740" name="PC en libre-service" collapsed="true" icon="fas fa-desktop">
             <layer
                 id="v_pc_kiosque_dsn"
-                name="PC Kisoque"
+                name="PC Kiosque"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/eq_admin/ows"
                 visible="true"
