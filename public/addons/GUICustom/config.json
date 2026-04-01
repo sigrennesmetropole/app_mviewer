@@ -10,7 +10,6 @@
     "js/nohighlight.js",
     "js/printMap.js",
     "js/rmCustomization.js",
-    "js/legendeRM.js",
     "js/svg_marker.js",
     "js/rm_eventsmanager.js",
     "js/matomo.js"
