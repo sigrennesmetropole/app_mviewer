@@ -216,8 +216,8 @@ p.navbar-text.mv-title {
   color: #f8f8f8 !important;
 }
 
-.mv-nav-item {
-  padding-left: 10px;
+.mv-nav-item > a {
+  padding-left: 10px !important;
 }
 
 .state-icon {
