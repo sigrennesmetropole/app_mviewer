@@ -4,17 +4,21 @@
 		<p class="text-feature">
 			{{#commune}}<span style="font-family:'roboto_bold'"> ADRESSE :</span> {{adresse}} - {{commune}}<br/>{{/commune}}
 			{{#type}}<span style="font-family:'roboto_bold'"> TYPE :</span> {{{type}}}<br/>{{/type}}
-			{{#places}}<span style="font-family:'roboto_bold'"> NOMBRE DE PLACES :</span> {{{places}}}<br/>{{/places}}
-            
+			{{#nb_pl_total}}<span style="font-family:'roboto_bold'"> NOMBRE DE PLACES TOTAL :</span> {{{nb_pl_total}}}<br/>{{/nb_pl_total}}
+   			{{#nb_pl_covoit}}<span style="font-family:'roboto_bold'"> NOMBRE DE PLACES COVOITURAGE :</span> {{{nb_pl_covoit}}}<br/>{{/nb_pl_covoit}}
+			
             <ul id="ul_comm">
 			{{#commentaire}}<li> {{{commentaire}}}</li>{{/commentaire}}
             {{#borne_rech}}<li> BORNE DE RECHARGE</li>{{/borne_rech}}
             {{#goudronnee}}<li> GOUDRONNEE</li>{{/goudronnee}}
             {{#place_pmr}}<li> PLACE(S) PMR</li>{{/place_pmr}}
+			<br/>
+       	  <li>Sortie du parc-relais le même jour, avec un titre de transport validé dans l’heure, dans le respect des horaires du parking</li>
             </ul>
         </p>
         
 	</li>
+
 {{/features}}
 
 
