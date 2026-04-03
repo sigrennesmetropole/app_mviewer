@@ -1,17 +1,8 @@
 {{#features}}
 	<li class="item" style="width:238px;">
-		<h5 class="title-feature"><span style="font-family:'roboto_bold'"> NOM :</span> {{nom}}</h5>
+		<h5 class="title-feature">{{nom}}</h5>
 		<p class="text-feature">
-			{{#nom_commune}}
-			<span style="font-family:'roboto_bold'"> COMMUNE :</span> 
-			 {{nom_commune}}<br/>
-			{{/nom_commune}}
-			
-			{{#nom_voie}}
-			<span style="font-family:'roboto_bold'"> ADRESSE :</span> 
-			{{nom_voie}}<br/>
-			{{/nom_voie}}
-			<br/>
+			{{#commune}}<span style="font-family:'roboto_bold'"> ADRESSE :</span> {{adresse}} - {{commune}}<br/>{{/commune}}
 			{{#type}}<span style="font-family:'roboto_bold'"> TYPE :</span> {{{type}}}<br/>{{/type}}
 			{{#nb_pl_total}}<span style="font-family:'roboto_bold'"> NOMBRE DE PLACES TOTAL :</span> {{{nb_pl_total}}}<br/>{{/nb_pl_total}}
    			{{#nb_pl_covoit}}<span style="font-family:'roboto_bold'"> NOMBRE DE PLACES COVOITURAGE :</span> {{{nb_pl_covoit}}}<br/>{{/nb_pl_covoit}}
@@ -22,8 +13,12 @@
             {{#goudronnee}}<li> GOUDRONNEE</li>{{/goudronnee}}
             {{#place_pmr}}<li> PLACE(S) PMR</li>{{/place_pmr}}
 			<br/>
-            </ul>
+			<li>Sortie du parc-relais le même jour, avec un titre de transport validé dans l’heure, dans le respect des horaires du parking</li>
+       	    </ul>
         </p>
+        
 	</li>
+
 {{/features}}
+
 

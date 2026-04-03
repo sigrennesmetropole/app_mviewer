@@ -108,7 +108,7 @@
 			       queryable="true"
 			       featurecount="5"
 			       infopanel="right-panel">
-				<template url="apps/site_internet/templates/airecovoiturage.mst"/>
+				<template url="apps/site_internet/templates/parc_relais.mst"/>
 			</layer>
 		</theme>
 		 
