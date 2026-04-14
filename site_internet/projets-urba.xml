@@ -12,9 +12,9 @@
 <mapoptions projection="EPSG:3857" center="-181873.30657612678,6125540.364129572" maxzoom="" zoom="12" extent="-200559.20931653812,6115618.727426819,-168741.4780186147,6136257.255836283" />
 <proxy url="" />
 <olscompletion type="ban" url="https://data.geopf.fr/geocodage/search/" attribution="Base adresse nationale (BAN)" />
-<searchparameters bbox="false" localities="false" features="false" static="false" inputlabel="" querymaponclick="false" closeafterclick="false" />
+<searchparameters bbox="false" localities="false" features="false" static="false" inputlabel="" querymaponclick="false" closeafterclick="false" imgurl='apps/public/img/pin-black.png'/>
 <baselayers style="default"> 
-    <baselayer visible="true" id="positron" thumbgallery="img/basemap/positron.png" title="CartoDb" label="Positron" type="OSM" url="https://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" attribution="Map tiles by  &lt;a href=&quot;https://cartodb.com/attributions&quot;&gt;CartoDb&lt;/a&gt;, under  &lt;a href=&quot;https://creativecommons.org/licenses/by/3.0/&quot;&gt;CC BY 3.0 &lt;/a&gt;" /> 
+    <baselayer visible="true" id="pvci_simple_gris" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
     <baselayer visible="false" id="ortho_ign" thumbgallery="img/basemap/ortho.jpg" title="IGN" label="Photographies aériennes" type="WMTS" url="https://data.geopf.fr/wmts" layers="ORTHOIMAGERY.ORTHOPHOTOS" format="image/jpeg" fromcapacity="false" attribution="&lt;a href='https://geoservices.ign.fr/services-geoplateforme-diffusion' target='_blank'&gt;&lt;img src='https://geobretagne.fr/pub/logo/099_ign.jpg'&gt;&lt;/a&gt;" style="normal" matrixset="PM" maxzoom="22" /> 
 </baselayers>
 <styles>
@@ -95,37 +95,49 @@
         </layer>       
 
     </theme> 
-    <theme id="theme-2" name="Déplacements" collapsed="true" icon="fas fa-biking"> 
-         <layer id="trp_coll:metro_trace_axe" name="Métro du réseau STAR - tracés de l'axe des lignes"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="true" visible="false"
-          infoformat="text/html" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/31cd10dc-1245-4554-8ca9-232f925d4402"
-          metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=31cd10dc-1245-4554-8ca9-232f925d4402" 
-          queryable="false" showintoc="true">
-        </layer>
+    <theme id="theme-2" name="projets mobilité" collapsed="true" icon="fas fa-biking">         
         <layer id="trp_coll:trambus_lignes" name="Projet trambus de Rennes Métropole : tracé des lignes"
           type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="true" visible="false"
-          infoformat="text/html" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/89f161cc-33bf-430b-b458-5d9ef61061e0"
-          metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=89f161cc-33bf-430b-b458-5d9ef61061e0"
+          attribution="&lt;a href='https://trambus.coopterr.rennesmetropole.fr' target='_blank'>En savoir plus &lt;/a>"
+          infoformat="text/html"   expanded="true"
           queryable="false" showintoc="true">
         </layer> 
         <layer id="trp_org:sd_velo_iti_2018" name="Schéma Directeur Vélo Métropolitain de Rennes Métropole"
           type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="false" visible="false" 
-          infoformat="text/html" fields="" aliases="" style="trp_org:sd_velo_iti_2018_domanialite" 
-          stylesalias="" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4d6318d8-de30-4af5-8f37-971c486a0280" 
-          metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=4d6318d8-de30-4af5-8f37-971c486a0280"
-          attribution="" queryable="false" searchable="false" fusesearchkeys="" fusesearchresult="" 
+          infoformat="text/html" fields="" aliases="" style="trp_org:sd_velo_iti_2018_etat_avanc" 
+          attribution="&lt;a href='https://transport.metropole.rennes.fr/la-politique-cyclable/' target='_blank'>En savoir plus &lt;/a>"
+          stylesalias="" 
+          queryable="true" searchable="false" fusesearchkeys="" fusesearchresult="" 
           useproxy="false" filter="" sld="" legendurl="" featurecount="5" 
           infopanel="right-panel" opacity="1" index="" styletitle="" dynamiclegend="false" 
-          toplayer="false" expanded="false" exclusive="false" showintoc="true">
+          toplayer="false" expanded="true" exclusive="false" showintoc="true">
         </layer> 
         <layer id="ladm_terri:commune_contour" name="Limites communales référentielles de Rennes Métropole (polylignes)"
           type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="true" visible="true"
           infoformat="text/html" fields="" aliases="" style="ladm_terri:commune_contour_rm_tiretsgris_lgn" stylesalias=""
+          scalemax="100000"
           metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/33f019b4-40e5-4fe7-9bc4-358960e021bb" 
           metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=33f019b4-40e5-4fe7-9bc4-358960e021bb"
           attribution="" queryable="false" searchable="false" fusesearchkeys="" fusesearchresult="" useproxy="false" 
           filter="" sld="" legendurl="" featurecount="5" infopanel="right-panel" opacity="1" index="" styletitle="" dynamiclegend="false" 
           toplayer="false" expanded="false" exclusive="false" showintoc="false">
+        </layer>
+
+    </theme>
+    <theme id="theme-3" name="Contexte" collapsed="true" icon="fas fa-bus"> 
+
+   
+       <layer id="trp_coll:metro_station" name="Stations de métro"
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="true" visible="false"
+          infoformat="text/html" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/31cd10dc-1245-4554-8ca9-232f925d4402"
+          metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=31cd10dc-1245-4554-8ca9-232f925d4402" 
+          queryable="false" showintoc="true">
+        </layer>
+       <layer id="trp_coll:metro_trace_axe" name="Métro du réseau STAR - tracés de l'axe des lignes"
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="true" visible="false"
+          infoformat="text/html" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/31cd10dc-1245-4554-8ca9-232f925d4402"
+          metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=31cd10dc-1245-4554-8ca9-232f925d4402" 
+          queryable="false" showintoc="true">
         </layer>
 
     </theme>
