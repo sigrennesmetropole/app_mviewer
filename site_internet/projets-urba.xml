@@ -125,7 +125,9 @@
 
     </theme>
     <theme id="theme-3" name="Contexte" collapsed="true" icon="fas fa-map">
-         <layer id="trp_coll:metro_station" name="Stations de métro" index="13"
+         <layer id="trp_coll:metro_station" name="Stations de métro"
+          scalemax="75000"
+          scalemin="100"
           type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="true" visible="false"
           infoformat="text/html" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/31cd10dc-1245-4554-8ca9-232f925d4402"
           metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=31cd10dc-1245-4554-8ca9-232f925d4402" 
