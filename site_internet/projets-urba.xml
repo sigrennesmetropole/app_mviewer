@@ -4,7 +4,7 @@
     logo="https://mviewer.sig.rennesmetropole.fr/apps/public/img/logo/logo_mviewer_transp.png" 
     help="apps/site_internet/html/projets-urbains.html" titlehelp="Carte des projets urbains" iconhelp="fas fa-home"
     favicon=""
-    style="apps/site_internet/css/site_internet_gris.css"
+    style="apps/site_internet/css/site_internet_gris_projets_urba.css"
     home="" zoomtools="true" initialextenttool="true" 
     exportpng="false" showhelp="false" coordinates="false" measuretools="true" mouseposition="false" 
     geoloc="false" studio="" togglealllayersfromtheme="false" mapprint="false" addlayerstools="false">
@@ -30,7 +30,7 @@
         </subselectionstyle>
     </styles>
 <themes mini="false" legendmini="false"> 
-    <theme id="theme-20260127103600" name="Vocation principale des opérations d’aménagement" collapsed="false" icon="fas fa-building"> 
+    <theme id="theme-20260127103600" name="Projets d’aménagement (vocation principale des opérations)" collapsed="false" icon="fas fa-snowplow"> 
         <layer id="urba_proj:v_oa_operation"  name="Habitat"
           style="app:projets_urbains"
           filter="title is not null and title &lt;&gt; '' and vocation = 'Habitat'"
@@ -81,7 +81,7 @@
           <template url="apps/site_internet/templates/projets-urba.mst"/>
         </layer>        
         
-        <layer id="urba_proj:v_oa_operation"  name="Mobilités, infrastructures, espaces publics"
+        <layer id="urba_proj:v_oa_operation"  name="Infrastructures, espaces publics"
           style="app:projets_urbains"
           filter="title is not null and title &lt;&gt; '' and vocation = 'Mobilités/Infrastructures/Espaces publics'"
           type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
@@ -95,7 +95,7 @@
         </layer>       
 
     </theme> 
-    <theme id="theme-2" name="projets mobilité" collapsed="true" icon="fas fa-biking">         
+    <theme id="theme-2" name="Projets de mobilité" collapsed="true" icon="fas fa-biking">         
         <layer id="trp_coll:trambus_lignes" name="Projet trambus de Rennes Métropole : tracé des lignes"
           type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="true" visible="false"
           attribution="&lt;a href='https://trambus.coopterr.rennesmetropole.fr' target='_blank'>En savoir plus &lt;/a>"
@@ -104,10 +104,10 @@
         </layer> 
         <layer id="trp_org:sd_velo_iti_2018" name="Schéma Directeur Vélo Métropolitain de Rennes Métropole"
           type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="false" visible="false" 
-          infoformat="text/html" fields="" aliases="" style="trp_org:sd_velo_iti_2018_etat_avanc" 
+          infoformat="text/html" fields="" aliases="" style="" 
           attribution="&lt;a href='https://transport.metropole.rennes.fr/la-politique-cyclable/' target='_blank'>En savoir plus &lt;/a>"
           stylesalias="" 
-          queryable="true" searchable="false" fusesearchkeys="" fusesearchresult="" 
+          queryable="false" searchable="false" fusesearchkeys="" fusesearchresult="" 
           useproxy="false" filter="" sld="" legendurl="" featurecount="5" 
           infopanel="right-panel" opacity="1" index="" styletitle="" dynamiclegend="false" 
           toplayer="false" expanded="true" exclusive="false" showintoc="true">
@@ -124,16 +124,8 @@
         </layer>
 
     </theme>
-    <theme id="theme-3" name="Contexte" collapsed="true" icon="fas fa-bus"> 
-
-   
-       <layer id="trp_coll:metro_station" name="Stations de métro"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="true" visible="false"
-          infoformat="text/html" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/31cd10dc-1245-4554-8ca9-232f925d4402"
-          metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=31cd10dc-1245-4554-8ca9-232f925d4402" 
-          queryable="false" showintoc="true">
-        </layer>
-       <layer id="trp_coll:metro_trace_axe" name="Métro du réseau STAR - tracés de l'axe des lignes"
+    <theme id="theme-3" name="Contexte" collapsed="true" icon="fas fa-map">
+         <layer id="trp_coll:metro_station" name="Stations de métro" index="13"
           type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="true" visible="false"
           infoformat="text/html" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/31cd10dc-1245-4554-8ca9-232f925d4402"
           metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=31cd10dc-1245-4554-8ca9-232f925d4402" 
