@@ -96,14 +96,16 @@
     </theme> 
     <theme id="theme-2" name="Projets de mobilité" collapsed="true" icon="fas fa-biking">         
         <layer id="trp_coll:trambus_lignes" name="Projet trambus de Rennes Métropole : tracé des lignes"
+          style="app:trambus_simple"
           type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="true" visible="false"
           attribution="&lt;a href='https://trambus.coopterr.rennesmetropole.fr' target='_blank'>En savoir plus &lt;/a>"
           infoformat="text/html"   expanded="true"
           queryable="false" showintoc="true">
         </layer> 
         <layer id="trp_org:sd_velo_iti_2018" name="Schéma Directeur Vélo Métropolitain de Rennes Métropole"
+          style="app:schema_directeur_velo"
           type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="false" visible="false" 
-          infoformat="text/html" fields="" aliases="" style="" 
+          infoformat="text/html" fields="" aliases="" 
           attribution="&lt;a href='https://transport.metropole.rennes.fr/la-politique-cyclable/' target='_blank'>En savoir plus &lt;/a>"
           stylesalias="" 
           queryable="false" searchable="false" fusesearchkeys="" fusesearchresult="" 
@@ -125,13 +127,29 @@
     </theme>
     <theme id="theme-3" name="Contexte" collapsed="true" icon="fas fa-map">
          <layer id="trp_coll:metro_station" name="Stations de métro"
+          style="app:metro_station_simple"
+          dynamiclegend="false"
           scalemax="75000"
           scalemin="100"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="true" visible="false"
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="false" visible="false"
           infoformat="text/html" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/31cd10dc-1245-4554-8ca9-232f925d4402"
           metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=31cd10dc-1245-4554-8ca9-232f925d4402" 
           queryable="false" showintoc="true">
         </layer>
+        <layer
+                id="app:sv_sitorg_culture"
+                name="Equipements culturels"
+                style="app:sv_sitorg_culture"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/ows"
+                visible="false"
+                queryable="false"
+                dynamiclegend="true"                
+                filter="etat_organisme = 'actif' AND (code_nomenclature_principale LIKE '7.3.%' OR code_nomenclature_principale LIKE '7.5.%' OR code_nomenclature_principale LIKE '7.7.%' OR code_nomenclature_principale IN ('7.6'))"
+                infopanel="right-panel"
+                tabcolor="#33919d">
+                <template url="apps/site_internet/templates/organisme.mst"></template>
+            </layer>
 
     </theme>
 </themes>
