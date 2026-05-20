@@ -11,6 +11,9 @@
 </application>
 <mapoptions projection="EPSG:3857" center="-181873.30657612678,6125540.364129572" maxzoom="" zoom="12" extent="-200559.20931653812,6115618.727426819,-168741.4780186147,6136257.255836283" />
 <proxy url="" />
+<extensions>
+  <extension type="javascript" src="apps/public/addons/GUICustom/js/matomo-test.js"/>
+</extensions>
 <olscompletion type="ban" url="https://data.geopf.fr/geocodage/search/" attribution="Base adresse nationale (BAN)" />
 <searchparameters bbox="false" localities="false" features="false" static="false" inputlabel="" querymaponclick="false" closeafterclick="false" imgurl='apps/public/img/marker-rm.svg'/>
 <baselayers style="default"> 
@@ -141,14 +144,30 @@
                 name="Equipements culturels"
                 style="app:sv_sitorg_culture"
                 type="wms"
+                scalemax="25000"
+                scalemin="100"
                 url="https://public.sig.rennesmetropole.fr/geoserver/ows"
                 visible="false"
                 queryable="false"
-                dynamiclegend="true"                
+                dynamiclegend="false"                
                 filter="etat_organisme = 'actif' AND (code_nomenclature_principale LIKE '7.3.%' OR code_nomenclature_principale LIKE '7.5.%' OR code_nomenclature_principale LIKE '7.7.%' OR code_nomenclature_principale IN ('7.6'))"
                 infopanel="right-panel"
                 tabcolor="#33919d">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
+            </layer>
+        <layer
+                id="quartier"
+                name="Quartiers"
+                type="customlayer"
+                url="apps/site_internet/customlayer/quartier.js"
+                legendurl="apps/site_internet/img/legend/leg_perim_quartier.svg"
+                visible="false"
+                infoformat="application/vnd.ogc.gml"                
+                tooltip="false"
+                tooltipcontent=""
+                queryable="false"
+                opacity='0.5'
+                infopanel="right-panel">
             </layer>
 
     </theme>

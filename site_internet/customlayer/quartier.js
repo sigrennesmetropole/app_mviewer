@@ -5,7 +5,7 @@ mviewer.customLayers.quartier= (function() {
     
     
     function markerStyle(feature) {
-        let label = feature.get('matricule') ;
+        let label = feature.get('numnom');
         let fontFamily = "Arial, Verdana, Courier New";
         
         let style = new ol.style.Style({
