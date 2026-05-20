@@ -12,7 +12,7 @@
 <mapoptions projection="EPSG:3857" center="-181873.30657612678,6125540.364129572" maxzoom="" zoom="12" extent="-200559.20931653812,6115618.727426819,-168741.4780186147,6136257.255836283" />
 <proxy url="" />
 <olscompletion type="ban" url="https://data.geopf.fr/geocodage/search/" attribution="Base adresse nationale (BAN)" />
-<searchparameters bbox="false" localities="false" features="false" static="false" inputlabel="" querymaponclick="false" closeafterclick="false" imgurl='apps/public/img/pin-black.png'/>
+<searchparameters bbox="false" localities="false" features="false" static="false" inputlabel="" querymaponclick="false" closeafterclick="false" imgurl='apps/public/img/marker-rm.svg'/>
 <baselayers style="default"> 
     <baselayer visible="true" id="pvci_simple_gris" thumbgallery="apps/public/img/basemap/pvcisimple.jpg" title="Rennes Metropole" label="Plan de ville" type="WMTS" url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false" attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;" maxzoom="22"  maxscale="1000" ></baselayer>
     <baselayer visible="false" id="ortho_ign" thumbgallery="img/basemap/ortho.jpg" title="IGN" label="Photographies aériennes" type="WMTS" url="https://data.geopf.fr/wmts" layers="ORTHOIMAGERY.ORTHOPHOTOS" format="image/jpeg" fromcapacity="false" attribution="&lt;a href='https://geoservices.ign.fr/services-geoplateforme-diffusion' target='_blank'&gt;&lt;img src='https://geobretagne.fr/pub/logo/099_ign.jpg'&gt;&lt;/a&gt;" style="normal" matrixset="PM" maxzoom="22" /> 
