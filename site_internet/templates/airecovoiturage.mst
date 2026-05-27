@@ -17,7 +17,7 @@
    			{{#nb_pl_covoit}}<span style="font-family:'roboto_bold'"> NOMBRE DE PLACES COVOITURAGE :</span> {{{nb_pl_covoit}}}<br/>{{/nb_pl_covoit}}
 			
             <ul id="ul_comm">
-			{{#commentaire}}<li> {{{commentaire}}}</li>{{/commentaire}}
+		
             {{#borne_rech}}<li> BORNE DE RECHARGE</li>{{/borne_rech}}
             {{#goudronnee}}<li> GOUDRONNEE</li>{{/goudronnee}}
             {{#place_pmr}}<li> PLACE(S) PMR</li>{{/place_pmr}}
