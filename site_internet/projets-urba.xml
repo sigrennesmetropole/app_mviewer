@@ -2,7 +2,7 @@
 
 <application title="Carte des projets urbains" 
     logo="https://mviewer.sig.rennesmetropole.fr/apps/public/img/logo/logo_mviewer_transp.png" 
-    help="apps/site_internet/html/projets-urbains.html" titlehelp="Carte des projets urbains" iconhelp="fas fa-home"
+    help="apps/site_internet/html/projets_urbains_help.html" titlehelp="Carte des projets urbains" iconhelp="fas fa-home"
     favicon=""
     style="apps/site_internet/css/site_internet_gris_projets_urba.css"
     home="" zoomtools="true" initialextenttool="true" 
@@ -34,6 +34,17 @@
     </styles>
 <themes mini="false" legendmini="false"> 
     <theme id="theme-20260127103600" name="Projets d’aménagement (vocation principale des opérations)" collapsed="false" icon="fas fa-snowplow"> 
+        <!--<layer id="urba_proj:v_oa_operation"  name="Projets"
+          style="app:projets_urbains"
+          filter="title is not null and title &lt;&gt; ''"
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
+          infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases=""           
+          metadata="" 
+          metadata-csw="" 
+          queryable="true" sld="" featurecount="5" infopanel="right-panel" opacity="1"
+          dynamiclegend="false" toplayer="false" expanded="false" exclusive="false" showintoc="true">
+          <template url="apps/site_internet/templates/projets-urba.mst"/>
+        </layer>-->
         <layer id="urba_proj:v_oa_operation"  name="Infrastructures, espaces publics"
           style="app:projets_urbains"
           filter="title is not null and title &lt;&gt; '' and vocation = 'Mobilités/Infrastructures/Espaces publics'"
@@ -70,7 +81,7 @@
           dynamiclegend="false" toplayer="false" expanded="false" exclusive="false" showintoc="true">
           <template url="apps/site_internet/templates/projets-urba.mst"/>
         </layer>        
-        <layer id="urba_proj:v_oa_operation"  name="Programmation mixte"
+        <layer id="urba_proj:v_oa_operation"  name="Mixte (habitat, bureaux, commerces…)"
           style="app:projets_urbains"
           filter="title is not null and title &lt;&gt; '' and vocation = 'Mixte'"
           type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
@@ -138,37 +149,7 @@
           infoformat="text/html" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/31cd10dc-1245-4554-8ca9-232f925d4402"
           metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=31cd10dc-1245-4554-8ca9-232f925d4402" 
           queryable="false" showintoc="true">
-        </layer>
-        <layer
-                id="app:sv_sitorg_culture"
-                name="Equipements culturels"
-                style="app:sv_sitorg_culture"
-                type="wms"
-                scalemax="25000"
-                scalemin="100"
-                url="https://public.sig.rennesmetropole.fr/geoserver/ows"
-                visible="false"
-                queryable="false"
-                dynamiclegend="false"                
-                filter="etat_organisme = 'actif' AND (code_nomenclature_principale LIKE '7.3.%' OR code_nomenclature_principale LIKE '7.5.%' OR code_nomenclature_principale LIKE '7.7.%' OR code_nomenclature_principale IN ('7.6'))"
-                infopanel="right-panel"
-                tabcolor="#33919d">
-                <template url="apps/site_internet/templates/organisme.mst"></template>
-            </layer>
-        <layer
-                id="quartier"
-                name="Quartiers"
-                type="customlayer"
-                url="apps/site_internet/customlayer/quartier.js"
-                legendurl="apps/site_internet/img/legend/leg_perim_quartier.svg"
-                visible="false"
-                infoformat="application/vnd.ogc.gml"                
-                tooltip="false"
-                tooltipcontent=""
-                queryable="false"
-                opacity='0.5'
-                infopanel="right-panel">
-            </layer>
+        </layer>        
 
     </theme>
 </themes>
