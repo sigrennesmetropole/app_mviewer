@@ -1,0 +1,56 @@
+{{#features}}
+    <li class="item" id="{{feature_ol_uid}}">
+        <h3 class="rm-popup-title-feature">{{{title}}}</h3>
+        </br>
+        <p class="rm-popup-text-feature">
+             {{#chapeau}}<p class="rm-chapeau"> {{chapeau}} </p><br/>{{/chapeau}}
+        </p>
+        <p class="rm-popup-text-feature">
+             {{#projet}}<span class='rm-popup-label'> <h4>Projet d'aménagement</h4></span><p class="rm-txt-img"> {{{projet}}} </p><br/>{{/projet}}             
+        </p>
+        <p class="rm-popup-text-feature">
+             {{#actualites}}<span class='rm-popup-label'> <h4>Le saviez-vous ?</h4></span><p class="rm-txt-img"> {{{actualites}}} </p><br/>{{/actualites}}
+        </p>
+        <p class="rm-popup-text-feature">
+             {{#savoir}}<span class='rm-popup-label'> <h4>Plus d'informations</h4></span><p class="rm-txt-img"> {{{savoir}}} </p><br/>{{/savoir}}             
+        </p>
+    </li>
+{{/features}}
+<style>
+.rm-txt-img img {
+  width: 100%;
+  padding-bottom: 10px;
+  padding-top: 10px; 
+  cursor: pointer;
+}
+
+.rm-chapeau {
+  font-family: 'DMSans_light', Arial, Sans-serif;
+  color: #555;
+  font-size: 12px;
+  white-space: pre-wrap;
+}
+
+
+.rm-txt-img {  
+  padding-right: 15px;
+  padding-leftt: 10px;
+  font-family: 'DMSans_medium', Arial, Sans-serif;
+  color: #555;
+  font-size: 14px;
+}
+
+.rm-txt-img a {
+ color: rgb(208, 41, 41);
+ cursor: pointer;
+}
+
+#right-panel .carousel-inner {  
+  width: 100%;
+  padding-bottom: 25px;
+}
+#right-panel.active {
+  width: 500px;
+}
+</style>
+
