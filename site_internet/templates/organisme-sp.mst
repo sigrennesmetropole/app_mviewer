@@ -1,0 +1,53 @@
+{{#features}}
+	<li class="item">
+	    <style>
+		 .a-repas {
+			background-color : #ffbf00;
+			color:black;
+		 }
+		 .a-paniers {
+			background-color : #0080a3;
+			color: white;
+		 }
+		 .a-epicerie {
+			background-color : #ff0000;
+			color: white;
+		 }
+		</style>
+         
+		<h3 class="a-{{type_code}}">{{type_aide}}</h3>	
+
+		<h5 class="rm-popup-title-feature">{{telephones}}</h5>		
+		
+
+		<p class="rm-popup-text-feature">
+			<span class='rm-popup-label'> ADRESSE :</span> {{adresse_postale_adr}} {{adresse_postale_cp}} {{adresse_postale_comm}}<br/>
+			{{#nom_site_principal}}<span class='rm-popup-label'> NOM DU SITE :</span> {{{nom_site_principal}}}<br/>{{/nom_site_principal}}
+			{{#descriptif}}<span class='rm-popup-label'> DESCRIPTIF :</span> {{{descriptif}}}<br/>{{/descriptif}}
+			{{#horaire_grille}}<span class='rm-popup-label'> HORAIRES :</span><br><span class='horaires'>{{{horaire_grille}}}</span>{{/horaire_grille}}
+			{{#infos_horaires}}<span class='rm-popup-label'> INFORMATIONS :</span> {{{infos_horaires}}}<br/>{{/infos_horaires}}
+			{{#variation_conges_scolaires}}<span class='variationvac'> {{{variation_conges_scolaires}}}</span>{{/variation_conges_scolaires}}
+			
+			
+			{{#modalites_inscription}}<span class='rm-popup-label'> MODALITES D'INSCRIPTION :</span> {{{modalites_inscription}}}<br/>{{/modalites_inscription}}
+			{{#type_particip_financ}}<span class='rm-popup-label'> PARTICIPATION FINANCIERE :</span> {{{type_particip_financ}}}<br/>{{/type_particip_financ}}
+			
+		
+
+            <span class='rm_orga_fermetures'>
+                <span class='rm-popup-label'> FERMETURES :</span> <span class='rm-fermetures'></span>
+                {{#jour_periode_ferme}} <span class='daysOff'> {{{jour_periode_ferme}}} </span>{{/jour_periode_ferme}}
+                {{#com_fermeture_conges}}<span class='comfermeture'> {{{com_fermeture_conges}}}</span>{{/com_fermeture_conges}}
+            </span>
+
+            {{#jours_excep_fermes}}
+                <span class='rm-popup-label'> FERMETURES EXCEPTIONNELLES :</span> <br/>
+                <span class="exceptionalClosures">{{{jours_excep_fermes}}}</span>
+            {{/jours_excep_fermes}}
+
+			{{#mails}}<span class='rm-popup-label'> COURRIEL :</span> {{{mails}}}<br/>{{/mails}}
+			{{#telephones}}<span class='rm-popup-label'> TÉLÉPHONE :</span> {{{telephones}}}<br/>{{/telephones}}
+			{{#web}}<span class='rm-popup-label'> PAGE INTERNET :</span><a id='lienweb' class='lienweb' href="{{{web}}}" target="_blank" title="{{{web}}}"> Cliquez ici </a> {{/web}}
+		</p>
+	</li>
+{{/features}} 
