@@ -29,19 +29,8 @@ color: white;
 			{{#nom_site_principal}}<span class='rm-popup-label'> NOM DU SITE :</span> {{{nom_site_principal}}}<br/>{{/nom_site_principal}}
 			
 			{{#horaire_grille}}<span class='rm-popup-label'> HORAIRES :</span><br><span class='horaires'>{{{horaire_grille}}}</span>{{/horaire_grille}}
-			{{#infos_horaires}}<span class='rm-popup-label'> HORAIRES COMPLÉMENTAIRES :</span> {{{infos_horaires}}}<br/>{{/infos_horaires}}
-			{{#variation_conges_scolaires}}<span class='variationvac'> {{{variation_conges_scolaires}}}</span>{{/variation_conges_scolaires}}
-
-            <span class='rm_orga_fermetures'>
-                <span class='rm-fermetures'></span>
-                {{#jour_periode_ferme}} <span class='daysOff'> {{{jour_periode_ferme}}} </span>{{/jour_periode_ferme}}
-                {{#com_fermeture_conges}}<span class='comfermeture'> {{{com_fermeture_conges}}}</span>{{/com_fermeture_conges}}
-            </span>
-
-            {{#jours_excep_fermes}}
-                <span class='rm-popup-label'> FERMETURES EXCEPTIONNELLES :</span> <br/>
-                <span class="exceptionalClosures">{{{jours_excep_fermes}}}</span>
-            {{/jours_excep_fermes}}
+			{{#infos_horaires}}<span class='rm-popup-label'> INFOS COMPLÉMENTAIRES :</span> {{{infos_horaires}}}<br/>{{/infos_horaires}}
+         
 
 			{{#mails}}<span class='rm-popup-label'> COURRIEL :</span> {{{mails}}}<br/>{{/mails}}
 			{{#telephones}}<span class='rm-popup-label'> TÉLÉPHONE :</span> {{{telephones}}}<br/>{{/telephones}}
