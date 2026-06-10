@@ -32,29 +32,22 @@
   /*border : 1px solid #9EA0A1; */
 }
 
-#accessibility_tabs > li > a {
+#accessibility_tabs > li > button {
   background-color: #fff;
   color: #000000;
   border-bottom: 1px solid #ddd;
 }
 
-#accessibility_tabs li.active {
-  border-bottom: 1px solid #fff;
-  /*background-color: #DD3627; */
-  color: #000000;
-}
-
-#accessibility_tabs > li.active > a,
-#accessibility_tabs > li.active > a:focus,
-#accessibility_tabs > li.active > a:hover {
+#accessibility_tabs > li > button.active,
+#accessibility_tabs > li > button.active:focus,
+#accessibility_tabs > li > button.active:hover {
   color: #000000 !important;
   cursor: default;
-  background-color: DD3627 !important;
   border-bottom: 2px solid #dd3627;
   font-weight: bold;
 }
 
-#accessibility_tabs > li > a:hover {
+#accessibility_tabs > li > button:hover {
   /*border-color: #eee #eee #000000;*/
   border-top-style: #fff;
   border-left-style: #fff;
@@ -64,19 +57,17 @@
   color: #000000 !important;
 }
 
-#accessibility_tabs > li.active > a:hover {
+#accessibility_tabs > li.active > button:hover {
   border: 1px solid #ddd;
   border-bottom: 2px solid #dd3627;
 }
 
-#accessibility_tabs a {
-  display: block;
+#accessibility_tabs button {
   color: #fff;
-  text-decoration: none;
   padding: 4px;
 }
 
-#accessibility_tabs a:hover {
+#accessibility_tabs button:hover {
   color: #000000;
 }
 
