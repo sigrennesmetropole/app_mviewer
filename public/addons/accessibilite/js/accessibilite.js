@@ -11,9 +11,9 @@ document.addEventListener(
   { once: true },
 );
 
-var layerAttributes = [];
-var reloadTable = [];
-var runningReload = [];
+let layerAttributes = [];
+let reloadTable = [];
+let runningReload = [];
 
 /*
     function getFeatures(layer){
@@ -23,7 +23,7 @@ var runningReload = [];
                     // un appel WFS pour ne récupérer toutes les données visualisables sur la carte et pas seulement celles de l'emprise visible
                     // Attention à bien conserver le CQLFilter si défini dans la structure
                     // LIMITE : si la couche appelle un style, le filtre porté par ce style ne peut pas être appliqué sur cette extension
-                    var url = layer.url + "?service=WFS&version=1.0.0&request=GetFeature&typeName=" + layer.layername + "&outputFormat=application%2Fjson&srsname=EPSG:3948";
+                    const url = layer.url + "?service=WFS&version=1.0.0&request=GetFeature&typeName=" + layer.layername + "&outputFormat=application%2Fjson&srsname=EPSG:3948";
                     if (layer.filter && layer.filter != "") {
                         url += "&CQL_FILTER=" + encodeURIComponent(layer.filter);
                     }
@@ -62,7 +62,7 @@ function getFeatures(layer) {
   }
 
   function waitForDataWMS(resolve, reject) {
-    var url =
+    let url =
       layer.url +
       "?service=WFS&version=1.0.0&request=GetFeature&typeName=" +
       layer.layername +
@@ -86,7 +86,7 @@ function getFeatures(layer) {
   }
 }
 
-var parsed_template;
+let parsed_template;
 
 // recherche des champs affichés selon le template de couche
 async function getAttributes(template) {
@@ -96,7 +96,7 @@ async function getAttributes(template) {
   template = template.replaceAll(/slide[a-zA-Z0-9_-]+{{+([^\^#\/]*?)}}+/gi, "");
   parsed_template = Mustache.parse(template);
   // calculer les attributs de données
-  var attributes = await _resolveContent(Mustache.parse(template)[0]);
+  const attributes = await _resolveContent(Mustache.parse(template)[0]);
 
   return attributes;
 }
@@ -109,7 +109,7 @@ function _resolveContent(_parsedcontent) {
     Array.isArray(element),
   );
   let _ct;
-  for (var i = 0; i < _filteredContent.length; i++) {
+  for (let i = 0; i < _filteredContent.length; i++) {
     switch (_filteredContent[i][0]) {
       case "name":
       case "&":
@@ -134,7 +134,7 @@ function _resolveContent(_parsedcontent) {
             0,
             _filteredContent[i][1].indexOf(".length"),
           );
-          for (var j = 0; j < _ct.length; j++) {
+          for (const j = 0; j < _ct.length; j++) {
             _addElement(attributes, _ct[j]);
           }
 
@@ -188,7 +188,7 @@ function _resolveContent(_parsedcontent) {
 // Mutualisation du push dans le tableau attributes + avant le push d'un objet, vérifier s'il n'existe pas déjà un objet sur le même noeud
 function _addElement(destination, element) {
   if (typeof element === "object") {
-    var foundNode = false;
+    let foundNode = false;
     for (const cle_attrib of Object.keys(element)) {
       for (let i = 0; i < destination.length; i++) {
         if (typeof destination[i] === "object") {
@@ -218,65 +218,75 @@ async function buildTable(layer) {
   // ici : créer la structure de base pour toutes les couches (y compris la div qui contient le tableau, le tableau )
   // puis appeler la fonction de remplissage du tableau updateLayerTable pour remplir le tbody du tableau
 
-  //CREATION ONGLET
-  var menu = document.getElementById("accessibility_tabs");
-  var firstChild = !menu.hasChildNodes();
-  var li = document.createElement("li");
+  // CREATION ONGLET
+  const menu = document.getElementById("accessibility_tabs");
+  const isFirstTab = !menu.hasChildNodes();
+  const li = document.createElement("li");
+  li.setAttribute("role", "presentation"); // Obligatoire pour les enfants de tablist
   li.classList.add("nav-item");
-  var a = Object.assign(document.createElement("a"), {
-    id: "a_" + layer.layerid,
-    href: "#data_" + layer.layerid,
-    role: "tab",
-  });
-  a.classList.add("nav-link");
-  a.setAttribute("data-bs-toggle", "tab");
 
-  a.appendChild(document.createTextNode(layer.name));
-  li.appendChild(a);
+  const tabButton = document.createElement("button");
+  tabButton.classList.add("nav-link");
+  tabButton.id = "button_" + layer.layerid;
+  tabButton.setAttribute("role", "tab");
+  tabButton.setAttribute("aria-controls", "data_" + layer.layerid);
+  tabButton.setAttribute("tabindex", isFirstTab ? "0" : "-1");
+  tabButton.setAttribute("data-bs-toggle", "tab");
+  tabButton.setAttribute("data-bs-target", `#data_${layer.layerid}`);
+  tabButton.textContent = layer.name;
+
+  li.appendChild(tabButton);
   menu.appendChild(li);
 
-  //CREATION TABLEAU
-  var contenu = document.getElementById("accessibility_main_");
-  var maindiv = Object.assign(document.createElement("div"), {
-    id: "data_" + layer.layerid,
-    role: "tabpanel",
-  });
+  // ✅ Initialiser l'onglet avec Bootstrap
+  const bsTab = new bootstrap.Tab(tabButton);
+  if (isFirstTab) {
+    bsTab.show();
+  }
+
+  // CREATION TABLEAU
+  const contenu = document.getElementById("accessibility_main_");
+  const maindiv = document.createElement("div");
+  maindiv.id = "data_" + layer.layerid;
+  maindiv.setAttribute("role", "tabpanel");
+  maindiv.setAttribute("aria-labelledby", "a_" + layer.layerid);
+  maindiv.setAttribute("aria-hidden", isFirstTab ? "false" : "true");
+  maindiv.setAttribute("tabindex", "0"); // Pour la navigation au clavier
   maindiv.classList.add("tab-pane", "fade");
   maindiv.setAttribute("originallayer", layer.layerid);
 
-  var attributes = await getAttributes(layer.template);
+  let attributes = await getAttributes(layer.template);
   attributes = await _analyseAttributes(attributes);
   layerAttributes[layer.layerid] = await _sortAttributes(attributes);
 
-  var header = await _setTableHeader(layerAttributes[layer.layerid]);
-  var _table = document.createElement("table");
+  const header = await _setTableHeader(layerAttributes[layer.layerid]);
+  const _table = document.createElement("table");
   _table.appendChild(header);
 
-  var _tblBody = document.createElement("tbody");
+  const _tblBody = document.createElement("tbody");
   maindiv.appendChild(_table);
   _table.appendChild(_tblBody);
   contenu.appendChild(maindiv);
 
   //Ouverture par défaut sur le premier onglet
-  if (firstChild) {
+  if (isFirstTab) {
     li.classList.add("active");
-    a.classList.add("active");
-    a.setAttribute("aria-expanded", "true");
+    tabButton.classList.add("active");
+    tabButton.setAttribute("aria-expanded", "true");
     maindiv.classList.add("active", "show");
   }
 
   // Remplir le tableau avec les données
   updateLayerTable(layer);
-  //setTimeout(function() { updateLayerTable(layer);}, 5000);
 }
 
 async function _sortAttributes(attributes) {
-  var objattr = [];
-  var simpleattr = [];
+  const objattr = [];
+  const simpleattr = [];
 
   for (let i = 0; i < attributes.length; i++) {
     if (typeof attributes[i] === "object") {
-      var label;
+      let label;
       for (const cle_attrib of Object.keys(attributes[i])) {
         if (cle_attrib !== "colspan" && cle_attrib !== "descendants") {
           label = cle_attrib;
@@ -305,15 +315,15 @@ async function _analyseAttributes(attributes) {
 }
 
 async function _setTableHeader(attributes) {
-  var max_rows = 1;
-  var tbl_objattrib = attributes.objattr;
+  let max_rows = 1;
+  const tbl_objattrib = attributes.objattr;
   for (let i = 0; i < tbl_objattrib.length; i++) {
     max_rows = Math.max(max_rows, tbl_objattrib[i].descendants + 1);
   }
 
   // Produire les éléments DOM
-  var _tblHead = document.createElement("thead");
-  var _thead_tr = [];
+  const _tblHead = document.createElement("thead");
+  const _thead_tr = [];
   for (let i = 0; i < max_rows; i++) {
     _thead_tr[i] = document.createElement("tr");
     _tblHead.appendChild(_thead_tr[i]);
@@ -324,13 +334,13 @@ async function _setTableHeader(attributes) {
 }
 
 async function _createTHObjects(_thead_tr, level, max_row, attributes) {
-  var simpleattr =
+  const simpleattr =
     attributes.simpleattr != "undefined" ? attributes.simpleattr : [];
-  var objattr = attributes.objattr != "undefined" ? attributes.objattr : [];
+  const objattr = attributes.objattr != "undefined" ? attributes.objattr : [];
 
   // Produire les éléments DOM
   for (let i = 0; i < simpleattr.length; i++) {
-    var _thead_th = document.createElement("th");
+    const _thead_th = document.createElement("th");
 
     _thead_th.setAttribute("rowspan", max_row);
     attributes.simplerowspan = max_row;
@@ -338,7 +348,7 @@ async function _createTHObjects(_thead_tr, level, max_row, attributes) {
     _thead_tr[level].appendChild(_thead_th);
   }
   for (let i = 0; i < objattr.length; i++) {
-    var _thead_th = document.createElement("th");
+    const _thead_th = document.createElement("th");
     _thead_th.setAttribute("colspan", objattr[i].colspan);
     _thead_th.appendChild(document.createTextNode(objattr[i].label));
     _thead_tr[level].appendChild(_thead_th);
@@ -350,8 +360,8 @@ async function _createTHObjects(_thead_tr, level, max_row, attributes) {
 // calcule les valeurs de rowspan et colspan des attributs
 function _setRowColspan(element) {
   for (const cle_attrib of Object.keys(element)) {
-    var descendants = 1;
-    var colspan = 0;
+    let descendants = 1;
+    let colspan = 0;
 
     for (let i = 0; i < element[cle_attrib].length; i++) {
       if (typeof element[cle_attrib][i] === "object") {
@@ -378,17 +388,17 @@ function updateLayerTable(layer) {
     getFeatures(layer)
       .then(async function (res) {
         const features = res.response;
-        var _tblBody = document.querySelector(
+        const _tblBody = document.querySelector(
           "#data_" + layer.layerid + "> table > tbody",
         );
         _tblBody.innerHTML = "";
 
         for (let i = 0; i < features.length; i++) {
-          var maxRowSpan = await _calculateMaxRowSpan(
+          const maxRowSpan = await _calculateMaxRowSpan(
             features[i],
             layerAttributes[layer.layerid].objattr,
           );
-          var _tbody_tr = [];
+          const _tbody_tr = [];
           await _createTDObjects(
             _tbody_tr,
             features[i],
@@ -425,13 +435,13 @@ async function _createTDObjects(
 
   // attributs simples
   for (let j = 0; j < simpleattr.length; j++) {
-    var _tbody_td = document.createElement("td");
+    const _tbody_td = document.createElement("td");
     if (maxRowSpan && maxRowSpan > 0) {
       _tbody_td.setAttribute("rowspan", maxRowSpan);
     }
-    var propriete = simpleattr[j];
+    const propriete = simpleattr[j];
 
-    var texte = "";
+    let texte = "";
     if (feature) {
       if (Object.prototype.hasOwnProperty.call(feature, propriete)) {
         texte = feature[propriete];
@@ -494,7 +504,7 @@ async function _createTDObjects(
         }
       }
       if (obj && Array.isArray(obj) && obj.length > 0) {
-        var childlevel = level;
+        let childlevel = level;
         for (let k = 0; k < obj.length; k++) {
           let childMaxRowSpan = await _calculateMaxRowSpan(
             obj[k],
@@ -532,7 +542,7 @@ function comblertable(level, tbody_tr, rowspan, colspan) {
     let _tr = document.createElement("tr");
     tbody_tr.push(_tr);
   }
-  var _td_comble = document.createElement("td");
+  const _td_comble = document.createElement("td");
   _td_comble.setAttribute("rowspan", rowspan);
   _td_comble.setAttribute("colspan", colspan);
   tbody_tr[level].appendChild(_td_comble);
@@ -543,7 +553,7 @@ function comblertable(level, tbody_tr, rowspan, colspan) {
     let _tr = document.createElement("tr");
     tbody_tr.push(_tr);
   }
-  var _td_comble = document.createElement("td");
+  const _td_comble = document.createElement("td");
   _td_comble.setAttribute("rowspan", rowspan);
   _td_comble.setAttribute("colspan", colspan);
   tbody_tr[level].appendChild(_td_comble);
@@ -554,14 +564,14 @@ function comblertable(level, tbody_tr, rowspan, colspan) {
     let _tr = document.createElement("tr");
     tbody_tr.push(_tr);
   }
-  var _td_comble = document.createElement("td");
+  const _td_comble = document.createElement("td");
   _td_comble.setAttribute("rowspan", rowspan);
   _td_comble.setAttribute("colspan", colspan);
   tbody_tr[level].appendChild(_td_comble);
 }
 
 async function _calculateMaxRowSpan(feature, modele) {
-  var maxRowSpan = 0;
+  let maxRowSpan = 0;
 
   for (let i = 0; i < modele.length; i++) {
     let value;
@@ -603,7 +613,7 @@ function _isDate(date) {
 }
 
 function _decodedHTMLEntity(string) {
-  var txtarea = document.createElement("textarea");
+  const txtarea = document.createElement("textarea");
   txtarea.innerHTML = string;
   return txtarea.value;
 }
@@ -618,9 +628,9 @@ function relaunch(layer) {
 
 function _init() {
   if (API.mode == "data") {
-    var layers = mviewer.getLayers();
+    const layers = mviewer.getLayers();
     for (const layerid of Object.keys(layers)) {
-      var layer = layers[layerid];
+      const layer = layers[layerid];
 
       layer.layer.getSource().on("changefeature", () => {
         relaunch(layer);
@@ -636,23 +646,6 @@ function _init() {
         buildTable(layer);
       }
     }
-
-    document
-      .querySelectorAll('#accessibility_tabs a[data-bs-toggle="tab"]')
-      .forEach((tab) => {
-        tab.addEventListener("shown.bs.tab", function (e) {
-          // Retirer "active" de tous les onglets
-          document
-            .querySelectorAll("#accessibility_tabs li")
-            .forEach((li) => li.classList.remove("active"));
-          document
-            .querySelectorAll("#accessibility_tabs a")
-            .forEach((a) => a.classList.remove("active"));
-          // Ajouter "active" à l'onglet actif
-          e.target.classList.add("active");
-          e.target.parentElement.classList.add("active");
-        });
-      });
 
     // Affichage du tableau et masquage de la carte
     document.getElementById("accessibilite-custom-component").style.display =
