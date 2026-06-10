@@ -53,10 +53,8 @@ function getFeatures(layer) {
       // Attention à bien conserver le CQLFilter si défini dans la structure
       // LIMITE : si la couche appelle un style, le filtre porté par ce style ne peut pas être appliqué sur cette extension
       return new Promise(waitForDataWMS);
-      break;
     case "customlayer":
       return new Promise(waitForData);
-      break;
     default:
       return new Promise(waitForData);
   }
@@ -229,6 +227,7 @@ async function buildTable(layer) {
   tabButton.classList.add("nav-link");
   tabButton.id = "button_" + layer.layerid;
   tabButton.setAttribute("role", "tab");
+  tabButton.setAttribute("type", "button");
   tabButton.setAttribute("aria-controls", "data_" + layer.layerid);
   tabButton.setAttribute("tabindex", isFirstTab ? "0" : "-1");
   tabButton.setAttribute("data-bs-toggle", "tab");
@@ -239,19 +238,14 @@ async function buildTable(layer) {
   menu.appendChild(li);
 
   // ✅ Initialiser l'onglet avec Bootstrap
-  const bsTab = new bootstrap.Tab(tabButton);
-  if (isFirstTab) {
-    bsTab.show();
-  }
+  const bsButton = new bootstrap.Tab(tabButton);
 
   // CREATION TABLEAU
   const contenu = document.getElementById("accessibility_main_");
   const maindiv = document.createElement("div");
   maindiv.id = "data_" + layer.layerid;
   maindiv.setAttribute("role", "tabpanel");
-  maindiv.setAttribute("aria-labelledby", "a_" + layer.layerid);
-  maindiv.setAttribute("aria-hidden", isFirstTab ? "false" : "true");
-  maindiv.setAttribute("tabindex", "0"); // Pour la navigation au clavier
+  maindiv.setAttribute("aria-labelledby", "button_" + layer.layerid);
   maindiv.classList.add("tab-pane", "fade");
   maindiv.setAttribute("originallayer", layer.layerid);
 
@@ -268,16 +262,9 @@ async function buildTable(layer) {
   _table.appendChild(_tblBody);
   contenu.appendChild(maindiv);
 
-  //Ouverture par défaut sur le premier onglet
-  if (isFirstTab) {
-    li.classList.add("active");
-    tabButton.classList.add("active");
-    tabButton.setAttribute("aria-expanded", "true");
-    maindiv.classList.add("active", "show");
-  }
-
   // Remplir le tableau avec les données
   updateLayerTable(layer);
+  return bsButton;
 }
 
 async function _sortAttributes(attributes) {
@@ -321,7 +308,6 @@ async function _setTableHeader(attributes) {
     max_rows = Math.max(max_rows, tbl_objattrib[i].descendants + 1);
   }
 
-  // Produire les éléments DOM
   const _tblHead = document.createElement("thead");
   const _thead_tr = [];
   for (let i = 0; i < max_rows; i++) {
@@ -338,10 +324,10 @@ async function _createTHObjects(_thead_tr, level, max_row, attributes) {
     attributes.simpleattr != "undefined" ? attributes.simpleattr : [];
   const objattr = attributes.objattr != "undefined" ? attributes.objattr : [];
 
-  // Produire les éléments DOM
   for (let i = 0; i < simpleattr.length; i++) {
     const _thead_th = document.createElement("th");
-
+    _thead_th.setAttribute("tabindex", i === 0 ? "0" : "-1");
+    _thead_th.setAttribute("scope", "col");
     _thead_th.setAttribute("rowspan", max_row);
     attributes.simplerowspan = max_row;
     _thead_th.appendChild(document.createTextNode(simpleattr[i]));
@@ -349,6 +335,8 @@ async function _createTHObjects(_thead_tr, level, max_row, attributes) {
   }
   for (let i = 0; i < objattr.length; i++) {
     const _thead_th = document.createElement("th");
+    _thead_th.setAttribute("tabindex", i === 0 ? "0" : "-1");
+    _thead_th.setAttribute("scope", "col");
     _thead_th.setAttribute("colspan", objattr[i].colspan);
     _thead_th.appendChild(document.createTextNode(objattr[i].label));
     _thead_tr[level].appendChild(_thead_th);
@@ -436,6 +424,7 @@ async function _createTDObjects(
   // attributs simples
   for (let j = 0; j < simpleattr.length; j++) {
     const _tbody_td = document.createElement("td");
+    _tbody_td.setAttribute("tabindex", "-1"); // Les autres cellules ne sont accessibles que via les flèches
     if (maxRowSpan && maxRowSpan > 0) {
       _tbody_td.setAttribute("rowspan", maxRowSpan);
     }
@@ -443,7 +432,7 @@ async function _createTDObjects(
 
     let texte = "";
     if (feature) {
-      if (Object.prototype.hasOwnProperty.call(feature, propriete)) {
+      if (Object.hasOwn(feature, propriete)) {
         texte = feature[propriete];
       } else if (feature.properties) {
         texte = feature.properties[propriete];
@@ -480,8 +469,7 @@ async function _createTDObjects(
         console.log(e);
       }
     }
-    //_tbody_td.appendChild(document.createTextNode(texte));
-    _tbody_td.innerHTML = texte;
+    _tbody_td.textContent = texte;
     if (!_tbody_tr[level]) {
       let _tr = document.createElement("tr");
       _tbody_tr.push(_tr);
@@ -548,28 +536,6 @@ function comblertable(level, tbody_tr, rowspan, colspan) {
   tbody_tr[level].appendChild(_td_comble);
 }
 
-function comblertable(level, tbody_tr, rowspan, colspan) {
-  if (!tbody_tr[level]) {
-    let _tr = document.createElement("tr");
-    tbody_tr.push(_tr);
-  }
-  const _td_comble = document.createElement("td");
-  _td_comble.setAttribute("rowspan", rowspan);
-  _td_comble.setAttribute("colspan", colspan);
-  tbody_tr[level].appendChild(_td_comble);
-}
-
-function comblertable(level, tbody_tr, rowspan, colspan) {
-  if (!tbody_tr[level]) {
-    let _tr = document.createElement("tr");
-    tbody_tr.push(_tr);
-  }
-  const _td_comble = document.createElement("td");
-  _td_comble.setAttribute("rowspan", rowspan);
-  _td_comble.setAttribute("colspan", colspan);
-  tbody_tr[level].appendChild(_td_comble);
-}
-
 async function _calculateMaxRowSpan(feature, modele) {
   let maxRowSpan = 0;
 
@@ -619,16 +585,17 @@ function _decodedHTMLEntity(string) {
 }
 
 function relaunch(layer) {
-  if (runningReload[layer.layerid] == true) {
+  if (runningReload[layer.layerid] === true) {
     reloadTable[layer.layerid] = true;
   } else {
     updateLayerTable(layer);
   }
 }
 
-function _init() {
+async function _init() {
   if (API.mode == "data") {
     const layers = mviewer.getLayers();
+    let firstTabButton = null;
     for (const layerid of Object.keys(layers)) {
       const layer = layers[layerid];
 
@@ -643,9 +610,13 @@ function _init() {
         if (layer.visible == "false") {
           mviewer.addLayer(layer);
         }
-        buildTable(layer);
+        const layerTabButton = await buildTable(layer);
+        if (!firstTabButton) {
+          firstTabButton = layerTabButton;
+        }
       }
     }
+    firstTabButton.show();
 
     // Affichage du tableau et masquage de la carte
     document.getElementById("accessibilite-custom-component").style.display =
@@ -654,6 +625,67 @@ function _init() {
     document.getElementById("mv-navbar").style.display = "none";
     if (configuration.getConfiguration().application.showhelp == "true") {
       $("#help").modal("hide");
+    }
+    // Écouteur pour la navigation au clavier dans les tables
+    document.addEventListener("keydown", function (e) {
+      // Vérifier si l'élément actif est une cellule de tableau
+      const activeElement = document.activeElement;
+      if (activeElement.tagName === "TD" || activeElement.tagName === "TH") {
+        const table = activeElement.closest("table");
+        if (!table) return;
+
+        const cells = table.querySelectorAll("td, th");
+        const currentIndex = Array.from(cells).indexOf(activeElement);
+
+        // Gestion des flèches
+        switch (e.key) {
+          case "ArrowUp":
+            e.preventDefault();
+            moveFocus(cells, currentIndex, -1, table); // Monter d'une ligne
+            break;
+          case "ArrowDown":
+            e.preventDefault();
+            moveFocus(cells, currentIndex, 1, table); // Descendre d'une ligne
+            break;
+          case "ArrowLeft":
+            e.preventDefault();
+            moveFocus(cells, currentIndex, -1, table, true); // Aller à gauche
+            break;
+          case "ArrowRight":
+            e.preventDefault();
+            moveFocus(cells, currentIndex, 1, table, true); // Aller à droite
+            break;
+        }
+      }
+    });
+  }
+}
+// Fonction pour déplacer le focus
+function moveFocus(cells, currentIndex, step, table, isHorizontal = false) {
+  const rows = table.querySelectorAll("tr");
+  const currentCell = cells[currentIndex];
+  const currentRow = currentCell.closest("tr");
+  const currentRowIndex = Array.from(rows).indexOf(currentRow);
+
+  let nextIndex;
+  if (isHorizontal) {
+    // Navigation horizontale (gauche/droite)
+    const rowCells = currentRow.querySelectorAll("td, th");
+    const currentRowCellIndex = Array.from(rowCells).indexOf(currentCell);
+    nextIndex = currentRowCellIndex + step;
+    if (nextIndex < 0 || nextIndex >= rowCells.length) return; // Limites de la ligne
+    rowCells[nextIndex].focus();
+  } else {
+    // Navigation verticale (haut/bas)
+    const currentColIndex = Array.from(
+      currentRow.querySelectorAll("td, th"),
+    ).indexOf(currentCell);
+    const nextRowIndex = currentRowIndex + step;
+    if (nextRowIndex < 0 || nextRowIndex >= rows.length) return; // Limites de la table
+    const nextRow = rows[nextRowIndex];
+    const nextRowCells = nextRow.querySelectorAll("td, th");
+    if (currentColIndex < nextRowCells.length) {
+      nextRowCells[currentColIndex].focus();
     }
   }
 }
