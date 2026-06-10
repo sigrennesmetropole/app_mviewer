@@ -309,6 +309,7 @@ async function _setTableHeader(attributes) {
   }
 
   const _tblHead = document.createElement("thead");
+  _tblHead.setAttribute("role", "rowgroup");
   const _thead_tr = [];
   for (let i = 0; i < max_rows; i++) {
     _thead_tr[i] = document.createElement("tr");
@@ -472,6 +473,7 @@ async function _createTDObjects(
     _tbody_td.textContent = texte;
     if (!_tbody_tr[level]) {
       let _tr = document.createElement("tr");
+      _tr.setAttribute("role", "row");
       _tbody_tr.push(_tr);
     }
     _tbody_tr[level].appendChild(_tbody_td);
@@ -508,8 +510,8 @@ async function _createTDObjects(
           );
           childlevel += Math.max(childMaxRowSpan, 1);
         }
-        // créer une case vide de la hauteur restante
 
+        // créer une case vide de la hauteur restante
         if (childlevel < maxRowSpan) {
           comblertable(
             childlevel,
