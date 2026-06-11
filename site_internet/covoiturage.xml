@@ -74,7 +74,7 @@
 				icon="fas fa-caret-right"> 
        
 	   <layer id="v_voirie_stationnement_limite"
-		   name="Déposes minutes covoiturage"
+		   name="Dépose-minutes covoiturage"
 		   type="wms"
 		   url="https://public.sig.rennesmetropole.fr/geoserver/trp_statio/ows"	  
 		   visible="true"

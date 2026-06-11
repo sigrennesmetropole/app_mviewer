@@ -16,6 +16,9 @@
 			<span style="font-family:'roboto_bold'">DUREE :</span>{{duree_text}}<br/>
 			{{/duree_text}}
 			
+			{{#nb_places_covoit}}
+			<span style="font-family:'roboto_bold'"> NOMBRE DE PLACES COVOITURAGE :</span> {{{nb_places_covoit}}}<br/>{{/nb_places_covoit}}
+
           	<br/>
             </ul>
         </p>
