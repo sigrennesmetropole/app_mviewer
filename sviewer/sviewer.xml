@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <application
-        title="Visualiseur de cartes"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
         favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         style="apps/public/css/themes/site_internet_gris.css"
         stats="false"
         statsurl=""
         togglealllayersfromtheme="true"
-        printMap="true"
+        printMap="false"
         templaterightinfopanel="allintabs"
         sortlayersinfopanel="toc"
-        coordinates="true"
+        coordinates="false"
         zoomtools="false"
         initialextenttool="false"
     >
@@ -24,10 +23,6 @@
             url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci_simple_gris" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
             attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
         </baselayer>
-        <baselayer visible="true" id="pvci_nb" thumbgallery="apps/public/img/basemap/pvcinb.jpg" title="Rennes Metropole" label="Plan de ville gris" type="WMTS"
-            url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci_nb" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
-            attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
-        </baselayer>
         <baselayer visible="false" id="pvcicouleur" thumbgallery="apps/public/img/basemap/pvci.jpg" title="Rennes Metropole" label="Plan de ville couleur" type="WMTS"
             url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?" layers="ref_fonds:pvci" format="image/png" style="_null" matrixset="EPSG:3857" fromcapacity="false"
             attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/6ecb85b1-ec5e-4427-ae81-9c83b21a7f32&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
@@ -38,7 +33,7 @@
         <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
     </extensions>
 
-    <themes mini="true">
+    <themes mini="true" legendmini="true">
         <theme id="theme-transport" name="Transport" collapsed="true" icon="fas fa-bus">
             <layer
                 id="stations_vls"
@@ -99,7 +94,7 @@
                 featurecount="5"
                 tooltip="false"
                 tooltipcontent="nom_usage"
-                tooltipenabled="app:sv_sitorg_administration"
+                tooltipenabled="sv_sitorg_administration"
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
@@ -176,7 +171,7 @@
                 featurecount="5"
                 tooltip="false"
                 tooltipcontent="nom_usage"
-                tooltipenabled="app:sv_sitorg_administration"
+                tooltipenabled="sv_sitorg_administration"
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
@@ -197,7 +192,7 @@
                 featurecount="5"
                 tooltip="false"
                 tooltipcontent="nom_court"
-                tooltipenabled="app:sv_metier_v_decheterie_pf_dv"
+                tooltipenabled="sv_metier_v_decheterie_pf_dv"
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
@@ -216,7 +211,7 @@
                 featurecount="5"
                 tooltip="false"
                 tooltipcontent="id_pav"
-                tooltipenabled="app:sv_metier_v_gesbac_pav"
+                tooltipenabled="sv_metier_v_gesbac_pav"
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$id_pav[/b]"
                 infopanel="right-panel">
@@ -237,7 +232,7 @@
                 sld="https://public.sig.rennesmetropole.fr/ressources/app/mviewer/sld/georm_pav_biodechet.sld"
                 tooltip="false"
                 tooltipcontent="id_pav"
-                tooltipenabled="app:sv_metier_v_gesbac_pav"
+                tooltipenabled="sv_metier_v_gesbac_pav"
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$id_pav[/b]"
                 infopanel="right-panel">
@@ -256,7 +251,7 @@
                 featurecount="5"
                 tooltip="false"
                 tooltipcontent="cmp_id"
-                tooltipenabled="app:sv_metier_composteur_coll"
+                tooltipenabled="sv_metier_composteur_coll"
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$cmp_id[/b]"
                 infopanel="right-panel">
@@ -297,7 +292,7 @@
                 featurecount="5"
                 tooltip="false"
                 tooltipcontent="nom_usage"
-                tooltipenabled="app:sv_sitorg_education"
+                tooltipenabled="sv_sitorg_education"
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
@@ -318,7 +313,7 @@
                 featurecount="5"
                 tooltip="false"
                 tooltipcontent="nom_usage"
-                tooltipenabled="app:sv_sitorg_sante"
+                tooltipenabled="sv_sitorg_sante"
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
@@ -339,7 +334,7 @@
                 featurecount="5"
                 tooltip="false"
                 tooltipcontent="nom_usage"
-                tooltipenabled="app:sv_sitorg_administration"
+                tooltipenabled="sv_sitorg_administration"
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
@@ -358,7 +353,7 @@
                 featurecount="5"
                 tooltip="false"
                 tooltipcontent="nom_usage"
-                tooltipenabled="app:sv_sitorg_securite"
+                tooltipenabled="sv_sitorg_securite"
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
@@ -399,7 +394,7 @@
                 featurecount="5"
                 tooltip="false"
                 tooltipcontent="nom_usage"
-                tooltipenabled="app:sv_sitorg_culture"
+                tooltipenabled="sv_sitorg_culture"
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
@@ -486,7 +481,7 @@
                 featurecount="5"
                 tooltip="false"
                 tooltipcontent="nom_usage"
-                tooltipenabled="app:sv_sitorg_sport"
+                tooltipenabled="sv_sitorg_sport"
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
@@ -507,7 +502,7 @@
                 featurecount="5"
                 tooltip="false"
                 tooltipcontent="nom_usage"
-                tooltipenabled="app:sv_sitorg_logement"
+                tooltipenabled="sv_sitorg_logement"
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
@@ -545,7 +540,7 @@
                 featurecount="5"
                 tooltip="false"
                 tooltipcontent="nom_usage"
-                tooltipenabled="app:sv_sitorg_economie"
+                tooltipenabled="sv_sitorg_economie"
                 tooltipWMS="false"
                 tooltipWMSContent= "[b]$nom_usage[/b]"
                 infopanel="right-panel">
