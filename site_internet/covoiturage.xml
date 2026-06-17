@@ -67,6 +67,30 @@
 	</extensions>
 	<themes mini="true">
 	
+	<!-- Parc relais -->
+		<theme id="parc_relais"
+		       name="Parc relais"
+		       collapsed="false"
+			   visible="false"
+		       icon="fas fa-parking">
+			<layer id="v_parking"
+			       name="Parcs relais avec places réservées au covoiturage"
+			       type="wms"
+			       url="https://public.sig.rennesmetropole.fr/geoserver/trp_statio/ows"
+			       visible="true"
+			       style="v_parking_usage_parc_relais"
+			       filter="usage = 'Parc relais' and etat = 'Existant' and nb_pl_covoit > 0 "
+			      
+			       infoformat="application/vnd.ogc.gml" 
+			       metadata="undefined"
+			       metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/ceb9828a-951a-46ed-99e3-dc750d07feb9"
+			       queryable="true"
+			       featurecount="5"
+			       infopanel="right-panel">
+				<template url="apps/site_internet/templates/parc_relais.mst"/>
+			</layer>
+		</theme>
+	
 	<!-- Dépose minute covoiturage -->
 		<theme id="Dépose minute covoiturage" 
 				name="Déposes minutes covoiturage" 
@@ -74,7 +98,7 @@
 				icon="fas fa-caret-right"> 
        
 	   <layer id="v_voirie_stationnement_limite"
-		   name="Dépose-minutes covoiturage"
+		   name="Dépose-minute covoiturage"
 		   type="wms"
 		   url="https://public.sig.rennesmetropole.fr/geoserver/trp_statio/ows"	  
 		   visible="true"
@@ -114,29 +138,7 @@
 				<template url="apps/site_internet/templates/airecovoiturage.mst"/>
 			</layer>
 		</theme>
-		<!-- Parc relais -->
-		<theme id="parc_relais"
-		       name="Parc relais"
-		       collapsed="false"
-			   visible="false"
-		       icon="fas fa-parking">
-			<layer id="v_parking"
-			       name="Parcs relais – places réservées au covoiturage"
-			       type="wms"
-			       url="https://public.sig.rennesmetropole.fr/geoserver/trp_statio/ows"
-			       visible="true"
-			       style="v_parking_usage_parc_relais"
-			       filter="usage = 'Parc relais' and etat = 'Existant' and nb_pl_covoit > 0 "
-			      
-			       infoformat="application/vnd.ogc.gml" 
-			       metadata="undefined"
-			       metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/ceb9828a-951a-46ed-99e3-dc750d07feb9"
-			       queryable="true"
-			       featurecount="5"
-			       infopanel="right-panel">
-				<template url="apps/site_internet/templates/parc_relais.mst"/>
-			</layer>
-		</theme>
+		
 		
 		
 	</themes>
