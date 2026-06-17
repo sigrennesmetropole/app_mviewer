@@ -65,7 +65,7 @@
 		       styletitle=""
 		       dynamiclegend="false"
 		       toplayer="false"
-		       expanded="false"
+		       expanded="true"
 		       exclusive="false"
 		       showintoc="true">
 			   <ccfilters logicaloperator="and" nofilterlabel="Toutes" default="true">
