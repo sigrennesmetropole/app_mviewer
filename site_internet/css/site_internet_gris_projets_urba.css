@@ -1133,10 +1133,52 @@ a>.piscineicon{
 ********************************/
 
 .mv-layer-options[data-layerid="trp_colltrambus_lignes"] a  {
-    color: rgb(221, 54, 39)!important;
+    color: #ee7253!important;
+    text-decoration: underline;
 }
 .mv-layer-options[data-layerid="trp_orgsd_velo_iti_2018"] a {
-    color: rgb(221, 54, 39)!important;
+    color: #00a897!important;
+    text-decoration: underline;
 }
 
+
+
+.grueicon::before {
+    content: '';
+    display: inline-block;
+    height: 1.5em;
+    width: 1.5em;
+    background: url(../img/icons/travaux_02.png) no-repeat scroll;
+    background-size: contain;
+    margin-top: 5px;
+}
+
+a:hover .grueicon::before {  
+    content: '';
+    display: inline-block;
+    height: 1.5em;
+    width: 1.5em;
+    background: url(../img/icons/travaux_02_blanc.png) no-repeat scroll;
+    background-size: contain;
+    margin-top: 5px;
+   
+}
+
+#sidebar-wrapper .sidebar-nav li a {
+    color:#000000;
+}
+
+#sidebar-wrapper .sidebar-nav li a:hover {
+    color:#ffffff;
+}
+
+#searchRM-custom-component .background-custom-searchtool {
+    background-color: black;
+    width: 357px;
+    height: 38px;
+    position: relative;
+    right: 110px;
+    border-radius: 4px;
+    color: white;
+  }
 
