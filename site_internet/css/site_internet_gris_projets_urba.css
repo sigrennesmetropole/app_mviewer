@@ -1193,3 +1193,16 @@ a:hover .grueicon::before {
     color: white;
   }
 
+/*Désactivation big legend*/
+
+.big-legend:hover{
+    cursor: default!important;
+}
+.big-legend:hover img{
+    background: rgba(255, 255, 255, 0)!important;
+}
+
+.big-legend:hover span.text-big-legend {
+  opacity: 0!important;
+}
+
