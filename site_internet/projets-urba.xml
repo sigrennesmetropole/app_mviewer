@@ -7,7 +7,9 @@
     style="apps/site_internet/css/site_internet_gris_projets_urba.css"
     home="" zoomtools="true" initialextenttool="true" 
     exportpng="false" showhelp="false" coordinates="false" measuretools="false" mouseposition="false" 
-    geoloc="false" studio="" togglealllayersfromtheme="false" mapprint="false" addlayerstools="false">
+    geoloc="false" studio="" togglealllayersfromtheme="false" mapprint="false" addlayerstools="false"
+    templaterightinfopanel="allintabs">
+ 
 </application>
 <mapoptions projection="EPSG:3857" center="-181873.30657612678,6125540.364129572" maxzoom="" zoom="12" extent="-200559.20931653812,6115618.727426819,-168741.4780186147,6136257.255836283" />
 <proxy url="" />

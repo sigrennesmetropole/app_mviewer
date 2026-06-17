@@ -1164,6 +1164,17 @@ a:hover .grueicon::before {
    
 }
 
+.popup-content .grueicon::before {
+    content: '';
+    display: inline-block;
+    height: 1.5em;
+    width: 1.5em;
+    background: url(../img/icons/travaux_02_blanc.png) no-repeat scroll;
+    background-size: contain;
+    margin-top: 5px;
+}
+
+
 #sidebar-wrapper .sidebar-nav li a {
     color:#000000;
 }
