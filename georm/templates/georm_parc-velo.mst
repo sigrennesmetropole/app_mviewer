@@ -1,0 +1,11 @@
+{{#features}}
+	<li class="item">
+		<h5 class="rm-popup-title-feature station-velo-title">{{nom}}</h5>
+		<p class="rm-popup-text-feature">
+			{{#nom_voie}}<span class='rm-popup-label'> RUE : </span> {{nom_voie}}<br/>{{/nom_voie}}
+			{{#gestionnaire}}<span class='rm-popup-label'>GESTIONNAIRE :</span> {{gestionnaire}}<br/>{{/gestionnaire}}
+			{{#nb_total_place}}<span class='rm-popup-label'> NOMBRE TOTAL DE PLACES :</span> {{nb_total_place}}<br/>{{/nb_total_place}}
+		</p>
+	</li>
+{{/features}}
+
