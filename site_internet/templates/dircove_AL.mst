@@ -42,7 +42,7 @@ border-radius: 8px;
             <p class="rm-popup-text-feature macaron_ecobonus" show="{{ecobonus}}"> 
                 <img class="ecobns_{{{ecobonus}}}" src="apps/fondsconcours/img/écusson1.svg" style="height: 30px;"/> Bonus Transition Écologique et Environnementale 
             </p>
-			<span>{{ecobonus}}</span>
+			
         {{/ecobonus}}
         <p class="rm-popup-text-feature">
             {{#maitrise_ouvrage}}<span class='rm-popup-label'> MAÎTRISE D'OUVRAGE :</span> {{{maitrise_ouvrage}}}<br/>{{/maitrise_ouvrage}}
