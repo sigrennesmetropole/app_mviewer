@@ -37,7 +37,7 @@
         <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
     </extensions>
 
-    <themes mini="true" legendmini="true">
+    <themes mini="true">
         <theme id="theme-transport" name="Transport" collapsed="true" icon="fas fa-bus">
             <layer
                 id="stations_vls"
