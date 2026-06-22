@@ -1108,20 +1108,8 @@ button.btn.btn-default.navbar-btn.mv-navbar-btn:focus{
 	margin-top: 10px !important;
 }
 
-.piscineicon::before {
-     content: '';
-     display: inline-block;
-     height: 2em;
-     width: 2em;
-     background: url(../img/icons/piscine-01.svg) no-repeat scroll;
-     background-size: contain;
- }
-!a>.piscineicon{
-    padding: 5px 10px;
-}
 
-
-!a.dircove_biodiv::before {
+.dircove_biodiv::before {
      content: '';
      display: inline-block;
      height: 2em;
@@ -1129,7 +1117,8 @@ button.btn.btn-default.navbar-btn.mv-navbar-btn:focus{
      background: url(../img/marqueurs/DIRCOVE-05.svg) no-repeat scroll;
      background-size: contain;
  }
-!a>.dircove_biodiv{
+
+.dircove_biodiv{
     padding: 5px 10px;
 }
 
@@ -1141,7 +1130,7 @@ button.btn.btn-default.navbar-btn.mv-navbar-btn:focus{
      background: url(../img/marqueurs/DIRCOVE-03.svg) no-repeat scroll;
      background-size: contain;
  }
-!a>.dircove_enfance{
+.dircove_enfance{
     padding: 5px 10px;
 }
 
@@ -1153,7 +1142,7 @@ button.btn.btn-default.navbar-btn.mv-navbar-btn:focus{
      background: url(../img/marqueurs/DIRCOVE-02.svg) no-repeat scroll;
      background-size: contain;
  }
-!a>.dircove_autres{
+.dircove_autres{
     padding: 5px 10px;
 }
 
