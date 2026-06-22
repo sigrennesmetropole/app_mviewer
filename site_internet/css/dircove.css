@@ -1119,7 +1119,7 @@ button.btn.btn-default.navbar-btn.mv-navbar-btn:focus{
  }
 
 .dircove_biodiv{
-    padding: 5px 10px;
+    padding: 0px 0px;
 }
 
 .dircove_enfance::before {
@@ -1149,3 +1149,7 @@ button.btn.btn-default.navbar-btn.mv-navbar-btn:focus{
 .ecobns{
   /*transform: rotate(-22deg); */
 }
+
+#right-panel .item.active {    
+    padding-right: 25px;
+  }
