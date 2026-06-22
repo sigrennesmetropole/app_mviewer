@@ -1119,3 +1119,44 @@ button.btn.btn-default.navbar-btn.mv-navbar-btn:focus{
 !a>.piscineicon{
     padding: 5px 10px;
 }
+
+
+!a.dircove_biodiv::before {
+     content: '';
+     display: inline-block;
+     height: 2em;
+     width: 2em;
+     background: url(../img/marqueurs/DIRCOVE-05.svg) no-repeat scroll;
+     background-size: contain;
+ }
+!a>.dircove_biodiv{
+    padding: 5px 10px;
+}
+
+.dircove_enfance::before {
+     content: '';
+     display: inline-block;
+     height: 2em;
+     width: 2em;
+     background: url(../img/marqueurs/DIRCOVE-03.svg) no-repeat scroll;
+     background-size: contain;
+ }
+!a>.dircove_enfance{
+    padding: 5px 10px;
+}
+
+.dircove_autres::before {
+     content: '';
+     display: inline-block;
+     height: 2em;
+     width: 2em;
+     background: url(../img/marqueurs/DIRCOVE-02.svg) no-repeat scroll;
+     background-size: contain;
+ }
+!a>.dircove_autres{
+    padding: 5px 10px;
+}
+
+.ecobns{
+  /*transform: rotate(-22deg); */
+}
