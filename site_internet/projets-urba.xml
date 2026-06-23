@@ -44,7 +44,7 @@
         <layer id="urba_proj:v_oa_operation"  name="Projets d'aménagement"
           style="app:projets_urbains"
           filter="title is not null and title &lt;&gt; ''"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?sortBy=vocation" tiled="false" visible="true"
           infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases=""           
           metadata="" 
           metadata-csw="" 
