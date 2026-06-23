@@ -6,14 +6,21 @@
     favicon=""
     style="apps/site_internet/css/site_internet_gris_projets_urba.css"
     home="" zoomtools="true" initialextenttool="true" 
-    exportpng="false" showhelp="false" coordinates="false" measuretools="true" mouseposition="false" 
-    geoloc="false" studio="" togglealllayersfromtheme="false" mapprint="false" addlayerstools="false">
+    exportpng="false" showhelp="false" coordinates="false" measuretools="false" mouseposition="false" 
+    geoloc="false" studio="" togglealllayersfromtheme="false" mapprint="false" addlayerstools="false"
+    templaterightinfopanel="allintabs">
+ 
 </application>
-<mapoptions projection="EPSG:3857" center="-181873.30657612678,6125540.364129572" maxzoom="" zoom="12" extent="-200559.20931653812,6115618.727426819,-168741.4780186147,6136257.255836283" />
+<mapoptions projection="EPSG:3857" center="-181873.30657612678,6125540.364129572" maxzoom="" zoom="13" extent="-200559.20931653812,6115618.727426819,-168741.4780186147,6136257.255836283" />
 <proxy url="" />
 <extensions>
   <extension type="javascript" src="apps/public/addons/GUICustom/js/matomo.js"/>
+  <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_RVA_adresses_voies.json"/>
 </extensions>
+<!--<extensions>
+        <extension type="component" id="GUICustom" path="apps/public/addons"/>        
+        <extension type="component" id="accessibilite" path="apps/public/addons"/>
+    </extensions>-->
 <olscompletion type="ban" url="https://data.geopf.fr/geocodage/search/" attribution="Base adresse nationale (BAN)" />
 <searchparameters bbox="false" localities="false" features="false" static="false" inputlabel="" querymaponclick="false" closeafterclick="false" imgurl='apps/public/img/marker-rm.svg'/>
 <baselayers style="default"> 
@@ -24,7 +31,7 @@
         <selectionstyle>
             <point radius="7" fillcolor="26, 188, 156" opacity="0.5" strokecolor="26, 188, 156" strokewidth="4" />
             <line opacity="0.5" strokecolor="26, 188, 156" strokewidth="3" />
-            <polygon fillcolor="189, 191, 199" opacity="0.5" strokecolor="189, 191, 199" strokewidth="2" />
+            <polygon fillcolor="189, 191, 199" opacity="0" strokecolor="0, 0, 0" strokewidth="2" />
         </selectionstyle>
         <subselectionstyle>
             <point radius="7" fillcolor="175, 122, 197" opacity="0.5" strokecolor="175, 122, 197" strokewidth="2" />
@@ -33,101 +40,48 @@
         </subselectionstyle>
     </styles>
 <themes mini="false" legendmini="false"> 
-    <theme id="theme-20260127103600" name="Projets d’aménagement (vocation principale des opérations)" collapsed="false" icon="fas fa-snowplow"> 
-        <!--<layer id="urba_proj:v_oa_operation"  name="Projets"
+    <theme id="theme-20260127103600" name="Projets d’aménagement" collapsed="false" icon=".grueicon"> 
+        <layer id="urba_proj:v_oa_operation"  name="Projets d'aménagement"
           style="app:projets_urbains"
           filter="title is not null and title &lt;&gt; ''"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?sortBy=vocation" tiled="false" visible="true"
           infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases=""           
           metadata="" 
           metadata-csw="" 
           queryable="true" sld="" featurecount="5" infopanel="right-panel" opacity="1"
           dynamiclegend="false" toplayer="false" expanded="false" exclusive="false" showintoc="true">
           <template url="apps/site_internet/templates/projets-urba.mst"/>
-        </layer>-->
-        <layer id="urba_proj:v_oa_operation"  name="Infrastructures, espaces publics"
-          style="app:projets_urbains"
-          filter="title is not null and title &lt;&gt; '' and vocation = 'Mobilités/Infrastructures/Espaces publics'"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
-          infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases="" 
-          legendurl="https://public.sig.rennesmetropole.fr/geoserver/ows?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetLegendGraphic&amp;SLD_VERSION=1.1.0&amp;FORMAT=image/png&amp;WIDTH=30&amp;HEIGHT=20&amp;LEGEND_OPTIONS=fontName%3AOpen%20Sans%3BfontAntiAliasing%3Atrue%3BfontColor%3A0x777777%3BfontSize%3A10%3Bdpi%3A96&amp;TRANSPARENT=true&amp;LAYER=urba_proj:v_oa_operation&amp;RULE=Mobilites_Infrastructures_Espaces_publics&amp;STYLE=app:projets_urbains"
-          metadata="" 
-          metadata-csw=""
-          queryable="true" sld="" featurecount="5" infopanel="right-panel" opacity="1"
-          dynamiclegend="false" toplayer="false" expanded="false" exclusive="false" showintoc="true">
-          <template url="apps/site_internet/templates/projets-urba.mst"/>
-        </layer>       
-        <layer id="urba_proj:v_oa_operation"  name="Activités"
-          style="app:projets_urbains"
-          filter="title is not null and title &lt;&gt; '' and vocation = 'Activités'"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
-          infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases="" 
-          legendurl="https://public.sig.rennesmetropole.fr/geoserver/ows?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetLegendGraphic&amp;SLD_VERSION=1.1.0&amp;FORMAT=image/png&amp;WIDTH=30&amp;HEIGHT=20&amp;LEGEND_OPTIONS=fontName%3AOpen%20Sans%3BfontAntiAliasing%3Atrue%3BfontColor%3A0x777777%3BfontSize%3A10%3Bdpi%3A96&amp;TRANSPARENT=true&amp;LAYER=urba_proj:v_oa_operation&amp;RULE=Activités&amp;STYLE=app:projets_urbains"
-          metadata="" 
-          metadata-csw="" 
-          queryable="true" sld="" featurecount="5" infopanel="right-panel" opacity="1"
-          dynamiclegend="false" toplayer="false" expanded="false" exclusive="false" showintoc="true">
-          <template url="apps/site_internet/templates/projets-urba.mst"/>
         </layer>
-        <layer id="urba_proj:v_oa_operation"  name="Habitat"
-          style="app:projets_urbains"
-          filter="title is not null and title &lt;&gt; '' and vocation = 'Habitat'"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
-          infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases="" 
-          legendurl="https://public.sig.rennesmetropole.fr/geoserver/ows?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetLegendGraphic&amp;SLD_VERSION=1.1.0&amp;FORMAT=image/png&amp;WIDTH=30&amp;HEIGHT=20&amp;LEGEND_OPTIONS=fontName%3AOpen%20Sans%3BfontAntiAliasing%3Atrue%3BfontColor%3A0x777777%3BfontSize%3A10%3Bdpi%3A96&amp;TRANSPARENT=true&amp;LAYER=urba_proj:v_oa_operation&amp;RULE=Habitat&amp;STYLE=app:projets_urbains"
-          metadata="" 
-          metadata-csw="" 
-          queryable="true" sld="" featurecount="5" infopanel="right-panel" opacity="1"
-          dynamiclegend="false" toplayer="false" expanded="false" exclusive="false" showintoc="true">
-          <template url="apps/site_internet/templates/projets-urba.mst"/>
-        </layer>        
-        <layer id="urba_proj:v_oa_operation"  name="Mixte (habitat, bureaux, commerces…)"
-          style="app:projets_urbains"
-          filter="title is not null and title &lt;&gt; '' and vocation = 'Mixte'"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
-          infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases="" 
-          legendurl="https://public.sig.rennesmetropole.fr/geoserver/ows?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetLegendGraphic&amp;SLD_VERSION=1.1.0&amp;FORMAT=image/png&amp;WIDTH=30&amp;HEIGHT=20&amp;LEGEND_OPTIONS=fontName%3AOpen%20Sans%3BfontAntiAliasing%3Atrue%3BfontColor%3A0x777777%3BfontSize%3A10%3Bdpi%3A96&amp;TRANSPARENT=true&amp;LAYER=urba_proj:v_oa_operation&amp;RULE=Mixte&amp;STYLE=app:projets_urbains"
-          metadata="" 
-          metadata-csw="" 
-          queryable="true" sld="" featurecount="5" infopanel="right-panel" opacity="1"
-          dynamiclegend="false" toplayer="false" expanded="false" exclusive="false" showintoc="true">
-          <template url="apps/site_internet/templates/projets-urba.mst"/>
-        </layer>
-        
-         <layer id="urba_proj:v_oa_operation"  name="Equipement public"
-          style="app:projets_urbains"
-          filter="title is not null and title &lt;&gt; '' and vocation = 'Equipement public'"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="false" visible="true"
-          infoformat="application/vnd.ogc.gml" fields="title,chapeau,projet,actualites,savoir" aliases="" 
-          legendurl="https://public.sig.rennesmetropole.fr/geoserver/ows?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetLegendGraphic&amp;SLD_VERSION=1.1.0&amp;FORMAT=image/png&amp;WIDTH=30&amp;HEIGHT=20&amp;LEGEND_OPTIONS=fontName%3AOpen%20Sans%3BfontAntiAliasing%3Atrue%3BfontColor%3A0x777777%3BfontSize%3A10%3Bdpi%3A96&amp;TRANSPARENT=true&amp;LAYER=urba_proj:v_oa_operation&amp;RULE=Equipement public&amp;STYLE=app:projets_urbains"
-          metadata="" 
-          metadata-csw="" 
-          queryable="true" sld="" featurecount="5" infopanel="right-panel" opacity="1"
-          dynamiclegend="false" toplayer="false" expanded="false" exclusive="false" showintoc="true">
-          <template url="apps/site_internet/templates/projets-urba.mst"/>
-        </layer>
-
     </theme> 
-    <theme id="theme-2" name="Projets de mobilité" collapsed="true" icon="fas fa-biking">         
+    <theme id="theme-2" name="Déplacements" collapsed="true" icon="fas fa-biking">         
         <layer id="trp_coll:trambus_lignes" name="Projet trambus de Rennes Métropole : tracé des lignes"
           style="app:trambus_simple"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="true" visible="false"
-          attribution="&lt;a href='https://trambus.coopterr.rennesmetropole.fr' target='_blank'>En savoir plus &lt;/a>"
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="true" visible="true"
+          attribution="&lt;a href='https://trambus.coopterr.rennesmetropole.fr' target='_blank'>Plus d’informations sur le trambus &lt;/a>"
           infoformat="text/html"   expanded="true"
           queryable="false" showintoc="true">
         </layer> 
         <layer id="trp_org:sd_velo_iti_2018" name="Schéma Directeur Vélo Métropolitain de Rennes Métropole"
           style="app:schema_directeur_velo"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="false" visible="false" 
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="false" visible="true"           
           infoformat="text/html" fields="" aliases="" 
-          attribution="&lt;a href='https://transport.metropole.rennes.fr/la-politique-cyclable/' target='_blank'>En savoir plus &lt;/a>"
+          attribution="&lt;a href='https://transport.metropole.rennes.fr/la-politique-cyclable/' target='_blank'>Plus d’informations sur le schéma directeur vélo  &lt;/a>"
           stylesalias="" 
+          dynamiclegend="false"
           queryable="false" searchable="false" fusesearchkeys="" fusesearchresult="" 
           useproxy="false" filter="" sld="" legendurl="" featurecount="5" 
-          infopanel="right-panel" opacity="1" index="" styletitle="" dynamiclegend="false" 
+          infopanel="right-panel" opacity="1" index="" styletitle=""
           toplayer="false" expanded="true" exclusive="false" showintoc="true">
-        </layer> 
-        <layer id="ladm_terri:commune_contour" name="Limites communales référentielles de Rennes Métropole (polylignes)"
+        </layer>
+        <layer id="trp_coll:metro_station" name="Stations de métro"
+          style="app:metro_station_simple"
+          dynamiclegend="false"         
+          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="false" visible="false"
+          infoformat="text/html" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/31cd10dc-1245-4554-8ca9-232f925d4402"
+          metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=31cd10dc-1245-4554-8ca9-232f925d4402" 
+          queryable="false" showintoc="true">
+        </layer>        
+        <!--<layer id="ladm_terri:commune_contour" name="Limites communales référentielles de Rennes Métropole (polylignes)"
           type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="true" visible="true"
           infoformat="text/html" fields="" aliases="" style="ladm_terri:commune_contour_rm_tiretsgris_lgn" stylesalias=""
           scalemax="100000"
@@ -136,21 +90,8 @@
           attribution="" queryable="false" searchable="false" fusesearchkeys="" fusesearchresult="" useproxy="false" 
           filter="" sld="" legendurl="" featurecount="5" infopanel="right-panel" opacity="1" index="" styletitle="" dynamiclegend="false" 
           toplayer="false" expanded="false" exclusive="false" showintoc="false">
-        </layer>
+        </layer>-->
 
-    </theme>
-    <theme id="theme-3" name="Contexte" collapsed="true" icon="fas fa-map">
-         <layer id="trp_coll:metro_station" name="Stations de métro"
-          style="app:metro_station_simple"
-          dynamiclegend="false"
-          scalemax="75000"
-          scalemin="100"
-          type="wms" url="https://public.sig.rennesmetropole.fr/geoserver/ows" tiled="false" visible="false"
-          infoformat="text/html" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/31cd10dc-1245-4554-8ca9-232f925d4402"
-          metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=31cd10dc-1245-4554-8ca9-232f925d4402" 
-          queryable="false" showintoc="true">
-        </layer>        
-
-    </theme>
+    </theme>    
 </themes>
 </config>
