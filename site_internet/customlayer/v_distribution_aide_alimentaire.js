@@ -29,38 +29,62 @@ function createSvgIcon(url, size) {
   });
 }
 
-// 1. Définition des styles pour chaque type de distribution (Convertis du SLD)
+// 1. Définition des styles pour chaque type de distribution
 const stylesMap = {
+
   epicerie: [
     new ol.style.Style({
       image: new ol.style.Circle({
-        radius: 25 / 2, // Diamètre 35 du SLD / 2 = Rayon
+        radius: 12.5,
         fill: new ol.style.Fill({ color: '#ff0000' })
       })
     }),
-    createSvgIcon('https://public.sig.rennesmetropole.fr/ressources/pictos/commerce.svg?fill=%23ffffff', 30)
+    new ol.style.Style({
+      image: new ol.style.Icon({
+        src: 'apps/site_internet/img/icons/commerce.svg',
+        scale: 0.2,
+        anchor: [0.5, 0.5],
+        declutter: false
+      })
+    })
   ],
-  colis:  [
+
+  colis: [
     new ol.style.Style({
       image: new ol.style.Circle({
-        radius: 25 / 2,
+        radius: 12.5,
         fill: new ol.style.Fill({ color: '#0080a3' })
       })
     }),
-   createSvgIcon('https://public.sig.rennesmetropole.fr/ressources/pictos/marche.svg?fill=%23ffffff', 30)
-
+    new ol.style.Style({
+      image: new ol.style.Icon({
+        src: 'apps/site_internet/img/icons/marche.svg',
+        scale: 0.2,
+		color: '#ffffff',
+        anchor: [0.5, 0.5],
+        declutter: false
+      })
+    })
   ],
+
   repas: [
     new ol.style.Style({
       image: new ol.style.Circle({
-        radius: 25 / 2,
+        radius: 12.5,
         fill: new ol.style.Fill({ color: '#ffbf00' })
       })
     }),
-    createSvgIcon('https://public.sig.rennesmetropole.fr/ressources/pictos/repas.svg?fill=%23000000', 20)
+    new ol.style.Style({
+      image: new ol.style.Icon({
+        src: 'apps/site_internet/img/icons/repas.svg',
+        scale: 0.1,
+        anchor: [0.40, 0.25],
+        declutter: false
+      })
+    })
   ]
-};
 
+};
 // 2. Fonction de style dynamique (Interprète les filtres <ogc:Filter> du SLD)
 const featureStyleFunction = function (feature) {
   const props = feature.getProperties();
