@@ -77,8 +77,8 @@ const stylesMap = {
     new ol.style.Style({
       image: new ol.style.Icon({
         src: 'apps/site_internet/img/icons/repas.svg',
-        scale: 0.1,
-        anchor: [0.40, 0.25],
+        scale: 0.2,
+        anchor: [0.3, 0.4],
         declutter: false
       })
     })
