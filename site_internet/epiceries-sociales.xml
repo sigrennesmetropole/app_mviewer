@@ -35,12 +35,12 @@
                
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
-                style="eq_educ:distrib_aide_alim"
+                legendurl="apps/site_internet/img/legend/epiceries_sociales.png"
                 
 				
 				
 				type="customlayer" 
-				vectorlegend="true" 
+				vectorlegend="false" 
 				
 				url="apps/site_internet/customlayer/v_distribution_aide_alimentaire.js"
 				searchable="true" 
