@@ -1,0 +1,11 @@
+{{#features}}
+	<li class="item" >
+		<h5 class="rm-popup-title-feature">{{Nom organisme}}</h5>
+		<p class="rm-popup-text-feature">
+			{{#Quartier}}<span class='rm-popup-label'> QUARTIER :</span> {{{Quartier}}}<br/>{{/Quartier}}
+			{{#Thème}}<span class='rm-popup-label'> THEME :</span> {{{Thème}}}<br/>{{/Thème}}
+			{{#Activité}}<span class='rm-popup-label'> ACTIVITE :</span> {{{Activité}}}<br/>{{/Activité}}
+			{{#Spécialité}}<span class='rm-popup-label'> SPECIALITE :</span> {{{Spécialité}}}<br/>{{/Spécialité}}
+		</p>
+	</li>
+{{/features}}
