@@ -1,32 +1,67 @@
+mviewer.customLayers.lieuxfrais = (function () {
 
-mviewer.customLayers.lieuxfrais= (function() {
-    
     var data = 'apps/site_internet/customlayer/data/lieux_frais.geojson';
-    
-    function lieux_frais_Style_pct() {
-        let style = new ol.style.Style({
+
+    function lieux_frais_Style_pct(feature) {
+
+        const lieuxFrais = feature.get("Lieux frais");
+        const climatise = feature.get("Climatisé");
+
+        // N'afficher que Oui ou Partiellement
+        if (lieuxFrais !== "Oui" && lieuxFrais !== "Partiellement") {
+            return null;
+        }
+
+        // Couleur du marqueur
+        let color = "#2FE8FC"; // Bleu
+
+        if (lieuxFrais === "Partiellement") {
+            color = "#984CEB"; // Violet
+        }
+
+        let styles = [];
+
+        // Contour bleu foncé si Climatisé = Oui
+        if (climatise === "Oui") {
+            styles.push(
+                new ol.style.Style({
+                    image: new ol.style.Icon({
+                        src: 'apps/site_internet/customlayer/picture/marker.svg',
+                        color: '#003B8E',
+                        scale: 1.15,
+                        anchor: [0.5, 1],
+                        crossOrigin: 'anonymous'
+                    })
+                })
+            );
+        }
+
+        // Marqueur principal
+        styles.push(
+            new ol.style.Style({
                 image: new ol.style.Icon({
-                  color: '#0255BA',
-                  crossOrigin: 'anonymous',
-                  scale:1,
-                  anchor:[0.5,1],
-                  src: 'apps/site_internet/customlayer/picture/marker.svg',
-                }),
-              });
-        return [style];
+                    src: 'apps/site_internet/customlayer/picture/marker.svg',
+                    color: color,
+                    scale: 1,
+                    anchor: [0.5, 1],
+                    crossOrigin: 'anonymous'
+                })
+            })
+        );
+
+        return styles;
     }
-    
+
     let lieuxfraislayer = new ol.layer.Vector({
         source: new ol.source.Vector({
             url: data,
-            format: new ol.format.GeoJSON(),
+            format: new ol.format.GeoJSON()
         }),
-        style: lieux_frais_Style_pct,
+        style: lieux_frais_Style_pct
     });
-    
+
     return {
-        layer: lieuxfraislayer,
-    }
+        layer: lieuxfraislayer
+    };
+
 }());
-
-

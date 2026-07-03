@@ -58,7 +58,7 @@
             type="wms" 
             url="https://public.sig.rennesmetropole.fr/geoserver/ows" 
             tiled="false" 
-            visible="true" 
+            visible="false" 
             infoformat="application/vnd.ogc.gml" 
             fields="" 
             aliases="" 
