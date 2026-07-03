@@ -8,6 +8,8 @@
 			{{#Spécialité}}<span class='rm-popup-label'> SPECIALITE :</span> {{{Spécialité}}}<br/>{{/Spécialité}}
             {{#Lieux frais}}<span class='rm-popup-label'> LIEUX FRAIS :</span> {{{Lieux frais}}}<br/>{{/Lieux frais}}
             {{#Accès libre}}<span class='rm-popup-label'> ACCES LIBRE :</span> {{{Accès libre}}}<br/>{{/Accès libre}}
+            {{#horaires officiels}}<span class='rm-popup-label'> HORAIRES :</span> {{{horaires officiels}}}<br/>{{/horaires officiels}}
+            
 		</p>
 	</li>
 {{/features}}

@@ -13,10 +13,10 @@ mviewer.customLayers.lieuxfrais = (function () {
         }
 
         // Couleur du marqueur
-        let color = "#2FE8FC"; // Bleu
+        let color = "#8AE5FC"; // Bleu
 
         if (lieuxFrais === "Partiellement") {
-            color = "#984CEB"; // Violet
+            color = "#B185EB"; // Violet
         }
 
         let styles = [];
@@ -26,9 +26,9 @@ mviewer.customLayers.lieuxfrais = (function () {
             styles.push(
                 new ol.style.Style({
                     image: new ol.style.Icon({
-                        src: 'apps/site_internet/customlayer/picture/marker.svg',
+                        src: 'apps/site_internet/customlayer/picture/rond_default.svg',
                         color: '#003B8E',
-                        scale: 1.15,
+                        scale: 2,
                         anchor: [0.5, 1],
                         crossOrigin: 'anonymous'
                     })
@@ -40,9 +40,9 @@ mviewer.customLayers.lieuxfrais = (function () {
         styles.push(
             new ol.style.Style({
                 image: new ol.style.Icon({
-                    src: 'apps/site_internet/customlayer/picture/marker.svg',
+                    src: 'apps/site_internet/customlayer/picture/rond_default.svg',
                     color: color,
-                    scale: 1,
+                    scale: 1.5,
                     anchor: [0.5, 1],
                     crossOrigin: 'anonymous'
                 })
