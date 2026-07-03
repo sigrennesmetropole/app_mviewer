@@ -4,55 +4,54 @@ mviewer.customLayers.lieuxfrais = (function () {
 
     function lieux_frais_Style_pct(feature) {
 
-        const lieuxFrais = feature.get("Lieux frais");
-        const climatise = feature.get("Climatisé");
+        var lieuxFrais = feature.get("Lieux frais");
+        var climatise = feature.get("Climatisé");
 
-        // N'afficher que Oui ou Partiellement
+        // On n'affiche que les lieux frais
         if (lieuxFrais !== "Oui" && lieuxFrais !== "Partiellement") {
             return null;
         }
 
-        // Couleur du marqueur
-        let color = "#8AE5FC"; // Bleu
+        var color;
+        var zIndex;
 
-        if (lieuxFrais === "Partiellement") {
-            color = "#B185EB"; // Violet
+        // Détermination de la catégorie
+        if (lieuxFrais === "Oui" && climatise === "Oui") {
+            color = "#BCE9FC";      // Vert
+            zIndex = 20;
+        }
+        else if (lieuxFrais === "Partiellement" && climatise === "Oui") {
+            color = "#D2B0EB";      // Orange
+            zIndex = 20;
+        }
+        else if (lieuxFrais === "Oui") {
+            color = "#5D82FC";      // Bleu
+            zIndex = 10;
+        }
+        else if (lieuxFrais === "Partiellement") {
+            color = "#9261EB";      // Violet
+            zIndex = 10;
+        }
+        else {
+            return null;
         }
 
-        let styles = [];
-
-        // Contour bleu foncé si Climatisé = Oui
-        if (climatise === "Oui") {
-            styles.push(
-                new ol.style.Style({
-                    image: new ol.style.Icon({
-                        src: 'apps/site_internet/customlayer/picture/rond_default.svg',
-                        color: '#003B8E',
-                        scale: 2,
-                        anchor: [0.5, 1],
-                        crossOrigin: 'anonymous'
-                    })
-                })
-            );
-        }
-
-        // Marqueur principal
-        styles.push(
-            new ol.style.Style({
-                image: new ol.style.Icon({
-                    src: 'apps/site_internet/customlayer/picture/rond_default.svg',
-                    color: color,
-                    scale: 1.5,
-                    anchor: [0.5, 1],
-                    crossOrigin: 'anonymous'
+        return new ol.style.Style({
+            zIndex: zIndex,
+            image: new ol.style.Circle({
+                radius: 7,
+                fill: new ol.style.Fill({
+                    color: color
+                }),
+                stroke: new ol.style.Stroke({
+                    color: "#333333",
+                    width: 1.5
                 })
             })
-        );
-
-        return styles;
+        });
     }
 
-    let lieuxfraislayer = new ol.layer.Vector({
+    var lieuxfraislayer = new ol.layer.Vector({
         source: new ol.source.Vector({
             url: data,
             format: new ol.format.GeoJSON()
