@@ -84,6 +84,7 @@
             expanded="false" 
             exclusive="false" 
             showintoc="true">
+            <template url="apps/site_internet/templates/parc.mst"></template>
         </layer> 
     </theme> 
 </themes>
