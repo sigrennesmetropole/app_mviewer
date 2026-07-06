@@ -10,28 +10,16 @@ mviewer.customLayers.lieuxfrais = (function () {
 
     // On n'affiche que les lieux en accès libre
     if (accesLibre !== "Oui") {
-        return null;
+       return null;
     }
-
-    // On n'affiche que les lieux frais
-    if (lieuxFrais !== "Oui" && lieuxFrais !== "Partiellement") {
-        return null;
-    }
-
+        
+    
     var color;
     var zIndex;
 
-    // Détermination de la catégorie
-    if (lieuxFrais === "Oui" && climatise === "Oui") {
-        color = "#BCE9FC";
-        zIndex = 20;
-    }
-    else if (lieuxFrais === "Partiellement" && climatise === "Oui") {
-        color = "#D2B0EB";
-        zIndex = 20;
-    }
-    else if (lieuxFrais === "Oui") {
-        color = "#5D82FC";
+   
+    if (lieuxFrais === "Oui") {
+        color = "#1BE5FC";
         zIndex = 10;
     }
     else if (lieuxFrais === "Partiellement") {
@@ -41,6 +29,7 @@ mviewer.customLayers.lieuxfrais = (function () {
     else {
         return null;
     }
+        
 
     return new ol.style.Style({
         zIndex: zIndex,
