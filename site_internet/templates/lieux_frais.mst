@@ -5,6 +5,7 @@
             {{#Lieux frais}}<span class='rm-popup-label'> LIEUX FRAIS :</span> {{{Lieux frais}}}<br/>{{/Lieux frais}}
             {{#Accès libre}}<span class='rm-popup-label'> ACCES LIBRE :</span> {{{Accès libre}}}<br/>{{/Accès libre}}
             {{#Climatisé}}<span class='rm-popup-label'> CLIMATISE :</span> {{{Climatisé}}}<br/>{{/Climatisé}}
+            {{#Adresse}}<span class='rm-popup-label'> ADRESSE :</span> {{{Adresse}}}<br/>{{/Adresse}}
             {{#horaires officiels}}<span class='rm-popup-label'> HORAIRES :</span> {{{horaires officiels}}}<br/>{{/horaires officiels}}
             
             
