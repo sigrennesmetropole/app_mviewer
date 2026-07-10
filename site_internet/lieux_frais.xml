@@ -31,7 +31,7 @@
     
 <themes mini="false"> 
     <theme id="theme-20250724093223" name="Lieux frais" collapsed="true" icon="fas fa-tint "> 
-        <layer
+        <!--<layer
             id="lieuxfrais"
             name="Lieux Frais"
             type="customlayer"
@@ -44,6 +44,19 @@
             queryable="true"
             featurecount="5"
             infopanel="right-panel">
+            <template url="apps/site_internet/templates/lieux_frais.mst"></template>
+        </layer> -->
+        <layer 
+            id="eq_poi:v_sitorg_lieux_frais" 
+            name="Lieux frais à Rennes" 
+            type="wms" 
+            url="https://public.sig.rennesmetropole.fr/geoserver/ows" 
+            tiled="true" 
+            visible="true" 
+            infoformat="text/html" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/727df89d-0dfd-43eb-9c24-cc9ed60b8828" 
+            metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=727df89d-0dfd-43eb-9c24-cc9ed60b8828" 
+            queryable="true" 
+            showintoc="true">
             <template url="apps/site_internet/templates/lieux_frais.mst"></template>
         </layer> 
         <!--<layer id="lieux_frais" name="Lieux Frais" type="geojson" url="data\lieux_frais.geojson" tiled="true" visible="false" infoformat="application/vnd.ogc.gml" fields="" aliases="" style="eq_sport_proxi_pataugeoire" stylesalias="" metadata="" metadata-csw="" attribution="" queryable="true" searchable="false" fusesearchkeys="" fusesearchresult="" secure="public" useproxy="false" filter="" sld="" legendurl="" featurecount="5" infopanel="right-panel" opacity="1" index="" styletitle="" dynamiclegend="false" toplayer="false" expanded="false" exclusive="false" showintoc="true">
