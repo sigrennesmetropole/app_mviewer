@@ -1,13 +1,12 @@
 {{#features}}
-	<li class="item" >
+	<li class="item">
 		<h5 class="rm-popup-title-feature">{{nom_usage}}</h5>
 		<p class="rm-popup-text-feature">
             {{#lieux_frais}}<span class='rm-popup-label'> LIEUX FRAIS :</span> {{{lieux_frais}}}<br/>{{/lieux_frais}}
             {{#acces_libre}}<span class='rm-popup-label'> ACCES LIBRE :</span> {{{acces_libre}}}<br/>{{/acces_libre}}
             {{#climatise}}<span class='rm-popup-label'> CLIMATISE :</span> {{{climatise}}}<br/>{{/climatise}}
-            {{#adresse_postale_adr}}<span class='rm-popup-label'> ADRESSE :</span> {{{adresse_postale_adr}}}<br/>{{/adresse_postale_adr}}
-            {{#horaires officiels}}<span class='rm-popup-label'> HORAIRES :</span> {{{horaires officiels}}}<br/>{{/horaires officiels}}
-            {{#horaire_canicule}}<span class='rm-popup-label'> HORAIRES :</span> {{{horaire_canicule}}}<br/>{{/horaire_canicule}}
+            {{#adresse}}<span class='rm-popup-label'> ADRESSE :</span> {{{adresse}}}<br/>{{/adresse}}
+            {{#horaire}}<span class='rm-popup-label'> HORAIRES :</span> {{{horaire}}}<br/>{{/horaire}}
             
             
 		</p>
