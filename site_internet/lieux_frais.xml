@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <application
-        title="Lieux frais"
+        title="Lieux Frais"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
         favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
@@ -30,7 +30,7 @@
     </extensions>
     
 <themes mini="false"> 
-    <theme id="theme-20250724093223" name="Lieux frais" collapsed="true" icon="fas fa-tint "> 
+    <theme id="theme-20250724093223" name="Lieux Frais" collapsed="true" icon="fas fa-tint "> 
         <!--<layer
             id="lieuxfrais"
             name="Lieux Frais"
