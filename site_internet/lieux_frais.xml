@@ -48,7 +48,7 @@
         </layer> -->
         <layer 
             id="v_sitorg_lieux_frais" 
-            name="Lieux frais" 
+            name="Lieux Frais" 
             type="wms" 
             url="https://public.sig.rennesmetropole.fr/geoserver/ows" 
             visible="true" 
