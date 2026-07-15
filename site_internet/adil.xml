@@ -193,6 +193,19 @@
                exclusive="false" 
                showintoc="true">
         </layer> 
+                <layer 
+                id="res_humide:v_zone_reseau_chaleur_urbain" 
+                name="Zones concernées par le raccordement aux réseaux de chaleur urbains" 
+                type="wms" 
+                url="https://public.sig.rennesmetropole.fr/geoserver/ows"
+                tiled="true" 
+                visible="false" 
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a04e130f-cb96-46a1-a0c8-c2012c020437" 
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=a04e130f-cb96-46a1-a0c8-c2012c020437" 
+                queryable="true" 
+                showintoc="true">
+        </layer>
             <layer
                 id="plui_plan_zonage"
                 name="PLUi de Rennes Métropole : plan de zonage"
