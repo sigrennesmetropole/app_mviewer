@@ -23,7 +23,6 @@
     </baselayers>
 
     <extensions>
-        
         <extension type="component" id="GUICustom" path="apps/public/addons"/>
         <extension type="javascript" src="apps/public/addons/addOrthophotoBaselayer.js" visible="false"/>
         <extension type="component" id="accessibilite" path="apps/public/addons"/>
@@ -31,21 +30,6 @@
     
 <themes mini="false"> 
     <theme id="theme-20250724093223" name="Lieux Frais" collapsed="true" icon="fas fa-tint "> 
-        <!--<layer
-            id="lieuxfrais"
-            name="Lieux Frais"
-            type="customlayer"
-            url="apps/site_internet/customlayer/lieux_frais.js"
-            legendurl="apps/site_internet/img/legend/leg_lieux_frais_1.svg"
-            vectorlegend="true"
-            opacity="1"
-            visible="true"
-            metadata="undefined"
-            queryable="true"
-            featurecount="5"
-            infopanel="right-panel">
-            <template url="apps/site_internet/templates/lieux_frais.mst"></template>
-        </layer> -->
         <layer 
             id="v_sitorg_lieux_frais" 
             name="Lieux Frais" 
@@ -57,9 +41,7 @@
             metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/csw?SERVICE=CSW&amp;VERSION=2.0.2&amp;REQUEST=GetRecordById&amp;ELEMENTSETNAME=full&amp;ID&amp;ID=727df89d-0dfd-43eb-9c24-cc9ed60b8828" 
             queryable="true" 
             showintoc="true"><template url="apps/site_internet/templates/lieux_frais.mst"></template>
-        </layer> 
-        <!--<layer id="lieux_frais" name="Lieux Frais" type="geojson" url="data\lieux_frais.geojson" tiled="true" visible="false" infoformat="application/vnd.ogc.gml" fields="" aliases="" style="eq_sport_proxi_pataugeoire" stylesalias="" metadata="" metadata-csw="" attribution="" queryable="true" searchable="false" fusesearchkeys="" fusesearchresult="" secure="public" useproxy="false" filter="" sld="" legendurl="" featurecount="5" infopanel="right-panel" opacity="1" index="" styletitle="" dynamiclegend="false" toplayer="false" expanded="false" exclusive="false" showintoc="true">
-        </layer>-->
+        </layer>
     </theme>
 </themes>
 </config>

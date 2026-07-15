@@ -1,10 +1,8 @@
 {{#features}}
-	<li class="item" >
-		<h5 class="rm-popup-title-feature">{{nom}}</h5>
-		<p class="rm-popup-text-feature">
-            {{#type}}<span class='rm-popup-label'> TYPE :</span> {{{type}}}<br/>{{/type}}
-            
-            
-		</p>
-	</li>
+  <li class="item">
+    <h5 class="rm-popup-title-feature">{{nom}}</h5>
+    <p class="rm-popup-text-feature">
+      {{#type}}<span class="rm-popup-label"> TYPE :</span> {{{type}}}<br />{{/type}}
+    </p>
+  </li>
 {{/features}}
