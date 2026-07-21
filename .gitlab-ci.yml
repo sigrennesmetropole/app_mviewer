@@ -15,6 +15,7 @@ workflow:
 
 deploy-ansible:
   stage: deploy
+  environment: ${ENV}
   tags:
     - SIG
     - deploy
@@ -33,10 +34,11 @@ deploy-ansible:
         --extra-vars \
           "CI_PROJECT_DIR=$CI_PROJECT_DIR \
             CI_PROJECT_NAME=$CI_PROJECT_NAME \
+            MVIEWER_VERSION=$MVIEWER_VERSION \
             ENV=$ENV"
   rules:
     - if: '$CI_COMMIT_REF_NAME == "develop"'
-      when: on_success
+      when: manual
     - if: '$CI_COMMIT_REF_NAME =~ /^migration\//'
       when: manual
     - if: '$CI_COMMIT_REF_NAME == "main"'
