@@ -4,7 +4,7 @@
     logo="https://mviewer.sig.rennesmetropole.fr/apps/public/img/logo/logo_mviewer_transp.png" 
     help="apps/site_internet/html/projets_urbains_help.html" titlehelp="Carte des projets urbains" iconhelp="fas fa-home"
     favicon=""
-    style="apps/site_internet/css/site_internet_gris_projets_urba.css"
+    style="apps/site_internet/css/site_internet_gris.css"
     home="" zoomtools="true" initialextenttool="true" 
     exportpng="false" showhelp="false" coordinates="false" measuretools="false" mouseposition="false" 
     geoloc="false" studio="" togglealllayersfromtheme="false" mapprint="false" addlayerstools="false"
