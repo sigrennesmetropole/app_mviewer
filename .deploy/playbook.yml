@@ -20,6 +20,7 @@
         rsync_opts:
           - "--exclude=.git"
           - "--delete"
+        delegate_to: localhost
 
     - name: Copie de la composition docker
       become: true
