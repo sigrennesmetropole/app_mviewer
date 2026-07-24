@@ -155,39 +155,45 @@
         var oldTabs;
 
 
-    const targetNode1 = document.getElementById("right-panel").getElementsByClassName("popup-content");
-    const targetNode2 = document.getElementById("modal-panel").getElementsByClassName("popup-content");
-    
-    // Options for the observer (which mutations to observe)
-    const config = { attributes: true, childList: true, subtree: true };
+		// initialisation du carousel
+		const targetNode1 = document.getElementById("right-panel").getElementsByClassName("popup-content");
+		const targetNode2 = document.getElementById("modal-panel").getElementsByClassName("popup-content");
+		
+			
+		// Options for the observer (which mutations to observe)
+		const config = { attributes: true, childList: true, subtree: true };
 
-    // Callback function to execute when mutations are observed
-    const callback = (mutationList, observer) => {
-      for (const mutation of mutationList) {
-        if (mutation.type === "childList") {
-            var l_tabs = $("h4.title-feature");
-            activeTabs=[];
-            for(var i= 0; i < l_tabs.length; i++){
-                activeTabs.push(l_tabs[i].innerHTML);
-            }
-            if(!oldTabs || oldTabs.length==0 ||activeTabs.sort().join() != oldTabs.sort().join()){
-                oldTabs =  [].concat(activeTabs);
-                rmCategorieProjUrbain();
-                rmSlickPhotoCarousel();
-            }
-        }
-      }
-    };
+		// Callback function to execute when mutations are observed
+		const callback = (mutationList, observer) => {
+		  for (const mutation of mutationList) {
+			if (mutation.type === "childList") {
+				var l_tabs = $("h4.title-feature");
+				activeTabs=[];
+				for(var i= 0; i < l_tabs.length; i++){
+					activeTabs.push(l_tabs[i].innerHTML);
+				}
+				if(!oldTabs || oldTabs.length==0 ||activeTabs.sort().join() != oldTabs.sort().join()){
+					oldTabs =  [].concat(activeTabs);
+					rmCategorieProjUrbain();
+					rmSlickPhotoCarousel();
+				}
+			} 
+			else if (mutation.type === 'attributes' && mutation.attributeName === 'class' && mutation.target.classList.contains('slick-slide')) {
+				if (mutation.target.classList.contains('slick-current')) {
+					mutation.target.style.display = 'block';
+				} else {
+					mutation.target.style.display = 'none';
+				}			
+			}
+		  }
+		};
 
-    // Create an observer instance linked to the callback function
-    const observer = new MutationObserver(callback);
+		// Create an observer instance linked to the callback function
+		const observer = new MutationObserver(callback);
 
-    // Start observing the target node for configured mutations
-    observer.observe(targetNode1[0], config);
-    observer.observe(targetNode2[0], config);
-
-
-
+		// Start observing the target node for configured mutations
+		observer.observe(targetNode1[0], config);
+		observer.observe(targetNode2[0], config);
     
     }
 
@@ -198,8 +204,5 @@
     }
 
 })();
-//This instruction is only necessary if init function is needed.
-//Very important first parameter is customComponent id + '-componentLoaded',
-//second parameter is init function to execute
-//document.addEventListener('graph3d-componentLoaded', graph3d.init);
+
 new CustomComponent("carousel", carousel.init());
