@@ -7,9 +7,9 @@
 
 /* FICHE INFO */
 #right-panel.active {
-    width:30%!important;
+  width: 30% !important;
 }
 
 #right-panel .carousel-inner {
-    width:100%!important;
+  width: 100% !important;
 }

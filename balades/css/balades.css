@@ -7,11 +7,10 @@
 
 /* FICHE INFO */
 body {
-    background: #ededea!important;
+  background: #ededea !important;
 }
 
 /****** liens ******/
 .lienweb {
-    text-decoration: underline;
+  text-decoration: underline;
 }
-

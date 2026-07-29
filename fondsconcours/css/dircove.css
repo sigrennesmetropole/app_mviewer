@@ -7,15 +7,15 @@
 
 /* FICHE INFO */
 .title-2019-2020 {
-    color:#f78b12;
+  color: #f78b12;
 }
 
 .title-2021-2022 {
-    color:#b22496;
+  color: #b22496;
 }
 
-.nav>li>a {
-    padding:10px 12px 9px 12px!important;
+.nav > li > a {
+  padding: 10px 12px 9px 12px !important;
 }
 
 /********************************
@@ -23,41 +23,41 @@
 ********************************/
 
 .dircove_biodiv::before {
-     content: '';
-     display: inline-block;
-     height: 2em;
-     width: 2em;
-     background: url(../img/marqueurs/DIRCOVE-05.svg) no-repeat scroll;
-     background-size: contain;
- }
-!a>.dircove_biodiv{
-    padding: 5px 10px;
+  content: "";
+  display: inline-block;
+  height: 2em;
+  width: 2em;
+  background: url(../img/marqueurs/DIRCOVE-05.svg) no-repeat scroll;
+  background-size: contain;
+}
+!a > .dircove_biodiv {
+  padding: 5px 10px;
 }
 
 .dircove_enfance::before {
-     content: '';
-     display: inline-block;
-     height: 2em;
-     width: 2em;
-     background: url(../img/marqueurs/DIRCOVE-03.svg) no-repeat scroll;
-     background-size: contain;
- }
-!a>.dircove_enfance{
-    padding: 5px 10px;
+  content: "";
+  display: inline-block;
+  height: 2em;
+  width: 2em;
+  background: url(../img/marqueurs/DIRCOVE-03.svg) no-repeat scroll;
+  background-size: contain;
+}
+!a > .dircove_enfance {
+  padding: 5px 10px;
 }
 
 .dircove_autres::before {
-     content: '';
-     display: inline-block;
-     height: 2em;
-     width: 2em;
-     background: url(../img/marqueurs/DIRCOVE-02.svg) no-repeat scroll;
-     background-size: contain;
- }
-!a>.dircove_autres{
-    padding: 5px 10px;
+  content: "";
+  display: inline-block;
+  height: 2em;
+  width: 2em;
+  background: url(../img/marqueurs/DIRCOVE-02.svg) no-repeat scroll;
+  background-size: contain;
+}
+!a > .dircove_autres {
+  padding: 5px 10px;
 }
 
-.ecobns{
+.ecobns {
   /*transform: rotate(-22deg); */
 }

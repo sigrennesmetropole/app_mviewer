@@ -1,82 +1,86 @@
 #startButton {
-    position: fixed;
-    display: none;
-    width: 160px;
-    height: 50px;
-    bottom: 10%;
-    left: 33%;
-    background-color: #343a40;
-    border-color: #343a40;
-    z-index: 2000;
+  position: fixed;
+  display: none;
+  width: 160px;
+  height: 50px;
+  bottom: 10%;
+  left: 33%;
+  background-color: #343a40;
+  border-color: #343a40;
+  z-index: 2000;
 }
 
 #prevButton {
-    position: fixed;
-    display: none;
-    width: 140px;
-    height: 40px;
-    bottom: 10%;
-    left: 26%;
-    background-color: #343a40;
-    border-color: #343a40;
-    z-index: 2000;
+  position: fixed;
+  display: none;
+  width: 140px;
+  height: 40px;
+  bottom: 10%;
+  left: 26%;
+  background-color: #343a40;
+  border-color: #343a40;
+  z-index: 2000;
 }
 
 #nextButton {
-    position: fixed;
-    display: none;
-    width: 140px;
-    height: 40px;
-    bottom: 10%;
-    left: 40%;
-    background-color: #343a40;
-    border-color: #343a40;
-    z-index: 2000;
+  position: fixed;
+  display: none;
+  width: 140px;
+  height: 40px;
+  bottom: 10%;
+  left: 40%;
+  background-color: #343a40;
+  border-color: #343a40;
+  z-index: 2000;
 }
 
 #geolocbtnBalade {
-    position: fixed;
-    display: none;
-    z-index: 2000;
+  position: fixed;
+  display: none;
+  z-index: 2000;
 }
 
-#prevButton:hover, #nextButton:hover, #startButton:hover {
-    background-color: #23272B;
+#prevButton:hover,
+#nextButton:hover,
+#startButton:hover {
+  background-color: #23272b;
 }
 
-#prevButton:active, #nextButton:active, #startButton:active {
-    background-color: #343a40;
+#prevButton:active,
+#nextButton:active,
+#startButton:active {
+  background-color: #343a40;
 }
 
 .btn[disabled] {
-    opacity: 0.4;
+  opacity: 0.4;
 }
 
 @media screen and (max-width: 1200px) {
-    #prevButton {
-       left: 22%;
-    }
+  #prevButton {
+    left: 22%;
+  }
 }
 
 @media screen and (max-width: 990px) {
-    #prevButton {
-        left: 25%;
-    }
-    #nextButton {
-        left: 55%;
-    }
-    #accordion .panel-collapse.collapse.in {
-        max-height: 42vh;
-    }
+  #prevButton {
+    left: 25%;
+  }
+  #nextButton {
+    left: 55%;
+  }
+  #accordion .panel-collapse.collapse.in {
+    max-height: 42vh;
+  }
 }
 
 @media screen and (max-width: 500px) {
-    #prevButton {
-        left: 22%;
-        width: 100px;
-    }
-    #nextButton {
-        left: 60%;
-        width: 100px;
-    }
+  #prevButton {
+    left: 22%;
+    width: 100px;
+  }
+  #nextButton {
+    left: 60%;
+    width: 100px;
+  }
 }

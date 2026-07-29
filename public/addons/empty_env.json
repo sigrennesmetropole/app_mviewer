@@ -1,9 +1,9 @@
 {
   "searchRM": [
-      {
-        "apiRVAKey": "",
-        "apiSitesOrgkey": ""
-      }
+    {
+      "apiRVAKey": "",
+      "apiSitesOrgkey": ""
+    }
   ],
   "opendatasoftKey": ""
 }
