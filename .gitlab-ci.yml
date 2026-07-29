@@ -3,7 +3,7 @@ stages:
 
 workflow:
   rules:
-    - if: '$CI_COMMIT_REF_NAME == "develop"'
+    - if: '$CI_COMMIT_REF_NAME == "main-v4"'
       variables:
         ENV: "test"
     - if: '$CI_COMMIT_REF_NAME == "main"'
@@ -37,7 +37,7 @@ deploy-ansible:
             MVIEWER_VERSION=$MVIEWER_VERSION \
             ENV=$ENV"
   rules:
-    - if: '$CI_COMMIT_REF_NAME == "develop"'
+    - if: '$CI_COMMIT_REF_NAME == "main-v4"'
       when: manual
     - if: '$CI_COMMIT_REF_NAME =~ /^migration\//'
       when: manual
