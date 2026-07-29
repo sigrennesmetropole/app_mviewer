@@ -1,7 +1,7 @@
 services:
   app:
     image: mviewer/mviewer:{{ MVIEWER_VERSION }}
-    container_name: mviewer_{{ MVIEWER_VERSION }}
+    container_name: mviewer_{{ MVIEWER_VERSION }}_{{ ENV }}
     ports:
       - "{{ PORT }}:80"
     volumes:
