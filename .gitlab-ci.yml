@@ -5,13 +5,16 @@ workflow:
   rules:
     - if: '$CI_COMMIT_REF_NAME == "main-v4"'
       variables:
-        ENV: "test"
+        ENV: "migration"
     - if: '$CI_COMMIT_REF_NAME == "main"'
       variables:
         ENV: "prod"
     - if: '$CI_COMMIT_REF_NAME =~ /^migration\//'
       variables:
         ENV: "migration"
+    - if: '$CI_COMMIT_REF_NAME =~ /^carte\//'
+      variables:
+        ENV: "test"
 
 deploy-ansible:
   stage: deploy
@@ -43,3 +46,5 @@ deploy-ansible:
       when: manual
     - if: '$CI_COMMIT_REF_NAME == "main"'
       when: manual
+     - if: '$CI_COMMIT_REF_NAME =~ /^carte\//'
+      when: on_success
