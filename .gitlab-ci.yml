@@ -46,5 +46,5 @@ deploy-ansible:
       when: manual
     - if: '$CI_COMMIT_REF_NAME == "main"'
       when: manual
-     - if: '$CI_COMMIT_REF_NAME =~ /^carte\//'
+    - if: '$CI_COMMIT_REF_NAME =~ /^carte\//'
       when: on_success
