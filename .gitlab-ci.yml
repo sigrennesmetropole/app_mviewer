@@ -1,9 +1,10 @@
-stages:  
+stages:
+  - draft 
   - deploy
 
 workflow:
   rules:    
-    - if: '$CI_COMMIT_REF_NAME == "develop"'
+    - if: '$CI_COMMIT_REF_NAME == "draft"'
       variables:
         ENV: "test"
     - if: '$CI_COMMIT_REF_NAME == "main"'
@@ -13,7 +14,27 @@ workflow:
       variables:
         ENV: "migration"
     
-
+draft:
+  stage: draft  
+  tags:
+    - SIG
+  image: bitnami/git:latest
+  before_script:
+    - GIT_SSL_NO_VERIFY=true git fetch origin draft
+  script:
+    - git --version
+    - echo $CI_COMMIT_SHA
+    - echo $CI_COMMIT_BRANCH
+    - echo $CI_COMMIT_MESSAGE
+    - git checkout draft
+    - git log -5 --oneline --graph --decorate
+    - git merge remotes/origin/$CI_COMMIT_BRANCH
+    - git remote set-url origin https://gitlab-ci:${MVIEWER_PUSH_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git
+    - GIT_SSL_NO_VERIFY=true git push origin draft
+   
+  rules:
+    - if: '$CI_COMMIT_REF_NAME =~ /^carte\// && $CI_PIPELINE_SOURCE != "merge_request_event"'
+      when: on_success
 
 deploy-ansible:
   stage: deploy
@@ -37,7 +58,7 @@ deploy-ansible:
             CI_PROJECT_NAME=$CI_PROJECT_NAME \
             ENV=$ENV"
   rules:    
-    - if: '$CI_COMMIT_REF_NAME == "develop"'
+    - if: '$CI_COMMIT_REF_NAME == "draft"'
       when: on_success
     - if: '$CI_COMMIT_REF_NAME =~ /^migration\//'
       when: manual
