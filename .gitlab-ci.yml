@@ -16,6 +16,9 @@ workflow:
     - if: '$CI_COMMIT_REF_NAME =~ /^carte\//'
       variables:
         ENV: "test"
+    - if: '$CI_COMMIT_REF_NAME == "draft"'
+      variables:
+        ENV: "test"
 
 draft:
   stage: draft  
