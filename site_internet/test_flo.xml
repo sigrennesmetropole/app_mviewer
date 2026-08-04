@@ -31,7 +31,7 @@
         <theme id="theme-20180827150815" name="Broyeurs" collapsed="true" icon="fas fa-recycle">
             <layer
                 id="v_broyage"
-                name="Broyeurs"
+                name="Broyeurs en location"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_dech/ows"
                 visible="true"
