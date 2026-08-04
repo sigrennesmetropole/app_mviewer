@@ -30,21 +30,21 @@
     </extensions>
     
     <themes mini="true">
-        <theme id="theme-20180625145760" name="Equipements sportifs" collapsed="true" icon="fas fa-swimmer">
+        <theme id="theme-20180625145760" name="Equipements sportifs" collapsed="true" mini="false" legendmini="false" icon="fas fa-swimmer">
              <layer
-                id="piscinesRM"
+                id="v_sitorg_organisme"
                 name="Piscines"
-                type="customlayer"
-                url="apps/site_internet/customlayer/piscinesRM.js"
-                legendurl="apps/site_internet/img/legend/piscine-01.svg"
-                vectorlegend="true"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows"
+                infoformat="application/vnd.ogc.gml"
                 visible="true"
-                tooltip="true"
+				tooltip="true"
                 tooltipenabled="true"
-                tooltipcontent="&lt;span class=&apos;rm-tooltip-title&apos;&gt;{{nomUsage}}&lt;/span&gt;"
+                tooltipcontent="{{nomUsage}}"
                 metadata="undefined"
                 queryable="true"
                 featurecount="3"
+				style="v_sitorg_piscine_mv"
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/piscinesRM.mst"></template>
             </layer>
@@ -55,7 +55,7 @@
                 url="https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
-                style="v_sitorg_baignade"
+                style="v_sitorg_baignade_mv"
                 metadata="undefined"
                 metadata-csw=""
                 queryable="true"
@@ -63,17 +63,18 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/organisme.mst"></template>
             </layer>
+
         </theme>
 
         <theme id="theme-20180625145780" name="Environnement/Cadre de vie" collapsed="true" icon="fas fa-leaf">
             <layer
                 id="v_borne_eau_potable"
-                name="Fontaines d'eau potable"
+                name="Bornes d'eau potable"
                 type="wms"
                 url="https://public.sig.rennesmetropole.fr/geoserver/espub_mob/ows"
                 visible="true"
                 infoformat="application/vnd.ogc.gml"
-                style="v_borne_eau_potable"
+                style="v_borne_eau_potable_mv"
                 metadata="undefined"
                 metadata-csw=""
                 queryable="true"
@@ -81,22 +82,7 @@
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/point_eau_potable.mst"></template> 
             </layer>
-            <layer
-                id="v_sitorg_organisme"
-                name="Parcs et jardins publics"
-                type="wms"
-                url="https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows"
-                visible="false"
-                infoformat="application/vnd.ogc.gml"
-                style="v_sitorg_theme_picto_parc_jardin"
-                metadata="undefined"
-                metadata-csw=""
-                queryable="true"
-                featurecount="6"
-                infopanel="right-panel">
-                <template url="apps/site_internet/templates/organisme.mst"></template>
-            </layer>
-        
+                   
         </theme>
         <theme id="theme-20180625145800" name="Espaces de rafraichissement" collapsed="true" icon="fas fa-tint">
           <layer
@@ -106,7 +92,7 @@
               url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
               visible="true"
               infoformat="application/vnd.ogc.gml"
-              style="eq_sport_proxi_brumisateur"
+              style="eq_sport_proxi_brumisateur_mv"
               sld=""
               metadata="undefined"
               metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
@@ -121,7 +107,7 @@
               url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
               visible="true"
               infoformat="application/vnd.ogc.gml"
-              style="eq_sport_proxi_pataugeoire"
+              style="eq_sport_proxi_pataugeoire_mv"
               sld=""
               metadata="undefined"
               metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
@@ -131,6 +117,21 @@
               infopanel="right-panel">
               <template url="apps/site_internet/templates/pataugeoires.mst"></template>
           </layer>
+		  <layer
+                id="v_sport_proximite"
+                name="Miroir d'eau"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/eq_cultspo/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                style="eq_sport_proxi_miroireau_mv"
+                metadata="undefined"
+                metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/a986935d-5d66-4d3d-9f57-5fac68594740"
+                queryable="true"
+                featurecount="6"
+                infopanel="right-panel">
+                <template url="apps/site_internet/templates/proximite.mst"></template>
+            </layer>
         </theme>
     </themes>
 </config>
