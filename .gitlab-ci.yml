@@ -63,7 +63,7 @@ deploy-ansible:
             ENV=$ENV"
   rules:
     - if: '$CI_COMMIT_REF_NAME == "main-v4" && $CI_PIPELINE_SOURCE != "merge_request_event"'
-      when: manual    
+      when: on_success
     - if: '$CI_COMMIT_REF_NAME == "draft"'
       when: on_success
    
