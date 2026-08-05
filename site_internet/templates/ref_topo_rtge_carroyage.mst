@@ -1,0 +1,53 @@
+<hash style="display:none;">1647253571</hash>{{#features}}
+      <li id="{{feature_ol_uid}}" class="item mstudio_template" style="width:100%;">
+        
+    {{#id_case}}
+    <div class="textH1Component template-component mb-2" id="5bad4ddc-15b1-48cd-9687-c235e5bfad5a"
+      data-type-selector="field"
+      data-color="#000000"
+      data-value="id_case"
+      data-component="textH1Component"
+    >
+        <!--
+        Variable : nom
+        Prop : color
+        -->
+        <h3 style="font-weight:bold; color:#000000;">{{#id_case}}{{id_case}}{{/id_case}}</h3>
+    </div>{{/id_case}}
+    {{#cases_200}}
+    <div class="textTextComponent template-component mb-2"
+      data-type-selector="field"
+      data-value="cases_200"
+      data-component="textTextComponent"
+    >
+        <p>{{#cases_200}}{{cases_200}}{{/cases_200}}</p>
+    </div>
+    {{/cases_200}}
+    
+    <div class="textTextComponent template-component mb-2"
+      data-type-selector="static"
+      data-value="Présence de données : {{presence_donnees}}"
+      data-component="textTextComponent"
+    >
+        <p>Présence de données : {{presence_donnees}}</p>
+    </div>
+    
+    {{#url_dxf_surface}}
+    <div class="linkComponent template-component mb-2"
+      data-type-selector="field"
+      data-value="url_dxf_surface"
+      data-text="Télécharger le casé"
+      data-icon="fas fa-download "
+      data-color="#ffffff"
+      data-bg-color="#345266"
+      data-component="linkComponent"
+    >
+      <a href="{{#url_dxf_surface}}{{url_dxf_surface}}{{/url_dxf_surface}}" target="_blank" class="btn" style="background-color: #345266;color:#ffffff;">
+        <i class="fas fa-download "></i>
+        Télécharger le casé
+      </a>
+    </div>
+    {{/url_dxf_surface}}
+    
+      </li>
+    {{/features}}
