@@ -1,0 +1,44 @@
+<config xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" mviewerversion="4.1" mviewerstudioversion="4.3">
+<application 
+    title="Données du Référentiel Topographiques à très Grande Échelle (RTGE) de Rennes Métropole (1/200)"
+    logo="https://mviewer.sig.rennesmetropole.fr/apps/public/img/logo/logo_mviewer_transp.png" 
+    help="apps/site_internet/html/rtge_help.html" 
+    titlehelp="Données du Référentiel Topographiques à très Grande Échelle (RTGE) de Rennes Métropole (1/200)"
+    iconhelp="fas fa-home" home="" style="css/themes/default.css" zoomtools="true" initialextenttool="true" exportpng="false" showhelp="true" coordinates="false" measuretools="false" mouseposition="false" geoloc="false" studio="" togglealllayersfromtheme="false" mapprint="false" addlayerstools="false">
+</application>
+<mapoptions projection="EPSG:3857" center="-181873.30657612678,6125540.364129572" maxzoom="" zoom="13" extent="-200559.20931653812,6115618.727426819,-168741.4780186147,6136257.255836283" />
+<olscompletion type="ban" url="https://data.geopf.fr/geocodage/search/" attribution="Base adresse nationale (BAN)" />
+<searchparameters bbox="false" localities="true" features="false" static="false" inputlabel="" querymaponclick="false" closeafterclick="false" />
+<baselayers style="default"> 
+    <baselayer visible="true" id="positron" thumbgallery="img/basemap/positron.png" title="CartoDb" label="Positron" type="OSM" url="https://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png" attribution="Map tiles by  &lt;a href=&quot;https://cartodb.com/attributions&quot;&gt;CartoDb&lt;/a&gt;, under  &lt;a href=&quot;https://creativecommons.org/licenses/by/3.0/&quot;&gt;CC BY 3.0 &lt;/a&gt;" /> 
+    <baselayer visible="false" id="ortho_ign" thumbgallery="img/basemap/ortho.jpg" title="IGN" label="Photographies aériennes" type="WMTS" url="https://data.geopf.fr/wmts" layers="ORTHOIMAGERY.ORTHOPHOTOS" format="image/jpeg" fromcapacity="false" attribution="&lt;a href='https://geoservices.ign.fr/services-geoplateforme-diffusion' target='_blank'&gt;&lt;img src='https://geobretagne.fr/pub/logo/099_ign.jpg'&gt;&lt;/a&gt;" style="normal" matrixset="PM" maxzoom="22" /> 
+</baselayers>
+<styles>
+        <selectionstyle>
+            <point radius="7" fillcolor="26, 188, 156" opacity="0.5" strokecolor="26, 188, 156" strokewidth="4" />
+            <line opacity="0.5" strokecolor="26, 188, 156" strokewidth="3" />
+            <polygon fillcolor="189, 191, 199" opacity="0" strokecolor="0, 0, 0" strokewidth="2" />
+        </selectionstyle>
+        <subselectionstyle>
+            <point radius="7" fillcolor="175, 122, 197" opacity="0.5" strokecolor="175, 122, 197" strokewidth="2" />
+            <line opacity="0.5" strokecolor="175, 122, 197"  strokewidth="2" />
+            <polygon fillcolor="189, 191, 199" opacity="0" strokecolor="0, 0, 0" strokewidth="4" />
+        </subselectionstyle>
+    </styles>
+<themes mini="true"> 
+    <theme id="theme-20260805161052" name="RTGE" collapsed="true" icon="fas fa-caret-right"> 
+        <layer id="ref_topo:rtge_carroyage" name="RTGE : carroyage au 1/200" type="wms" 
+          url="https://public.sig.rennesmetropole.fr/geoserver/ows?" tiled="true" visible="true" 
+          infoformat="application/vnd.ogc.gml" fields="" aliases="" style="app:rtge_download" 
+          stylesalias="" metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/7ad6364c-adda-4b81-a6b6-708252b05b33" 
+          metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/api/records/7ad6364c-adda-4b81-a6b6-708252b05b33/formatters/xml" 
+          attribution="Rennes Métropole" queryable="true" searchable="false" fusesearchkeys="" fusesearchresult="" useproxy="false" 
+          sld="" legendurl="" featurecount="5" infopanel="right-panel" opacity="1"
+          filter="presence_donnees IN ('oui')"
+          index="" styletitle="" dynamiclegend="true" toplayer="false" expanded="true" exclusive="false" showintoc="true">
+          <template url="apps/site_internet/templates/ref_topo_rtge_carroyage.mst" />
+        </layer>
+        
+    </theme> 
+</themes>
+</config>
