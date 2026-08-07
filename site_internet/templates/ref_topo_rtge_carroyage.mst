@@ -1,19 +1,28 @@
-<hash style="display:none;">1647253571</hash>{{#features}}
+<hash style="display:none;">1061485373</hash>{{#features}}
       <li id="{{feature_ol_uid}}" class="item mstudio_template" style="width:100%;">
         
-    {{#id_case}}
-    <div class="textH1Component template-component mb-2" id="5bad4ddc-15b1-48cd-9687-c235e5bfad5a"
-      data-type-selector="field"
+    
+    <div class="imageComponent template-component mb-2"
+      data-value="https://public.sig.rennesmetropole.fr/ressources/catalogue/apercus/ref_topo_toposurf_rctr_carroyage.png"
+      data-type-selector="static"
+      data-component="imageComponent"
+    >
+    <img src="https://public.sig.rennesmetropole.fr/ressources/catalogue/apercus/ref_topo_toposurf_rctr_carroyage.png" class="img img-responsive" style="max-height:300px;"/>
+    </div>
+    
+    
+    <div class="textH1Component template-component mb-2" id="995d80eb-f541-4e17-831c-f6d2308b5560"
+      data-type-selector="static"
       data-color="#000000"
-      data-value="id_case"
+      data-value="Casé sélectionné :"
       data-component="textH1Component"
     >
         <!--
         Variable : nom
         Prop : color
         -->
-        <h3 style="font-weight:bold; color:#000000;">{{#id_case}}{{id_case}}{{/id_case}}</h3>
-    </div>{{/id_case}}
+        <h3 style="font-weight:bold; color:#000000;">Casé sélectionné :</h3>
+    </div>
     {{#cases_200}}
     <div class="textTextComponent template-component mb-2"
       data-type-selector="field"
@@ -23,15 +32,6 @@
         <p>{{#cases_200}}{{cases_200}}{{/cases_200}}</p>
     </div>
     {{/cases_200}}
-    
-    <div class="textTextComponent template-component mb-2"
-      data-type-selector="static"
-      data-value="Présence de données : {{presence_donnees}}"
-      data-component="textTextComponent"
-    >
-        <p>Présence de données : {{presence_donnees}}</p>
-    </div>
-    
     {{#url_dxf_surface}}
     <div class="linkComponent template-component mb-2"
       data-type-selector="field"
@@ -39,10 +39,10 @@
       data-text="Télécharger le casé"
       data-icon="fas fa-download "
       data-color="#ffffff"
-      data-bg-color="#345266"
+      data-bg-color="#000000"
       data-component="linkComponent"
     >
-      <a href="{{#url_dxf_surface}}{{url_dxf_surface}}{{/url_dxf_surface}}" target="_blank" class="btn" style="background-color: #345266;color:#ffffff;">
+      <a href="{{#url_dxf_surface}}{{url_dxf_surface}}{{/url_dxf_surface}}" target="_blank" class="btn" style="background-color: #000000;color:#ffffff;">
         <i class="fas fa-download "></i>
         Télécharger le casé
       </a>
