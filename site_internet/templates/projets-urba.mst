@@ -16,11 +16,6 @@
         </p>
     </li>
 {{/features}}
-<script>
-let root = document.documentElement;
-root.style.setProperty('--mv-rightpanel-size', 500 + "px");
-</script>
-
 <style>
 .rm-txt-img img {
   width: 100%;
