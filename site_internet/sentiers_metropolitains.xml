@@ -5,7 +5,7 @@
 	Objet : Partage des tracés projet du sentier métropolitain avec plusieurs acteurs de la randonnée sur le territoire d'IeV 
     
   Référent technique   : Arnaud LECLERE - SDTIG unité AM
-  Donneur d’ordre      : Claire LUCAS via FCH  SDTIG-DR et DirCult
+  Donneur d’ordre      : Frédéric CHAUVIN  SDTIG-DR 
   
   ============================================================================
   Historique des versions : v 1.0
@@ -13,12 +13,12 @@
   Date        | Auteur        | Description
   ____________________________________________________________________________
   29/07/2026  | Arnaud LECLERE     | Version initiale
-  jj/mm/aaaa  | [Nom]              | [Modification / ajout attribut / changement…]
+  20/08/2026  | Frédéric CHAUVIN   | Mise à disposition des sentier métropolitains- Proposition de tracé
   ============================================================================
   -->
 <config>
     <application
-        title="Sentiers métropolitains - Proposition"
+        title="Sentiers métropolitains - Proposition de tracé"
         logo="apps/public/img/logo/logo_mviewer_transp.png"
         favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
         titlehelp="À propos des cartes thématiques"
