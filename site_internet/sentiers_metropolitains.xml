@@ -54,7 +54,7 @@
 		
         <layer
             id="sentier_metropolitain_sentier"
-            name="Sentiers métropolitains sur Rennes Métropole - proposition"
+            name="Sentiers métropolitains sur Rennes Métropole - proposition de tracé"
             type="wms"
             url="https://public.sig.rennesmetropole.fr/geoserver/ptou_lois/ows"
             visible="true"
