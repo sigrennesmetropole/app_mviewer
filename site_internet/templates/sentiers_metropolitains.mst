@@ -1,0 +1,13 @@
+{{#features}}
+	<li class="item">
+		<h5 class="rm-popup-title-feature pup-title">Sentiers Métropolitains</h5>
+		<p class="rm-popup-text-feature">
+		
+		{{#domaine}}<span class='rm-popup-label'>Domaine :</span> {{{domaine}}}<br/>{{/domaine}}		
+		{{#nom_sentier}}<span class='rm-popup-label'>Nom sentier :</span> {{{nom_sentier}}}<br/>{{/nom_sentier}}
+		{{#type_sentier}}<span class='rm-popup-label'>Type :</span> {{{type_sentier}}}<br/>{{/type_sentier}}		
+
+            
+		</p>
+	</li>
+{{/features}}
