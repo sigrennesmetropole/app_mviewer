@@ -213,15 +213,15 @@
   right: 0 !important;
 }
 
-#searchresults a {
+#searchresults a:not(.noResult) {
   cursor: pointer;
 }
 
-#searchresults a.disabled {
+#searchresults a.disabled:not(.autocompleteRmItem) {
   padding: 10px;
 }
 
-#searchresults a.list-group-item.disabled {
+#searchresults a.list-group-item.disabled:not(.autocompleteRmItem) {
   color: #5b5b5b;
   font-size: 13px;
   background-color: rgb(255, 255, 255);
@@ -229,6 +229,7 @@
 
 #searchresults .noResult {
   font-style: italic;
+  font-weight: normal !important;
 }
 
 .searchresults-title {
