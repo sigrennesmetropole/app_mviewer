@@ -1,13 +1,12 @@
 var searchRM = (function () {
   var searchParameters = [];
-  var nbResults = 0;
-  var currentRmAutocompleteItem = -1;
+  let nbResults = 0;
+  let currentRmAutocompleteItem = -1;
   var getPersoConfData;
   var apiRVAKey = "";
   var apiSitesOrgkey = "";
-  var restrictionInsee;
+  let restrictionInsee;
   var apiRvaBaseUrl = "https://api-rva.sig.rennesmetropole.fr/";
-  // var apiRvaBaseUrl = 'http://185.150.252.77/api-rva-2';
   var apiSitesOrg = "https://api-sitesorg.sig.rennesmetropole.fr/v1/";
   var laneData =
     "https://public.sig.rennesmetropole.fr/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=v_troncon_denom&outputFormat=application%2Fjson&srsname=EPSG:3948&CQL_FILTER=id_voie=";
@@ -631,6 +630,7 @@ var searchRM = (function () {
 
   // affiche une coordonnée sur la carte
   var displayLocation = function (coordX, coordY, zoom, querymaponclick) {
+    $("#searchfieldRM").val("");
     mviewer.zoomToLocation(coordX, coordY, zoom, querymaponclick);
     mviewer.hideLocation();
   };
@@ -643,8 +643,8 @@ var searchRM = (function () {
     querymaponclick,
     proj,
   ) {
+    $("#searchfieldRM").val("");
     mviewer.zoomToLocation(coordX, coordY, zoom, querymaponclick);
-    // setTimeout(function(){mviewer.showLocation(proj, coordX, coordY)},500);
     mviewer.showLocation(proj, coordX, coordY);
   };
 
