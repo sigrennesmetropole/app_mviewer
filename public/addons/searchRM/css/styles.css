@@ -7,11 +7,13 @@
   font-family: "DMSans_medium", Arial, Sans-serif;
   font-size: 11px;
 }
-#fieldWrapper {
-  height: 28px;
+
+#searchfieldRM {
+  border-radius: 4px 0 0 4px;
+  font-size: 1em;
 }
 
-searchresults-title .close:hover {
+.searchresults-title .close:hover {
   color: #fff;
   opacity: 1;
   padding-top: 10px;
@@ -97,10 +99,6 @@ searchresults-title .close:hover {
   padding: 0 4px;
 }
 
-#fieldWrapper #searchfield {
-  border-radius: 4px;
-}
-
 #buttonSearchField {
   height: 30px;
 }
@@ -173,7 +171,6 @@ searchresults-title .close:hover {
 
   #searchresults a {
     font-size: 11px;
-    margin-left: 5px;
   }
 
   #btn-mode-su-menu {
@@ -206,7 +203,6 @@ searchresults-title .close:hover {
 
   #searchresults a {
     font-size: 11px;
-    margin-left: 5px;
   }
 }
 
@@ -214,7 +210,11 @@ searchresults-title .close:hover {
   top: 65px;
   position: fixed;
   font-family: "DMSans_medium", Arial, Sans-serif;
-  right: 0;
+  right: 0 !important;
+}
+
+#searchresults a {
+  cursor: pointer;
 }
 
 #searchresults a.disabled {
@@ -227,9 +227,12 @@ searchresults-title .close:hover {
   background-color: rgb(255, 255, 255);
 }
 
+#searchresults .noResult {
+  font-style: italic;
+}
+
 .searchresults-title {
   padding: 10px 10px;
-  margin-left: 5px;
 }
 
 .searchresults-title .close {
