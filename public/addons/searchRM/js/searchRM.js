@@ -576,7 +576,7 @@ var searchRM = (function () {
     if (createHtml !== false) {
       $("#searchresults a").remove();
       if (nbItems === 0) {
-        dataHtml += `<a class="list-group-item autocompleteRmItem noResult">Aucun résultat</a>`;
+        dataHtml += `<a class="list-group-item disabled noResult autocompleteRmItem">Aucun résultat</a>`;
       }
       $("#searchresults").append(dataHtml);
       if (search.options.closeafterclick) {

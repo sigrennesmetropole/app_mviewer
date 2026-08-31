@@ -841,7 +841,8 @@ ul ul {
   color: #555 !important;
 }
 
-#searchresults .disabled {
+#searchresults .disabled:not(.autocompleteRmItem),
+#searchresults .disabled:not(.noResult) {
   /*font-family:'vistaSansOT_bold', Arial, Sans-serif;*/
   font-family: "DMSans_bold", Arial, Sans-serif;
   color: var(--darkMain);
