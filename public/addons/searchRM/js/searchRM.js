@@ -1,20 +1,17 @@
 var searchRM = (function () {
   var searchParameters = [];
-  var nbResults = 0;
-  var currentRmAutocompleteItem = -1;
+  let nbResults = 0;
+  let currentRmAutocompleteItem = -1;
   var getPersoConfData;
   var apiRVAKey = "";
   var apiSitesOrgkey = "";
-  var previousRequest;
-  var communesToRestrict = [];
-  var restrictionInsee;
+  let restrictionInsee;
   var apiRvaBaseUrl = "https://api-rva.sig.rennesmetropole.fr/";
-  // var apiRvaBaseUrl = 'http://185.150.252.77/api-rva-2';
   var apiSitesOrg = "https://api-sitesorg.sig.rennesmetropole.fr/v1/";
   var laneData =
     "https://public.sig.rennesmetropole.fr/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=v_troncon_denom&outputFormat=application%2Fjson&srsname=EPSG:3948&CQL_FILTER=id_voie=";
   var queryMapOnClick;
-  var townsList = [
+  const townsList = [
     "Acigné",
     "Bécherel",
     "Betton",
@@ -59,6 +56,20 @@ var searchRM = (function () {
     "Vezin-le-Coquet",
     "Pont-Péan",
   ];
+  //Timer pour attendre la fin de saisie
+  const doneTypingInterval = 300;
+
+  function debounce(fn, delay) {
+    let timer;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => fn.apply(this, args), delay);
+    };
+  }
+
+  const debouncedRecherche = debounce(function (confData) {
+    lancerRecherche(confData);
+  }, doneTypingInterval);
 
   var enable = function () {
     $("#searchtool").show();
@@ -75,23 +86,11 @@ var searchRM = (function () {
       mviewer.customComponents.searchRM.config.options.libelles.placeholderRVA,
     );
 
-    //ajoute le searchResult lorsque le mode est U, non présent dans la version u par défaut de mviewer
-    if (API.mode === "u") {
-      $("#page-content-wrapper").append(
-        '<div id="searchresults" class="list-group">' +
-          '<div class="searchresults-title">' +
-          "Résultats" +
-          '<button type="button" class="close">x</button>' +
-          "</div>" +
-          "</div>",
-      );
-    }
-
     //mise en place des actions lorsque clic sur la croix du searchresult, non présent sur le mode u de mviewer
     $(".searchresults-title .close").click(function () {
       $("#searchresults a").remove();
       $("#searchresults").hide();
-      $("#searchfield").val("");
+      $("#searchfieldRM").val("");
     });
 
     var confdata = _setConfig();
@@ -121,10 +120,6 @@ var searchRM = (function () {
     return configPerso;
   }
 
-  //Timer pour attendre la fin de saisie
-  var typingTimer; //timer identifier
-  var doneTypingInterval = 100; //time in ms, 0.3 seconds here
-
   var _configureSearch = function (searchRMConf) {
     $.getJSON(searchRMConf, function (confData) {
       if (confData.queryMapOnClick === true) {
@@ -134,7 +129,7 @@ var searchRM = (function () {
       }
       _setSearchParameters(confData);
 
-      $(document).on("keyup", "#searchfield", function (e) {
+      $(document).on("keyup", "#searchfieldRM", function (e) {
         if (e.keyCode == 40) {
           //down arrow keyCode
           currentRmAutocompleteItem++;
@@ -151,7 +146,7 @@ var searchRM = (function () {
           $("#autocompleteRmItem_" + currentRmAutocompleteItem).addClass(
             "selectedRmAutocompleteItem",
           );
-          $("#searchfield").val(
+          $("#searchfieldRM").val(
             $("#autocompleteRmItem_" + currentRmAutocompleteItem)[0].innerText,
           );
           return;
@@ -172,7 +167,7 @@ var searchRM = (function () {
           $("#autocompleteRmItem_" + currentRmAutocompleteItem).addClass(
             "selectedRmAutocompleteItem",
           );
-          $("#searchfield").val(
+          $("#searchfieldRM").val(
             $("#autocompleteRmItem_" + currentRmAutocompleteItem)[0].innerText,
           );
           return;
@@ -183,11 +178,7 @@ var searchRM = (function () {
           );
           return;
         }
-        // TODO : mettre une légère attente avant de lancer la recherche
-        clearTimeout(typingTimer);
-        typingTimer = setTimeout(() => {
-          lancerRecherche(confData);
-        }, doneTypingInterval);
+        debouncedRecherche(confData);
       });
 
       $(document).on("click", "#searchparameters", function () {
@@ -196,38 +187,32 @@ var searchRM = (function () {
     });
   };
 
-  //on keyup, start the countdown
-  $("#searchfield").on("keyup", function () {
-    clearTimeout(typingTimer);
-    typingTimer = setTimeout(() => {
-      lancerRecherche(confData);
-    }, doneTypingInterval);
-  });
-
-  //on keydown, clear the countdown
-  $("#searchfield").on("keydown", function () {
-    clearTimeout(typingTimer);
-  });
+  let currentController = null;
 
   //actions à mener lorsque l'utilisateur ecrit une ligne
   //user is "finished typing," do something
   function lancerRecherche(confData) {
-    var chars = $("#searchfield").val().length;
+    var chars = $("#searchfieldRM").val().length;
     if (chars === 0) {
-    } else if (chars > 0 && chars < 3) {
+      if (currentController) currentController.abort();
+      $("#searchresults a").remove();
+      $("#searchresults").hide();
+    } else if (chars > 0 && chars < 4) {
       $("#searchresults .list-group-item").remove();
     } else {
-      _searchRM(confData, $("#searchfield").val());
+      if (currentController) currentController.abort();
+      currentController = new AbortController();
+      _searchRM(confData, $("#searchfieldRM").val(), currentController.signal);
     }
   }
 
-  //Mets en place les paramêtres de recherche
+  // Mets en place les paramêtres de recherche
   var _setSearchParameters = function (confData) {
     $("#searchparameters li").hide();
     confData.searchContent.forEach(function (searchElem) {
       var newSearchParameter =
         '<li class="mv-param-item" onclick="searchRM.toggleParameter(this)">' +
-        '<a href="#">' +
+        "<a>" +
         '<span id="param_search_' +
         searchElem.categoryName +
         '" class="state-icon far ';
@@ -264,320 +249,217 @@ var searchRM = (function () {
       }
     }
     $.getJSON(getPersoConfData, function (confData) {
-      _searchRM(confData, $("#searchfield").val());
+      _searchRM(confData, $("#searchfieldRM").val());
     });
   };
 
-  var _searchRM = function (confData, value) {
-    _getApisRequests(confData, value, function (allResults) {
+  var _searchRM = function (confData, value, signal) {
+    _getApisRequests(confData, value, signal, function (allResults) {
       _displayAutocompleteData(allResults, value);
       nbResults = $(".autocompleteRmItem").length;
     });
   };
 
   var completeString;
-  var _getApisRequests = function (confData, value, callback) {
-    configOptionsValues = mviewer.customComponents.searchRM.config.options;
-    value = value.trim();
+  var _getApisRequests = function (confData, value, signal, callback) {
+    const valueTrimmed = value.trim();
 
-    var hasComma;
+    var hasComma = valueTrimmed.split(",")[1];
     var citiesSearch;
-    var updatedString = "";
-    var originalValue = value;
-    var resultArray = [];
+    var originalValue = valueTrimmed;
 
-    hasComma = value.split(",")[1];
     if (hasComma) {
-      value = value.split(",")[0];
+      valueTrimmed = valueTrimmed.split(",")[0];
       citiesSearch = _getCitiesSearch(hasComma.trim());
     } else {
       citiesSearch = _getCitiesSearch(value);
     }
-    if (citiesSearch != undefined) {
-      value = value.replace(",", " ").trim().split(" ");
-      if (value.length >= 2) {
-        value.pop();
-      }
-      updatedString = value.join(" ");
-    } else {
-      value = value.replace(",", " ").trim().split(" ");
-      if (value.length >= 2) {
-        value.pop();
-      }
-      updatedString = value.join(" ");
-    }
 
+    var updatedString = valueTrimmed.replace(",", " ").trim();
     completeString = originalValue;
 
-    Promise.all(_getRequest(confData, updatedString, citiesSearch)).then(
-      function (restrictedResult) {
-        var completeStringNoComma = completeString
-          .split(",")[0]
-          .replace(/[^0-9A-zÀ-ú' ]/g, " ")
-          .trim()
-          .toLowerCase();
-        var amountLanes = 0;
-        var amountAddresses = 0;
-        var elementLanes;
-        var elementAdresses;
-        restrictedResult.forEach((element) => {
-          if (element.result.rva.answer.lanes) {
-            elementLanes = element.result.rva.answer.lanes;
-            element.result.rva.answer.lanes.sort(function (x, y) {
-              return x.name
-                .replace(/[^0-9A-zÀ-ú' ]/g, " ")
-                .trim()
-                .toLowerCase()
-                .includes(completeStringNoComma)
-                ? -1
-                : y.name
-                      .replace(/[^0-9A-zÀ-ú' ]/g, " ")
-                      .trim()
-                      .toLowerCase()
-                      .includes(completeStringNoComma)
-                  ? 1
-                  : 0;
-            });
-            element.result.rva.answer.lanes.forEach(function (lane) {
-              if (
-                lane.name
-                  .replace(/[^0-9A-zÀ-ú' ]/g, " ")
-                  .trim()
-                  .toLowerCase()
-                  .includes(completeStringNoComma)
-              ) {
-                amountLanes++;
-              }
-            });
-          }
+    Promise.all(
+      _getRequest(confData, updatedString, citiesSearch, signal),
+    ).then(function (restrictedResult) {
+      if (
+        restrictedResult.some((r) => r.aborted) ||
+        (signal && signal.aborted)
+      ) {
+        return;
+      }
 
-          if (element.result.rva.answer.addresses) {
-            elementAdresses = element.result.rva.answer.addresses;
-            element.result.rva.answer.addresses.sort(function (x, y) {
-              return x.addr2
-                .replace(/[^0-9A-zÀ-ú' ]/g, " ")
-                .trim()
-                .toLowerCase()
-                .includes(completeStringNoComma)
-                ? -1
-                : y.addr2
-                      .replace(/[^0-9A-zÀ-ú' ]/g, " ")
-                      .trim()
-                      .toLowerCase()
-                      .includes(completeStringNoComma)
-                  ? 1
-                  : 0;
-            });
-            element.result.rva.answer.addresses.forEach(function (addresse) {
-              if (
-                addresse.addr2
-                  .replace(/[^0-9A-zÀ-ú' ]/g, " ")
-                  .trim()
-                  .toLowerCase()
-                  .includes(completeStringNoComma)
-              ) {
-                amountAddresses++;
-              }
-            });
+      // Restriction géographique active : on ne cherche jamais plus large
+      if (restrictionInsee) {
+        callback(restrictedResult);
+        return;
+      }
+
+      var hasAnyResult = restrictedResult.some(function (element) {
+        var lanes = element.result.rva && element.result.rva.answer.lanes;
+        var addresses =
+          element.result.rva && element.result.rva.answer.addresses;
+        var cities = element.result.rva && element.result.rva.answer.cities;
+        var organismes =
+          element.categoryName === "Organismes" &&
+          Array.isArray(element.result) &&
+          element.result.length > 0;
+        return (
+          (lanes && lanes.length > 0) ||
+          (addresses && addresses.length > 0) ||
+          (cities && cities.length > 0) ||
+          organismes
+        );
+      });
+
+      if (hasAnyResult || hasComma) {
+        callback(restrictedResult);
+        return;
+      }
+
+      // Aucun résultat, pas de restriction commune, pas de ville précisée : on élargit
+      Promise.all(_getRequest(confData, originalValue, undefined, signal)).then(
+        function (unrestrictedResult) {
+          if (
+            unrestrictedResult.some((r) => r.aborted) ||
+            (signal && signal.aborted)
+          ) {
+            return;
           }
-          if (amountLanes >= 5 || amountAddresses >= 5) {
-            elementAdresses = elementAdresses
-              .slice(0, amountAddresses)
-              .sort(function (a, b) {
-                return a.number - b.number;
-              })
-              .concat(
-                elementAdresses.slice(amountAddresses, elementAdresses.length),
-              );
-            callback(restrictedResult);
-          } else {
-            if (restrictedResult[0].id == completeString) {
-              if (!hasComma) {
-                Promise.all(
-                  _getRequest(confData, originalValue, undefined),
-                ).then(function (unrestrictedResult) {
-                  if (unrestrictedResult[0].id == completeString) {
-                    $.getJSON(getPersoConfData, function (confData) {
-                      confData.searchContent.forEach((item, h) => {
-                        switch (item.categoryName) {
-                          case "Communes":
-                            resultArray[h] = restrictedResult[h];
-                            break;
-                          case "Voies":
-                            resultArray[h] = unrestrictedResult[h];
-                            resultArray[h].citiesSearch =
-                              restrictedResult[h].citiesSearch;
-                            resultArray[h].result.rva.answer.lanes =
-                              unrestrictedResult[
-                                h
-                              ].result.rva.answer.lanes.concat(
-                                restrictedResult[h].result.rva.answer.lanes,
-                              );
-                            for (
-                              var i = 0;
-                              i < resultArray[h].result.rva.answer.lanes.length;
-                              ++i
-                            ) {
-                              for (
-                                var j = i + 1;
-                                j <
-                                resultArray[h].result.rva.answer.lanes.length;
-                                ++j
-                              ) {
-                                if (
-                                  resultArray[h].result.rva.answer.lanes[i]
-                                    .name3 ===
-                                  resultArray[h].result.rva.answer.lanes[j]
-                                    .name3
-                                ) {
-                                  if (i != j) {
-                                    resultArray[
-                                      h
-                                    ].result.rva.answer.lanes.splice(j, 1);
-                                  }
-                                }
-                              }
-                            }
-                            break;
-                          case "Adresses":
-                            resultArray[h] = unrestrictedResult[h];
-                            resultArray[h].citiesSearch =
-                              restrictedResult[h].citiesSearch;
-                            resultArray[h].result.rva.answer.addresses =
-                              unrestrictedResult[
-                                h
-                              ].result.rva.answer.addresses.concat(
-                                restrictedResult[h].result.rva.answer.addresses,
-                              );
-                            for (
-                              var i = 0;
-                              i <
-                              resultArray[h].result.rva.answer.addresses.length;
-                              ++i
-                            ) {
-                              for (
-                                var j = i + 1;
-                                j <
-                                resultArray[h].result.rva.answer.addresses
-                                  .length;
-                                ++j
-                              ) {
-                                if (
-                                  resultArray[h].result.rva.answer.addresses[i]
-                                    .addr3 ===
-                                  resultArray[h].result.rva.answer.addresses[j]
-                                    .addr3
-                                )
-                                  if (i != j) {
-                                    resultArray[
-                                      h
-                                    ].result.rva.answer.addresses.splice(j, 1);
-                                  }
-                              }
-                            }
-                            break;
-                          case "Organismes":
-                            restrictedResult[h].request = originalValue;
-                            resultArray[h] = restrictedResult[h];
-                            break;
-                          default:
-                        }
-                      });
-                      callback(resultArray);
-                    });
-                  }
-                });
-              } else {
-                resultArray = restrictedResult;
-                callback(resultArray);
-              }
-            }
-          }
-        });
-      },
-    );
+          callback(unrestrictedResult);
+        },
+      );
+    });
   };
 
-  function _getRequest(confData, value, citiesSearch) {
+  function _getRequest(confData, value, citiesSearch, signal) {
     var searchItemChecked = $("#searchparameters li a .mv-checked");
     var promises = [];
+
     confData.searchContent.forEach(function (content) {
-      var ajaxSetting = { type: "GET", crossDomain: true, dataType: "json" };
-      ajaxSetting.url = apiRvaBaseUrl;
-      switch (content.categoryName) {
-        case "Communes":
-          ajaxSetting.data = {
-            key: apiRVAKey,
-            version: "1.0",
-            format: "json",
-            epsg: "3948",
-            cmd: "getcities",
-            insee: "all",
-          };
-          break;
-        case "Voies":
-          ajaxSetting.data = {
-            key: apiRVAKey,
-            version: "1.0",
-            format: "json",
-            epsg: "3948",
-            cmd: "getlanes",
-            insee: "all",
-            query: value,
-          };
-          break;
-        case "Adresses":
-          ajaxSetting.data = {
-            key: apiRVAKey,
-            version: "1.0",
-            format: "json",
-            epsg: "3948",
-            cmd: "getfulladdresses",
-            query: value,
-          };
-          break;
-        case "Organismes":
-          ajaxSetting.url = apiSitesOrg + "recherche";
-          ajaxSetting.data =
-            "adresse=&etats[]=actif&etats[]=projet&etats[]=inactif&niveaux_org[]=3&niveaux_org[]=1&niveaux_org[]=2&niveaux_site[]=1" +
-            "&termes=" +
-            value +
-            "&termes_op=AND&types[]=organisme&limit=20&offset=0";
-          ajaxSetting.headers = { "X-API-KEY": apiSitesOrgkey };
-          break;
-      }
-
-      if (restrictionInsee) {
-        ajaxSetting.data.insee = restrictionInsee;
-      }
-
+      var isChecked = false;
       for (var i = 0; i < searchItemChecked.length; i++) {
         if (
           searchItemChecked[i].id ===
           "param_search_" + content.categoryName
         ) {
-          promises.push(
-            new Promise((resolve) => {
-              $.ajax(ajaxSetting).done(function (result) {
-                var nbItemDisplay = 5;
-                if (!Number.isNaN(parseInt(content.nbItemDisplay))) {
-                  nbItemDisplay = parseInt(content.nbItemDisplay);
-                }
-                var resolveRes = {
-                  result: result,
-                  nbItemDisplay: nbItemDisplay,
-                };
-                resolveRes["zoom"] = content.zoom;
-                resolveRes["categoryName"] = content.categoryName;
-                resolveRes["citiesSearch"] = citiesSearch;
-                resolveRes["id"] = completeString;
-                resolve(resolveRes);
-              });
-            }),
-          );
+          isChecked = true;
+          break;
         }
       }
+      if (!isChecked) return;
+
+      var url;
+      var params = new URLSearchParams();
+      var headers = {};
+
+      switch (content.categoryName) {
+        case "Communes":
+          url = apiRvaBaseUrl;
+          params.set("key", apiRVAKey);
+          params.set("version", "1.0");
+          params.set("format", "json");
+          params.set("epsg", "3948");
+          params.set("cmd", "getcities");
+          params.set("insee", restrictionInsee || "all");
+          break;
+        case "Voies":
+          url = apiRvaBaseUrl;
+          params.set("key", apiRVAKey);
+          params.set("version", "1.0");
+          params.set("format", "json");
+          params.set("epsg", "3948");
+          params.set("cmd", "getlanes");
+          params.set("insee", restrictionInsee || "all");
+          params.set("query", value);
+          break;
+        case "Adresses":
+          url = apiRvaBaseUrl;
+          params.set("key", apiRVAKey);
+          params.set("version", "1.0");
+          params.set("format", "json");
+          params.set("epsg", "3948");
+          params.set("cmd", "getfulladdresses");
+          params.set("query", value);
+          if (restrictionInsee) params.set("insee", restrictionInsee);
+          break;
+        case "Organismes":
+          url = apiSitesOrg + "recherche";
+          params.set("adresse", "");
+          ["actif", "projet", "inactif"].forEach((e) =>
+            params.append("etats[]", e),
+          );
+          [3, 1, 2].forEach((n) => params.append("niveaux_org[]", n));
+          params.append("niveaux_site[]", 1);
+          params.set("termes", value);
+          params.set("termes_op", "AND");
+          params.append("types[]", "organisme");
+          params.set("limit", 20);
+          params.set("offset", 0);
+          if (restrictionInsee) params.set("insee", restrictionInsee);
+          headers["X-API-KEY"] = apiSitesOrgkey;
+          break;
+        default:
+          return;
+      }
+
+      let nbItemDisplay = 5;
+      if (!Number.isNaN(parseInt(content.nbItemDisplay))) {
+        nbItemDisplay = parseInt(content.nbItemDisplay);
+      }
+
+      const promise = fetch(url + "?" + params.toString(), {
+        headers: headers,
+        signal: signal,
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error("HTTP " + response.status);
+          return response.json();
+        })
+        .then(function (result) {
+          return {
+            result: result,
+            nbItemDisplay: nbItemDisplay,
+            zoom: content.zoom,
+            categoryName: content.categoryName,
+            citiesSearch: citiesSearch,
+            id: completeString,
+            error: false,
+            aborted: false,
+          };
+        })
+        .catch(function (err) {
+          if (err.name === "AbortError") {
+            // Pas de log, pas de throw : on résout avec un marqueur
+            return {
+              result: { rva: { answer: {} } },
+              nbItemDisplay: 0,
+              zoom: content.zoom,
+              categoryName: content.categoryName,
+              citiesSearch: citiesSearch,
+              id: completeString,
+              error: false,
+              aborted: true,
+            };
+          }
+          console.error(
+            "Erreur API searchRM (" + content.categoryName + ") :",
+            err,
+          );
+          return {
+            result: { rva: { answer: {} } },
+            nbItemDisplay: 0,
+            zoom: content.zoom,
+            categoryName: content.categoryName,
+            citiesSearch: citiesSearch,
+            id: completeString,
+            error: true,
+            aborted: false,
+          };
+        });
+
+      promises.push(promise);
     });
+
     return promises;
   }
 
@@ -610,133 +492,92 @@ var searchRM = (function () {
     return citiesSearch;
   }
 
-  var _displayAutocompleteData = function (allResult, value, createHtml) {
-    var str = "";
-    var nbItem = 0;
-    var cities = [];
-    var lane = [];
-    var address = [];
+  function _displayAutocompleteData(allResult, value, createHtml) {
+    let dataHtml = "";
+    let nbItems = 0;
+    let cities = [];
+    let lane = [];
+    let address = [];
 
     allResult.forEach(function (data) {
-      str +=
-        '<a class="geoportail list-group-item disabled" id="list-group-' +
-        data.categoryName +
-        '">' +
-        data.categoryName +
-        "</a>";
-      var dataFiltered = [];
+      let categoryDataFiltered = [];
+      let itemsHtml = "";
       switch (data.categoryName) {
         case "Communes":
           var communeData = data.result.rva.answer.cities;
-          dataFiltered = _filterCities(communeData, value, data.citiesSearch);
-          dataFiltered.forEach(function (elem) {
-            str +=
-              '<a class="geoportail list-group-item autocompleteRmItem" id="autocompleteRmItem_' +
-              nbItem +
-              '" href="#" title="' +
-              elem.name;
-            var x = _getBoundigBoxCenterX(elem.lowerCorner, elem.upperCorner);
-            var y = _getBoundigBoxCenterY(elem.lowerCorner, elem.upperCorner);
-            var coordNewProj = proj4("EPSG:3948", "EPSG:4326", [x, y]);
-            str +=
-              '" onclick="searchRM.displayLocation(' +
-              coordNewProj[0] +
-              "," +
-              coordNewProj[1] +
-              "," +
-              data.zoom +
-              "," +
-              queryMapOnClick +
-              ", 'EPSG:4326');\">" +
-              elem.name +
-              "</a>";
-            nbItem++;
+          categoryDataFiltered = _filterCities(
+            communeData,
+            value,
+            data.citiesSearch,
+          );
+          categoryDataFiltered.forEach(function (elem) {
+            itemsHtml += `<a class="geoportail list-group-item autocompleteRmItem" id="autocompleteRmItem_${nbItems}" title="${elem.name}`;
+            const x = _getBoundingBoxCenterX(
+              elem.lowerCorner,
+              elem.upperCorner,
+            );
+            const y = _getBoundingBoxCenterY(
+              elem.lowerCorner,
+              elem.upperCorner,
+            );
+            const coordNewProj = proj4("EPSG:3948", "EPSG:4326", [x, y]);
+            itemsHtml += `" onclick="searchRM.displayLocation(${coordNewProj[0]},${coordNewProj[1]},${data.zoom},${queryMapOnClick}, 'EPSG:4326');\">${elem.name}</a>`;
+            nbItems++;
           });
-          cities.push(dataFiltered);
+          cities.push(categoryDataFiltered);
           break;
         case "Voies":
-          dataFiltered = _filterLanes(data);
-          dataFiltered.forEach(function (elem) {
-            str +=
-              '<a class="geoportail list-group-item autocompleteRmItem" id="autocompleteRmItem_' +
-              nbItem +
-              '" href="#" title="' +
-              elem.name4;
-            str +=
-              '" onclick="searchRM.displayLocationLane(' +
-              elem.idlane +
-              "," +
-              data.zoom +
-              "," +
-              queryMapOnClick +
-              ", 'EPSG:4326');\">" +
-              elem.name4 +
-              "</a>";
-            nbItem++;
+          categoryDataFiltered = _filterLanes(data);
+          categoryDataFiltered.forEach(function (elem) {
+            itemsHtml += `<a class="geoportail list-group-item autocompleteRmItem" id="autocompleteRmItem_${nbItems}" title="${elem.name4}" onclick="searchRM.displayLocationLane(${elem.idlane},${data.zoom},${queryMapOnClick}, 'EPSG:4326');">${elem.name4}</a>`;
+            nbItems++;
           });
-          lane.push(dataFiltered);
+          lane.push(categoryDataFiltered);
           break;
         case "Adresses":
-          dataFiltered = _filterAddresses(data);
-          dataFiltered.forEach(function (elem) {
-            str +=
-              '<a class="geoportail list-group-item autocompleteRmItem" id="autocompleteRmItem_' +
-              nbItem +
-              '" href="#" title="' +
-              elem.addr3;
+          categoryDataFiltered = _filterAddresses(data);
+          categoryDataFiltered.forEach(function (elem) {
+            itemsHtml += `<a class="geoportail list-group-item autocompleteRmItem" id="autocompleteRmItem_${nbItems}" title="${elem.addr3}`;
             var coordNewProj = proj4("EPSG:3948", "EPSG:4326", [
               elem.x,
               elem.y,
             ]);
-            str +=
-              '" onclick="searchRM.displayLocationMarker(' +
-              coordNewProj[0] +
-              "," +
-              coordNewProj[1] +
-              "," +
-              data.zoom +
-              "," +
-              queryMapOnClick +
-              ", 'EPSG:4326');\">" +
-              elem.addr3 +
-              "</a>";
-            nbItem++;
+            itemsHtml += `" onclick="searchRM.displayLocationMarker(${coordNewProj[0]},${coordNewProj[1]},${data.zoom},${queryMapOnClick}, 'EPSG:4326');\">${elem.addr3}</a>`;
+            nbItems++;
           });
-          address.push(dataFiltered);
+          address.push(categoryDataFiltered);
           break;
         case "Organismes":
           //dataFiltered = data.result.slice(0,data.nbItemDisplay);
-          dataFiltered = _filterOrganisms(data);
-          dataFiltered.forEach(function (elem) {
-            var elemName = elem.nom;
+          categoryDataFiltered = _filterOrganisms(data);
+          categoryDataFiltered.forEach(function (elem) {
+            const elemName = elem.nom;
             elem.autres.forEach(function (autresData) {
               if (autresData.includes("Localisation :")) {
                 elemName += ", " + autresData.split(":")[1].trim();
               }
             });
-            var mainSite = _getMainSite(elem);
-            str +=
-              '<a class="geoportail list-group-item autocompleteRmItem" id="autocompleteRmItem_' +
-              nbItem +
-              '" href="#" title="' +
-              mainSite +
-              ' " onclick="searchRM.displayOrganism(this,' +
-              data.zoom +
-              "," +
-              queryMapOnClick +
-              ')">' +
-              elemName +
-              "</a>";
-            nbItem++;
+            const mainSite = _getMainSite(elem);
+            itemsHtml += `<a class="geoportail list-group-item autocompleteRmItem" id="autocompleteRmItem_${nbItems}" title="${mainSite} " onclick="searchRM.displayOrganism(this,${data.zoom},${queryMapOnClick})">${elemName}</a>`;
+            nbItems++;
           });
           break;
         default:
       }
+
+      // On n'ajoute le header (et les items) que si dataFiltered contient quelque chose
+      if (categoryDataFiltered.length > 0) {
+        dataHtml += `<a class="geoportail list-group-item disabled" id="list-group-${data.categoryName}">${data.categoryName}</a>`;
+        dataHtml += itemsHtml;
+      }
     });
 
-    if (createHtml != false) {
+    if (createHtml !== false) {
       $("#searchresults a").remove();
-      $("#searchresults").append(str);
+      if (nbItems === 0) {
+        dataHtml += `<a class="list-group-item disabled noResult autocompleteRmItem">Aucun résultat</a>`;
+      }
+      $("#searchresults").append(dataHtml);
       if (search.options.closeafterclick) {
         $("#searchresults .list-group-item").click(function () {
           $(".searchresults-title .close").trigger("click");
@@ -749,7 +590,7 @@ var searchRM = (function () {
       lane: lane,
       address: address,
     };
-  };
+  }
 
   //renvoie un point du tronçon
   function getPointOnLane(idlane) {
@@ -767,16 +608,16 @@ var searchRM = (function () {
     });
   }
 
-  //obtiens les données de la voie idLane
-  function getLaneData(idlane) {
-    return new Promise((resolve) => {
-      $.ajax({
-        url: laneData + idlane,
-        context: document.body,
-      }).done(function (res) {
-        resolve({ response: res });
+  //obtient les données de la voie idLane
+  function getLaneData(idlane, signal) {
+    return fetch(laneData + idlane, { signal: signal })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (response) {
+        return { response: response };
       });
-    });
   }
 
   // obtiens un point sur la voie et l'affiche
@@ -789,6 +630,7 @@ var searchRM = (function () {
 
   // affiche une coordonnée sur la carte
   var displayLocation = function (coordX, coordY, zoom, querymaponclick) {
+    $("#searchfieldRM").val("");
     mviewer.zoomToLocation(coordX, coordY, zoom, querymaponclick);
     mviewer.hideLocation();
   };
@@ -801,8 +643,8 @@ var searchRM = (function () {
     querymaponclick,
     proj,
   ) {
+    $("#searchfieldRM").val("");
     mviewer.zoomToLocation(coordX, coordY, zoom, querymaponclick);
-    // setTimeout(function(){mviewer.showLocation(proj, coordX, coordY)},500);
     mviewer.showLocation(proj, coordX, coordY);
   };
 
@@ -827,17 +669,16 @@ var searchRM = (function () {
    * Obtiens les coordonnées de notre site
    */
   var _getSiteCoordinates = function (idSite) {
-    var requestUrl = apiSitesOrg + "sites/" + idSite;
-
-    return new Promise((resolve) => {
-      $.ajax({
-        url: requestUrl,
-        context: document.body,
-        headers: { "X-API-KEY": apiSitesOrgkey },
-      }).done(function (res) {
-        resolve({ x: res.sitePt.x, y: res.sitePt.y });
+    return fetch(apiSitesOrg + "sites/" + idSite, {
+      headers: { "X-API-KEY": apiSitesOrgkey },
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (res) {
+        return { x: res.sitePt.x, y: res.sitePt.y };
       });
-    });
   };
 
   /**
@@ -848,22 +689,19 @@ var searchRM = (function () {
   var _getSiteFromOrg = function (mainSite) {
     var requestUrl =
       apiSitesOrg +
-      "recherche" +
-      "?" +
-      "adresse=&etats[]=actif&etats[]=projet&etats[]=inactif&niveaux_org[]=3" +
+      "recherche?adresse=&etats[]=actif&etats[]=projet&etats[]=inactif&niveaux_org[]=3" +
       "&niveaux_org[]=1&niveaux_org[]=2&niveaux_site[]=1&termes=" +
-      mainSite +
+      encodeURIComponent(mainSite) +
       "&termes_op=AND&types[]=site&limit=20&offset=0";
 
-    return new Promise((resolve) => {
-      $.ajax({
-        url: requestUrl,
-        context: document.body,
-        headers: { "X-API-KEY": apiSitesOrgkey },
-      }).done(function (site) {
-        resolve({ site });
+    return fetch(requestUrl, { headers: { "X-API-KEY": apiSitesOrgkey } })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (site) {
+        return { site: site };
       });
-    });
   };
 
   //////////////////// Search input /////////////////////////////////////////////////
@@ -917,13 +755,13 @@ var searchRM = (function () {
     return citiesFound;
   };
 
-  var _getBoundigBoxCenterX = function (lowerCorner, upperCorner) {
+  var _getBoundingBoxCenterX = function (lowerCorner, upperCorner) {
     var xmin = parseFloat(lowerCorner.split(" ")[0]);
     var xmax = parseFloat(upperCorner.split(" ")[0]);
     return (xmin + xmax) / 2;
   };
 
-  var _getBoundigBoxCenterY = function (lowerCorner, upperCorner) {
+  var _getBoundingBoxCenterY = function (lowerCorner, upperCorner) {
     var ymin = parseFloat(lowerCorner.split(" ")[1]);
     var ymax = parseFloat(upperCorner.split(" ")[1]);
     return (ymin + ymax) / 2;
@@ -932,7 +770,7 @@ var searchRM = (function () {
   //retourne les voies correspondantes à notre recherche
   var _filterLanes = function (lanesData) {
     var lanesFound = [];
-    var lanes = lanesData.result.rva.answer.lanes;
+    var lanes = lanesData.result.rva.answer.lanes || [];
     if (typeof lanesData.citiesSearch !== "undefined") {
       lanes.forEach(function (lane) {
         if (

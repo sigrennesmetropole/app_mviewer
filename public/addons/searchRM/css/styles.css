@@ -7,11 +7,13 @@
   font-family: "DMSans_medium", Arial, Sans-serif;
   font-size: 11px;
 }
-#fieldWrapper {
-  height: 28px;
+
+#searchfieldRM {
+  border-radius: 4px 0 0 4px;
+  font-size: 1em;
 }
 
-searchresults-title .close:hover {
+.searchresults-title .close:hover {
   color: #fff;
   opacity: 1;
   padding-top: 10px;
@@ -97,10 +99,6 @@ searchresults-title .close:hover {
   padding: 0 4px;
 }
 
-#fieldWrapper #searchfield {
-  border-radius: 4px;
-}
-
 #buttonSearchField {
   height: 30px;
 }
@@ -173,7 +171,6 @@ searchresults-title .close:hover {
 
   #searchresults a {
     font-size: 11px;
-    margin-left: 5px;
   }
 
   #btn-mode-su-menu {
@@ -206,7 +203,6 @@ searchresults-title .close:hover {
 
   #searchresults a {
     font-size: 11px;
-    margin-left: 5px;
   }
 }
 
@@ -214,22 +210,30 @@ searchresults-title .close:hover {
   top: 65px;
   position: fixed;
   font-family: "DMSans_medium", Arial, Sans-serif;
-  right: 0;
+  right: 0 !important;
 }
 
-#searchresults a.disabled {
+#searchresults a:not(.noResult) {
+  cursor: pointer;
+}
+
+#searchresults a.disabled:not(.autocompleteRmItem) {
   padding: 10px;
 }
 
-#searchresults a.list-group-item.disabled {
+#searchresults a.list-group-item.disabled:not(.autocompleteRmItem) {
   color: #5b5b5b;
   font-size: 13px;
   background-color: rgb(255, 255, 255);
 }
 
+#searchresults .noResult {
+  font-style: italic;
+  font-weight: normal !important;
+}
+
 .searchresults-title {
   padding: 10px 10px;
-  margin-left: 5px;
 }
 
 .searchresults-title .close {
