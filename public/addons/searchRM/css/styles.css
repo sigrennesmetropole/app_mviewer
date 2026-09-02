@@ -160,10 +160,6 @@
 /*Début des modifs pour le searchtool*/
 
 @media (max-width: 767px) {
-  #searchtool {
-    margin-left: 2px;
-    right: -35px;
-  }
   /*  Modal popup close*/
   .modal .close {
     font-size: 30px;
@@ -178,15 +174,6 @@
   }
 }
 
-#searchresults {
-  padding: 0px 14px;
-  margin-top: -10px;
-  position: fixed;
-  right: 60px;
-  top: 155px !important;
-  width: 300px;
-}
-
 .mode-u #searchresults {
   right: 40px;
   top: 65px !important;
@@ -197,20 +184,9 @@
 }
 
 @media (min-width: 768px) {
-  #searchtool {
-    width: 220px;
-  }
-
   #searchresults a {
     font-size: 11px;
   }
-}
-
-#searchtool {
-  top: 65px;
-  position: fixed;
-  font-family: "DMSans_medium", Arial, Sans-serif;
-  right: 0 !important;
 }
 
 #searchresults a:not(.noResult) {

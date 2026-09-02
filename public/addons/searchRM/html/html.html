@@ -1,29 +1,23 @@
-<div role="search" id="searchtool">
-  <div
-    class="d-flex align-items-center gap-2 px-2 py-1 rounded position-absolute background-custom-searchtool"
-    style="background-color: var(--mvcustom-color-primary); width: 358px"
-  >
-    <span class="text-white text-nowrap">Recherche par adresse :</span>
-
-    <div class="input-group input-group-sm">
-      <input
-        type="text"
-        class="form-control"
-        id="searchfieldRM"
-        i18n="navbar.search.placeholder"
-        placeholder="Rechercher"
-      />
-      <button
-        class="btn btn-outline-light"
-        type="button"
-        id="button-addon2"
-        aria-label="Open search options"
-        data-bs-toggle="modal"
-        data-bs-target="#parameterspanel"
-      >
-        <i class="ri-more-2-fill"></i>
-      </button>
-    </div>
+<div class="navbar-form" role="search" id="searchtool">
+  <div class="form-group input-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Rechercher"
+      i18n="navbar.search.placeholder"
+      id="searchfieldRM"
+    />
+    <button
+      type="button"
+      class="btn btn-light"
+      aria-label="Open search options"
+      data-bs-toggle="modal"
+      data-bs-target="#parameterspanel"
+      i18n="search.panel.title"
+      title="Paramètres de recherche"
+    >
+      <i class="ri-more-2-fill"></i>
+    </button>
   </div>
 </div>
 

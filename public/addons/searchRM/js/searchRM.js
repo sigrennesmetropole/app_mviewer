@@ -71,7 +71,40 @@ var searchRM = (function () {
     lancerRecherche(confData);
   }, doneTypingInterval);
 
-  var enable = function () {
+  function placeSearchTool() {
+    const mode =
+      $("input[name=mv-display-mode]:checked").val() || API.mode || "d";
+    const w = $(window).width();
+    const isXs = w < 992;
+
+    if (isXs) {
+      // mobile : placer dans main (mode compact)
+      $("#searchtool").appendTo("#main");
+      $("#searchtool").removeClass("navbar-form");
+    } else {
+      // desktop
+      if (mode === "u") {
+        // ultrasimple : placer dans main et enlever la barre
+        $("#searchtool").appendTo("#main");
+        $("#searchtool").removeClass("navbar-form");
+        $("#mv-navbar").remove();
+      } else if (mode === "s") {
+        // simple : placer dans la zone prévue pour la recherche
+        $("#searchtool").appendTo("#searchtool_nav");
+        $("#searchtool").addClass("navbar-form");
+      } else {
+        // mode par défaut : remettre dans la navbar de recherche si existe
+        $("#searchtool").appendTo("#searchtool_nav");
+        $("#searchtool").addClass("navbar-form");
+      }
+    }
+  }
+
+  function enable() {
+    placeSearchTool();
+    // repositionne au redimensionnement et au changement de mode d'affichage
+    $(window).on("resize.searchtool", placeSearchTool);
+
     $("#searchtool").show();
 
     //Récupère les clés d'api dans le fichier d'environnement
@@ -96,7 +129,7 @@ var searchRM = (function () {
     var confdata = _setConfig();
     _configureSearch(confdata);
     getPersoConfData = confdata;
-  };
+  }
 
   function _setConfig() {
     var extensions = configuration.getConfiguration().extensions.extension;
