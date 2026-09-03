@@ -79,7 +79,7 @@
 
   --mvcustom-navbar-color: #000000;
   --mvcustom-navbar-h: 65px;
-  --mvcustom-font: "Condate", "DM Sans", serif;
+  --mvcustom-font: "DMSans_regular", serif;
   --mvcustom-color-primary: #000;
 }
 
@@ -137,14 +137,16 @@
   background-color: var(--darkMain);
 }
 
+.mv-title {
+  font-family: "condate_medium", Arial, Sans-serif;
+}
+
 .navbar-header.fixed-brand {
   background-color: var(--darkMain);
 }
 
 p.navbar-text.mv-title {
   font-size: 18px;
-  /*font-family: 'vistaSansOT_regular', Arial, Sans-serif;*/
-  font-family: "condate_medium", Arial, Sans-serif;
   letter-spacing: 0.5px;
 }
 
@@ -1136,22 +1138,4 @@ a:hover .grueicon::before,
 
 #sidebar-wrapper .sidebar-nav li a:hover {
   color: #ffffff;
-}
-
-#searchRM-custom-component .background-custom-searchtool {
-  background-color: black;
-  width: 357px;
-  height: 38px;
-  position: relative;
-  right: 110px;
-  border-radius: 4px;
-  color: white;
-}
-
-#searchtool {
-  top: 75px !important;
-}
-
-.xs.mode-u #searchtool {
-  top: 1em !important;
 }

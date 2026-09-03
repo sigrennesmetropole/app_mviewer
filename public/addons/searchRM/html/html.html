@@ -1,3 +1,6 @@
+<!-- Copie du composant de recherche de mviewer defini dans mviewer-v4/index.html ligne 91 -->
+<!-- On est obligé de le recopier car le composant de recherche de mviewer est supprimé du DOM si aucune recheche n'est spécifiée dans la config -->
+<!--  Attention, très sensible aux migrations de mviewer -->
 <div class="navbar-form" role="search" id="searchtool">
   <div class="form-group input-group">
     <input
@@ -21,25 +24,20 @@
   </div>
 </div>
 
-<div id="parcelSelectors" class="parcelSelectors">
-  <div class="background-custom-parcelSelectors">
-    <p id="parcelSelectorsLegend">Recherche par parcelle :</p>
-    <div id="communeSearchContainer">
-      <select
-        id="communeSearch"
-        name="communeSearch"
-        class="form-control"
-      ></select>
-    </div>
-    <div id="sectionInputContainer" class="sectionInputContainer">
-      <select id="section" class="sectionsList form-control"></select>
-    </div>
-    <div id="parcelleInputContainer" class="parcelleInputContainer">
-      <select
-        id="parcelle"
-        class="parcellesList form-control"
-        disabled
-      ></select>
-    </div>
+<div
+  id="parcelSelectors"
+  class="parcelSelectors"
+  tabindex="1"
+  style="display: none"
+>
+  <p id="parcelSelectorsLegend">Recherche par parcelle :</p>
+  <div class="parcelSelectorsRow">
+    <select
+      id="communeSearch"
+      name="communeSearch"
+      class="form-control"
+    ></select>
+    <select id="section" class="sectionsList form-control"></select>
+    <select id="parcelle" class="parcellesList form-control" disabled></select>
   </div>
 </div>
