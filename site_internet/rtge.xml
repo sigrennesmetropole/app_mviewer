@@ -1,13 +1,13 @@
 <config xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" mviewerversion="4.1" mviewerstudioversion="4.3">
 <application 
-    title="Données du Référentiel Topographiques à très Grande Échelle (RTGE) de Rennes Métropole (1/200)"
+    title="Données du Référentiel Topographique à très Grande Échelle (RTGE) de Rennes Métropole (1/200)"
     logo="https://mviewer.sig.rennesmetropole.fr/apps/public/img/logo/logo_mviewer_transp.png" 
     help="apps/site_internet/html/rtge_help.html" 
     titlehelp="Données du Référentiel Topographiques à très Grande Échelle (RTGE) de Rennes Métropole (1/200)"
     iconhelp="fas fa-home" home=""
     style-original="css/themes/default.css"
     style="apps/site_internet/css/site_internet_gris.css"
-    zoomtools="true" initialextenttool="true" exportpng="false" showhelp="true" coordinates="false" measuretools="false" mouseposition="false" geoloc="false" studio="" togglealllayersfromtheme="false" mapprint="false" addlayerstools="false">
+    zoomtools="true" initialextenttool="true" exportpng="false" showhelp="true" coordinates="false" measuretools="false" mouseposition="false" geoloc="true" studio="" togglealllayersfromtheme="false" mapprint="false" addlayerstools="false">
 </application>
 <mapoptions projection="EPSG:3857" center="-181873.30657612678,6125540.364129572" maxzoom="" zoom="13" extent="-200559.20931653812,6115618.727426819,-168741.4780186147,6136257.255836283" />
 <olscompletion type="ban" url="https://data.geopf.fr/geocodage/search/" attribution="Base adresse nationale (BAN)" />
