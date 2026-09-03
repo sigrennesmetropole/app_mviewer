@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Recherche générique mviewer (#searchtool, #searchresults, modal paramètres)
+   ========================================================================== */
+
+.searchresults-title .close:hover {
+  color: #fff;
+  opacity: 1;
+  padding-top: 10px;
+  right: 10px;
+  position: absolute;
+  margin-top: -38px;
+}
+
+#searchfieldRM {
+  font-size: 0.85em;
+}
+
+.selectedRmAutocompleteItem {
+  background-color: #f1f1f2;
+}
+
+#buttonSearchField {
+  height: 30px;
+}
+
+#modal-panel-selector .rm-popup-footer {
+  position: relative;
+  bottom: 0px !important;
+}
+
+/* Début des modifs pour le searchtool */
+
+@media (max-width: 767px) {
+  /* Modal popup close */
+  .modal .close {
+    font-size: 30px;
+  }
+
+  #searchresults a {
+    font-size: 11px;
+  }
+}
+
+#searchresults a:not(.noResult) {
+  cursor: pointer;
+}
+
+#searchresults a.disabled:not(.autocompleteRmItem) {
+  padding: 10px;
+}
+
+#searchresults a.list-group-item.disabled:not(.autocompleteRmItem) {
+  color: #5b5b5b;
+  font-size: 13px;
+  background-color: rgb(255, 255, 255);
+}
+
+#searchresults .noResult {
+  font-style: italic;
+  font-weight: normal !important;
+}
+
+.searchresults-title {
+  padding: 10px 10px;
+}
+
+.searchresults-title .close {
+  margin-top: -5px;
+  opacity: 1;
+}

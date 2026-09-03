@@ -1,51 +1,43 @@
-<div role="search" id="searchtool">
-  <div
-    class="d-flex align-items-center gap-2 px-2 py-1 rounded position-absolute background-custom-searchtool"
-    style="background-color: var(--mvcustom-color-primary); width: 358px"
-  >
-    <span class="text-white text-nowrap">Recherche par adresse :</span>
-
-    <div class="input-group input-group-sm">
-      <input
-        type="text"
-        class="form-control"
-        id="searchfieldRM"
-        i18n="navbar.search.placeholder"
-        placeholder="Rechercher"
-      />
-      <button
-        class="btn btn-outline-light"
-        type="button"
-        id="button-addon2"
-        aria-label="Open search options"
-        data-bs-toggle="modal"
-        data-bs-target="#parameterspanel"
-      >
-        <i class="ri-more-2-fill"></i>
-      </button>
-    </div>
+<!-- Copie du composant de recherche de mviewer defini dans mviewer-v4/index.html ligne 91 -->
+<!-- On est obligé de le recopier car le composant de recherche de mviewer est supprimé du DOM si aucune recheche n'est spécifiée dans la config -->
+<!--  Attention, très sensible aux migrations de mviewer -->
+<div class="navbar-form" role="search" id="searchtool">
+  <div class="form-group input-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Rechercher"
+      i18n="navbar.search.placeholder"
+      id="searchfieldRM"
+    />
+    <button
+      type="button"
+      class="btn btn-light"
+      aria-label="Open search options"
+      data-bs-toggle="modal"
+      data-bs-target="#parameterspanel"
+      i18n="search.panel.title"
+      title="Paramètres de recherche"
+    >
+      <i class="ri-more-2-fill"></i>
+    </button>
   </div>
 </div>
 
-<div id="parcelSelectors" class="parcelSelectors">
-  <div class="background-custom-parcelSelectors">
-    <p id="parcelSelectorsLegend">Recherche par parcelle :</p>
-    <div id="communeSearchContainer">
-      <select
-        id="communeSearch"
-        name="communeSearch"
-        class="form-control"
-      ></select>
-    </div>
-    <div id="sectionInputContainer" class="sectionInputContainer">
-      <select id="section" class="sectionsList form-control"></select>
-    </div>
-    <div id="parcelleInputContainer" class="parcelleInputContainer">
-      <select
-        id="parcelle"
-        class="parcellesList form-control"
-        disabled
-      ></select>
-    </div>
+<div
+  id="parcelSelectors"
+  class="parcelSelectors"
+  tabindex="1"
+  style="display: none"
+>
+  <p id="parcelSelectorsLegend">Recherche par parcelle :</p>
+  <div class="parcelSelectorsRow">
+    <select
+      id="communeSearch"
+      name="communeSearch"
+      class="form-control"
+    ></select>
+    <select id="section" class="sectionsList form-control"></select>
+    <select id="parcelle" class="parcellesList form-control" disabled></select>
   </div>
 </div>
