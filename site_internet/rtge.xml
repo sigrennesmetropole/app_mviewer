@@ -3,7 +3,7 @@
     title="Données du Référentiel Topographique à très Grande Échelle (RTGE) de Rennes Métropole (1/200)"
     logo="https://mviewer.sig.rennesmetropole.fr/apps/public/img/logo/logo_mviewer_transp.png" 
     help="apps/site_internet/html/rtge_help.html" 
-    titlehelp="Données du Référentiel Topographiques à très Grande Échelle (RTGE) de Rennes Métropole (1/200)"
+    titlehelp="Données du Référentiel Topographique à très Grande Échelle (RTGE) de Rennes Métropole (1/200)"
     iconhelp="fas fa-home" home=""
     style-original="css/themes/default.css"
     style="apps/site_internet/css/site_internet_gris.css"
