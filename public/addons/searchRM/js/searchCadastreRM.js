@@ -5,8 +5,6 @@ var searchCadastreRM = (function () {
   var sectionTag = $("#sectionInputContainer");
   var parcelTag = $("#parcelleInputContainer");
 
-  var selectedParcelLayer;
-
   var getCenterGeometry = function (geomCoords) {
     var nbCoords = geomCoords.length;
     var sumX = 0;
@@ -37,20 +35,20 @@ var searchCadastreRM = (function () {
         placeholder: "commune",
         allowClear: true,
         dropdownAutoWidth: true,
-        width: "210px",
+        width: "190px",
       });
 
       $("#section").select2({
         placeholder: "section",
         allowClear: true,
         dropdownAutoWidth: true,
-        width: "75px",
+        width: "95px",
       });
       $("#parcelle").select2({
         placeholder: "parcelle",
         allowClear: true,
         dropdownAutoWidth: true,
-        width: "75px",
+        width: "95px",
       });
 
       $(".sectionsList").prop("disabled", true);
@@ -237,7 +235,7 @@ var searchCadastreRM = (function () {
 setTimeout(function () {
   var extensions = configuration.getConfiguration().extensions.extension;
   var configPerso;
-  var trueOrFalse = "false";
+  var displayParcelSearch = false;
   for (index in extensions) {
     if (extensions[index].id == "searchRM") {
       if (extensions[index].configFile != undefined) {
@@ -248,7 +246,7 @@ setTimeout(function () {
           async: false,
         }).done(function (response) {
           if (response.cadastre === true) {
-            trueOrFalse = "true";
+            displayParcelSearch = true;
           }
         });
       } else {
@@ -259,8 +257,7 @@ setTimeout(function () {
       break;
     }
   }
-  $("#parcelSelectors").hide();
-  if (trueOrFalse === "true" && API.mode !== "u" && API.mode !== "s") {
+  if (displayParcelSearch === true && API.mode !== "u" && API.mode !== "s") {
     $("#parcelSelectors").show();
     searchCadastreRM.init();
   }

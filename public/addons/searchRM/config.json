@@ -5,7 +5,7 @@
     "js/searchCadastreRM.js",
     "js/searchRMCustom.js"
   ],
-  "css": "css/styles.css",
+  "css": ["css/recherche.css", "css/rechercheCadastre.css"],
   "html": "html/html.html",
   "target": "page-content-wrapper",
   "options": {

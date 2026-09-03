@@ -1,0 +1,68 @@
+/* ==========================================================================
+   Recherche cadastrale par parcelle (#parcelSelectors)
+   ========================================================================== */
+
+.parcelSelectors {
+  display: flex;
+  position: fixed;
+  top: calc(var(--mv-navbar-h) + 10px);
+  right: 5em;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  background-color: var(--mvcustom-color-primary);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 1em;
+  min-width: 584px;
+}
+
+.xs.mode-d .parcelSelectors {
+  top: calc(var(--mv-navbar-h) + 60px);
+  left: 1em;
+  right: auto;
+  width: 80%;
+  min-width: auto;
+}
+
+@media (max-width: 724px) {
+  .parcelSelectors {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.parcelSelectorsRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+#parcelSelectorsLegend {
+  margin: 0;
+  white-space: nowrap;
+  font-size: 0.85em;
+}
+
+.select2-container {
+  flex: 1 1 0;
+  min-width: 0;
+  font-size: 0.85em;
+  font-family: var(--mvcustom-font);
+}
+
+/* La commune a un libellé plus long que section/parcelle : lui donner plus de place */
+#communeSearch + .select2-container {
+  flex-grow: 2;
+}
+
+#section + .select2-container,
+#parcelle + .select2-container {
+  flex-grow: 1;
+}
+
+.select2-results__option {
+  font-size: 11px;
+}

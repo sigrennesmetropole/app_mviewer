@@ -71,6 +71,8 @@ var searchRM = (function () {
     lancerRecherche(confData);
   }, doneTypingInterval);
 
+  // Replace le composant de recherche en fonction du mode et de la résolution de l'écran
+  // Attention, très sensible aux migrations de mviewer
   function placeSearchTool() {
     const mode =
       $("input[name=mv-display-mode]:checked").val() || API.mode || "d";
