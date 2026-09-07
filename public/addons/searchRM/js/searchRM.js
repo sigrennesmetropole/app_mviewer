@@ -586,7 +586,7 @@ var searchRM = (function () {
           //dataFiltered = data.result.slice(0,data.nbItemDisplay);
           categoryDataFiltered = _filterOrganisms(data);
           categoryDataFiltered.forEach(function (elem) {
-            const elemName = elem.nom;
+            let elemName = elem.nom;
             elem.autres.forEach(function (autresData) {
               if (autresData.includes("Localisation :")) {
                 elemName += ", " + autresData.split(":")[1].trim();
