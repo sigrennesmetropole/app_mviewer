@@ -997,4 +997,6 @@ var searchRM = (function () {
   };
 })();
 
-setTimeout(searchRM.enable, 2000);
+document.addEventListener("searchRM-componentLoaded", function () {
+  searchRM.enable();
+});

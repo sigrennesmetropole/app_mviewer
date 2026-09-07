@@ -232,7 +232,7 @@ var searchCadastreRM = (function () {
   };
 })();
 
-setTimeout(function () {
+document.addEventListener("searchRM-componentLoaded", function () {
   var extensions = configuration.getConfiguration().extensions.extension;
   var configPerso;
   var displayParcelSearch = false;
@@ -261,4 +261,4 @@ setTimeout(function () {
     $("#parcelSelectors").show();
     searchCadastreRM.init();
   }
-}, 2000);
+});
