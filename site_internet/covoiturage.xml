@@ -74,7 +74,7 @@
 			   visible="false"
 		       icon="fas fa-parking">
 			<layer id="v_parking"
-			       name="Parcs relais avec places réservées au covoiturage"
+			       name="Parc relais avec places réservées au covoiturage"
 			       type="wms"
 			       url="https://public.sig.rennesmetropole.fr/geoserver/trp_statio/ows"
 			       visible="true"
@@ -93,12 +93,12 @@
 	
 	<!-- Dépose minute covoiturage -->
 		<theme id="Dépose minute covoiturage" 
-				name="Déposes minutes covoiturage" 
+				name="Dépose minute covoiturage" 
 				collapsed="false" 
 				icon="fas fa-caret-right"> 
        
 	   <layer id="v_voirie_stationnement_limite"
-		   name="Dépose-minutes covoiturage"
+		   name="Dépose minute covoiturage"
 		   type="wms"
 		   url="https://public.sig.rennesmetropole.fr/geoserver/trp_statio/ows"	  
 		   visible="true"
@@ -118,12 +118,12 @@
 	  
 	    <!-- Aires de covoiturage -->
 		<theme id="aires"
-		       name="Aires de covoiturage"
+		       name="Aire de covoiturage"
 		       collapsed="false"
 			   visible="false"
 		       icon="fas fa-car">
 			<layer id="v_parking"
-			       name="Aires de covoiturage"
+			       name="Aire de covoiturage"
 			       type="wms"
 			       url="https://public.sig.rennesmetropole.fr/geoserver/trp_statio/ows"
 			       visible="true"
