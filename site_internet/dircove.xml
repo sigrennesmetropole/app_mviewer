@@ -56,7 +56,7 @@
 		       useproxy="false"
 			   sld=""
 		       legendurl=""
-		       featurecount="5"
+		       featurecount="1"
 			   customcontrol="true"
 		       customcontrolpath="apps/site_internet/customcontrols"
 		       infopanel="right-panel"

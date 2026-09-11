@@ -4,7 +4,7 @@
     logo="https://mviewer.sig.rennesmetropole.fr/apps/public/img/logo/logo_mviewer_transp.png" 
     help="apps/site_internet/html/projets_urbains_help.html" titlehelp="Carte des projets urbains" iconhelp="fas fa-home"
     favicon=""
-    style="apps/site_internet/css/site_internet_gris.css"
+    style="apps/site_internet/css/projet-urbains.css"
     home="" zoomtools="true" initialextenttool="true" 
     exportpng="false" showhelp="false" coordinates="false" measuretools="false" mouseposition="false" 
     geoloc="false" studio="" togglealllayersfromtheme="false" mapprint="false" addlayerstools="false"
@@ -16,6 +16,7 @@
 <extensions>
   <extension type="javascript" src="apps/public/addons/GUICustom/js/matomo.js"/>
   <extension type="component" id="searchRM" path="apps/public/addons" configFile="/apps/public/addons/searchRM/conf/searchConf_RVA_adresses_voies.json"/>
+  <extension type="javascript" src="apps/public/addons/GUICustom/js/fixInfoPanels.js"/>
 </extensions>
 <!--<extensions>
         <extension type="component" id="GUICustom" path="apps/public/addons"/>        
