@@ -7,28 +7,7 @@
         <p class="rm-popup-text-feature">
             {{#adresse}}<span class='rm-popup-label'> ADRESSE :</span> {{{adresse}}}<br/>{{/adresse}}<br/>
             {{#horaires}}<span class='rm-popup-label'> HORAIRES :</span><br/><span class='horaires'>{{{horaires}}}</span><br/>{{/horaires}}           
-            
-            <span class='rm-popup-label'> FERMETURES :</span> 
-            <span class='l_fermetures'>
-                <span class='ferie_{{{ferme_jour_an}}}'>Jour de l'an</span>
-                <span class='ferie_{{{ferme_lundi_paques}}}'>Lundi de Pâques</span>
-                <span class='ferie_{{{ferme_fete_travail}}}'>Fête du travail</span>
-                <span class='ferie_{{{ferme_victoire_1945}}}'>Victoire 1945</span>
-                <span class='ferie_{{{ferme_ascension}}}'>Ascension</span>
-                <span class='ferie_{{{ferme_lundi_pentecote}}}'>Lundi de Pentecôte</span>
-                <span class='ferie_{{{ferme_fete_nationale}}}'>Fête nationale</span>
-                <span class='ferie_{{{ferme_assomption}}}'>Assomption</span>
-                <span class='ferie_{{{ferme_toussaint}}}'>Toussaint</span>
-                <span class='ferie_{{{ferme_armistice_1918}}}'>Armistice 1918</span>
-                <span class='ferie_{{{ferme_noel}}}'>Noël</span>
-                <span class='vac_{{{ferme_vacances_toussaint}}}'>Vacances de la Toussaint</span>
-                <span class='vac_{{{ferme_vacances_noel}}}'>Vacances de Noël</span>
-                <span class='vac_{{{ferme_vacances_hiver}}}'>Vacances d'hiver</span>
-                <span class='vac_{{{ferme_vacances_printemps}}}'>Vacances de printemps</span>
-                <span class='vac_{{{ferme_vacances_ete}}}'>Vacances d'été </span>
-                <span class='variationvac_{{{variation_conges_scolaires}}}'>Les horaires sont susceptibles de varier lors des congés scolaires. {{{comm_variation_conges_scolaires}}}</span>
-            </span> 
-            
+                  
 
             {{#commentaire}}<span class='rm-popup-label'> COMMENTAIRES :</span> {{{commentaire}}}<br/><br/>{{/commentaire}}
 
