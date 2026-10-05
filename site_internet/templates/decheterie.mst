@@ -6,9 +6,13 @@
 
         <p class="rm-popup-text-feature">
             {{#adresse}}<span class='rm-popup-label'> ADRESSE :</span> {{{adresse}}}<br/>{{/adresse}}<br/>
-            {{#horaires}}<span class='rm-popup-label'> HORAIRES :</span><br/><span class='horaires'>{{{horaires}}}</span><br/>{{/horaires}}           
+			
+			 <span class='rm-popup-label'> HORAIRES :</span>
+            <a href="https://heyzine.com/flip-book/5983db4367.html" target="_blank" rel="noopener noreferrer">
+                Consulter les horaires
+            </a>
+            <br/>  
                   
-
             {{#commentaire}}<span class='rm-popup-label'> COMMENTAIRES :</span> {{{commentaire}}}<br/><br/>{{/commentaire}}
 
             {{#fermeture_except}}
