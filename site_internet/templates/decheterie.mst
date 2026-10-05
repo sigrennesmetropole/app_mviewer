@@ -8,7 +8,7 @@
             {{#adresse}}<span class='rm-popup-label'> ADRESSE :</span> {{{adresse}}}<br/>{{/adresse}}<br/>
 			
 			 <span class='rm-popup-label'> HORAIRES :</span>
-            <a href="https://heyzine.com/flip-book/5983db4367.html" target="_blank" rel="noopener noreferrer">
+            <a href="https://dechets.metropole.rennes.fr/carte-et-horaires-des-decheteries/#horaires-des-decheteries-et-plateformes-vegetaux" target="_blank" rel="noopener noreferrer">
                 Consulter les horaires
             </a>
             <br/>  
