@@ -15,12 +15,6 @@
                   
             {{#commentaire}}<span class='rm-popup-label'> COMMENTAIRES :</span> {{{commentaire}}}<br/><br/>{{/commentaire}}
 
-            {{#fermeture_except}}
-                <span>
-                    <span class='rm-popup-label'> FERMETURES EXCEPTIONNELLES :</span><br/>
-                    <span class="exceptionalClosuresDechet">{{{fermeture_except}}}</span>
-                </span>
-            {{/fermeture_except}}
             <br/>
 
             <span class='rm-popup-label'> MATIÈRES ACCEPTÉES :</span><br/>
