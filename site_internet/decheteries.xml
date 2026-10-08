@@ -38,13 +38,13 @@
                 visible="true"
                 tiled="false"
                 infoformat="application/vnd.ogc.gml"
-                sld="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/decheterie.sld"
+                style="v_decheterie_pf_dv_mv"
                 legendurl="apps/site_internet/img/legend/leg_decheteries.svg"
                 metadata="undefined"
                 metadata-csw="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/9bd66532-036e-44c8-957d-9156362e5576"
                 attribution="Service Information Géographique de Rennes Métropole"
                 queryable="true"
-                filter="etat='actif'"
+                
                 infopanel="right-panel">
                 <template url="apps/site_internet/templates/decheterie.mst"></template>
             </layer>
