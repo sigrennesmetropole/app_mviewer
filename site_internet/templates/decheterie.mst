@@ -6,7 +6,6 @@
 
         <p class="rm-popup-text-feature">
             {{#adresse}}<span class='rm-popup-label'> ADRESSE :</span> {{{adresse}}}<br/>{{/adresse}}<br/>
-<<<<<<< HEAD
 			
 			 <span class='rm-popup-label'> HORAIRES :</span>
             <a href="https://dechets.metropole.rennes.fr/carte-et-horaires-des-decheteries/#horaires-des-decheteries-et-plateformes-vegetaux" target="_blank" rel="noopener noreferrer">
@@ -14,11 +13,6 @@
             </a>
             <br/>  
                   
-=======
-            {{#horaires}}<span class='rm-popup-label'> HORAIRES :</span><br/><span class='horaires'>{{{horaires}}}</span><br/>{{/horaires}}           
-                  
-
->>>>>>> 462889c (suppression champ fermeture)
             {{#commentaire}}<span class='rm-popup-label'> COMMENTAIRES :</span> {{{commentaire}}}<br/><br/>{{/commentaire}}
 
             <br/>
