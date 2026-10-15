@@ -1,0 +1,120 @@
+/******************************************************************************
+--------------------------- CSS THEME MVIEWER / RENNES METROPOLE---------------
+********************************************************************************/
+
+
+/* =========================================
+   TITRE PRINCIPAL DE L'ORGANISME
+   ========================================= */
+
+.rm-popup-title-feature {
+  margin-top: 10px;
+  font-family: "DMSans_bold", Arial, Sans-serif;
+  color: var(--titleColor);
+  font-size: 23px;
+  margin-bottom: 1%;
+  line-height: 1;
+  overflow-wrap: break-word;
+}
+
+/* =========================================
+   SECTIONS : INFORMATIONS, HORAIRES, SERVICES...
+   ========================================= */
+
+.mviewer-organisme-section {
+    margin-bottom: 18px;
+    padding: 10px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+/* Titres des sections : gras et soulignés */
+
+.mviewer-organisme-section h6 {
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 0 0 10px 0;
+    color: #333333;
+}
+
+/* Paragraphes des informations */
+
+.mviewer-organisme-section p {
+    margin: 5px 0;
+    line-height: 1.5;
+    font-size: 13px;
+    color: #444444;
+}
+
+/* Libellés en gras : Adresse, Gestionnaire, etc. */
+
+.mviewer-organisme-section p strong {
+    font-weight: bold;
+    color: #222222;
+}
+
+/* =========================================
+   TITRE FERMETURES
+   ========================================= */
+
+.rm-popup-label {
+    display: block;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 10px 0 5px 0;
+    color: #333333;
+}
+
+/* =========================================
+   LISTE DES FERMETURES
+   ========================================= */
+
+.l_fermetures {
+    display: block;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Affichage des jours fériés et vacances */
+
+.l_fermetures span {
+    margin-right: 5px;
+}
+
+/* =========================================
+   VARIATION DES HORAIRES PENDANT LES VACANCES
+   ========================================= */
+
+.l_fermetures .variationvac_true {
+    display: block;
+    margin-top: 8px;
+    font-style: italic;
+    color: #666666;
+}
+
+/* =========================================
+   ELEMENTS DE LA POPUP
+   ========================================= */
+
+li.item {
+    list-style: none;
+    padding: 10px;
+}
+
+/* =========================================
+   AFFICHAGE SUR PETIT ECRAN
+   ========================================= */
+
+@media screen and (max-width: 600px) {
+    .rm-popup-title-feature {
+        font-size: 16px;
+    }
+
+    .mviewer-organisme-section h6 {
+        font-size: 14px;
+    }
+
+    .mviewer-organisme-section p {
+        font-size: 12px;
+    }
+}

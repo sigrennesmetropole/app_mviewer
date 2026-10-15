@@ -1,3 +1,5 @@
+<ul>
+
 {{#features}}
 <li class="item">
 
@@ -35,13 +37,14 @@
 
     <!-- HORAIRES -->
     <div class="mviewer-organisme-section">
-        <h6>Horaires et fonctionnement</h6>
+	<h6 style="font-weight: bold; text-decoration: underline;">
+        Horaires et fonctionnement</h6>
 
         {{#horaires}}
         <p><strong>Horaires :</strong> {{horaires}}</p>
         {{/horaires}}
 
-       <span class='rm-popup-label'> FERMETURES :</span> 
+       <span class='rm-popup-label'>Fermetures :</span> 
             <span class='l_fermetures'>
                 <span class='ferie_{{{ferme_jour_an}}}'>Jour de l'an</span>
                 <span class='ferie_{{{ferme_lundi_paques}}}'>Lundi de Pâques</span>
@@ -64,60 +67,64 @@
 
         {{#commentaire}}
         <p><strong>Commentaire :</strong> {{commentaire}}</p>
-        {{/commentaire}}
+        {{/commentaire}} 
     </div>
 
     <!-- ACCESSIBILITE ET TRANSPORTS -->
     <div class="mviewer-organisme-section">
-        <h6>Accessibilité et transports</h6>
+	 <h6 style="font-weight: bold; text-decoration: underline;">
+        Accessibilité et transports
+		</h6>
 
         {{#accessibilite_pmr}}
-        <p><strong>Accessibilité PMR :</strong> {{accessibilite_pmr}}</p>
+        <p>Accessibilité PMR : {{accessibilite_pmr}}</p>
         {{/accessibilite_pmr}}
 
         {{#accessibilite_chiens}}
-        <p><strong>Accueil des chiens :</strong> {{accessibilite_chiens}}</p>
+        <p>Accueil des chiens : {{accessibilite_chiens}}</p>
         {{/accessibilite_chiens}}
-
+		
         {{#bus}}
-        <p><strong>Bus :</strong> {{bus}}</p>
+        <p>Bus : {{bus}}</p>
         {{/bus}}
 
         {{#metro}}
-        <p><strong>Métro :</strong> {{metro}}</p>
+        <p>Métro : {{metro}}</p>
         {{/metro}}
     </div>
 
     <!-- SERVICES PROPOSES -->
     <div class="mviewer-organisme-section">
-        <h6>Services proposés</h6>
+       <h6 style="font-weight: bold; text-decoration: underline;">
+    Services proposés
+</h6>
 
         {{#dormir}}
-        <p><strong>Hébergement :</strong> {{dormir}}</p>
+        <p>Trouver un hébergement : {{dormir}}</p>
         {{/dormir}}
 
         {{#se_laver}}
-        <p><strong>Se laver :</strong> {{se_laver}}</p>
+        <p>Se laver : {{se_laver}}</p>
         {{/se_laver}}
 
         {{#vetements}}
-        <p><strong>Vêtements :</strong> {{vetements}}</p>
+        <p>Trouver des vêtements : {{vetements}}</p>
         {{/vetements}}
 
         {{#lave_linge}}
-        <p><strong>Laver son linge :</strong> {{lave_linge}}</p>
+        <p>Laver son linge : {{lave_linge}}</p>
         {{/lave_linge}}
 
         {{#manger}}
-        <p><strong>Alimentation :</strong> {{manger}}</p>
+        <p>Alimentation : {{manger}}</p>
         {{/manger}}
 
         {{#accueil_journee}}
-        <p><strong>Accueil en journée :</strong> {{accueil_journee}}</p>
+        <p>Accueil en journée : {{accueil_journee}}</p>
         {{/accueil_journee}}
 
         {{#stocker_affaires}}
-        <p><strong>Consigne / stockage des affaires :</strong>
+        <p>Consigne / stockage des affaires :
             {{stocker_affaires}}
         </p>
         {{/stocker_affaires}}
@@ -125,63 +132,65 @@
 
     <!-- SANTE ET URGENCES -->
     <div class="mviewer-organisme-section">
-        <h6>Santé et urgences</h6>
+	<h6 style="font-weight: bold; text-decoration: underline;">
+        Santé et urgences</h6>
 
         {{#urgences}}
-        <p><strong>Urgences :</strong> {{urgences}}</p>
+        <p>Urgences : {{urgences}}</p>
         {{/urgences}}
 
         {{#premiers_soins}}
-        <p><strong>Premiers soins :</strong> {{premiers_soins}}</p>
+        <p>Premiers soins :{{premiers_soins}}</p>
         {{/premiers_soins}}
 
         {{#sante_mentale}}
-        <p><strong>Santé mentale :</strong> {{sante_mentale}}</p>
+        <p>Santé mentale : {{sante_mentale}}</p>
         {{/sante_mentale}}
 
         {{#addictions}}
-        <p><strong>Addictions :</strong> {{addictions}}</p>
+        <p>Addictions : {{addictions}}</p>
         {{/addictions}}
 
         {{#sexualite_contraception}}
-        <p><strong>Sexualité et contraception :</strong>
+        <p>Sexualité et contraception :
             {{sexualite_contraception}}
         </p>
         {{/sexualite_contraception}}
 
         {{#grossesse_bebes}}
-        <p><strong>Grossesse et bébés :</strong> {{grossesse_bebes}}</p>
+        <p>Grossesse et bébés : {{grossesse_bebes}}</p>
         {{/grossesse_bebes}}
 
         {{#soin_animal}}
-        <p><strong>Soins aux animaux :</strong> {{soin_animal}}</p>
+        <p>Soins aux animaux : {{soin_animal}}</p>
         {{/soin_animal}}
     </div>
 
     <!-- ACCOMPAGNEMENT -->
     <div class="mviewer-organisme-section">
-        <h6>Accompagnement et démarches</h6>
+	<h6 style="font-weight: bold; text-decoration: underline;">
+        Accompagnement et démarches</h6>
 
         {{#demarches}}
-        <p><strong>Démarches administratives :</strong> {{demarches}}</p>
+        <p>Démarches administratives : {{demarches}}</p>
         {{/demarches}}
 
         {{#insertion}}
-        <p><strong>Insertion :</strong> {{insertion}}</p>
+        <p>Insertion : {{insertion}}</p>
         {{/insertion}}
 
         {{#aide_juridique}}
-        <p><strong>Aide juridique :</strong> {{aide_juridique}}</p>
+        <p>Aide juridique : {{aide_juridique}}</p>
         {{/aide_juridique}}
 
         {{#soutien_vss}}
-        <p><strong>Soutien aux victimes de violences sexistes et sexuelles :</strong>
+        <p>Soutien aux victimes de violences sexistes et sexuelles :
             {{soutien_vss}}
         </p>
         {{/soutien_vss}}
 
         {{#soutien_discrim}}
-        <p><strong>Soutien face aux discriminations :</strong>
+        <p>Soutien face aux discriminations :
             {{soutien_discrim}}
         </p>
         {{/soutien_discrim}}
@@ -189,3 +198,4 @@
 
 </li>
 {{/features}}
+</ul>
