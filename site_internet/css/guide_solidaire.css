@@ -123,9 +123,9 @@ li.item {
    TEMPLATE
    ========================================= */
 .mviewer-popup-scroll {
-    max-height: 350px !important;
-    overflow-y: scroll !important;
-    overflow-x: hidden !important;
+    max-height: 350px ;
+    overflow-y: auto ;
+    overflow-x: hidden ;
     margin: 0;
     padding-right: 8px;
 }
