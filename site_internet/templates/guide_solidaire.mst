@@ -87,10 +87,10 @@
                 </h6>
 
                 <p>
-                  Accessibilité PMR : {{#accessibilite_pmr}}oui{{/accessibilite_pmr}}{{^accessibilite_pmr}}non{{/accessibilite_pmr}}
+                  Accessibilité PMR : {{#accessibilite_pmr}}{{{accessibilite_pmr}}}{{/accessibilite_pmr}}
                 </p>
 
-                <p>Accueil des chiens : {{#accessibilite_chiens}}oui{{/accessibilite_chiens}}{{^accessibilite_chiens}}non{{/accessibilite_chiens}}</p>
+                <p>Accueil des chiens : {{#accessibilite_chiens}}{{{accessibilite_chiens}}}{{/accessibilite_chiens}}</p>
 
                 {{#bus}}
                 <p>- Bus</p>
