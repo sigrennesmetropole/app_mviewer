@@ -6,7 +6,7 @@ var searchRM = (function () {
   var apiRVAKey = "";
   var apiSitesOrgkey = "";
   let restrictionInsee;
-  var apiRvaBaseUrl = "https://api-rva.sig.rennesmetropole.fr/";
+  var apiRvaBaseUrl = "https://api-rva-test.sig.rennesmetropole.fr/";
   var apiSitesOrg = "https://api-sitesorg.sig.rennesmetropole.fr/v1/";
   var laneData =
     "https://public.sig.rennesmetropole.fr/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=v_troncon_denom&outputFormat=application%2Fjson&srsname=EPSG:3948&CQL_FILTER=id_voie=";
