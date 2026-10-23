@@ -101,7 +101,7 @@
 		       name="Guide solidaire"
 		       collapsed="false"
 		       icon="fas fa-book">
-			<layer id="eq_educ:v_solidarite"
+<!--			<layer id="eq_educ:v_solidarite"
 			       name="Ensemble des organismes du Guide Solidaire de la Ville de Rennes"
 			       type="wms"
 			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
@@ -116,7 +116,7 @@
 			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
 				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
 			</layer>
-			
+-->			
 			<layer id="eq_educ:v_solidarite"
 			       name="Où dormir ?"
 			       type="wms"
