@@ -92,13 +92,9 @@
 
                 <p>Accueil des chiens : {{#type_chiens}}{{{type_chiens}}}{{/type_chiens}}</p>
 
-                {{#bus}}
-                <p>- Bus</p>
-                {{/bus}}
-
-                {{#metro}}
-                <p>- Métro</p>
-                {{/metro}}
+                <p>Bus : {{#bus}}{{{bus}}}{{/bus}}</p>             
+               
+                <p>Métro : {{#metro}}{{{metro}}}{{/metro}}</p>
 
             </div>
 
