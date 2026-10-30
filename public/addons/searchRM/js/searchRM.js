@@ -7,7 +7,7 @@ var searchRM = (function () {
   var apiSitesOrgkey = "";
   let restrictionInsee;
   var apiRvaBaseUrl = "https://api-rva.sig.rennesmetropole.fr/";
-  var apiSitesOrg = "https://api-sitesorg.sig.rennesmetropole.fr/v1/";
+  var apiSitesOrg = "https://api.rennesmetropole.fr/sitesorg/v1/";
   var laneData =
     "https://public.sig.rennesmetropole.fr/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=v_troncon_denom&outputFormat=application%2Fjson&srsname=EPSG:3948&CQL_FILTER=id_voie=";
   var queryMapOnClick;
@@ -423,8 +423,8 @@ var searchRM = (function () {
           ["actif", "projet", "inactif"].forEach((e) =>
             params.append("etats[]", e),
           );
-          [3, 1, 2].forEach((n) => params.append("niveaux_org[]", n));
-          params.append("niveaux_site[]", 1);
+          /* [3, 1, 2].forEach((n) => params.append("niveaux_org[]", n));
+           params.append("niveaux_site[]", 1);*/
           params.set("termes", value);
           params.set("termes_op", "AND");
           params.append("types[]", "organisme");
@@ -724,8 +724,8 @@ var searchRM = (function () {
   var _getSiteFromOrg = function (mainSite) {
     var requestUrl =
       apiSitesOrg +
-      "recherche?adresse=&etats[]=actif&etats[]=projet&etats[]=inactif&niveaux_org[]=3" +
-      "&niveaux_org[]=1&niveaux_org[]=2&niveaux_site[]=1&termes=" +
+      "recherche?adresse=&etats[]=actif&etats[]=projet&etats[]=inactif" +
+      "&termes=" +
       encodeURIComponent(mainSite) +
       "&termes_op=AND&types[]=site&limit=20&offset=0";
 
