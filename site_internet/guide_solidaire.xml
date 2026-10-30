@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ============================================================================
+    Nom du fichier    : guide_solidaire.xml
+	Objet : Localisation des organismes ressources suivant les thématiques du Guide, ainsi que les fontaines d'eau potable
+    
+  Référent technique   : Arnaud LECLERE - SDTIG unité AM
+  Donneur d’ordre      : Marie DUMOULIN - DSS/RSS/MPAIS 
+  
+  ============================================================================
+  Historique des versions : v 1.0
+  ____________________________________________________________________________
+  Date        | Auteur        | Description
+  ____________________________________________________________________________
+  01/10/2026  | Arnaud LECLERE     | Version initiale
+  ============================================================================
+  -->
+<config>
+	<application title="Guide solidaire de la Ville de Rennes"
+	             logo="apps/public/img/logo/logo_mviewer_transp.png"
+	             favicon="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/favicon_gris.png"
+	             titlehelp="À propos des cartes thématiques"
+	             help="apps/site_internet/html/site_internet_help.html"
+	             showhelp="false"
+	             exportpng="false"
+	             style="apps/site_internet/css/guide_solidaire.css" 
+			           
+	             measuretools="false"
+	             togglealllayersfromtheme="false"
+	             templaterightinfopanel="allintabs"
+	             sortlayersinfopanel="toc"/>
+	<mapoptions maxzoom="22"
+	            minzoom="11"
+	            projection="EPSG:3857"
+	            center="-185600.24433942206,6125077.984905125"
+	            zoom="13"/>
+	<baselayers style="default">
+		<!-- style="default"||gallery" -->
+		<baselayer visible="true"
+		           id="pvcisimplegris"
+		           thumbgallery="apps/public/img/basemap/pvcisimple.jpg"
+		           title="Rennes Metropole"
+		           label="Plan de ville simple gris"
+		           type="WMTS"
+		           url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?"
+		           layers="ref_fonds:pvci_simple_gris"
+		           format="image/png"
+		           style="_null"
+		           matrixset="EPSG:3857"
+		           fromcapacity="false"
+		           attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
+        </baselayer>
+		<baselayer visible="false"
+		           id="pvci_nb"
+		           thumbgallery="apps/public/img/basemap/pvcinb.jpg"
+		           title="Rennes Metropole"
+		           label="Plan de ville gris"
+		           type="WMTS"
+		           url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?"
+		           layers="ref_fonds:pvci_nb"
+		           format="image/png"
+		           style="_null"
+		           matrixset="EPSG:3857"
+		           fromcapacity="false"
+		           attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
+        </baselayer>
+		<baselayer visible="false"
+		           id="pvcicouleur"
+		           thumbgallery="apps/public/img/basemap/pvci.jpg"
+		           title="Rennes Metropole"
+		           label="Plan de ville couleur"
+		           type="WMTS"
+		           url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?"
+		           layers="ref_fonds:pvci"
+		           format="image/png"
+		           style="_null"
+		           matrixset="EPSG:3857"
+		           fromcapacity="false"
+		           attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
+        </baselayer>
+	</baselayers>
+	<extensions>
+		<extension type="component"
+		           id="GUICustom"
+		           path="apps/public/addons"/>
+		<extension type="javascript"
+		           src="apps/public/addons/addOrthophotoBaselayer.js"
+		           visible="false"/>
+		<extension type="component"
+		           id="accessibilite"
+		           path="apps/public/addons"/>
+		<extension type="component"
+		           id="searchRM"
+		           path="apps/public/addons"
+		           configFile="/apps/public/addons/searchRM/conf/searchConf_RVA_adresses_voies.json"/>
+	</extensions>
+	
+	
+	<themes mini="true">
+		<theme id="theme-20180827150815"
+		       name="Guide solidaire"
+		       collapsed="false"
+		       icon="fas fa-book">
+<!--			<layer id="eq_educ:v_solidarite"
+			       name="Ensemble des organismes du Guide Solidaire de la Ville de Rennes"
+			       type="wms"
+			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
+			       tiled="true"
+			       visible="false"
+			       style="eq_educ:guide_solidarite_mv"
+
+			       showintoc="true"
+			       expanded="true"
+			       infoformat="application/vnd.ogc.gml"
+			       queryable="true"
+			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
+				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			</layer>
+-->			
+			<layer id="eq_educ:v_solidarite"
+			       name="Où dormir ?"
+			       type="wms"
+			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
+			       tiled="true"
+			       visible="true"
+			       style="eq_educ:guide_solidarite_ou_dormir_mv"
+				   legendurl="apps/site_internet/img/legend/leg_ou_dormir.svg"
+			       showintoc="true"
+			       expanded="true"
+			       infoformat="application/vnd.ogc.gml"
+			       queryable="true"
+			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
+				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			</layer>
+			
+			<layer id="eq_educ:v_solidarite"
+			       name="Où se laver ?"
+			       type="wms"
+			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
+			       tiled="true"
+			       visible="true"
+			       style="eq_educ:guide_solidarite_ou_se_laver_mv"
+				   legendurl="apps/site_internet/img/legend/leg_ou_se_laver.svg"
+			       showintoc="true"
+			       expanded="true"
+			       infoformat="application/vnd.ogc.gml"
+			       queryable="true"
+			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
+				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			</layer>
+			
+			<layer id="eq_educ:v_solidarite"
+			       name="Où trouver des vêtements ? Où laver son linge ?"
+			       type="wms"
+			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
+			       tiled="true"
+			       visible="true"
+			       style="eq_educ:guide_solidarite_ou_trouver_vetements_mv"
+				   legendurl="apps/site_internet/img/legend/leg_ou_trouver_vetements.svg"
+			       showintoc="true"
+			       expanded="true"
+			       infoformat="application/vnd.ogc.gml"
+			       queryable="true"
+			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
+				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			</layer>
+			
+			<layer id="eq_educ:v_solidarite"
+			       name="Où manger ?"
+			       type="wms"
+			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
+			       tiled="true"
+			       visible="true"
+			       style="eq_educ:guide_solidarite_ou_manger_mv"
+				   legendurl="apps/site_internet/img/legend/leg_ou_manger.svg"
+			       showintoc="true"
+			       expanded="true"
+			       infoformat="application/vnd.ogc.gml"
+			       queryable="true"
+			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
+				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			</layer>
+			
+			<layer id="eq_educ:v_solidarite"
+			       name="Où trouver un accueil en journée ? Où stocker ses affaires ?"
+			       type="wms"
+			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
+			       tiled="true"
+			       visible="true"
+			       style="eq_educ:guide_solidarite_ou_trouver_accueil_mv"
+				   legendurl="apps/site_internet/img/legend/leg_ou_trouver_accueil.svg"
+			       showintoc="true"
+			       expanded="true"
+			       infoformat="application/vnd.ogc.gml"
+			       queryable="true"
+			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
+				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			</layer>
+			
+			<layer id="eq_educ:v_solidarite"
+			       name="Où se soigner ?"
+			       type="wms"
+			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
+			       tiled="true"
+			       visible="true"
+			       style="eq_educ:guide_solidarite_ou_se_soigner_mv"
+				   legendurl="apps/site_internet/img/legend/leg_ou_se_soigner.svg"
+			       showintoc="true"
+			       expanded="true"
+			       infoformat="application/vnd.ogc.gml"
+			       queryable="true"
+			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
+				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			</layer>
+			
+			<layer id="eq_educ:v_solidarite"
+			       name="Où prendre soin de son animal ?"
+			       type="wms"
+			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
+			       tiled="true"
+			       visible="true"
+			       style="eq_educ:guide_solidarite_ou_prendre_soin_animal_mv"
+				   legendurl="apps/site_internet/img/legend/leg_ou_prendre_soin_animal.svg"
+			       showintoc="true"
+			       expanded="true"
+			       infoformat="application/vnd.ogc.gml"
+			       queryable="true"
+			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
+				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			</layer>
+			
+			<layer id="eq_educ:v_solidarite"
+			       name="Où réaliser ses démarches administratives ?"
+			       type="wms"
+			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
+			       tiled="true"
+			       visible="true"
+			       style="eq_educ:guide_solidarite_ou_realiser_demarche_admin_mv"
+				   legendurl="apps/site_internet/img/legend/leg_ou_realiser_demarche_admin.svg"
+			       showintoc="true"
+			       expanded="true"
+			       infoformat="application/vnd.ogc.gml"
+			       queryable="true"
+			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
+				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			</layer>
+			
+			<layer id="eq_educ:v_solidarite"
+			       name="Où trouver de l'aide pour ses droits ?"
+			       type="wms"
+			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
+			       tiled="true"
+			       visible="true"
+			       style="eq_educ:guide_solidarite_ou_trouver_aide_droits_mv"
+				   legendurl="apps/site_internet/img/legend/leg_ou_trouver_aide_droits.svg"
+			       showintoc="true"
+			       expanded="true"
+			       infoformat="application/vnd.ogc.gml"
+			       queryable="true"
+			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
+				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			</layer>
+			
+			<layer id="espub_mob:v_borne_eau_potable"
+			       name="Bornes d'eau potable"
+			       type="wms"
+			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
+			       tiled="true"
+			       visible="true"
+			       infoformat="application/vnd.ogc.gml"
+			       fields=""
+			       aliases=""
+			       style="espub_mob:v_borne_eau_potable_mv2"
+			       showlegend="false"
+			       stylesalias=""
+			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/bbe33434-f5fc-4974-8572-e26332051138"
+			       metadata-csw=""
+			       attribution=""
+			       queryable="true"
+			       searchable="false"
+			       fusesearchkeys=""
+			       fusesearchresult=""
+			       useproxy="false"
+			       filter=""
+			       sld=""
+			       legendurl="apps/site_internet/img/legend/leg_eau_potable.svg"
+			       featurecount="5"
+			       infopanel="right-panel"
+			       opacity="1"
+			       index=""
+			       styletitle=""
+			       dynamiclegend="false"
+			       toplayer="false"
+			       expanded="false"
+			       exclusive="false"
+			       showintoc="true">
+				<template url="apps/site_internet/templates/point_eau_potable.mst"/>
+			</layer>
+		</theme>
+	</themes>
+</config>

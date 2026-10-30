@@ -1,0 +1,205 @@
+<ul class="mviewer-popup-scroll">
+{{#features}}
+<li class="item">
+
+            <h5 class="rm-popup-title-feature">
+                {{nom_organisme}}
+            </h5>
+
+            <!-- INFORMATIONS GENERALES -->
+            <div class="mviewer-organisme-section">
+
+                {{#adresse}}
+                <p><strong>Adresse :</strong> {{adresse}}</p>
+                {{/adresse}}
+
+                {{#adresse_admin}}
+                <p><strong>Adresse administrative :</strong> {{adresse_admin}}</p>
+                {{/adresse_admin}}
+
+                {{#gestionnaire}}
+                <p><strong>Gestionnaire :</strong> {{gestionnaire}}</p>
+                {{/gestionnaire}}
+
+                {{#beneficiaire}}
+                <p><strong>Bénéficiaires :</strong> {{beneficiaire}}</p>
+                {{/beneficiaire}}
+
+                {{#participation_financiere}}
+                <p><strong>Participation financière :</strong> {{participation_financiere}}</p>
+                {{/participation_financiere}}
+
+                {{#info_suppl}}
+                <p><strong>Informations complémentaires :</strong> {{info_suppl}}</p>
+                {{/info_suppl}}
+
+            </div>
+
+            <!-- HORAIRES -->
+            <div class="mviewer-organisme-section">
+
+                <h6 style="font-weight: bold; text-decoration: underline;">
+                    Horaires et fonctionnement
+                </h6>
+
+                {{#horaires}}
+                <p><strong>Horaires :</strong> {{horaires}}</p>
+                {{/horaires}}
+
+                <p>
+                    <strong>Fermetures :</strong>
+                </p>
+
+                <div class="l_fermetures">
+                    <span class="ferie_{{{ferme_jour_an}}}">Jour de l'an</span>
+                    <span class="ferie_{{{ferme_lundi_paques}}}">Lundi de Pâques</span>
+                    <span class="ferie_{{{ferme_fete_travail}}}">Fête du travail</span>
+                    <span class="ferie_{{{ferme_victoire_1945}}}">Victoire 1945</span>
+                    <span class="ferie_{{{ferme_ascension}}}">Ascension</span>
+                    <span class="ferie_{{{ferme_lundi_pentecote}}}">Lundi de Pentecôte</span>
+                    <span class="ferie_{{{ferme_fete_nationale}}}">Fête nationale</span>
+                    <span class="ferie_{{{ferme_assomption}}}">Assomption</span>
+                    <span class="ferie_{{{ferme_toussaint}}}">Toussaint</span>
+                    <span class="ferie_{{{ferme_armistice_1918}}}">Armistice 1918</span>
+                    <span class="ferie_{{{ferme_noel}}}">Noël</span>
+                    <span class="vac_{{{ferme_vacances_toussaint}}}">Vacances de la Toussaint</span>
+                    <span class="vac_{{{ferme_vacances_noel}}}">Vacances de Noël</span>
+                    <span class="vac_{{{ferme_vacances_hiver}}}">Vacances d'hiver</span>
+                    <span class="vac_{{{ferme_vacances_printemps}}}">Vacances de printemps</span>
+                    <span class="vac_{{{ferme_vacances_ete}}}">Vacances d'été</span>
+                    <span class="variationvac_{{{variation_conges_scolaires}}}">
+                        Les horaires sont susceptibles de varier lors des congés scolaires.
+                        {{{comm_variation_conges_scolaires}}}
+                    </span>
+                </div>
+
+                {{#commentaire}}
+                <p><strong>Commentaire :</strong> {{commentaire}}</p>
+                {{/commentaire}}
+
+            </div>
+
+            <!-- ACCESSIBILITE ET TRANSPORTS -->
+            <div class="mviewer-organisme-section">
+
+                <h6 style="font-weight: bold; text-decoration: underline;">
+                    Accessibilité et transports
+                </h6>
+
+                <p>
+                  Accessibilité PMR : {{#type_pmr}}{{{type_pmr}}}{{/type_pmr}}
+                </p>
+
+                <p>Accueil des chiens : {{#type_chiens}}{{{type_chiens}}}{{/type_chiens}}</p>
+
+                <p>Bus : {{#bus}}{{{bus}}}{{/bus}}</p>             
+               
+                <p>Métro : {{#metro}}{{{metro}}}{{/metro}}</p>
+
+            </div>
+
+            <!-- SERVICES PROPOSES -->
+            <div class="mviewer-organisme-section">
+
+                <h6 style="font-weight: bold; text-decoration: underline;">
+                    Services proposés
+                </h6>
+
+                {{#dormir}}
+                <p>- Trouver un hébergement</p>
+                {{/dormir}}
+
+                {{#se_laver}}
+                <p>- Se laver</p>
+                {{/se_laver}}
+
+                {{#vetements}}
+                <p>- Trouver des vêtements</p>
+                {{/vetements}}
+
+                {{#lave_linge}}
+                <p>- Laver son linge</p>
+                {{/lave_linge}}
+
+                {{#manger}}
+                <p>- Alimentation</p>
+                {{/manger}}
+
+                {{#accueil_journee}}
+                <p>- Accueil en journée</p>
+                {{/accueil_journee}}
+
+                {{#stocker_affaires}}
+                <p>- Consigne / stockage des affaires</p>
+                {{/stocker_affaires}}
+
+            </div>
+
+            <!-- SANTE ET URGENCES -->
+            <div class="mviewer-organisme-section">
+
+                <h6 style="font-weight: bold; text-decoration: underline;">
+                    Santé et urgences
+                </h6>
+
+                {{#urgences}}
+                <p>- Urgences</p>
+                {{/urgences}}
+
+                {{#premiers_soins}}
+                <p>- Premiers soins</p>
+                {{/premiers_soins}}
+
+                {{#sante_mentale}}
+                <p>- Santé mentale</p>
+                {{/sante_mentale}}
+
+                {{#addictions}}
+                <p>- Addictions</p>
+                {{/addictions}}
+
+                {{#sexualite_contraception}}
+                <p>- Sexualité et contraception</p>
+                {{/sexualite_contraception}}
+
+                {{#grossesse_bebes}}
+                <p>- Grossesse et bébés</p>
+                {{/grossesse_bebes}}
+
+                {{#soin_animal}}
+                <p>- Soins aux animaux</p>
+                {{/soin_animal}}
+
+            </div>
+
+            <!-- ACCOMPAGNEMENT -->
+            <div class="mviewer-organisme-section">
+
+                <h6 style="font-weight: bold; text-decoration: underline;">
+                    Accompagnement et démarches
+                </h6>
+
+                {{#demarches}}
+                <p>- Démarches administratives</p>
+                {{/demarches}}
+
+                {{#insertion}}
+                <p>- Insertion</p>
+                {{/insertion}}
+
+                {{#aide_juridique}}
+                <p>- Aide juridique</p>
+                {{/aide_juridique}}
+
+                {{#soutien_vss}}
+                <p>- Soutien aux victimes de violences sexistes et sexuelles</p>
+                {{/soutien_vss}}
+
+                {{#soutien_discrim}}
+                <p>- Soutien face aux discriminations</p>
+                {{/soutien_discrim}}
+
+            </div>
+</li>
+{{/features}}
+</ul>
