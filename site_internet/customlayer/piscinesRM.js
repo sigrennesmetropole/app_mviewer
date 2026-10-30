@@ -59,14 +59,14 @@ mviewer.customLayers.piscinesRM = (function () {
     site_data.set("bassins", []);
     // récupération des données du site pour obtenir la liste des organismes liés
     sitesorgs_data(
-      "https://api-sitesorg.sig.rennesmetropole.fr/v1/sites/" +
+      "https://api.rennesmetropole.fr/sitesorg/v1/sites/" +
         feature.get("id_site"),
     ).then(function (result_site) {
       let piscines_org = result_site.response.organismes;
       for (org in piscines_org) {
         // récupération des données de chaque organisme (pour les grilles horaires)
         sitesorgs_data(
-          "https://api-sitesorg.sig.rennesmetropole.fr/v1/organismes/" +
+          "https://api.rennesmetropole.fr/sitesorg/v1/organismes/" +
             piscines_org[org].idOrganisme.idOrganisme,
           piscines_org[org].flagOrganismePrincipal,
         ).then(function (result_org, siteid = site_data.getId()) {
