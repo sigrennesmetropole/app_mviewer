@@ -1,20 +1,6 @@
 @import url('site_internet_gris.css');
 
 /* =========================================
-   TITRE PRINCIPAL DE L'ORGANISME
-   ========================================= */
-
-.rm-popup-title-feature {
-  margin-top: 10px;
-  font-family: "DMSans_bold", Arial, Sans-serif;
-  color: var(--titleColor);
-  font-size: 23px;
-  margin-bottom: 1%;
-  line-height: 1;
-  overflow-wrap: break-word;
-}
-
-/* =========================================
    SECTIONS : INFORMATIONS, HORAIRES, SERVICES...
    ========================================= */
 

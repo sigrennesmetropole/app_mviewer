@@ -24,18 +24,16 @@
 	             showhelp="false"
 	             exportpng="false"
 	             style="apps/site_internet/css/guide_solidaire.css" 
-			           
 	             measuretools="false"
 	             togglealllayersfromtheme="false"
 	             templaterightinfopanel="allintabs"
 	             sortlayersinfopanel="toc"/>
-	<mapoptions maxzoom="22"
-	            minzoom="11"
-	            projection="EPSG:3857"
-	            center="-185600.24433942206,6125077.984905125"
-	            zoom="13"/>
+	             <mapoptions maxzoom="22"
+	             minzoom="11"
+	             projection="EPSG:3857"
+	             center="-185600.24433942206,6125077.984905125"
+	             zoom="13"/>
 	<baselayers style="default">
-		<!-- style="default"||gallery" -->
 		<baselayer visible="true"
 		           id="pvcisimplegris"
 		           thumbgallery="apps/public/img/basemap/pvcisimple.jpg"
@@ -49,7 +47,7 @@
 		           matrixset="EPSG:3857"
 		           fromcapacity="false"
 		           attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
-        </baselayer>
+		</baselayer>
 		<baselayer visible="false"
 		           id="pvci_nb"
 		           thumbgallery="apps/public/img/basemap/pvcinb.jpg"
@@ -63,7 +61,7 @@
 		           matrixset="EPSG:3857"
 		           fromcapacity="false"
 		           attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
-        </baselayer>
+		</baselayer>
 		<baselayer visible="false"
 		           id="pvcicouleur"
 		           thumbgallery="apps/public/img/basemap/pvci.jpg"
@@ -77,7 +75,7 @@
 		           matrixset="EPSG:3857"
 		           fromcapacity="false"
 		           attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
-        </baselayer>
+		</baselayer>
 	</baselayers>
 	<extensions>
 		<extension type="component"
@@ -95,28 +93,12 @@
 		           configFile="/apps/public/addons/searchRM/conf/searchConf_RVA_adresses_voies.json"/>
 	</extensions>
 	
-	
 	<themes mini="true">
 		<theme id="theme-20180827150815"
 		       name="Guide solidaire"
 		       collapsed="false"
 		       icon="fas fa-book">
-<!--			<layer id="eq_educ:v_solidarite"
-			       name="Ensemble des organismes du Guide Solidaire de la Ville de Rennes"
-			       type="wms"
-			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
-			       tiled="true"
-			       visible="false"
-			       style="eq_educ:guide_solidarite_mv"
-
-			       showintoc="true"
-			       expanded="true"
-			       infoformat="application/vnd.ogc.gml"
-			       queryable="true"
-			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
-				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
-			</layer>
--->			
+			   
 			<layer id="eq_educ:v_solidarite"
 			       name="Où dormir ?"
 			       type="wms"
@@ -124,13 +106,13 @@
 			       tiled="true"
 			       visible="true"
 			       style="eq_educ:guide_solidarite_ou_dormir_mv"
-				   legendurl="apps/site_internet/img/legend/leg_ou_dormir.svg"
+			       legendurl="apps/site_internet/img/legend/leg_ou_dormir.svg"
 			       showintoc="true"
 			       expanded="true"
 			       infoformat="application/vnd.ogc.gml"
 			       queryable="true"
 			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
-				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			       <template url="apps/site_internet/templates/guide_solidaire.mst"/>
 			</layer>
 			
 			<layer id="eq_educ:v_solidarite"
@@ -140,13 +122,13 @@
 			       tiled="true"
 			       visible="true"
 			       style="eq_educ:guide_solidarite_ou_se_laver_mv"
-				   legendurl="apps/site_internet/img/legend/leg_ou_se_laver.svg"
+			       legendurl="apps/site_internet/img/legend/leg_ou_se_laver.svg"
 			       showintoc="true"
 			       expanded="true"
 			       infoformat="application/vnd.ogc.gml"
 			       queryable="true"
 			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
-				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			       <template url="apps/site_internet/templates/guide_solidaire.mst"/>
 			</layer>
 			
 			<layer id="eq_educ:v_solidarite"
@@ -156,13 +138,13 @@
 			       tiled="true"
 			       visible="true"
 			       style="eq_educ:guide_solidarite_ou_trouver_vetements_mv"
-				   legendurl="apps/site_internet/img/legend/leg_ou_trouver_vetements.svg"
+			       legendurl="apps/site_internet/img/legend/leg_ou_trouver_vetements.svg"
 			       showintoc="true"
 			       expanded="true"
 			       infoformat="application/vnd.ogc.gml"
 			       queryable="true"
 			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
-				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			       <template url="apps/site_internet/templates/guide_solidaire.mst"/>
 			</layer>
 			
 			<layer id="eq_educ:v_solidarite"
@@ -172,13 +154,13 @@
 			       tiled="true"
 			       visible="true"
 			       style="eq_educ:guide_solidarite_ou_manger_mv"
-				   legendurl="apps/site_internet/img/legend/leg_ou_manger.svg"
+			       legendurl="apps/site_internet/img/legend/leg_ou_manger.svg"
 			       showintoc="true"
 			       expanded="true"
 			       infoformat="application/vnd.ogc.gml"
 			       queryable="true"
 			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
-				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			       <template url="apps/site_internet/templates/guide_solidaire.mst"/>
 			</layer>
 			
 			<layer id="eq_educ:v_solidarite"
@@ -188,13 +170,13 @@
 			       tiled="true"
 			       visible="true"
 			       style="eq_educ:guide_solidarite_ou_trouver_accueil_mv"
-				   legendurl="apps/site_internet/img/legend/leg_ou_trouver_accueil.svg"
+			       legendurl="apps/site_internet/img/legend/leg_ou_trouver_accueil.svg"
 			       showintoc="true"
 			       expanded="true"
 			       infoformat="application/vnd.ogc.gml"
 			       queryable="true"
 			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
-				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			       <template url="apps/site_internet/templates/guide_solidaire.mst"/>
 			</layer>
 			
 			<layer id="eq_educ:v_solidarite"
@@ -210,7 +192,7 @@
 			       infoformat="application/vnd.ogc.gml"
 			       queryable="true"
 			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
-				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			       <template url="apps/site_internet/templates/guide_solidaire.mst"/>
 			</layer>
 			
 			<layer id="eq_educ:v_solidarite"
@@ -220,7 +202,7 @@
 			       tiled="true"
 			       visible="true"
 			       style="eq_educ:guide_solidarite_ou_prendre_soin_animal_mv"
-				   legendurl="apps/site_internet/img/legend/leg_ou_prendre_soin_animal.svg"
+			       legendurl="apps/site_internet/img/legend/leg_ou_prendre_soin_animal.svg"
 			       showintoc="true"
 			       expanded="true"
 			       infoformat="application/vnd.ogc.gml"
@@ -236,7 +218,7 @@
 			       tiled="true"
 			       visible="true"
 			       style="eq_educ:guide_solidarite_ou_realiser_demarche_admin_mv"
-				   legendurl="apps/site_internet/img/legend/leg_ou_realiser_demarche_admin.svg"
+			       legendurl="apps/site_internet/img/legend/leg_ou_realiser_demarche_admin.svg"
 			       showintoc="true"
 			       expanded="true"
 			       infoformat="application/vnd.ogc.gml"
@@ -252,13 +234,13 @@
 			       tiled="true"
 			       visible="true"
 			       style="eq_educ:guide_solidarite_ou_trouver_aide_droits_mv"
-				   legendurl="apps/site_internet/img/legend/leg_ou_trouver_aide_droits.svg"
+			       legendurl="apps/site_internet/img/legend/leg_ou_trouver_aide_droits.svg"
 			       showintoc="true"
 			       expanded="true"
 			       infoformat="application/vnd.ogc.gml"
 			       queryable="true"
 			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
-				<template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			       <template url="apps/site_internet/templates/guide_solidaire.mst"/>
 			</layer>
 			
 			<layer id="espub_mob:v_borne_eau_potable"
@@ -294,7 +276,7 @@
 			       expanded="false"
 			       exclusive="false"
 			       showintoc="true">
-				<template url="apps/site_internet/templates/point_eau_potable.mst"/>
+			       <template url="apps/site_internet/templates/point_eau_potable.mst"/>
 			</layer>
 		</theme>
 	</themes>
