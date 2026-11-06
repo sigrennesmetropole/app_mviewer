@@ -1,0 +1,20 @@
+<ul class="mviewer-popup-scroll">
+{{#features}}
+<li class="item">
+
+            <!-- INFORMATIONS GENERALES -->
+            <div class="mviewer-organisme-section">
+
+                {{#zone_tarif}}
+                <p><strong>Zone tarif :</strong> {{zone_tarif}}</p>
+                {{/zone_tarif}}
+
+                {{#etat}}
+                <p><strong>Etat :</strong> {{etat}}</p>
+                {{/etat}}
+
+            </div>
+
+</li>
+{{/features}}
+</ul>
