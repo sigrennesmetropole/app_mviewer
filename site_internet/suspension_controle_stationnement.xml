@@ -95,7 +95,7 @@
 	
 	<themes mini="true">
 		<theme id="theme-20180827150815"
-		       name="Suspension stationnement payant"
+		       name="Suspension du contrôle de stationnement"
 		       collapsed="false"
 		       icon="fas fa-parking ">
 			   
