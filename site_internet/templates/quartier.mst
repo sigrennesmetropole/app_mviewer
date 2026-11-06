@@ -1,0 +1,16 @@
+<ul class="mviewer-popup-scroll">
+{{#features}}
+<li class="item">
+
+            <!-- INFORMATIONS GENERALES -->
+            <div class="mviewer-organisme-section">
+
+                {{#numnom}}
+                <p><strong>Nom quartier :</strong> {{numnom}}</p>
+                {{/numnom}}
+
+            </div>
+
+</li>
+{{/features}}
+</ul>

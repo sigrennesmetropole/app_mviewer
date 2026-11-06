@@ -32,7 +32,7 @@
 	             minzoom="11"
 	             projection="EPSG:3857"
 	             center="-185600.24433942206,6125077.984905125"
-	             zoom="13"/>
+	             zoom="14"/>
 	<baselayers style="default">
 		<baselayer visible="true"
 		           id="pvcisimplegris"
@@ -99,53 +99,48 @@
 		       collapsed="false"
 		       icon="fas fa-parking ">
 			   
-			<layer id="trp_station:suspension_stationnement_payant"
-			       name="secteurs de suspension du contrôle du stationnement payant (aplat opaque)"
+			<layer id="trp_statio:suspension_stationnement_payant"
+			       name="Secteurs pouvant connaître une suspension du contrôle de stationnement liée aux inondations sur Rennes"
 			       type="wms"
 			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
 			       tiled="true"
 			       visible="true"
-			       style="trp_statio:suspension_stationnement_payant"
+			       style="trp_statio:suspension_stationnement_payant_actif"
 			       showintoc="true"
 			       expanded="true"
 			       infoformat="application/vnd.ogc.gml"
 			       queryable="true"
 			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
-			       <template url="apps/site_internet/templates/suspension_stationnement_payant.mst"/>
+			      <template url="apps/site_internet/templates/suspension_controle_stationnement.mst"></template>
 			</layer>
-			   <!--
-			<layer id="trp_station:suspension_stationnement_payant"
-			       name="Secteurs de suspension du contrôle du stationnement payant (aplat transparent à 30 %)"
+			<layer id="ladm_terri:quartier"
+			       name="Limite de quartiers Rennes"
 			       type="wms"
 			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
 			       tiled="true"
 			       visible="true"
-			       style="trp_station:suspension_stationnement_payant_transparent"
+			       style="ladm_terri:quartier_contour_rennes"
 			       showintoc="true"
 			       expanded="true"
 			       infoformat="application/vnd.ogc.gml"
 			       queryable="true"
 			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
-			       <template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			       <template url="apps/site_internet/templates/quartier.mst"></template>
 			</layer>
-			
-			
-			
-			<layer id="trp_station:suspension_stationnement_payant"
-			       name="Secteurs où la suspension du contrôle du stationnement payant est active (actif = true)"
+			<layer id="trp_statio:stationnement_payant"
+			       name="Stationnement payant sur Rennes"
 			       type="wms"
 			       url="https://public.sig.rennesmetropole.fr/geoserver/ows"
 			       tiled="true"
 			       visible="true"
-			       style="trp_station:suspension_stationnement_payant_actif"
+			       style="trp_statio:statio_payant_zone_exist"
 			       showintoc="true"
 			       expanded="true"
 			       infoformat="application/vnd.ogc.gml"
 			       queryable="true"
 			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
-			       <template url="apps/site_internet/templates/guide_solidaire.mst"/>
+			       <template url="apps/site_internet/templates/stationnement_payant.mst"></template>
 			</layer>
-			-->
-			</theme>
+		</theme>
 	</themes>
 </config>
