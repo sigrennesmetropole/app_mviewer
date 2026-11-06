@@ -1,0 +1,24 @@
+<ul class="mviewer-popup-scroll">
+{{#features}}
+<li class="item">
+
+            <h5 class="rm-popup-title-feature">
+                {{nom_organisme}}
+            </h5>
+
+            <!-- INFORMATIONS GENERALES -->
+            <div class="mviewer-organisme-section">
+
+                {{#secteur}}
+                <p><strong>Secteur :</strong> {{secteur}}</p>
+                {{/secteur}}
+
+                {{#commentaire}}
+                <p><strong>Informations complémentaires :</strong> {{commentaire}}</p>
+                {{/commentaire}}
+
+            </div>
+
+</li>
+{{/features}}
+</ul>
