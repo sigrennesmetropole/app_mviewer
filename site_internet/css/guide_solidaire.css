@@ -112,3 +112,10 @@ li.item {
     margin: 0;
     padding-right: 8px;
 }
+
+/* =========================================
+   Masquer le curseur de transparence dans le gestionnaire de couches
+   ========================================= */
+#layers-container input[type="range"] {
+    display: none !important;
+}
