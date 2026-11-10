@@ -116,6 +116,6 @@ li.item {
 /* =========================================
    Masquer le curseur de transparence dans le gestionnaire de couches
    ========================================= */
-#layers-container input[type="range"] {
+.form-group-opacity {
     display: none !important;
 }
