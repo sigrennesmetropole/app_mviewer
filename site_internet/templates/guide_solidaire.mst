@@ -13,13 +13,17 @@
                 <p><strong>Adresse :</strong> {{adresse}}</p>
                 {{/adresse}}
 
-                {{#adresse_admin}}
-                <p><strong>Adresse administrative :</strong> {{adresse_admin}}</p>
-                {{/adresse_admin}}
-
                 {{#gestionnaire}}
                 <p><strong>Gestionnaire :</strong> {{gestionnaire}}</p>
                 {{/gestionnaire}}
+				
+				 {{#telephones}}
+                <p><strong>Téléphone :</strong> {{telephones}}</p>
+                {{/telephones}}
+				
+				 {{#mails}}
+                <p><strong>Courriel :</strong> {{mails}}</p>
+                {{/mails}}
 
                 {{#beneficiaire}}
                 <p><strong>Bénéficiaires :</strong> {{beneficiaire}}</p>
@@ -72,10 +76,6 @@
                         {{{comm_variation_conges_scolaires}}}
                     </span>
                 </div>
-
-                {{#commentaire}}
-                <p><strong>Commentaire :</strong> {{commentaire}}</p>
-                {{/commentaire}}
 
             </div>
 
@@ -131,16 +131,7 @@
 
                 {{#stocker_affaires}}
                 <p>- Consigne / stockage des affaires</p>
-                {{/stocker_affaires}}
-
-            </div>
-
-            <!-- SANTE ET URGENCES -->
-            <div class="mviewer-organisme-section">
-
-                <h6 style="font-weight: bold; text-decoration: underline;">
-                    Santé et urgences
-                </h6>
+                {{/stocker_affaires}}           
 
                 {{#urgences}}
                 <p>- Urgences</p>
@@ -170,14 +161,9 @@
                 <p>- Soins aux animaux</p>
                 {{/soin_animal}}
 
-            </div>
-
-            <!-- ACCOMPAGNEMENT -->
-            <div class="mviewer-organisme-section">
-
-                <h6 style="font-weight: bold; text-decoration: underline;">
-                    Accompagnement et démarches
-                </h6>
+                {{#adresse_admin}}
+                <p>- Adresse administrative</p>
+                {{/adresse_admin}}
 
                 {{#demarches}}
                 <p>- Démarches administratives</p>
