@@ -33,22 +33,8 @@
 	             projection="EPSG:3857"
 	             center="-185600.24433942206,6125077.984905125"
 	             zoom="14"/>
-	<baselayers style="default">
+		<baselayers style="default">
 		<baselayer visible="true"
-		           id="pvcisimplegris"
-		           thumbgallery="apps/public/img/basemap/pvcisimple.jpg"
-		           title="Rennes Metropole"
-		           label="Plan de ville simple gris"
-		           type="WMTS"
-		           url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?"
-		           layers="ref_fonds:pvci_simple_gris"
-		           format="image/png"
-		           style="_null"
-		           matrixset="EPSG:3857"
-		           fromcapacity="false"
-		           attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
-		</baselayer>
-		<baselayer visible="false"
 		           id="pvci_nb"
 		           thumbgallery="apps/public/img/basemap/pvcinb.jpg"
 		           title="Rennes Metropole"
@@ -56,6 +42,20 @@
 		           type="WMTS"
 		           url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?"
 		           layers="ref_fonds:pvci_nb"
+		           format="image/png"
+		           style="_null"
+		           matrixset="EPSG:3857"
+		           fromcapacity="false"
+		           attribution="&lt;a href=&quot;https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/home&quot; target=&quot;_blank&quot; &gt;Rennes Métropole&lt;/a&gt;">
+		</baselayer>
+		<baselayer visible="false"
+		           id="pvcisimplegris"
+		           thumbgallery="apps/public/img/basemap/pvcisimple.jpg"
+		           title="Rennes Metropole"
+		           label="Plan de ville simple gris"
+		           type="WMTS"
+		           url="https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?"
+		           layers="ref_fonds:pvci_simple_gris"
 		           format="image/png"
 		           style="_null"
 		           matrixset="EPSG:3857"
