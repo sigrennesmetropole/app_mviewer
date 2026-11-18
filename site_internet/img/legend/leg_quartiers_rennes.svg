@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="550" viewBox="0 0 760 550" role="img" aria-labelledby="title desc">
+  <title id="title">Légende des 12 quartiers de Rennes</title>
+
+  <rect x="0" y="0" width="760" height="550" fill="#ffffff"/>
+  <text x="24" y="39" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#202124">Les 12 quartiers de Rennes</text>
+
+  <rect x="25" y="53" width="25" height="25" rx="2" fill="#e6194b" fill-opacity="0.5" stroke="#666666" stroke-width="0.7"/>
+  <text x="66" y="72" font-family="Arial, sans-serif" font-size="16" fill="#202124">1 - Centre</text>
+  <line x1="24" y1="85" x2="736" y2="85" stroke="#eeeeee" stroke-width="1"/>
+  <rect x="25" y="91" width="25" height="25" rx="2" fill="#3cb44b" fill-opacity="0.5" stroke="#666666" stroke-width="0.7"/>
+  <text x="66" y="110" font-family="Arial, sans-serif" font-size="16" fill="#202124">2 - Thabor / Saint-Hélier / Alphonse Guérin / Baud-Chardonnet</text>
+  <line x1="24" y1="123" x2="736" y2="123" stroke="#eeeeee" stroke-width="1"/>
+  <rect x="25" y="129" width="25" height="25" rx="2" fill="#4363d8" fill-opacity="0.5" stroke="#666666" stroke-width="0.7"/>
+  <text x="66" y="148" font-family="Arial, sans-serif" font-size="16" fill="#202124">3 - Bourg l'Evesque / La Touche / Moulin du Comte</text>
+  <line x1="24" y1="161" x2="736" y2="161" stroke="#eeeeee" stroke-width="1"/>
+  <rect x="25" y="167" width="25" height="25" rx="2" fill="#ffe119" fill-opacity="0.5" stroke="#666666" stroke-width="0.7"/>
+  <text x="66" y="186" font-family="Arial, sans-serif" font-size="16" fill="#202124">4 - Saint Martin</text>
+  <line x1="24" y1="199" x2="736" y2="199" stroke="#eeeeee" stroke-width="1"/>
+  <rect x="25" y="205" width="25" height="25" rx="2" fill="#f58231" fill-opacity="0.5" stroke="#666666" stroke-width="0.7"/>
+  <text x="66" y="224" font-family="Arial, sans-serif" font-size="16" fill="#202124">5 - Maurepas / Bellangerais</text>
+  <line x1="24" y1="237" x2="736" y2="237" stroke="#eeeeee" stroke-width="1"/>
+  <rect x="25" y="243" width="25" height="25" rx="2" fill="#911eb4" fill-opacity="0.5" stroke="#666666" stroke-width="0.7"/>
+  <text x="66" y="262" font-family="Arial, sans-serif" font-size="16" fill="#202124">6 - Jeanne d'Arc / Longs Champs / Beaulieu</text>
+  <line x1="24" y1="275" x2="736" y2="275" stroke="#eeeeee" stroke-width="1"/>
+  <rect x="25" y="281" width="25" height="25" rx="2" fill="#42d4f4" fill-opacity="0.5" stroke="#666666" stroke-width="0.7"/>
+  <text x="66" y="300" font-family="Arial, sans-serif" font-size="16" fill="#202124">7 - La Pommeraie</text>
+  <line x1="24" y1="313" x2="736" y2="313" stroke="#eeeeee" stroke-width="1"/>
+  <rect x="25" y="319" width="25" height="25" rx="2" fill="#f032e6" fill-opacity="0.5" stroke="#666666" stroke-width="0.7"/>
+  <text x="66" y="338" font-family="Arial, sans-serif" font-size="16" fill="#202124">8 - Sud gare</text>
+  <line x1="24" y1="351" x2="736" y2="351" stroke="#eeeeee" stroke-width="1"/>
+  <rect x="25" y="357" width="25" height="25" rx="2" fill="#808000" fill-opacity="0.5" stroke="#666666" stroke-width="0.7"/>
+  <text x="66" y="376" font-family="Arial, sans-serif" font-size="16" fill="#202124">9 - Cleunay / Arsenal - Redon / La Courrouze</text>
+  <line x1="24" y1="389" x2="736" y2="389" stroke="#eeeeee" stroke-width="1"/>
+  <rect x="25" y="395" width="25" height="25" rx="2" fill="#fabed4" fill-opacity="0.5" stroke="#666666" stroke-width="0.7"/>
+  <text x="66" y="414" font-family="Arial, sans-serif" font-size="16" fill="#202124">10 - Villejean / Beauregard</text>
+  <line x1="24" y1="427" x2="736" y2="427" stroke="#eeeeee" stroke-width="1"/>
+  <rect x="25" y="433" width="25" height="25" rx="2" fill="#469990" fill-opacity="0.5" stroke="#666666" stroke-width="0.7"/>
+  <text x="66" y="452" font-family="Arial, sans-serif" font-size="16" fill="#202124">11 - Le Blosne</text>
+  <line x1="24" y1="465" x2="736" y2="465" stroke="#eeeeee" stroke-width="1"/>
+  <rect x="25" y="471" width="25" height="25" rx="2" fill="#9a6324" fill-opacity="0.5" stroke="#666666" stroke-width="0.7"/>
+  <text x="66" y="490" font-family="Arial, sans-serif" font-size="16" fill="#202124">12 - Bréquigny</text>
+</svg>
