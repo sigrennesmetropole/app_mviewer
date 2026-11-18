@@ -91,7 +91,7 @@
 		<extension type="component"
 		           id="searchRM"
 		           path="apps/public/addons"
-		           configFile="/apps/public/addons/searchRM/conf/searchConf_RVA_adresses_voies.json"/>
+		           configFile="/apps/public/addons/searchRM/conf/searchConf_RVA_adresses_voies_15.json"/>
 	</extensions>
 	
 	<themes mini="true">
