@@ -91,13 +91,14 @@
 		<extension type="component"
 		           id="searchRM"
 		           path="apps/public/addons"
-		           configFile="/apps/public/addons/searchRM/conf/searchConf_RVA_adresses_voies_15.json"/>
+		           configFile="/apps/public/addons/searchRM/conf/searchConf_RVA_adresses_voies.json"/>
 	</extensions>
 	
-	<themes mini="true">
+	<themes mini="true"
+	        legendmini="true">
 		<theme id="theme-20180827150815"
 		       name="Limites des quartiers de Rennes"
-		       collapsed="false"
+		       collapsed="true"
 		       icon="fas fa-map-marked-alt">
 			   
 			<layer id="ladm_terri:quartier"
@@ -110,7 +111,7 @@
 			       dynamiclegend="true"
  			       legendurl="apps/site_internet/img/legend/leg_quartiers_rennes.svg"
 			       showintoc="true"
-			       expanded="true"
+			       expanded="false"
 			       infoformat="application/vnd.ogc.gml"
 			       queryable="true"
 			       metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/4ee7818e-d2bc-4ea8-8901-7147ddc9aab3">
