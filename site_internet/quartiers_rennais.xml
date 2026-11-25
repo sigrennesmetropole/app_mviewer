@@ -109,7 +109,7 @@
 			       visible="true"
 			       style="ladm_terri:quartier_applat_rennes_mv"
 			       dynamiclegend="true"
- 			       legendurl="apps/site_internet/img/legend/leg_quartiers_rennes.svg"
+ 			       legendurl=""
 			       showintoc="true"
 			       expanded="false"
 			       infoformat="application/vnd.ogc.gml"
