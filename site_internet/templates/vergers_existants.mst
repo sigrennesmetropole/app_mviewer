@@ -6,7 +6,7 @@
 			{{#site}}<span class='rm-popup-label'> LOCALISATION :</span> {{{site}}}<br/>{{/site}}
 			{{#surface}}<span class='rm-popup-label'> SURFACE :</span> {{{surface}}} m²<br/>{{/surface}}
 			{{#Nombre_arb}}<span class='rm-popup-label'> NOMBRE D'ARBRES :</span> {{{Nombre_arb}}} m²<br/>{{/Nombre_arb}}
-			{{#localisation}}<span class='rm-popup-label'> ACCÈSS :</span> {{{localisation}}}<br/>{{/localisation}}
+			{{#localisation}}<span class='rm-popup-label'> ACCÈS :</span> {{{localisation}}}<br/>{{/localisation}}
 			{{#creation}}<span class='rm-popup-label'> CRÉE EN :</span> {{{creation}}}<br/>{{/creation}}
 		</p>
 		<p class="rm-popup-text-feature">
