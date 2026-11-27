@@ -1,0 +1,14 @@
+{{#features}}
+    <li class="item">
+        <h5 class="rm-popup-title-feature">{{nom_commun}}</h5>
+        <p class="rm-popup-text-feature">
+            {{#denomination}}<span class='rm-popup-label'> LOCALISATION :</span> {{{denomination}}}<br/> {{/denomination}}
+            {{#date_plantation}}<span class='rm-popup-label'> PLANTATION :</span> <span class='date_year'>{{{date_plantation}}}</span> <br/> {{/date_plantation}}
+            {{#genre}}<span class='rm-popup-label'> GENRE :</span> {{{genre}}} <br/> {{/genre}}
+            {{#espece}}<span class='rm-popup-label'> ESPÈCE :</span> {{{espece}}} <br/> {{/espece}}
+            {{#variete}}<span class='rm-popup-label'> VARIÉTÉ :</span> {{{variete}}} <br/> {{/variete}}
+        </p>
+        {{#complement}}<span class="rm-popup-subtitle-feature" > {{complement}} <br/> </span>{{/complement}}
+    </li>
+{{/features}}
+
