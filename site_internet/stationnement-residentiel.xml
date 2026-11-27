@@ -39,7 +39,24 @@
                 infoformat="application/vnd.ogc.gml"
                 metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/bdeec5e5-5f46-41a8-a540-4387f8a76f7a"
 				attribution="Rennes Métropole"
-				style="statio_payant_zone"
+				style="statio_payant_zone_exist"
+                queryable="false"
+                featurecount="5"
+                infopanel="right-panel"
+                templaterightinfopanel="allintabs">
+                <template url="apps/site_internet/templates/tram_bus.mst"></template>
+            </layer>	
+		
+		<layer
+                id="stationnement_payant_extension"
+                name="Extension du stationnement payant à venir"
+                type="wms"
+                url="https://public.sig.rennesmetropole.fr/geoserver/trp_statio/ows"
+                visible="true"
+                infoformat="application/vnd.ogc.gml"
+                metadata="https://public.sig.rennesmetropole.fr/geonetwork/srv/fre/catalog.search#/metadata/bdeec5e5-5f46-41a8-a540-4387f8a76f7a"
+				attribution="Rennes Métropole"
+				style="statio_payant_extension_validee"
                 queryable="false"
                 featurecount="5"
                 infopanel="right-panel"
